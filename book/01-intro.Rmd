@@ -1,0 +1,424 @@
+# Introduction {#introduction}
+
+<!-- You can label chapter and section titles using `{#label}` after them, e.g., we can reference Chapter \@ref(intro). If you do not manually label them, there will be automatic labels anyway, e.g., Chapter \@ref(methods). -->
+
+<!-- Figures and tables with captions will be placed in `figure` and `table` environments, respectively. -->
+
+<!-- # ```{r nice-fig, fig.cap='Here is a nice figure!', out.width='80%', fig.asp=.75, fig.align='center'} -->
+<!-- # [Probability, union, and complement]par(mar = c(4, 4, .1, .1)) -->
+<!-- # plot(pressure, type = 'b', pch = 19) -->
+<!-- ``` -->
+
+<!-- Reference a figure by its code chunk label with the `fig:` prefix, e.g., see Figure \@ref(fig:nice-fig). Similarly, you can reference tables generated from `knitr::kable()`, e.g., see Table \@ref(tab:nice-tab). -->
+
+<!-- # ```{r nice-tab, tidy=FALSE} -->
+<!-- # knitr::kable( -->
+<!-- #   head(iris, 20), caption = 'Here is a nice table!', -->
+<!-- #   booktabs = TRUE -->
+<!-- # ) -->
+<!-- ``` -->
+
+You can write citations, too. For example, we are using the **bookdown** package [@R-bookdown] in this sample book, which was built on top of R Markdown and **knitr** [@xie2015].
+
+## Preliminaries
+
+Data has been identified as the main commodity in our connected world of today. Generated at a breakneck pace and related to practically all of the aspects of human life, it has become a variable resource for the creation of products and services designed to improve people's lives. For illustration, mobile devices provide enormous amounts of information of the location of users, which in turn, can help governments or big companies design better policies in what pertains mobility.
+
+<!-- Insert a better explanation of this -->
+
+```{r, echo = FALSE, fig.align='center', fig.cap = 'the site'}
+knitr::include_url("https://flowmap.blue/15kwLB4baXZ7jpip8q0JjgR6zDoS5Gt3gMLCTUAboQxk?v=46.719075,7.817990,7.51,0,0&a=0&as=1&b=1&bo=75&c=0&ca=1&d=1&fe=1&lt=1&lfm=ALL&col=Default&f=45")
+```
+
+
+In order to make sense of the immense amounts of Data generated every millisecond, computational tools are needed. Thankfully, in this day and age, computing power allows easy and fast manipulation of that enormous amount of information, yet it is not only by brute force or algorithmic power that appropriate insights are found. 
+
+Here is where mathematical theory contributes the most. The discipline that formalises the important aspects of the randomness in the data generation process and provides the tools necessary for data analysis is the field of Statistics. That said, in order to construct tools that capture these phenomena appropriately, mathematical assumptions on how the randomness/uncertainty of our data is generated. The field of mathematics that formalises randomness is the field of **Probability**
+
+
+## What is Probability? What are Statistics? (a.k.a. "What to expect from this Course")
+
+In this course, **we study Probability as a way to introduce Statistics**. Thus we **do not study Probability as a subject of interest in itself** i.e. we do not develop deep probability theory using all the formal theoretical arguments, but rather **we set up a few principles and methods** which will be **helpful to study Statistics**. 
+
+<!-- \includegraphics[width=0.6\textwidth,height=0.7\textheight]{y.pdf} -->
+
+Hence, for the purposes of this lecture, we shall consider:  
+
+- **Statistics**: as the discipline that deals with the **collection**, **presentation**, **analysis** and **interpretation** of data. 
+- **Probability** as the mathematical formalisation of randomness and uncertainty, main building block of Statistical methods or their modern reincarnation (rebranding), algorithmic tools known as Machine Learning, Deep Learning, etc.
+
+Before jumping into the core of the subject, I want you to . When you are thinking about uncertain outcomes, say you are attempting to _gamble_ in a casino or _invest_ in the stock exchange^[one could claim, gambling and investing amount to the same thing, give or take some details], you often ask yourself:
+
+> What are my **chances** of success? 
+
+And sometimes, hearing you think aloud, someone in the rooom would say some **number**. 
+
+> "I'd say more like one out of a million."
+
+In your mind, this number becomes an indication of the _likelihood_ of the event of interest (winning your gamble, being successful in the investment).
+
+> "So, you're telling me that THERE IS A CHANCE!"
+
+Intuitively, you understand this as the result as the result of a computation. Were you to _repeat_ the _experiment_ (gamble, investment) your chances of success results from.
+
+$$\text{my chances} = \frac{\text{number of times I succeed}}{\text{number of times I fail}}$$
+In a bit of an abuse of language, this value, constitutes the **probability** of success. When it's small, success is very unlikely, but 
+
+
+> Probability is defined as the measure of the "likelihood" of an event or random outcome. 
+
+$\leadsto$ Uncertainty is measured in units of \textit{probability}, which _is the currency of statistics_. 
+
+$\leadsto$ Statistics is concerned with **study of uncertainty** and with the _study of data-driven decision making in the face of uncertainty_.
+
+
+
+
+
+Another way of saying that is: 
+
+> "What is the chance of something happening?"
+
+To answer this question we make use of Probability. Indeed, Probability is all about the certainty/uncertainty and the prediction of something happening. Some events are impossible, other events are certain to occur, while many are possible, but not certain to occur...
+
+>   "In this world there is nothing certain but death and taxes."
+-  Benjamin Franklin
+
+<!-- \includegraphics[width=0.4\textwidth,height=0.5\textheight]{profit.pdf} -->
+
+<!-- \includegraphics[width=0.3\textwidth,height=0.3\textheight]{tipoS.pdf} -->
+
+#### Example: Stock price evolution
+
+Let us imagine that we are going to model the  **uncertainty** characterizing the Stock price of an asset by a simple model. With probability $p=1/2$ the stock price moves up of a factor $u$, and with probability $1-p$ the price moves down of a factor $d$. We denote the price at time $t_1$  by $uS_0 $ if the price goes up, and by $dS_0 $  if the price goes down. 
+
+Let us set $S_0=1$, $u=2$ and $d=1/2$. Can we say something about the price at time $t_2$?
+
+The price evolution is represented by a tree:
+
+> Insert illustration or animation
+
+<!-- \tikzstyle{bag} = [text width=8em, text centered] -->
+<!-- \tikzstyle{end} = [] -->
+<!-- \begin{tikzpicture}[sloped] -->
+<!--    \node (a) at ( 0,0) [bag] {$\$ 1$}; -->
+<!--    \node (b) at ( 4,-1.5) [bag] {$\$ d =\$ 0.5$}; -->
+<!--    \node (c) at ( 4,1.5) [bag] {$\$ u= \$ 2$}; -->
+<!--    \node (d) at ( 8,-3) [bag] {$\$ d^2= \$ 0.25$}; -->
+<!--    \node (e) at ( 8,0) [bag] {$\$ ud= \$ du = \$ 1$}; -->
+<!--    \node (f) at ( 8,3) [bag] {$\$ u^2=\$ 4$}; -->
+<!--    \draw [->] (a) to node [below] {$(1-p)$} (b); -->
+<!--    \draw [->] (a) to node [above] {$p$} (c); -->
+<!--    \draw [->] (c) to node [below] {$p^2$} (f); -->
+<!--    \draw [->] (c) to node [above] {$(1-p)p$} (e); -->
+<!--    \draw [->] (b) to node [below] {$(1-p)p$} (e); -->
+<!--    \draw [->] (b) to node [above] {$(1-p)^2$} (d); -->
+<!-- \end{tikzpicture} -->
+
+
+#### Example: Quanta
+
+<!-- \includegraphics[width=0.3\textwidth,height=0.2\textheight]{Quantum.pdf} -->
+
+<!-- \includegraphics[width=0.4\textwidth,height=0.9\textheight, angle = -90]{cern.pdf} -->
+
+
+Probability models are the basis for quantum physics: they characterize the **uncertainty** of properties of single energy ``quanta'' emitted by a ``perfect radiator" with a given temperature ($T$). Specifically, recall the famous Einstein's equation $$\boxed{\mathcal{E} = m c^2}$$ which expresses the energy $\mathcal{E}$  in terms of the mass \underline{$m$, a random quantity,} and $c$, the speed of light. Moreover, consider the geometric energy mean defined by ${\mathcal{E}_G} = c_0 k_B T$, where $c_0 \approx 2.134$ and $k_B$ is Boltzmann's constant. Thus, one can define the random quantity
+
+$$W = \frac{\mathcal{E}}{{\mathcal{E}_G}},$$
+which is called _quantum mass ratio_.
+
+
+The random behaviour of $W$ can be described by a probability density function:
+
+> Insert Illustration or animation of the quantum mass ratio. 
+
+<!-- \includegraphics[width=0.4\textwidth,height=0.6\textheight, angle = 0]{W.pdf} -->
+
+
+
+<!-- % -->
+<!-- % -->
+<!-- %# {Preliminaries} -->
+<!-- % -->
+<!-- % -->
+<!-- %A bit more precisely, \textbf{Statistics} -->
+<!-- % -->
+<!-- %\vspace{0.2cm} -->
+<!-- % -->
+<!-- %$\leadsto$  is the science of {`learning -->
+<!-- %  from data'} (or of {making sense out of data}), and of -->
+<!-- % {measuring, controlling and communicating uncertainty}. -->
+<!-- % -->
+<!-- %%% -->
+<!-- %%% -[--] Statistics can be defined as the science of \present{`learning -->
+<!-- %%%   from data'} (or of \highlighttext{making sense out of data}), and of -->
+<!-- %%%  \highlighttext{measuring, controlling and communicating uncertainty}.  -->
+<!-- % -->
+<!-- %\medskip -->
+<!-- % -->
+<!-- %$\leadsto$ is a \textbf{{process}} that includes everything from planning for the collection of data -->
+<!-- % and subsequent data management to end-of-the-line activities -->
+<!-- % such as drawing conclusions of %numerical facts called  -->
+<!-- % data and -->
+<!-- % presentation of results. -->
+<!-- % -->
+<!-- %\bigskip -->
+<!-- % -->
+<!-- %%% -[--]  -->
+<!-- % -->
+<!-- % -->
+<!-- % -->
+
+## Appendix: Mathematical Formulae
+
+Probability theory is a mathematical tool. Hence, it is important to review some elemental mathematical concepts. 
+ 
+### Powers and Logarithms
+
+- $a^m \times a^n = a^{m+n}$;
+- $(a^n)^m = a^{m \times n}$;
+- $\ln(\exp^{a}) = a$;
+- $a=\ln(\exp^{a}) = \ln(e^a)$;
+- $\ln(a^n) = n \times \ln a$;
+- $\ln (a \times b) = \ln (a) + \ln (b)$;
+
+### Differentiation 
+
+The **derivatives** will also play a pivotal role. For instance:
+
+$$
+\frac{d x^n}{dx} = n \cdot x^{n-1}, \quad \frac{d \exp^{x}}{dx} = \exp^{x} , \quad \frac{d \ln({x})}{dx} = \frac{1}{x}, 
+$$
+
+and we will make use of some fundamental rules, like e.g.
+
+
+#### Product rule: 
+
+\begin{align} 
+\frac{d [f(x)\cdot g(x)]}{dx} &= \frac{df(x)}{dx} g(x) + \frac{dg(x)}{dx} f(x) \\ 
+&= f'(x) g(x)+ f(x) g'(x)
+\end{align}
+
+#### Chain rule
+
+$$\frac{d f[g(x)]}{dx} =  (f\circ g)'(x) = f'[g(x)] \cdot g'(x)$$
+
+### Integration
+
+Integrals will be crucial in many tasks. For instance, recall that:
+
+
+$$\int_{a}^{b} \left[c \times f(x) + d \times g(x) \right]dx = c  \times \int_{a}^{b}   f(x) dx + d \times \int_{a}^{b}   g(x) dx; $$
+
+<!-- %-  A special case of Leibnitz's rule: $$ \frac{d}{dx} \int_{-\infty}^{x} f(s) ds = f(x);$$   -->
+<!-- %-  -->
+<!-- %\begin{eqnarray}  -->
+<!-- %\int_{a}^{b} f(x) dx = \int_{a}^{m} f(x) dx + \int_{m}^{b}  f(x) dx,  \quad { \text{\ for \ } m \in [a,b]; }\nn -->
+<!-- %\end{eqnarray}  -->
+
+- If $f(x) \geq 0, \forall x \in \mathbb{R}$, then 
+
+$$\int_{\mathbb{R}} f(x) dx \geq 0.$$
+
+- For a continuous function $f(x)$, the indefinite integral is 
+
+$$\int f(x) dx = F(x) + \text{const}$$
+
+while the definite integral is
+
+$$F(b)-F(a)= \int_{a}^{b} f(x) dx, \quad b \geq a.$$
+
+### Sums
+
+Besides integrals we are also going to use **sums**:
+
+
+- $$\sum_{i=1}^{n} X_{i} = X_1 + X_2 +....+ X_n,$$
+- For every $\alpha_i \in \mathbb{R}$,  $$\sum_{i=1}^{n} \alpha_i X_{i} = \alpha_1 X_1 + \alpha_2 X_2 +....+ \alpha_n X_n;$$ 
+<!-- %whose special case is -->
+<!-- %$ -->
+<!-- %\sum_{i=1}^{n} \alpha X_{i} = \alpha X_{i} = \alpha X_1 + \alpha X_2 +....+ \alpha X_n = \alpha \sum_{i=1}^{n} X_{i} -->
+<!-- %$ -->
+
+- Double sum: a sum with two indices. For instance,
+
+\begin{align}
+\sum_{i=1}^{n} \sum_{j=1}^{m}  x_{i}y_{j}  &=& x_1y_1 + x_1 y_2 +... +x_2y_1+ x_2y_2 + \dots \\
+&= \left(\sum_{i=1}^{n} x_i\right) y_1 +  \left(\sum_{i=1}^{n} x_i\right) y_2 + \dots + \left(\sum_{i=1}^{n} x_i\right) y_m  \\
+&= \sum_{i=1}^{n} x_i \sum_{j=1}^{m} y_j.
+\end{align}
+
+### Combinatorics
+
+Finally, we also rely on some **combinatorial formulas**. Specifically,
+
+#### Factorial 
+
+$$ n! = n \times (n-1) \times (n-2) \times \dots \times 1;$$
+where $0! =1$, by definition;
+- Binomial coefficient, for $n \geq k$
+$$\binom n k =\frac{n!}{k!(n-k)!}{\color{blue}{=C^{k}_n}}$$
+which is helpful to express the \color{blue} Binomial Theorem \color{black}
+
+$$(x+y)^n = {n \choose 0}x^n y^0 + {n \choose 1}x^{n-1}y^1 + \cdots + {n \choose n-1}x^1 y^{n-1} + {n \choose n}x^0 y^n;$$
+
+or equivalently, making use of the sum notation,
+
+$$(x+y)^n = \sum_{k=0}^n {n \choose k}x^{n-k}y^k = \sum_{k=0}^n {n \choose k}x^{k}y^{n-k}.$$ 
+
+#### Example
+
+Let us compute:
+
+
+- for $n=1$ we have 
+
+\begin{align}
+(x+y)^1 &= {1 \choose 0}x^1 y^0 + {2 \choose 1}x^{1}y^1 +  {2 \choose 0}x^0 y^{2}\\  
+&=  x^2 +  2 x y +  y^{2} 
+\end{align}
+
+- for $n=2$ we have 
+
+\begin{align}
+(x+y)^2 &= {2 \choose 0}x^2 y^0 + {2 \choose 1}x^{1}y^1 +  {2 \choose 2}x^0 y^{2}  \\  
+&=  x^2 +  2 x y +  y^{2} 
+\end{align} 
+
+
+- for $n=3$ we have 
+\begin{align}
+(x+y)^3 &= {3 \choose 0}x^3 y^0 + {3 \choose 1}x^{2}y^1 + \cdots + {3 \choose 2}x^1 y^{2} + {3 \choose 3}x^0 y^3 \\
+&= y^3 + 3xy^2 + 3x^2y+x^3 
+\end{align}
+
+
+How many ways can we select $3$ presents  among the $5$ available presents (see figure below)? 
+Assume the order does not matter!
+
+
+\includegraphics[width=0.4\textwidth,height=0.35\textheight]{gifts.pdf}
+
+\includegraphics[width=0.5\textwidth,height=0.2\textheight]{outcomes.pdf}
+
+
+
+<!-- % -->
+<!-- % -->
+<!-- %  -->
+<!-- %```{example}[cont'd] -->
+<!-- % -->
+<!-- %%How many ways can we select $3$ presents (order does not matter) among the $5$ available presents (see figure below)? -->
+<!-- % -->
+<!-- %\begin{figure}[h!] -->
+<!-- %\includegraphics[width=0.6\textwidth,height=0.3\textheight]{outcomes.pdf} -->
+<!-- %\end{figure} -->
+<!-- %``` -->
+<!-- % -->
+<!-- % -->
+
+
+
+ 
+```{example}
+
+[cont'd by Explanation] 
+
+1. $5!$ gives you the total $\#$ of possible choices when you can select 5 presents 
+(so-called ``permutations'', see next slides); 
+2. If you're going to select $3$ presents from the list, then you have $(5-3)$ presents that you're not going to select.  Therefore, you need to divide out the $(5-3)!$ different ways you can order the presents  you are not going to select from the $5!$ possible choices of all presents. In other words you have $5! / (5-3) !$ ways to select and order the 3 presents;
+3. Finally, remember you don't care about the order in which you select the $3$ presents. So, 
+in how many ways can you select $3$ presents from the $n$ available ones? The problem is the same as in point 1. aboveexcept that now you don't care about the order of the $3$ presents, and therefore you 
+also need to divide out the $3!$ different ways you can order the presents. 
+
+... so, in formula, you have $$\frac{5!/(5-3)!}{3!}$$ ways to select the $3$ presents:
+
+$$\frac{5!/(5-3)!}{3!}= \frac{5!}{3!2!} = \binom 5 3 = C_5^3.$$
+
+This gives you the total $\#$ of possible ways to select the $3$ presents when the order does not matter.
+```
+
+As a recommendation, redo the exercise assuming you can select 2 presents from 3 available presents 
+(like for instance F,L,R)...
+
+```{remark} 
+**Permutations:** How many different ways can we combine $n$ objects?
+
+- In the 1st place: $n$ possibilities
+- In the 2nd place: $(n-1)$ possibilities 
+- ...
+- Finally, $1$ possibility
+
+
+Thus, in total we have $n\times(n-1)\times(n-2)\times...\times1 = n!$
+``` 
+
+
+```{example}
+How many ways can Aline, Brigitte and Carmen seat on 3 spots, from left to right? Possible outcomes: 
+$$
+(A, B, C), (A, C, B), (B, A, C), (B, C, A), (C, A, B), (C, B, A)
+$$
+
+Total $\#$ of permutations: $N = 6 = 3 \times 2 \times 1 = 3!$
+```
+
+
+
+
+
+
+```{remark} 
+
+[continued]
+
+**Combinations:** How many ways can we select $k$ objects among $n$?
+To answer this question, we proceed as follows:
+
+
+- How many ways can we combine $k$ objects among $n$?
+
+- In the 1st place: $n$
+- In the 2nd place: $(n-1)$
+- ....
+- In the $k$-th place: $(n-k+1)$
+
+
+- We have $k!$ ways to permute the $k$ objects that we selected 
+- The number of possibilities (without considering the order) is:
+
+$$\frac{n!/(n-k)!}{k!} = \frac{n!}{k!(n-k)!}{\color{gray}{=C^{k}_n}}$$
+
+For the Problem Set $2$, you will have to make use of $C^{k}_n$ in Ex2-Ex3-Ex5. Indeed, 
+to compute the probability for an event $E$, will have to make use of the formula 
+
+\begin{equation} \label{Eq: PE}
+P(E)=\dfrac{\text{number of cases in E}}{\text{number of possible cases}}.
+\end{equation}
+
+This is a first intuitive definition of probability, which we will justify in the next lecture; see Lecture 1, slide 28. For the time being, let us say that the combinatorial calculus will be needed to express both the quantities (numerator
+and denominator) in (\ref{Eq: PE}).  
+``` 
+
+Finally, the following **limits** will be crucial in many tasks:
+
+- $$\lim_{n \to \infty} \sum_{i=1}^n x_i = \sum_{i=1 }^\infty x_i \nonumber$$
+-
+$$ e^x = \lim_{n \rightarrow \infty} \left(1 + \frac{x}{n}\right)^n \nonumber$$
+- for $\alpha >0$
+$$\lim_{x \to \infty} {\alpha e^{-\alpha x}} = 0 \nonumber$$ 
+- 
+$$e^x = \sum_{i = 0}^{\infty} {x^i \over i!} = 1 + x + {x^2 \over 2!} + {x^3 \over 3!} + {x^4 \over 4!} + \dots$$
+
+
+
+
+
+
+
+
+
+
+

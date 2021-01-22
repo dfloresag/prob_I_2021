@@ -1,0 +1,800 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Chapter 6 Limit Theorems | Probability I</title>
+  <meta name="description" content="Course Materials" />
+  <meta name="generator" content="bookdown 0.21 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Chapter 6 Limit Theorems | Probability I" />
+  <meta property="og:type" content="book" />
+  
+  
+  <meta property="og:description" content="Course Materials" />
+  <meta name="github-repo" content="rstudio/bookdown-demo" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Chapter 6 Limit Theorems | Probability I" />
+  
+  <meta name="twitter:description" content="Course Materials" />
+  
+
+<meta name="author" content="Prof. Davide La Vecchia &amp; Dr. Daniel Flores Agreda" />
+
+
+<meta name="date" content="2021-01-22" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="continuousrv.html"/>
+<link rel="next" href="bivariatediscreterv.html"/>
+<script src="libs/header-attrs-2.6/header-attrs.js"></script>
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="https://www.unige.ch/gsem/fr/"><img src="img/gsem_en.png" alt="UNIGE Logo" width="200" class ="center"></a></li>
+<li><a href="https://moodle.unige.ch/course/view.php?id=7133"><strong>Probability I (Spring 2021)</strong></a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>About this Lecture</a>
+<ul>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#practical-information"><i class="fa fa-check"></i>Practical information</a>
+<ul>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#hours"><i class="fa fa-check"></i>Hours</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#course-overview"><i class="fa fa-check"></i>Course Overview</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="1" data-path="introduction.html"><a href="introduction.html"><i class="fa fa-check"></i><b>1</b> Introduction</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="introduction.html"><a href="introduction.html#preliminaries"><i class="fa fa-check"></i><b>1.1</b> Preliminaries</a></li>
+<li class="chapter" data-level="1.2" data-path="introduction.html"><a href="introduction.html#what-is-probability-what-are-statistics-a.k.a.-what-to-expect-from-this-course"><i class="fa fa-check"></i><b>1.2</b> What is Probability? What are Statistics? (a.k.a. “What to expect from this Course”)</a></li>
+<li class="chapter" data-level="1.3" data-path="introduction.html"><a href="introduction.html#appendix-mathematical-formulae"><i class="fa fa-check"></i><b>1.3</b> Appendix: Mathematical Formulae</a>
+<ul>
+<li class="chapter" data-level="1.3.1" data-path="introduction.html"><a href="introduction.html#powers-and-logarithms"><i class="fa fa-check"></i><b>1.3.1</b> Powers and Logarithms</a></li>
+<li class="chapter" data-level="1.3.2" data-path="introduction.html"><a href="introduction.html#differentiation"><i class="fa fa-check"></i><b>1.3.2</b> Differentiation</a></li>
+<li class="chapter" data-level="1.3.3" data-path="introduction.html"><a href="introduction.html#integration"><i class="fa fa-check"></i><b>1.3.3</b> Integration</a></li>
+<li class="chapter" data-level="1.3.4" data-path="introduction.html"><a href="introduction.html#sums"><i class="fa fa-check"></i><b>1.3.4</b> Sums</a></li>
+<li class="chapter" data-level="1.3.5" data-path="introduction.html"><a href="introduction.html#combinatorics"><i class="fa fa-check"></i><b>1.3.5</b> Combinatorics</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="settheory.html"><a href="settheory.html"><i class="fa fa-check"></i><b>2</b> Elements of Set Theory for Probability</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="settheory.html"><a href="settheory.html#definitions"><i class="fa fa-check"></i><b>2.1</b> Definitions</a></li>
+<li class="chapter" data-level="2.2" data-path="settheory.html"><a href="settheory.html#some-definitions-from-set-theory"><i class="fa fa-check"></i><b>2.2</b> Some definitions from set theory</a></li>
+<li class="chapter" data-level="2.3" data-path="settheory.html"><a href="settheory.html#elements-of-set-theory-venn-diagram"><i class="fa fa-check"></i><b>2.3</b> Elements of set theory (Venn diagram)</a></li>
+<li class="chapter" data-level="2.4" data-path="settheory.html"><a href="settheory.html#more-on-sets"><i class="fa fa-check"></i><b>2.4</b> More on sets</a></li>
+<li class="chapter" data-level="2.5" data-path="settheory.html"><a href="settheory.html#de-morgans-laws-1-law"><i class="fa fa-check"></i><b>2.5</b> De Morgan’s Laws: 1  law</a></li>
+<li class="chapter" data-level="2.6" data-path="settheory.html"><a href="settheory.html#de-morgans-laws-2-law"><i class="fa fa-check"></i><b>2.6</b> De Morgan’s Laws: 2 law}</a></li>
+<li class="chapter" data-level="2.7" data-path="settheory.html"><a href="settheory.html#de-morgans-theorem"><i class="fa fa-check"></i><b>2.7</b> De Morgan’s Theorem</a></li>
+<li class="chapter" data-level="2.8" data-path="settheory.html"><a href="settheory.html#back-to-the-events"><i class="fa fa-check"></i><b>2.8</b> Back to the events</a></li>
+<li class="chapter" data-level="2.9" data-path="settheory.html"><a href="settheory.html#some-references"><i class="fa fa-check"></i><b>2.9</b> Some references</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="axioms.html"><a href="axioms.html"><i class="fa fa-check"></i><b>3</b> Probability Axioms</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="axioms.html"><a href="axioms.html#an-axiomatic-definition-of-probability"><i class="fa fa-check"></i><b>3.1</b> An Axiomatic Definition of Probability</a></li>
+<li class="chapter" data-level="3.2" data-path="axioms.html"><a href="axioms.html#properties-of-pcdot"><i class="fa fa-check"></i><b>3.2</b> Properties of <span class="math inline">\(P(\cdot)\)</span></a></li>
+<li class="chapter" data-level="3.3" data-path="axioms.html"><a href="axioms.html#illustrations-of-use"><i class="fa fa-check"></i><b>3.3</b> Illustrations of use</a>
+<ul>
+<li class="chapter" data-level="3.3.1" data-path="axioms.html"><a href="axioms.html#flipping-coins"><i class="fa fa-check"></i><b>3.3.1</b> Flipping coins</a></li>
+<li class="chapter" data-level="3.3.2" data-path="axioms.html"><a href="axioms.html#detecting-shoppers"><i class="fa fa-check"></i><b>3.3.2</b> Detecting shoppers</a></li>
+<li class="chapter" data-level="3.3.3" data-path="axioms.html"><a href="axioms.html#de-morgans-law"><i class="fa fa-check"></i><b>3.3.3</b> De Morgan’s Law</a></li>
+<li class="chapter" data-level="3.3.4" data-path="axioms.html"><a href="axioms.html#probability-union-and-complement"><i class="fa fa-check"></i><b>3.3.4</b> Probability, union, and complement</a></li>
+</ul></li>
+<li class="chapter" data-level="3.4" data-path="axioms.html"><a href="axioms.html#conditional-probability"><i class="fa fa-check"></i><b>3.4</b> Conditional probability</a>
+<ul>
+<li class="chapter" data-level="3.4.1" data-path="axioms.html"><a href="axioms.html#a-check"><i class="fa fa-check"></i><b>3.4.1</b> A check</a></li>
+</ul></li>
+<li class="chapter" data-level="3.5" data-path="axioms.html"><a href="axioms.html#independence"><i class="fa fa-check"></i><b>3.5</b> Independence</a>
+<ul>
+<li class="chapter" data-level="3.5.1" data-path="axioms.html"><a href="axioms.html#independence-another-characterization"><i class="fa fa-check"></i><b>3.5.1</b> Independence – another characterization</a></li>
+</ul></li>
+<li class="chapter" data-level="3.6" data-path="axioms.html"><a href="axioms.html#theorem-i"><i class="fa fa-check"></i><b>3.6</b> Theorem I</a></li>
+<li class="chapter" data-level="3.7" data-path="axioms.html"><a href="axioms.html#theorem-ii"><i class="fa fa-check"></i><b>3.7</b> Theorem II</a>
+<ul>
+<li class="chapter" data-level="3.7.1" data-path="axioms.html"><a href="axioms.html#guessing-in-a-multiple-choice-exam"><i class="fa fa-check"></i><b>3.7.1</b> Guessing in a multiple choice exam</a></li>
+<li class="chapter" data-level="3.7.2" data-path="axioms.html"><a href="axioms.html#rent-car-maintenance"><i class="fa fa-check"></i><b>3.7.2</b> Rent car maintenance</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="discreterv.html"><a href="discreterv.html"><i class="fa fa-check"></i><b>4</b> Discrete Random Variables</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="discreterv.html"><a href="discreterv.html#random-variables---what-are-they"><i class="fa fa-check"></i><b>4.1</b> Random variables - what are they?</a></li>
+<li class="chapter" data-level="4.2" data-path="discreterv.html"><a href="discreterv.html#formal-definition-of-a-random-variable-i"><i class="fa fa-check"></i><b>4.2</b> Formal definition of a random variable (I)</a></li>
+<li class="chapter" data-level="4.3" data-path="discreterv.html"><a href="discreterv.html#example-from-s-to-d-via-xcdot"><i class="fa fa-check"></i><b>4.3</b> Example: from <span class="math inline">\(S\)</span> to <span class="math inline">\(D\)</span>, via <span class="math inline">\(X(\cdot)\)</span></a></li>
+<li class="chapter" data-level="4.4" data-path="discreterv.html"><a href="discreterv.html#formal-definition-of-a-random-variable-ii"><i class="fa fa-check"></i><b>4.4</b> Formal definition of a random variable (II)</a></li>
+<li class="chapter" data-level="4.5" data-path="discreterv.html"><a href="discreterv.html#an-example-from-gambling"><i class="fa fa-check"></i><b>4.5</b> An Example from gambling</a></li>
+<li class="chapter" data-level="4.6" data-path="discreterv.html"><a href="discreterv.html#discrete-random-variables"><i class="fa fa-check"></i><b>4.6</b> Discrete random variables</a></li>
+<li class="chapter" data-level="4.7" data-path="discreterv.html"><a href="discreterv.html#cumulative-distribution-function-i"><i class="fa fa-check"></i><b>4.7</b> Cumulative Distribution Function (I)}</a></li>
+<li class="chapter" data-level="4.8" data-path="discreterv.html"><a href="discreterv.html#distributional-summaries-for-discrete-random-variables"><i class="fa fa-check"></i><b>4.8</b> Distributional summaries for discrete random variables</a>
+<ul>
+<li class="chapter" data-level="4.8.1" data-path="discreterv.html"><a href="discreterv.html#some-illustrations-of-binomial"><i class="fa fa-check"></i><b>4.8.1</b> Some illustrations of Binomial</a></li>
+<li class="chapter" data-level="4.8.2" data-path="discreterv.html"><a href="discreterv.html#binomial-distribution"><i class="fa fa-check"></i><b>4.8.2</b> Binomial Distribution</a></li>
+<li class="chapter" data-level="4.8.3" data-path="discreterv.html"><a href="discreterv.html#binomial-distribution-1"><i class="fa fa-check"></i><b>4.8.3</b> Binomial Distribution</a></li>
+<li class="chapter" data-level="4.8.4" data-path="discreterv.html"><a href="discreterv.html#binomial-distribution-2"><i class="fa fa-check"></i><b>4.8.4</b> Binomial Distribution</a></li>
+<li class="chapter" data-level="4.8.5" data-path="discreterv.html"><a href="discreterv.html#poisson-distribution"><i class="fa fa-check"></i><b>4.8.5</b> Poisson Distribution</a></li>
+<li class="chapter" data-level="4.8.6" data-path="discreterv.html"><a href="discreterv.html#poisson-distribution-1"><i class="fa fa-check"></i><b>4.8.6</b> Poisson Distribution</a></li>
+<li class="chapter" data-level="4.8.7" data-path="discreterv.html"><a href="discreterv.html#some-illustrations-of-poisson"><i class="fa fa-check"></i><b>4.8.7</b> Some illustrations of Poisson</a></li>
+<li class="chapter" data-level="4.8.8" data-path="discreterv.html"><a href="discreterv.html#poisson-distribution-2"><i class="fa fa-check"></i><b>4.8.8</b> Poisson Distribution</a></li>
+<li class="chapter" data-level="4.8.9" data-path="discreterv.html"><a href="discreterv.html#poisson-distribution-3"><i class="fa fa-check"></i><b>4.8.9</b> Poisson Distribution</a></li>
+<li class="chapter" data-level="4.8.10" data-path="discreterv.html"><a href="discreterv.html#poisson-distribution-link-to-binomial"><i class="fa fa-check"></i><b>4.8.10</b> Poisson Distribution (link to Binomial)</a></li>
+<li class="chapter" data-level="4.8.11" data-path="discreterv.html"><a href="discreterv.html#poisson-distribution-link-to-binomial-1"><i class="fa fa-check"></i><b>4.8.11</b> Poisson Distribution (link to Binomial)</a></li>
+<li class="chapter" data-level="4.8.12" data-path="discreterv.html"><a href="discreterv.html#poisson-distribution-example"><i class="fa fa-check"></i><b>4.8.12</b> Poisson Distribution: example</a></li>
+<li class="chapter" data-level="4.8.13" data-path="discreterv.html"><a href="discreterv.html#the-hypergeometric-distribution"><i class="fa fa-check"></i><b>4.8.13</b> The Hypergeometric Distribution</a></li>
+<li class="chapter" data-level="4.8.14" data-path="discreterv.html"><a href="discreterv.html#hypergeometric-distribution-example"><i class="fa fa-check"></i><b>4.8.14</b> Hypergeometric Distribution Example</a></li>
+<li class="chapter" data-level="4.8.15" data-path="discreterv.html"><a href="discreterv.html#the-negative-binomial-distribution"><i class="fa fa-check"></i><b>4.8.15</b> The Negative Binomial Distribution</a></li>
+<li class="chapter" data-level="4.8.16" data-path="discreterv.html"><a href="discreterv.html#the-negative-binomial-distribution-1"><i class="fa fa-check"></i><b>4.8.16</b> The Negative Binomial Distribution</a></li>
+<li class="chapter" data-level="4.8.17" data-path="discreterv.html"><a href="discreterv.html#negative-binomial-distribution-example"><i class="fa fa-check"></i><b>4.8.17</b> Negative Binomial Distribution Example</a></li>
+<li class="chapter" data-level="4.8.18" data-path="discreterv.html"><a href="discreterv.html#the-geometric-distribution"><i class="fa fa-check"></i><b>4.8.18</b> The Geometric Distribution</a></li>
+<li class="chapter" data-level="4.8.19" data-path="discreterv.html"><a href="discreterv.html#the-geometric-distribution-1"><i class="fa fa-check"></i><b>4.8.19</b> The Geometric Distribution</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="continuousrv.html"><a href="continuousrv.html"><i class="fa fa-check"></i><b>5</b> Continuous Random Variable</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="continuousrv.html"><a href="continuousrv.html#continuous-distributions"><i class="fa fa-check"></i><b>5.1</b> Continuous Distributions</a></li>
+<li class="chapter" data-level="5.2" data-path="continuousrv.html"><a href="continuousrv.html#cumulative-distribution-function-cdf"><i class="fa fa-check"></i><b>5.2</b> Cumulative Distribution Function (CDF)</a>
+<ul>
+<li class="chapter" data-level="5.2.1" data-path="continuousrv.html"><a href="continuousrv.html#some-properties-of-the-normal-distribution"><i class="fa fa-check"></i><b>5.2.1</b> Some properties of the Normal distribution</a></li>
+<li class="chapter" data-level="5.2.2" data-path="continuousrv.html"><a href="continuousrv.html#normal-an-example"><i class="fa fa-check"></i><b>5.2.2</b> Normal: an example</a></li>
+</ul></li>
+<li class="chapter" data-level="5.3" data-path="continuousrv.html"><a href="continuousrv.html#the-chi-squared-distribution"><i class="fa fa-check"></i><b>5.3</b> The Chi-squared distribution</a>
+<ul>
+<li class="chapter" data-level="5.3.1" data-path="continuousrv.html"><a href="continuousrv.html#some-plots-for-the-chi-squared"><i class="fa fa-check"></i><b>5.3.1</b> Some plots for the Chi-squared</a></li>
+<li class="chapter" data-level="5.3.2" data-path="continuousrv.html"><a href="continuousrv.html#chi-squared-table"><i class="fa fa-check"></i><b>5.3.2</b> Chi-squared table</a></li>
+<li class="chapter" data-level="5.3.3" data-path="continuousrv.html"><a href="continuousrv.html#chi-squared-table-illustration-of-its-use"><i class="fa fa-check"></i><b>5.3.3</b> Chi-squared table (illustration of its use)</a></li>
+</ul></li>
+<li class="chapter" data-level="5.4" data-path="continuousrv.html"><a href="continuousrv.html#the-student-t-distribution"><i class="fa fa-check"></i><b>5.4</b> The Student-t distribution</a>
+<ul>
+<li class="chapter" data-level="5.4.1" data-path="continuousrv.html"><a href="continuousrv.html#some-student-t-distributions"><i class="fa fa-check"></i><b>5.4.1</b> Some Student-t distributions</a></li>
+<li class="chapter" data-level="5.4.2" data-path="continuousrv.html"><a href="continuousrv.html#student-t-table"><i class="fa fa-check"></i><b>5.4.2</b> Student-t table</a></li>
+</ul></li>
+<li class="chapter" data-level="5.5" data-path="continuousrv.html"><a href="continuousrv.html#some-f-distributions"><i class="fa fa-check"></i><b>5.5</b> Some F distributions</a>
+<ul>
+<li class="chapter" data-level="5.5.1" data-path="continuousrv.html"><a href="continuousrv.html#f-distribution-table-5-upper-tail"><i class="fa fa-check"></i><b>5.5.1</b> F distribution table (5% upper tail)</a></li>
+</ul></li>
+<li class="chapter" data-level="5.6" data-path="continuousrv.html"><a href="continuousrv.html#the-lognormal-distribution"><i class="fa fa-check"></i><b>5.6</b> The lognormal distribution</a></li>
+<li class="chapter" data-level="5.7" data-path="continuousrv.html"><a href="continuousrv.html#exponential-distribution"><i class="fa fa-check"></i><b>5.7</b> Exponential distribution</a></li>
+<li class="chapter" data-level="5.8" data-path="continuousrv.html"><a href="continuousrv.html#transformation-of-variables"><i class="fa fa-check"></i><b>5.8</b> Transformation of variables</a>
+<ul>
+<li class="chapter" data-level="5.8.1" data-path="continuousrv.html"><a href="continuousrv.html#transformation-of-discrete-random-variables"><i class="fa fa-check"></i><b>5.8.1</b> Transformation of discrete random variables</a></li>
+<li class="chapter" data-level="5.8.2" data-path="continuousrv.html"><a href="continuousrv.html#transformation-of-variables-using-the-cdf"><i class="fa fa-check"></i><b>5.8.2</b> Transformation of variables using the CDF</a></li>
+<li class="chapter" data-level="5.8.3" data-path="continuousrv.html"><a href="continuousrv.html#function-1-to-1-and-monotone-decreasing"><i class="fa fa-check"></i><b>5.8.3</b> Function 1-to-1 and monotone decreasing</a></li>
+<li class="chapter" data-level="5.8.4" data-path="continuousrv.html"><a href="continuousrv.html#transformation-of-continuous-rv-through-pdf"><i class="fa fa-check"></i><b>5.8.4</b> Transformation of continuous RV through pdf</a></li>
+<li class="chapter" data-level="5.8.5" data-path="continuousrv.html"><a href="continuousrv.html#example-of-transformation-using-pdf"><i class="fa fa-check"></i><b>5.8.5</b> Example of transformation using pdf</a></li>
+<li class="chapter" data-level="5.8.6" data-path="continuousrv.html"><a href="continuousrv.html#a-caveat"><i class="fa fa-check"></i><b>5.8.6</b> A caveat</a></li>
+</ul></li>
+<li class="chapter" data-level="5.9" data-path="continuousrv.html"><a href="continuousrv.html#the-big-picture"><i class="fa fa-check"></i><b>5.9</b> The big picture</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="limittheorems.html"><a href="limittheorems.html"><i class="fa fa-check"></i><b>6</b> Limit Theorems</a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="limittheorems.html"><a href="limittheorems.html#sequences-of-random-variables"><i class="fa fa-check"></i><b>6.1</b> Sequences of Random Variables</a>
+<ul>
+<li class="chapter" data-level="6.1.1" data-path="limittheorems.html"><a href="limittheorems.html#example-bernoulli-trials-and-their-sum"><i class="fa fa-check"></i><b>6.1.1</b> Example: Bernoulli Trials and their sum</a></li>
+<li class="chapter" data-level="6.1.2" data-path="limittheorems.html"><a href="limittheorems.html#example-bernoulli-trials-and-limit-behaviour"><i class="fa fa-check"></i><b>6.1.2</b> Example: Bernoulli Trials and limit behaviour</a></li>
+</ul></li>
+<li class="chapter" data-level="6.2" data-path="limittheorems.html"><a href="limittheorems.html#convergence-in-probability-oversetprightarrow"><i class="fa fa-check"></i><b>6.2</b> Convergence in Probability (<span class="math inline">\(\overset{p}{\rightarrow }\)</span>)</a>
+<ul>
+<li class="chapter" data-level="6.2.1" data-path="limittheorems.html"><a href="limittheorems.html#operational-rules-for-oversetprightarrow"><i class="fa fa-check"></i><b>6.2.1</b> Operational Rules for <span class="math inline">\(\overset{p}{\rightarrow }\)</span></a></li>
+<li class="chapter" data-level="6.2.2" data-path="limittheorems.html"><a href="limittheorems.html#convergence-of-sample-moments-as-a-motivation"><i class="fa fa-check"></i><b>6.2.2</b> Convergence of Sample Moments as a motivation…</a></li>
+<li class="chapter" data-level="6.2.3" data-path="limittheorems.html"><a href="limittheorems.html#the-weak-law-of-large-numbers-wlln"><i class="fa fa-check"></i><b>6.2.3</b> The Weak Law of Large Numbers (WLLN)</a></li>
+<li class="chapter" data-level="6.2.4" data-path="limittheorems.html"><a href="limittheorems.html#the-wlln-and-chebyshevs-inequality"><i class="fa fa-check"></i><b>6.2.4</b> The WLLN and Chebyshev’s Inequality</a></li>
+<li class="chapter" data-level="6.2.5" data-path="limittheorems.html"><a href="limittheorems.html#chebyshevs-and-markovs-inequality"><i class="fa fa-check"></i><b>6.2.5</b> Chebyshev’s (and Markov’s) Inequality</a></li>
+<li class="chapter" data-level="6.2.6" data-path="limittheorems.html"><a href="limittheorems.html#example-markovs-inequality"><i class="fa fa-check"></i><b>6.2.6</b> Example: Markov’s Inequality</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="bivariatediscreterv.html"><a href="bivariatediscreterv.html"><i class="fa fa-check"></i><b>7</b> Bivariate Discrete Random Variables</a>
+<ul>
+<li class="chapter" data-level="7.1" data-path="bivariatediscreterv.html"><a href="bivariatediscreterv.html#joint-probability-functions"><i class="fa fa-check"></i><b>7.1</b> Joint Probability Functions</a></li>
+<li class="chapter" data-level="7.2" data-path="bivariatediscreterv.html"><a href="bivariatediscreterv.html#marginal-probability-mass-functions"><i class="fa fa-check"></i><b>7.2</b> Marginal probability (mass) functions</a>
+<ul>
+<li class="chapter" data-level="7.2.1" data-path="bivariatediscreterv.html"><a href="bivariatediscreterv.html#first-example"><i class="fa fa-check"></i><b>7.2.1</b> First Example</a></li>
+<li class="chapter" data-level="7.2.2" data-path="bivariatediscreterv.html"><a href="bivariatediscreterv.html#empirical-example"><i class="fa fa-check"></i><b>7.2.2</b> Empirical Example</a></li>
+</ul></li>
+<li class="chapter" data-level="7.3" data-path="bivariatediscreterv.html"><a href="bivariatediscreterv.html#conditional-probability-mass-function"><i class="fa fa-check"></i><b>7.3</b> Conditional probability mass function</a></li>
+<li class="chapter" data-level="7.4" data-path="bivariatediscreterv.html"><a href="bivariatediscreterv.html#independence-1"><i class="fa fa-check"></i><b>7.4</b> Independence</a></li>
+<li class="chapter" data-level="7.5" data-path="bivariatediscreterv.html"><a href="bivariatediscreterv.html#expectations-for-jointly-distributed-discrete-rvs"><i class="fa fa-check"></i><b>7.5</b> Expectations for Jointly Distributed Discrete RVs</a></li>
+<li class="chapter" data-level="7.6" data-path="bivariatediscreterv.html"><a href="bivariatediscreterv.html#iterated-expectations"><i class="fa fa-check"></i><b>7.6</b> Iterated Expectations</a></li>
+<li class="chapter" data-level="7.7" data-path="bivariatediscreterv.html"><a href="bivariatediscreterv.html#expectations-for-jointly-distributed-discrete-rvs-1"><i class="fa fa-check"></i><b>7.7</b> Expectations for Jointly Distributed Discrete RVs</a></li>
+<li class="chapter" data-level="7.8" data-path="bivariatediscreterv.html"><a href="bivariatediscreterv.html#some-properties-of-covariances"><i class="fa fa-check"></i><b>7.8</b> Some Properties of Covariances</a>
+<ul>
+<li class="chapter" data-level="7.8.1" data-path="bivariatediscreterv.html"><a href="bivariatediscreterv.html#a-remark"><i class="fa fa-check"></i><b>7.8.1</b> A remark</a></li>
+<li class="chapter" data-level="7.8.2" data-path="bivariatediscreterv.html"><a href="bivariatediscreterv.html#an-important-property-of-correlation"><i class="fa fa-check"></i><b>7.8.2</b> An important property of correlation</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="numericalmethods.html"><a href="numericalmethods.html"><i class="fa fa-check"></i><b>8</b> Numerical Methods</a>
+<ul>
+<li class="chapter" data-level="8.1" data-path="numericalmethods.html"><a href="numericalmethods.html#introduction-to-simulation"><i class="fa fa-check"></i><b>8.1</b> Introduction to simulation</a></li>
+<li class="chapter" data-level="8.2" data-path="numericalmethods.html"><a href="numericalmethods.html#simulation-procedure"><i class="fa fa-check"></i><b>8.2</b> Simulation procedure</a></li>
+<li class="chapter" data-level="8.3" data-path="numericalmethods.html"><a href="numericalmethods.html#simulation-in-r"><i class="fa fa-check"></i><b>8.3</b> Simulation in R</a></li>
+<li class="chapter" data-level="8.4" data-path="numericalmethods.html"><a href="numericalmethods.html#coin-tossing"><i class="fa fa-check"></i><b>8.4</b> Coin tossing</a></li>
+<li class="chapter" data-level="8.5" data-path="numericalmethods.html"><a href="numericalmethods.html#summarizing"><i class="fa fa-check"></i><b>8.5</b> Summarizing</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Probability I</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="limittheorems" class="section level1" number="6">
+<h1><span class="header-section-number">Chapter 6</span> Limit Theorems</h1>
+<div id="sequences-of-random-variables" class="section level2" number="6.1">
+<h2><span class="header-section-number">6.1</span> Sequences of Random Variables</h2>
+
+<div class="definition">
+<p><span id="def:unnamed-chunk-1" class="definition"><strong>Definition 6.1  </strong></span> A sequence of random variables is an ordered list of random variables
+of the form</p>
+<p><span class="math display">\[\begin{equation*}
+S_{1},S\,_{2},...,S_{n},...
+\end{equation*}\]</span></p>
+where, in an abstract sense, the sequence is infinitely long.
+</div>
+<p>We would like to say something about how these random variables behave as <span class="math inline">\(n\)</span> gets larger and larger (i.e. as <span class="math inline">\(n\)</span> tends towards infinity, denoted by <span class="math inline">\(n\rightarrow\infty\)</span> )</p>
+<p>The study of such limiting behaviour is commonly called a study of `asymptotics’ — after the word asymptote used in standard calculus.</p>
+<div id="example-bernoulli-trials-and-their-sum" class="section level3" number="6.1.1">
+<h3><span class="header-section-number">6.1.1</span> Example: Bernoulli Trials and their sum</h3>
+<p>Let <span class="math inline">\(\tilde Z\)</span> denote a dichotomous random variable with <span class="math inline">\(\tilde Z\sim Bernoulli(p)\)</span>. A sequence of Bernoulli trials provides us with a sequence of values <span class="math inline">\(\tilde Z_{1},\tilde Z_{2},...,\tilde Z_{n},...\)</span> %where each <span class="math inline">\(\tilde {Z}_{i}\)</span> is such that</p>
+<p><span class="math display">\[\begin{eqnarray*}
+\Pr(&quot;Success&quot;)=\Pr \left( \tilde{Z}_{i}=1\right) = p &amp; \text{and} &amp; \Pr(&quot;Failure&quot;)=\Pr \left( \tilde Z_{i}=0\right)  = 1-p
+\end{eqnarray*}\]</span></p>
+<p>Now let
+<span class="math display">\[S_n=\sum_{s=1}^n \tilde Z_s,\]</span> the number of “Successes” in the first <span class="math inline">\(n\)</span> Bernoulli trials. This yields a new sequence of random variables</p>
+<p><span class="math display">\[\begin{eqnarray*}
+S_{1} &amp;=&amp; \tilde Z_{1} \\
+S_{2} &amp;=&amp;\left( \tilde Z_{1}+ \tilde Z_{2}\right)\\
+&amp;&amp;\vdots  \\
+S_{n} &amp;=&amp;\left( \tilde Z_{1}+ \tilde Z_{2}+\cdots + \tilde Z_{n}\right) = \sum_{i=1}^n \tilde Z_i
+\end{eqnarray*}\]</span></p>
+<p>This new sequence is such that <span class="math inline">\(S_n\sim B(n,p)\)</span> for each <span class="math inline">\(n\)</span>.</p>
+<p>Now consider the sequence:<br />
+<span class="math display">\[{P}_n=S_n/n,\]</span>
+for <span class="math inline">\(n=1,2,\ldots\)</span>, corresponds to the proportion of `Successes’in the first <span class="math inline">\(n\)</span> Bernoulli trials.</p>
+<p>It is natural to ask how the behaviour of <span class="math inline">\({P}_n\)</span> is related to the true probability of a `Success’ (<span class="math inline">\(p\)</span>).</p>
+<!-- %- We can provide a reasonably complete description of the behaviour of $\bar{P}_n$: -->
+<!-- % -->
+<!-- %- $\bar{P}_n\sim \frac{1}{n}Binomial(n,p)$, -->
+<!-- %- $E[\bar{P}_n]=p$ and $Var(\bar{P}_n)=p(1-p)/n$ for all $n$, and -->
+<!-- %- as $n\rightarrow\infty$ the probability distribution of -->
+<!-- %$$ -->
+<!-- %\frac{\sqrt{n}(\bar{P}_n-p)}{\sqrt{p(1-p)}} -->
+<!-- %$$ -->
+<!-- %is closely approximated by a standard normal. -->
+<!-- % -->
+<p>Specifically, the open question at this point is: \</p>
+<p> “Do these results imply that <span class="math inline">\({P}_n\)</span> collapses onto the true <span class="math inline">\(p\)</span> as <span class="math inline">\(n\)</span> increases, and if
+so, in what way?”  \</p>
+<p>To gain a clue, let us consider the simulated values of <span class="math inline">\({P}_n\)</span>.</p>
+</div>
+<div id="example-bernoulli-trials-and-limit-behaviour" class="section level3" number="6.1.2">
+<h3><span class="header-section-number">6.1.2</span> Example: Bernoulli Trials and limit behaviour</h3>
+
+<div class="remark">
+ <span class="remark"><em>Remark. </em></span> This numerical illustration leads us to suspect that there is a sense in which <span class="math inline">\({P}_n\)</span> converges to <span class="math inline">\(p\)</span> — notice that although the sequence is random, the `limiting’ value here is a constant (i.e. is non-random).
+</div>
+<p>So, informally, we can claim that a sequence of random variables <span class="math inline">\(X_{1},X_{2},...,X_{n},...\)</span> is thought to converge if the probability distribution of <span class="math inline">\(X_{n}\)</span> gets more and more concentrated around a single point as <span class="math inline">\(n\)</span> tends to infinity.</p>
+</div>
+</div>
+<div id="convergence-in-probability-oversetprightarrow" class="section level2" number="6.2">
+<h2><span class="header-section-number">6.2</span> Convergence in Probability (<span class="math inline">\(\overset{p}{\rightarrow }\)</span>)</h2>
+<p>More formally,</p>
+
+<div class="definition">
+<p><span id="def:unnamed-chunk-3" class="definition"><strong>Definition 6.2  </strong></span>A sequence of random variables <span class="math inline">\(X_{1},X_{2},...,X_{n},...\)</span> is said to <strong>converge in probability</strong> to a number <span class="math inline">\(\alpha\)</span> if for any arbitrary constant <span class="math inline">\(\varepsilon &gt;0\)</span></p>
+<p><span class="math display">\[\begin{equation*}
+\lim_{n\rightarrow \infty }\Pr \left( \left\vert X_{n}-\alpha \right\vert
+&gt;\varepsilon \right) =0
+\end{equation*}\]</span></p>
+<p>If this is the case, we write <span class="math inline">\(X_{n}\overset{p}{\rightarrow }\alpha\)</span> or <span class="math inline">\(p\lim X_{n}=\alpha\)</span>.</p>
+<p>A sequence of random variables <span class="math inline">\(X_{1},X_{2},...,X_{n},...\)</span> is said to <strong>converge in probability</strong> to a random variable <span class="math inline">\(X\)</span> if for any arbitrary constant <span class="math inline">\(\varepsilon &gt;0\)</span></p>
+<p><span class="math display">\[\begin{equation*}
+\lim_{n\rightarrow \infty }\Pr \left( \left\vert X_{n}-X \right\vert &gt;\varepsilon \right) =0\,,
+\end{equation*}\]</span></p>
+written <span class="math inline">\(X_{n}\overset{p}{\rightarrow }X\)</span> or <span class="math inline">\(p\lim(X_{n}-X)=0\)</span>.
+</div>
+<div id="operational-rules-for-oversetprightarrow" class="section level3" number="6.2.1">
+<h3><span class="header-section-number">6.2.1</span> Operational Rules for <span class="math inline">\(\overset{p}{\rightarrow }\)</span></h3>
+<p>Let us itemize some rules. To this end, let <span class="math inline">\(a\)</span> be any (nonrandom) number so:</p>
+<ul>
+<li><p>If <span class="math inline">\(X_{n}\overset{p}{\rightarrow } \alpha\)</span> then</p></li>
+<li><p><span class="math inline">\(aX_{n}\overset{p}{\rightarrow }a\alpha\)</span> and</p></li>
+<li><p><span class="math inline">\(a+X_{n}\overset{p}{\rightarrow }a+\alpha\)</span>,</p></li>
+<li><p>If <span class="math inline">\(X_{n}\overset{p}{\rightarrow }X\)</span> then</p>
+<ul>
+<li><span class="math inline">\(aX_{n}\overset{p}{\rightarrow }aX\)</span> and</li>
+<li><span class="math inline">\(a+X_{n}\overset{p}{\rightarrow }a+X\)</span></li>
+</ul></li>
+<li><p>If <span class="math inline">\(X_{n}\overset{p}{\rightarrow }\alpha\)</span> and <span class="math inline">\(Y_{n}\overset{p}{\rightarrow }\gamma\)</span> then</p>
+<ul>
+<li><span class="math inline">\(X_{n}Y_{n}\overset{p}{\rightarrow }\alpha \gamma\)</span> and</li>
+<li><span class="math inline">\(X_{n}+Y_{n}\overset{p}{\rightarrow }\alpha +\gamma\)</span>.</li>
+</ul></li>
+<li><p>If <span class="math inline">\(X_{n}\overset{p}{\rightarrow }X\)</span> and <span class="math inline">\(Y_{n}\overset{p}{\rightarrow }Y\)</span> then</p>
+<ul>
+<li><span class="math inline">\(X_{n}Y_{n}\overset{p}{\rightarrow }X Y\)</span> and<br />
+</li>
+<li><span class="math inline">\(X_{n}+Y_{n}\overset{p}{\rightarrow }X +Y\)</span></li>
+</ul></li>
+<li><p>Let <span class="math inline">\(g\left( x\right)\)</span> be any (non-random) continuous function. If <span class="math inline">\(X_{n}\overset{p}{\rightarrow }\alpha\)</span> then
+<span class="math display">\[g\left( X_{n}\right) \overset{p}{\rightarrow }g\left( \alpha \right),\]</span> and if <span class="math inline">\(X_{n}\overset{p}{\rightarrow }X\)</span> then</p></li>
+</ul>
+<p><span class="math display">\[g\left( X_{n}\right) \overset{p}{\rightarrow }g\left( X \right).\]</span></p>
+<p>Suppose <span class="math inline">\(X_{1},X_{2},...,X_{n},...\)</span> is a sequence of  random variables with common distribution <span class="math inline">\(F_X(x)\)</span> and moments <span class="math inline">\(\mu_r=E [X^r]\)</span>. At any given point along the sequence, <span class="math inline">\(X_{1},X_{2},...,X_{n}\)</span> constitutes a simple random sample of size <span class="math inline">\(n\)</span>. \</p>
+<p>For each fixed sample size <span class="math inline">\(n\)</span>, the <span class="math inline">\(r\)</span>th sample moment is (using an obvious notation)
+<span class="math display">\[\begin{equation*}
+M_{(r,n)}=\frac{1}{n}\left( X_{1}^r+X_{2}^r+\cdots +X_{n}^r\right)=\frac{1}{n}\sum_{s=1}^nX_s^r\,,
+\end{equation*}\]</span>
+and we know that
+<span class="math display">\[E[M_{(r,n)}]=\mu_r\quad\text{and}\quad Var(M_{(r,n)})=\frac{1}{n}(\mu_{2}-\mu_1^2)\,.\]</span></p>
+<p>Now consider the sequence of sample moments <span class="math inline">\(M_{(r,1)},M_{(r,2)},...,M_{(r,n)},...\)</span> or, equivalently, <span class="math inline">\(\{M_{(r,i)}\}_{i=1}^{n}\)</span>.</p>
+<!-- % -->
+<!-- % -->
+<!-- % -->
+<!-- % -->
+<!-- % -->
+<!-- %\frametitle{An informal example (continued)} -->
+<!-- % -->
+<!-- % -->
+<!-- %- The expected value of the sample mean is% -->
+<!-- %\begin{eqnarray*} -->
+<!-- %E\left[ \overline{X}_{n}\right]  &=&E\left[ \frac{1}{n}\left( -->
+<!-- %X_{1}+X_{2}+\cdots +X_{n}\right) \right]  \\ -->
+<!-- %&=&\frac{1}{n}\left( E\left[ X_{1}\right] +E\left[ X_{2}\right] +\cdots +E% -->
+<!-- %\left[ X_{n}\right] \right)  \\ -->
+<!-- %&=&\frac{1}{n}\left( \mu +\mu +\cdots +\mu \right) =\mu -->
+<!-- %\end{eqnarray*} -->
+<!-- % -->
+<!-- %- The variance of the sample mean is% -->
+<!-- %\begin{eqnarray*} -->
+<!-- %Var\left( \overline{X}_{n}\right)  &=&Var\left( \frac{1}{n}\left( -->
+<!-- %X_{1}+X_{2}+\cdots +X_{n}\right) \right)  \\ -->
+<!-- %&=&\frac{1}{n^{2}}\left( Var\left( X_{1}\right) +Var\left( X_{2}\right) -->
+<!-- %+\cdots +Var\left( X_{n}\right) \right)  \\ -->
+<!-- %&=&\frac{1}{n^{2}}\left( \sigma ^{2}+\sigma ^{2}+\cdots +\sigma ^{2}\right) -->
+<!-- %\\ -->
+<!-- %&=&\frac{n\sigma ^{2}}{n^{2}}=\frac{\sigma ^{2}}{n} -->
+<!-- %\end{eqnarray*} -->
+<!-- % -->
+<!-- % -->
+<!-- % -->
+<!-- % -->
+<!-- % -->
+<!-- % -->
+</div>
+<div id="convergence-of-sample-moments-as-a-motivation" class="section level3" number="6.2.2">
+<h3><span class="header-section-number">6.2.2</span> Convergence of Sample Moments as a motivation…</h3>
+<p>The distribution of <span class="math inline">\(M_{(r,n)}\)</span> (which is unknown because <span class="math inline">\(F_X(x)\)</span> has not been specified) is thus concentrated around <span class="math inline">\(\mu_r\)</span> for all <span class="math inline">\(n\)</span>,
+with a variance which tends to zero as <span class="math inline">\(n\)</span> increases. \</p>
+<p>So the distribution of <span class="math inline">\(M_{(r,n)}\)</span> becomes more and more concentrated around <span class="math inline">\(\mu_r\)</span> as $n
+$ increases and therefore we might  that
+<span class="math display">\[\begin{equation*}
+M_{(r,n)}\overset{p}{\rightarrow }\mu_r.
+\end{equation*}\]</span></p>
+<p>In fact, this result follows from what is known as the <strong>Weak Law of Large Numbers</strong> (WLLN).</p>
+<!-- %- N.B. If we define the sample MGF as -->
+<!-- %$$ -->
+<!-- %\bar{M}_X(t)=\frac{1}{n}\sum_{s=1}^ne^{tX_s}=\sum_{r=0}^\infty M_{(r,n)}\frac{t^r}{r!}\,, -->
+<!-- %$$ -->
+<!-- %then -->
+<!-- %$$ -->
+<!-- %\bar{M}_X(t)-M_X(t)=\sum_{r=0}^\infty (M_{(r,n)}-\mu_r)\frac{t^r}{r!}\,. -->
+<!-- %$$ -->
+<!-- %Using the operational rules for probability limits indicates that $p\lim\bar{M}_X(t)=M_X(t)$. This suggests \textit{estimating} $F_X(x)$ from "the data"! -->
+<!-- %%- But how can we formally prove this WLLN? -->
+</div>
+<div id="the-weak-law-of-large-numbers-wlln" class="section level3" number="6.2.3">
+<h3><span class="header-section-number">6.2.3</span> The Weak Law of Large Numbers (WLLN)</h3>
+
+<div class="proposition">
+<p><span id="prp:unnamed-chunk-4" class="proposition"><strong>Proposition 6.1  </strong></span> Let <span class="math inline">\(X_{1},X_{2},...,X_{n},...\)</span> be a sequence of  random variables with common probability distribution <span class="math inline">\(F_X(x)\)</span>, and let <span class="math inline">\(Y=h(X)\)</span> be such that
+<span class="math display">\[\begin{eqnarray*}
+E[Y]=E\left[ h(X)\right]  &amp;=&amp;\mu_Y  \\
+Var(Y)=Var\left( h(X)\right)  &amp;=&amp;\sigma_Y ^{2}&lt;\infty\,.
+\end{eqnarray*}\]</span>%
+Set
+<span class="math display">\[\overline{Y}_n=\frac{1}{n}\sum_{s=1}^nY_s\quad\text{where}\quad Y_s=h(X_s)\,,\quad s=1,\ldots,n\,.\]</span>
+Then for any two numbers <span class="math inline">\(\varepsilon\)</span> and <span class="math inline">\(\delta\)</span> satisfying <span class="math inline">\(\varepsilon&gt;0\)</span> and <span class="math inline">\(0&lt;\delta&lt;1\)</span></p>
+<p><span class="math display">\[\Pr \left( \left\vert \overline{Y}_{n}-\mu_Y \right\vert&lt;\varepsilon \right)\geq 1-\delta\]</span></p>
+for all <span class="math inline">\(n&gt;\sigma_Y^2/(\varepsilon^2\delta)\)</span>. Choosing both <span class="math inline">\(\varepsilon\)</span> and <span class="math inline">\(\delta\)</span> to be arbitrarily small implies that <span class="math inline">\(p\lim_{n\rightarrow\infty}(\overline{Y}_{n}-\mu_Y)=0\)</span>, or equivalently
+<span class="math inline">\(\overline{Y}_{n}\overset{p}{\rightarrow }\mu_Y\)</span>.
+</div>
+</div>
+<div id="the-wlln-and-chebyshevs-inequality" class="section level3" number="6.2.4">
+<h3><span class="header-section-number">6.2.4</span> The WLLN and Chebyshev’s Inequality</h3>
+<ul>
+<li>First note that <span class="math inline">\(E[\overline{Y}_n]=\mu_Y\)</span> and <span class="math inline">\(Var(\overline{Y}_n)=\sigma_Y^2/n\)</span>.</li>
+<li>Now, according to <strong>Chebyshev’s inequality</strong>
+<span class="math display">\[\begin{eqnarray*}
+\Pr \left( |\overline{Y}_{n}-\mu_Y| &lt;\varepsilon\right)  &amp;\geq &amp;1-\frac{E\left[ \left(
+\overline{Y}_{n}-\mu_Y \right) ^{2}\right] }{\varepsilon^{2}} \\
+&amp;=&amp;1-\frac{\sigma_Y ^{2}/n}{\varepsilon^{2}} \\
+&amp;=&amp;1-\frac{\sigma_Y ^{2}}{n\varepsilon^{2}}\geq 1-\delta
+\end{eqnarray*}\]</span>
+for all <span class="math inline">\(n&gt;\sigma_Y^2/(\varepsilon^2\delta)\)</span>.</li>
+<li>Thus the WLLN is proven, provided we can verify <strong>Chebyshev’s inequality</strong>.</li>
+<li>Note that by considering the limit as <span class="math inline">\(n\rightarrow \infty\)</span> we also have%
+<span class="math display">\[\begin{equation*}
+\lim_{n\rightarrow \infty }\Pr \left( \left\vert \overline{Y}_{n}-\mu_Y\right\vert &lt;\varepsilon\right) \geq \lim_{n\rightarrow \infty }\left( 1-\frac{\sigma^{2}}{n\varepsilon^{2}}\right) =1\,,
+\end{equation*}\]</span>
+again implying that <span class="math inline">\(\left( \overline{Y}_{n}-\mu_Y \right) \overset{p}{\rightarrow }0\)</span>.</li>
+</ul>
+</div>
+<div id="chebyshevs-and-markovs-inequality" class="section level3" number="6.2.5">
+<h3><span class="header-section-number">6.2.5</span> Chebyshev’s (and Markov’s) Inequality</h3>
+<ul>
+<li><p><strong>Chebychev’s Inequality</strong>: For any random variable <span class="math inline">\(Z\)</span> with mean <span class="math inline">\(\mu_Z\)</span> and variance <span class="math inline">\(\sigma_Z^2&lt;\infty\)</span>
+<span class="math display">\[\begin{equation*}
+\Pr \left( \left\vert Z-\mu_Z\right\vert &lt;r\sigma_Z\right) \geq 1-\frac{1 }{r^{2}}
+\end{equation*}\]</span>
+for all <span class="math inline">\(r&gt;0\)</span>.</p></li>
+<li><p>Note that an equivalent expression is given by
+<span class="math display">\[\begin{equation}
+\Pr \left( \left\vert Z-\mu_Z\right\vert \geq r\sigma_Z\right) \leq \frac{1 }{r^{2}} \label{Eq. C2}
+\end{equation}\]</span></p></li>
+<li><p>This inequality says that the probability that a random variable lies more than <span class="math inline">\(r\)</span> standard deviations away from its mean value is bounded above by <span class="math inline">\(1/r^2\)</span>.</p></li>
+<li><p>Chebychev’s inequality is, in turn, a special case of Markov’s inequality.</p></li>
+<li><p>: Let <span class="math inline">\(Z\)</span> be random variable and <span class="math inline">\(h(z)\)</span> a non-negative valued function for all <span class="math inline">\(z\in \mathbb{R}\)</span>. Then
+<span class="math display">\[\begin{equation}
+\Pr(h(Z)\geq \zeta)\leq \frac{E[h(Z)]}{\zeta}\quad\text{for all}\,\zeta&gt;0. \label{Eq. M1}
+\end{equation}\]</span></p></li>
+<li><p>To verify Markov’s inequality, observe that
+<span class="math display">\[\begin{eqnarray*}
+E[h( Z)]&amp;=&amp;\int_{-\infty }^{\infty }h(z) f_{Z}\left(z\right)dz\\
+&amp;=&amp;\int_{\{z:h(z)\geq\zeta\}}h(z) f_{Z}\left(z\right) dz+
+\int_{\{z:h(z)&lt;\zeta\}}h(z) f_{Z}\left(z\right) dz \\
+&amp;\geq&amp;\int_{\{z:h(z)\geq\zeta\}}h(z) f_{Z}\left(z\right) dz\\
+&amp;\geq&amp;\int_{\{z:h(z)\geq\zeta\}}\zeta f_{Z}\left(z\right)dz=\zeta\Pr(h(Z)\geq\zeta)\,,
+\end{eqnarray*}\]</span>
+giving the desired result on division by <span class="math inline">\(\zeta\)</span>.</p></li>
+<li><p>Chebyshev’s inequality now follows as a direct corollary of Markov’s inequality on taking <span class="math inline">\(h(z)=(z-\mu_Z)^2\)</span> and <span class="math inline">\(\zeta=r^2\sigma_Z^2\)</span>.
+%- Chebychev’s inequality
+It can be used to construct crude bounds on the probabilities associated with deviations of a random variable from its mean.
+%But we are more often interested in more precise evaluations.</p></li>
+</ul>
+</div>
+<div id="example-markovs-inequality" class="section level3" number="6.2.6">
+<h3><span class="header-section-number">6.2.6</span> Example: Markov’s Inequality</h3>
+
+<div class="example">
+<p><span id="exm:unnamed-chunk-5" class="example"><strong>Example 6.1  </strong></span>
+<strong>Q.</strong> On the A2 highway (in the Luzern Canton), the speed limit is <span class="math inline">\(80\)</span> Km/h. Most drivers are not driving so fast and the average speed on the high way is <span class="math inline">\(70\)</span> Km/h.
+If <span class="math inline">\(Z\)</span> denotes a randomly chosen driver’s speed, what is the probability that such a person is driving faster than the speed limit? \</p>
+<p><strong>A.</strong> Since we do not have the whole distribution of <span class="math inline">\(Z\)</span>, but we have only limited info (i.e. we know <span class="math inline">\(E[Z]=70\)</span> Km/h), we have to resort on Markov’s inequality. So using () we obtain an upper bound to the probability:</p>
+<span class="math display">\[ P(Z \geq 80) \leq \frac{70}{80} = 0.875. \]</span>
+</div>
+
+<div class="example">
+<p><span id="exm:unnamed-chunk-6" class="example"><strong>Example 6.2  </strong></span>
+<strong>Q.</strong> On the A2 highway (in the Luzern Canton), the speed limit is <span class="math inline">\(80\)</span> Km/h. Most drivers are not driving so fast and the average speed on the high way is <span class="math inline">\(70\)</span> Km/h, .
+If <span class="math inline">\(Z\)</span> denotes a randomly chosen driver’s speed, what is the probability that such a person is driving faster than the speed limit? \</p>
+<p><strong>A.</strong> Since we do not have the whole distribution of <span class="math inline">\(Z\)</span>, but we have only limited info (i.e. we know <span class="math inline">\(E[Z]=70\)</span> Km/h <strong>AND</strong> <span class="math inline">\(V(Z)=9\)</span> <span class="math inline">\((Km/h)^2\)</span>), we have to resort on Chebyshev’s inequality and give an upper bound to the probability. Thus,</p>
+<p><span class="math display">\[\begin{eqnarray*}
+P( Z \geq 80) &amp;=&amp; P( Z - E[Z]\geq 80 - 70) \\ &amp;\leq&amp; P(\vert Z-E[Z] \vert \geq 10) \leq  P\left( \frac{\vert Z-E[Z] \vert }{\sqrt{V(Z)}}\geq \frac{10}{\sqrt{9}}\right) 
+\end{eqnarray*}\]</span></p>
+<p>Using (), with <span class="math inline">\(r=\frac{10}{3}\)</span> and <span class="math inline">\(\sigma_Z= 3\)</span>, we finally get</p>
+<p><span class="math display">\[\begin{eqnarray*}
+P( Z \geq 80) \leq P\left(\Big\vert Z-E[Z] \Big\vert \geq \left(\frac{10}{3}\right) {3}\right) \leq \frac{1}{\frac{10^2}{3^2}} \leq \frac{9}{100} \leq 0.09 
+\end{eqnarray*}\]</span></p>
+</div>
+
+<div class="remark">
+<p> <span class="remark"><em>Remark. </em></span> Chebichev’s inequality can be rewirtten in a different way. \</p>
+<p>Indeed, for any random variable <span class="math inline">\(Z\)</span> with mean <span class="math inline">\(\mu_Z\)</span> and variance <span class="math inline">\(\sigma_Z^2&lt;\infty\)</span>
+<span class="math display">\[\begin{equation}
+\Pr \left( \left\vert Z-\mu_Z\right\vert \geq \varepsilon \right) \leq \frac{E[Z-\mu_Z]^2}{\varepsilon^{2}} = \frac{\sigma_Z^2}{\varepsilon^{2}}. \label{Eq. C3}
+\end{equation}\]</span></p>
+<p>It’s easy to check that Eq. () coincides with Eq. (), setting in Eq. ()</p>
+<p><span class="math display">\[
+ \varepsilon = r \sigma_Z.
+ \]</span></p>
+Do the check as an exercise!!
+</div>
+<!-- % -->
+<!-- % -->
+<!-- % -->
+<!-- % -->
+<!-- % -->
+<!-- %\frametitle{Proof of Chebyshev's inequality (continuous case)} -->
+<!-- % -->
+<!-- % -->
+<!-- %- We can rewrite the RHS of Chebyshev's inequality as -->
+<!-- %\begin{eqnarray*} -->
+<!-- %1-\frac{E\left( Z^{2}\right) }{t^{2}} &=&E\left[ 1-\frac{Z^{2}}{t^{2}}\right] -->
+<!-- %\\ -->
+<!-- %&=&\int_{-\infty }^{\infty }\left( 1-\frac{z^{2}}{t^{2}}\right) f_{Z}\left( -->
+<!-- %z\right) dz \\ -->
+<!-- %&=&\int_{-\infty }^{-t}\left( 1-\frac{z^{2}}{t^{2}}\right) f_{Z}\left( -->
+<!-- %z\right) dz \\ -->
+<!-- %&&+\int_{-t}^{t}\left( 1-\frac{z^{2}}{t^{2}}\right) f_{Z}\left( z\right) dz -->
+<!-- %\\ -->
+<!-- %&&+\int_{t}^{\infty }\left( 1-\frac{z^{2}}{t^{2}}\right) f_{Z}\left( -->
+<!-- %z\right) dz -->
+<!-- %\end{eqnarray*} -->
+<!-- % -->
+<!-- % -->
+<!-- %- i.e. just break up the integral into three parts -->
+<!-- % -->
+<!-- % -->
+<!-- % -->
+<!-- % -->
+<!-- % -->
+<!-- % -->
+<!-- % -->
+<!-- % -->
+<!-- % -->
+<!-- % -->
+<!-- % -->
+<!-- % -->
+<!-- %\frametitle{Proof of Chebyshev's inequality (continued)} -->
+<!-- % -->
+<!-- % -->
+<!-- %- Notice that both of the outer integrals are non-positive, -->
+<!-- % -->
+<!-- % -->
+<!-- %- i.e.% -->
+<!-- %\begin{equation*} -->
+<!-- %\int_{-\infty }^{-t}\left( 1-\frac{z^{2}}{t^{2}}\right) f_{Z}\left( z\right) -->
+<!-- %dz\leq 0 -->
+<!-- %\end{equation*} -->
+<!-- % -->
+<!-- %- and% -->
+<!-- %\begin{equation*} -->
+<!-- %\int_{t}^{\infty }\left( 1-\frac{z^{2}}{t^{2}}\right) f_{Z}\left( z\right) -->
+<!-- %dz\leq 0 -->
+<!-- %\end{equation*} -->
+<!-- % -->
+<!-- %- since in both cases $\left( 1-\frac{z^{2}}{t^{2}}\right) \leq 0$ -->
+<!-- % -->
+<!-- % -->
+<!-- %- And so -->
+<!-- %\begin{eqnarray*} -->
+<!-- %E\left[ 1-\frac{Z^{2}}{t^{2}}\right]  &=&\int_{-t}^{t}\left( 1-\frac{z^{2}}{% -->
+<!-- %t^{2}}\right) f_{Z}\left( z\right) dz+\text{something negative} \\ -->
+<!-- %&\leq &\int_{-t}^{t}\left( 1-\frac{z^{2}}{t^{2}}\right) f_{Z}\left( z\right) -->
+<!-- %dz -->
+<!-- %\end{eqnarray*} -->
+<!-- % -->
+<!-- % -->
+<!-- % -->
+<!-- % -->
+<!-- % -->
+<!-- % -->
+<!-- % -->
+<!-- % -->
+<!-- % -->
+<!-- % -->
+<!-- % -->
+<!-- %\frametitle{Proof of Chebyshev's inequality (continued)} -->
+<!-- % -->
+<!-- % -->
+<!-- %- So therefore we have that% -->
+<!-- %\begin{eqnarray*} -->
+<!-- %E\left[ 1-\frac{Z^{2}}{t^{2}}\right]  &\leq &\int_{-t}^{t}\left( 1-\frac{% -->
+<!-- %z^{2}}{t^{2}}\right) f_{Z}\left( z\right) dz \\ -->
+<!-- %&=&\int_{-t}^{t}f_{Z}\left( z\right) dz-\int_{-t}^{t}\frac{z^{2}}{t^{2}}% -->
+<!-- %f_{Z}\left( z\right) dz \\ -->
+<!-- %&=&\Pr \left( -t<Z<t\right) -\text{something positive} \\ -->
+<!-- %&\leq &\Pr \left( -t<Z<t\right) -->
+<!-- %\end{eqnarray*} -->
+<!-- % -->
+<!-- %- and hence Chebyshev's inequality holds -->
+<!-- % -->
+<!-- % -->
+<!-- % -->
+<!-- % -->
+<!-- % -->
+<!-- % -->
+<!-- % -->
+
+<div class="definition">
+<span id="def:unnamed-chunk-8" class="definition"><strong>Definition 6.3  </strong></span>Consider, therefore, a sequence of random variables <span class="math inline">\(X_{1},X_{2},...,X_{n},...\)</span> with corresponding CDFs <span class="math inline">\(F_{X_{1}}\left( x\right) ,F_{X_{2}}\left( x\right),...,F_{X_{n}}\left(x\right) ,...\)</span>. We say that the sequence <span class="math inline">\(X_{1},X_{2},...,X_{n},...\)</span> <strong>converges in distribution</strong> to the random variable <span class="math inline">\(X\)</span>, having probability distribution <span class="math inline">\(F_X(x)\)</span>, if and only if
+<span class="math display">\[\begin{equation*}
+\lim_{n\rightarrow \infty }F_{X_n}\left( x\right) =F_{X}\left( x\right)
+\end{equation*}\]</span>
+at all points <span class="math inline">\(x\)</span> where <span class="math inline">\(F_{X}\left( x\right)\)</span> is continuous. In this case we write <span class="math inline">\(X_{n}\overset{D}{\rightarrow }X\)</span>
+</div>
+<ul>
+<li><p>If <span class="math inline">\(p\lim_{n\rightarrow\infty}(X_n-X)=0\)</span> then <span class="math inline">\(X_{n}\overset{D}{\rightarrow }X\)</span>.</p></li>
+<li><p>Let <span class="math inline">\(a\)</span> be any real number. If <span class="math inline">\(X_{n}\overset{D}{\rightarrow }X\)</span>, then
+<span class="math inline">\(aX_{n}\overset{D}{\rightarrow }aX\)</span></p></li>
+<li><p>If <span class="math inline">\(Y_{n}\overset{p}{\rightarrow }\phi\)</span> and <span class="math inline">\(X_{n}\overset{D}{% \rightarrow }X\)</span>, then</p></li>
+<li><p><span class="math inline">\(Y_{n}X_{n}\overset{D}{\rightarrow }\phi X,\)</span> and</p></li>
+<li><p><span class="math inline">\(Y_{n}+X_{n}\overset{D}{\rightarrow }\phi +X\)</span></p></li>
+<li><p>If <span class="math inline">\(X_{n}\overset{D}{\rightarrow }X\)</span> and <span class="math inline">\(g\left( x\right)\)</span> is any
+continuous function, then <span class="math inline">\(g\left( X_{n}\right) \overset{D}{\rightarrow }% g\left( X\right)\)</span></p></li>
+</ul>
+<!-- %- If $Y_{n}\overset{D}{\rightarrow }Y$ and $X_{n}\overset{D}{\rightarrow -->
+<!-- %}X$, then -->
+<!-- % -->
+<!-- %- $Y_{n}X_{n}\overset{D}{\rightarrow }YX,$ and -->
+<!-- % -->
+<!-- %- $Y_{n}+X_{n}\overset{D}{\rightarrow }Y +X$ -->
+<!-- % -->
+
+<div class="example">
+<p><span id="exm:unnamed-chunk-9" class="example"><strong>Example 6.3  </strong></span>Suppose <span class="math inline">\(X_{1},X_{2},...,X_{n},...\)</span> is a sequence of independent
+random variables where <span class="math inline">\(X_n\sim B(n,p)\)</span> with probability of “Success” <span class="math inline">\(p\)</span>.</p>
+<ul>
+<li><p>We already know that, if <span class="math inline">\(p=\lambda/n\)</span>, where <span class="math inline">\(\lambda&gt;0\)</span> is fixed, then as <span class="math inline">\(n\)</span> goes to infinity, <span class="math inline">\(F_{X_{n}}\left( x\right)\)</span> converges to
+the probability distribution of a <span class="math inline">\(Poisson\left( \lambda \right)\)</span>  random variable. So, <span class="math inline">\(X_{n}\overset{D}{\rightarrow }X\)</span>, where $XPoisson() $</p></li>
+<li><p>Now consider another case. If <span class="math inline">\(p\)</span> is fixed, the probability distribution of
+<span class="math display">\[\begin{equation*}
+Y_{n}=\frac{X_{n}-np}{\sqrt{np\left( 1-p\right) }}
+\end{equation*}\]</span>
+converges, as <span class="math inline">\(n\)</span> goes to infinity, to that of a standard Normal  random variable [Theorem of De Moivre-Laplace]. So, <span class="math inline">\(Y_ {n}\overset{D}{\rightarrow }Y\)</span>, where $Y(0,1) $.</p></li>
+</ul>
+</div>
+
+<div class="example">
+<p><span id="exm:unnamed-chunk-10" class="example"><strong>Example 6.4  </strong></span></p>
+<p>%</p>
+</div>
+
+<div class="example">
+<p><span id="exm:unnamed-chunk-11" class="example"><strong>Example 6.5  </strong></span>Let us consider a sequence of continuous r.v.’s <span class="math inline">\(X_1, X_2, ..., X_n,...\)</span>, where <span class="math inline">\(X_n\)</span> has range <span class="math inline">\((0, n]\)</span>, for <span class="math inline">\(n &gt; 0\)</span> and CDF
+<span class="math display">\[
+F_{X_n} (x) = 1- \left( 1- \frac{x}{n} \right)^n,  \ \ 0&lt;x\leq n.
+\]</span>
+Then, as <span class="math inline">\(n \to \infty\)</span>, the limiting support is <span class="math inline">\((0,\infty)\)</span>, and <span class="math inline">\(\forall x &gt;0\)</span>, we have
+<span class="math display">\[
+F_{X_n} (x)  \to F_X(x) = 1 - e^{-x}
+\]</span>
+which is the CDF of an exponential r.v. (at all continuity points). </p>
+<p>So, we conclude that <span class="math inline">\(X_n\)</span> convergences in distribution to an exponential r.v., that is
+<span class="math display">\[
+X_n \overset{D}{\rightarrow } X, \quad X \sim \exp(1).
+\]</span></p>
+</div>
+<p>The following theorem is often said to be one of the most important results. Its significance lies in the fact that it allows accurate probability calculations to be made without knowledge of the underlying distributions!</p>
+
+<div class="theorem">
+<p><span id="thm:unnamed-chunk-12" class="theorem"><strong>Theorem 6.1  </strong></span>
+Let <span class="math inline">\(X_{1},X_{2},...,X_{n},...\)</span> be a sequence of  random variables and let <span class="math inline">\(Y=h(X)\)</span> be such that
+<span class="math display">\[\begin{eqnarray*}
+E[Y]=E\left[ h(X)\right]  &amp;=&amp;\mu_Y  \\
+Var(Y)=Var\left( h(X)\right)  &amp;=&amp;\sigma_Y ^{2}&lt;\infty\,.
+\end{eqnarray*}\]</span>%
+Set
+<span class="math display">\[
+\overline{Y}_n=\frac{1}{n}\sum_{s=1}^nY_s\quad\text{where}\quad Y_s=h(X_s)\,,\quad s=1,\ldots,n\,.
+\]</span>
+Then (under quite general regularity conditions)%</p>
+<p><span class="math display">\[\begin{equation*}
+\frac{\sqrt{n}\left( \overline{Y}_{n}-\mu_Y \right) }{\sigma_Y }\overset{D}{%
+\rightarrow }N\left( 0,1\right).
+\end{equation*}\]</span></p>
+</div>
+<p>%</p>
+<!-- % -->
+<!-- %\begin{figure}[ptb]\centering -->
+<!-- %\includegraphics[height=3in, width=3.6in]{Poisson.pdf}% -->
+<!-- %\end{figure}% -->
+<!-- % -->
+<p>%</p>
+
+<div class="remark">
+ <span class="remark"><em>Remark. </em></span> Several generalizations of this statement are available. For instance, one can state a CLT for data which are independent but NOT identically distributed. Another possibility is to define a CLT for data which are NOT independent, namely for dependent data — for this you need to attend my course about Time Series, in the Fall semester at the Master in Statistics at University of Geneva !!!!
+</div>
+
+</div>
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="continuousrv.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="bivariatediscreterv.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": "https://github.com/rstudio/bookdown-demo/edit/master/06-limit_theorems.Rmd",
+"text": "Edit"
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["bookdown-demo.pdf", "bookdown-demo.epub"],
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

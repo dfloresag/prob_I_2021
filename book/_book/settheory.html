@@ -1,0 +1,770 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Chapter 2 Elements of Set Theory for Probability | Probability I</title>
+  <meta name="description" content="Course Materials" />
+  <meta name="generator" content="bookdown 0.21 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Chapter 2 Elements of Set Theory for Probability | Probability I" />
+  <meta property="og:type" content="book" />
+  
+  
+  <meta property="og:description" content="Course Materials" />
+  <meta name="github-repo" content="rstudio/bookdown-demo" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Chapter 2 Elements of Set Theory for Probability | Probability I" />
+  
+  <meta name="twitter:description" content="Course Materials" />
+  
+
+<meta name="author" content="Prof. Davide La Vecchia &amp; Dr. Daniel Flores Agreda" />
+
+
+<meta name="date" content="2021-01-22" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="introduction.html"/>
+<link rel="next" href="axioms.html"/>
+<script src="libs/header-attrs-2.6/header-attrs.js"></script>
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="https://www.unige.ch/gsem/fr/"><img src="img/gsem_en.png" alt="UNIGE Logo" width="200" class ="center"></a></li>
+<li><a href="https://moodle.unige.ch/course/view.php?id=7133"><strong>Probability I (Spring 2021)</strong></a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>About this Lecture</a>
+<ul>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#practical-information"><i class="fa fa-check"></i>Practical information</a>
+<ul>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#hours"><i class="fa fa-check"></i>Hours</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#course-overview"><i class="fa fa-check"></i>Course Overview</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="1" data-path="introduction.html"><a href="introduction.html"><i class="fa fa-check"></i><b>1</b> Introduction</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="introduction.html"><a href="introduction.html#preliminaries"><i class="fa fa-check"></i><b>1.1</b> Preliminaries</a></li>
+<li class="chapter" data-level="1.2" data-path="introduction.html"><a href="introduction.html#what-is-probability-what-are-statistics-a.k.a.-what-to-expect-from-this-course"><i class="fa fa-check"></i><b>1.2</b> What is Probability? What are Statistics? (a.k.a. “What to expect from this Course”)</a></li>
+<li class="chapter" data-level="1.3" data-path="introduction.html"><a href="introduction.html#appendix-mathematical-formulae"><i class="fa fa-check"></i><b>1.3</b> Appendix: Mathematical Formulae</a>
+<ul>
+<li class="chapter" data-level="1.3.1" data-path="introduction.html"><a href="introduction.html#powers-and-logarithms"><i class="fa fa-check"></i><b>1.3.1</b> Powers and Logarithms</a></li>
+<li class="chapter" data-level="1.3.2" data-path="introduction.html"><a href="introduction.html#differentiation"><i class="fa fa-check"></i><b>1.3.2</b> Differentiation</a></li>
+<li class="chapter" data-level="1.3.3" data-path="introduction.html"><a href="introduction.html#integration"><i class="fa fa-check"></i><b>1.3.3</b> Integration</a></li>
+<li class="chapter" data-level="1.3.4" data-path="introduction.html"><a href="introduction.html#sums"><i class="fa fa-check"></i><b>1.3.4</b> Sums</a></li>
+<li class="chapter" data-level="1.3.5" data-path="introduction.html"><a href="introduction.html#combinatorics"><i class="fa fa-check"></i><b>1.3.5</b> Combinatorics</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="settheory.html"><a href="settheory.html"><i class="fa fa-check"></i><b>2</b> Elements of Set Theory for Probability</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="settheory.html"><a href="settheory.html#definitions"><i class="fa fa-check"></i><b>2.1</b> Definitions</a></li>
+<li class="chapter" data-level="2.2" data-path="settheory.html"><a href="settheory.html#some-definitions-from-set-theory"><i class="fa fa-check"></i><b>2.2</b> Some definitions from set theory</a></li>
+<li class="chapter" data-level="2.3" data-path="settheory.html"><a href="settheory.html#elements-of-set-theory-venn-diagram"><i class="fa fa-check"></i><b>2.3</b> Elements of set theory (Venn diagram)</a></li>
+<li class="chapter" data-level="2.4" data-path="settheory.html"><a href="settheory.html#more-on-sets"><i class="fa fa-check"></i><b>2.4</b> More on sets</a></li>
+<li class="chapter" data-level="2.5" data-path="settheory.html"><a href="settheory.html#de-morgans-laws-1-law"><i class="fa fa-check"></i><b>2.5</b> De Morgan’s Laws: 1  law</a></li>
+<li class="chapter" data-level="2.6" data-path="settheory.html"><a href="settheory.html#de-morgans-laws-2-law"><i class="fa fa-check"></i><b>2.6</b> De Morgan’s Laws: 2 law}</a></li>
+<li class="chapter" data-level="2.7" data-path="settheory.html"><a href="settheory.html#de-morgans-theorem"><i class="fa fa-check"></i><b>2.7</b> De Morgan’s Theorem</a></li>
+<li class="chapter" data-level="2.8" data-path="settheory.html"><a href="settheory.html#back-to-the-events"><i class="fa fa-check"></i><b>2.8</b> Back to the events</a></li>
+<li class="chapter" data-level="2.9" data-path="settheory.html"><a href="settheory.html#some-references"><i class="fa fa-check"></i><b>2.9</b> Some references</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="axioms.html"><a href="axioms.html"><i class="fa fa-check"></i><b>3</b> Probability Axioms</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="axioms.html"><a href="axioms.html#an-axiomatic-definition-of-probability"><i class="fa fa-check"></i><b>3.1</b> An Axiomatic Definition of Probability</a></li>
+<li class="chapter" data-level="3.2" data-path="axioms.html"><a href="axioms.html#properties-of-pcdot"><i class="fa fa-check"></i><b>3.2</b> Properties of <span class="math inline">\(P(\cdot)\)</span></a></li>
+<li class="chapter" data-level="3.3" data-path="axioms.html"><a href="axioms.html#illustrations-of-use"><i class="fa fa-check"></i><b>3.3</b> Illustrations of use</a>
+<ul>
+<li class="chapter" data-level="3.3.1" data-path="axioms.html"><a href="axioms.html#flipping-coins"><i class="fa fa-check"></i><b>3.3.1</b> Flipping coins</a></li>
+<li class="chapter" data-level="3.3.2" data-path="axioms.html"><a href="axioms.html#detecting-shoppers"><i class="fa fa-check"></i><b>3.3.2</b> Detecting shoppers</a></li>
+<li class="chapter" data-level="3.3.3" data-path="axioms.html"><a href="axioms.html#de-morgans-law"><i class="fa fa-check"></i><b>3.3.3</b> De Morgan’s Law</a></li>
+<li class="chapter" data-level="3.3.4" data-path="axioms.html"><a href="axioms.html#probability-union-and-complement"><i class="fa fa-check"></i><b>3.3.4</b> Probability, union, and complement</a></li>
+</ul></li>
+<li class="chapter" data-level="3.4" data-path="axioms.html"><a href="axioms.html#conditional-probability"><i class="fa fa-check"></i><b>3.4</b> Conditional probability</a>
+<ul>
+<li class="chapter" data-level="3.4.1" data-path="axioms.html"><a href="axioms.html#a-check"><i class="fa fa-check"></i><b>3.4.1</b> A check</a></li>
+</ul></li>
+<li class="chapter" data-level="3.5" data-path="axioms.html"><a href="axioms.html#independence"><i class="fa fa-check"></i><b>3.5</b> Independence</a>
+<ul>
+<li class="chapter" data-level="3.5.1" data-path="axioms.html"><a href="axioms.html#independence-another-characterization"><i class="fa fa-check"></i><b>3.5.1</b> Independence – another characterization</a></li>
+</ul></li>
+<li class="chapter" data-level="3.6" data-path="axioms.html"><a href="axioms.html#theorem-i"><i class="fa fa-check"></i><b>3.6</b> Theorem I</a></li>
+<li class="chapter" data-level="3.7" data-path="axioms.html"><a href="axioms.html#theorem-ii"><i class="fa fa-check"></i><b>3.7</b> Theorem II</a>
+<ul>
+<li class="chapter" data-level="3.7.1" data-path="axioms.html"><a href="axioms.html#guessing-in-a-multiple-choice-exam"><i class="fa fa-check"></i><b>3.7.1</b> Guessing in a multiple choice exam</a></li>
+<li class="chapter" data-level="3.7.2" data-path="axioms.html"><a href="axioms.html#rent-car-maintenance"><i class="fa fa-check"></i><b>3.7.2</b> Rent car maintenance</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="discreterv.html"><a href="discreterv.html"><i class="fa fa-check"></i><b>4</b> Discrete Random Variables</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="discreterv.html"><a href="discreterv.html#random-variables---what-are-they"><i class="fa fa-check"></i><b>4.1</b> Random variables - what are they?</a></li>
+<li class="chapter" data-level="4.2" data-path="discreterv.html"><a href="discreterv.html#formal-definition-of-a-random-variable-i"><i class="fa fa-check"></i><b>4.2</b> Formal definition of a random variable (I)</a></li>
+<li class="chapter" data-level="4.3" data-path="discreterv.html"><a href="discreterv.html#example-from-s-to-d-via-xcdot"><i class="fa fa-check"></i><b>4.3</b> Example: from <span class="math inline">\(S\)</span> to <span class="math inline">\(D\)</span>, via <span class="math inline">\(X(\cdot)\)</span></a></li>
+<li class="chapter" data-level="4.4" data-path="discreterv.html"><a href="discreterv.html#formal-definition-of-a-random-variable-ii"><i class="fa fa-check"></i><b>4.4</b> Formal definition of a random variable (II)</a></li>
+<li class="chapter" data-level="4.5" data-path="discreterv.html"><a href="discreterv.html#an-example-from-gambling"><i class="fa fa-check"></i><b>4.5</b> An Example from gambling</a></li>
+<li class="chapter" data-level="4.6" data-path="discreterv.html"><a href="discreterv.html#discrete-random-variables"><i class="fa fa-check"></i><b>4.6</b> Discrete random variables</a></li>
+<li class="chapter" data-level="4.7" data-path="discreterv.html"><a href="discreterv.html#cumulative-distribution-function-i"><i class="fa fa-check"></i><b>4.7</b> Cumulative Distribution Function (I)}</a></li>
+<li class="chapter" data-level="4.8" data-path="discreterv.html"><a href="discreterv.html#distributional-summaries-for-discrete-random-variables"><i class="fa fa-check"></i><b>4.8</b> Distributional summaries for discrete random variables</a>
+<ul>
+<li class="chapter" data-level="4.8.1" data-path="discreterv.html"><a href="discreterv.html#some-illustrations-of-binomial"><i class="fa fa-check"></i><b>4.8.1</b> Some illustrations of Binomial</a></li>
+<li class="chapter" data-level="4.8.2" data-path="discreterv.html"><a href="discreterv.html#binomial-distribution"><i class="fa fa-check"></i><b>4.8.2</b> Binomial Distribution</a></li>
+<li class="chapter" data-level="4.8.3" data-path="discreterv.html"><a href="discreterv.html#binomial-distribution-1"><i class="fa fa-check"></i><b>4.8.3</b> Binomial Distribution</a></li>
+<li class="chapter" data-level="4.8.4" data-path="discreterv.html"><a href="discreterv.html#binomial-distribution-2"><i class="fa fa-check"></i><b>4.8.4</b> Binomial Distribution</a></li>
+<li class="chapter" data-level="4.8.5" data-path="discreterv.html"><a href="discreterv.html#poisson-distribution"><i class="fa fa-check"></i><b>4.8.5</b> Poisson Distribution</a></li>
+<li class="chapter" data-level="4.8.6" data-path="discreterv.html"><a href="discreterv.html#poisson-distribution-1"><i class="fa fa-check"></i><b>4.8.6</b> Poisson Distribution</a></li>
+<li class="chapter" data-level="4.8.7" data-path="discreterv.html"><a href="discreterv.html#some-illustrations-of-poisson"><i class="fa fa-check"></i><b>4.8.7</b> Some illustrations of Poisson</a></li>
+<li class="chapter" data-level="4.8.8" data-path="discreterv.html"><a href="discreterv.html#poisson-distribution-2"><i class="fa fa-check"></i><b>4.8.8</b> Poisson Distribution</a></li>
+<li class="chapter" data-level="4.8.9" data-path="discreterv.html"><a href="discreterv.html#poisson-distribution-3"><i class="fa fa-check"></i><b>4.8.9</b> Poisson Distribution</a></li>
+<li class="chapter" data-level="4.8.10" data-path="discreterv.html"><a href="discreterv.html#poisson-distribution-link-to-binomial"><i class="fa fa-check"></i><b>4.8.10</b> Poisson Distribution (link to Binomial)</a></li>
+<li class="chapter" data-level="4.8.11" data-path="discreterv.html"><a href="discreterv.html#poisson-distribution-link-to-binomial-1"><i class="fa fa-check"></i><b>4.8.11</b> Poisson Distribution (link to Binomial)</a></li>
+<li class="chapter" data-level="4.8.12" data-path="discreterv.html"><a href="discreterv.html#poisson-distribution-example"><i class="fa fa-check"></i><b>4.8.12</b> Poisson Distribution: example</a></li>
+<li class="chapter" data-level="4.8.13" data-path="discreterv.html"><a href="discreterv.html#the-hypergeometric-distribution"><i class="fa fa-check"></i><b>4.8.13</b> The Hypergeometric Distribution</a></li>
+<li class="chapter" data-level="4.8.14" data-path="discreterv.html"><a href="discreterv.html#hypergeometric-distribution-example"><i class="fa fa-check"></i><b>4.8.14</b> Hypergeometric Distribution Example</a></li>
+<li class="chapter" data-level="4.8.15" data-path="discreterv.html"><a href="discreterv.html#the-negative-binomial-distribution"><i class="fa fa-check"></i><b>4.8.15</b> The Negative Binomial Distribution</a></li>
+<li class="chapter" data-level="4.8.16" data-path="discreterv.html"><a href="discreterv.html#the-negative-binomial-distribution-1"><i class="fa fa-check"></i><b>4.8.16</b> The Negative Binomial Distribution</a></li>
+<li class="chapter" data-level="4.8.17" data-path="discreterv.html"><a href="discreterv.html#negative-binomial-distribution-example"><i class="fa fa-check"></i><b>4.8.17</b> Negative Binomial Distribution Example</a></li>
+<li class="chapter" data-level="4.8.18" data-path="discreterv.html"><a href="discreterv.html#the-geometric-distribution"><i class="fa fa-check"></i><b>4.8.18</b> The Geometric Distribution</a></li>
+<li class="chapter" data-level="4.8.19" data-path="discreterv.html"><a href="discreterv.html#the-geometric-distribution-1"><i class="fa fa-check"></i><b>4.8.19</b> The Geometric Distribution</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="continuousrv.html"><a href="continuousrv.html"><i class="fa fa-check"></i><b>5</b> Continuous Random Variable</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="continuousrv.html"><a href="continuousrv.html#continuous-distributions"><i class="fa fa-check"></i><b>5.1</b> Continuous Distributions</a></li>
+<li class="chapter" data-level="5.2" data-path="continuousrv.html"><a href="continuousrv.html#cumulative-distribution-function-cdf"><i class="fa fa-check"></i><b>5.2</b> Cumulative Distribution Function (CDF)</a>
+<ul>
+<li class="chapter" data-level="5.2.1" data-path="continuousrv.html"><a href="continuousrv.html#some-properties-of-the-normal-distribution"><i class="fa fa-check"></i><b>5.2.1</b> Some properties of the Normal distribution</a></li>
+<li class="chapter" data-level="5.2.2" data-path="continuousrv.html"><a href="continuousrv.html#normal-an-example"><i class="fa fa-check"></i><b>5.2.2</b> Normal: an example</a></li>
+</ul></li>
+<li class="chapter" data-level="5.3" data-path="continuousrv.html"><a href="continuousrv.html#the-chi-squared-distribution"><i class="fa fa-check"></i><b>5.3</b> The Chi-squared distribution</a>
+<ul>
+<li class="chapter" data-level="5.3.1" data-path="continuousrv.html"><a href="continuousrv.html#some-plots-for-the-chi-squared"><i class="fa fa-check"></i><b>5.3.1</b> Some plots for the Chi-squared</a></li>
+<li class="chapter" data-level="5.3.2" data-path="continuousrv.html"><a href="continuousrv.html#chi-squared-table"><i class="fa fa-check"></i><b>5.3.2</b> Chi-squared table</a></li>
+<li class="chapter" data-level="5.3.3" data-path="continuousrv.html"><a href="continuousrv.html#chi-squared-table-illustration-of-its-use"><i class="fa fa-check"></i><b>5.3.3</b> Chi-squared table (illustration of its use)</a></li>
+</ul></li>
+<li class="chapter" data-level="5.4" data-path="continuousrv.html"><a href="continuousrv.html#the-student-t-distribution"><i class="fa fa-check"></i><b>5.4</b> The Student-t distribution</a>
+<ul>
+<li class="chapter" data-level="5.4.1" data-path="continuousrv.html"><a href="continuousrv.html#some-student-t-distributions"><i class="fa fa-check"></i><b>5.4.1</b> Some Student-t distributions</a></li>
+<li class="chapter" data-level="5.4.2" data-path="continuousrv.html"><a href="continuousrv.html#student-t-table"><i class="fa fa-check"></i><b>5.4.2</b> Student-t table</a></li>
+</ul></li>
+<li class="chapter" data-level="5.5" data-path="continuousrv.html"><a href="continuousrv.html#some-f-distributions"><i class="fa fa-check"></i><b>5.5</b> Some F distributions</a>
+<ul>
+<li class="chapter" data-level="5.5.1" data-path="continuousrv.html"><a href="continuousrv.html#f-distribution-table-5-upper-tail"><i class="fa fa-check"></i><b>5.5.1</b> F distribution table (5% upper tail)</a></li>
+</ul></li>
+<li class="chapter" data-level="5.6" data-path="continuousrv.html"><a href="continuousrv.html#the-lognormal-distribution"><i class="fa fa-check"></i><b>5.6</b> The lognormal distribution</a></li>
+<li class="chapter" data-level="5.7" data-path="continuousrv.html"><a href="continuousrv.html#exponential-distribution"><i class="fa fa-check"></i><b>5.7</b> Exponential distribution</a></li>
+<li class="chapter" data-level="5.8" data-path="continuousrv.html"><a href="continuousrv.html#transformation-of-variables"><i class="fa fa-check"></i><b>5.8</b> Transformation of variables</a>
+<ul>
+<li class="chapter" data-level="5.8.1" data-path="continuousrv.html"><a href="continuousrv.html#transformation-of-discrete-random-variables"><i class="fa fa-check"></i><b>5.8.1</b> Transformation of discrete random variables</a></li>
+<li class="chapter" data-level="5.8.2" data-path="continuousrv.html"><a href="continuousrv.html#transformation-of-variables-using-the-cdf"><i class="fa fa-check"></i><b>5.8.2</b> Transformation of variables using the CDF</a></li>
+<li class="chapter" data-level="5.8.3" data-path="continuousrv.html"><a href="continuousrv.html#function-1-to-1-and-monotone-decreasing"><i class="fa fa-check"></i><b>5.8.3</b> Function 1-to-1 and monotone decreasing</a></li>
+<li class="chapter" data-level="5.8.4" data-path="continuousrv.html"><a href="continuousrv.html#transformation-of-continuous-rv-through-pdf"><i class="fa fa-check"></i><b>5.8.4</b> Transformation of continuous RV through pdf</a></li>
+<li class="chapter" data-level="5.8.5" data-path="continuousrv.html"><a href="continuousrv.html#example-of-transformation-using-pdf"><i class="fa fa-check"></i><b>5.8.5</b> Example of transformation using pdf</a></li>
+<li class="chapter" data-level="5.8.6" data-path="continuousrv.html"><a href="continuousrv.html#a-caveat"><i class="fa fa-check"></i><b>5.8.6</b> A caveat</a></li>
+</ul></li>
+<li class="chapter" data-level="5.9" data-path="continuousrv.html"><a href="continuousrv.html#the-big-picture"><i class="fa fa-check"></i><b>5.9</b> The big picture</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="limittheorems.html"><a href="limittheorems.html"><i class="fa fa-check"></i><b>6</b> Limit Theorems</a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="limittheorems.html"><a href="limittheorems.html#sequences-of-random-variables"><i class="fa fa-check"></i><b>6.1</b> Sequences of Random Variables</a>
+<ul>
+<li class="chapter" data-level="6.1.1" data-path="limittheorems.html"><a href="limittheorems.html#example-bernoulli-trials-and-their-sum"><i class="fa fa-check"></i><b>6.1.1</b> Example: Bernoulli Trials and their sum</a></li>
+<li class="chapter" data-level="6.1.2" data-path="limittheorems.html"><a href="limittheorems.html#example-bernoulli-trials-and-limit-behaviour"><i class="fa fa-check"></i><b>6.1.2</b> Example: Bernoulli Trials and limit behaviour</a></li>
+</ul></li>
+<li class="chapter" data-level="6.2" data-path="limittheorems.html"><a href="limittheorems.html#convergence-in-probability-oversetprightarrow"><i class="fa fa-check"></i><b>6.2</b> Convergence in Probability (<span class="math inline">\(\overset{p}{\rightarrow }\)</span>)</a>
+<ul>
+<li class="chapter" data-level="6.2.1" data-path="limittheorems.html"><a href="limittheorems.html#operational-rules-for-oversetprightarrow"><i class="fa fa-check"></i><b>6.2.1</b> Operational Rules for <span class="math inline">\(\overset{p}{\rightarrow }\)</span></a></li>
+<li class="chapter" data-level="6.2.2" data-path="limittheorems.html"><a href="limittheorems.html#convergence-of-sample-moments-as-a-motivation"><i class="fa fa-check"></i><b>6.2.2</b> Convergence of Sample Moments as a motivation…</a></li>
+<li class="chapter" data-level="6.2.3" data-path="limittheorems.html"><a href="limittheorems.html#the-weak-law-of-large-numbers-wlln"><i class="fa fa-check"></i><b>6.2.3</b> The Weak Law of Large Numbers (WLLN)</a></li>
+<li class="chapter" data-level="6.2.4" data-path="limittheorems.html"><a href="limittheorems.html#the-wlln-and-chebyshevs-inequality"><i class="fa fa-check"></i><b>6.2.4</b> The WLLN and Chebyshev’s Inequality</a></li>
+<li class="chapter" data-level="6.2.5" data-path="limittheorems.html"><a href="limittheorems.html#chebyshevs-and-markovs-inequality"><i class="fa fa-check"></i><b>6.2.5</b> Chebyshev’s (and Markov’s) Inequality</a></li>
+<li class="chapter" data-level="6.2.6" data-path="limittheorems.html"><a href="limittheorems.html#example-markovs-inequality"><i class="fa fa-check"></i><b>6.2.6</b> Example: Markov’s Inequality</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="bivariatediscreterv.html"><a href="bivariatediscreterv.html"><i class="fa fa-check"></i><b>7</b> Bivariate Discrete Random Variables</a>
+<ul>
+<li class="chapter" data-level="7.1" data-path="bivariatediscreterv.html"><a href="bivariatediscreterv.html#joint-probability-functions"><i class="fa fa-check"></i><b>7.1</b> Joint Probability Functions</a></li>
+<li class="chapter" data-level="7.2" data-path="bivariatediscreterv.html"><a href="bivariatediscreterv.html#marginal-probability-mass-functions"><i class="fa fa-check"></i><b>7.2</b> Marginal probability (mass) functions</a>
+<ul>
+<li class="chapter" data-level="7.2.1" data-path="bivariatediscreterv.html"><a href="bivariatediscreterv.html#first-example"><i class="fa fa-check"></i><b>7.2.1</b> First Example</a></li>
+<li class="chapter" data-level="7.2.2" data-path="bivariatediscreterv.html"><a href="bivariatediscreterv.html#empirical-example"><i class="fa fa-check"></i><b>7.2.2</b> Empirical Example</a></li>
+</ul></li>
+<li class="chapter" data-level="7.3" data-path="bivariatediscreterv.html"><a href="bivariatediscreterv.html#conditional-probability-mass-function"><i class="fa fa-check"></i><b>7.3</b> Conditional probability mass function</a></li>
+<li class="chapter" data-level="7.4" data-path="bivariatediscreterv.html"><a href="bivariatediscreterv.html#independence-1"><i class="fa fa-check"></i><b>7.4</b> Independence</a></li>
+<li class="chapter" data-level="7.5" data-path="bivariatediscreterv.html"><a href="bivariatediscreterv.html#expectations-for-jointly-distributed-discrete-rvs"><i class="fa fa-check"></i><b>7.5</b> Expectations for Jointly Distributed Discrete RVs</a></li>
+<li class="chapter" data-level="7.6" data-path="bivariatediscreterv.html"><a href="bivariatediscreterv.html#iterated-expectations"><i class="fa fa-check"></i><b>7.6</b> Iterated Expectations</a></li>
+<li class="chapter" data-level="7.7" data-path="bivariatediscreterv.html"><a href="bivariatediscreterv.html#expectations-for-jointly-distributed-discrete-rvs-1"><i class="fa fa-check"></i><b>7.7</b> Expectations for Jointly Distributed Discrete RVs</a></li>
+<li class="chapter" data-level="7.8" data-path="bivariatediscreterv.html"><a href="bivariatediscreterv.html#some-properties-of-covariances"><i class="fa fa-check"></i><b>7.8</b> Some Properties of Covariances</a>
+<ul>
+<li class="chapter" data-level="7.8.1" data-path="bivariatediscreterv.html"><a href="bivariatediscreterv.html#a-remark"><i class="fa fa-check"></i><b>7.8.1</b> A remark</a></li>
+<li class="chapter" data-level="7.8.2" data-path="bivariatediscreterv.html"><a href="bivariatediscreterv.html#an-important-property-of-correlation"><i class="fa fa-check"></i><b>7.8.2</b> An important property of correlation</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="numericalmethods.html"><a href="numericalmethods.html"><i class="fa fa-check"></i><b>8</b> Numerical Methods</a>
+<ul>
+<li class="chapter" data-level="8.1" data-path="numericalmethods.html"><a href="numericalmethods.html#introduction-to-simulation"><i class="fa fa-check"></i><b>8.1</b> Introduction to simulation</a></li>
+<li class="chapter" data-level="8.2" data-path="numericalmethods.html"><a href="numericalmethods.html#simulation-procedure"><i class="fa fa-check"></i><b>8.2</b> Simulation procedure</a></li>
+<li class="chapter" data-level="8.3" data-path="numericalmethods.html"><a href="numericalmethods.html#simulation-in-r"><i class="fa fa-check"></i><b>8.3</b> Simulation in R</a></li>
+<li class="chapter" data-level="8.4" data-path="numericalmethods.html"><a href="numericalmethods.html#coin-tossing"><i class="fa fa-check"></i><b>8.4</b> Coin tossing</a></li>
+<li class="chapter" data-level="8.5" data-path="numericalmethods.html"><a href="numericalmethods.html#summarizing"><i class="fa fa-check"></i><b>8.5</b> Summarizing</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Probability I</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="settheory" class="section level1" number="2">
+<h1><span class="header-section-number">Chapter 2</span> Elements of Set Theory for Probability</h1>
+<div id="definitions" class="section level2" number="2.1">
+<h2><span class="header-section-number">2.1</span> Definitions</h2>
+<p>In this course we are going to need also some elements of  set theory.</p>
+<p>To start our journey, let us introduce some definitions.</p>
+
+<div class="definition">
+<span id="def:unnamed-chunk-1" class="definition"><strong>Definition 2.1  </strong></span>A random experiment is a process that can result in two or more different outcomes with uncertainty as to which will be observed.
+</div>
+
+<div class="definition">
+<p><span id="def:unnamed-chunk-2" class="definition"><strong>Definition 2.2  </strong></span>An event is an uncertain outcome of a random experiment. An event can be</p>
+<ul>
+<li>Elementary: it includes only one particular outcome of the experiment</li>
+<li>Composite: it includes more than one elementary outcome in the possible sets of outcomes.</li>
+</ul>
+</div>
+
+<div class="definition">
+<span id="def:unnamed-chunk-3" class="definition"><strong>Definition 2.3  </strong></span>The sample space is the complete listing of the elementary events that can occur in a random experiment. We will denote
+the sample space by <span class="math inline">\(S\)</span>.
+</div>
+
+<div class="example">
+<span id="exm:unnamed-chunk-4" class="example"><strong>Example 2.1  </strong></span>
+</div>
+
+<div class="example">
+<p><span id="exm:unnamed-chunk-5" class="example"><strong>Example 2.2  </strong></span>- If we flip two coins (experiment) we have, for each coin,</p>
+<ul>
+<li><span class="math inline">\(H\)</span> for Head</li>
+<li><span class="math inline">\(T\)</span> for Tail</li>
+</ul>
+<p>so the sample space contains the following four points</p>
+<p><span class="math display">\[
+S = \{ (HH),(HT),(TH),(TT)  \}.
+\]</span></p>
+<ul>
+<li>If the experiment consists in measuring (in hours) the life time of a your iPhone, the sample space consists of all nonnegative real
+numbers:
+<span class="math display">\[
+S = \{x: 0 \leq x &lt; \infty \}
+\]</span></li>
+</ul>
+or, equivalently, <span class="math inline">\(S\equiv \mathbb{R}^+\)</span>.
+</div>
+</div>
+<div id="some-definitions-from-set-theory" class="section level2" number="2.2">
+<h2><span class="header-section-number">2.2</span> Some definitions from set theory</h2>
+To deal with events, we rely on the set theory. Some definitions:
+
+<div class="definition">
+<p><span id="def:unnamed-chunk-6" class="definition"><strong>Definition 2.4  </strong></span>- If every element of a set <span class="math inline">\(A\)</span> is also an element of a set <span class="math inline">\(B\)</span>, then <span class="math inline">\(A\)</span> is defined to be a  of <span class="math inline">\(B\)</span>, and we will write
+<span class="math display">\[ A \subset B\]</span>
+and we read it as ``<span class="math inline">\(A\)</span> is contained in <span class="math inline">\(B\)</span>’’
+- Two sets <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span> are defined to be equal if
+<span class="math display">\[A \subset B \text{ \ and \ } B \subset A;\]</span>
+- If a set <span class="math inline">\(A\)</span> contains no points, it will be called the <em>null set, or empty set</em>, and it is typically denoted by <span class="math inline">\(\varnothing\)</span>.</p>
+</div>
+</div>
+<div id="elements-of-set-theory-venn-diagram" class="section level2" number="2.3">
+<h2><span class="header-section-number">2.3</span> Elements of set theory (Venn diagram)</h2>
+<p>A Venn diagram is an enclosed figure representing the sample space with one or more events defined.</p>
+<p>Two events are mutually exclusive is they cannot occur jointly…</p>
+<p>… and not mutually exclusive …</p>
+<p>The union of the events <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span> is the event which occurs when either <span class="math inline">\(A\)</span> or <span class="math inline">\(B\)</span> occurs: <span class="math inline">\(A \cup B\)</span> \</p>
+The intersection of the events <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span> is the event which occurs when both <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span> occur: <span class="math inline">\(A \cap B\)</span>\
+
+
+
+
+The complement of an event <span class="math inline">\(A\)</span> is the event which occurs when <span class="math inline">\(A\)</span> does not occur: <span class="math inline">\(A^{c}\)</span> (or <span class="math inline">\(\overline{A}\)</span>)
+<p>Let <span class="math inline">\(S\)</span> be the complete set of all possible events. Then, <span class="math inline">\(A^c\)</span> is such that <span class="math inline">\(A \cup A^c = S\)</span>, or equivalently <span class="math inline">\(A^c = S \setminus A = S-A\)</span>.</p>
+<p>Let <span class="math inline">\(A\)</span>, <span class="math inline">\(B\)</span>, and <span class="math inline">\(D\)</span> be sets. The following laws hold:</p>
+<ul>
+<li><p>:
+<span class="math display">\[\begin{eqnarray*}
+A \cup B = B \cup A \\
+A \cap B = B \cap A
+\end{eqnarray*}\]</span></p></li>
+<li><p>:
+<span class="math display">\[\begin{eqnarray*}
+A \cup (B \cup D) = (A \cup B) \cup D \\
+A \cap (B \cap D) = (A \cap B) \cap D
+\end{eqnarray*}\]</span></p></li>
+<li><p>:
+<span class="math display">\[\begin{eqnarray*}
+A \cap (B \cup D) = (A \cap B) \cup (A\cap D)\\
+A \cup (B \cap D) = (A\cup B) \cap (A \cup D)
+\end{eqnarray*}\]</span></p></li>
+</ul>
+<p>… verify them using Venn diagrams …</p>
+… for instance, let <span class="math inline">\(A_1, A_2, A_3\)</span> be in <span class="math inline">\(S\)</span> and let us introduce the shorthand notation:
+<span class="math display">\[A_1 A_2 = A_1 \cap A_2  \quad \text{and} \quad A_1 A_3 = A_1 \cap A_3\]</span>
+Then, we have:
+
+<div class="exercise">
+<p><span id="exr:unnamed-chunk-7" class="exercise"><strong>Exercise 2.1  </strong></span>
+</p>
+%Set A or B but not (A and B) also known a A xor B
+ (i)
+<ol start="2" style="list-style-type: lower-roman">
+<li>% Set B but not A
+</div></li>
+</ol>
+</div>
+<div id="more-on-sets" class="section level2" number="2.4">
+<h2><span class="header-section-number">2.4</span> More on sets</h2>
+<p>Events can be represented by means of sets and sets can be either countable or uncountable.</p>
+<p>In mathematics, a { countable set} is a set with the same cardinality (number of elements) as some subset of the set of
+natural numbers (<span class="math inline">\(\mathbb{N}\)</span>).</p>
+<ul>
+<li></li>
+<li>Whether finite or infinite, the elements of a countable set can always be counted one at a time and, although the counting may never finish, every element of the set is associated with a natural number
+<ul>
+<li>roughly speaking one can count the elements of the set using <span class="math inline">\(1,2,3,..\)</span></li>
+</ul></li>
+<li>G. Cantor introduced the term countable set, contrasting sets that are countable with those that are { uncountable} (i.e., nonenumerable or nondenumerable).</li>
+</ul>
+
+<div class="example">
+<p><span id="exm:unnamed-chunk-8" class="example"><strong>Example 2.3  </strong></span># [Countable]</p>
+</div>
+<p>%Events can be represented by means of sets.</p>
+
+<div class="exercise">
+<span id="exr:unnamed-chunk-9" class="exercise"><strong>Exercise 2.2  </strong></span># [Uncountable]
+<p>and using the definition of <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span> compute:</p>
+%\begin{figure}[h!]
+%
+%
+%\end{figure}
+</div>
+
+<div class="exercise">
+<p><span id="exr:unnamed-chunk-10" class="exercise"><strong>Exercise 2.3  </strong></span># [Countable]
+Let us consider the experiment where we flip two coins. For each coin we have <span class="math inline">\(H\)</span> for Head and <span class="math inline">\(T\)</span> for Tail. \</p>
+<p>The sample space (see Lecture 1)
+contains the following four points
+<span class="math display">\[ S = \Big\{ (HH),(HT),(TH),(TT)  \Big\}.\]</span> \</p>
+<p>Then, let us consider the events:</p>
+<span class="math inline">\(A= H\)</span> is obtained at least once = <span class="math inline">\(\Big\{ (HH),(HT),(TH) \Big\}\)</span>
+<p><span class="math inline">\(B=\)</span> the second toss yields <span class="math inline">\(T\)</span> = <span class="math inline">\(\Big\{ (HT),(TT) \Big\}\)</span></p>
+<p>%\begin{figure}[h!]
+%
+%
+%\end{figure}</p>
+<p>and using the definitions of <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span> compute:
+%\begin{figure}[h!]
+%
+%
+%\end{figure}</p>
+</div>
+
+<div class="exercise">
+<p><span id="exr:unnamed-chunk-11" class="exercise"><strong>Exercise 2.4  </strong></span># [cont’d]
+and using the definitions of <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span> compute:
+%\begin{figure}[h!]
+%
+%
+%\end{figure}</p>
+</div>
+
+<div class="proposition">
+<p><span id="prp:unnamed-chunk-12" class="proposition"><strong>Proposition 2.1  </strong></span>Let <span class="math inline">\(A\)</span> be a set in <span class="math inline">\(S\)</span> and let <span class="math inline">\(\varnothing\)</span> denote the empty set . The following relations hold:</p>
+</div>
+<p>The relations can be verified easily using Venn diagrams … [do it!]</p>
+The above relations are helpful to define some other relations between sets/events.
+
+<div class="example">
+<span id="exm:unnamed-chunk-13" class="example"><strong>Example 2.4  </strong></span>Let <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span> be two sets in <span class="math inline">\(S\)</span>. Then we have
+<span class="math display">\[
+B = (B \cap A) \cup (B \cap A^c).
+\]</span>
+To check it, we can proceed as follows:
+<span class="math display">\[\begin{eqnarray}
+B &amp; = &amp; S \cap B \nn \\
+ &amp; = &amp; (A \cup A^c) \cap B \nn \\
+ &amp; = &amp;  (B \cap A) \cup (B \cap A^c). \nn 
+\end{eqnarray}\]</span>
+That concludes the argument.
+</div>
+</div>
+<div id="de-morgans-laws-1-law" class="section level2" number="2.5">
+<h2><span class="header-section-number">2.5</span> De Morgan’s Laws: 1  law</h2>
+<p>Let <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span> be two sets in <span class="math inline">\(S\)</span>. Then:
+<span class="math display">\[\begin{eqnarray}
+(A\cap B)^{c} =A^c \cup B^c,  \nn
+\end{eqnarray}\]</span></p>
+<p>where:</p>
+Left hand side: <span class="math inline">\((A\cap B)^{c}\)</span>  represents the ; 
+{0.4cm}
+<p>Right hand side: <span class="math inline">\(A^c \cup B^c\)</span>  represents all elements that are not <span class="math inline">\(A\)</span> (namely they are <span class="math inline">\(A^c\)</span>) and not $B
+$ either (namely they are <span class="math inline">\(B^c\)</span>) <span class="math inline">\(\Rightarrow\)</span> .</p>
+</div>
+<div id="de-morgans-laws-2-law" class="section level2" number="2.6">
+<h2><span class="header-section-number">2.6</span> De Morgan’s Laws: 2 law}</h2>
+<p>Let <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span> be two sets in <span class="math inline">\(S\)</span>. Then:
+<span class="math display">\[\begin{eqnarray}
+(A\cup B)^{c} =A^c \cap B^c,  \nn
+\end{eqnarray}\]</span></p>
+<p>where:</p>
+<ul>
+<li>Left hand side: <span class="math inline">\((A\cup B)^{c}\)</span>  represents the ; 
+{0.4cm}</li>
+<li>Right hand side: <span class="math inline">\(A^c \cap B^c\)</span>  represents the intersection of all elements that are not <span class="math inline">\(A\)</span> (namely they are <span class="math inline">\(A^c\)</span>) and not $B
+$ either (namely they are <span class="math inline">\(B^c\)</span>) <span class="math inline">\(\Rightarrow\)</span> .</li>
+</ul>
+</div>
+<div id="de-morgans-theorem" class="section level2" number="2.7">
+<h2><span class="header-section-number">2.7</span> De Morgan’s Theorem</h2>
+More generally, we can consider unions and intersections of many (countable) sets. So, we state the general results,
+
+<div class="theorem">
+<p><span id="thm:unnamed-chunk-14" class="theorem"><strong>Theorem 2.1  </strong></span># [De Morgan]
+Let <span class="math inline">\(\mathbb{N}\)</span> be the set of natural number and <span class="math inline">\(\{A_{i}\}\)</span> a collection (indexed by <span class="math inline">\(i \in \mathbb{N}\)</span>) of subsets of <span class="math inline">\(S\)</span>. Then:</p>
+<ol style="list-style-type: lower-roman">
+<li><p><span class="math display">\[\begin{eqnarray}
+\overline{\bigcup_{i \in \mathbb{N}} A_i} &amp;=&amp; \bigcap_{i \in \mathbb{N}} \overline{A}_i;
+\end{eqnarray}\]</span></p></li>
+<li><p><span class="math display">\[\begin{eqnarray}
+\overline{\bigcap_{i \in \mathbb{N}} A_i} &amp;=&amp; \bigcup_{i \in \mathbb{N}} \overline{A}_i.
+\end{eqnarray}\]</span></p>
+</div></li>
+</ol>
+<!-- % -->
+<!-- %\frametitle{Back to the events} -->
+<!-- % -->
+<!-- % -->
+<!-- %The sample space of an experiment is denoted by $S$ and it is the complete listing of the elementary events (which are representable by means of  -->
+<!-- %sets) associated to a random experiment.  -->
+<!-- %```{example} [Countable] -->
+<!-- %\begin{figure}[h!] -->
+<!-- %\centering                -->
+<!-- %\includegraphics[width=0.8\textwidth,height=0.6\textheight]{Example11.pdf} -->
+<!-- %\end{figure} -->
+<!-- %``` -->
+<!-- %  -->
+<!-- % -->
+<!-- % -->
+</div>
+<div id="back-to-the-events" class="section level2" number="2.8">
+<h2><span class="header-section-number">2.8</span> Back to the events</h2>
+<p>
+ \ </p>
+<p>Intuitively,
+the probability of an event is the number associated to the event:
+<span class="math display">\[
+\text{event} \rightarrow \text{pr(event)}
+\]</span>
+such that:</p>
+<ol style="list-style-type: decimal">
+<li>the probability is positive or more generally non-negative (it can be zero);</li>
+<li>the <span class="math inline">\(\text{pr}(S)=1\)</span> (remember, <span class="math inline">\(S\)</span> is the sample space) and <span class="math inline">\(\text{pr}(\varnothing)=0\)</span>;</li>
+<li>the probability of two (or more) mutually exclusive events is the sum of the probabilities of each event.</li>
+</ol>
+<p>In many experiments, it is natural to assume that all outcomes in the sample space (<span class="math inline">\(S\)</span>) are equally likely to occur. That is, consider an experiment whose sample space is a finite set, say, <span class="math inline">\(S=\{1,2,3,...N\}\)</span>. Then, it is often natural to assume that
+<span class="math display">\[
+P(\{1\})=P(\{2\})=...=P(\{N\})
+\]</span>
+or equivalently <span class="math inline">\(P(\{i\})= 1/N\)</span>, for <span class="math inline">\(i=1,2,...,N\)</span>.</p>
+<p>Now, if we define a composite event <span class="math inline">\(A\)</span>, there exist <span class="math inline">\(N_A\)</span> realizations having the same likelihood (namely, the have the same
+probability) in the event <span class="math inline">\(A\)</span>, so<br />
+<span class="math display">\[
+\boxed{P(A)=\frac{N_A}{N}=\frac{\mbox{\# of favorable outcomes}}{\mbox{total \# of outcomes}}=\frac{\mbox{\# of outcomes in $A$}}{\mbox{ \# of outcomes in $S$}}}
+\]</span></p>
+<p>where the notation $# $ means ``number’’.</p>
+
+<div class="example">
+<p><span id="exm:unnamed-chunk-15" class="example"><strong>Example 2.5  </strong></span>
+We roll a fair die and we define the event <span class="math display">\[A=\text{the outcome is an even number}=\{2,4,6\}.\]</span>
+What is the probability of <span class="math inline">\(A\)</span>?</p>
+<p>First, we identify the sample space as
+<span class="math display">\[S=\{1,2,3,4,5,6\}.\]</span></p>
+<p>Then, we have that</p>
+<span class="math display">\[
+P(A)=\frac{N_A}{N} = \frac{\mbox{3 \text{favorable outcomes}}}{\mbox{6 total outcomes}} = \frac{1}{2}. %= \text{pr}(\{1\})+\text{pr}(\{2\})+\text{pr}(\{3\})
+\]</span>
+</div>
+<!-- # since the die is fair, each outcome is equally -->
+<!-- # %likely, so -->
+<!-- # %\begin{eqnarray} -->
+<!-- # %\text{pr}(\{1\})=\text{pr}(\{2\})=...=\text{pr}(\{6\})=\frac{1}{6}. \nonumber -->
+<!-- # %\end{eqnarray} -->
+<!-- # %Thus, we conclude that -->
+<p>Building on the intuition gained in the last example (see boxed formula), we state a first  informal  definition
+of probability. Specifically, one way of defining the probability of an event is in terms of .</p>
+
+<div class="definition">
+<p><span id="def:unnamed-chunk-16" class="definition"><strong>Definition 2.5  </strong></span># [Informal]
+Suppose that an experiment, whose sample space is <span class="math inline">\(S\)</span>, is repeatedly performed under exactly the same conditions. For each event, say <span class="math inline">\(A\)</span>, of the sample space, we define <span class="math inline">\(n(A)\)</span> to be the number of times in the first <span class="math inline">\(n\)</span> repetitions of the experiment that the event <span class="math inline">\(A\)</span> occurs. Then, <span class="math inline">\(P(A)\)</span>, namely the probability of the event <span class="math inline">\(A\)</span>, is defined as:
+<span class="math display">\[
+P(A)=\lim_{n \to \infty} \frac{n(A)}{n},
+\]</span></p>
+that is <span class="math inline">\(P(A)\)</span> is defined as the limiting proportion/frequency of time that <span class="math inline">\(A\)</span> occurs: it is the limit of relative frequency of <span class="math inline">\(A\)</span>.
+</div>
+
+<div class="example">
+<p><span id="exm:unnamed-chunk-17" class="example"><strong>Example 2.6  </strong></span># [Tossing a well-balanced coin]
+In tossing a well-balanced coin, there are 2 mutually exclusive equiprobrable outcomes: H and T. Let <span class="math inline">\(A\)</span>
+be the event of head (H). Since the coin is fair, we have <span class="math inline">\(P(A)=1/2\)</span>. To confirm this intuition/conjecture we can toss the coin a large number of times (each under identical conditions) and count the times we have H. Let <span class="math inline">\(n\)</span> be the  while <span class="math inline">\(n(A)\)</span> is the . Then, the relative frequency:
+<span class="math display">\[
+\lim_{n \to \infty} \frac{n(A)}{n},
+\]</span>
+converges to <span class="math inline">\(P(A)\)</span>. So,
+<span class="math display">\[
+P(A) \sim \frac{n(A)}{n}, \quad \text{for large $n$}.
+\]</span></p>
+</div>
+<!-- % -->
+<!-- % -->
+<!-- %\frametitle{Back to the events} -->
+<!-- % -->
+<!-- %Clearly,  -->
+<!-- %$$0 \leq n(A) \leq n, \quad \text{so} \quad  0 \leq P(A) \leq 1.$$  -->
+<!-- %Thus, we say that  \color{blue} the probability is a set function (it is defined on sets) and it associates to each set/event a number between zero and one.  -->
+<!-- %\color{black}  -->
+<!-- % -->
+<!-- %\vspace{0.5cm} -->
+<!-- % -->
+<!-- %Now, let us recall that a real-valued function is a mapping from $D_f$ to $\mathbb{R}$ and we write: -->
+<!-- %$$ -->
+<!-- %f \quad : \quad D_f \to \mathbb{R},   -->
+<!-- %$$ -->
+<!-- %where $D_f$ is the domain of $f$ and $\mathbb{R}$ is the range. \\ -->
+<!-- % -->
+<!-- %\vspace{0.5cm} -->
+<!-- % -->
+<!-- %\color{red} \textbf{Q.} \color{black} In the case of the (function) probability, we already know that the range is $[0,1]$, but what about $D_f$?  -->
+<!-- % -->
+<!-- % -->
+<!-- % -->
+<!-- % -->
+<!-- % -->
+<!-- % -->
+<!-- %\frametitle{Back to the events} -->
+<!-- % -->
+<!-- %To define $D_f$ for -->
+<!-- %the probability, we have to rely on the set theory --- indeed $D_f$ has to be related to sets/events. To this end, -->
+<!-- %%\vspace{0.3cm} -->
+<!-- %```{definition} [$\sigma$-algebra] -->
+<!-- %The $\sigma$-algebra $\mathcal{B}$ generated by the sample space $S$ is defined as the collection of all subsets of $S$ satisfying: -->
+<!-- %\begin{enumerate} -->
+<!-- %\item[(i)] $S \in \mathcal{B}$; -->
+<!-- %\item[(ii)] if $A \in \mathcal{B}$, then $A^c \in \mathcal{B}$; -->
+<!-- %\item[(iii)] if $A_1 \in \mathcal{B}$ and $A_2 \in \mathcal{B}$, then $A_1 \cup A_2 \in \mathcal{B}$. More generally, for a collection of events $\{A_i\}$, with $i \in \mathbb{N}$, we have -->
+<!-- %\begin{eqnarray} -->
+<!-- %A = \bigcup_{i \in \mathbb{N}} A_i \text{ \ is such that \ }  A \in \mathcal{B}. \nn -->
+<!-- %\end{eqnarray} -->
+<!-- % -->
+<!-- %\end{enumerate} -->
+<!-- %``` -->
+<!-- % -->
+<!-- %Thus,  we will have that  -->
+<!-- %$$ -->
+<!-- %\boxed{P \quad : \quad \mathcal{B} \to [0,1]. }  -->
+<!-- %$$ -->
+<!-- % -->
+<!-- % -->
+<!-- % -->
+<!-- % -->
+<!-- % -->
+<!-- %\frametitle{Back to the events} -->
+<!-- % -->
+<!-- %%In this way, we define the domain of the probability. Then,  -->
+<!-- %To provide a formal definition of probability, we will make use of $\mathcal{B}$ and we will need to impose some additional conditions (that we are going to call \textit{axioms}). \\ -->
+<!-- %\vspace{0.5cm} -->
+<!-- %We here briefly state the ideas, then we will formalize them: \\  -->
+<!-- %\vspace{0.3cm} -->
+<!-- %(i) When we define the probability we would want the have a domain (namely $\mathcal{B}$) such that it includes the  -->
+<!-- %sample space $S$, and $P(S)=1$. \\ \vspace{0.1cm} -->
+<!-- %(ii)  Moreover, for the sake of completeness, if $A$ is an event and we can talk about the probability that $A$ happens, then it is  -->
+<!-- %suitable for us that $A^c$ is also an event in $\mathcal{B}$, so that we can talk about the probability that $A$ does not happen. \\ \vspace{0.1cm}  -->
+<!-- %(iii) Similarly, if  -->
+<!-- %$A_1$ and $A_2$ are two events (so we can say something about their probability of happening), so we should be able to say something about the probability of the event $A_1 \cup A_2$.   -->
+<!-- % -->
+<!-- % -->
+<!-- % -->
+<p>Clearly,
+<span class="math display">\[0 \leq n(A) \leq n, \quad \text{so} \quad  0 \leq P(A) \leq 1.\]</span>
+Thus, we say that  the probability is a set function (it is defined on sets) and it associates to each set/event a number between zero and one.
+</p>
+
+<div class="remark">
+ <span class="remark"><em>Remark. </em></span> One can provide a more rigorous definition of probability, as a real-valued function which defines a mapping between sets/events and the interval <span class="math inline">\([0,1]\)</span>. To achieve this goal one needs the concept of sigma-algebra (which represents the domain of the probability), but we do not pursue with that—at the cost of losing the mathematical rigour of the next slide!!
+</div>
+<!-- %In this way, we define the domain of the probability. Then,  -->
+<p>To express the probability, we need to impose some additional conditions, that we are going to call <strong>axioms</strong>.</p>
+<p>We here briefly state the ideas, then we will formalize them:</p>
+<ol style="list-style-type: lower-roman">
+<li><p>When we define the probability we would want the have a domain such that it includes the
+sample space <span class="math inline">\(S\)</span> and <span class="math inline">\(P(S)=1\)</span>.</p></li>
+<li><p>Moreover, for the sake of completeness, if <span class="math inline">\(A\)</span> is an event and we can talk about the probability that <span class="math inline">\(A\)</span> happens, then it is
+suitable for us that <span class="math inline">\(A^c\)</span> is also an event, so that we can talk about the probability that <span class="math inline">\(A\)</span> does not happen.</p></li>
+<li><p>Similarly, if
+<span class="math inline">\(A_1\)</span> and <span class="math inline">\(A_2\)</span> are two events (so we can say something about their probability of happening), so we should be able to say something about the probability of the event <span class="math inline">\(A_1 \cup A_2\)</span>.</p></li>
+</ol>
+</div>
+<div id="some-references" class="section level2" number="2.9">
+<h2><span class="header-section-number">2.9</span> Some references</h2>
+<p>%The interested Student can find some additional info in the books: \</p>
+<ul>
+<li>, Hogg, McKean, and Craig, 7th edition (2013), Ed: Pearson.
+</li>
+<li>, Rozanov, 3rd edtion (1969), Ed: Dover Publication.</li>
+</ul>
+<!-- % -->
+<!-- % -->
+<!-- % -->
+<!-- %\frametitle{Back to the events} -->
+<!-- % -->
+<!-- %%Beyond the mathematical formalism, the interpretation of $\mathcal{B}$ goes like that: -->
+<!-- %%\begin{interpretation} -->
+<!-- %We said earlier that we are not interested in the events per se mainly because our focus is on the \textbf{probability} that an event happens.  -->
+<!-- %As we said, the \textbf{probability is a function}. Now,  any function is a rule (law, formula, recipe) that associates each point in one set of points (the  -->
+<!-- %domain) with one and only one point in another set of points (range). \\ \vspace{0.2cm}  -->
+<!-- % -->
+<!-- % -->
+<!-- %(i) When we define the probability we would want the have a domain (namely $\mathcal{B}$) such that it includes the  -->
+<!-- %sample space $S$. \\ \vspace{0.1cm} -->
+<!-- %(ii)  Moreover, for the sake of completeness, if $A$ is an event and we can talk about the probability that $A$ happens, then it is  -->
+<!-- %suitable for us that $A^c$ is also an event in $\mathcal{B}$ so that we can talk about the probability that $A$ does not happen. \\ \vspace{0.1cm}  -->
+<!-- %(iii) Similarly, if  -->
+<!-- %$A_1$ and $A_2$ are two events (so we can say something about their probability of happening), so should $A_1 \cup A_2$ be an event too.   -->
+<!-- %%\end{interpretation} -->
+<!-- % -->
+<!-- % -->
+<!-- % -->
+
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="introduction.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="axioms.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": "https://github.com/rstudio/bookdown-demo/edit/master/02-set_theory.Rmd",
+"text": "Edit"
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["bookdown-demo.pdf", "bookdown-demo.epub"],
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

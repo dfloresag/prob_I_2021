@@ -1,0 +1,71 @@
+--- 
+title: "Probability I"
+author: "Prof. Davide La Vecchia \\& Dr. Daniel Flores Agreda"
+date: "`r Sys.Date()`"
+site: bookdown::bookdown_site
+output: bookdown::gitbook
+documentclass: book
+bibliography: [book.bib, packages.bib]
+biblio-style: apalike
+link-citations: yes
+github-repo: rstudio/bookdown-demo
+description: "Course Materials"
+code_folding: hide 
+toc-title: "Probability I - Spring 2021"
+---
+
+# About this Lecture {-}
+
+```{r setup, include = FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+```{r include=FALSE}
+# automatically create a bib database for R packages
+knitr::write_bib(c(
+  .packages(), 'bookdown', 'knitr', 'rmarkdown'
+), 'packages.bib')
+```
+
+## Practical information {-}
+
+### Hours {-}
+
+- Lectures (no recording): Thur. from 12 to 14 (MR280) 
+
+- Exercises (no recording, text \& solutions available on Chamilo):  
+  - Thur. from 16 to 18 (MS130) 
+
+- **Exam:**  Written exam **open-book, 2 hrs**
+
+- **Book:** _A first course in probability_, S. Ross (any edition), Ed: Pearson New International Edition.
+
+### Course Overview {-}
+
+1. Introduction 
+  - some fundamental math tools 
+2. Basic calculus for probability
+  - Random variables  
+  - Trees
+  - Venn diagram
+  - Conditional probability 
+  - Independence & Bayes' theorem
+  - ...
+3. Discrete random variables
+  - Definitions
+  - Expected value and variance
+  - Binomial
+  - Poisson
+  - Negative binomial and hypergeometric
+4. Continuous random variables
+  - Definitions
+  - Expected value and variance
+  - Cumulative distribution function (cdf) and Probability density function (pdf)
+  - Some important examples: Uniform, Exponential, Gamma, Normal, logNormal, Student's...
+  - Relationships
+5. Bivariate random variables
+6. Limit theorems
+  - Weak Law of Large Numbers (WLLN) and Central Limit Theorem (CLT)
+7. Elements of simulations 
+  - numerical methods for the simulation of random variable with a given CDF...
+
