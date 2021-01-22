@@ -1,0 +1,1258 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+  <head>
+    <title>Bootstrapping Clustered Data</title>
+    <meta charset="utf-8" />
+    <meta name="author" content="Daniel Flores-Agreda" />
+    <script src="libs/header-attrs-2.6/header-attrs.js"></script>
+    <link rel="stylesheet" href="css/unige.css" type="text/css" />
+    <link rel="stylesheet" href="css/unige-fonts.css" type="text/css" />
+  </head>
+  <body>
+    <textarea id="source">
+class: center, middle, inverse, title-slide
+
+# Bootstrapping Clustered Data
+## via a Weighted Laplace Approximation
+### Daniel Flores-Agreda
+### School of Public Health and Preventive Medicine
+### ViCBiostat Work In Progress (WIP) Seminar 9/04/2020
+
+---
+
+class: center, middle
+
+# Joint Work
+
+???
+
+Dear Ms Hickey, 
+
+Please find these slides for your review. This version includes the previously mentioned Simpsons memes.
+
+The planned special pre-booked session will follow very shortly (i.e. tomorrow, for example? tonight there's Tennis! *shrug)
+
+Kindest regards, 
+
+Dan/Dani/Bear
+
+---
+class: center, middle
+
+# _(Co)-Starring:_
+
+---
+class: center
+
+# _(Co)-Starring:_
+.column[
+
+### Eva Cantoni
+
+&lt;img src="https://www.unige.ch/gsem/files/cache/89437c652682ce133175f82b3238bb0a_f3835.jpg" width="350"&gt;
+
+&lt;img src="./img/gsem_en.png" width="150"&gt;
+
+]
+
+.column[
+
+### Stephane Heritier
+
+&lt;img src="https://research.monash.edu/files-asset/248358259/Stephane_Roland_Heritier.jpg" width="150"&gt;
+
+&lt;img src="./img/monash-stacked-black-cmyk.png" width="150"&gt;
+
+]
+
+.column[
+
+### Rory Wolfe
+
+&lt;img src="https://research.monash.edu/files-asset/248351697/profile+photo" width="150"&gt;
+
+&lt;img src="./img/monash-stacked-black-cmyk.png" width="150"&gt;
+
+]
+
+---
+
+
+# Outline
+
+1. **Clustered Data**
+
+2. **Bootstrapping** Clustered Data
+
+3. Bootstrapping Clustered Data via a **Weighted Laplace Approximation**
+
+4. (Some) Properties
+
+5. Discussion and Current Work
+
+---
+class: inverse, center, middle
+
+
+
+
+
+&lt;!-- Tell a story  --&gt;
+&lt;!-- This is the journey : Elevator pitch 30 seconds --&gt;
+&lt;!-- Signpost along the way, i.e. 
+&lt;!-- Say where are we going and where are we up to in the story --&gt;
+
+# Clustered Data
+
+---
+class: center
+
+### Data that can be **grouped**, according to a **hierarchical** structure. 
+
+&lt;img src="./img/Charts-001.png" width="600"&gt;
+
+### _Highest_ level in the hierarchy: Independent **Clusters** ( `\(i\)` )
+
+???
+
+
+
+A natural clustering factor in medical applications and longitudinal studies is the patient level. from which the different observations come. 
+
+
+In this case, the patient, but in general it can be other things, such as hospitals in centre-patient studies. More levels of clustering can be considered.
+---
+class: center
+
+### Modelling `\(\Rightarrow\)` **Mixed Models** (MM)
+
+.content-box-lightgrey[
+`$$\text{Mixed Effects} = \textbf{Fixed Effects} + \color{blue}{\textbf{Random Effects}}$$`
+]
+
+---
+class: center
+
+### Modelling `\(\Rightarrow\)` **Mixed Models** (MM)
+
+.content-box-lightgrey[
+`$$\text{Mixed Effects} = \underbrace{\textbf{Fixed Effects}}_{\mathbf{X}_{i}\mathbf{\beta}} + \underbrace{\color{blue}{\textbf{Random Effects}}}_{\color{blue}{\mathbf{Z}_{i}\mathbf{D}_{\sigma}\mathbf{u}_{i}}}$$`
+]
+
+--
+.pull-left[
+Generalized Linear Mixed Models (**GLMM**)
+
+.content-box-lightgrey[
+`$${\scriptsize \underbrace{\text{link function}}_{g}\underbrace{\left[\mathbb{E}\text{xpected}\left(\textbf{Outcomes}\right)\right]}_{\left[\mathbb{E}\left( \mathbf{Y}_{i} \ \vert \ \mathbf{X}_{i} , \mathbf{u}_{i} \right)\right]} = \mathbf{X}_{i}\mathbf{\beta} + \color{blue}{\mathbf{Z}_{i}\mathbf{D}_{\sigma}\mathbf{u}_{i}}}$$`
+]
+
+.black[Example] Longitudinal **Mixed Logit**: 
+
+.content-box-lightgrey[
+
+`$$\log \frac{p_{ij}}{1-p_{ij}} = \mathbf{x}_{ij}^{T}\mathbf{\beta} + \color{blue}{\sigma_{1} u_{i}}$$`
+]
+]
+
+--
+.pull-right[
+
+Accelerated Failure Time Models (**AFT**)
+
+.content-box-lightgrey[
+
+`$${\scriptsize \text{log}\underbrace{\left(\textbf{Duration}\right)}_{ \mathbf{T}_{i} } = \mathbf{X}_{i}\mathbf{\beta}+\color{blue}{\mathbf{Z}_{i}\mathbf{D}_{\sigma}\mathbf{u}_{i}}+\color{purple}{\phi\mathbf{\varepsilon}_i}}$$`
+]
+
+.black[Example]: **AFT** with **Random Intercept** and **Right-Censoring**
+
+.content-box-lightgrey[
+`\begin{align}
+\log t_{ij}&amp;= \mathbf{x}_{it}^T\mathbf{\beta} + \color{blue}{\sigma_1 u_i} + \phi\varepsilon_{it}\\
+Y_{ij} &amp;= (1-\delta_{ij}) t_{ij}+\delta_{ij} C_{ij}
+\end{align}`
+`\(\delta_{ij}\)`, `\(C_{ij}\)`: censoring **indicators** and **times**
+]
+]
+
+???
+
+For parsimony, the effects of the different levels in this hierarchy are considered as random, this has the added advantage of modelling within-cluster correlations.
+
+Mixed models _link_ the expected outcome with a combination of Fixed Effects and Random effects. 
+
+This combination can be _linear_ yielding the class of generalized Linear Mixed Models. 
+
+---
+class: center, middle
+
+### Likelihood Inference `\(\Rightarrow\)` **(Numerical) Integration** (of `\(\color{\blue}{\mathbf{u}_{i}}\)` )
+
+.content-box-lightgrey[
+`$$\color{red}{\mathcal{L}_i\left(\mathbf{\theta}\right)} = \color{red}{f\left(\mathbf{y}_{i}\right)}$$`
+]
+
+---
+class: center, middle
+
+### Likelihood Inference `\(\Rightarrow\)` **(Numerical) Integration** (of `\(\color{\blue}{\mathbf{u}_{i}}\)` )
+
+.content-box-lightgrey[
+`$$\color{red}{\mathcal{L}_i\left(\mathbf{\theta}\right)} = \color{blue}{\int_{\mathbb{R}^q}} f\left(\mathbf{y}_i, \color{blue}{\mathbf{u}_i}\right) \mathrm{d} \color{blue}{\mathbf{u}_{i}}$$`
+]
+
+???
+
+As with many problems with unobserved random effects, these need to be partialed out by integration from the joint pdf of responses and random effects in order to construct the likelihood. 
+
+---
+class: center, middle
+
+### Likelihood Inference `\(\Rightarrow\)` **(Numerical) Integration** (of `\(\color{\blue}{\mathbf{u}_{i}}\)` )
+
+.content-box-lightgrey[
+`$$\color{red}{\mathcal{L}_i\left(\mathbf{\theta}\right)} = \int_{\mathbb{R}^q} \color{blue}{f\left(\mathbf{y}_i \vert \color{blue}{\mathbf{u}_i}\right)f\left(\color{blue}{\mathbf{u}_i}\right)} \mathrm{d} \mathbf{u}_{i}$$`
+]
+
+
+???
+
+which is the product between the conditional pdf or pmf and random effect density
+---
+class: center, middle
+
+### Likelihood Inference `\(\Rightarrow\)` **(Numerical) Integration** (of `\(\color{\blue}{\mathbf{u}_{i}}\)` )
+
+.content-box-lightgrey[
+`$$\color{red}{\mathcal{L}_i\left(\mathbf{\theta}\right)} =\int_{\mathbb{R}^q} \color{red}{\exp} \left[ \color{blue}{\log f\left(\mathbf{y}_i \vert \color{blue}{\mathbf{u}_i}\right)  + \log  f\left(\color{blue}{\mathbf{u}_i}\right)} \right] \ \mathrm{d}\mathbf{u}_{i}$$`
+]
+
+???
+
+which can be written for convenience as the exponents in the log 
+
+--
+
+### e.g. via the **Laplace Approximation** `\(\rightarrow \color{red}{\tilde{\mathcal{L}}\left(\mathbf{\theta}\right)}\)`.
+---
+class: inverse, center, middle
+
+# Bootstrapping Clustered Data
+
+---
+class: center, middle
+
+### _Classical_ Bootstrap **does not respect the clustering structure**
+
+&lt;img src="./img/Charts-002.png" width="600"&gt;
+
+---
+class: center, middle
+
+### _Cluster_ Bootstrap  **might be limited** by the **number of elements** at each level
+
+
+&lt;img src="./img/Charts-003.png" width="800"&gt;
+---
+class: center, middle
+
+### _Residual_ Bootstrap **struggles** with **random effects** and **link function**
+
+--
+
+.pull-left[
+Easy(-ish) in **Gaussian LMM**
+
+.content-box-lightgrey[
+`$$\mathbf{x}_{ij}^T\widehat{\mathbf{\beta}} + \widehat{\sigma}_1\color{red}{\widehat{u}_{i}^{{\star}}} + \widehat{\phi}\color{red}{\widehat{\varepsilon}_{i}^{{\star}}} \longrightarrow  y_{ij}^{\color{red}{\star}}$$`
+]
+
+&lt;!-- &lt;img src="https://media.giphy.com/media/4JSAfzWfvMN36r1HG1/giphy.gif" style="width: 200px" /&gt; --&gt;
+&lt;img src="https://media.giphy.com/media/1Zp770guwpG5UHONlD/giphy.gif" style="width: 200px" /&gt;
+
+]
+
+--
+.pull-right[
+
+Not that clear **in other cases**
+
+.content-box-lightgrey[
+`$$\mathbf{x}_{ij}^T \widehat{\mathbf{\beta}} + \widehat{\sigma}_1\color{red}{\widehat{u}_{i}^{{\star}}}  \overset{\mathbf{???}}{\rightarrow}
+g(\mathbb{E}[y_{ij}^{\color{red}{\star}}]) 
+\overset{\mathbf{???}}{\rightarrow}
+y_{ij}^{\color{red}{\star}}$$`
+]
+
+&lt;!-- &lt;img src="https://media.giphy.com/media/eNTxLwTGW7E64/giphy.gif" style="width: 200px" /&gt; --&gt;
+
+&lt;img src="https://media.giphy.com/media/l0HlRnAWXxn0MhKLK/giphy.gif" style="width: 200px" /&gt;
+
+]
+
+---
+class: center, middle
+
+&lt;!-- &lt;img src="./img/meme-lisapresenting.png" width="600"&gt; --&gt;
+
+### _Parametric_ Bootstrap is the only **feasible** and **convenient** alternative 
+
+???
+
+At this point in the talk it appears that Parametric Bootstrap (approach based on simulations) is the only feasible and convenient alternative 
+
+---
+class: inverse, center, middle
+
+# Bootstrapping Clustered Data via a Weighted Laplace Approximation* 
+
+???
+
+That said, it also help us segue into the title of the talk
+
+--
+
+(*yup! Our proposal!)
+
+???
+
+What is it that we propose?
+
+---
+class: dark, center, middle
+
+
+
+## Random Weighted Laplace Bootstrap (RWLB)
+
+--
+
+### **General** scheme relying on **externally generated _Random Weights_**
+
+---
+
+# RWLB Algorithm
+
+### 1. **Generate _Random Weights_**  `\({\color{red}{w_{i}^{*}}}\)`
+--
+
+### 2. **Apply** to `\(\color{blue}{f(\mathbf{y}_i,\mathbf{u}_i)}\)` 
+--
+
+### 3. **Evaluate via the _Laplace Approximation_** `\({\color{red}{\tilde{\mathcal{L}}_{i}^{*}}}\)`  
+--
+
+### 4. Optimize
+--
+...
+--
+
+### 5. Profit! 
+---
+
+# (Some) Details
+
+### 1. **Generate _Random Weights_**  `\({\color{red}{w_{i}^{*}}}\)`
+
+.content-box-lightgrey[
+`$$\mathbb{E}\left[{\color{red}{w^{*}_{i}}}\right] = \mathbb{V}ar\left[{\color{red}{w^{*}_{i}}}\right]=1 \qquad \text{e.g. } \mathcal{E}(1)$$`
+]
+
+--
+
+### 2. **Apply** to `\(\color{blue}{f(\mathbf{y}_i,\mathbf{u}_i)}\)` 
+
+.content-box-lightgrey[
+`$$\mathcal{L}_i^{*} \left(\mathbf{\theta}\right) = 
+\int_{\mathbb{R}^q} 
+\exp \left\{- \left[ - {\color{red}{w_{i}^{*}}} 
+\color{blue}{\log f\left(\mathbf{y}_i \vert \mathbf{u}_i\right)}  - 
+{\color{red}{w_{i}^{*}}} \log f\left(\color{blue}{\mathbf{u}_i}\right)\right] \right\}   \mathrm{d}\mathbf{u}_{i}$$`
+]
+
+--
+
+### 3.(4. and 5.)  **Evaluate** : Package `TMB` (`C++` Templates and `R`)
+
+---
+class: inverse, center, middle
+
+# (Some) Properties
+
+---
+class: dark, center, middle
+
+# The Good &lt;svg viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg" style="height:1em;fill:currentColor;position:relative;display:inline-block;top:.1em;"&gt;  [ comment ]  &lt;path d="M466.27 286.69C475.04 271.84 480 256 480 236.85c0-44.015-37.218-85.58-85.82-85.58H357.7c4.92-12.81 8.85-28.13 8.85-46.54C366.55 31.936 328.86 0 271.28 0c-61.607 0-58.093 94.933-71.76 108.6-22.747 22.747-49.615 66.447-68.76 83.4H32c-17.673 0-32 14.327-32 32v240c0 17.673 14.327 32 32 32h64c14.893 0 27.408-10.174 30.978-23.95 44.509 1.001 75.06 39.94 177.802 39.94 7.22 0 15.22.01 22.22.01 77.117 0 111.986-39.423 112.94-95.33 13.319-18.425 20.299-43.122 17.34-66.99 9.854-18.452 13.664-40.343 8.99-62.99zm-61.75 53.83c12.56 21.13 1.26 49.41-13.94 57.57 7.7 48.78-17.608 65.9-53.12 65.9h-37.82c-71.639 0-118.029-37.82-171.64-37.82V240h10.92c28.36 0 67.98-70.89 94.54-97.46 28.36-28.36 18.91-75.63 37.82-94.54 47.27 0 47.27 32.98 47.27 56.73 0 39.17-28.36 56.72-28.36 94.54h103.99c21.11 0 37.73 18.91 37.82 37.82.09 18.9-12.82 37.81-22.27 37.81 13.489 14.555 16.371 45.236-5.21 65.62zM88 432c0 13.255-10.745 24-24 24s-24-10.745-24-24 10.745-24 24-24 24 10.745 24 24z"&gt;&lt;/path&gt;&lt;/svg&gt;
+
+![](https://media.giphy.com/media/RXXTZtYKTubiU/giphy.gif)
+
+---
+class: middle
+
+# &lt;svg viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg" style="height:1em;fill:currentColor;position:relative;display:inline-block;top:.1em;"&gt;  [ comment ]  &lt;path d="M466.27 286.69C475.04 271.84 480 256 480 236.85c0-44.015-37.218-85.58-85.82-85.58H357.7c4.92-12.81 8.85-28.13 8.85-46.54C366.55 31.936 328.86 0 271.28 0c-61.607 0-58.093 94.933-71.76 108.6-22.747 22.747-49.615 66.447-68.76 83.4H32c-17.673 0-32 14.327-32 32v240c0 17.673 14.327 32 32 32h64c14.893 0 27.408-10.174 30.978-23.95 44.509 1.001 75.06 39.94 177.802 39.94 7.22 0 15.22.01 22.22.01 77.117 0 111.986-39.423 112.94-95.33 13.319-18.425 20.299-43.122 17.34-66.99 9.854-18.452 13.664-40.343 8.99-62.99zm-61.75 53.83c12.56 21.13 1.26 49.41-13.94 57.57 7.7 48.78-17.608 65.9-53.12 65.9h-37.82c-71.639 0-118.029-37.82-171.64-37.82V240h10.92c28.36 0 67.98-70.89 94.54-97.46 28.36-28.36 18.91-75.63 37.82-94.54 47.27 0 47.27 32.98 47.27 56.73 0 39.17-28.36 56.72-28.36 94.54h103.99c21.11 0 37.73 18.91 37.82 37.82.09 18.9-12.82 37.81-22.27 37.81 13.489 14.555 16.371 45.236-5.21 65.62zM88 432c0 13.255-10.745 24-24 24s-24-10.745-24-24 10.745-24 24-24 24 10.745 24 24z"&gt;&lt;/path&gt;&lt;/svg&gt; Flexible
+
+--
+
+## Can be applied to **a wide variety of Mixed Models**
+
+--
+
+### &lt;svg viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg" style="height:1em;fill:currentColor;position:relative;display:inline-block;top:.1em;"&gt;  [ comment ]  &lt;path d="M256 8c137 0 248 111 248 248S393 504 256 504 8 393 8 256 119 8 256 8zm-28.9 143.6l75.5 72.4H120c-13.3 0-24 10.7-24 24v16c0 13.3 10.7 24 24 24h182.6l-75.5 72.4c-9.7 9.3-9.9 24.8-.4 34.3l11 10.9c9.4 9.4 24.6 9.4 33.9 0L404.3 273c9.4-9.4 9.4-24.6 0-33.9L271.6 106.3c-9.4-9.4-24.6-9.4-33.9 0l-11 10.9c-9.5 9.6-9.3 25.1.4 34.4z"&gt;&lt;/path&gt;&lt;/svg&gt; Can deal with **Non-Gaussian Responses** and **Censored Data**
+  
+### &lt;svg viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg" style="height:1em;fill:currentColor;position:relative;display:inline-block;top:.1em;"&gt;  [ comment ]  &lt;path d="M256 8c137 0 248 111 248 248S393 504 256 504 8 393 8 256 119 8 256 8zm-28.9 143.6l75.5 72.4H120c-13.3 0-24 10.7-24 24v16c0 13.3 10.7 24 24 24h182.6l-75.5 72.4c-9.7 9.3-9.9 24.8-.4 34.3l11 10.9c9.4 9.4 24.6 9.4 33.9 0L404.3 273c9.4-9.4 9.4-24.6 0-33.9L271.6 106.3c-9.4-9.4-24.6-9.4-33.9 0l-11 10.9c-9.5 9.6-9.3 25.1.4 34.4z"&gt;&lt;/path&gt;&lt;/svg&gt; Software **implementation is straightforward**
+
+---
+### &lt;svg viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg" style="height:1em;fill:currentColor;position:relative;display:inline-block;top:.1em;"&gt;  [ comment ]  &lt;path d="M466.27 286.69C475.04 271.84 480 256 480 236.85c0-44.015-37.218-85.58-85.82-85.58H357.7c4.92-12.81 8.85-28.13 8.85-46.54C366.55 31.936 328.86 0 271.28 0c-61.607 0-58.093 94.933-71.76 108.6-22.747 22.747-49.615 66.447-68.76 83.4H32c-17.673 0-32 14.327-32 32v240c0 17.673 14.327 32 32 32h64c14.893 0 27.408-10.174 30.978-23.95 44.509 1.001 75.06 39.94 177.802 39.94 7.22 0 15.22.01 22.22.01 77.117 0 111.986-39.423 112.94-95.33 13.319-18.425 20.299-43.122 17.34-66.99 9.854-18.452 13.664-40.343 8.99-62.99zm-61.75 53.83c12.56 21.13 1.26 49.41-13.94 57.57 7.7 48.78-17.608 65.9-53.12 65.9h-37.82c-71.639 0-118.029-37.82-171.64-37.82V240h10.92c28.36 0 67.98-70.89 94.54-97.46 28.36-28.36 18.91-75.63 37.82-94.54 47.27 0 47.27 32.98 47.27 56.73 0 39.17-28.36 56.72-28.36 94.54h103.99c21.11 0 37.73 18.91 37.82 37.82.09 18.9-12.82 37.81-22.27 37.81 13.489 14.555 16.371 45.236-5.21 65.62zM88 432c0 13.255-10.745 24-24 24s-24-10.745-24-24 10.745-24 24-24 24 10.745 24 24z"&gt;&lt;/path&gt;&lt;/svg&gt; Flexible
+
+.content-box-lightgrey[
+`$$\mathcal{L}_i^{*} \left(\mathbf{\theta}\right) = 
+\int_{\mathbb{R}^q} 
+\exp \left\{- \left[ - {\color{red}{w_{i}^{*}}} 
+\color{blue}{\log f\left(\mathbf{y}_i \vert \mathbf{u}_i\right)}  - 
+{\color{red}{w_{i}^{*}}} \log f\left(\color{blue}{\mathbf{u}_i}\right)\right] \right\}   \mathrm{d}\mathbf{u}_{i}$$`
+]
+
+--
+
+.black[Example:] **Mixed Logit**
+
+.tothe-left[
+`template.cpp`: application of `\(\color{red}{w_i^{*}}\)`
+
+```c
+...
+for(int j=0;j&lt;ngroups;j++){
+* res-= w[j]*dnorm(u[j], Type(0) ,sigma,1); 
+}
+
+for(int i=0;i&lt;nobs;i++){
+  j=group[i];
+* res-= w[j]*dbinom(y[i],Type(1),Type(1/(1+exp(-mu[i]-u[j]))),1);
+}
+...
+```
+]
+--
+.tothe-right[
+
+`estimation.R`: Approximation and `\(\mathcal{L}(\mathbf{\theta})\)`
+```r
+...
+# Compilation
+* compile("template.cpp")
+
+# Loading to the Environment
+dyn.load(dynlib("template")) 
+
+# AD Object creation
+obj &lt;- MakeADFun(data=data,
+                 parameters=parameters,
+                 random="u",
+                 DLL="template"
+                 )
+# Optimisation                  
+opt &lt;-nlminb(obj$par, obj$fn, obj$gr)
+...
+```
+]
+
+---
+class: middle
+
+# &lt;svg viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg" style="height:1em;fill:currentColor;position:relative;display:inline-block;top:.1em;"&gt;  [ comment ]  &lt;path d="M466.27 286.69C475.04 271.84 480 256 480 236.85c0-44.015-37.218-85.58-85.82-85.58H357.7c4.92-12.81 8.85-28.13 8.85-46.54C366.55 31.936 328.86 0 271.28 0c-61.607 0-58.093 94.933-71.76 108.6-22.747 22.747-49.615 66.447-68.76 83.4H32c-17.673 0-32 14.327-32 32v240c0 17.673 14.327 32 32 32h64c14.893 0 27.408-10.174 30.978-23.95 44.509 1.001 75.06 39.94 177.802 39.94 7.22 0 15.22.01 22.22.01 77.117 0 111.986-39.423 112.94-95.33 13.319-18.425 20.299-43.122 17.34-66.99 9.854-18.452 13.664-40.343 8.99-62.99zm-61.75 53.83c12.56 21.13 1.26 49.41-13.94 57.57 7.7 48.78-17.608 65.9-53.12 65.9h-37.82c-71.639 0-118.029-37.82-171.64-37.82V240h10.92c28.36 0 67.98-70.89 94.54-97.46 28.36-28.36 18.91-75.63 37.82-94.54 47.27 0 47.27 32.98 47.27 56.73 0 39.17-28.36 56.72-28.36 94.54h103.99c21.11 0 37.73 18.91 37.82 37.82.09 18.9-12.82 37.81-22.27 37.81 13.489 14.555 16.371 45.236-5.21 65.62zM88 432c0 13.255-10.745 24-24 24s-24-10.745-24-24 10.745-24 24-24 24 10.745 24 24z"&gt;&lt;/path&gt;&lt;/svg&gt; Correct
+
+--
+
+## **Good approximation** of the **Asymptotic Distribution**
+
+--
+
+### &lt;svg viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg" style="height:1em;fill:currentColor;position:relative;display:inline-block;top:.1em;"&gt;  [ comment ]  &lt;path d="M256 8c137 0 248 111 248 248S393 504 256 504 8 393 8 256 119 8 256 8zm-28.9 143.6l75.5 72.4H120c-13.3 0-24 10.7-24 24v16c0 13.3 10.7 24 24 24h182.6l-75.5 72.4c-9.7 9.3-9.9 24.8-.4 34.3l11 10.9c9.4 9.4 24.6 9.4 33.9 0L404.3 273c9.4-9.4 9.4-24.6 0-33.9L271.6 106.3c-9.4-9.4-24.6-9.4-33.9 0l-11 10.9c-9.5 9.6-9.3 25.1.4 34.4z"&gt;&lt;/path&gt;&lt;/svg&gt; `\(\sqrt{n} \left(\widehat{\mathbf{\beta}}^{*} - \widehat{\beta}\right)\)` is &lt;svg viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg" style="height:1em;fill:currentColor;position:relative;display:inline-block;top:.1em;"&gt;  [ comment ]  &lt;path d="M173.898 439.404l-166.4-166.4c-9.997-9.997-9.997-26.206 0-36.204l36.203-36.204c9.997-9.998 26.207-9.998 36.204 0L192 312.69 432.095 72.596c9.997-9.997 26.207-9.997 36.204 0l36.203 36.204c9.997 9.997 9.997 26.206 0 36.204l-294.4 294.401c-9.998 9.997-26.207 9.997-36.204-.001z"&gt;&lt;/path&gt;&lt;/svg&gt;
+
+--
+
+### &lt;svg viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg" style="height:1em;fill:currentColor;position:relative;display:inline-block;top:.1em;"&gt;  [ comment ]  &lt;path d="M256 8c137 0 248 111 248 248S393 504 256 504 8 393 8 256 119 8 256 8zm-28.9 143.6l75.5 72.4H120c-13.3 0-24 10.7-24 24v16c0 13.3 10.7 24 24 24h182.6l-75.5 72.4c-9.7 9.3-9.9 24.8-.4 34.3l11 10.9c9.4 9.4 24.6 9.4 33.9 0L404.3 273c9.4-9.4 9.4-24.6 0-33.9L271.6 106.3c-9.4-9.4-24.6-9.4-33.9 0l-11 10.9c-9.5 9.6-9.3 25.1.4 34.4z"&gt;&lt;/path&gt;&lt;/svg&gt;  `\(\sqrt{n} \left(\widehat{\mathbf{\sigma}}^{*} - \widehat{\sigma}\right)\)` is &lt;svg viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg" style="height:1em;fill:currentColor;position:relative;display:inline-block;top:.1em;"&gt;  [ comment ]  &lt;path d="M256 8C119.033 8 8 119.033 8 256s111.033 248 248 248 248-111.033 248-248S392.967 8 256 8zm0 48c110.532 0 200 89.451 200 200 0 110.532-89.451 200-200 200-110.532 0-200-89.451-200-200 0-110.532 89.451-200 200-200m140.204 130.267l-22.536-22.718c-4.667-4.705-12.265-4.736-16.97-.068L215.346 303.697l-59.792-60.277c-4.667-4.705-12.265-4.736-16.97-.069l-22.719 22.536c-4.705 4.667-4.736 12.265-.068 16.971l90.781 91.516c4.667 4.705 12.265 4.736 16.97.068l172.589-171.204c4.704-4.668 4.734-12.266.067-16.971z"&gt;&lt;/path&gt;&lt;/svg&gt; 
+
+---
+class: dark, middle, center 
+
+# Simulations
+--
+
+# 1. **Mixed Logit** 
+---
+
+### Simulation: **Mixed Logit**
+
+- **Parameters** :  .black[4 Fixed Effects] ( `\(\beta_k\)` ) and .black[1 Random intercept] ( `\(\sigma_1\)` )
+
+- **Number of Simulations**: 1000 with `\(B=1000\)` **Bootstrap Replicates** 
+- **Studied methods**: .green[RWLB] vs .red[Parametric Bootstrap (PB)]
+
+- **Cluster size** ( `\(n_i\)` ): **7** and **21**
+
+- **Number of clusters** ( `\(n\)` ): **300** and **600**
+
+--
+
+#### .black[Q-Q plots]: _Average_ **Bootstrap** replicates vs. **Empirical** Distributions 
+
+.content-box-lightgrey[
+`$$\sqrt{n}\left(\widehat{\beta}_{k}^{*}-\widehat{\beta}_{k}\right) \ \  \text{vs.} \ \ \sqrt{n}\left(\widehat{\beta}_{k} - \beta_{k}\right)
+\qquad \sqrt{n} \left(\widehat{\sigma}_1^{*} - \widehat{\sigma}_{1}\right) \ \ \text{vs.} \ \ \sqrt{n} \left(\widehat{\sigma}_{1} - \sigma_1\right)$$`
+]
+
+???
+
+To illustrate these points, let me show you a comparison of the Mean Bootstrap distribution vs. the empirical by means of qq-plots
+
+---
+class: center
+
+
+
+
+
+
+
+
+
+
+###  Fixed Effect Parameters `\(\beta_k\)`
+**Number of clusters** `\(n = 300\)`
+.pull-left[
+**Cluster size** `\(n_i= 7\)`
+
+]
+
+???
+
+As we have said at the introduction of this section, the approximation of the bootstrap to the asymptotic distribution is very correct as shown by the alignment of the green lines over the identiy line.
+
+This is valid accross 
+
+--
+
+.pull-right[
+**Cluster size** `\(n_i = 21\)`
+
+]
+
+---
+class: center
+
+### Random Effect Variance `\(\sigma_1^{2}\)`
+
+**Cluster size** `\(n_{i} = 7\)`
+.pull-left[
+**Number of Clusters:** `\(n = 300\)`
+
+]
+
+.pull-right[
+**Number of Clusters:** `\(n = 600\)`
+
+]
+
+---
+class: center
+
+### Random Effect Variance `\(\sigma_{1}^{2}\)`
+**Cluster size** `\(n_{i} = 14\)`
+.pull-left[
+**Number of Clusters:** `\(n = 300\)`
+
+]
+
+.pull-right[
+**Number of Clusters:** `\(n = 600\)`
+
+]
+
+---
+class: center
+
+### Random Effect Variance `\(\sigma_{1}^{2}\)`
+**Cluster size** `\(n_{i} = 21\)`
+
+
+.pull-left[
+**Number of Clusters:** `\(n = 300\)`
+
+]
+
+.pull-right[
+**Number of Clusters:** `\(n = 600\)`
+
+]
+---
+class: center
+
+### Coverage Ratios 
+
+
+
+
+
+
+---
+class: center
+
+### Coverage Ratios 
+
+
+---
+class: center
+
+### Coverage Ratios 
+
+
+---
+class: dark, middle, center 
+
+# Simulations
+--
+
+# 2. **Log-Normal AFT** 
+---
+### Simulated **Log-Normal AFT**
+
+- **Parameters**: 4 Fixed Effects ( `\(\beta_k\)` ), 1 Random intercept ( `\(\sigma_1\)` ) and a Scale ( `\(\phi\)` ) 
+- Number of Simulations: 1000 with `\(B=1000\)` Bootstrap Replicates
+
+- **Studied methods**: .green[RWLB] vs .pink[Asymptotic based on the Laplace-Approximated Likelihood] 
+
+- **Cluster sizes ( `\(n_i\)` )**: 4, 10, 20, 50
+
+- **Number of clusters ( `\(n\)` )**: 20, 50, 100, 200 
+
+- **Degree of censoring**:  0% and 23%
+
+- **Signal-to-noise Ratio** `\(\displaystyle \frac{\sigma_{1}}{\phi} = 1/0.5 = 2\)`
+--
+
+####  .black[Box-Plots]: Small-sample Bias Correction of `\(\widehat{\sigma_1}\)`
+
+.content-box-lightgrey[
+`$$\widehat{\sigma}_1^{\text{BC}} = \widehat{\sigma}_1^{\text{ML}} - \frac{1}{B}\sum_{b=1}^B\left[ \color{forestgreen}{\widehat{\sigma}^{*}_{1}} -  \widehat{\sigma}_1^{\text{ML}}\right]$$`
+]
+
+
+---
+class: center
+
+### Boxplots of `\(\widehat{\sigma}_1\)`
+
+
+
+
+
+
+
+---
+class: center
+
+### Boxplots of `\(\widehat{\sigma}_1\)`
+
+
+
+
+---
+class: center
+
+### Boxplots of `\(\widehat{\phi}\)`
+
+
+
+---
+class: center
+
+### Boxplots of `\(\widehat{\phi}\)`
+
+
+---
+class: dark, center, middle
+
+# The 'meh' &lt;svg viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg" style="height:1em;fill:currentColor;position:relative;display:inline-block;top:.1em;"&gt;  [ comment ]  &lt;path d="M466.27 225.31c4.674-22.647.864-44.538-8.99-62.99 2.958-23.868-4.021-48.565-17.34-66.99C438.986 39.423 404.117 0 327 0c-7 0-15 .01-22.22.01C201.195.01 168.997 40 128 40h-10.845c-5.64-4.975-13.042-8-21.155-8H32C14.327 32 0 46.327 0 64v240c0 17.673 14.327 32 32 32h64c11.842 0 22.175-6.438 27.708-16h7.052c19.146 16.953 46.013 60.653 68.76 83.4 13.667 13.667 10.153 108.6 71.76 108.6 57.58 0 95.27-31.936 95.27-104.73 0-18.41-3.93-33.73-8.85-46.54h36.48c48.602 0 85.82-41.565 85.82-85.58 0-19.15-4.96-34.99-13.73-49.84zM64 296c-13.255 0-24-10.745-24-24s10.745-24 24-24 24 10.745 24 24-10.745 24-24 24zm330.18 16.73H290.19c0 37.82 28.36 55.37 28.36 94.54 0 23.75 0 56.73-47.27 56.73-18.91-18.91-9.46-66.18-37.82-94.54C206.9 342.89 167.28 272 138.92 272H128V85.83c53.611 0 100.001-37.82 171.64-37.82h37.82c35.512 0 60.82 17.12 53.12 65.9 15.2 8.16 26.5 36.44 13.94 57.57 21.581 20.384 18.699 51.065 5.21 65.62 9.45 0 22.36 18.91 22.27 37.81-.09 18.91-16.71 37.82-37.82 37.82z"&gt;&lt;/path&gt;&lt;/svg&gt;
+
+![](https://media.giphy.com/media/QC5jE83f3tBCg/giphy.gif)
+
+---
+# Some Caveats
+
+### &lt;svg viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg" style="height:1em;fill:currentColor;position:relative;display:inline-block;top:.1em;"&gt;  [ comment ]  &lt;path d="M466.27 225.31c4.674-22.647.864-44.538-8.99-62.99 2.958-23.868-4.021-48.565-17.34-66.99C438.986 39.423 404.117 0 327 0c-7 0-15 .01-22.22.01C201.195.01 168.997 40 128 40h-10.845c-5.64-4.975-13.042-8-21.155-8H32C14.327 32 0 46.327 0 64v240c0 17.673 14.327 32 32 32h64c11.842 0 22.175-6.438 27.708-16h7.052c19.146 16.953 46.013 60.653 68.76 83.4 13.667 13.667 10.153 108.6 71.76 108.6 57.58 0 95.27-31.936 95.27-104.73 0-18.41-3.93-33.73-8.85-46.54h36.48c48.602 0 85.82-41.565 85.82-85.58 0-19.15-4.96-34.99-13.73-49.84zM64 296c-13.255 0-24-10.745-24-24s10.745-24 24-24 24 10.745 24 24-10.745 24-24 24zm330.18 16.73H290.19c0 37.82 28.36 55.37 28.36 94.54 0 23.75 0 56.73-47.27 56.73-18.91-18.91-9.46-66.18-37.82-94.54C206.9 342.89 167.28 272 138.92 272H128V85.83c53.611 0 100.001-37.82 171.64-37.82h37.82c35.512 0 60.82 17.12 53.12 65.9 15.2 8.16 26.5 36.44 13.94 57.57 21.581 20.384 18.699 51.065 5.21 65.62 9.45 0 22.36 18.91 22.27 37.81-.09 18.91-16.71 37.82-37.82 37.82z"&gt;&lt;/path&gt;&lt;/svg&gt; Can be **unstable** in **extreme Cases**
+
+--
+
+- RWLB is tributary to the quality of the estimation method.
+
+    - **Cluster Size** is **too small** and/or
+
+    - **Signal-to-noise** ratio is **weak** 
+
+---
+class: center
+
+### Simulated AFT - `\(\widehat{\sigma}_1\)` : Same as before
+
+
+
+---
+class: center
+
+### Simulated AFT - `\(\widehat{\sigma}_1\)` : **s-t-n = 1**
+
+
+---
+class: center
+
+### Simulated AFT - `\(\widehat{\sigma}_1\)` : **s-t-n = 0.4**
+
+
+
+
+---
+class: center
+
+### Simulated AFT - `\(\widehat{\sigma}_1\)` : **s-t-n = 0.4, `\(n_{i}=2\)`**
+
+
+
+---
+# Some Caveats
+
+### &lt;svg viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg" style="height:1em;fill:currentColor;position:relative;display:inline-block;top:.1em;"&gt;  [ comment ]  &lt;path d="M466.27 225.31c4.674-22.647.864-44.538-8.99-62.99 2.958-23.868-4.021-48.565-17.34-66.99C438.986 39.423 404.117 0 327 0c-7 0-15 .01-22.22.01C201.195.01 168.997 40 128 40h-10.845c-5.64-4.975-13.042-8-21.155-8H32C14.327 32 0 46.327 0 64v240c0 17.673 14.327 32 32 32h64c11.842 0 22.175-6.438 27.708-16h7.052c19.146 16.953 46.013 60.653 68.76 83.4 13.667 13.667 10.153 108.6 71.76 108.6 57.58 0 95.27-31.936 95.27-104.73 0-18.41-3.93-33.73-8.85-46.54h36.48c48.602 0 85.82-41.565 85.82-85.58 0-19.15-4.96-34.99-13.73-49.84zM64 296c-13.255 0-24-10.745-24-24s10.745-24 24-24 24 10.745 24 24-10.745 24-24 24zm330.18 16.73H290.19c0 37.82 28.36 55.37 28.36 94.54 0 23.75 0 56.73-47.27 56.73-18.91-18.91-9.46-66.18-37.82-94.54C206.9 342.89 167.28 272 138.92 272H128V85.83c53.611 0 100.001-37.82 171.64-37.82h37.82c35.512 0 60.82 17.12 53.12 65.9 15.2 8.16 26.5 36.44 13.94 57.57 21.581 20.384 18.699 51.065 5.21 65.62 9.45 0 22.36 18.91 22.27 37.81-.09 18.91-16.71 37.82-37.82 37.82z"&gt;&lt;/path&gt;&lt;/svg&gt; **Variance** of some `\(\widehat{\mathbf{\sigma}}^{*}\)`  **differs slightly** from the asymptotic.
+
+- Divergence **Depends on the relationship between**:  
+    
+    - **Marginal Variance** of the Observations  `\(\mathbb{V}ar(\mathbf{Y}_i) = \mathbf{\Sigma}_{i}\)`: and 
+    
+    - **Contrasts of the Random Effects**:  `\(\mathbf{Z}_{i}\)` 
+
+--
+
+- **In LMM**, this is _easy-ish_ to figure out.
+  
+    - Relationship **governed by** `\(\text{tr}(\mathbf{\Sigma}_{i}^{-1}\mathbf{Z}_{i}\mathbf{Z}_{i}^{T})\)`
+
+    - **"Fuller" designs**, e.g. *Random Intercept*  `\(\mathbf{Z}_{ir} = \mathbb{1}_{n_{i}}\)` and *Slope*  `\(\mathbf{Z}_{ir} = \mathbf{x}^{(k)}_{i}\)` seem less affected. 
+    
+    - **"Sparser"" designs** e.g. the *Random Error* `\(\varepsilon\)` with `\(\mathbf{Z}_{i0} = \mathbf{I}_{n_{i}}\)` seem to be **most divergent**.
+    
+    - Possible **fix**: increases in `\(n_i\)`. 
+    
+---
+class: inverse, center, middle
+
+# Discussion and Current Work
+
+---
+
+# Discussion
+
+### RWLB has good properties as a bootstrapping method.
+
+--
+
+- &lt;svg viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg" style="height:1em;fill:currentColor;position:relative;display:inline-block;top:.1em;"&gt;  [ comment ]  &lt;path d="M466.27 286.69C475.04 271.84 480 256 480 236.85c0-44.015-37.218-85.58-85.82-85.58H357.7c4.92-12.81 8.85-28.13 8.85-46.54C366.55 31.936 328.86 0 271.28 0c-61.607 0-58.093 94.933-71.76 108.6-22.747 22.747-49.615 66.447-68.76 83.4H32c-17.673 0-32 14.327-32 32v240c0 17.673 14.327 32 32 32h64c14.893 0 27.408-10.174 30.978-23.95 44.509 1.001 75.06 39.94 177.802 39.94 7.22 0 15.22.01 22.22.01 77.117 0 111.986-39.423 112.94-95.33 13.319-18.425 20.299-43.122 17.34-66.99 9.854-18.452 13.664-40.343 8.99-62.99zm-61.75 53.83c12.56 21.13 1.26 49.41-13.94 57.57 7.7 48.78-17.608 65.9-53.12 65.9h-37.82c-71.639 0-118.029-37.82-171.64-37.82V240h10.92c28.36 0 67.98-70.89 94.54-97.46 28.36-28.36 18.91-75.63 37.82-94.54 47.27 0 47.27 32.98 47.27 56.73 0 39.17-28.36 56.72-28.36 94.54h103.99c21.11 0 37.73 18.91 37.82 37.82.09 18.9-12.82 37.81-22.27 37.81 13.489 14.555 16.371 45.236-5.21 65.62zM88 432c0 13.255-10.745 24-24 24s-24-10.745-24-24 10.745-24 24-24 24 10.745 24 24z"&gt;&lt;/path&gt;&lt;/svg&gt; **Flexible** to be applied in many fields.
+
+- &lt;svg viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg" style="height:1em;fill:currentColor;position:relative;display:inline-block;top:.1em;"&gt;  [ comment ]  &lt;path d="M466.27 286.69C475.04 271.84 480 256 480 236.85c0-44.015-37.218-85.58-85.82-85.58H357.7c4.92-12.81 8.85-28.13 8.85-46.54C366.55 31.936 328.86 0 271.28 0c-61.607 0-58.093 94.933-71.76 108.6-22.747 22.747-49.615 66.447-68.76 83.4H32c-17.673 0-32 14.327-32 32v240c0 17.673 14.327 32 32 32h64c14.893 0 27.408-10.174 30.978-23.95 44.509 1.001 75.06 39.94 177.802 39.94 7.22 0 15.22.01 22.22.01 77.117 0 111.986-39.423 112.94-95.33 13.319-18.425 20.299-43.122 17.34-66.99 9.854-18.452 13.664-40.343 8.99-62.99zm-61.75 53.83c12.56 21.13 1.26 49.41-13.94 57.57 7.7 48.78-17.608 65.9-53.12 65.9h-37.82c-71.639 0-118.029-37.82-171.64-37.82V240h10.92c28.36 0 67.98-70.89 94.54-97.46 28.36-28.36 18.91-75.63 37.82-94.54 47.27 0 47.27 32.98 47.27 56.73 0 39.17-28.36 56.72-28.36 94.54h103.99c21.11 0 37.73 18.91 37.82 37.82.09 18.9-12.82 37.81-22.27 37.81 13.489 14.555 16.371 45.236-5.21 65.62zM88 432c0 13.255-10.745 24-24 24s-24-10.745-24-24 10.745-24 24-24 24 10.745 24 24z"&gt;&lt;/path&gt;&lt;/svg&gt; **Correct** to provide good inference.
+
+--
+
+### RWLB has a few drawbacks.
+
+- &lt;svg viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg" style="height:1em;fill:currentColor;position:relative;display:inline-block;top:.1em;"&gt;  [ comment ]  &lt;path d="M466.27 225.31c4.674-22.647.864-44.538-8.99-62.99 2.958-23.868-4.021-48.565-17.34-66.99C438.986 39.423 404.117 0 327 0c-7 0-15 .01-22.22.01C201.195.01 168.997 40 128 40h-10.845c-5.64-4.975-13.042-8-21.155-8H32C14.327 32 0 46.327 0 64v240c0 17.673 14.327 32 32 32h64c11.842 0 22.175-6.438 27.708-16h7.052c19.146 16.953 46.013 60.653 68.76 83.4 13.667 13.667 10.153 108.6 71.76 108.6 57.58 0 95.27-31.936 95.27-104.73 0-18.41-3.93-33.73-8.85-46.54h36.48c48.602 0 85.82-41.565 85.82-85.58 0-19.15-4.96-34.99-13.73-49.84zM64 296c-13.255 0-24-10.745-24-24s10.745-24 24-24 24 10.745 24 24-10.745 24-24 24zm330.18 16.73H290.19c0 37.82 28.36 55.37 28.36 94.54 0 23.75 0 56.73-47.27 56.73-18.91-18.91-9.46-66.18-37.82-94.54C206.9 342.89 167.28 272 138.92 272H128V85.83c53.611 0 100.001-37.82 171.64-37.82h37.82c35.512 0 60.82 17.12 53.12 65.9 15.2 8.16 26.5 36.44 13.94 57.57 21.581 20.384 18.699 51.065 5.21 65.62 9.45 0 22.36 18.91 22.27 37.81-.09 18.91-16.71 37.82-37.82 37.82z"&gt;&lt;/path&gt;&lt;/svg&gt; **settings** where it appears to fail
+
+- &lt;svg viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg" style="height:1em;fill:currentColor;position:relative;display:inline-block;top:.1em;"&gt;  [ comment ]  &lt;path d="M466.27 225.31c4.674-22.647.864-44.538-8.99-62.99 2.958-23.868-4.021-48.565-17.34-66.99C438.986 39.423 404.117 0 327 0c-7 0-15 .01-22.22.01C201.195.01 168.997 40 128 40h-10.845c-5.64-4.975-13.042-8-21.155-8H32C14.327 32 0 46.327 0 64v240c0 17.673 14.327 32 32 32h64c11.842 0 22.175-6.438 27.708-16h7.052c19.146 16.953 46.013 60.653 68.76 83.4 13.667 13.667 10.153 108.6 71.76 108.6 57.58 0 95.27-31.936 95.27-104.73 0-18.41-3.93-33.73-8.85-46.54h36.48c48.602 0 85.82-41.565 85.82-85.58 0-19.15-4.96-34.99-13.73-49.84zM64 296c-13.255 0-24-10.745-24-24s10.745-24 24-24 24 10.745 24 24-10.745 24-24 24zm330.18 16.73H290.19c0 37.82 28.36 55.37 28.36 94.54 0 23.75 0 56.73-47.27 56.73-18.91-18.91-9.46-66.18-37.82-94.54C206.9 342.89 167.28 272 138.92 272H128V85.83c53.611 0 100.001-37.82 171.64-37.82h37.82c35.512 0 60.82 17.12 53.12 65.9 15.2 8.16 26.5 36.44 13.94 57.57 21.581 20.384 18.699 51.065 5.21 65.62 9.45 0 22.36 18.91 22.27 37.81-.09 18.91-16.71 37.82-37.82 37.82z"&gt;&lt;/path&gt;&lt;/svg&gt; **improvements** to its estimation of variability. 
+
+---
+
+# Current Work
+
+#### 1. Data applications 
+
+- Time-to-failure studies on patients submitting to dialysis under two different treatments.
+
+--
+
+#### 2. Further software implementation of estimation methods in AFT
+
+
+- Software tool allowing for flexible estimation of AFT models for Clustered Data (different distributions for durations and Random effects)
+
+- Bootstrapping via RWLB is intended as a feature. 
+
+--
+
+#### 3. Improvements
+
+- REML-like-based estimation method and its effects on variance and bias. 
+
+---
+
+# References (and Associated Publications) 
+
+F-A, Cantoni (2020),  **Bootstrapping generalized linear mixed models via a weighted Laplace approximation**, 
+
+- _Under Review_
+
+F-A, Cantoni (2019), **Bootstrap estimation of uncertainty in prediction for generalized linear mixed models**, 
+
+- _Computational Statistics &amp; Data Analysis_, Volume 130, 2019, Pages 1-17 &lt;svg xmlns="http://www.w3.org/2000/svg" style="height:1em;fill:currentColor;position:relative;display:inline-block;top:.1em;"&gt;  &lt;path transform="scale(1,-1) translate(0,-448)" d="M115.593 225.492l-0.000976563 0.000976562c8.73145 0 19.917 -5.45605 26.0693 -11.6104c6.15234 -6.05371 8.54785 -16.5088 8.54785 -25.2402c0 -8.83105 -5.11719 -18.9951 -11.2695 -25.0488c-6.05176 -6.05371 -16.5557 -9.76074 -25.3896 -9.76074 c-9.82422 0 -16.4502 5.03223 -22.6025 12.375c-5.06152 5.9541 -7.93164 14.4521 -7.93164 22.0928c0 7.64258 2.5293 16.8213 7.59082 22.7744c6.25195 7.34375 15.2598 14.417 24.9863 14.417zM290.236 223.093c8.92969 0 16.5234 -3.30273 22.7725 -9.89746 c6.35059 -6.49121 9.52734 -14.4453 9.52734 -23.8682c0 -9.52734 -3.125 -17.583 -9.37891 -24.1797c-6.25098 -6.49121 -13.8896 -9.74219 -22.9209 -9.74219c-10.1201 0 -18.3584 3.98047 -24.709 11.9365c-5.1582 6.38672 -7.74023 13.7148 -7.74023 21.9854 c0 8.16602 2.58203 15.4424 7.74023 21.8291c6.35059 7.95605 14.5889 11.9365 24.709 11.9365zM256 440c136.966 0 248 -111.034 248 -248c0 -136.966 -111.034 -248 -248 -248s-248 111.034 -248 248c0 136.966 111.034 248 248 248zM197.174 116.209h0.00195312v229.345 h-45.9355v-98.502c-5.25977 5.45801 -14.1426 11.0635 -19.1045 13.4443c-8.63281 4.16602 -20.749 5.04785 -30.5723 5.04785c-16.8701 0 -32.7666 -8.97559 -45.7656 -20.1895c-16.374 -14.0898 -24.5605 -32.9443 -24.5605 -56.5625 c0 -23.2207 7.50684 -44.7637 23.4834 -58.8535c13.3965 -11.8076 28.6768 -17.2324 45.8447 -17.2324c10.6191 0 21.9385 3.03809 30.2734 7.70117c4.76074 2.67773 15.7354 8.64648 20.3994 14.501v-18.6992h45.9355zM354.39 137.35v-0.000976563 c12.6025 14.4482 18.9043 31.7734 18.9014 51.9785c0 19.998 -6.35059 37.2168 -19.0518 51.665c-15.5811 17.6943 -36.4199 26.54 -62.5176 26.54c-28.3789 0 -50.2617 -8.84668 -65.6416 -26.54c-12.7012 -14.6562 -19.0518 -31.459 -19.0518 -50.4082 c0 -21.042 6.30273 -38.7861 18.9033 -53.2344c15.2852 -17.5879 36.7188 -26.3828 64.3047 -26.3828c27.4863 0 48.8721 8.79492 64.1533 26.3828zM393.159 336.567c-5.25977 -5.25977 -7.8916 -11.71 -7.88867 -19.3496c0 -7.64062 2.62891 -14.1406 7.88867 -19.499 c5.35645 -5.35938 11.8564 -8.03809 19.498 -8.03809c7.74023 0 14.2402 2.62891 19.499 7.88867c5.35938 5.35938 8.03809 11.9082 8.03809 19.6475c0 7.64062 -2.67871 14.0908 -8.03809 19.3506c-5.3584 5.3584 -11.8584 8.03711 -19.499 8.03711 c-7.63965 0 -14.1396 -2.67871 -19.498 -8.03711zM437.069 116.324v145.835h-48.8232v-145.835h48.8232z"&gt;&lt;/path&gt;&lt;/svg&gt; [10.1016/j.csda.2018.08.006](10.1016/j.csda.2018.08.006)
+    
+F-A, Wolfe, Cantoni, Heritier (2020), **A flexible tool for inference of Accelerated Failure Time models with clustered data**, 
+
+- Working Paper
+
+---
+class: center, middle
+
+# Questions?
+
+---
+class: center, middle
+
+# Remarks?
+ 
+---
+class: center, middle
+
+# I'll stick around!
+
+---
+class: center, middle
+
+# Thanks!
+
+Slides created via the `R` package [**xaringan**](https://github.com/yihui/xaringan).
+
+Research funded by the
+National Health and Medical Research Council (NHMRC) of Australia (APP 1128222)
+
+Travel Grant accorded by ViCBiostat and Monash University, Melbourne. 
+
+---
+
+class: inverse, center, middle
+
+# Appendix
+
+---
+class: dark , center, middle
+
+# (Some) Theory
+
+---
+# Comparison with GCB*
+ 
+**Generalised Cluster Bootstrap** for Gaussian LMM (Field, Pang, Welsh 2014)  
+
+`$$\widehat{\mathbf{\theta}}^{*} = \underset{\theta}{\mathrm{arg}} \left\{ \frac{1}{\sqrt{n}}\sum_{i=1}^{n} \color{red}{w_{i}^{*}} \Psi_{i}\left(\mathbf{\theta}\right) = \mathbf{0} \right\}$$`
+
+--
+.tothe-left[
+.content-box-lightgrey[
+.black[Theorem:] Under regularity conditions on `\(\Psi_i\left(\mathbf{\theta}\right)\)`, ensuring Asymptotic Normality i.e.
+
+`$$\sqrt{n}\left(\widehat{\mathbf{\theta}}-\mathbf{\theta}\right)
+\overset{\mathcal{D}}{\underset{n\rightarrow \infty}{\longrightarrow}}
+\mathcal{N}\left\{ \mathbf{0},\mathbf{M}^{-1}\mathbf{Q}\mathbf{M}^{-1}\right)$$`
+
+for fixed `\(n_i\)`, then:
+.content-box-fuchsia[
+.white[
+`$$\sqrt{n}\left(\widehat{\mathbf{\theta}}^{*}- \widehat{\mathbf{\theta}}\right)\overset{\mathcal{D}}{\underset{n\rightarrow\infty}{\longrightarrow}}\mathcal{N}\left(\mathbf{0},\widehat{\mathbf{M}}^{-1}\widehat{\mathbf{Q}}\widehat{\mathbf{M}}^{-1}\right)$$`]
+]
+]
+]
+--
+.tothe-right[
+
+`$$\widehat{\mathbf{M}}^{-1}\widehat{\mathbf{Q}}\widehat{\mathbf{M}}^{-1}$$`
+
+Is the _Empirical_ **Sandwich Variance**
+
+&lt;!-- &lt;img src="https://media.giphy.com/media/jOuA5oDxeIWJi/giphy.gif" style="width: 150px" /&gt; --&gt;
+
+]
+
+---
+
+### Elements of the **bread** ( `\(\mathbf{M}\)` ) and  **patty** ( `\(\mathbf{Q}\)` ) matrices **depend on  `\(\Psi_i\left(\mathbf{\theta}_0\right)\)`** or its **derivatives**:
+
+`\(Let  k, l \in \{1, \dots d\}\)`, where `\(d = p + s\)`, `\(\mathbf{M} = \left( M_{kl}\right)_{k=1, l=1}^{p,s}\)`, `\(\mathbf{Q} = \left( Q_{kl}\right)_{k=1, l=1}^{p,s}\)`
+
+**Asymptotic Variance**
+.content-box-lightgrey[
+`\begin{align}
+-\frac{1}{n}
+\sum_{i=1}^n 
+\mathbb{E} 
+\left\{ 
+{\color{blue}{\partial_{\theta_{l}}\Psi^{(k)}_i\left(\mathbf{\theta}_0\right)}}
+\right\}
+&amp;\underset{n\rightarrow \infty}{\longrightarrow}
+M_{kl}\\
+\frac{1}{\sqrt{n}}\sum_{i=1}^n 
+\mathbb{E} 
+\left\{ 
+{\color{blue}{\Psi^{(k)}_i\left(\mathbf{\theta}_0\right)
+\Psi^{(l)}_i\left(\mathbf{\theta}_0\right)}}
+\right\} 
+&amp;\underset{n\rightarrow \infty}{\longrightarrow}
+Q_{kl}
+\end{align}`
+]
+
+---
+
+### Elements of the **bread** ( `\(\mathbf{M}\)` ) and  **patty** ( `\(\mathbf{Q}\)` ) matrices **depend on  `\(\Psi_i\left(\mathbf{\theta}_0\right)\)`** or its **derivatives**:
+
+`\(Let  k, l \in \{1, \dots d\}\)`, where `\(d = p + s\)`, `\(\mathbf{M} = \left( M_{kl}\right)_{k=1, l=1}^{p,s}\)`, `\(\mathbf{Q} = \left( Q_{kl}\right)_{k=1, l=1}^{p,s}\)`
+
+
+**GCB** version: 
+.content-box-lightgrey[
+`\begin{align}
+-\frac{1}{n}
+\sum_{i=1}^n 
+\color{blue}{\mathbb{E}^{*}}\left[\color{red}{w_{i}^{*}}\right]  
+\left\{ 
+\partial_{\theta_{l}}\Psi^{(k)}_i\left(\mathbf{\theta}_0\right)
+\right\}
+&amp;\underset{n\rightarrow \infty}{\longrightarrow}
+M_{kl}
+\end{align}`
+
+`\begin{align}
+\frac{1}{n}
+&amp;\sum_{i=1}^n 
+\color{blue}{\mathbb{V}ar^{*}} \left[ \color{red}{w_{i}^{*}}\right]
+\Psi^{(k)}_i(\widehat{\mathbf{\theta}})
+\Psi^{(l)}_i(\widehat{\mathbf{\theta}}) \nonumber \\
+&amp;+ 
+\frac{1}{n}\sum_{i=1}^n\sum_{j\neq i}
+\mathbb{C}ov \left[ \color{red}{w_{i}^{*}}, \color{red}{w_{j}^{*}}\right]
+\left\{ 
+\Psi^{(k)}_i(\widehat{\mathbf{\theta}})
+\Psi^{(l)}_j(\widehat{\mathbf{\theta}})
+\right\}  
+\underset{n\rightarrow \infty}{\longrightarrow}
+Q_{kl}
+\end{align}`
+]
+
+
+---
+
+# GCB vs RWLB in _Random Effect_ LMM
+
+`$$\mathbf{y}_i = \mathbf{X}_{i}\mathbf{\beta} + \sum_{r=0}^{q} \sigma_r \mathbf{Z}_{ir}\mathbf{u}_{ir} \longrightarrow \begin{array}{l c l} \tilde{\Psi}^{\beta}_i\left(\mathbf{\theta}\right)
+  &amp;=&amp;\mathbf{X}_i^T \mathbf{\Sigma}_i^{-1} \left(\mathbf{y}_i - \mathbf{X}_i\mathbf{\beta}\right),
+  \\
+  \tilde{\Psi}^{\sigma^{2}_{r}}_i\left(\mathbf{\theta}\right)
+  &amp;=&amp;
+  -\frac{1}{2}
+  \left( \mathbf{y}_i-\mathbf{X}_i\mathbf{\beta}\right)^T
+  \mathbf{\Sigma}_i^{-1}\mathbf{Z}_{ir}\mathbf{Z}_{ir}^T\mathbf{\Sigma}_i^{-1}
+  \left(\mathbf{y}_i-\mathbf{X}_i\mathbf{\beta}\right)  + \frac{1}{2}
+  \mathrm{tr}\left( \mathbf{\Sigma}_{i}^{-1} \mathbf{Z}_{ir} \mathbf{Z}_{ir}^T\right). \end{array}$$`
+
+--
+
+.pull-left[
+**GCB**
+`\begin{align}
+  \tilde{\Psi}^{\beta}_i\left(\mathbf{\theta}\right)
+  &amp;=\color{red}{w_{i}^{*}}\mathbf{X}_i^T \mathbf{\Sigma}_i^{-1} \left(\mathbf{y}_i - \mathbf{X}_i\mathbf{\beta}\right),
+  \\
+  \tilde{\Psi}^{\sigma^{2}_{r}}_i\left(\mathbf{\theta}\right)
+  &amp;=
+  -\frac{\color{red}{w_{i}^{*}}}{2}
+  \left( \mathbf{y}_i-\mathbf{X}_i\mathbf{\beta}\right)^T
+  \mathbf{\Sigma}_i^{-1}\mathbf{Z}_{ir}\mathbf{Z}_{ir}^T\mathbf{\Sigma}_i^{-1}
+  \left(\mathbf{y}_i-\mathbf{X}_i\mathbf{\beta}\right)  \\
+  &amp;+ 
+  \frac{\color{red}{w_{i}^{*}}}{2}
+  \color{blue}{\mathrm{tr}\left( \mathbf{\Sigma}_{i}^{-1} \mathbf{Z}_{ir} \mathbf{Z}_{ir}^T\right).} 
+\end{align}`
+]
+.pull-right[
+**RWLB** (after tedious derivation)
+
+.content-box-lightgrey[
+`\begin{align}
+  \tilde{\Psi}^{\beta}_i\left(\mathbf{\theta}\right)
+  &amp;=\color{red}{w_{i}^{*}}\mathbf{X}_i^T \mathbf{\Sigma}_i^{-1} \left(\mathbf{y}_i - \mathbf{X}_i\mathbf{\beta}\right),
+  \\
+  \tilde{\Psi}^{\sigma^{2}_{r}}_i\left(\mathbf{\theta}\right)
+  &amp;=
+  -\frac{\color{red}{w_{i}^{*}}}{2}
+  \left( \mathbf{y}_i-\mathbf{X}_i\mathbf{\beta}\right)^T
+  \mathbf{\Sigma}_i^{-1}\mathbf{Z}_{ir}\mathbf{Z}_{ir}^T\mathbf{\Sigma}_i^{-1}
+  \left(\mathbf{y}_i-\mathbf{X}_i\mathbf{\beta}\right)  \\
+  &amp;+ 
+  \color{blue}{\frac{1}{2}
+  \mathrm{tr}\left( \mathbf{\Sigma}_{i}^{-1} \mathbf{Z}_{ir} \mathbf{Z}_{ir}^T\right).} 
+\end{align}`
+]
+]
+---
+class: dark, middle, center
+
+# Simulations 
+
+--
+
+# 3. **(Gaussian)** Linear Mixed Model (LMM)
+
+---
+
+### Simulation: **Linear Mixed Model**
+
+- **Parameters**: .black[4 Fixed Effects] ( `\(\beta_k\)` ) .black[Random intercept] ( `\(\sigma_1\)` ), .black[slope] ( `\(\sigma_2\)` ) and .black[Scale] ( `\(\phi\)` )
+
+- **Number of Simulations**: 1000 with `\(B=1000\)` **Bootstrap Replicates** 
+- **Studied methods**: .green[RWLB] vs .fuchsia[Parametric Bootstrap (PB)]
+
+- **Cluster size** ( `\(n_i\)` ): **4** and **12**
+
+- **Number of clusters** ( `\(n\)` ): **100** and **250**
+
+--
+
+### .black[Q-Q plots]: _Average_ **Bootstrap** replicates vs. **Empirical** Distributions 
+
+.content-box-lightgrey[
+`$$\sqrt{n} \left(\widehat{\sigma}_1^{*} - \widehat{\sigma}_{1}\right) \ \ \text{vs.} \ \ \sqrt{n} \left(\widehat{\sigma}_{1} - \sigma_1\right)$$`
+]
+
+
+
+  
+
+
+---
+
+class: center
+
+### Random **Intercept** Variance `\(\sigma_{1}^{2}\)`
+
+**Cluster size** `\(n_i=4\)`
+
+.pull-left[
+**Number of Clusters:** `\(n=100\)`
+
+]
+
+.pull-right[
+**Number of Clusters:** `\(n=250\)`
+
+]
+---
+class: center
+
+### Random **Intercept** Variance `\(\sigma_1^{2}\)`
+
+**Cluster size** `\(n_i=12\)`
+
+.pull-left[
+**Number of Clusters:** `\(n=100\)`
+
+]
+
+.pull-right[
+**Number of Clusters:** `\(n=250\)`
+
+] 
+
+---
+class: center
+
+### Random **Slope** Variance `\(\sigma_{1}^{2}\)`
+
+**Cluster size** `\(n_i=4\)`
+.pull-left[
+**Number of Clusters:** `\(n=100\)`
+
+]
+
+.pull-right[
+**Number of Clusters:** `\(n=250\)`
+
+]
+---
+class: center
+### Random **Slope** Variance `\(\sigma_{1}^{2}\)`
+
+**Cluster size** `\(n_i=12\)`
+.pull-left[
+**Number of Clusters:** `\(n=100\)`
+
+]
+
+.pull-right[
+**Number of Clusters:** `\(n=250\)`
+
+]
+
+---
+class: center
+### **Scale** `\(\phi\)`
+**Cluster size** `\(n_i=4\)`
+
+
+.pull-left[
+**Number of Clusters:** `\(n=100\)`
+
+]
+
+.pull-right[
+**Number of Clusters:** `\(n=250\)`
+
+]
+
+---
+class: center
+
+### **Scale** `\(\phi\)`
+**Cluster size** `\(n_i=12\)`
+.pull-left[
+**Number of Clusters:** `\(n=100\)`
+
+]
+
+.pull-right[
+**Number of Clusters:** `\(n=250\)`
+
+]
+
+    </textarea>
+<style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
+<script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
+<script>var slideshow = remark.create({
+"highlightStyle": "github",
+"highlightLines": true,
+"countIncrementalSlides": false,
+"ratio": "16:9",
+"navigation": {
+"scroll": true
+}
+});
+if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
+  window.dispatchEvent(new Event('resize'));
+});
+(function(d) {
+  var s = d.createElement("style"), r = d.querySelector(".remark-slide-scaler");
+  if (!r) return;
+  s.type = "text/css"; s.innerHTML = "@page {size: " + r.style.width + " " + r.style.height +"; }";
+  d.head.appendChild(s);
+})(document);
+
+(function(d) {
+  var el = d.getElementsByClassName("remark-slides-area");
+  if (!el) return;
+  var slide, slides = slideshow.getSlides(), els = el[0].children;
+  for (var i = 1; i < slides.length; i++) {
+    slide = slides[i];
+    if (slide.properties.continued === "true" || slide.properties.count === "false") {
+      els[i - 1].className += ' has-continuation';
+    }
+  }
+  var s = d.createElement("style");
+  s.type = "text/css"; s.innerHTML = "@media print { .has-continuation { display: none; } }";
+  d.head.appendChild(s);
+})(document);
+// delete the temporary CSS (for displaying all slides initially) when the user
+// starts to view slides
+(function() {
+  var deleted = false;
+  slideshow.on('beforeShowSlide', function(slide) {
+    if (deleted) return;
+    var sheets = document.styleSheets, node;
+    for (var i = 0; i < sheets.length; i++) {
+      node = sheets[i].ownerNode;
+      if (node.dataset["target"] !== "print-only") continue;
+      node.parentNode.removeChild(node);
+    }
+    deleted = true;
+  });
+})();
+(function() {
+  "use strict"
+  // Replace <script> tags in slides area to make them executable
+  var scripts = document.querySelectorAll(
+    '.remark-slides-area .remark-slide-container script'
+  );
+  if (!scripts.length) return;
+  for (var i = 0; i < scripts.length; i++) {
+    var s = document.createElement('script');
+    var code = document.createTextNode(scripts[i].textContent);
+    s.appendChild(code);
+    var scriptAttrs = scripts[i].attributes;
+    for (var j = 0; j < scriptAttrs.length; j++) {
+      s.setAttribute(scriptAttrs[j].name, scriptAttrs[j].value);
+    }
+    scripts[i].parentElement.replaceChild(s, scripts[i]);
+  }
+})();
+(function() {
+  var links = document.getElementsByTagName('a');
+  for (var i = 0; i < links.length; i++) {
+    if (/^(https?:)?\/\//.test(links[i].getAttribute('href'))) {
+      links[i].target = '_blank';
+    }
+  }
+})();
+// adds .remark-code-has-line-highlighted class to <pre> parent elements
+// of code chunks containing highlighted lines with class .remark-code-line-highlighted
+(function(d) {
+  const hlines = d.querySelectorAll('.remark-code-line-highlighted');
+  const preParents = [];
+  const findPreParent = function(line, p = 0) {
+    if (p > 1) return null; // traverse up no further than grandparent
+    const el = line.parentElement;
+    return el.tagName === "PRE" ? el : findPreParent(el, ++p);
+  };
+
+  for (let line of hlines) {
+    let pre = findPreParent(line);
+    if (pre && !preParents.includes(pre)) preParents.push(pre);
+  }
+  preParents.forEach(p => p.classList.add("remark-code-has-line-highlighted"));
+})(document);</script>
+
+<script>
+slideshow._releaseMath = function(el) {
+  var i, text, code, codes = el.getElementsByTagName('code');
+  for (i = 0; i < codes.length;) {
+    code = codes[i];
+    if (code.parentNode.tagName !== 'PRE' && code.childElementCount === 0) {
+      text = code.textContent;
+      if (/^\\\((.|\s)+\\\)$/.test(text) || /^\\\[(.|\s)+\\\]$/.test(text) ||
+          /^\$\$(.|\s)+\$\$$/.test(text) ||
+          /^\\begin\{([^}]+)\}(.|\s)+\\end\{[^}]+\}$/.test(text)) {
+        code.outerHTML = code.innerHTML;  // remove <code></code>
+        continue;
+      }
+    }
+    i++;
+  }
+};
+slideshow._releaseMath(document);
+</script>
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+(function () {
+  var script = document.createElement('script');
+  script.type = 'text/javascript';
+  script.src  = 'https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML';
+  if (location.protocol !== 'file:' && /^https?:/.test(script.src))
+    script.src  = script.src.replace(/^https?:/, '');
+  document.getElementsByTagName('head')[0].appendChild(script);
+})();
+</script>
+  </body>
+</html>

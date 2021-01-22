@@ -1,0 +1,497 @@
+/*
+CSS for xaringan slides in Monash University Flavor
+(heavily) based on the Middlebury College flavor by Joseph V. Casillas
+some cues were taken from the Sydney U Template by Garth Tarr
+Author: Daniel Flores Agreda
+Updated: 06/29/2018
+*/
+
+/* 
+Primary Palette:
+Monash Blue (official): #006DAE, PMS 2945C
+Black                 : #000000
+White                 : #FFFFFF
+Grey 80% Black        : #5A5A5A
+Grey 50% Black        : #969696
+Grey 10% Black        : #E6E6E6
+*/
+
+/* 
+Secondary Palette:
+Blue    : #027EB6
+Purple  : #746FB2
+Fuchsia : #9651A0
+Ruby    : #C8008F
+Pink    : #EE64A4
+Red     : #EE0220
+Orange  : #D93F00
+Umber   : #795549
+Olive   : #6F7C4D
+Green   : #008A25
+*/
+
+/* Package defaults */
+
+a, a > code {
+  color: #97BBD5; /* blue accent 2 */
+  text-decoration: none;
+}
+
+/* slightly lower and bigger than default */
+.footnote{ 
+  position: absolute;
+  bottom: 1em;
+  padding-right: 4em;
+  font-size: 95%;
+}
+
+/* important code slightly blue */
+.remark-code-line-highlighted {
+  background-color: #97BBD5 !important;
+}
+
+/* color tweak */
+.inverse {
+  background-color: #006DAE;
+  color: #FFFFFF;
+  text-shadow: 0 0 20px #333;
+}
+
+
+/* color tweak */
+.dark {
+  background-color: #000000;
+  color: #FFFFFF;
+  text-shadow: 0 0 20px #333;
+}
+
+
+/* slightly spacing change */
+.dark h1, .dark h2, .dark h3 {
+  color: #FFFFFF;
+  line-height: 1.0em;
+}
+
+/* slightly spacing change */
+.inverse h1, .inverse h2, .inverse h3 {
+  color: #f3f3f3;
+  line-height: 1.0em;
+}
+
+/* Two-column layout (slightly wider for aspect ratio) */
+.left-column {
+  color: #777;
+  width: 25%;
+  height: 92%;
+  float: left;
+}
+
+.left-column h2:last-of-type, .left-column h3:last-child {
+  color: #000;
+}
+
+/* slightly thinner to support aspect ratio */
+.right-column {
+  width: 70%;
+  float: right;
+  padding-top: 1em;
+}
+
+.pull-left {
+  float: left;
+  width: 45%;
+}
+
+.pull-right {
+  float: right;
+  width: 45%;
+}
+
+.tothe-left {
+  float: left;
+  width: 55%;
+}
+
+.tothe-right {
+  float: right;
+  width: 40%;
+}
+
+.pull-right ~ * {
+  clear: both;
+}
+
+.column {
+  float: left;
+  width: 30%;
+  padding: 10px;
+  height: 300px; /* Should be removed. Only for demonstration */
+}
+
+/* Clear floats after the columns */
+
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.crop {
+    width: 200px;
+    height: 150px;
+    overflow: hidden;
+}
+
+.crop img {
+    width: 400px;
+    height: 300px;
+    margin: -75px 0 0 -100px;
+}
+
+img, video, iframe {
+  max-width: 100%;
+}
+
+.blockquote {
+  border-left: solid 5px lightgray;
+  padding-left: 1em;
+}
+
+/* adjust table horizontal spacing */
+th, td {
+    padding:0 15px 0 15px;
+}
+
+/* remove color from tables */
+table {
+  margin: auto;
+  border-top: none;
+  border-bottom: none;
+}
+
+table thead th { border-bottom: none; }
+thead, tfoot, tr:nth-child(even) { background: none; }
+
+/* leave this alone */
+@page { margin: 0; }
+@media print {
+  .remark-slide-scaler {
+    width: 100% !important;
+    height: 100% !important;
+    transform: scale(1) !important;
+    top: 0 !important;
+    left: 0 !important;
+  }
+}
+
+/*~~~~~>>~~~~~~~~~*/
+/* MIDD additions */
+/*~~~~~~~>>~~~~~~~*/
+
+/* Title slide */
+
+/* Add image and change bg color */
+.title-slide {
+  background-image: url(https://raw.githubusercontent.com/dfloresag/sphpm_xaringan/master/monash-stacked-black-rgb.png);
+  background-position: 5% 5%;
+  background-size: 250px;
+  background-color: #fff;
+  padding-left: 100px;   /* delete this for 4:3 aspect ratio */
+}
+
+/* H1 fonts */
+.title-slide h1 {
+  color:  #006DAE; /* Monash blue */
+  padding-top: 250px;
+  font-weight: 800;
+  font-size: 45px;
+  line-height: 0.05;
+  text-align: left;
+  text-shadow: none;
+  padding-bottom: 18px;
+  margin-bottom: 18px;
+}
+
+/* H2 fonts */
+.title-slide h2 {
+  color: #5A5A5A; /* Grey 80% Black*/ 
+  font-weight: 600;
+  font-size: 35px;
+  text-align: left;
+  text-shadow: none;
+  padding-top: 0;
+  margin-top: 0;
+}
+
+/* H3 fonts */
+.title-slide h3 {
+  color: #969696; /* Grey 50% Black */
+  font-size: 28px;
+  font-weight: normal;
+  text-align: left;
+  text-shadow: none;
+  padding: 0px;
+  margin: 0px;
+  line-height: 1;
+}
+
+/* Remove slide count */
+.title-slide .remark-slide-number {
+  text-shadow: none;
+}
+
+/*~~~~~~~~~~~~~~~~~~*/
+/* SECTION DIVIDERS */
+/*~~~~~~~~~~~~~~~~~~*/
+
+/* section divider blue */
+.title-slide-section-blue {
+  background-color: #006DAE;
+  padding-left: 100px;  /* delete this for 4:3 aspect ratio */
+}
+
+/* section divider blue H1 fonts */
+.title-slide-section-blue h1, .title-slide-section-blue h2, .title-slide-section-blue h3, .title-slide-section-blue p {
+  color: #006DAE;
+}
+
+.title-slide-section-blue p {
+  color: #006DAE;
+}
+
+/* section divider grey */
+.title-slide-section-grey {
+  background-color: #4C4B4C;
+  padding-left: 100px;  /* delete this for 4:3 aspect ratio */
+}
+
+/* section divider grey H1 fonts */
+.title-slide-section-grey h1, .title-slide-section-grey h2, .title-slide-section-grey h3 {
+  color: #AAA59F;
+}
+
+.title-slide-section-grey p {
+  color: #fff;
+}
+
+/*~~~~~~~~~~~~~~~~~~*/
+/* FINAL SLIDE      */
+/*~~~~~~~~~~~~~~~~~~*/
+
+.title-slide-final {
+  background-color: #AAA59F;
+  color: #fff;
+  padding-left: 100px;
+/*  text-shadow: 0 0 3px #333; */  
+  text-align: center;
+}
+
+.title-slide-final h1 {
+  color: #006DAE;
+}
+
+.title-slide-final h2 {
+  color: #4C4B4C;
+}
+
+.title-slide-final h3 {
+  color: #0D395F;
+}
+
+/*~~~~~~~~~~~~~~~~~~~~*/
+/* Global adjustments */
+/*~~~~~~~~~~~~~~~~~~~~*/
+
+/* Add padding to all slides for 16:9 aspect ratio */
+.remark-slide-content {
+  padding-left: 50px;  /* delete this for 4:3 aspect ratio */
+}
+
+/* Color adjustments for text */
+
+/* Make bold syntax compile to midd-blue */
+strong {
+  color: #006DAE;
+}
+
+.RUred {
+  color: #cc0033;
+}
+
+/* Add blue tag */
+.blue {
+  color: #006DAE;
+  font-weight: bold;
+}
+
+/* Grey tags */
+.darkgrey {
+  color: #5A5A5A;
+}
+
+.grey {
+  color: #969696;
+}
+
+.lightgrey {
+  color: #E6E6E6;
+}
+
+/*Secondary Palette:*/
+
+.blue { 
+  color: #027EB6;
+}
+.purple {
+  color: #746FB2;
+}
+.fuchsia {
+  color: #9651A0;
+}
+.ruby {
+  color: #C8008F;
+}
+.pink {
+  color: #EE64A4;
+}
+.red {
+  color: #EE0220;
+}
+.orange {
+  color: #D93F00;
+}
+.umber {
+  color: #795549;
+}
+.olive {
+  color: #6F7C4D;
+}
+.green {
+  color: #008A25;
+}
+
+/* Monash Blue Bold */
+.monashblue {
+  color: #006DAE;
+  font-weight: bold;
+}
+
+/* Force black */
+.black {
+  color: black;
+  font-weight: bold;
+}
+
+/* Add white tag */
+
+.white{
+  color: white;
+}
+
+.white-bold {
+  color: white;
+  font-weight: bold;
+}
+
+/* Color adjustments to headers */
+h1 {
+  color: #0D395F;
+  font-weight: 700;
+}
+
+h2 {
+  color: #0D395F;
+  font-weight: 600;
+}
+
+h3 {
+  color: #4C4B4C;
+  font-weight: 300;
+}
+
+/* Font size tags */
+.big {
+  font-size: 6em;
+}
+
+/* midd blockquote */
+.monash-blockquote {
+  display: block;
+  margin-top: .5em;
+  margin-bottom: .5em;
+  margin-left: 40px;
+  margin-right: 40px;
+  border-left: solid 10px #006DAE;
+  background-color: lightgrey;
+  padding: 1em;
+  color: #fff;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+}
+
+/*~~~~~~~~~~~~~~~~~~~~~~~~*/
+/* Coloured content boxes*/
+/*~~~~~~~~~~~~~~~~~~~~~~~*/
+.content-box { 
+    box-sizing: border-box;
+    background-color: #969696;
+}
+
+.content-box-darkgrey,
+.content-box-grey,
+.content-box-lightgrey,
+.content-box-blue,
+.content-box-purple,
+.content-box-fuchsia,
+.content-box-ruby,
+.content-box-pink,
+.content-box-red,
+.content-box-orange,
+.content-box-umber,
+.content-box-olive,
+.content-box-green{
+  box-sizing: border-box;
+  border-radius: 15px;
+  margin: 0 0 15px;
+  overflow: hidden;
+  padding: 0px 20px 0px 20px;
+  width: 100%;
+}
+
+.content-box-darkgrey { background-color: #5A5A5A; }
+.content-box-grey { background-color: #969696; }
+.content-box-lightgrey { background-color: #E6E6E6; }
+.content-box-blue { background-color: #027EB6; }
+.content-box-purple{ background-color: #746FB2; }
+.content-box-fuchsia{ background-color: #9651A0; }
+.content-box-ruby{ background-color: #C8008F; }
+.content-box-pink{ background-color: #EE64A4; }
+.content-box-red{ background-color: #EE0220; }
+.content-box-orange{ background-color: #D93F00; }
+.content-box-umber{ background-color: #795549; }
+.content-box-olive{ background-color: #6F7C4D; }
+.content-box-green{ background-color: #008A25; }
+
+.content-box-darkgrey .remark-inline-code,
+.content-box-grey .remark-inline-code,
+.content-box-lightgray .remark-inline-code,
+.content-box-blue .remark-inline-code,
+.content-box-purple .remark-inline-code,
+.content-box-fuchsia .remark-inline-code,
+.content-box-ruby .remark-inline-code,
+.content-box-pink .remark-inline-code,
+.content-box-red .remark-inline-code,
+.content-box-orange .remark-inline-code,
+.content-box-umber .remark-inline-code,
+.content-box-olive .remark-inline-code,
+.content-box-green .remark-inline-code{ 
+  background: none;
+}
+
+.full-width {
+    display: flex;
+    width: 100%;
+    flex: 1 1 auto;
+}
+
+
