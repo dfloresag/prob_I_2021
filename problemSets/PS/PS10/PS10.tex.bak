@@ -1,0 +1,161 @@
+\documentclass[12pt,thmsa]{article}
+\usepackage[french,english]{babel}
+\usepackage[ansinew]{inputenc}
+\usepackage[T1,OT1]{fontenc}
+\usepackage{graphicx}
+\usepackage{amsmath,amssymb,listings}
+\usepackage{alltt,algorithmic,algorithm}
+\usepackage{multicol}
+\usepackage{cite}
+\usepackage{fancyhdr}
+\usepackage{setspace}
+\usepackage{array}
+\usepackage{amsfonts}
+\usepackage{latexsym}
+\usepackage{epsf}
+\usepackage{umlaute}
+\usepackage{setspace}
+\usepackage{amsthm}
+\usepackage{enumerate}
+
+
+\setlength{\textwidth}{160mm}
+\setlength{\textheight}{230mm}
+\setlength{\oddsidemargin}{-5mm}
+\setlength{\topmargin}{-10mm}
+
+% to get rid of the numbers in the bibliography:
+\makeatletter
+\def\@biblabel#1{}
+\makeatother
+
+
+
+\title{Assignement 4}
+
+
+
+
+\begin{document}
+
+
+\noindent \textsc{University of Geneva}     \hfill \textsc{Bachelor in Economics and Management} \\
+\textbf{Probability 1}                      \hfill \textsc{Bachelor in International Relations} \\
+Professor Davide La Vecchia                 \hfill Spring 2018  \\
+ASSIGNMENT 10                               \hfill   May 7th-11th
+
+
+\noindent
+\makebox[\linewidth]{\rule{\textwidth}{0.4pt}}\\[1.5ex]
+
+
+
+
+\addtocounter{section}{1}
+\section*{Exercise \thesection:}
+
+
+We assume that there is a probability of 0.10 to be inspected by a conductor when one takes Tram 15. Charles travels 700 times a year on this line.
+ \begin{enumerate}
+ \item What is the approximate probability that Charles is inspected between 60 and 100 times a year ?
+ \item Charles is in fact a cheater and always travels without any ticket. Given that the price of a ticket is 2CHF, what is the minimum penalty that the TPG
+ should fix so that Charles's probability of having a loss of profits is bigger than 75\% ?
+\end{enumerate}
+
+
+
+
+
+\addtocounter{section}{1}
+\section*{Exercise \thesection:}
+
+From 7 am, buses pass every 15 minutes at a given stop. So they pass at 7:00, then 7:15, etc. A user arrives between 7:00 am and 7:30 am at this stop, the exact time of his arrival being a uniform random variable over this period. Find the probability that he has to wait
+\begin{enumerate}%[\indent \bf a)]
+\item less than 5 minutes,
+\item more than 10 minutes.
+\end{enumerate}
+
+
+
+
+
+
+
+\addtocounter{section}{1}
+\section*{Exercise \thesection:}
+
+The parts of a car are often copied and sold as original. We want to replace a part of a car.
+With probability $1/4$, we buy a pirated part and probability $3/4$ we buy
+an original part. The lifetime is exponential random variable with expectation $2$ if it
+is a pirated part and expectation $5$ if it is an original part.
+Let's call $T$ the lifetime of a part that we bought.
+Assume that the part has survived until time $t$ after its installation.
+\begin{enumerate}
+  \item What is the probability $\pi(t)$ that this part is pirated ?
+Find the limit of $\pi(t)$ when $t \rightarrow \infty$.
+\item Let's formalize the problem using a random variable $Y$ taking values $1$ if the part is pirated and $0$ when it is not.
+\begin{enumerate}
+  \item What is the distribution of $Y$?
+  \item Compute $P(T \leq t \vert Y=y)$, the conditional probability of $T$ given $Y=y$.
+  \item Compute $P(T \leq t \cap Y=y)$, the joint probability of $T$ and $Y$.
+  \item What is the marginal probability distribution of $T$ ?
+  \item Find $P(Y=y \vert T>t)$ and deduce $\pi(t)$.
+\end{enumerate}
+
+
+
+\addtocounter{section}{1}
+\section*{Exercise \thesection:}
+
+Let $S_t$ be the value of an asset at the end of the year $t$ and $R_{0,n}$ be the rate of return over a horizon of $n$ years, that is, $R_{0,n}$
+is the solution of the equation
+\begin{equation*}
+S_n=S_0(1+R_{0,n})^n .
+\end{equation*}
+Let $Z_t={S_t}/S_{t-1}$. Suppose $Z_t$ follows a log-normal distribution with parameters $\mu$ and $\sigma^2$: %, {\it i.e.}
+$$
+Z_t=\frac{S_t}{S_{t-1}} \sim LN(\mu, \sigma^2), \quad t=1,2,...,n.
+$$
+It is also assumed that the $Z_t$ are independent of each other.
+\medskip
+
+\begin{enumerate}
+  \item Montrer que  $$R_{0,n}=\left( \prod_{t=1}^{n} \frac{S_t}{S_{t-1}} \right)^{\frac{1}{n}} -1.$$ 
+
+{Indication:}
+$$
+\frac{S_n}{S_0}= \frac{S_1}{S_0} \cdots \frac{S_2}{S_1} \cdots
+\frac{S_t}{S_{t-1}} \cdots \frac{S_n}{S_{n-1}}= \prod_{t=1}^{n}
+\frac{S_t}{S_{t-1}}.
+$$
+  \item Posons $$Y=\frac{1}{n} \sum_{t=1}^{n} \log\left( \frac{S_t}{S_{t-1}} \right).$$ Trouver la distribution de $Y$ et spécifier son espérance et sa variance.
+  \item Montrer que $R_{0,n}=\exp(Y)-1$. En déduire l'espérance et la variance de $R_{0,n}$.
+  \item Que se passe-t-il quand $n \rightarrow \infty$?
+
+
+
+\end{enumerate}
+
+\addtocounter{section}{1}
+\section*{(Optional) Exercise \thesection:}
+Let $V$ a uniformly distributed random variable on $[0,1]$, that is $V \sim U(0,1)$.
+\begin{enumerate}
+  \item What is the cumulative distribution function of $W=\frac{-1}{\lambda} \log(V)$ ? Compute its density. Which distribution is it?
+  \item Let $F(x)$ be some cumulative distribution function. Show that the random variable $X=F^{-1}(V)$ is distributed with cumulative distribution function $F(x)$. \\
+  \emph{Hint: $F^{-1}(x)$ is the inverse function of $F(x)$, that is it satisfies $F^{-1}(F(x))=x$ and $F(F^{-1}(x))=x$.}
+  \item The cumulative
+  distribution function of the Dagum distribution is:
+  \begin{equation*}
+  F(x)=(1+\lambda x^{-2})^{-1}
+  \end{equation*}
+where $x\geq 0$ and $\lambda>0$.
+From the uniformly distributed random variable $V$, define the transformation $g(V)$ such that $g(V)$ follows a Dagum distribution.
+
+\end{enumerate}
+
+\end{enumerate}
+
+\end{document}
+
+
+

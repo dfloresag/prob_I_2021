@@ -1,0 +1,166 @@
+\documentclass[12pt,thmsa]{article}
+\usepackage[french,english]{babel}
+\usepackage[ansinew]{inputenc}
+\usepackage[T1,OT1]{fontenc}
+\usepackage{graphicx}
+\usepackage{amsmath,amssymb,listings}
+\usepackage{alltt,algorithmic,algorithm}
+\usepackage{multicol}
+\usepackage{cite}
+\usepackage{fancyhdr}
+\usepackage{setspace}
+\usepackage{array}
+\usepackage{amsfonts}
+\usepackage{latexsym}
+\usepackage{epsf}
+\usepackage{umlaute}
+\usepackage{setspace}
+\usepackage{amsthm}
+\usepackage{enumerate}
+
+
+\setlength{\textwidth}{160mm}
+\setlength{\textheight}{230mm}
+\setlength{\oddsidemargin}{-5mm}
+\setlength{\topmargin}{-10mm}
+
+% to get rid of the numbers in the bibliography:
+\makeatletter
+\def\@biblabel#1{}
+\makeatother
+
+
+
+\title{Assignement 6}
+
+
+
+
+\begin{document}
+
+
+\noindent \textsc{University of Geneva}     \hfill \textsc{Bachelor in Economics and Management} \\
+\textbf{Probability 1}                      \hfill \textsc{Bachelor in International Relations} \\
+Professor Davide La Vecchia                 \hfill Spring 2018  \\
+ASSIGNMENT 06                               \hfill   April 10th
+
+
+
+\noindent
+\makebox[\linewidth]{\rule{\textwidth}{0.4pt}}\\[1.5ex]
+
+
+\section*{Exercise 1}
+
+We consider an urn with N marbles containing $r$ red marbles and $N-r$ blue marbles. We draw $n$ marbles randomly without replacement.
+Let $X$ be the following discrete random variables:
+
+$ \qquad X=$ ``the number of red marbles among the $n$ drawn marbles''.
+
+\begin{enumerate}
+  \item Compute the probability law of $X$, that is $P(X=k)$ for $k=0,1,...,min(n,r)$.
+  \item This law is well known. Its expectation is $E[X]=np$ and its variance $var(X)=np(1-p)\frac{N-n}{N-1}$ with $p=\frac{r}{N}$.
+  Compare intuitively this law with the binomial law.
+\end{enumerate}
+
+
+\section*{Exercise 2}
+
+An editor is interested in modelling the number of mistakes in a book of $n=200$ pages. The number of typos for each page follows a Poisson distribution
+with parameter $\lambda=0.05$ and is independent of the number of typos on the other pages.
+\begin{enumerate}
+  \item What is the expected number of pages without typos? \newline
+  Hint: define a random variable $Y_n$ which represents the number of pages without any typo and compute $E(Y_n)$.
+  \item What is the variance of the number of pages without any typo?
+  \item What is, approximately, the probability that a book has at least $195$ pages without typos? % Not possible to do it without the normal.
+\end{enumerate}
+
+
+
+
+\newpage
+
+\section*{Exercise 3}
+
+Charles-Basile passes a test of probabilities and statistics. The test is a multiple choice quiz with 6 questions. Each question has three possible answers, only one of which is correct. Charles-Basile passes the test if he answers correctly at least 4 questions.
+
+
+\begin{enumerate}%[(a)]
+\item If Charles-Basile answers at random, what is the expectation of the number of correct answers?
+What is its variance? What is the probability that Charles-Basile will pass the test?
+
+\item Being a little better prepared, Charles-Basile is able to eliminate an incorrect answer for each question. Then he chooses his answer randomly from the two remaining possibilities.
+Find the expectation and variance of the number of correct answers in this case.
+What is the probability that Charles-Basile will pass the exam?
+
+\end{enumerate}
+
+
+
+
+
+\section*{Exercise 4}
+
+The phone calls to `Residence Soleil' follow the Poisson distribution with $\lambda = 2$ calls per hour.
+\begin{enumerate}%[(a)]
+\item What is the average number of calls in this residence? What is the variance of the number of calls?
+\item Calculate the probability of receiving more than two calls in one hour.
+
+\item Charles-Basile, living in `Residence Soleil', would like to take a shower for 10 minutes.
+What is the probability that the phone will ring while Charles-Basile is in the shower?
+
+\end{enumerate}
+
+
+
+
+
+\section*{Exercise 5}
+
+\begin{enumerate}%[(a)]
+
+\item In a large sports store, it is estimated that the probability that a randomly selected customer is a thief is 0.005. The store welcomes 400 customers daily and it is assumed that an individual does not engage in more than one theft a day.
+
+\noindent Calculate the probability that there are more than 2 thefts per day using
+\begin{enumerate}
+\item Poisson distribution;
+\item Binomial distribution.
+\end{enumerate}
+
+\noindent Compare the expected number of thefts per day in both cases. Comment on the results obtained.
+
+\item It can be seen that 50\% of thefts are for items at 50 CHF, 20\% for items at 100 CHF, and 30\% for items at 200 CHF. Hiring a supervisor would make thefts decrease by half and cost the store management 130 CHF per day.
+
+\noindent Does the management have an interest in hiring a supervisor? To justify.
+
+\end{enumerate}
+
+\newpage
+
+\section*{Exercise 6 (Optional)}
+
+Pamela has decided to do a trip of 10000km this summer in a Fiat Ritmo (a very old fashion Italian car). The probability that Pamela has an accident during a 1km distance is 1/(10000).
+Knowing this probability, she decides to cancel her long trip arguing that she is sure to have an accident. Do you agree with Pamela? If it is not the case, what is her mistake? Do you think she needs more training with probability? Compute approximately the probability of Pamela having an accident.
+
+
+\section*{Exercise 7 (Optional)}
+
+We consider a series of independent trials. At each trial, we observe a success with probability $p$ and a failure with probability $1-p$. Let $X$ be the random variable counting the number of trials necessary to
+obtain the first success.
+\begin{enumerate}
+  \item Compute the probability law of $X$, that is $P(X=k)$, for $k=1,2,..$.
+  \item Check that $E(X)=1/p$. \\
+  Hint: Use the formula of the geometric difference series: $\sum_{k=0}^\infty k q^{k-1}=\frac{1}{(1-q)^2}$.
+  \item Check that the variable is without memory, which means:
+  \begin{equation*}
+    P(X>k\vert X>j)=P(X>k-j) \quad \text{for} \quad k>j.
+  \end{equation*}
+  \item I decided to sell my house and to accept the first purchase offer bigger than K CHF. We assume that the purchase offers are independently distributed random variables
+  with known cumulative distribution $F$. Let $N$ be number of purchase offers received before selling the house.
+  Compute the probability law of N, that is $P(N=n)$, for $n=1,2,...$.
+\end{enumerate}
+
+\end{document}
+
+
+

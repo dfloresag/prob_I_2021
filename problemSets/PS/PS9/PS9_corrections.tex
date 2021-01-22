@@ -1,0 +1,203 @@
+\documentclass[12pt,thmsa]{article}
+\usepackage[french,english]{babel}
+\usepackage[ansinew]{inputenc}
+\usepackage[T1,OT1]{fontenc}
+\usepackage{graphicx}
+\usepackage{amsmath,amssymb,listings}
+\usepackage{alltt,algorithmic,algorithm}
+\usepackage{multicol}
+\usepackage{cite}
+\usepackage{fancyhdr}
+\usepackage{setspace}
+\usepackage{array}
+\usepackage{amsfonts}
+\usepackage{latexsym}
+\usepackage{epsf}
+\usepackage{umlaute}
+\usepackage{setspace}
+\usepackage{amsthm}
+\usepackage{enumerate}
+
+
+\setlength{\textwidth}{160mm}
+\setlength{\textheight}{230mm}
+\setlength{\oddsidemargin}{-5mm}
+\setlength{\topmargin}{-10mm}
+
+% to get rid of the numbers in the bibliography:
+\makeatletter
+\def\@biblabel#1{}
+\makeatother
+
+
+
+\title{Assignement 9}
+
+
+
+
+\begin{document}
+
+
+\noindent \textsc{University of Geneva}     \hfill \textsc{Bachelor in Economics and Management} \\
+\textbf{Probability 1}                      \hfill \textsc{Bachelor in International Relations} \\
+Professor Davide La Vecchia                 \hfill Spring 2018  \\
+ASSIGNMENT 09                               \hfill  May 3rd \& May 8th
+
+
+
+\noindent
+\makebox[\linewidth]{\rule{\textwidth}{0.4pt}}\\[1.5ex]
+
+
+\addtocounter{section}{1}
+\section*{Exercise \thesection:}
+
+To solve this exercise we use the table of the cumulative distribution function of the standard normal
+{\it i.e.}  $\Phi(\cdot)$, where $P(Z\leq x)=\Phi(x)$.
+
+We use this two properties
+\begin{itemize}
+\item $P(Z>x)=1-P(Z \leq x)$ (complementarity) and
+\item $P(Z\leq-x) = P(Z\geq x)$ (symmetry)
+\end{itemize}
+
+\begin{eqnarray*}
+P(Z \leq 2.67) &= &\Phi(2.67)  \approx  {0.9962} \\
+P(Z\leq 6.2) &=& \Phi(6.2)  \approx  {1.0000}\\
+P(Z\leq -1.2) &\stackrel{sym.}{=}& P(Z\geq 1.2) \stackrel{comp.}{=}
+1-P(Z < 1.2) = 1-\Phi(1.2) \approx  {0.1151}\\
+P(Z\geq 0.68) &\stackrel{comp.}{=}& 1-P(Z < 0.68) = 1-\Phi(0.68)
+\approx  {0.2483}\\
+P(Z\geq -1.55) &\stackrel{sym.}{=}& P(Z\leq 1.55) = \Phi(1.55) \approx   {0.9394}\\
+P(0 \leq Z\leq 0.55) &=& P(Z \leq 0.55) - P(Z < 0) = \Phi(0.55) -
+\Phi(0) \approx 0.7088-0.5= {0.2088}\\
+P(Z\leq a) & = & 0.9099  \iff  a\approx {1.34}\\
+P(Z\leq a) & = & 0.0044  \iff  a\approx {-2.62}\\
+P(Z\geq a) & = & 0.7704  \iff  a\approx {-0.74}\\
+P(Z\leq a) & = & 0.93  \iff  a\approx {1.48}\\
+\end{eqnarray*}
+
+
+\addtocounter{section}{1}
+\section*{Exercise \thesection:}
+% ex 3.17
+
+Let $X$ be the random variable measuring the speed. So $X \sim N(72,8^2)$.
+\begin{enumerate}
+  \item The proportion of drivers who will have to pay a penalty is the probability that $X$ is
+  bigger than  80:
+\begin{equation*}
+P(X>80)= P\left(Z>\frac{80-72}{8} \right)=1-\Phi(1) \simeq 16 \%
+\end{equation*}
+where $Z \sim N(0,1)$.
+  \item We are looking for the conditional probability to measure a speed bigger than 110 given that the driver has already a penalty:
+  \begin{eqnarray*}
+  P(X>110 \vert X>80) &=&  \frac{P(X>110 \bigcap X>80)}{P(X>80)} \\
+   &=& \frac{P(X>110)}{P(X>80)} = \frac{1- \Phi((110-72)/8)}{1-\Phi(1)}\simeq 0.
+  \end{eqnarray*}
+
+
+\end{enumerate}
+
+
+\addtocounter{section}{1}
+\section*{Exercise \thesection:}
+% 3.11
+
+
+Let $X$ (respectively $Y$) be the length of the screws produced by device A (respectively B). The random
+variables $X$ and $Y$ are normally distributed with parameters $(8,4)$ and (7.5 ,1).
+\begin{enumerate}
+  \item We are looking for the device which has the bigger probability to produce screws in the interval $[ 7; 9]$. First:
+  \begin{equation*}
+  P(7\leq X \leq 9)= P(-0.5\leq Z \leq 0.5)=2 \Phi(0.5)-1 \simeq 0.383
+  \end{equation*}
+  where $Z$ is the standard normal random variable (i.e. $Z\sim N(0,1)$).
+  For the second device:
+  \begin{eqnarray*}
+  P(7\leq Y \leq 9)&=& P(-0.5\leq Z \leq 1.5)=P(Z \leq 1.5)-P(Z\leq -0.5) \\
+  &=&\Phi(1.5)- (1-\Phi(0.5)) \simeq 0.6247
+  \end{eqnarray*}
+  The device B is the best.
+
+  \item Let $X^*$ be the new random variable describing the length of the screws produced by device A. Given that $E(X^*)=8$ we are looking for the variance such
+  that both devices produce the same amount of screws with length in the interval $[7,9]$.
+  We want then:
+  \begin{equation*}
+  P(7\leq X^* \leq 9)= P\left(\frac{-1}{\sigma}\leq Z \leq \frac{1}{\sigma}\right)=2 \Phi\left(\frac{1}{\sigma}\right)-1 = 0.6247
+  \end{equation*}
+  So we find:
+  \begin{equation*}
+    \Phi\left(\frac{1}{\sigma}\right)=0.8124  \Leftrightarrow \frac{1}{\sigma}= \Phi^{-1}(0.8124) ,
+  \end{equation*}
+  and finally:
+   \begin{equation*}
+   \sigma =\frac{1}{0.89}  \Leftrightarrow \sigma^2 \simeq 1.26.
+  \end{equation*}
+
+\end{enumerate}
+
+
+\addtocounter{section}{1}
+\section*{Exercise \thesection:}
+
+The operating time of the machines is given by $M \sim  N(200,81)$ for the machine `Minulta' and by $ C  \sim N(210,144)$ for the machine `Canyon'.
+\begin{enumerate}%[(a)]
+\item What is the probability that the machine `Canyon' will require maintenance in the next 7 months (assuming 1 month contains 30 days)? Redo the calculation for the machine `Minulta'.
+
+The probability that the machine `Canyon' will need maintenance in the next 7 months (210 days) is $P (C <210)$ whereas for the machine `Minulta', it is equal to $ P ( M <210) $.\\
+For the machine `Canyon', we calculate $P(C<210)$:
+ \begin{eqnarray*}
+P(C<210)&=& \left. P(C-210<0) \right. \nonumber  \\
+&=& \left. P \left(\frac{C-210}{\sqrt{144}}<0\right) \right. \nonumber  \\
+&=& \left. \Phi(0)=0.5.  \right. \nonumber
+ \end{eqnarray*}
+ 
+
+For the machine `Minulta', we calculate $P(M<210)$:
+\begin{eqnarray*}
+P(M<210)&=& \left. P(M-200<10) \right. \nonumber  \\
+&=& \left. P(\frac{M-200}{\sqrt{81}}<\frac{10}{\sqrt{81}}) \right. \nonumber  \\
+&=& \left.P(\frac{M-200}{\sqrt{81}}<\frac{10}{9}) \right. \nonumber  \\
+&\approx & \left. \Phi(1.11) \approx 0.8665.  \right. \nonumber
+ \end{eqnarray*}
+
+\item What is the probability that the machine `Canyon' will stop before `Minulta' for the first time?
+
+The probability that the machine `Canyon' will stop before `Minulta' for the first time is given by $$P(C<M)=P(C-M<0)$$
+We know that $ C $ and $ M $ are independent and normally distributed random variables.
+
+So $$(C-M)\sim N(\mu_c - \mu_m , \sigma_c^2 + \sigma_m^2) \quad
+\Rightarrow \quad (C-M)\sim N(10, 225)$$
+and
+\[
+P(C-M<0)=\Phi\left(\frac{0-10}{\sqrt{225}}\right)=\Phi\left(\frac{-10}{15}\right)\approx\Phi(-0.67) = 1-\Phi(0.67) \approx 1 - 0.7486 = 0.2514.
+\]
+\item What is the probability that the machine `Minolta' will stop before `Canyon' for the first time?
+
+The probability that the machine `Minolta' will stop before `Canyon' for the first time is given by $$(M-C)\sim N(-10,225)$$ 
+So
+\[
+P(M-C<0)=\Phi\left(\frac{0-(-10)}{\sqrt{225}}\right)=\Phi\left(\frac{10}{15}\right)\approx\Phi(0.67) \approx 0.7486.
+\]
+
+\medskip
+
+Alternative: Note that: $P(M - C < 0)=1-P(C-M<0)$.
+\item What is the probability that both machines will stop at the same time for the first time?
+
+The probability that both machines will stop at the same time for the first time is: $$P(C=M)=P(C-M=0).$$
+
+The probability that a continuous random variable has an exact value is zero, hence: $$P(C=M)=0.$$
+
+
+
+\end{enumerate}
+
+
+
+\end{document}
+
+
+

@@ -1,0 +1,302 @@
+\documentclass[12pt,thmsa]{article}
+\usepackage[french,english]{babel}
+\usepackage[ansinew]{inputenc}
+\usepackage[T1,OT1]{fontenc}
+\usepackage{graphicx}
+\usepackage{amsmath,amssymb,listings}
+\usepackage{alltt,algorithmic,algorithm}
+\usepackage{multicol}
+\usepackage{cite}
+\usepackage{fancyhdr}
+\usepackage{setspace}
+\usepackage{array}
+\usepackage{amsfonts}
+\usepackage{latexsym}
+\usepackage{epsf}
+\usepackage{umlaute}
+\usepackage{setspace}
+\usepackage{amsthm}
+\usepackage{enumerate}
+\usepackage{multirow}
+
+\setlength{\textwidth}{160mm}
+\setlength{\textheight}{230mm}
+\setlength{\oddsidemargin}{-5mm}
+\setlength{\topmargin}{-10mm}
+
+% to get rid of the numbers in the bibliography:
+\makeatletter
+\def\@biblabel#1{}
+\makeatother
+
+
+
+\title{Assignement 4}
+
+
+
+
+\begin{document}
+
+
+\noindent \textsc{University of Geneva}     \hfill \textsc{Bachelor in Economics and Management} \\
+\textbf{Probability 1}                      \hfill \textsc{Bachelor in International Relations} \\
+Professor Davide La Vecchia                 \hfill Spring 2018  \\
+ASSIGNMENT 10                               \hfill   May 14th-18th
+
+
+
+\noindent
+\makebox[\linewidth]{\rule{\textwidth}{0.4pt}}\\[1.5ex]
+
+
+
+
+
+
+
+\section*{Exercise 1:}
+
+
+Let $X$ be the random variable counting the number of times Charlie is inspected during a year. The definition of $X$ implies that $X\sim Bin(700,0.1)$.
+
+\begin{enumerate}%[(a)]
+\item
+We have $\text{E}(X)=np=70$ and $\text{var}(X)=np(1-p)=63$. We can then approximate the binomial distribution by a nomal:
+ $X \sim_{appr} N(70,63)$ and so:
+\begin{eqnarray*}
+ P(60\le X \le 100)&\simeq& \left. P(X\le100)-P(X\le60) \right. \nonumber  \\
+&=& \left. \Phi\left(\frac{100-70}{\sqrt{63}}\right)-\Phi\left(\frac{60-70}{\sqrt{63}}\right) \right. \nonumber  \\
+& \approx & \left. \Phi(3.78) - \Phi(-1.26)  \right. \nonumber  \\
+&\approx & \left.  0.9999 - (1-0.8962) = 0.9999-0.1038=0.8961. \right. \nonumber
+ \end{eqnarray*}
+
+\medskip
+
+\item
+If Charles always buys his ticket, he would spend 2$\cdot$700 = 1'400 CHF for the year.
+If there is a conductor, Charles has to pay the penalty $a$.
+Let $F$ be the financial result at the end of the year. So $F=1400 - a X$. So
+$$\text{E}(F)=1400-a E(X) = 1400 - 70 a$$
+and
+$$\text{var}(F)= a^2\cdot \text{var}(X)=63a^2.$$
+
+To compute the value of the minimal penalty, we have to find $a$ such that $P(F < 0) = 0.75$.
+
+Using the normal approximation, $F \sim N(1400-70a,63 a^2)$:
+\begin{eqnarray*}
+ P(F<0)& \approx & \left.  \Phi\left(-\frac{1400-70a}{\sqrt{63 a^2}}\right) \right. \nonumber  \\
+&=& \left. \Phi\left(-\frac{1400-70a}{\sqrt{63}a}\right). \right. \nonumber
+ \end{eqnarray*}
+
+We have to solve:
+ \begin{eqnarray*}
+-\frac{1400-70a}{\sqrt{63}a}& \approx & \left.  \Phi^{-1}(0.75) \right. \nonumber  \\
+& \approx & \left.  0.67. \right. \nonumber
+ \end{eqnarray*}
+So finally we have:
+$$
+a \approx \frac{1400}{70-0.67\cdot\sqrt{63}} \approx 21.64.
+$$
+\end{enumerate}
+
+
+
+\section*{Exercise 2:}
+\begin{enumerate}%[\indent \bf a)]
+\item The event {`the user waits less than 5 minutes'} is the same as the event {`the user arrives between 7h10 and 7h15  or between 7h25 and 7h30',}
+which is itself the meeting of the two disjoint events
+ {$A=$ `the user arrives between 7h10 and 7h15'\, and\, $B=$ `'the user arrives between 7h25 and 7h30'.}
+\smallskip
+
+Let $X$ be a uniform random variable on $(0,30)$, representing the number of minutes since 7h00 until the arrival of the user.
+
+We then
+ \begin{eqnarray*}
+P(\mbox{wait less than 5 minutes}) &=& P(A \cup B) = P(A) + P(B)\\
+ &=&
+P(10<X<15) + P(25<X<30).
+ \end{eqnarray*}
+As $X$ follows a uniform law on $(0,30)$,
+$$
+P(10<X<15) + P(25<X<30) = \int_{10}^{15} \frac{1}{30}dx +
+\int_{25}^{30} \frac{1}{30}dx = \frac{1}{3}.
+$$
+
+\item The event {`the user waits more than 10 minutes'} is the same as the event {`the user arrives between 7h00 and 7h05 or between 7h15 and 7h20',}
+which is itself the meeting of the two disjoint events 
+ `the user arrives between 7h00 and 7h05'\, and\, `the user arrives between 7h15 and 7h20'.
+\smallskip
+
+We then
+% Un raisonnement similaire montre que
+ \begin{eqnarray*}
+P(\mbox{`wait more than 10 minutes'}) &=& P(0<X<5) + P(15<X<20) \\
+&=& \int_{0}^{5} \frac{1}{30}dx +
+\int_{15}^{20} \frac{1}{30}dx = \frac{1}{3}.
+ \end{eqnarray*}
+\end{enumerate}
+
+
+
+
+
+
+\section*{Exercise 3:}
+\begin{enumerate}
+  \item Let $T$ be the lifetime of a part of the car and $H$ the event `the part is pirated'. We know that $P(H)=1/4$ and then $P(\bar{H})=3/4$. Moreover $T\vert H$ follows an exponential distribution with expectation $5$ and $T\vert \bar{H}$ follows an exponential distribution with expectation 2.
+The formula of the cumulative distribution function of an exponential random variable $X$ with expectation $1/\lambda$ is $P(X\leq x)=1-\exp(-\lambda x)$ and then $P(X>x)=\exp(-\lambda x)$.
+Knowing that the part has survived until time $t$, the probability that it has been pirated is:
+\begin{eqnarray*}
+  \pi(t) &=& P(H\vert T>t)= \frac{P(T>t\vert H) P(H)}{P(T>t \vert H) P(H)+
+  P(T>t\vert \bar{H}) P(\bar{H})} \\
+   &=& \frac{\exp(-\frac{1}{2}t)\cdot \frac{1}{4}}{\exp(-\frac{1}{2}t)
+   \cdot \frac{1}{4} + \exp(-\frac{1}{5}t)\cdot \frac{3}{4}} \\
+   &=& \frac{1}{1+3 \cdot \exp(\frac{3}{10}t)}.
+\end{eqnarray*}
+
+When $t$ goes to infinity we have:
+$$
+\lim_{t \rightarrow \infty} \pi(t) =0.
+$$
+  \item Let's $Y$ be a random variable taking values $1$ if the part is pirated and $0$ when it is not.
+\begin{enumerate}
+  \item $Y$ is a bernoulli with probability $1/4$. Then $P(Y=y)= \left(\frac{1}{4}\right)^y \left(\frac{3}{4}\right)^{1-y}$.
+  \item We have $P(T\leq t \vert Y=1)=1-e^{-t/2}$ and $P(T\leq t \vert Y=0)=1-e^{-t/5}$. We can merge them in this way: $P(T\leq t \vert Y=y)=1-e^{-t/(2y+5(1-y))}$.
+  \item We just have to multiply the conditional probability by $P(Y=y)$:
+  $$P(T \leq t \cap Y=y)= \left( 1-e^{-t/(2y+5(1-y))} \right) \left(\frac{1}{4}\right)^y \left(\frac{3}{4}\right)^{1-y}$$
+  \item We compute the cumulative distribution function of $T$.
+  \begin{eqnarray*}
+   P(T \leq t) &=& \left(1-e^{-t/5}\right) \frac{3}{4} + \left(1-e^{-t/2}\right) \frac{1}{4}  \\
+     &=& 1 - e^{-t/5} \frac{3}{4} - e^{-t/2} \frac{1}{4}
+  \end{eqnarray*}
+  \item We can now find $P(Y=y\vert T\geq t)$:
+  \begin{eqnarray*}
+  P(Y=y\vert T> t) &=& \frac{P(T>t\vert Y=y) P(Y=y)}{P(T>t)} \\
+   &=& e^{-t/(2y+5(1-y))} \frac{\left(\frac{1}{4}\right)^y \left(\frac{3}{4}\right)^{1-y}}{ e^{-t/5} \frac{3}{4} + e^{-t/2} \frac{1}{4}}
+\end{eqnarray*}
+
+We can then deduce $\pi(t)$:
+  \begin{eqnarray*}
+  \pi(t)&=& P(Y=1\vert T> t) = e^{-t/2} \frac{\frac{1}{4}}{ e^{-t/5} \frac{3}{4} +e^{-t/2}\frac{1}{4}}  \\
+  &=& \frac{1}{1+3 \cdot \exp(\frac{3}{10}t)}
+\end{eqnarray*}
+
+
+
+\end{enumerate}
+
+\newpage
+
+\section*{Exercise 4:}
+
+\begin{enumerate}
+  \item We start by isolating $R_{0,n}$ from the equation of the statement:
+\begin{equation*}
+    R_{0,n}=\left( \frac{S_n}{S_0}\right)^{\frac{1}{n}} -1.
+\end{equation*}
+We use the indication to obtain:
+\begin{equation*}
+ R_{0,n}=\left( \prod_{t=1}^{n} \frac{S_t}{S_{t-1}} \right)^{\frac{1}{n}} -1.
+\end{equation*}
+
+  \item As $S_t/S_{t-1} \sim LN(\mu, \sigma^2)$ we have $\log(S_t/S_{t-1}) \sim N(\mu, \sigma^2)$.
+\smallskip
+
+It is known that a linear combination of random variables with normal distributions also follows a normal distribution. So we calculate the expectation of $Y$:
+\begin{equation*}
+ \text{E}(Y)=\text{E}\left[\frac{1}{n} \sum_{t=1}^n \log\left(\frac{S_t}{S_{t-1}}\right)\right]  = \frac{1}{n} \sum_{t=1}^n \text{E}\left[\log\left(\frac{S_t}{S_{t-1}}\right)\right] = \frac{1}{n} \sum_{t=1}^n \mu = \mu
+\end{equation*}
+  and the variance of $Y$:
+  \begin{equation*}
+   \text{var}(Y)=\text{var}\left[\frac{1}{n} \sum_{t=1}^n \log\left(\frac{S_t}{S_{t-1}}\right)\right]  = \frac{1}{n^2} \sum_{t=1}^n \text{var}\left[\log\left(\frac{S_t}{S_{t-1}}\right)\right] = \frac{1}{n^2} \sum_{t=1}^n \sigma^2 = \frac{\sigma^2}{n}.
+  \end{equation*}
+  So we get that $$Y=\frac{1}{n} \sum_{t=1}^n \log\left(\frac{S_t}{S_{t-1}}\right) \sim N\left(\mu,\frac{\sigma^2}{n}\right).$$
+  \item
+Using the formula of point 1 we have that
+$$
+ R_{0,n}=\left( \prod_{t=1}^{n} \frac{S_t}{S_{t-1}} \right)^{\frac{1}{n}}
+ -1=\exp\left[\log\left(\prod_{t=1}^{n}
+ \frac{S_t}{S_{t-1}}\right)^{\frac{1}{n}}\right]  -1=\exp\left[\frac{1}{n}
+ \sum_{t=1}^{n} \log\left( \frac{S_t}{S_{t-1}} \right) \right]-1 %= \exp(Y)-1
+$$
+and so
+$$
+ R_{0,n}= \exp(Y)-1.
+$$
+
+We know that $\exp(Y)$ follows a log-normal distribution with parameters $\mu$ and $\sigma^2/n$.
+Applying the expectation formula of the log-normal distribution, we find the expectation of $R_{0,n}$:
+\begin{equation*}
+\text{E}(R_{0,n})=\text{E}[\exp(Y)]-1=\exp\left(\mu + \frac{\sigma^2}{2 n} \right)-1
+\end{equation*}
+and the variance $R_{0,n}$:
+\begin{equation*}
+\text{var}(R_{0,n})=\text{var}[\exp(Y)]=\exp\left(2\mu + \frac{\sigma^2}{n} \right) \left[
+ \exp\left(\frac{\sigma^2}{n} \right) -1\right].
+\end{equation*}
+  \item When $n \rightarrow \infty$, $\text{E}(R_{0,n})=\exp(\mu)-1$ and
+$\text{var}(R_{0,n})=\exp(2\mu)\cdot (1-1)=0$.
+\end{enumerate}
+
+\section*{ Exercise 5 (Optional):}
+% ex 3.19
+$V \sim \mathcal{U}(0,1)$. The density function of $V$: $f_{V}(v)=1, when \ v\in (0,1)$. CDF of $V$ is: 
+$$F_V(v) = \begin{cases}
+   0    & \text{if } v \leq 0 ,  \\
+   v      & \text{if } 0< v < 1 \\
+    1   & \text{if } v\geq 1.
+  \end{cases} $$
+\begin{enumerate}
+   \item Let's denote $F_W(w)$ its density. 
+  \begin{eqnarray*}
+  1.1, \ \text{ if } \ \lambda >0,  F_W(w) &=& P(W \leq w )=P( \frac{-1}{\lambda} \log(V) \leq w) = P(V> \exp(-\lambda w))\\
+     &=& 1-F_V(\exp(-\lambda w))= 1-\exp(-\lambda w) ,
+  \end{eqnarray*}
+ The random variable follows an exponential distribution with density:
+  \begin{equation*}
+  f_W(w)= \lambda \exp(-\lambda w) ,  \text{ for } w>0.
+  \end{equation*}
+ \begin{eqnarray*}
+ 1.2, \ \text{ if } \ \lambda <0,  F_W(w) &=& P(W \leq w )=P( \frac{-1}{\lambda} \log(V) \leq w) = P(V< \exp(-\lambda w))\\
+     &=& F_V(\exp(-\lambda w))= \exp(-\lambda w) ,
+  \end{eqnarray*}
+\begin{equation*}
+f_W(w)= -\lambda \exp(-\lambda w) ,  \text{ for } w<0
+ \end{equation*}
+  \item $V$ is uniformly distributed. Let's compute the cumulative distribution of $X$:
+  \begin{equation*}
+  P(X \leq x)=P( F^{-1}(V) \leq x)=P(V \leq F(x))=F_V(F(x))=F(x).
+  \end{equation*}
+
+  \item Solution 1: From point 2. we know that $g(x)=F^{-1}(x)$. So we just have to invert the cumulative distribution $F$:
+  \begin{eqnarray*}
+  F(x) &=&  v  \\
+   \frac{1}{1+\frac{\lambda}{x^2}} &=& v \\
+   1 &=& v \left( 1+\frac{\lambda}{x^2}\right)  \\
+  \frac{1}{v} -1 &=& \frac{\lambda}{x^2}   \\
+  x &=& \sqrt{\frac{\lambda}{\frac{1}{v} -1}}
+  \end{eqnarray*}
+The transformed random variable $g(V)=\sqrt{\frac{\lambda}{\frac{1}{V} -1}} $ has then a Dagum distribution.
+
+\newpage
+Solution 2: Let $Y=g(V)$, show that $Y \sim $Dagum distri. \\
+  i) suppose $g(V)$ is a 1-to-1 and increasing function.\\
+ \begin{eqnarray*}
+  F_Y(y)&=&P(Y \leq y) =P(g(V) \leq y) = P(V \leq g^{-1}(y))\\
+&=& F(g^{-1}(y))=g^{-1}(y)=v\\
+&=& (1+\lambda y^{-2})^{-1}\\
+y &=& \sqrt{\frac{\lambda}{\frac{1}{v} -1}} \ (0<v<1) \ \Rightarrow  \ Y =g(V)= \sqrt{\frac{\lambda}{\frac{1}{V} -1}}
+\end{eqnarray*}
+ ii) suppose $g(V)$ is a 1-to-1 and decreasing function.\\
+ \begin{eqnarray*}
+  F_Y(y)&=&P(Y \leq y) =P(g(V) \leq y) = P(V \geq g^{-1}(y))\\
+&=& 1-F(g^{-1}(y))=1-g^{-1}(y)=1-v\\
+&=& (1+\lambda y^{-2})^{-1}\\
+y &=& \sqrt{\frac{\lambda}{\frac{1}{1-v} -1}} \ (0<v<1) \ \Rightarrow  \ Y =g(V)= \sqrt{\frac{\lambda}{\frac{1}{1-V} -1}}
+\end{eqnarray*}
+
+\end{enumerate}
+
+\end{enumerate}
+\end{document}

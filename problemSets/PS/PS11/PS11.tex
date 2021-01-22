@@ -1,0 +1,169 @@
+\documentclass[12pt,thmsa]{article}
+\usepackage[french,english]{babel}
+\usepackage[ansinew]{inputenc}
+\usepackage[T1,OT1]{fontenc}
+\usepackage{graphicx}
+\usepackage{amsmath,amssymb,listings}
+\usepackage{alltt,algorithmic,algorithm}
+\usepackage{multicol}
+\usepackage{cite}
+\usepackage{fancyhdr}
+\usepackage{setspace}
+\usepackage{array}
+\usepackage{amsfonts}
+\usepackage{latexsym}
+\usepackage{epsf}
+\usepackage{umlaute}
+\usepackage{setspace}
+\usepackage{amsthm}
+\usepackage{enumerate}
+
+
+\setlength{\textwidth}{160mm}
+\setlength{\textheight}{230mm}
+\setlength{\oddsidemargin}{-5mm}
+\setlength{\topmargin}{-10mm}
+
+% to get rid of the numbers in the bibliography:
+\makeatletter
+\def\@biblabel#1{}
+\makeatother
+
+
+
+\title{Assignement 11}
+
+
+
+
+\begin{document}
+
+
+\noindent \textsc{University of Geneva}     \hfill \textsc{Bachelor in Economics and Management} \\
+\textbf{Probability 1}                      \hfill \textsc{Bachelor in International Relations} \\
+Professor Davide La Vecchia                 \hfill Spring 2018  \\
+ASSIGNMENT 11                               \hfill   May 22nd-24th
+
+
+
+\noindent
+\makebox[\linewidth]{\rule{\textwidth}{0.4pt}}\\[1.5ex]
+
+
+
+
+\addtocounter{section}{1}
+\section*{Exercise \thesection:}
+
+The mean of the yearly incomes of the employees of a big bank is equal to 50'000 dollars.
+\begin{enumerate}
+  \item Give an upper bound for the proportion $p$ of the incomes greater than or equal to 80'000 dollars.
+  \item Moreover, we know that the standard error is equal to 10'000. Give a smaller upper bound of $p$
+  by using this additional information.
+\end{enumerate}
+
+
+\addtocounter{section}{1}
+\section*{Exercise \thesection:}
+
+Barack is a presidential candidate in the country United-states of Statistics.
+Let $p$ be the true proportion of the voters supporting Barack.
+We perform a survey on 1'200 electors. What should be the proportion $p$ so that there is $95\%$ certainty that
+the majority of the participants to the survey will vote for Barack
+
+\addtocounter{section}{1}
+\section*{Exercise \thesection:}
+
+The number of registrations in a statistics course is a Poisson random variable with parameter $\lambda= 100$. The teacher giving this course has decided that, if the number of registrations is above 120, it will create two sections and thus give two courses. While below 120, only one class will be formed. What is the probability that this teacher has to give the course twice?
+
+\addtocounter{section}{1}
+\section*{Exercise \thesection:}
+
+
+Let $R$ be the random variable whose value is the maximum of a throw of two dice. The probability distribution
+of $R$ is:
+$$
+\begin{array}{c|cccccc|c}
+r_i & 1 & 2 & 3 & 4 & 5 & 6 & \text{Total} \\
+\hline
+p_{r_i}  = P( R=r_i) & 1/36 & 3/36& 5/36& 7/36& 9/36& 11/36& 1
+\end{array}
+$$
+\begin{enumerate}%[\indent \bf a)]
+\item Let $S$ be the number of 5 or 6 obtained. Compute the distribution of $S$.
+\item Compute the joint distribution of $R$ and $S$.
+\item Are the random variables $R$ and $S$ independent?
+\item Compute the distribution of $R$ given $S=1$.
+\end{enumerate}
+
+
+
+
+\addtocounter{section}{1}
+\section*{Exercise \thesection:}
+
+Let $X$ be a number chosen randomly among the integers $1,2,3$ and $4$.
+Let $Y$ be another number randomly chosen among the numbers greater than or equal to $X$, but less than or equal to 10.
+\begin{enumerate}
+  \item Find the probability distribution of $X$ and the conditional probability distribution of
+ $Y\vert X=x$ for all $x=1,2,3,4$.
+  \item Determine the joint distribution of $X$ and $Y$.
+\end{enumerate}
+
+
+\addtocounter{section}{1}
+\section*{Exercise \thesection (Optional):}
+
+
+\begin{enumerate}
+ 
+\item Let $Z$ be a random variable having a Bernoulli distribution with  $p:=P(Z=1)$. Letting
+$\zeta>0$, show that
+$$
+P(Z \geq \zeta) \leq \exp^{\{-\zeta\}} [1-p(1-\exp^{\{1\}})]. %(1-p) e^{-\gamma} + p e^{1-\gamma}. %\frac{p+(1-p)e} {e^{\gamma}}.
+$$
+[Hint: $P(Z \geq  \zeta) = P (\exp^{\{Z\}}\geq \exp^{\{\zeta\}})$.]  \\
+ 
+
+ 
+\item Let us define
+$$
+X := \sum_{i=1}^n Z_i, \quad \text{for} \quad n \in \mathbb{N}.
+$$
+where $\{Z_i\}$ is a sequence of independent and identically distributed Bernoulli random variables such that $p:=P(Z_i=1)$, for each $i=1,2,...,n$.
+ 
+ 
+ 
+\begin{itemize}
+     \item[2.1] Is $X$ a discrete or a continuous random variable? What is the distribution of $X$? What is $E[X]$?
+     %\vspace{4cm}
+            \item[2.2] Show that
+             \begin{equation} \label{Eq: var1}
+             \text{Var}(X) = E[X(X-1)]+np(1-np).
+             \end{equation}
+   [Hint: make use of $E[X]$ as derived in question 2.1]
+           %  \vspace{8cm}
+           
+    \item[2.3] Assuming there exists $\beta > 1$ such that $E[X^2]\leq n^2\beta^2$, show that
+             \begin{equation} \label{Eq: var2}
+             \text{Var}(X) \leq n^2(\beta^2 -p^2).
+             \end{equation}
+          %  \vspace{5cm}
+
+            \item[2.4] Let $Y \sim \text{Poisson}(\lambda)$ (namely, $Y$ is a Poisson random variable with parameter $\lambda$), where $\lambda$ is a positive real number. Making use of (\ref{Eq: var1}) and (\ref{Eq: var2}), show that the following inequalities hold
+            \begin{eqnarray*}
+    P\Big( \vert X-np \vert \geq nE[Y] \Big) & \leq & \frac{E[X(X-1)]+np(1-np)}{(nE[Y])^2}  \\
+%        & \leq &\left(\frac{\beta}{\alpha}\right)^2 -\left(\frac{p}{\alpha}\right)^2 \\
+        & \leq & \left(\frac{\beta -p }{\lambda}\right) \left(\frac{\beta + p}{\lambda} \right).
+            \end{eqnarray*}
+\end{itemize}
+           
+ 
+\end{enumerate}
+
+
+
+\end{document}
+
+
+

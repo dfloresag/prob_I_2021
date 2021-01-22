@@ -1,0 +1,164 @@
+\documentclass[12pt,thmsa]{article}
+\usepackage[french,english]{babel}
+\usepackage[ansinew]{inputenc}
+\usepackage[T1,OT1]{fontenc}
+\usepackage{graphicx}
+\usepackage{amsmath,amssymb,listings}
+\usepackage{alltt,algorithmic,algorithm}
+\usepackage{multicol}
+\usepackage{cite}
+\usepackage{fancyhdr}
+\usepackage{setspace}
+\usepackage{array}
+\usepackage{amsfonts}
+\usepackage{latexsym}
+\usepackage{epsf}
+\usepackage{umlaute}
+\usepackage{setspace}
+\usepackage{amsthm}
+\usepackage{enumerate}
+
+
+\setlength{\textwidth}{160mm}
+\setlength{\textheight}{230mm}
+\setlength{\oddsidemargin}{-5mm}
+\setlength{\topmargin}{-10mm}
+
+% to get rid of the numbers in the bibliography:
+\makeatletter
+\def\@biblabel#1{}
+\makeatother
+
+
+
+\title{Assignement 5}
+
+
+
+
+\begin{document}
+
+
+\noindent \textsc{University of Geneva}     \hfill \textsc{Bachelor in Economics and Management} \\
+\textbf{Probability 1}                      \hfill \textsc{Bachelor in International Relations} \\
+Professor Davide La Vecchia                 \hfill Spring 2018  \\
+ASSIGNMENT 05                               \hfill   March 27th
+
+
+
+\noindent
+\makebox[\linewidth]{\rule{\textwidth}{0.4pt}}\\[1.5ex]
+
+\section*{Exercise 1}
+
+You look at the following discrete probability distributions for two random variables X and Y respectively
+\begin{center}
+\begin{tabular}{l*{6}{c}r}
+X \text{values}               & -1 & 1 & 3 & 5 & 7 \\
+\hline
+\text{Probability}         & 0.1 & 0.2 & 0.4 & 0.2 & 0.1  \\
+\end{tabular}
+\end{center}
+\begin{center}
+\begin{tabular}{l*{6}{c}r}
+Y \text{values}               & -1 & 1 & 3 & 5 & 7 \\
+\hline
+\text{Probability}         & 0.2 & 0.15 & 0.3 & 0.15 & 0.2  \\
+\end{tabular}
+\end{center}
+
+Compute the mean and the variance of both variables.
+
+
+\section*{Exercise 2}
+
+In a TV game, a candidate faces 5 doors, one of which hides a gift. Viewers can make bets on the number of doors that the candidate will push until he finds the gift. Jules and Gaston are candidates for the game. Jules has a good memory and is not likely to push twice the same door. As far as Gaston is concerned, he has absolutely no memory.
+
+\begin{enumerate}%[(a)]
+\item Construct the probability function of the number of doors pushed by Jules. Calculate the expectation of this event.
+\item Construct the probability function of the number of doors pushed by Gaston. Calculate the expectation of this event.
+
+
+
+\noindent \underline{Indication:} The following mathematical property can be used (generic geometric series):
+$$|x|<1 \Rightarrow \sum_{k=1}^{\infty} k x^{k-1} = \frac{1}{(1-x)^2}.$$
+\item Generalize the previous results to n doors.
+\end{enumerate}
+
+\newpage
+\section*{Exercise 3} %\bf Exercice 4.7 du recueil d'exercices}
+
+Two cards are randomly chosen from a box containing the following five cards: 1, 1, 2, 2, 3. $X$ represents the average and $Y$ is the maximum of the two numbers drawn.
+\begin{enumerate}%[(a)]
+    \item Calculate the probability distribution, the cumulative distribution function, the mean and the variance of $X$, $Y$ and $Z = Y - X$.
+    \item If $W$ is the sum of the two numbers, what are its expectation and its variance?
+\end{enumerate}
+
+
+\section*{Exercise 4} %\bf}
+
+We consider a die whose faces are numbered from 1 to 6 and we define $X$ the random variable given by the number of the upper face. It is assumed that the die is rigged so that the probability of getting a face is proportional to the number on that face.
+
+ \begin{enumerate}%[(a)]
+\item Determine the probability function of $X$, then calculate its expectation and variance.
+\item We define $Y = 3X$. Calculate the expectation and variance of $Y$. Is it necessary to determine the probability function of $Y$ for calculating its expectation and variance?
+\item We define $Z = \frac{1}{X}$. Calculate the expectation and variance of $Z$. Is it necessary to determine the probability function of $Z$ for calculating its expectation and variance?
+\end{enumerate}
+
+
+\section*{Exercise 5} %\bf}
+
+\begin{enumerate}
+\item The following game is considered: The player rolls once a fair six sided die. If he gets 1, 2 or 3, he wins the equivalent in francs. Otherwise, he loses 2 francs. Let $ X $ be the random variable corresponding to the player's win (a negative value indicating a loss).
+
+\begin{enumerate}%[(a)]
+\item Give the probability function of $X$ and its distribution function $F_X$.
+\item Calculate the expectation and variance of $X$.
+\end{enumerate}
+
+\item We modify the game as follows: The winnings remain the same for the results 1, 2 or 3, but if the player gets something else, he rolls the die again. If he then gets 3 or less, he wins 3 francs, otherwise he loses 5 francs. We define $Y$ as the random variable corresponding to the gain of the player in this new game.
+
+\begin{enumerate}%[(a)]
+\item Give the probability function of $Y$ and its distribution function $F_Y$.
+\item Calculate the expectation and variance of $Y$.
+\end{enumerate}
+
+\item Which game is the most advantageous for the player? To justify.
+
+\end{enumerate}
+
+
+
+\section*{Exercise 6 (Optional)}
+The random variable $ X $ is Bernoulli(p) distribution if its probability mass function is given by:
+\begin{align*}
+P(X=x)=p^{x}(1-p)^{1-x} & \text{for } x=0,1
+\end{align*}
+where $ 0<p<1 $.
+Compute the Mean and the Variance of the Bernoulli distribution.
+
+
+
+\section*{Exercise 7 (Optional)}
+
+Let $X$ a discrete random variable following a Poisson distribution with parameter $\lambda$. Its probability function is given by:
+\begin{equation*}
+P(X=k)=e^{-\lambda} \frac{\lambda^{k}}{k!} \quad \text{for} \quad k=0,1,...
+\end{equation*}
+\begin{enumerate}
+  \item Check that $P(X=k)$ is a probability function.
+  \item Prove that its expectation is equal to $\lambda$.
+  \item Find the variance of $X$.
+  \item Compare the expectation and the variance of $X$ with the expectation and the variance of $S$, for a very large $n$. Here $S \sim Binomial(n,p)$.
+\end{enumerate}
+
+
+
+
+
+
+
+\end{document}
+
+
+
