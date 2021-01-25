@@ -2,3 +2,12 @@ Probability I
 ================
 
 A repo to share the Probability I lecture.
+
+-   [Book](/book) : Contains a working copy of the book based on
+    Davide’s [last year notes](/lecture2020).
+-   [problemSets](/problemSets) : This year’s problem sets in `.tex`
+    source and `.pdf`. Not to be changed (aside from the date, the
+    author and perhaps made more web-friendly / interactive.)
+-   [resources](/resources): last year plots and examples. To be redone
+    for the new lecture.
+-   [slides](/slides) this year slides
