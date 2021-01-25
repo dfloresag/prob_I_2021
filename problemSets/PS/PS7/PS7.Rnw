@@ -1,0 +1,154 @@
+\documentclass[12pt,thmsa]{article}
+\usepackage[french,english]{babel}
+\usepackage[ansinew]{inputenc}
+\usepackage[T1,OT1]{fontenc}
+\usepackage{graphicx}
+\usepackage{amsmath,amssymb,listings}
+\usepackage{alltt,algorithmic,algorithm}
+\usepackage{multicol}
+\usepackage{cite}
+\usepackage{fancyhdr}
+\usepackage{setspace}
+\usepackage{array}
+\usepackage{amsfonts}
+\usepackage{latexsym}
+\usepackage{epsf}
+\usepackage{umlaute}
+\usepackage{setspace}
+\usepackage{amsthm}
+\usepackage{enumerate}
+
+
+\setlength{\textwidth}{160mm}
+\setlength{\textheight}{230mm}
+\setlength{\oddsidemargin}{-5mm}
+\setlength{\topmargin}{-10mm}
+
+% to get rid of the numbers in the bibliography:
+\makeatletter
+\def\@biblabel#1{}
+\makeatother
+
+
+
+\title{Assignement 7}
+
+
+
+
+\begin{document}
+
+
+\noindent \textsc{University of Geneva}     \hfill \textsc{Bachelor in Economics and Management} \\
+\textbf{Probability 1}                      \hfill \textsc{Bachelor in International Relations} \\
+Dr. Daniel \textsc{Flores Agreda}                 \hfill Spring 2021  \\
+ASSIGNMENT 07                               \hfill   April 16th-20th
+
+
+
+\noindent
+\makebox[\linewidth]{\rule{\textwidth}{0.4pt}}\\[1.5ex]
+
+
+\section*{Exercise 1}
+
+In the final football tournament, Vladimir Petkovic, the coach of the team `Probaland', seeks to compose the best team possible. Before starting the competition, the coach has 23 players, among whom he can form a team of 11 players for the match.
+\medskip
+
+
+Note for football fans: In this exercise, we do not take any substitutions into consideration during the match.
+\medskip
+
+Among those 23 players, 3 are goalkeepers, 7 defenders, 7 midfielders and 6 attackers.
+\begin{enumerate}
+\item Once the chosen players are on the field, the probability for a player of getting injured during the match is 0.045. It is assumed that players get injured
+independently of each other. What is the probability that 3 players from the 'Probaland' team get injured during the match?
+\item What is the probability that at least one player from the 'Probaland' team gets injured during the match?
+\item Calculate the expectation and variance of the number of players from the 'Probaland' team who are injured during the match.
+\end{enumerate}
+
+
+
+
+\section*{Exercise 2}
+Diego, the organizer of a festival for statisticians, invited 12 artists. Each of the 12 selected artists must play for 40 minutes during the festival. Diego is concerned about the number of technical problems during the festival. From experience, he estimates that there is a technical problem every 20 hours of the concert on average. It is assumed that technical problems will occur randomly over time.
+
+\begin{enumerate}
+\item Taking into account that the festival lasts 8 hours and that there is no pause during
+the festival, what is the probability of having no technical problems during the
+festival?
+\item What is the probability of having at least 2 technical problems during the festival?
+\item Calculate the expectation and variance of the number of technical problems during the
+festival.
+\end{enumerate}
+
+
+
+\section*{Exercise 3}
+
+One class has 300 students including 297 girls. In each mathematics class, the
+teacher randomly interviews a person. From one class to another, the teacher does not remember the interviewee in the previous class. We can, therefore, consider that in each course, the choice of the student by the teacher is independent of the previous choices. It is also assumed that all students are present at each class.
+
+\begin{enumerate}
+\item Let n (a positive integer) be the number of questions asked to students and $X_n$ be the random variable representing the number of questions asked to girls. Give the expectation and variance of $X_n$ as a function of n.
+\end{enumerate}
+\medskip
+
+The number of questions asked to students is fixed at 100.
+
+\begin{enumerate}
+\item[2.] What is the probability of having exactly 98 girls questioned?
+\item[3.] Give an approximation of the probability of having 98 girls questioned.
+\item[4.] Give an approximation of the probability of having 94 girls questioned.
+\end{enumerate}
+
+
+
+\section*{Exercise 4}
+
+
+Kevin is in front of his front door. He has 20 different keys and has completely forgotten which key opens his door. As he is intoxicated, he takes a random key from his pocket and tries to open his door. If it's the right key he can enter the home but if it's the wrong key he puts it back into his pocket and tries to open the door again by choosing a key at random. He continues this process until he opens his door.
+
+\begin{enumerate}
+\item What is the probability that Kevin opens his door exactly in 2 tries?
+\item What is the probability that Kevin needs strictly more than 2 tries to open his door?
+\item Kevin needs 5 seconds for each test. Calculate the expectation and variance of the time that Kevin is in front of his door.
+\end{enumerate}
+
+
+
+
+\section*{Exercise 5}
+
+Oliver wants to show his friends that he knows how to play basketball. He decides to shoot himself shooting baskets. He wants to get 3 success of shots. It is assumed that each time Oliver shoots, he has a 0.1 probability of scoring. It is also assumed that the probability of each shot is independent.
+
+\begin{enumerate}
+\item What is the probability that Oliver needs exactly
+\begin{enumerate}
+\item 3 shots?
+\item 4 shots?
+\item 5 shots?
+\end{enumerate}
+\item What is the probability that Oliver needs strictly more than 5 shots?
+\item Oliver needs 3 seconds per shot. Calculate the expectation and variance of time
+which Oliver needs to finish his video.
+\end{enumerate}
+
+
+\section*{Exercise 6}
+
+In the National University of Probaland, for the probability course, 5 assistants are randomly selected from a pool of 12 PhD students in statistics and 7 PhD students in economics.
+
+\begin{enumerate}
+\item What is the probability that among the 5 probability assistants, there are 3 doctoral students in economics and 2 in statistics?
+\item What is the probability that at most one of the assistants is a student in statistics?
+\item What is the expectation and variance of the number of chosen assistants from statistics for the probabilities course?
+\end{enumerate}
+
+
+
+
+\end{document}
+
+
+

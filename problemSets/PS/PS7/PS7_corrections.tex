@@ -1,4 +1,54 @@
-\documentclass[12pt,thmsa]{article}
+\documentclass[12pt,thmsa]{article}\usepackage[]{graphicx}\usepackage[]{color}
+% maxwidth is the original width if it is less than linewidth
+% otherwise use linewidth (to make sure the graphics do not exceed the margin)
+\makeatletter
+\def\maxwidth{ %
+  \ifdim\Gin@nat@width>\linewidth
+    \linewidth
+  \else
+    \Gin@nat@width
+  \fi
+}
+\makeatother
+
+\definecolor{fgcolor}{rgb}{0.345, 0.345, 0.345}
+\newcommand{\hlnum}[1]{\textcolor[rgb]{0.686,0.059,0.569}{#1}}%
+\newcommand{\hlstr}[1]{\textcolor[rgb]{0.192,0.494,0.8}{#1}}%
+\newcommand{\hlcom}[1]{\textcolor[rgb]{0.678,0.584,0.686}{\textit{#1}}}%
+\newcommand{\hlopt}[1]{\textcolor[rgb]{0,0,0}{#1}}%
+\newcommand{\hlstd}[1]{\textcolor[rgb]{0.345,0.345,0.345}{#1}}%
+\newcommand{\hlkwa}[1]{\textcolor[rgb]{0.161,0.373,0.58}{\textbf{#1}}}%
+\newcommand{\hlkwb}[1]{\textcolor[rgb]{0.69,0.353,0.396}{#1}}%
+\newcommand{\hlkwc}[1]{\textcolor[rgb]{0.333,0.667,0.333}{#1}}%
+\newcommand{\hlkwd}[1]{\textcolor[rgb]{0.737,0.353,0.396}{\textbf{#1}}}%
+\let\hlipl\hlkwb
+
+\usepackage{framed}
+\makeatletter
+\newenvironment{kframe}{%
+ \def\at@end@of@kframe{}%
+ \ifinner\ifhmode%
+  \def\at@end@of@kframe{\end{minipage}}%
+  \begin{minipage}{\columnwidth}%
+ \fi\fi%
+ \def\FrameCommand##1{\hskip\@totalleftmargin \hskip-\fboxsep
+ \colorbox{shadecolor}{##1}\hskip-\fboxsep
+     % There is no \\@totalrightmargin, so:
+     \hskip-\linewidth \hskip-\@totalleftmargin \hskip\columnwidth}%
+ \MakeFramed {\advance\hsize-\width
+   \@totalleftmargin\z@ \linewidth\hsize
+   \@setminipage}}%
+ {\par\unskip\endMakeFramed%
+ \at@end@of@kframe}
+\makeatother
+
+\definecolor{shadecolor}{rgb}{.97, .97, .97}
+\definecolor{messagecolor}{rgb}{0, 0, 0}
+\definecolor{warningcolor}{rgb}{1, 0, 1}
+\definecolor{errorcolor}{rgb}{1, 0, 0}
+\newenvironment{knitrout}{}{} % an empty environment to be redefined in TeX
+
+\usepackage{alltt}
 \usepackage[french,english]{babel}
 \usepackage[ansinew]{inputenc}
 \usepackage[T1,OT1]{fontenc}
@@ -32,16 +82,13 @@
 
 
 \title{Assignement7}
-
-
-
-
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
 \begin{document}
 
 
 \noindent \textsc{University of Geneva}     \hfill \textsc{Bachelor in Economics and Management} \\
 \textbf{Probability 1}                      \hfill \textsc{Bachelor in International Relations} \\
-Professor Davide La Vecchia                 \hfill Spring 2018  \\
+Dr. Daniel \textsc{Flores Agreda}                 \hfill Spring 2021  \\
 ASSIGNMENT 07                               \hfill   April 16th-20th
 
 
@@ -70,7 +117,7 @@ P(R=3)=\binom{11}{3} \cdot 0.045^3 \cdot 0.955^8 =  165 \cdot 0.045^3 \cdot 0.95
 
 \item What is the probability that at least one player from the 'Probaland' team gets injured during the match?
 
-Using the same definition of $R$ as in part 1, 
+Using the same definition of $R$ as in part 1,
  {\it i.e.} $R\sim B(11,0.045)$, and the fact that the complement of `$\{R\geq 1\}$' is `$\{R<1\}=\{R=0\}$', we have
 \begin{equation*}
 P(R\geq 1)= 1- P(R=0) = 1 - \binom{11}{0} \cdot 0.045^0 \cdot 0.955^{11} =  1- 0.955^{11} \approx 0.3974.
@@ -207,7 +254,7 @@ $$
 $$
 
 Let $ X $ be the time in seconds that Kevin is in front of his door. We have $X=5
-\cdot R$, so we derive that $\text{E}(X)=5\cdot \text{E}(R) = 100 $ 
+\cdot R$, so we derive that $\text{E}(X)=5\cdot \text{E}(R) = 100 $
 and $\text{var}(X)=5^2 \cdot \text{var}(R) = 25 \cdot 380 = 9'500$.
 \end{enumerate}
 
@@ -230,7 +277,7 @@ P(R=4)= \binom{3}{2} \cdot 0.1^3\cdot 0.9^{1} = \frac{3\cdot 2}{2} \cdot 0.001 \
 \end{equation*}
 \item \begin{equation*}
 P(R=5)= \binom{4}{2} \cdot 0.1^3\cdot 0.9^{2} = \frac{4\cdot 3}{2} \cdot 0.001 \cdot 0.81 = 0.00486.
-\end{equation*} 
+\end{equation*}
 \end{enumerate}
 
 \item What is the probability that Oliver needs strictly more than 5 shots?
@@ -267,7 +314,7 @@ In the National University of Probaland, for the probability course, 5 assistant
 \begin{enumerate}
 \item What is the probability that among the 5 probability assistants, there are 3 doctoral students in economics and 2 in statistics?
 
-Let $ R $ the number of PhD students chosen as assistants for the probability course. We have $ R $ following a hypergeometric distribution with $n=5$, $N=12+7=19$ and $m=12$. So we have 
+Let $ R $ the number of PhD students chosen as assistants for the probability course. We have $ R $ following a hypergeometric distribution with $n=5$, $N=12+7=19$ and $m=12$. So we have
 \begin{equation*}
 P(R=2)=   \frac{\binom{12}{2} \cdot \binom{7}{3}}{\binom{19}{5}} \approx 0.1986584.
 \end{equation*}

@@ -40,7 +40,7 @@
 
 \noindent \textsc{University of Geneva}     \hfill \textsc{Bachelor in Economics and Management} \\
 \textbf{Probability 1}                      \hfill \textsc{Bachelor in International Relations} \\
-Professor Davide La Vecchia                 \hfill Spring 2018  \\
+Dr. Daniel \textsc{Flores Agreda}                 \hfill Spring 2021  \\
 ASSIGNMENT 03                               \hfill   March 13th
 
 
@@ -128,7 +128,7 @@ Finally,
 Or $(Rap \cap Class)\cup(Class \cap Rock)=(Class \cap Rock)$ car $(Rap \cap Class)=\emptyset$.
 \end{center}
 
-So 
+So
 \begin{center}$P((Rap \cap Class)\cup(Class \cap Rock))\cup(Rock \cap Rap))= P(Class \cap Rock)+P(Rock \cap Rap)$.
 \end{center}
 }:
@@ -156,7 +156,7 @@ $P((Rap \cap Class)\cup(Class \cap Rock)\cup(Rock \cap Rap)) = P(Rap \cap Class)
 Because $P((Rap \cap Class))=0$ and $P((Rap \cap Class) \cap (Class \cap Rock) \cap (Rock \cap Rap))=P(Rap\cap Class\cap Rock)=0$.
 %\medskip
 
-We do not know $P(Class \cap Rock)$, so it must  be calculated. 
+We do not know $P(Class \cap Rock)$, so it must  be calculated.
 %\medskip
 
 We know that:
@@ -233,7 +233,7 @@ P(FED)=P(FED \mid DF)\cdot P(DF) + P(FED \mid \overline{DF}) \cdot
 P(\overline{DF})
 $$
 So
-$$P(FED)= 0.6\cdot 0.75 + 0.9\cdot 0.25 = 0.45+0.225 = 0.675.$$ 
+$$P(FED)= 0.6\cdot 0.75 + 0.9\cdot 0.25 = 0.45+0.225 = 0.675.$$
 \end{enumerate}
 
 \section*{Exercise 3}
@@ -247,7 +247,7 @@ what is the probability that
 \item  its total life will exceed 60'000km?
 \item its additional life will exceed 60'000km?
 
-\end{enumerate} 
+\end{enumerate}
 
 \noindent Solutions:\\
 We define Variable B: `battery life of a new car in km'. We have the information that:
@@ -262,14 +262,14 @@ We define Variable B: `battery life of a new car in km'. We have the information
 P(B > 60000 \mid B > 30000) = \frac{ P(B > 60000 \cap B> 30000) }{ P(B > 30000) }= \frac{P(B>60000) }{P(B > 30000)}= \frac{0.4}{0.8}= 0.5.
 \end{align*}
 
-\item 
+\item
 \noindent We know $B - 30000 > 60000 \Leftrightarrow B>90000$. So
 \begin{align*}
 P( B > 90000 \mid B>30000 ) =  \frac{ P(B > 90000 \cap B> 30000) }{ P(B > 30000) }= \frac{P(B>90000) }{P(B > 30000)}= \frac{0.1}{0.8}= 0.125.
 \end{align*}
 \end{enumerate}
 
- 
+
 \section*{Exercise 4}
 Consider the random experiment of tossing a fair coin twice. Let us define the following events:
 \begin{itemize}

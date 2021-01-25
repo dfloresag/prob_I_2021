@@ -1,0 +1,157 @@
+\documentclass[12pt,thmsa]{article}
+\usepackage[french,english]{babel}
+\usepackage[ansinew]{inputenc}
+\usepackage[T1,OT1]{fontenc}
+\usepackage{graphicx}
+\usepackage{amsmath,amssymb,listings}
+\usepackage{alltt,algorithmic,algorithm}
+\usepackage{multicol}
+\usepackage{cite}
+\usepackage{fancyhdr}
+\usepackage{setspace}
+\usepackage{array}
+\usepackage{amsfonts}
+\usepackage{latexsym}
+\usepackage{epsf}
+\usepackage{umlaute}
+\usepackage{setspace}
+\usepackage{amsthm}
+\usepackage{enumerate}
+
+
+\setlength{\textwidth}{160mm}
+\setlength{\textheight}{230mm}
+\setlength{\oddsidemargin}{-5mm}
+\setlength{\topmargin}{-10mm}
+
+% to get rid of the numbers in the bibliography:
+\makeatletter
+\def\@biblabel#1{}
+\makeatother
+
+
+
+\title{Assignement 3}
+
+
+
+
+\begin{document}
+
+
+\noindent \textsc{University of Geneva}     \hfill \textsc{Bachelor in Economics and Management} \\
+\textbf{Probability 1}                      \hfill \textsc{Bachelor in International Relations} \\
+Dr. Daniel \textsc{Flores Agreda}                 \hfill Spring 2021  \\
+ASSIGNMENT 03                               \hfill   March 13th
+
+
+
+\noindent
+\makebox[\linewidth]{\rule{\textwidth}{0.4pt}}\\[1.5ex]
+
+\section*{Exercise 1}
+
+
+The mail order company `CD-Bill' sends a questionnaire to households
+in its address file to know if they are interested in rap,
+classical or rock  music, genres in which it is specialized. By searching the answers, it
+notes that 20\% of households are not interested in any of these 3 genres of music, 35\% of households are interested in rap, 20\% in classical music and the number of households interested in rock is twice as many as in classical music. In addition, 5\%
+households are interested in both rap and rock and no household is interested
+in both rap and classical music.
+
+\medskip
+
+\noindent If one randomly chooses one of the households that responded to the
+  survey:
+
+ \begin{enumerate}%[(a)]
+ \item What is the probability that he/she is interested in rap or
+classical music?
+
+
+ \item What is the probability that he/she is interested in rock, knowing
+that he/she is interested in rap?
+
+
+ \item What is the probability that he/she is interested in at least 2 kinds of
+music ?
+
+ \item What is the probability that he/she is interested in rap, knowing that he/she is interested in neither classical nor rock music?
+ \end{enumerate}
+
+
+\section*{Exercise 2}
+
+
+
+Roger Federer prepares for Wimbledon tennis. Since turf is the best surface, we know that regardless of the player he faces, the probability of winning a match is 0.85. To win the tournament a player has to win seven consecutive games.
+
+\begin{enumerate} %[(a)]
+
+\item What is the probability that Federer reaches at least the semi-finals?
+
+\item Federer reached the quarter-finals (5th round). What is the probability that he wins the tournament?
+
+\item A journalist says that if Novak Djokovic is in the final with Federer, the latter has a 60\% chance of winning the tournament against 90\% if Djokovic does not qualify.
+ He says Djokovic has a 75\% chance of reaching the final. Calculate the probability that Federer\footnote{Assuming he is in the final.} wins the tournament according to the  journalist.
+
+\end{enumerate}
+
+\section*{Exercise 3}
+
+The probability that a new car battery works for over  30'000km is
+0.8, the probability that it functions for over 60'000km is 0.4, and the probability that it
+works for over 90'000km is 0.1. If a new car battery is still working after 30'000km,
+what is the probability that
+
+\begin{enumerate}
+\item  its total life will exceed 60'000km?
+\item its additional life will exceed 60'000km?
+
+\end{enumerate}
+
+
+\section*{Exercise 4}
+Consider the random experiment of tossing a fair coin twice. Let us define the following events:
+\begin{itemize}
+\item $ A $: Observe a head $ (H) $ on the first toss
+\item $ B $: Observe a head $ (H) $ on the second toss
+\item $ C $: Observe the same outcome on both tosses
+\end{itemize}
+Are the events pairwise independent? Are the events jointly independent?
+
+
+\section*{Exercise 5 (Optional)}
+
+
+Given the axioms of probability theory, show the following:
+\begin{enumerate}
+  \item $P(\emptyset)=0$
+  \item $P(A^c)=1-P(A)$
+  \item $P(A \cap B) \leq \min(P(A),P(B))$
+  \item $P(A \cup B)=P(A)+P(B)-P(A \cap B)$
+  \item If $A_1, A_2,...$ are mutually exclusive events in $\mathcal{B}$, then
+\begin{equation}
+P\left(  \bigcup_{i=1}^{n} A_i \right) = \sum_{i=1}^{n} P(A_i).  \label{Eq: ProbUnionDisj}
+\end{equation}
+  \item Let's $A_n$ a collection of sets such that: $\lim_{n\rightarrow \infty}A_n= A$.
+  Show that $\lim_{n\rightarrow \infty}P(A_n)=P(A)$.
+\end{enumerate}
+
+
+
+
+
+
+
+
+
+
+
+
+
+\end{document}
+
+
+
+

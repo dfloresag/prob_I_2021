@@ -1,6 +1,6 @@
 --- 
 title: "Probability I"
-author: "Prof. Davide La Vecchia \\& Dr. Daniel Flores Agreda"
+author: "Dr. Daniel Flores Agreda (based on the notes by Prof. Davide La Vecchia)"
 date: "`r Sys.Date()`"
 site: bookdown::bookdown_site
 output: bookdown::gitbook

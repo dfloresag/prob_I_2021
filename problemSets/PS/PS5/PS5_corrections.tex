@@ -1,4 +1,54 @@
-\documentclass[12pt,thmsa]{article}
+\documentclass[12pt,thmsa]{article}\usepackage[]{graphicx}\usepackage[]{color}
+% maxwidth is the original width if it is less than linewidth
+% otherwise use linewidth (to make sure the graphics do not exceed the margin)
+\makeatletter
+\def\maxwidth{ %
+  \ifdim\Gin@nat@width>\linewidth
+    \linewidth
+  \else
+    \Gin@nat@width
+  \fi
+}
+\makeatother
+
+\definecolor{fgcolor}{rgb}{0.345, 0.345, 0.345}
+\newcommand{\hlnum}[1]{\textcolor[rgb]{0.686,0.059,0.569}{#1}}%
+\newcommand{\hlstr}[1]{\textcolor[rgb]{0.192,0.494,0.8}{#1}}%
+\newcommand{\hlcom}[1]{\textcolor[rgb]{0.678,0.584,0.686}{\textit{#1}}}%
+\newcommand{\hlopt}[1]{\textcolor[rgb]{0,0,0}{#1}}%
+\newcommand{\hlstd}[1]{\textcolor[rgb]{0.345,0.345,0.345}{#1}}%
+\newcommand{\hlkwa}[1]{\textcolor[rgb]{0.161,0.373,0.58}{\textbf{#1}}}%
+\newcommand{\hlkwb}[1]{\textcolor[rgb]{0.69,0.353,0.396}{#1}}%
+\newcommand{\hlkwc}[1]{\textcolor[rgb]{0.333,0.667,0.333}{#1}}%
+\newcommand{\hlkwd}[1]{\textcolor[rgb]{0.737,0.353,0.396}{\textbf{#1}}}%
+\let\hlipl\hlkwb
+
+\usepackage{framed}
+\makeatletter
+\newenvironment{kframe}{%
+ \def\at@end@of@kframe{}%
+ \ifinner\ifhmode%
+  \def\at@end@of@kframe{\end{minipage}}%
+  \begin{minipage}{\columnwidth}%
+ \fi\fi%
+ \def\FrameCommand##1{\hskip\@totalleftmargin \hskip-\fboxsep
+ \colorbox{shadecolor}{##1}\hskip-\fboxsep
+     % There is no \\@totalrightmargin, so:
+     \hskip-\linewidth \hskip-\@totalleftmargin \hskip\columnwidth}%
+ \MakeFramed {\advance\hsize-\width
+   \@totalleftmargin\z@ \linewidth\hsize
+   \@setminipage}}%
+ {\par\unskip\endMakeFramed%
+ \at@end@of@kframe}
+\makeatother
+
+\definecolor{shadecolor}{rgb}{.97, .97, .97}
+\definecolor{messagecolor}{rgb}{0, 0, 0}
+\definecolor{warningcolor}{rgb}{1, 0, 1}
+\definecolor{errorcolor}{rgb}{1, 0, 0}
+\newenvironment{knitrout}{}{} % an empty environment to be redefined in TeX
+
+\usepackage{alltt}
 \usepackage[french,english]{babel}
 \usepackage[ansinew]{inputenc}
 \usepackage[T1,OT1]{fontenc}
@@ -34,16 +84,13 @@
 
 
 \title{Assignement 5}
-
-
-
-
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
 \begin{document}
 
 
 \noindent \textsc{University of Geneva}     \hfill \textsc{Bachelor in Economics and Management} \\
 \textbf{Probability 1}                      \hfill \textsc{Bachelor in International Relations} \\
-Professor Davide La Vecchia                 \hfill Spring 2017  \\
+Dr. Daniel \textsc{Flores Agreda}                 \hfill Spring 2021  \\
 ASSIGNMENT 05                               \hfill   March 27th
 
 
@@ -219,7 +266,7 @@ $\mbox{E}(X) = \overset{\infty}{\underset{i=1}{\sum}}P(Y=y_i)\cdot y_i = \frac{1
 
 Two cards are randomly chosen from a box containing the following five cards: 1, 1, 2, 2, 3. $X$ represents the average and $Y$ is the maximum of the two numbers drawn.
 \begin{enumerate}%[(a)]
-    \item Calculate the probability distribution, the cumulative distribution function, the mean and the variance of $X$, $Y$ and $Z = Y - X$. 
+    \item Calculate the probability distribution, the cumulative distribution function, the mean and the variance of $X$, $Y$ and $Z = Y - X$.
 
 \medskip
 
@@ -238,7 +285,7 @@ It is assumed a draw without replacement.\\
 					\hline
 												$z$ & 0 & 0.5 & 1 & 0 & 0.5\\[1mm]
 					\hline
-					
+
 					\end{tabular}
          	\end{center}
 
@@ -247,7 +294,7 @@ The probability distribution, the distribution function, the mean and the varian
 \begin{itemize}
 
 \item 		For Variable $X$:
-			
+
 			\begin{center}
 			\begin{tabular}{|c|c|c|c|c|}
 			\hline
@@ -327,10 +374,10 @@ The probability distribution, the distribution function, the mean and the varian
 			\begin{center}
 			$\mbox{E}(Z) = \overset{3}{\underset{i=1}{\sum}}P(Z=z_i)\cdot z_i = 2/10\cdot0 + 6/10\cdot0.5 + 2/10\cdot1 = 0.5$ \\
 			$\mbox{E}(Z^2) = \overset{3}{\underset{i=1}{\sum}}P(Z=z_i)\cdot z_i^2 = 2/10\cdot0^2 + 6/10\cdot0.5^2 + 2/10\cdot1^2 = 0.35 $\\
-			$\mbox{var}(Z) =  \mbox{E}(Z^2) - \mbox{E}(Z)^2 = 0.35 - 0.5^2 = 0.1$		
+			$\mbox{var}(Z) =  \mbox{E}(Z^2) - \mbox{E}(Z)^2 = 0.35 - 0.5^2 = 0.1$
 			\end{center}
 
-\end{itemize}		
+\end{itemize}
     \item If $W$ is the sum of the two numbers, what are its expectation and its variance?
 
 We can calculate the values of $ W $ for each possible case, and draw the table as we did for the variables $ X $, $ Y $ and $ Z $ to obtain the probability function then the mean and the variance of $ W $. However, it is faster to note that:
@@ -560,7 +607,7 @@ P(X=k)=e^{-\lambda} \frac{\lambda^{k}}{k!} \quad \text{for} \quad k=0,1,...
   \end{eqnarray*}
 
  \item  \begin{eqnarray*}
-E(X^2) &=& \sum_{k=0}^{\infty} k^2 e^{-\lambda} \frac{\lambda^{k}}{k!} = \lambda \sum_{k=1}^{\infty} k e^{-\lambda} \frac{\lambda^{k}}{(k-1)!} \\ 
+E(X^2) &=& \sum_{k=0}^{\infty} k^2 e^{-\lambda} \frac{\lambda^{k}}{k!} = \lambda \sum_{k=1}^{\infty} k e^{-\lambda} \frac{\lambda^{k}}{(k-1)!} \\
 & \overset{\text{j=k-1}}{=} & \sum_{j=0}^{\infty} (j+1) e^{-\lambda}  \frac{\lambda^{j+1}}{(j)!} \\
 &=& \lambda \{ \underbrace{\sum_{j=0}^{\infty} j e^{-\lambda}  \frac{\lambda^{j}}{(j)!}}_{E(X)=\lambda} + \sum_{j=0}^{\infty}  e^{-\lambda}  \frac{\lambda^{j}}{(j)!}\} \\
 &=& \lambda (\lambda+1)
@@ -570,14 +617,14 @@ E(X^2) &=& \sum_{k=0}^{\infty} k^2 e^{-\lambda} \frac{\lambda^{k}}{k!} = \lambda
 
 \item Let us denote the expected value of the binomial distribution, np by $ \lambda $, which means $ p=\frac{n}{\lambda} $.  Now, if we use this to rewrite P(S=x) in terms of $\lambda$, n, and x, we obtain \\
 \begin{eqnarray*}
-P(S = x) &= & \left( { n \atop x } \right)(\frac{n}{\lambda})^x(1-{\frac{n}{\lambda}})^{n-x}  = \frac{n(n-1) \cdots (n-x+1)}{(x)!}\frac{\lambda^x}{n^x}(1-\frac{\lambda}{n})^{n-x}\\ 
+P(S = x) &= & \left( { n \atop x } \right)(\frac{n}{\lambda})^x(1-{\frac{n}{\lambda}})^{n-x}  = \frac{n(n-1) \cdots (n-x+1)}{(x)!}\frac{\lambda^x}{n^x}(1-\frac{\lambda}{n})^{n-x}\\
 & = & \frac{n}{n}\times \frac{n-1}{n} \cdots \frac{n-x+1}{n} \times \frac{\lambda^x}{(x)!}(1-\frac{\lambda}{n})^{n-x}\\
-&=& \frac{n}{n}\times \frac{n-1}{n} \cdots \frac{n-x+1}{n} \times \frac{\lambda^x}{(x)!}(1-\frac{\lambda}{n})^{n}(1-\frac{\lambda}{n})^{-x}\\ 
+&=& \frac{n}{n}\times \frac{n-1}{n} \cdots \frac{n-x+1}{n} \times \frac{\lambda^x}{(x)!}(1-\frac{\lambda}{n})^{n}(1-\frac{\lambda}{n})^{-x}\\
 \end{eqnarray*}
 If we tool the limit as n approaches infinity, keeping x and $\lambda$ fixed,the first x fractions in this expression would tend towards 1, as would the last factor in the expression. $ \lim_{x\to\infty} (1-\frac{\lambda}{n})^{n} =  e^{-\lambda}, so \lim_{x\to\infty}P(S=x)= \frac{e^{-\lambda}{\lambda}^x}{x!} $\\
 So we can say expectations and variances of X and S are equivalent for a very large n. The Poisson distribution is actually a limiting case of a Binomial distribution when the number of trials, n, gets very large and p, the probability of success, is small.
 
- 
+
 \end{enumerate}
 
 

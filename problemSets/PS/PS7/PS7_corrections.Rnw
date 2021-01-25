@@ -1,0 +1,297 @@
+\documentclass[12pt,thmsa]{article}
+\usepackage[french,english]{babel}
+\usepackage[ansinew]{inputenc}
+\usepackage[T1,OT1]{fontenc}
+\usepackage{graphicx}
+\usepackage{amsmath,amssymb,listings}
+\usepackage{alltt,algorithmic,algorithm}
+\usepackage{multicol}
+\usepackage{cite}
+\usepackage{fancyhdr}
+\usepackage{setspace}
+\usepackage{array}
+\usepackage{amsfonts}
+\usepackage{latexsym}
+\usepackage{epsf}
+\usepackage{umlaute}
+\usepackage{setspace}
+\usepackage{amsthm}
+\usepackage{enumerate}
+
+
+\setlength{\textwidth}{160mm}
+\setlength{\textheight}{230mm}
+\setlength{\oddsidemargin}{-5mm}
+\setlength{\topmargin}{-10mm}
+
+% to get rid of the numbers in the bibliography:
+\makeatletter
+\def\@biblabel#1{}
+\makeatother
+
+
+
+\title{Assignement7}
+
+
+
+
+\begin{document}
+
+
+\noindent \textsc{University of Geneva}     \hfill \textsc{Bachelor in Economics and Management} \\
+\textbf{Probability 1}                      \hfill \textsc{Bachelor in International Relations} \\
+Dr. Daniel \textsc{Flores Agreda}                 \hfill Spring 2021  \\
+ASSIGNMENT 07                               \hfill   April 16th-20th
+
+
+
+\noindent
+\makebox[\linewidth]{\rule{\textwidth}{0.4pt}}\\[1.5ex]
+
+
+\section*{Exercise 1}
+
+In the final football tournament, Vladimir Petkovic, the coach of the team `Probaland', seeks to compose the best team possible. Before starting the competition, the coach has 23 players, among whom he can form a team of 11 players for the match.
+\medskip
+
+
+\begin{enumerate}
+\item Once the chosen players are on the field, the probability for a player of getting injured during the match is 0.045. It is assumed that players get injured
+independently of each other. What is the probability that 3 players from the 'Probaland' team get injured during the match?
+
+Let $R$ be the number of players in the 'Probaland' team injured during the match. Since there are 11 players in the 'Probaland' team and the players are injured independently with a probability of 0.045, we have $R \sim B(11,0.045) $. So according to the definition of the binomial distribution, we have
+\begin{equation*}
+P(R=3)=\binom{11}{3} \cdot 0.045^3 \cdot 0.955^8 =  165 \cdot 0.045^3 \cdot 0.955^8 \approx 0.01040.
+\end{equation*}
+
+
+
+
+\item What is the probability that at least one player from the 'Probaland' team gets injured during the match?
+
+Using the same definition of $R$ as in part 1,
+ {\it i.e.} $R\sim B(11,0.045)$, and the fact that the complement of `$\{R\geq 1\}$' is `$\{R<1\}=\{R=0\}$', we have
+\begin{equation*}
+P(R\geq 1)= 1- P(R=0) = 1 - \binom{11}{0} \cdot 0.045^0 \cdot 0.955^{11} =  1- 0.955^{11} \approx 0.3974.
+\end{equation*}
+\item Calculate the expectation and variance of the number of players from the 'Probaland' team who are injured during the match.
+
+Again, using the same definition of $ R $ as in Part 1, {\it i.e.} $R\sim B(11,0.045)$, and according to the formulas of the expectation and the variance of the binomial distribution, we have
+$$
+\text{E}(R) =n\cdot p= 11 \cdot 0.045 = 0.495
+$$
+and
+$$
+\text{var}(R) =  n\cdot p\cdot (1-p)= 11 \cdot 0.045 \cdot 0.955 = 0.472725.
+$$
+\end{enumerate}
+
+
+
+
+\section*{Exercise 2}
+Diego, the organizer of a festival for statisticians, invited 12 artists. Each of the 12 selected artists must play for 40 minutes during the festival. Diego is concerned about the number of technical problems during the festival. From experience, he estimates that there is a technical problem every 20 hours of the concert on average. It is assumed that technical problems will occur randomly over time.
+
+\begin{enumerate}
+\item Taking into account that the festival lasts 8 hours and that there is no pause during
+the festival, what is the probability of having no technical problems during the
+festival?
+
+ Let $R$ be the number of technical problems during the festival. Then We have $R\sim \text{Poisson}(\lambda)$. As there is a technical problem every 20 hours on average and the festival lasts 8 hours, there will be $\frac{8}{20}=0.4$ problems every 8 hours on average.Hence, we have $R\sim \text{Poisson}(0.4)$. So according to the definition of the Poisson distribution, we have
+\begin{equation*}
+P(R=0)= \exp(-0.4)\frac{0.4^0}{0!} = \exp(-0.4) \frac{1}{1} \approx 0.6703.
+\end{equation*}
+\item What is the probability of having at least 2 technical problems during the festival?
+
+Using the same definition of $R$ as in part 1, {\it i.e.} $R\sim  \text{Poisson}(0.4)$, and the fact that the complement of `$\{R\geq 2\}$' is `$\{R<2\}=\{R=0\}\cup\{R=1\}$', we have
+\begin{eqnarray*}
+P(R\geq 2)&=& 1- P(R=0) - P(R=1) = 1 - \exp(-0.4)\frac{0.4^0}{0!}- \exp(-0.4)\frac{0.4^1}{1!} \\
+&=&  1 - \exp(-0.4) - \exp(-0.4) \cdot 0.4 \approx 0.06155.
+\end{eqnarray*}
+\item Calculate the expectation and variance of the number of technical problems during the
+festival.
+
+Again, using the same definition of $ R $ as in Part 1, {\it i.e.} $R\sim  \text{Poisson}(0.4)$, and according to the formulas of the expectation and the variance of the Poisson distribution, we have
+$$
+\text{E}(R) = \lambda= 0.4
+$$
+and
+$$
+\text{var}(R) =\lambda= 0.4.
+$$
+
+\end{enumerate}
+
+\newpage
+
+\section*{Exercise 3}
+
+One class has 300 students including 297 girls. In each mathematics class, the
+teacher randomly interviews a person. From one class to another, the teacher does not remember the interviewee in the previous class. We can, therefore, consider that in each course, the choice of the student by the teacher is independent of the previous choices. It is also assumed that all students are present at each class.
+
+\begin{enumerate}
+\item Let n (a positive integer) be the number of questions asked to students and $X_n$ be the random variable representing the number of questions asked to girls. Give the expectation and variance of $X_n$ as a function of n.
+
+We have $X_n \sim B(n,\frac{297}{300})$.So according to the definition
+of the binomial distribution, we have
+$$
+\text{E}(X_n) = n\cdot \frac{297}{300}= 0.99 \cdot n
+$$
+and
+$$
+\text{var}(X_n) = n \cdot (1-0.99)\cdot 0.99 = 0.0099 \cdot n.
+$$
+\end{enumerate}
+\medskip
+
+The number of questions asked to students is fixed at 100.
+
+\begin{enumerate}
+\item[2.] What is the probability of having exactly 98 girls questioned?
+
+Let $R$ be the random variable representing the number of questions asked to girls. We have $ R \sim B (100,0.99) $, so according to the definition of the binomial distribution,
+we have
+\begin{eqnarray*}
+P(R= 98)&=& \binom{100}{98} (0.99)^{98} \cdot (0.01)^{2} = \frac{(100)!}{(2)!(98)!} \cdot (0.99)^{98} \cdot (0.01)^{2} \\
+&=& \frac{100\cdot 99}{2} \cdot (0.99)^{98} \cdot (0.01)^{2} \approx  0.1848648.
+\end{eqnarray*}
+\item[3.] Give an approximation of the probability of having 98 girls questioned.
+
+Let $Y$ be the random variable representing the number of questions asked to boys. We have
+$$ Y = 100-R $$ and $ Y \sim B (100,0.01) $. As $ p = 0.01 $ is `small' and $ n = 100 $  is `large', for $ \lambda = 100 \cdot 0.01 = 1 $, the distribution of $ Y $ can be approximated by $Z \sim \text {Poisson} (1) $. So we have
+\begin{eqnarray*}
+P(R= 98) &=& P(Y= 2) \,\approx\, P(Z=2) = \frac{1^{2}}{(2)!}\exp(-1) \approx  0.1839397.
+\end{eqnarray*}
+\item[4.] Give an approximation of the probability of having 94 girls questioned.
+
+Similarly, we have
+\begin{eqnarray*}
+P(R= 94) &=& P(Y= 6) \,\approx\, P(Z=6) = \frac{1^{2}}{(6)!}\exp(-1) \approx   0.0005109437.
+\end{eqnarray*}
+
+\end{enumerate}
+
+
+
+\section*{Exercise 4}
+
+
+Kevin is in front of his front door. He has 20 different keys and has completely forgotten which key opens his door. As he is intoxicated, he takes a random key from his pocket and tries to open his door. If it's the right key he can enter the home but if it's the wrong key he puts it back into his pocket and tries to open the door again by choosing a key at random. He continues this process until he opens his door.
+
+\begin{enumerate}
+\item What is the probability that Kevin opens his door exactly in 2 tries?
+
+Let $R$ be the number of tries for Kevin to open his door. We recognize that Kevin opens his door exactly in 2 tries, so $ R \sim \text {Geom} (\frac{1}{20}) $. So according to the definition of the geometric distribution, we have
+\begin{equation*}
+P(R=2)= \frac{19}{20}\cdot\frac{1}{20} = \frac{19}{400} = 0.0475.
+\end{equation*}
+\item What is the probability that Kevin needs strictly more than 2 tries to open his door?
+
+Using the same definition of $R$ as in part 1, {\it i.e.} $R \sim \text {Geom} (\frac{1}{20})$, and the fact that the complement of  `$\{R\geq 2\}$' is `$\{R<2\}=\{R=0\}\cup\{R=1\}$', we have
+\begin{eqnarray*}
+P(R> 2)&=& 1 - P(R=1)- P(R=2) = 1 - \frac{1}{20}-\frac{19}{400} \\
+&=&  \frac{400-20-19}{400} = \frac{361}{400} = 0.9025.
+\end{eqnarray*}
+\item Kevin needs 5 seconds for each test. Calculate the expectation and variance of the time that Kevin is in front of his door.
+
+Again, using the same definition of $ R $ as in Part 1, {\it i.e.}  $R \sim \text {Geom} (\frac{1}{20})$, and according to the formulas of the expectation and the variance of the Poisson distribution, we have
+
+$$
+\text{E}(R) = \frac{1}{p}=\frac{1}{\frac{1}{20}} = 20
+$$
+and
+$$
+\text{var}(R) =   \frac{1-p}{p^2}= \frac{1-\frac{1}{20}}{(\frac{1}{20})^2} =
+\frac{\frac{19}{20}}{\frac{1}{400}} = 19\cdot 20 = 380.
+$$
+
+Let $ X $ be the time in seconds that Kevin is in front of his door. We have $X=5
+\cdot R$, so we derive that $\text{E}(X)=5\cdot \text{E}(R) = 100 $
+and $\text{var}(X)=5^2 \cdot \text{var}(R) = 25 \cdot 380 = 9'500$.
+\end{enumerate}
+
+
+\newpage
+
+\section*{Exercise 5}
+
+Oliver wants to show his friends that he knows how to play basketball. He decides to shoot himself shooting baskets. He wants to get 3 success of shots. It is assumed that each time Oliver shoots, he has a 0.1 probability of scoring. It is also assumed that the probability of each shot is independent.
+
+\begin{enumerate}
+\item Let $ R $ be the number of shots before Oliver has 3 success.
+We have $R \sim \text{NB}(3,0.1)$.So according to the definition of the negative binomial distribution, we have
+\begin{enumerate}
+\item \begin{equation*}
+P(R=3)= \binom{2}{2} \cdot 0.1^3\cdot 0.9^{0} = \frac{1}{1} \cdot 0.001 \cdot 1 = 0.001;
+\end{equation*}
+\item \begin{equation*}
+P(R=4)= \binom{3}{2} \cdot 0.1^3\cdot 0.9^{1} = \frac{3\cdot 2}{2} \cdot 0.001 \cdot 0.9 = 3 \cdot 0.001 \cdot 0.9 = 0.0027;
+\end{equation*}
+\item \begin{equation*}
+P(R=5)= \binom{4}{2} \cdot 0.1^3\cdot 0.9^{2} = \frac{4\cdot 3}{2} \cdot 0.001 \cdot 0.81 = 0.00486.
+\end{equation*}
+\end{enumerate}
+
+\item What is the probability that Oliver needs strictly more than 5 shots?
+
+Using the same definition of $R$ as in part 1, {\it i.e.}  $R \sim \text{NB}(3,0.1)$, and the fact that the complement of  `$\{R> 5\}$' est `$\{R\leq 5\}=\{R=3\}\cup\{R=4\}\cup\{R=5\}$', we have
+\begin{eqnarray*}
+P(R> 5)&=& 1 - P(R=3)- P(R=4)- P(R=5) = 1 - 0.001 - 0.0027 -0.00486  \\
+&=&  0.99144.
+\end{eqnarray*}
+
+\item Oliver needs 3 seconds per shot. Calculate the expectation and variance of time
+which Oliver needs to finish his video.
+
+Again, using the same definition of $R$ as in the
+part 1 and the formulas of the expectation and variance of a
+negative binomial distribution, we have
+$$
+\text{E}(R) =  \frac{3}{0.1} = 30
+$$
+and
+$$
+\text{var}(R) = \frac{3\cdot 0.9}{0.1^2} = 270.
+$$
+
+Let $ X $ be the time before ending the video. So $X=3\cdot R$,
+$\text{E}(X)=3\cdot \text{E}(R) = 90$ and $\text{var}(X)=3^2 \cdot \text{var}(R) = 9 \cdot 270 = 2'430$.
+\end{enumerate}
+
+
+\section*{Exercise 6}
+
+In the National University of Probaland, for the probability course, 5 assistants are randomly selected from a pool of 12 PhD students in statistics and 7 PhD students in economics.
+
+\begin{enumerate}
+\item What is the probability that among the 5 probability assistants, there are 3 doctoral students in economics and 2 in statistics?
+
+Let $ R $ the number of PhD students chosen as assistants for the probability course. We have $ R $ following a hypergeometric distribution with $n=5$, $N=12+7=19$ and $m=12$. So we have
+\begin{equation*}
+P(R=2)=   \frac{\binom{12}{2} \cdot \binom{7}{3}}{\binom{19}{5}} \approx 0.1986584.
+\end{equation*}
+
+\item What is the probability that at most one of the assistants is a student in statistics?
+
+Using `$\{R\leq 1\}=\{R=0\}\cup\{R= 1\}$', we have
+\begin{equation*}
+P(R\leq 1)= P(R=0)+P(R=1) = \frac{\binom{12}{0}  \cdot \binom{7}{5}}{\binom{19}{5}} + \frac{\binom{12}{1}  \cdot \binom{7}{4}}{\binom{19}{5}} \approx 0.0379257.
+\end{equation*}
+\item What is the expectation and variance of the number of chosen assistants from statistics for the probabilities course?
+
+Using formulas for the expectation and variance of a
+hypergeometric distribution, we have
+$$
+\text{E}(R) = \frac{5\cdot 12}{19} \approx 3.157895
+$$
+and
+$$
+\text{var}(R) =   \frac{5\cdot 12}{19}\left[\frac{4\cdot 11}{18}+1-\frac{5\cdot 12}{19}\right] \approx 0.9048938.
+$$
+\end{enumerate}
+
+
+
+
+\end{document}

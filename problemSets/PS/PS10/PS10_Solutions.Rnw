@@ -41,7 +41,7 @@
 
 \noindent \textsc{University of Geneva}     \hfill \textsc{Bachelor in Economics and Management} \\
 \textbf{Probability 1}                      \hfill \textsc{Bachelor in International Relations} \\
-Professor Davide La Vecchia                 \hfill Spring 2018  \\
+Dr. Daniel \textsc{Flores Agreda}                 \hfill Spring 2021  \\
 ASSIGNMENT 10                               \hfill   May 14th-18th
 
 
@@ -124,7 +124,7 @@ P(10<X<15) + P(25<X<30) = \int_{10}^{15} \frac{1}{30}dx +
 $$
 
 \item The event {`the user waits more than 10 minutes'} is the same as the event {`the user arrives between 7h00 and 7h05 or between 7h15 and 7h20',}
-which is itself the meeting of the two disjoint events 
+which is itself the meeting of the two disjoint events
  `the user arrives between 7h00 and 7h05'\, and\, `the user arrives between 7h15 and 7h20'.
 \smallskip
 
@@ -241,14 +241,14 @@ $\text{var}(R_{0,n})=\exp(2\mu)\cdot (1-1)=0$.
 
 \section*{ Exercise 5 (Optional):}
 % ex 3.19
-$V \sim \mathcal{U}(0,1)$. The density function of $V$: $f_{V}(v)=1, when \ v\in (0,1)$. CDF of $V$ is: 
+$V \sim \mathcal{U}(0,1)$. The density function of $V$: $f_{V}(v)=1, when \ v\in (0,1)$. CDF of $V$ is:
 $$F_V(v) = \begin{cases}
    0    & \text{if } v \leq 0 ,  \\
    v      & \text{if } 0< v < 1 \\
     1   & \text{if } v\geq 1.
   \end{cases} $$
 \begin{enumerate}
-   \item Let's denote $F_W(w)$ its density. 
+   \item Let's denote $F_W(w)$ its density.
   \begin{eqnarray*}
   1.1, \ \text{ if } \ \lambda >0,  F_W(w) &=& P(W \leq w )=P( \frac{-1}{\lambda} \log(V) \leq w) = P(V> \exp(-\lambda w))\\
      &=& 1-F_V(\exp(-\lambda w))= 1-\exp(-\lambda w) ,

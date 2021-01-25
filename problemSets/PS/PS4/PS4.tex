@@ -1,4 +1,54 @@
-\documentclass[12pt,thmsa]{article}
+\documentclass[12pt,thmsa]{article}\usepackage[]{graphicx}\usepackage[]{color}
+% maxwidth is the original width if it is less than linewidth
+% otherwise use linewidth (to make sure the graphics do not exceed the margin)
+\makeatletter
+\def\maxwidth{ %
+  \ifdim\Gin@nat@width>\linewidth
+    \linewidth
+  \else
+    \Gin@nat@width
+  \fi
+}
+\makeatother
+
+\definecolor{fgcolor}{rgb}{0.345, 0.345, 0.345}
+\newcommand{\hlnum}[1]{\textcolor[rgb]{0.686,0.059,0.569}{#1}}%
+\newcommand{\hlstr}[1]{\textcolor[rgb]{0.192,0.494,0.8}{#1}}%
+\newcommand{\hlcom}[1]{\textcolor[rgb]{0.678,0.584,0.686}{\textit{#1}}}%
+\newcommand{\hlopt}[1]{\textcolor[rgb]{0,0,0}{#1}}%
+\newcommand{\hlstd}[1]{\textcolor[rgb]{0.345,0.345,0.345}{#1}}%
+\newcommand{\hlkwa}[1]{\textcolor[rgb]{0.161,0.373,0.58}{\textbf{#1}}}%
+\newcommand{\hlkwb}[1]{\textcolor[rgb]{0.69,0.353,0.396}{#1}}%
+\newcommand{\hlkwc}[1]{\textcolor[rgb]{0.333,0.667,0.333}{#1}}%
+\newcommand{\hlkwd}[1]{\textcolor[rgb]{0.737,0.353,0.396}{\textbf{#1}}}%
+\let\hlipl\hlkwb
+
+\usepackage{framed}
+\makeatletter
+\newenvironment{kframe}{%
+ \def\at@end@of@kframe{}%
+ \ifinner\ifhmode%
+  \def\at@end@of@kframe{\end{minipage}}%
+  \begin{minipage}{\columnwidth}%
+ \fi\fi%
+ \def\FrameCommand##1{\hskip\@totalleftmargin \hskip-\fboxsep
+ \colorbox{shadecolor}{##1}\hskip-\fboxsep
+     % There is no \\@totalrightmargin, so:
+     \hskip-\linewidth \hskip-\@totalleftmargin \hskip\columnwidth}%
+ \MakeFramed {\advance\hsize-\width
+   \@totalleftmargin\z@ \linewidth\hsize
+   \@setminipage}}%
+ {\par\unskip\endMakeFramed%
+ \at@end@of@kframe}
+\makeatother
+
+\definecolor{shadecolor}{rgb}{.97, .97, .97}
+\definecolor{messagecolor}{rgb}{0, 0, 0}
+\definecolor{warningcolor}{rgb}{1, 0, 1}
+\definecolor{errorcolor}{rgb}{1, 0, 0}
+\newenvironment{knitrout}{}{} % an empty environment to be redefined in TeX
+
+\usepackage{alltt}
 \usepackage[french,english]{babel}
 \usepackage[ansinew]{inputenc}
 \usepackage[T1,OT1]{fontenc}
@@ -32,16 +82,13 @@
 
 
 \title{Assignement 4}
-
-
-
-
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
 \begin{document}
 
 
 \noindent \textsc{University of Geneva}     \hfill \textsc{Bachelor in Economics and Management} \\
 \textbf{Probability 1}                      \hfill \textsc{Bachelor in International Relations} \\
-Professor Davide La Vecchia                 \hfill Spring 2018  \\
+Dr. Daniel \textsc{Flores Agreda}                 \hfill Spring 2021  \\
 ASSIGNMENT 04                               \hfill   March 20th
 
 
@@ -70,7 +117,7 @@ probability 0.02, 0.03 and 0.05. Amanda takes care of 50\% of the connections, D
 
 \section*{Exercise 2}
 
-Suppose that 40\% of the individuals in a population have some disease. The diagnosis of the presence or absence of this disease in an individual is reached by performing a type of blood test. But, like many other clinical tests, this particular test is not perfect. The manufacturer of the blood-test-kit made the accompanying information available to the clinics. If an individual has the disease, the test indicates the absence (false negative) of the disease 10\% of the time whereas if an individual does not have the disease, the test indicates the presence (false positive) of the disease 20\% of the time. Now, from this population an individual is selected at random and his blood is tested. The health professional is informed that the test indicated the presence of the particular disease. What is the probability that this individual does indeed have the disease? 
+Suppose that 40\% of the individuals in a population have some disease. The diagnosis of the presence or absence of this disease in an individual is reached by performing a type of blood test. But, like many other clinical tests, this particular test is not perfect. The manufacturer of the blood-test-kit made the accompanying information available to the clinics. If an individual has the disease, the test indicates the absence (false negative) of the disease 10\% of the time whereas if an individual does not have the disease, the test indicates the presence (false positive) of the disease 20\% of the time. Now, from this population an individual is selected at random and his blood is tested. The health professional is informed that the test indicated the presence of the particular disease. What is the probability that this individual does indeed have the disease?
 
 Help: Define the following events,
 \begin{itemize}
@@ -82,7 +129,7 @@ Help: Define the following events,
 
 \section*{Exercise 3}
 
-An insurance company divides its policy holders into three categories: low risk, moderate risk, and high risk. The probabilities that a low-risk, moderate-risk, and high-risk policy holder will be involved in an accident over a period of one year are respectively 0.05, 0.15 and 0.30. It is estimated that 20\% of the total number of people insured by the company is low risk, 50\% is moderate risk and 30\% is high risk. 
+An insurance company divides its policy holders into three categories: low risk, moderate risk, and high risk. The probabilities that a low-risk, moderate-risk, and high-risk policy holder will be involved in an accident over a period of one year are respectively 0.05, 0.15 and 0.30. It is estimated that 20\% of the total number of people insured by the company is low risk, 50\% is moderate risk and 30\% is high risk.
 
 \begin{enumerate}
 	\item What is the proportion of policy holders who have one or more accidents in a given year?
@@ -94,7 +141,7 @@ An insurance company divides its policy holders into three categories: low risk,
 
 \section*{Exercise 4}
 
-Let $X$ be a random variable. Prove that: 
+Let $X$ be a random variable. Prove that:
 \begin{enumerate}
   \item $Var(X)=E(X^2)-E(X)^2$
   \item $Var(aX+b)=a^2 Var(X)$ where $a$ and $b$ are constants.

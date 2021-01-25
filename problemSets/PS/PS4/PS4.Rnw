@@ -1,0 +1,134 @@
+\documentclass[12pt,thmsa]{article}
+\usepackage[french,english]{babel}
+\usepackage[ansinew]{inputenc}
+\usepackage[T1,OT1]{fontenc}
+\usepackage{graphicx}
+\usepackage{amsmath,amssymb,listings}
+\usepackage{alltt,algorithmic,algorithm}
+\usepackage{multicol}
+\usepackage{cite}
+\usepackage{fancyhdr}
+\usepackage{setspace}
+\usepackage{array}
+\usepackage{amsfonts}
+\usepackage{latexsym}
+\usepackage{epsf}
+\usepackage{umlaute}
+\usepackage{setspace}
+\usepackage{amsthm}
+\usepackage{enumerate}
+
+
+\setlength{\textwidth}{160mm}
+\setlength{\textheight}{230mm}
+\setlength{\oddsidemargin}{-5mm}
+\setlength{\topmargin}{-10mm}
+
+% to get rid of the numbers in the bibliography:
+\makeatletter
+\def\@biblabel#1{}
+\makeatother
+
+
+
+\title{Assignement 4}
+
+
+
+
+\begin{document}
+
+
+\noindent \textsc{University of Geneva}     \hfill \textsc{Bachelor in Economics and Management} \\
+\textbf{Probability 1}                      \hfill \textsc{Bachelor in International Relations} \\
+Dr. Daniel \textsc{Flores Agreda}                 \hfill Spring 2021  \\
+ASSIGNMENT 04                               \hfill   March 20th
+
+
+
+\noindent
+\makebox[\linewidth]{\rule{\textwidth}{0.4pt}}\\[1.5ex]
+
+\section*{Exercise 1}
+
+Amanda, Deborah and Rebecca work in a company as operators. They have to redirect the phone calls from the central contact service to the different services of the company. Sometimes they make mistakes with
+probability 0.02, 0.03 and 0.05. Amanda takes care of 50\% of the connections, Deborah 30\% and Rebecca 20\%. We say that an operator provides a good service if she does not commit any error.
+
+\begin{enumerate}
+  \item Among the bad services provided by the company, what is the proportion provided by Amanda?
+  \item What is the total proportion of good services ?
+  \item  Deborah goes often to parties during the night and then sometimes she gets suddenly sick the next day. She is absent with a probability of 10\%.
+  During her absences, Amanda takes care of 65\% of the connections and Rebecca of 35\%, but because of the stress, the probability of making a mistake
+  increases to 0.04 for Amanda and to 0.06 for Rebecca. If a client is redirected to a wrong phone line, what is the probability that Deborah went dancing during the preceding night and then she was sick ?
+\end{enumerate}
+
+
+
+
+
+
+
+\section*{Exercise 2}
+
+Suppose that 40\% of the individuals in a population have some disease. The diagnosis of the presence or absence of this disease in an individual is reached by performing a type of blood test. But, like many other clinical tests, this particular test is not perfect. The manufacturer of the blood-test-kit made the accompanying information available to the clinics. If an individual has the disease, the test indicates the absence (false negative) of the disease 10\% of the time whereas if an individual does not have the disease, the test indicates the presence (false positive) of the disease 20\% of the time. Now, from this population an individual is selected at random and his blood is tested. The health professional is informed that the test indicated the presence of the particular disease. What is the probability that this individual does indeed have the disease?
+
+Help: Define the following events,
+\begin{itemize}
+\item $ D $: The individual has the disease.
+\item $ \bar{D} $: The individual does not have the disease.
+\item $ T $: The blood test indicates the presence of the disease.
+\end{itemize}
+
+
+\section*{Exercise 3}
+
+An insurance company divides its policy holders into three categories: low risk, moderate risk, and high risk. The probabilities that a low-risk, moderate-risk, and high-risk policy holder will be involved in an accident over a period of one year are respectively 0.05, 0.15 and 0.30. It is estimated that 20\% of the total number of people insured by the company is low risk, 50\% is moderate risk and 30\% is high risk.
+
+\begin{enumerate}
+	\item What is the proportion of policy holders who have one or more accidents in a given year?
+	\item If Alfred who is insured did not have an accident in 2017, what is the probability that he will be in the low-risk category (respectively at moderate risk)?
+\end{enumerate}
+
+
+
+
+\section*{Exercise 4}
+
+Let $X$ be a random variable. Prove that:
+\begin{enumerate}
+  \item $Var(X)=E(X^2)-E(X)^2$
+  \item $Var(aX+b)=a^2 Var(X)$ where $a$ and $b$ are constants.
+\end{enumerate}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\section*{Exercise 5 (Optional)}
+
+Xenia has 6 books: 3 novels, 2 mathematics and 1 electronics.
+\begin{enumerate}
+  \item In how many ways can Xenia arrange them on a bookshelf if:
+\begin{enumerate}
+  \item the books can be arranged in any order?
+  \item the mathematics books must be together and the novels must be together?
+  \item the novels must be together, but the other books can be arranged in any order?
+\end{enumerate}
+  \item If Xenia's little sister throws 3 books on the floor, what is the probability that not more than one of the fallen book
+  is a mathematics one?
+\end{enumerate}
+
+\end{document}
+
+
+

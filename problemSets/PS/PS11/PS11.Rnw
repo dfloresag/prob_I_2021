@@ -41,7 +41,7 @@
 
 \noindent \textsc{University of Geneva}     \hfill \textsc{Bachelor in Economics and Management} \\
 \textbf{Probability 1}                      \hfill \textsc{Bachelor in International Relations} \\
-Professor Davide La Vecchia                 \hfill Spring 2018  \\
+Dr. Daniel \textsc{Flores Agreda}                 \hfill Spring 2021  \\
 ASSIGNMENT 11                               \hfill   May 22nd-24th
 
 
@@ -116,24 +116,24 @@ Let $Y$ be another number randomly chosen among the numbers greater than or equa
 
 
 \begin{enumerate}
- 
+
 \item Let $Z$ be a random variable having a Bernoulli distribution with  $p:=P(Z=1)$. Letting
 $\zeta>0$, show that
 $$
 P(Z \geq \zeta) \leq \exp^{\{-\zeta\}} [1-p(1-\exp^{\{1\}})]. %(1-p) e^{-\gamma} + p e^{1-\gamma}. %\frac{p+(1-p)e} {e^{\gamma}}.
 $$
 [Hint: $P(Z \geq  \zeta) = P (\exp^{\{Z\}}\geq \exp^{\{\zeta\}})$.]  \\
- 
 
- 
+
+
 \item Let us define
 $$
 X := \sum_{i=1}^n Z_i, \quad \text{for} \quad n \in \mathbb{N}.
 $$
 where $\{Z_i\}$ is a sequence of independent and identically distributed Bernoulli random variables such that $p:=P(Z_i=1)$, for each $i=1,2,...,n$.
- 
- 
- 
+
+
+
 \begin{itemize}
      \item[2.1] Is $X$ a discrete or a continuous random variable? What is the distribution of $X$? What is $E[X]$?
      %\vspace{4cm}
@@ -143,7 +143,7 @@ where $\{Z_i\}$ is a sequence of independent and identically distributed Bernoul
              \end{equation}
    [Hint: make use of $E[X]$ as derived in question 2.1]
            %  \vspace{8cm}
-           
+
     \item[2.3] Assuming there exists $\beta > 1$ such that $E[X^2]\leq n^2\beta^2$, show that
              \begin{equation} \label{Eq: var2}
              \text{Var}(X) \leq n^2(\beta^2 -p^2).
@@ -157,8 +157,8 @@ where $\{Z_i\}$ is a sequence of independent and identically distributed Bernoul
         & \leq & \left(\frac{\beta -p }{\lambda}\right) \left(\frac{\beta + p}{\lambda} \right).
             \end{eqnarray*}
 \end{itemize}
-           
- 
+
+
 \end{enumerate}
 
 

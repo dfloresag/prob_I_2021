@@ -41,7 +41,7 @@
 
 \noindent \textsc{University of Geneva}     \hfill \textsc{Bachelor in Economics and Management} \\
 \textbf{Probability 1}                      \hfill \textsc{Bachelor in International Relations} \\
-Professor Davide La Vecchia                 \hfill Spring 2018  \\
+Dr. Daniel \textsc{Flores Agreda}                 \hfill Spring 2021  \\
 ASSIGNMENT 09                               \hfill  May 3rd \& May 8th
 
 
@@ -153,7 +153,7 @@ P(C<210)&=& \left. P(C-210<0) \right. \nonumber  \\
 &=& \left. P \left(\frac{C-210}{\sqrt{144}}<0\right) \right. \nonumber  \\
 &=& \left. \Phi(0)=0.5.  \right. \nonumber
  \end{eqnarray*}
- 
+
 
 For the machine `Minulta', we calculate $P(M<210)$:
 \begin{eqnarray*}
@@ -176,7 +176,7 @@ P(C-M<0)=\Phi\left(\frac{0-10}{\sqrt{225}}\right)=\Phi\left(\frac{-10}{15}\right
 \]
 \item What is the probability that the machine `Minolta' will stop before `Canyon' for the first time?
 
-The probability that the machine `Minolta' will stop before `Canyon' for the first time is given by $$(M-C)\sim N(-10,225)$$ 
+The probability that the machine `Minolta' will stop before `Canyon' for the first time is given by $$(M-C)\sim N(-10,225)$$
 So
 \[
 P(M-C<0)=\Phi\left(\frac{0-(-10)}{\sqrt{225}}\right)=\Phi\left(\frac{10}{15}\right)\approx\Phi(0.67) \approx 0.7486.

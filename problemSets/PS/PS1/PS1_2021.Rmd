@@ -1,0 +1,109 @@
+---
+title: "R Notebook"
+output: html_notebook
+---
+
+\noindent \textsc{University of Geneva}     \hfill \textsc{Bachelor in Economics and Management} \\
+\textbf{Probability 1}                      \hfill \textsc{Bachelor in International Relations} \\
+Professor Davide La Vecchia                 \hfill Spring 2019  \\
+ASSIGNMENT 01                               \hfill   February 28th
+
+<!-- %\begin{center} -->
+<!-- %\vspace{2cm} -->
+<!-- %\LARGE{\textbf{Assignement 1}} -->
+<!-- %\end{center} -->
+
+<!-- \noindent -->
+<!-- \makebox[\linewidth]{\rule{\textwidth}{0.4pt}}\\[1.5ex] -->
+
+<!-- % -->
+
+
+## Integrals
+
+Compute the following integrals:
+
+\begin{align*}
+\int& 5x^{3}-10x^{-6}+4 dx \\
+\int&  \pi^{8}+\pi^{-8} dx \\
+\int& 3\sqrt[4]{x^{3}}+\frac{7}{x^{5}}+\frac{1}{6\sqrt{x}}dx \\
+\int& \frac{15}{x}dx \\
+\int & exp(x)dx\\
+\int_{1}^{2}& y^{2}+y^{-2}dy \\
+\int_{-3}^{1}& 6y^{2}-5y+2dy \\
+\int_{0}^{u}& \lambda exp(\lambda y) dy \\
+\int_{-\infty}^{a}& \frac{1}{2b} exp\left (-\frac{|y-\mu|}{b}\right) dy, \quad \text{for} \quad \mu \in \mathbb{R} \quad \text{and} \quad b \in \mathbb{R}^{+}.
+\end{align*}
+
+## Combinatorics
+
+Combinatorics is a branch of mathematics concerning the study of finite or countable discrete structures.
+We will enumerate the number of ways of selecting $k$ items from a collection of $n$ objects.
+In this class we will use several kinds of combinations:
+
+
+1.  Permutation with repetition: $n^k$  
+we draw (with replacement) $k$ elements from $n$ objects.
+1.  Permutation without repetition: $P^n_n=n!$
+we draw (without replacement) $n$ elements from $n$ objects.
+1.  Partial permutations: $P^n_k=\frac{n!}{(n-k)!}$
+we draw (without replacement) $k$ elements from $n$ objects.
+1.  Combinations: $C{n \choose k}=\frac{n!}{k!(n-k)!}$
+Same as a partial permutation but the order of the items doesn't count.
+The formula comes from:
+$$\text{Partial permutations}= \text{Permutations of the outcome} \times \text{Combinations}$$
+$$\text{That is :} \quad P^n_k=P^k_k \times {n \choose k} $$
+
+
+
+**Theorem**
+\begin{align}
+{n \choose r}={n-1 \choose r-1}+{n-1 \choose r} 
+\quad \text{for } 1\leq r\leq n
+\end{align}
+
+1. Assume there are 6 women and 4 men taking an exam. Then they are ranked according to their grades.
+    - How many possible rankings can we get?
+    - If the women are ranked between them, and the men between them. How many possible global rankings do we have?
+2. How many car number plates with 7 items does it exist:
+  -  if the first two are letters and the five last are digits?
+  - same question but we assume that there is no repetition of the letters and the digits.
+3. Suppose that a fair coin is tossed five times. The outcome of the experiment is registered with $H$ if the result of the tossing is head and with $T$ if the outcome is tail (the outcomes would look like $HHTHT, THTTH$ and so on).
+  - How many possible outcomes do we have?
+  - How many of these five dimensional outcomes would include two heads?
+4. A committee of 3 is to be formed from a group of 20 people. How many different committees are possible?
+
+## Taylor Expansions
+
+
+**Binomial Theorem:**
+
+\begin{align}
+(a+b)^{n}&=\sum_{k=0}^{n}{n \choose k} a^{k} b^{n-k}
+\end{align}
+
+A Taylor series of a function $ f(x) $ about $ x_0 $ is the power series
+\begin{eqnarray}
+f(x)&=&f(x_0)+f'(x_0)(x-x_0)+\frac{f''(x_0)}{2!}(x-x_0)^{2}+...+\frac{f^{(n)}(x_0)}{n!}(x-x_0)^{n}+... \\
+&=& \sum_{k=0}^\infty \frac{f^{(k)}(x_0)}{k!}(x-x_0)^{k}
+\end{eqnarray}
+
+A Maclaurin series is a Taylor expansion of a function about $x_0=0$.
+
+1. Using binomial theorem, compute the following expansions:
+\begin{align*}
+ &(x+y)^{2}  \\
+ &(x-y)^{2}\\
+ &x^{2}-y^{2}\\
+ &(x+y)^{3} \\
+ &x^{3}+y^{3}\\
+\end{align*}
+2. Find the Maclaurin expansions of the following functions $f(x)=\frac{1}{1-x}$ and $g(x)=exp(x)$.
+
+## Sums
+
+1. Compute the sum of the first 100 integers, namely find the value of
+$$\sum_{i=1}^{100} i =1 +2 + 3+ .....+100.$$
+2. Find a general formula for: $\sum_{i=1}^n i$.
+
+

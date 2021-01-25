@@ -1,0 +1,229 @@
+\documentclass[12pt,thmsa]{article}
+\usepackage[french,english]{babel}
+\usepackage[ansinew]{inputenc}
+\usepackage[T1,OT1]{fontenc}
+\usepackage{graphicx}
+\usepackage{amsmath,amssymb,listings}
+\usepackage{alltt,algorithmic,algorithm}
+\usepackage{multicol}
+\usepackage{cite}
+\usepackage{fancyhdr}
+\usepackage{setspace}
+\usepackage{array}
+\usepackage{amsfonts}
+\usepackage{latexsym}
+\usepackage{epsf}
+\usepackage{umlaute}
+\usepackage{setspace}
+\usepackage{amsthm}
+\usepackage{enumerate}
+
+
+\setlength{\textwidth}{160mm}
+\setlength{\textheight}{230mm}
+\setlength{\oddsidemargin}{-5mm}
+\setlength{\topmargin}{-10mm}
+
+% to get rid of the numbers in the bibliography:
+\makeatletter
+\def\@biblabel#1{}
+\makeatother
+
+
+
+\title{Assignement 4}
+
+
+
+
+\begin{document}
+
+
+\noindent \textsc{University of Geneva}     \hfill \textsc{Bachelor in Economics and Management} \\
+\textbf{Probability 1}                      \hfill \textsc{Bachelor in International Relations} \\
+Dr. Daniel \textsc{Flores Agreda}                 \hfill Spring 2021  \\
+ASSIGNMENT 04                               \hfill   March 20th
+
+
+
+\noindent
+\makebox[\linewidth]{\rule{\textwidth}{0.4pt}}\\[1.5ex]
+
+\section*{Exercise 1}
+
+Amanda, Deborah and Rebecca work in a company as operators. They have to redirect the phone calls from the central to the different services of the company. Sometimes they make mistakes with
+probability 0.02, 0.03 and 0.05. Amanda takes care of 50\% of the connections, Deborah 30\% and Rebecca 20\%. We say that an operator provides a good service if she does not commit any error.
+
+\begin{enumerate}
+  \item Among the bad services provided by the company, what is the proportion provided by Amanda?
+  \item What is the total proportion of good services ?
+  \item
+  Deborah goes often to parties during the night and then sometimes she gets suddenly sick the next day. She is absent with a probability of 10\%.
+  During her absences, Amanda takes care of 65\% of the connections and Rebecca of 35\%, but because of the stress, the probability of making a mistake
+  increases to 0.04 for Amanda and to 0.06 for Rebecca. If a client is redirected to a wrong phone line, what is the probability that Deborah went dancing during the preceding night and then she was sick ?
+\end{enumerate}
+
+\noindent Solutions:\\
+Let be the following events: \\
+A=\{Amanda takes care of the phone call\} ; \\
+D=\{Deborah takes care of the phone call\}; \\
+R=\{Rebecca takes care of the phone call\}; \\
+E=\{An error has been committed\}; \\
+
+We know that: $P(A)=0.5; P(D)=0.3; P(R)=0.2; P(E \vert A)=0.02; P(E \vert D)=0.03; P(E \vert R)=0.05$.
+
+\begin{enumerate}
+  \item $P(A \vert E)= \frac{P(E\vert A) P(A)}{P(E)}$.  \\
+  Since $P(E)=P(E \vert A) P(A)+ P(E \vert D) P(D)+ P(E \vert R) P(R)=0.029$. \\
+  Then $P(A \vert E)=\frac{0.02 0.5}{0.029}=0.3448$.
+
+  \item $P(E)=P(E \vert A)P(A)+P(E \vert D) P(D)+P(E \vert R) P(R)\\= 0.02\cdot0.5+0.03\cdot 0.3+0.05\cdot 0.2=0.029$\\
+$P(\bar{E})=1-P(E)=1-0.029=0.971$.
+
+
+  \item  $S$=\{Deborah is sick\}; \\
+$A_S$=\{ Amanda takes care of the phone call while Deborah is sick\}; \\
+$R_S$=\{Rebecca takes care of the phone call while Deborah is sick\}; \\
+
+We know: $P(A_S)=0.65; P(R_S)=0.35; P(S)=0.1; P(E \vert A_S)=0.04; P(E \vert R_S)=0.06$.
+
+We want $P(S \vert E)=  \frac{P(E \cap S)}{P(E)}$.
+
+$P(E)=P(E \vert S)P(S)+P(E \vert \bar{S}) P(\bar{S})$\\
+$P(E \vert S)=P(E \vert A_S) P(A_S) + P(E\vert R_S) P(R_S) =0.047$\\
+$P(E \vert \bar{S})= 0.029$\\
+So: $P(E)= 0.047 \cdot 0.1 + 0.029 \cdot 0.9= 0.0308$\\
+$P(S \cap E) = P(E \vert S) P(S)= 0.0047.$\\
+So: $P(S \vert E)= \frac{0.0047}{0.0308}\simeq 0.153$.
+
+\end{enumerate}
+
+\section*{Exercise 2}
+
+Suppose that 40\% of the individuals in a population have some disease. The diagnosis of the presence or absence of this disease in an individual is reached by performing a type of blood test. But, like many other clinical tests, this particular test is not perfect. The manufacturer of the blood-test-kit made the accompanying information available to the clinics. If an individual has the disease, the test indicates the absence (false negative) of the disease 10\% of the time whereas if an individual does not have the disease, the test indicates the presence (false positive) of the disease 20\% of the time. Now, from this population an individual is selected at random and his blood is tested. The health professional is informed that the test indicated the presence of the particular disease. What is the probability that this individual does indeed have the disease?
+
+Help: Define the following events,
+\begin{itemize}
+\item $ D $: The individual has the disease.
+\item $ \bar{D} $: The individual does not have the disease.
+\item $ T $: The blood test indicates the presence of the disease.
+\end{itemize}
+
+\noindent Solutions:\\
+
+\noindent From the data we know that \\
+$ P(D)=0.4 $, so $ P(\bar{D})=1-P(D)=1-0.4=0.6 $\\
+$ P(\bar{T} | D)=0.1 $, so $P(T|D)=1- P(\bar{T} | D)=1-0.1=0.9$\\
+and $ P(T | \bar{D})=0.2 $. \\
+We are asked to calculate the conditional probability of $D $ given $T $.  We use the Bayes theorem
+\begin{align*}
+P(D|T)=\frac{P(D)P(T|D)}{P(D)P(T|D)+P(\bar{D})P(T|\bar{D})}=\frac{0.4\times0.9}{0.4\times0.9+0.6\times0.2}=\frac{3}{4}
+\end{align*}
+So there is a 75\% chance that the tested individual has the disease if we know that the blood test had indicated so.
+
+
+\section*{Exercise 3}
+
+An insurance company divides its policy holders into three categories: low risk, moderate risk, and high risk. The probabilities that a low-risk, moderate-risk, and high-risk policy holder will be involved in an accident over a period of one year are respectively 0.05, 0.15 and 0.30. It is estimated that 20\% of the total number of people insured by the company is low risk, 50\% is moderate risk and 30\% is high risk.
+
+\begin{enumerate}
+	\item What is the proportion of policy holders who have one or more accidents in a given year?
+	\item If Alfred who is insured did not have an accident in 2017, what is the probability that he will be in the low-risk category (respectively at moderate risk)?
+\end{enumerate}
+
+\noindent Solutions:\\
+\noindent We consider the complete system of events $S=\{A_{1}, A_{2},A_{3}\}$ with\\
+$A_{1}$: `low risk' and $P(A_{1})=0.2$;\\
+$A_{2}$: `moderate risk' and  $P(A_{2})=0.5$;\\
+$A_{3}$: `high risk' and $ P(A_{3})=0.3$.
+
+\begin{enumerate}
+	\item If we consider the event $C=\{\mbox{`have one or more accidents in a given year'}\}$, we have\\
+	$P(C|A_{1})=0.05$;\\
+	$P(C|A_{2})=0.15$;\\
+	$P(C|A_{3})=0.3$.\\
+	So
+	\begin{align*}
+	P(C) &=P(C|A_{1})P(A_{1})+ P(C|A_{2})P(A_{2})+P(C|A_{3})P(A_{3})\\
+	&= 0.05\cdot 0.2 + 0.15\cdot 0.5 + 0.3 \cdot 0.3\\
+	&=0.175.
+	\end{align*}
+	\item The complementary event of $C$ is $\overline{C}=\{\mbox{`Do not have an accident'}\}$. \\
+	If Alfred did not have an accident in 2017, the probability that he is in the low-risk category:\\
+	$$P(A_{1}|\overline{C})=\frac{P(\overline{C}|A_{1})P(A_{1})}{P(\overline{C})}$$
+	with\\
+	$P(\overline{C}|A_{1})=1-P(C|A_{1})=1-0.05=0.95$ and\\
+	$P(\overline{C})=1-P(C)=1-0.175= 0.825$.\\
+	So\\
+	$$P(A_{1}|\overline{C})= \frac{P(\overline{C}|A_{1}) P(A_{1})}{P(\overline{C})}=\frac{0.95\cdot0.2}{0.825}\approx0.230.$$
+	 And the probability that he's part of the middle risk class is
+	 $$P(A_{2}|\overline{C})=\frac{P(\overline{C}|A_{2})P(A_{2})}{P(\overline{C})}= \frac{(1-0.15)\cdot0.5}{0.825}\approx0.515.$$
+
+\end{enumerate}
+
+
+
+\section*{Exercise 4}
+
+Let $X$ be a random variable. Prove that:
+\begin{enumerate}
+  \item $Var(X)=E(X^2)-E(X)^2$
+  \item $Var(aX+b)=a^2 Var(X)$ where $a$ and $b$ are constants.
+\end{enumerate}
+
+\noindent Solutions:
+\begin{enumerate}
+\item By the definition of variance,
+  \begin{align*}
+    Var(X)&=E[(X-E(X))^2]=E[X^2-2X\cdot E(X)+E(X)^2]\\
+    &=E(X^2)-2E(X)\cdot E(X)+E(X)^2=E(X^2)-E(X)^2
+  \end{align*}
+ \item By the definition of variance,
+  \begin{align*}
+    Var(aX+b)&=E[(aX+b-E(aX+b))^2]=E[(aX+b-aE(X)-b)^2]\\
+&=E[a^2(X-E(X))^2]=a^2	E[(X-E(X))^2]=a^2Var(X)
+   \end{align*}
+\end{enumerate}
+
+
+
+
+\section*{Exercise 5 (Optional)}
+
+Xenia has 6 books: 3 novels, 2 mathematics and 1 electronics.
+\begin{enumerate}
+  \item In how many ways can Xenia arrange them on a bookshelf if:
+\begin{enumerate}
+  \item the books can be arranged in any order?
+  \item the mathematics books must be together and the novels must be together?
+  \item the novels must be together, but the other books can be arranged in any order?
+\end{enumerate}
+  \item If Xenia's little sister throws 3 books on the floor, what is the probability that not more than one of the fallen book
+  is a mathematics one?
+\end{enumerate}
+
+\noindent Solutions:
+
+\begin{enumerate}
+  \item \begin{enumerate}
+          \item $6!=720$
+          \item $3!3!2!=72$
+          \item $4!3!=144$
+        \end{enumerate}
+  \item $$P(Math=2)= \frac{{2 \choose 2} +{2 \choose 2} {3 \choose 1}}{{6 \choose 3}} =\frac{1}{5}$$
+  So: $P(Math \leq 1)=1-\frac{1}{5}=\frac{4}{5}$
+\end{enumerate}
+
+
+
+
+
+
+
+
+
+
+\end{document}
+
+
+

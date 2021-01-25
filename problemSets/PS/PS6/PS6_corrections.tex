@@ -1,4 +1,54 @@
-\documentclass[12pt,thmsa]{article}
+\documentclass[12pt,thmsa]{article}\usepackage[]{graphicx}\usepackage[]{color}
+% maxwidth is the original width if it is less than linewidth
+% otherwise use linewidth (to make sure the graphics do not exceed the margin)
+\makeatletter
+\def\maxwidth{ %
+  \ifdim\Gin@nat@width>\linewidth
+    \linewidth
+  \else
+    \Gin@nat@width
+  \fi
+}
+\makeatother
+
+\definecolor{fgcolor}{rgb}{0.345, 0.345, 0.345}
+\newcommand{\hlnum}[1]{\textcolor[rgb]{0.686,0.059,0.569}{#1}}%
+\newcommand{\hlstr}[1]{\textcolor[rgb]{0.192,0.494,0.8}{#1}}%
+\newcommand{\hlcom}[1]{\textcolor[rgb]{0.678,0.584,0.686}{\textit{#1}}}%
+\newcommand{\hlopt}[1]{\textcolor[rgb]{0,0,0}{#1}}%
+\newcommand{\hlstd}[1]{\textcolor[rgb]{0.345,0.345,0.345}{#1}}%
+\newcommand{\hlkwa}[1]{\textcolor[rgb]{0.161,0.373,0.58}{\textbf{#1}}}%
+\newcommand{\hlkwb}[1]{\textcolor[rgb]{0.69,0.353,0.396}{#1}}%
+\newcommand{\hlkwc}[1]{\textcolor[rgb]{0.333,0.667,0.333}{#1}}%
+\newcommand{\hlkwd}[1]{\textcolor[rgb]{0.737,0.353,0.396}{\textbf{#1}}}%
+\let\hlipl\hlkwb
+
+\usepackage{framed}
+\makeatletter
+\newenvironment{kframe}{%
+ \def\at@end@of@kframe{}%
+ \ifinner\ifhmode%
+  \def\at@end@of@kframe{\end{minipage}}%
+  \begin{minipage}{\columnwidth}%
+ \fi\fi%
+ \def\FrameCommand##1{\hskip\@totalleftmargin \hskip-\fboxsep
+ \colorbox{shadecolor}{##1}\hskip-\fboxsep
+     % There is no \\@totalrightmargin, so:
+     \hskip-\linewidth \hskip-\@totalleftmargin \hskip\columnwidth}%
+ \MakeFramed {\advance\hsize-\width
+   \@totalleftmargin\z@ \linewidth\hsize
+   \@setminipage}}%
+ {\par\unskip\endMakeFramed%
+ \at@end@of@kframe}
+\makeatother
+
+\definecolor{shadecolor}{rgb}{.97, .97, .97}
+\definecolor{messagecolor}{rgb}{0, 0, 0}
+\definecolor{warningcolor}{rgb}{1, 0, 1}
+\definecolor{errorcolor}{rgb}{1, 0, 0}
+\newenvironment{knitrout}{}{} % an empty environment to be redefined in TeX
+
+\usepackage{alltt}
 \usepackage[french,english]{babel}
 \usepackage[ansinew]{inputenc}
 \usepackage[T1,OT1]{fontenc}
@@ -32,16 +82,13 @@
 
 
 \title{Assignement 6}
-
-
-
-
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
 \begin{document}
 
 
 \noindent \textsc{University of Geneva}     \hfill \textsc{Bachelor in Economics and Management} \\
 \textbf{Probability 1}                      \hfill \textsc{Bachelor in International Relations} \\
-Professor Davide La Vecchia                 \hfill Spring 2018  \\
+Dr. Daniel \textsc{Flores Agreda}                 \hfill Spring 2021  \\
 ASSIGNMENT 06                               \hfill   April 3rd
 
 
@@ -62,7 +109,7 @@ $ \qquad X=$ ``the number of red marbles among the $n$ drawn marbles''.
   \item This law is well known. Its expectation is $E[X]=np$ and its variance $var(X)=np(1-p)\frac{N-n}{N-1}$ with $p=\frac{r}{N}$.
   Compare intuitively this law with the binomial law.
 \end{enumerate}
-\noindent Solutions: 
+\noindent Solutions:
 
 \begin{enumerate}
   \item X =\{the number of red marbles among the n drawn marbles\}\\
@@ -87,11 +134,11 @@ An editor is interested to model the number of mistakes in his books.
 We consider a book of $n=200$ pages. The number of typos for each page follows a Poisson distribution
 with parameter $\lambda=0.05$ and is independent of the number of typos on the other pages.\\
 
-\noindent Let us do some preliminary considerations. Define 
+\noindent Let us do some preliminary considerations. Define
 $$
-X_i = \{\text{the number of typos on the $i_{th} $ page}\} \quad i = 1, 2, ..., n 
+X_i = \{\text{the number of typos on the $i_{th} $ page}\} \quad i = 1, 2, ..., n
 $$
-Each $X_i$ is independent and follows a Poisson distribution with parameter $\lambda = 0.05$. On page $i$-th, the probability of no typos is 
+Each $X_i$ is independent and follows a Poisson distribution with parameter $\lambda = 0.05$. On page $i$-th, the probability of no typos is
 $$P(X_i= 0) = \frac{\lambda^0e^{-\lambda}}{0!} = e^{-\lambda} =e^{-0.05}
 $$
 \begin{enumerate}
@@ -100,17 +147,17 @@ $$
 
 $Y_n$ = \{the number of pages without any typos\}. $Y_n$ follows a Binomial distribution with parameter $n=200$ and $p = P(X_i=0)$. The expected value of $Y_n$ is $np = 200e^{-0.05} $.
 
- 
+
   \item What is the variance of the number of pages without any typo?\\
 
 The variance of $Y_n$ is $np(1-p) = 200e^{-0.05}(1-e^{-0.05}) $.
   \item What is, approximately, the probability that a book has at least $195$ pages without typos? \\
-% Not possible to do it without the normal. 
+% Not possible to do it without the normal.
 
-The probability that a book has at least 195 pages without typos is $ P(Y_n \geq 195) $. 
+The probability that a book has at least 195 pages without typos is $ P(Y_n \geq 195) $.
 we know p is large, so we need to transform $Y_n$ to get a small p. Then we define $Z_n$: \{the number of pages with typos\}.
 $Z_n = 200-Y_n$. $Z_n$ also follows a binomial distribution with parameter $n$ and $q=1-p \approx 0.05$.
-As n and q are relatively large, we can use Poisson to approximate the required probability. So,  
+As n and q are relatively large, we can use Poisson to approximate the required probability. So,
 \begin{eqnarray*}
 \lambda &=& nq = 200(1-e^{-0.05}) \\
  P(Y_n \geq 195) &=& P(Z_n \leq 5) \approx \sum_{i=0}^{5} \lambda^{-i}\frac{e^{-\lambda}}{i!} \approx 0.077
@@ -289,7 +336,7 @@ We have $R_i \sim B(n,p_i)$, with $ p_i $ the probability of having a theft of a
 $$p_i=P(\text{value}=v_i|\text{thefts})P(\text{thefts})=P(\text{value}=v_i|\text{thefts})\cdot p, \quad i=1,2,3.$$
 Therefore, $p_1=0.5p$, $p_2=0.2p$, $p_3=0.3p$, and:
 $$\text{E}(R_{1})=0.5np, \text{E}(R_{2})=0.2np, \text{E}(R_{3})=0.3np.$$
-So 
+So
 $$ \text{E}(X)=(50 \cdot 0.5 + 100 \cdot 0.2 + 200 \cdot 0.3)np=105np.$$
 
 We have $n=400$.
@@ -304,7 +351,7 @@ The commitment of a supervisor reduces the expectation of daily loss of $105$ CH
 
 
 
-      
+
 
 \section*{Exercise 6 (Optional)}
 
