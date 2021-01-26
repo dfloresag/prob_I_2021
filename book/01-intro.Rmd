@@ -31,12 +31,12 @@ knitr::include_url("https://flowmap.blue/15kwLB4baXZ7jpip8q0JjgR6zDoS5Gt3gMLCTUA
 ```
 
 
-In order to make sense of the immense amounts of Data generated every millisecond, computational tools are needed. Thankfully, in this day and age, computing power allows easy and fast manipulation of that enormous amount of information, yet it is not only by brute force or algorithmic power that appropriate insights are found. 
+In order to make sense of the immense amounts of Data generated every millisecond, computational tools are needed. Thankfully, in this day and age, computing power allows easy and fast manipulation of that enormous amount of information, yet it is not only by "brute force" (i.e. algorithmic power)  that appropriate insights are found. 
 
-Here is where mathematical theory contributes the most. The discipline that formalises the important aspects of the randomness in the data generation process and provides the tools necessary for data analysis is the field of Statistics. That said, in order to construct tools that capture these phenomena appropriately, mathematical assumptions on how the randomness/uncertainty of our data is generated. The field of mathematics that formalises randomness is the field of **Probability**
+Here is where mathematical theory contributes the most. The discipline that formalises the important aspects of the randomness in the data generation process and provides the tools necessary for data analysis is the field of **Statistics**. That said, in order to construct tools that capture these phenomena appropriately, mathematical assumptions on how the randomness/uncertainty of our data is generated. The field of mathematics that formalises randomness is the field of **Probability**
 
 
-## What is Probability? What are Statistics? (a.k.a. "What to expect from this Course")
+## "What to expect from this Lecture?"
 
 In this course, **we study Probability as a way to introduce Statistics**. Thus we **do not study Probability as a subject of interest in itself** i.e. we do not develop deep probability theory using all the formal theoretical arguments, but rather **we set up a few principles and methods** which will be **helpful to study Statistics**. 
 
@@ -44,42 +44,43 @@ In this course, **we study Probability as a way to introduce Statistics**. Thus 
 
 Hence, for the purposes of this lecture, we shall consider:  
 
-- **Statistics**: as the discipline that deals with the **collection**, **presentation**, **analysis** and **interpretation** of data. 
-- **Probability** as the mathematical formalisation of randomness and uncertainty, main building block of Statistical methods or their modern reincarnation (rebranding), algorithmic tools known as Machine Learning, Deep Learning, etc.
+- **Statistics**: as the discipline that deals with the **collection**, **presentation**, **analysis** and **interpretation** of data. In future lectures, you will learn classical Statistical methods as well as their modern reincarnation (or "rebranding"): algorithmic tools known as Machine Learning, Deep Learning, etc.
+- **Probability** as the mathematical formalisation of randomness and uncertainty the main building block of Statistical methods. 
 
-Before jumping into the core of the subject, I want you to . When you are thinking about uncertain outcomes, say you are attempting to _gamble_ in a casino or _invest_ in the stock exchange^[one could claim, gambling and investing amount to the same thing, give or take some details], you often ask yourself:
+<mark>
+  keep it on
+</mark>
+
+### One intuitive illustration
+
+Before jumping into the core of the subject, I would like to make a little detour that helps illustrate intuitively the importance of Probability in everyday life. Let's imagine you are facing a situation with an uncertain outcome, say you are attempting to _gamble_ in a casino 
 
 > What are my **chances** of success? 
 
-And sometimes, hearing you think aloud, someone in the rooom would say some **number**. 
+And sometimes, hearing you think aloud, someone in the room would attempt to **quantify these chances**, say, by throwing some **number**. 
 
 > "I'd say more like one out of a million."
 
-In your mind, this number becomes an indication of the _likelihood_ of the event of interest (winning your gamble, being successful in the investment).
+In your mind, this number becomes an indication of the _likelihood_ of winning your gamble, being successful in the investment.
 
 > "So, you're telling me that THERE IS A CHANCE!"
 
-Intuitively, you understand this as the result as the result of a computation. Were you to _repeat_ the _experiment_ (gamble, investment) your chances of success results from.
+<mark>
+  jim carrey
+</mark>
+
+Intuitively, you understand this as the result as the result of a computation. Were you to _repeat_ the _experiment_ (gamble, investment) your chances of success results from a ratio between the number of times you are successful, versus the number of attempts.
 
 $$\text{my chances} = \frac{\text{number of times I succeed}}{\text{number of times I fail}}$$
-In a bit of an abuse of language, this value, constitutes the **probability** of success. When it's small, success is very unlikely, but 
-
-
-> Probability is defined as the measure of the "likelihood" of an event or random outcome. 
-
-$\leadsto$ Uncertainty is measured in units of \textit{probability}, which _is the currency of statistics_. 
-
-$\leadsto$ Statistics is concerned with **study of uncertainty** and with the _study of data-driven decision making in the face of uncertainty_.
+In a bit of an abuse of language, this value, constitutes the **probability** of success. When it's small, success is very _unlikely_, but if it is large (or at least closer to 1), the event seems more likely 
 
 
 
+Probability constitutes then the **measure of the "likelihood" of an event or random outcome**. Hence, we can measure Uncertainty units of \textit{probability}, which _is the currency of statistics_. 
 
+ <!-- Statistics is concerned with **study of uncertainty** and with the _study of data-driven decision making in the face of uncertainty_. -->
 
-Another way of saying that is: 
-
-> "What is the chance of something happening?"
-
-To answer this question we make use of Probability. Indeed, Probability is all about the certainty/uncertainty and the prediction of something happening. Some events are impossible, other events are certain to occur, while many are possible, but not certain to occur...
+<!-- To answer this question we make use of Probability. Indeed, Probability is all about the certainty/uncertainty and the prediction of something happening. Some events are impossible, other events are certain to occur, while many are possible, but not certain to occur... -->
 
 >   "In this world there is nothing certain but death and taxes."
 -  Benjamin Franklin
@@ -88,15 +89,23 @@ To answer this question we make use of Probability. Indeed, Probability is all a
 
 <!-- \includegraphics[width=0.3\textwidth,height=0.3\textheight]{tipoS.pdf} -->
 
-#### Example: Stock price evolution
 
-Let us imagine that we are going to model the  **uncertainty** characterizing the Stock price of an asset by a simple model. With probability $p=1/2$ the stock price moves up of a factor $u$, and with probability $1-p$ the price moves down of a factor $d$. We denote the price at time $t_1$  by $uS_0 $ if the price goes up, and by $dS_0 $  if the price goes down. 
+#### Another illustration: Stock price evolution
+
+<mark>
+  stonks
+</mark>
+
+
+Let us see how a simple probabilistic model can help us characterise the  **uncertainty** of the Stock price of an asset. With probability $p=1/2$ the stock price moves up of a factor $u$, and with probability $1-p$ the price moves down of a factor $d$. We denote the price at time $t_1$  by $uS_0 $ if the price goes up, and by $dS_0 $  if the price goes down. 
 
 Let us set $S_0=1$, $u=2$ and $d=1/2$. Can we say something about the price at time $t_2$?
 
 The price evolution is represented by a tree:
 
-> Insert illustration or animation
+<mark>
+  Insert illustration or animation
+</mark>
 
 <!-- \tikzstyle{bag} = [text width=8em, text centered] -->
 <!-- \tikzstyle{end} = [] -->
@@ -118,6 +127,10 @@ The price evolution is represented by a tree:
 
 #### Example: Quanta
 
+<mark>
+  I'm not sure about this example
+</mark>
+
 <!-- \includegraphics[width=0.3\textwidth,height=0.2\textheight]{Quantum.pdf} -->
 
 <!-- \includegraphics[width=0.4\textwidth,height=0.9\textheight, angle = -90]{cern.pdf} -->
@@ -136,43 +149,9 @@ The random behaviour of $W$ can be described by a probability density function:
 <!-- \includegraphics[width=0.4\textwidth,height=0.6\textheight, angle = 0]{W.pdf} -->
 
 
-
-<!-- % -->
-<!-- % -->
-<!-- %# {Preliminaries} -->
-<!-- % -->
-<!-- % -->
-<!-- %A bit more precisely, \textbf{Statistics} -->
-<!-- % -->
-<!-- %\vspace{0.2cm} -->
-<!-- % -->
-<!-- %$\leadsto$  is the science of {`learning -->
-<!-- %  from data'} (or of {making sense out of data}), and of -->
-<!-- % {measuring, controlling and communicating uncertainty}. -->
-<!-- % -->
-<!-- %%% -->
-<!-- %%% -[--] Statistics can be defined as the science of \present{`learning -->
-<!-- %%%   from data'} (or of \highlighttext{making sense out of data}), and of -->
-<!-- %%%  \highlighttext{measuring, controlling and communicating uncertainty}.  -->
-<!-- % -->
-<!-- %\medskip -->
-<!-- % -->
-<!-- %$\leadsto$ is a \textbf{{process}} that includes everything from planning for the collection of data -->
-<!-- % and subsequent data management to end-of-the-line activities -->
-<!-- % such as drawing conclusions of %numerical facts called  -->
-<!-- % data and -->
-<!-- % presentation of results. -->
-<!-- % -->
-<!-- %\bigskip -->
-<!-- % -->
-<!-- %%% -[--]  -->
-<!-- % -->
-<!-- % -->
-<!-- % -->
-
 ## Appendix: Mathematical Formulae
 
-Probability theory is a mathematical tool. Hence, it is important to review some elemental mathematical concepts. 
+Probability theory is a mathematical tool. Hence, it is important to review some elemental mathematical concepts. Here are some of the formulae that we will use throughout the course. 
  
 ### Powers and Logarithms
 
@@ -185,14 +164,18 @@ Probability theory is a mathematical tool. Hence, it is important to review some
 
 ### Differentiation 
 
-The **derivatives** will also play a pivotal role. For instance:
+**derivatives** will also play a pivotal role. For instance:
 
-$$
-\frac{d x^n}{dx} = n \cdot x^{n-1}, \quad \frac{d \exp^{x}}{dx} = \exp^{x} , \quad \frac{d \ln({x})}{dx} = \frac{1}{x}, 
-$$
+- Derivative of the $x$ to the power $n$, $f(x)= x^n$
+$$\frac{d x^n}{dx} = n \cdot x^{n-1}$$ 
 
-and we will make use of some fundamental rules, like e.g.
+- Derivative of the exponential function $f(x) = \exp(x)$ 
+$$\frac{d \exp^{x}}{dx} = \exp^{x}$$ 
 
+- Derivative of the natural logarithm $f(x) = \ln(x)$ 
+$$ \frac{d \ln({x})}{dx} = \frac{1}{x}$$
+
+Moreover, we will make use of some fundamental rules, such as:
 
 #### Product rule: 
 
@@ -207,7 +190,7 @@ $$\frac{d f[g(x)]}{dx} =  (f\circ g)'(x) = f'[g(x)] \cdot g'(x)$$
 
 ### Integration
 
-Integrals will be crucial in many tasks. For instance, recall that:
+Integrals will be crucial in many tasks. For instance, recall that integration is _linear_ over the sum, i.e. $\forall c, d \in \mathbb{R}$ 
 
 
 $$\int_{a}^{b} \left[c \times f(x) + d \times g(x) \right]dx = c  \times \int_{a}^{b}   f(x) dx + d \times \int_{a}^{b}   g(x) dx; $$
@@ -222,11 +205,11 @@ $$\int_{a}^{b} \left[c \times f(x) + d \times g(x) \right]dx = c  \times \int_{a
 
 $$\int_{\mathbb{R}} f(x) dx \geq 0.$$
 
-- For a continuous function $f(x)$, the indefinite integral is 
+- For a continuous function $f(x)$, the **indefinite integral** is 
 
 $$\int f(x) dx = F(x) + \text{const}$$
 
-while the definite integral is
+- while the **definite integral** is
 
 $$F(b)-F(a)= \int_{a}^{b} f(x) dx, \quad b \geq a.$$
 
@@ -234,21 +217,28 @@ $$F(b)-F(a)= \int_{a}^{b} f(x) dx, \quad b \geq a.$$
 
 Besides integrals we are also going to use **sums**:
 
+- Sums are denoted with a $\Sigma$ operator and an _index_ $i$, as in:
 
-- $$\sum_{i=1}^{n} X_{i} = X_1 + X_2 +....+ X_n,$$
-- For every $\alpha_i \in \mathbb{R}$,  $$\sum_{i=1}^{n} \alpha_i X_{i} = \alpha_1 X_1 + \alpha_2 X_2 +....+ \alpha_n X_n;$$ 
+$$\sum_{i=1}^{n} X_{i} = X_1 + X_2 +....+ X_n,$$
+- Moreover, for every $\alpha_i \in \mathbb{R}$,  
+$$\sum_{i=1}^{n} \alpha_i X_{i} = \alpha_1 X_1 + \alpha_2 X_2 +....+ \alpha_n X_n;$$ 
 <!-- %whose special case is -->
 <!-- %$ -->
 <!-- %\sum_{i=1}^{n} \alpha X_{i} = \alpha X_{i} = \alpha X_1 + \alpha X_2 +....+ \alpha X_n = \alpha \sum_{i=1}^{n} X_{i} -->
 <!-- %$ -->
 
-- Double sum: a sum with two indices. For instance,
+- A **double sum** is a sum operated over two _indices_. For instance,
+
+$$\sum_{i=1}^{n} \sum_{j=1}^{m}  x_{i}y_{j}  = x_1y_1 + x_1 y_2 +... +x_2y_1+ x_2y_2 + \dots$$
+
+- by carefully arranging the terms in the sum, we can stablish the following identity: 
 
 \begin{align}
-\sum_{i=1}^{n} \sum_{j=1}^{m}  x_{i}y_{j}  &=& x_1y_1 + x_1 y_2 +... +x_2y_1+ x_2y_2 + \dots \\
+\sum_{i=1}^{n} \sum_{j=1}^{m}  x_{i}y_{j}  &= x_1y_1 + x_1 y_2 +... +x_2y_1+ x_2y_2 + \dots \\
 &= \left(\sum_{i=1}^{n} x_i\right) y_1 +  \left(\sum_{i=1}^{n} x_i\right) y_2 + \dots + \left(\sum_{i=1}^{n} x_i\right) y_m  \\
 &= \sum_{i=1}^{n} x_i \sum_{j=1}^{m} y_j.
 \end{align}
+
 
 ### Combinatorics
 
@@ -258,9 +248,10 @@ Finally, we also rely on some **combinatorial formulas**. Specifically,
 
 $$ n! = n \times (n-1) \times (n-2) \times \dots \times 1;$$
 where $0! =1$, by definition;
-- Binomial coefficient, for $n \geq k$
+
+- The **Binomial coefficient**, for $n \geq k$ is defined by the following ratio:
 $$\binom n k =\frac{n!}{k!(n-k)!}{\color{blue}{=C^{k}_n}}$$
-which is helpful to express the \color{blue} Binomial Theorem \color{black}
+which is helpful to express the **Binomial Theorem** 
 
 $$(x+y)^n = {n \choose 0}x^n y^0 + {n \choose 1}x^{n-1}y^1 + \cdots + {n \choose n-1}x^1 y^{n-1} + {n \choose n}x^0 y^n;$$
 
@@ -268,12 +259,10 @@ or equivalently, making use of the sum notation,
 
 $$(x+y)^n = \sum_{k=0}^n {n \choose k}x^{n-k}y^k = \sum_{k=0}^n {n \choose k}x^{k}y^{n-k}.$$ 
 
-#### Example
+```{example}
+Let us compute the binomial coefficients for polynomials of different degrees $n$:
 
-Let us compute:
-
-
-- for $n=1$ we have 
+- for $n=1$ 
 
 \begin{align}
 (x+y)^1 &= {1 \choose 0}x^1 y^0 + {2 \choose 1}x^{1}y^1 +  {2 \choose 0}x^0 y^{2}\\  
@@ -293,38 +282,16 @@ Let us compute:
 (x+y)^3 &= {3 \choose 0}x^3 y^0 + {3 \choose 1}x^{2}y^1 + \cdots + {3 \choose 2}x^1 y^{2} + {3 \choose 3}x^0 y^3 \\
 &= y^3 + 3xy^2 + 3x^2y+x^3 
 \end{align}
+```
 
-
+```{example}
 How many ways can we select $3$ presents  among the $5$ available presents (see figure below)? 
 Assume the order does not matter!
-
 
 \includegraphics[width=0.4\textwidth,height=0.35\textheight]{gifts.pdf}
 
 \includegraphics[width=0.5\textwidth,height=0.2\textheight]{outcomes.pdf}
 
-
-
-<!-- % -->
-<!-- % -->
-<!-- %  -->
-<!-- %```{example}[cont'd] -->
-<!-- % -->
-<!-- %%How many ways can we select $3$ presents (order does not matter) among the $5$ available presents (see figure below)? -->
-<!-- % -->
-<!-- %\begin{figure}[h!] -->
-<!-- %\includegraphics[width=0.6\textwidth,height=0.3\textheight]{outcomes.pdf} -->
-<!-- %\end{figure} -->
-<!-- %``` -->
-<!-- % -->
-<!-- % -->
-
-
-
- 
-```{example}
-
-[cont'd by Explanation] 
 
 1. $5!$ gives you the total $\#$ of possible choices when you can select 5 presents 
 (so-called ``permutations'', see next slides); 

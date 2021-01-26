@@ -193,3 +193,6 @@ def:unnamed-chunk-9
 def:unnamed-chunk-13
 fig:unnamed-chunk-1
 what-is-probability-what-are-statistics-a.k.a.-what-to-expect-from-this-course
+what-to-expect-from-this-lecture
+one-intuitive-illustration
+another-illustration-stock-price-evolution

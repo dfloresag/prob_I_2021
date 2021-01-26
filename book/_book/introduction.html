@@ -21,10 +21,10 @@
   <meta name="twitter:description" content="Course Materials" />
   
 
-<meta name="author" content="Prof. Davide La Vecchia &amp; Dr. Daniel Flores Agreda" />
+<meta name="author" content="Dr. Daniel Flores Agreda (based on the notes by Prof. Davide La Vecchia)" />
 
 
-<meta name="date" content="2021-01-22" />
+<meta name="date" content="2021-01-26" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -82,7 +82,10 @@
 <li class="chapter" data-level="1" data-path="introduction.html"><a href="introduction.html"><i class="fa fa-check"></i><b>1</b> Introduction</a>
 <ul>
 <li class="chapter" data-level="1.1" data-path="introduction.html"><a href="introduction.html#preliminaries"><i class="fa fa-check"></i><b>1.1</b> Preliminaries</a></li>
-<li class="chapter" data-level="1.2" data-path="introduction.html"><a href="introduction.html#what-is-probability-what-are-statistics-a.k.a.-what-to-expect-from-this-course"><i class="fa fa-check"></i><b>1.2</b> What is Probability? What are Statistics? (a.k.a. “What to expect from this Course”)</a></li>
+<li class="chapter" data-level="1.2" data-path="introduction.html"><a href="introduction.html#what-to-expect-from-this-lecture"><i class="fa fa-check"></i><b>1.2</b> “What to expect from this Lecture?”</a>
+<ul>
+<li class="chapter" data-level="1.2.1" data-path="introduction.html"><a href="introduction.html#one-intuitive-illustration"><i class="fa fa-check"></i><b>1.2.1</b> One intuitive illustration</a></li>
+</ul></li>
 <li class="chapter" data-level="1.3" data-path="introduction.html"><a href="introduction.html#appendix-mathematical-formulae"><i class="fa fa-check"></i><b>1.3</b> Appendix: Mathematical Formulae</a>
 <ul>
 <li class="chapter" data-level="1.3.1" data-path="introduction.html"><a href="introduction.html#powers-and-logarithms"><i class="fa fa-check"></i><b>1.3.1</b> Powers and Logarithms</a></li>
@@ -281,7 +284,8 @@
 <p>You can write citations, too. For example, we are using the <strong>bookdown</strong> package <span class="citation">(<a href="references.html#ref-R-bookdown" role="doc-biblioref">Xie 2020</a>)</span> in this sample book, which was built on top of R Markdown and <strong>knitr</strong> <span class="citation">(<a href="references.html#ref-xie2015" role="doc-biblioref">Xie 2015</a>)</span>.</p>
 <div id="preliminaries" class="section level2" number="1.1">
 <h2><span class="header-section-number">1.1</span> Preliminaries</h2>
-<p>Data has been characterised as the main commodity in our connected world of today. Generated at a breakneck pace and related to practically all of the aspects of human life, it has become a variable resource for the creation of products and services designed to improve people’s lives. For illustration, mobile devices provide enormous amounts of information of the location of users, which in turn, can help governments or big companies design better policies in what pertains mobility.</p>
+<p>Data has been identified as the main commodity in our connected world of today. Generated at a breakneck pace and related to practically all of the aspects of human life, it has become a variable resource for the creation of products and services designed to improve people’s lives. For illustration, mobile devices provide enormous amounts of information of the location of users, which in turn, can help governments or big companies design better policies in what pertains mobility.</p>
+<!-- Insert a better explanation of this -->
 <div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-1"></span>
 <iframe src="https://flowmap.blue/15kwLB4baXZ7jpip8q0JjgR6zDoS5Gt3gMLCTUAboQxk?v=46.719075,7.817990,7.51,0,0&amp;a=0&amp;as=1&amp;b=1&amp;bo=75&amp;c=0&amp;ca=1&amp;d=1&amp;fe=1&amp;lt=1&amp;lfm=ALL&amp;col=Default&amp;f=45" width="672" height="400px">
 </iframe>
@@ -289,57 +293,61 @@
 Figure 1.1: the site
 </p>
 </div>
-<p>In order to make sense of the immense amounts of Data generated every millisecond, computational tools are needed. Thankfully, in this day and age, computing power allows easy and fast manipulation of that enormous amount of information, yet it is not only by brute force or algorithmic power that appropriate insights are found.</p>
-<p>Here is where mathematical theory contributes the most. The discipline that formalises the important aspects of the randomness in the data generation process and provides the tools necessary for data analysis is the field of Statistics. That said, in order to construct tools that capture these phenomena appropriately, mathematical assumptions on how the randomness/uncertainty of our data is generated. The field of mathematics that formalises randomness is the field of <strong>Probability</strong></p>
+<p>In order to make sense of the immense amounts of Data generated every millisecond, computational tools are needed. Thankfully, in this day and age, computing power allows easy and fast manipulation of that enormous amount of information, yet it is not only by “brute force” (i.e. algorithmic power) that appropriate insights are found.</p>
+<p>Here is where mathematical theory contributes the most. The discipline that formalises the important aspects of the randomness in the data generation process and provides the tools necessary for data analysis is the field of <strong>Statistics</strong>. That said, in order to construct tools that capture these phenomena appropriately, mathematical assumptions on how the randomness/uncertainty of our data is generated. The field of mathematics that formalises randomness is the field of <strong>Probability</strong></p>
 </div>
-<div id="what-is-probability-what-are-statistics-a.k.a.-what-to-expect-from-this-course" class="section level2" number="1.2">
-<h2><span class="header-section-number">1.2</span> What is Probability? What are Statistics? (a.k.a. “What to expect from this Course”)</h2>
+<div id="what-to-expect-from-this-lecture" class="section level2" number="1.2">
+<h2><span class="header-section-number">1.2</span> “What to expect from this Lecture?”</h2>
 <p>In this course, <strong>we study Probability as a way to introduce Statistics</strong>. Thus we <strong>do not study Probability as a subject of interest in itself</strong> i.e. we do not develop deep probability theory using all the formal theoretical arguments, but rather <strong>we set up a few principles and methods</strong> which will be <strong>helpful to study Statistics</strong>.</p>
 <!-- \includegraphics[width=0.6\textwidth,height=0.7\textheight]{y.pdf} -->
 <p>Hence, for the purposes of this lecture, we shall consider:</p>
 <ul>
-<li><strong>Statistics</strong>: as the discipline that deals with the <strong>collection</strong>, <strong>presentation</strong>, <strong>analysis</strong> and <strong>interpretation</strong> of data.</li>
-<li><strong>Probability</strong> as the mathematical formalisation of randomness and uncertainty, main building block of Statistical methods or their modern reincarnation (rebranding), algorithmic tools known as Machine Learning, Deep Learning, etc.</li>
+<li><strong>Statistics</strong>: as the discipline that deals with the <strong>collection</strong>, <strong>presentation</strong>, <strong>analysis</strong> and <strong>interpretation</strong> of data. In future lectures, you will learn classical Statistical methods as well as their modern reincarnation (or “rebranding”): algorithmic tools known as Machine Learning, Deep Learning, etc.</li>
+<li><strong>Probability</strong> as the mathematical formalisation of randomness and uncertainty the main building block of Statistical methods.</li>
 </ul>
-<p>Before jumping into the core of the subject, I want you to . When you are thinking about uncertain outcomes, say you are attempting to <em>gamble</em> in a casino or <em>invest</em> in the stock exchange<a href="#fn1" class="footnote-ref" id="fnref1"><sup>1</sup></a>, you often ask yourself:</p>
+<p><mark>
+keep it on
+</mark></p>
+<div id="one-intuitive-illustration" class="section level3" number="1.2.1">
+<h3><span class="header-section-number">1.2.1</span> One intuitive illustration</h3>
+<p>Before jumping into the core of the subject, I would like to make a little detour that helps illustrate intuitively the importance of Probability in everyday life. Let’s imagine you are facing a situation with an uncertain outcome, say you are attempting to <em>gamble</em> in a casino</p>
 <blockquote>
 <p>What are my <strong>chances</strong> of success?</p>
 </blockquote>
-<p>And sometimes, hearing you think aloud, someone in the rooom would say some <strong>number</strong>.</p>
+<p>And sometimes, hearing you think aloud, someone in the room would attempt to <strong>quantify these chances</strong>, say, by throwing some <strong>number</strong>.</p>
 <blockquote>
 <p>“I’d say more like one out of a million.”</p>
 </blockquote>
-<p>In your mind, this number becomes an indication of the <em>likelihood</em> of the event of interest (winning your gamble, being successful in the investment).</p>
+<p>In your mind, this number becomes an indication of the <em>likelihood</em> of winning your gamble, being successful in the investment.</p>
 <blockquote>
 <p>“So, you’re telling me that THERE IS A CHANCE!”</p>
 </blockquote>
-<p>Intuitively, you understand this as the result as the result of a computation. Were you to <em>repeat</em> the <em>experiment</em> (gamble, investment) your chances of success results from.</p>
+<p><mark>
+jim carrey
+</mark></p>
+<p>Intuitively, you understand this as the result as the result of a computation. Were you to <em>repeat</em> the <em>experiment</em> (gamble, investment) your chances of success results from a ratio between the number of times you are successful, versus the number of attempts.</p>
 <p><span class="math display">\[\text{my chances} = \frac{\text{number of times I succeed}}{\text{number of times I fail}}\]</span>
-In a bit of an abuse of language, this value, constitutes the <strong>probability</strong> of success. When it’s small, success is very unlikely, but</p>
-<blockquote>
-<p>Probability is defined as the measure of the “likelihood” of an event or random outcome.</p>
-</blockquote>
-<p><span class="math inline">\(\leadsto\)</span> Uncertainty is measured in units of , which <em>is the currency of statistics</em>.</p>
-<p><span class="math inline">\(\leadsto\)</span> Statistics is concerned with <strong>study of uncertainty</strong> and with the <em>study of data-driven decision making in the face of uncertainty</em>.</p>
-<p>Another way of saying that is:</p>
-<blockquote>
-<p>“What is the chance of something happening?”</p>
-</blockquote>
-<p>To answer this question we make use of Probability. Indeed, Probability is all about the certainty/uncertainty and the prediction of something happening. Some events are impossible, other events are certain to occur, while many are possible, but not certain to occur…</p>
+In a bit of an abuse of language, this value, constitutes the <strong>probability</strong> of success. When it’s small, success is very <em>unlikely</em>, but if it is large (or at least closer to 1), the event seems more likely</p>
+<p>Probability constitutes then the <strong>measure of the “likelihood” of an event or random outcome</strong>. Hence, we can measure Uncertainty units of , which <em>is the currency of statistics</em>.</p>
+<p><!-- Statistics is concerned with **study of uncertainty** and with the _study of data-driven decision making in the face of uncertainty_. --></p>
+<!-- To answer this question we make use of Probability. Indeed, Probability is all about the certainty/uncertainty and the prediction of something happening. Some events are impossible, other events are certain to occur, while many are possible, but not certain to occur... -->
 <blockquote>
 <p>“In this world there is nothing certain but death and taxes.”
 - Benjamin Franklin</p>
 </blockquote>
 <!-- \includegraphics[width=0.4\textwidth,height=0.5\textheight]{profit.pdf} -->
 <!-- \includegraphics[width=0.3\textwidth,height=0.3\textheight]{tipoS.pdf} -->
-<div id="example-stock-price-evolution" class="section level4" number="1.2.0.1">
-<h4><span class="header-section-number">1.2.0.1</span> Example: Stock price evolution</h4>
-<p>Let us imagine that we are going to model the <strong>uncertainty</strong> characterizing the Stock price of an asset by a simple model. With probability <span class="math inline">\(p=1/2\)</span> the stock price moves up of a factor <span class="math inline">\(u\)</span>, and with probability <span class="math inline">\(1-p\)</span> the price moves down of a factor <span class="math inline">\(d\)</span>. We denote the price at time <span class="math inline">\(t_1\)</span> by $uS_0 $ if the price goes up, and by $dS_0 $ if the price goes down.</p>
+<div id="another-illustration-stock-price-evolution" class="section level4" number="1.2.1.1">
+<h4><span class="header-section-number">1.2.1.1</span> Another illustration: Stock price evolution</h4>
+<p><mark>
+stonks
+</mark></p>
+<p>Let us see how a simple probabilistic model can help us characterise the <strong>uncertainty</strong> of the Stock price of an asset. With probability <span class="math inline">\(p=1/2\)</span> the stock price moves up of a factor <span class="math inline">\(u\)</span>, and with probability <span class="math inline">\(1-p\)</span> the price moves down of a factor <span class="math inline">\(d\)</span>. We denote the price at time <span class="math inline">\(t_1\)</span> by $uS_0 $ if the price goes up, and by $dS_0 $ if the price goes down.</p>
 <p>Let us set <span class="math inline">\(S_0=1\)</span>, <span class="math inline">\(u=2\)</span> and <span class="math inline">\(d=1/2\)</span>. Can we say something about the price at time <span class="math inline">\(t_2\)</span>?</p>
 <p>The price evolution is represented by a tree:</p>
-<blockquote>
-<p>Insert illustration or animation</p>
-</blockquote>
+<p><mark>
+Insert illustration or animation
+</mark></p>
 <!-- \tikzstyle{bag} = [text width=8em, text centered] -->
 <!-- \tikzstyle{end} = [] -->
 <!-- \begin{tikzpicture}[sloped] -->
@@ -357,8 +365,11 @@ In a bit of an abuse of language, this value, constitutes the <strong>probabilit
 <!--    \draw [->] (b) to node [above] {$(1-p)^2$} (d); -->
 <!-- \end{tikzpicture} -->
 </div>
-<div id="example-quanta" class="section level4" number="1.2.0.2">
-<h4><span class="header-section-number">1.2.0.2</span> Example: Quanta</h4>
+<div id="example-quanta" class="section level4" number="1.2.1.2">
+<h4><span class="header-section-number">1.2.1.2</span> Example: Quanta</h4>
+<p><mark>
+I’m not sure about this example
+</mark></p>
 <!-- \includegraphics[width=0.3\textwidth,height=0.2\textheight]{Quantum.pdf} -->
 <!-- \includegraphics[width=0.4\textwidth,height=0.9\textheight, angle = -90]{cern.pdf} -->
 <p>Probability models are the basis for quantum physics: they characterize the <strong>uncertainty</strong> of properties of single energy <code>quanta'' emitted by a</code>perfect radiator" with a given temperature (<span class="math inline">\(T\)</span>). Specifically, recall the famous Einstein’s equation <span class="math display">\[\boxed{\mathcal{E} = m c^2}\]</span> which expresses the energy <span class="math inline">\(\mathcal{E}\)</span> in terms of the mass  and <span class="math inline">\(c\)</span>, the speed of light. Moreover, consider the geometric energy mean defined by <span class="math inline">\({\mathcal{E}_G} = c_0 k_B T\)</span>, where <span class="math inline">\(c_0 \approx 2.134\)</span> and <span class="math inline">\(k_B\)</span> is Boltzmann’s constant. Thus, one can define the random quantity</p>
@@ -369,43 +380,12 @@ which is called <em>quantum mass ratio</em>.</p>
 <p>Insert Illustration or animation of the quantum mass ratio.</p>
 </blockquote>
 <!-- \includegraphics[width=0.4\textwidth,height=0.6\textheight, angle = 0]{W.pdf} -->
-<!-- % -->
-<!-- % -->
-<!-- %# {Preliminaries} -->
-<!-- % -->
-<!-- % -->
-<!-- %A bit more precisely, \textbf{Statistics} -->
-<!-- % -->
-<!-- %\vspace{0.2cm} -->
-<!-- % -->
-<!-- %$\leadsto$  is the science of {`learning -->
-<!-- %  from data'} (or of {making sense out of data}), and of -->
-<!-- % {measuring, controlling and communicating uncertainty}. -->
-<!-- % -->
-<!-- %%% -->
-<!-- %%% -[--] Statistics can be defined as the science of \present{`learning -->
-<!-- %%%   from data'} (or of \highlighttext{making sense out of data}), and of -->
-<!-- %%%  \highlighttext{measuring, controlling and communicating uncertainty}.  -->
-<!-- % -->
-<!-- %\medskip -->
-<!-- % -->
-<!-- %$\leadsto$ is a \textbf{{process}} that includes everything from planning for the collection of data -->
-<!-- % and subsequent data management to end-of-the-line activities -->
-<!-- % such as drawing conclusions of %numerical facts called  -->
-<!-- % data and -->
-<!-- % presentation of results. -->
-<!-- % -->
-<!-- %\bigskip -->
-<!-- % -->
-<!-- %%% -[--]  -->
-<!-- % -->
-<!-- % -->
-<!-- % -->
+</div>
 </div>
 </div>
 <div id="appendix-mathematical-formulae" class="section level2" number="1.3">
 <h2><span class="header-section-number">1.3</span> Appendix: Mathematical Formulae</h2>
-<p>Probability theory is a mathematical tool. Hence, it is important to review some elemental mathematical concepts.</p>
+<p>Probability theory is a mathematical tool. Hence, it is important to review some elemental mathematical concepts. Here are some of the formulae that we will use throughout the course.</p>
 <div id="powers-and-logarithms" class="section level3" number="1.3.1">
 <h3><span class="header-section-number">1.3.1</span> Powers and Logarithms</h3>
 <ul>
@@ -419,11 +399,16 @@ which is called <em>quantum mass ratio</em>.</p>
 </div>
 <div id="differentiation" class="section level3" number="1.3.2">
 <h3><span class="header-section-number">1.3.2</span> Differentiation</h3>
-<p>The <strong>derivatives</strong> will also play a pivotal role. For instance:</p>
-<p><span class="math display">\[
-\frac{d x^n}{dx} = n \cdot x^{n-1}, \quad \frac{d \exp^{x}}{dx} = \exp^{x} , \quad \frac{d \ln({x})}{dx} = \frac{1}{x}, 
-\]</span></p>
-<p>and we will make use of some fundamental rules, like e.g.</p>
+<p><strong>derivatives</strong> will also play a pivotal role. For instance:</p>
+<ul>
+<li><p>Derivative of the <span class="math inline">\(x\)</span> to the power <span class="math inline">\(n\)</span>, <span class="math inline">\(f(x)= x^n\)</span>
+<span class="math display">\[\frac{d x^n}{dx} = n \cdot x^{n-1}\]</span></p></li>
+<li><p>Derivative of the exponential function <span class="math inline">\(f(x) = \exp(x)\)</span>
+<span class="math display">\[\frac{d \exp^{x}}{dx} = \exp^{x}\]</span></p></li>
+<li><p>Derivative of the natural logarithm <span class="math inline">\(f(x) = \ln(x)\)</span>
+<span class="math display">\[ \frac{d \ln({x})}{dx} = \frac{1}{x}\]</span></p></li>
+</ul>
+<p>Moreover, we will make use of some fundamental rules, such as:</p>
 <div id="product-rule" class="section level4" number="1.3.2.1">
 <h4><span class="header-section-number">1.3.2.1</span> Product rule:</h4>
 <p><span class="math display">\[\begin{align} 
@@ -438,7 +423,7 @@ which is called <em>quantum mass ratio</em>.</p>
 </div>
 <div id="integration" class="section level3" number="1.3.3">
 <h3><span class="header-section-number">1.3.3</span> Integration</h3>
-<p>Integrals will be crucial in many tasks. For instance, recall that:</p>
+<p>Integrals will be crucial in many tasks. For instance, recall that integration is <em>linear</em> over the sum, i.e. <span class="math inline">\(\forall c, d \in \mathbb{R}\)</span></p>
 <p><span class="math display">\[\int_{a}^{b} \left[c \times f(x) + d \times g(x) \right]dx = c  \times \int_{a}^{b}   f(x) dx + d \times \int_{a}^{b}   g(x) dx; \]</span></p>
 <!-- %-  A special case of Leibnitz's rule: $$ \frac{d}{dx} \int_{-\infty}^{x} f(s) ds = f(x);$$   -->
 <!-- %-  -->
@@ -450,26 +435,36 @@ which is called <em>quantum mass ratio</em>.</p>
 </ul>
 <p><span class="math display">\[\int_{\mathbb{R}} f(x) dx \geq 0.\]</span></p>
 <ul>
-<li>For a continuous function <span class="math inline">\(f(x)\)</span>, the indefinite integral is</li>
+<li>For a continuous function <span class="math inline">\(f(x)\)</span>, the <strong>indefinite integral</strong> is</li>
 </ul>
 <p><span class="math display">\[\int f(x) dx = F(x) + \text{const}\]</span></p>
-<p>while the definite integral is</p>
+<ul>
+<li>while the <strong>definite integral</strong> is</li>
+</ul>
 <p><span class="math display">\[F(b)-F(a)= \int_{a}^{b} f(x) dx, \quad b \geq a.\]</span></p>
 </div>
 <div id="sums" class="section level3" number="1.3.4">
 <h3><span class="header-section-number">1.3.4</span> Sums</h3>
 <p>Besides integrals we are also going to use <strong>sums</strong>:</p>
 <ul>
-<li><p><span class="math display">\[\sum_{i=1}^{n} X_{i} = X_1 + X_2 +....+ X_n,\]</span></p></li>
-<li><p>For every <span class="math inline">\(\alpha_i \in \mathbb{R}\)</span>, <span class="math display">\[\sum_{i=1}^{n} \alpha_i X_{i} = \alpha_1 X_1 + \alpha_2 X_2 +....+ \alpha_n X_n;\]</span>
+<li>Sums are denoted with a <span class="math inline">\(\Sigma\)</span> operator and an <em>index</em> <span class="math inline">\(i\)</span>, as in:</li>
+</ul>
+<p><span class="math display">\[\sum_{i=1}^{n} X_{i} = X_1 + X_2 +....+ X_n,\]</span>
+- Moreover, for every <span class="math inline">\(\alpha_i \in \mathbb{R}\)</span>,<br />
+<span class="math display">\[\sum_{i=1}^{n} \alpha_i X_{i} = \alpha_1 X_1 + \alpha_2 X_2 +....+ \alpha_n X_n;\]</span>
 <!-- %whose special case is -->
 <!-- %$ -->
 <!-- %\sum_{i=1}^{n} \alpha X_{i} = \alpha X_{i} = \alpha X_1 + \alpha X_2 +....+ \alpha X_n = \alpha \sum_{i=1}^{n} X_{i} -->
-<!-- %$ --></p></li>
-<li><p>Double sum: a sum with two indices. For instance,</p></li>
+<!-- %$ --></p>
+<ul>
+<li>A <strong>double sum</strong> is a sum operated over two <em>indices</em>. For instance,</li>
+</ul>
+<p><span class="math display">\[\sum_{i=1}^{n} \sum_{j=1}^{m}  x_{i}y_{j}  = x_1y_1 + x_1 y_2 +... +x_2y_1+ x_2y_2 + \dots\]</span></p>
+<ul>
+<li>by carefully arranging the terms in the sum, we can stablish the following identity:</li>
 </ul>
 <p><span class="math display">\[\begin{align}
-\sum_{i=1}^{n} \sum_{j=1}^{m}  x_{i}y_{j}  &amp;=&amp; x_1y_1 + x_1 y_2 +... +x_2y_1+ x_2y_2 + \dots \\
+\sum_{i=1}^{n} \sum_{j=1}^{m}  x_{i}y_{j}  &amp;= x_1y_1 + x_1 y_2 +... +x_2y_1+ x_2y_2 + \dots \\
 &amp;= \left(\sum_{i=1}^{n} x_i\right) y_1 +  \left(\sum_{i=1}^{n} x_i\right) y_2 + \dots + \left(\sum_{i=1}^{n} x_i\right) y_m  \\
 &amp;= \sum_{i=1}^{n} x_i \sum_{j=1}^{m} y_j.
 \end{align}\]</span></p>
@@ -487,10 +482,10 @@ which is helpful to express the  Binomial Theorem </p>
 <p><span class="math display">\[(x+y)^n = {n \choose 0}x^n y^0 + {n \choose 1}x^{n-1}y^1 + \cdots + {n \choose n-1}x^1 y^{n-1} + {n \choose n}x^0 y^n;\]</span></p>
 <p>or equivalently, making use of the sum notation,</p>
 <p><span class="math display">\[(x+y)^n = \sum_{k=0}^n {n \choose k}x^{n-k}y^k = \sum_{k=0}^n {n \choose k}x^{k}y^{n-k}.\]</span></p>
-</div>
-<div id="example" class="section level4" number="1.3.5.2">
-<h4><span class="header-section-number">1.3.5.2</span> Example</h4>
-<p>Let us compute:</p>
+
+<div class="example">
+<p><span id="exm:unnamed-chunk-2" class="example"><strong>Example 1.1  </strong></span>
+Let us compute:</p>
 <ul>
 <li>for <span class="math inline">\(n=1\)</span> we have</li>
 </ul>
@@ -516,23 +511,6 @@ which is helpful to express the  Binomial Theorem </p>
 Assume the order does not matter!</p>
 <p></p>
 <p></p>
-<!-- % -->
-<!-- % -->
-<!-- %  -->
-<!-- %```{example}[cont'd] -->
-<!-- % -->
-<!-- %%How many ways can we select $3$ presents (order does not matter) among the $5$ available presents (see figure below)? -->
-<!-- % -->
-<!-- %\begin{figure}[h!] -->
-<!-- %\includegraphics[width=0.6\textwidth,height=0.3\textheight]{outcomes.pdf} -->
-<!-- %\end{figure} -->
-<!-- %``` -->
-<!-- % -->
-<!-- % -->
-
-<div class="example">
-<p><span id="exm:unnamed-chunk-2" class="example"><strong>Example 1.1  </strong></span>
-[cont’d by Explanation]</p>
 <ol style="list-style-type: decimal">
 <li><span class="math inline">\(5!\)</span> gives you the total <span class="math inline">\(\#\)</span> of possible choices when you can select 5 presents
 (so-called ``permutations’’, see next slides);</li>
@@ -541,15 +519,8 @@ Assume the order does not matter!</p>
 in how many ways can you select <span class="math inline">\(3\)</span> presents from the <span class="math inline">\(n\)</span> available ones? The problem is the same as in point 1. aboveexcept that now you don’t care about the order of the <span class="math inline">\(3\)</span> presents, and therefore you
 also need to divide out the <span class="math inline">\(3!\)</span> different ways you can order the presents.</li>
 </ol>
-</div>
-
-<div class="example">
-<span id="exm:unnamed-chunk-3" class="example"><strong>Example 1.2  </strong></span>
-[cont’d by Explanation]
-… so, in formula, you have <span class="math display">\[\frac{5!/(5-3)!}{3!}\]</span> ways to select the <span class="math inline">\(3\)</span> presents:
-<span class="math display">\[
-\frac{5!/(5-3)!}{3!}= \frac{5!}{3!2!} = \binom 5 3 = C_5^3.
-\]</span>
+<p>… so, in formula, you have <span class="math display">\[\frac{5!/(5-3)!}{3!}\]</span> ways to select the <span class="math inline">\(3\)</span> presents:</p>
+<p><span class="math display">\[\frac{5!/(5-3)!}{3!}= \frac{5!}{3!2!} = \binom 5 3 = C_5^3.\]</span></p>
 This gives you the total <span class="math inline">\(\#\)</span> of possible ways to select the <span class="math inline">\(3\)</span> presents when the order does not matter.
 </div>
 <p>As a recommendation, redo the exercise assuming you can select 2 presents from 3 available presents
@@ -567,7 +538,7 @@ Thus, in total we have <span class="math inline">\(n\times(n-1)\times(n-2)\times
 </div>
 
 <div class="example">
-<p><span id="exm:unnamed-chunk-5" class="example"><strong>Example 1.3  </strong></span>How many ways can Aline, Brigitte and Carmen seat on 3 spots, from left to right? Possible outcomes:
+<p><span id="exm:unnamed-chunk-4" class="example"><strong>Example 1.2  </strong></span>How many ways can Aline, Brigitte and Carmen seat on 3 spots, from left to right? Possible outcomes:
 <span class="math display">\[
 (A, B, C), (A, C, B), (B, A, C), (B, C, A), (C, A, B), (C, B, A)
 \]</span></p>
@@ -609,12 +580,6 @@ and denominator) in ().
 </div>
 </div>
 </div>
-</div>
-<div class="footnotes">
-<hr />
-<ol start="1">
-<li id="fn1"><p>one could claim, gambling and investing amount to the same thing, give or take some details<a href="introduction.html#fnref1" class="footnote-back">↩︎</a></p></li>
-</ol>
 </div>
             </section>
 
