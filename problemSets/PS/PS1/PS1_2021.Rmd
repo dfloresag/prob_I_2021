@@ -6,7 +6,7 @@ output: html_notebook
 \noindent \textsc{University of Geneva}     \hfill \textsc{Bachelor in Economics and Management} \\
 \textbf{Probability 1}                      \hfill \textsc{Bachelor in International Relations} \\
 Professor Davide La Vecchia                 \hfill Spring 2019  \\
-ASSIGNMENT 01                               \hfill   February 28th
+ASSIGNMENT 01                               \hfill  
 
 <!-- %\begin{center} -->
 <!-- %\vspace{2cm} -->

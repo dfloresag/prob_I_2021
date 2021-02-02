@@ -18,11 +18,10 @@
 <!-- # ) -->
 <!-- ``` -->
 
-You can write citations, too. For example, we are using the **bookdown** package [@R-bookdown] in this sample book, which was built on top of R Markdown and **knitr** [@xie2015].
 
 ## Preliminaries
 
-Data has been identified as the main commodity in our connected world of today. Generated at a breakneck pace and related to practically all of the aspects of human life, it has become a variable resource for the creation of products and services designed to improve people's lives. For illustration, mobile devices provide enormous amounts of information of the location of users, which in turn, can help governments or big companies design better policies in what pertains mobility.
+Data has been identified as the main commodity in our connected world of today. Generated at a breakneck pace and related to practically all of the aspects of human life, it has become a valuable resource for the creation of products and services designed to improve people's lives. For illustration, mobile devices provide enormous amounts of information of the location of users, which in turn, can help governments or big companies design better policies in what pertains mobility.
 
 <!-- Insert a better explanation of this -->
 
@@ -166,18 +165,20 @@ Probability theory is a mathematical tool. Hence, it is important to review some
 
 **derivatives** will also play a pivotal role. For instance:
 
-- Derivative of the $x$ to the power $n$, $f(x)= x^n$
+- Derivative of _$x$ to the power $n$_, $f(x)= x^n$
 $$\frac{d x^n}{dx} = n \cdot x^{n-1}$$ 
 
-- Derivative of the exponential function $f(x) = \exp(x)$ 
+- Derivative of the exponential function, $f(x) = \exp(x)$ 
 $$\frac{d \exp^{x}}{dx} = \exp^{x}$$ 
 
-- Derivative of the natural logarithm $f(x) = \ln(x)$ 
+- Derivative of the natural logarithm, $f(x) = \ln(x)$ 
 $$ \frac{d \ln({x})}{dx} = \frac{1}{x}$$
 
-Moreover, we will make use of some fundamental rules, such as:
+Moreover, we will make use of some fundamental derivation rules, such as:
 
-#### Product rule: 
+#### Product rule
+
+The derivative of the product between two functions is given as follows:
 
 \begin{align} 
 \frac{d [f(x)\cdot g(x)]}{dx} &= \frac{df(x)}{dx} g(x) + \frac{dg(x)}{dx} f(x) \\ 
@@ -186,12 +187,13 @@ Moreover, we will make use of some fundamental rules, such as:
 
 #### Chain rule
 
+Let $f(u)$ and $g(x)$ two functions. Let $f\circ g(x) = f[g(x)]$ be the **composite function**. The derivative of the composite is given by the product:
+
 $$\frac{d f[g(x)]}{dx} =  (f\circ g)'(x) = f'[g(x)] \cdot g'(x)$$
 
 ### Integration
 
 Integrals will be crucial in many tasks. For instance, recall that integration is _linear_ over the sum, i.e. $\forall c, d \in \mathbb{R}$ 
-
 
 $$\int_{a}^{b} \left[c \times f(x) + d \times g(x) \right]dx = c  \times \int_{a}^{b}   f(x) dx + d \times \int_{a}^{b}   g(x) dx; $$
 
@@ -201,7 +203,7 @@ $$\int_{a}^{b} \left[c \times f(x) + d \times g(x) \right]dx = c  \times \int_{a
 <!-- %\int_{a}^{b} f(x) dx = \int_{a}^{m} f(x) dx + \int_{m}^{b}  f(x) dx,  \quad { \text{\ for \ } m \in [a,b]; }\nn -->
 <!-- %\end{eqnarray}  -->
 
-- If $f(x) \geq 0, \forall x \in \mathbb{R}$, then 
+- If the function is _positive_ $f(x) \geq 0, \forall x \in \mathbb{R}$, then its integral is also positive. 
 
 $$\int_{\mathbb{R}} f(x) dx \geq 0.$$
 
@@ -227,11 +229,11 @@ $$\sum_{i=1}^{n} \alpha_i X_{i} = \alpha_1 X_1 + \alpha_2 X_2 +....+ \alpha_n X_
 <!-- %\sum_{i=1}^{n} \alpha X_{i} = \alpha X_{i} = \alpha X_1 + \alpha X_2 +....+ \alpha X_n = \alpha \sum_{i=1}^{n} X_{i} -->
 <!-- %$ -->
 
-- A **double sum** is a sum operated over two _indices_. For instance,
+- A **double sum** is a sum operated over two _indices_. For instance consider the sum of the product of two sequences $\{x_1, \dots, x_n\}$ and $\{y_1, \dots, y_m\}$,
 
 $$\sum_{i=1}^{n} \sum_{j=1}^{m}  x_{i}y_{j}  = x_1y_1 + x_1 y_2 +... +x_2y_1+ x_2y_2 + \dots$$
 
-- by carefully arranging the terms in the sum, we can stablish the following identity: 
+- by carefully arranging the terms in the sum, we can establish the following identity: 
 
 \begin{align}
 \sum_{i=1}^{n} \sum_{j=1}^{m}  x_{i}y_{j}  &= x_1y_1 + x_1 y_2 +... +x_2y_1+ x_2y_2 + \dots \\
@@ -250,12 +252,19 @@ $$ n! = n \times (n-1) \times (n-2) \times \dots \times 1;$$
 where $0! =1$, by definition;
 
 - The **Binomial coefficient**, for $n \geq k$ is defined by the following ratio:
-$$\binom n k =\frac{n!}{k!(n-k)!}{\color{blue}{=C^{k}_n}}$$
-which is helpful to express the **Binomial Theorem** 
+$$\binom n k =\frac{n!}{k!(n-k)!}{\color{blue}{=C^{k}_n}}$$ which is helpful to express the **Binomial Theorem** 
+
+
+```{theorem}
+
+(Pascal 1654). For $n=0,1, 2,\dots$,  we have
 
 $$(x+y)^n = {n \choose 0}x^n y^0 + {n \choose 1}x^{n-1}y^1 + \cdots + {n \choose n-1}x^1 y^{n-1} + {n \choose n}x^0 y^n;$$
 
-or equivalently, making use of the sum notation,
+The sum is finite and stops after n+1 terms. 
+```
+
+Equivalently, making use of the sum notation,
 
 $$(x+y)^n = \sum_{k=0}^n {n \choose k}x^{n-k}y^k = \sum_{k=0}^n {n \choose k}x^{k}y^{n-k}.$$ 
 
@@ -284,31 +293,39 @@ Let us compute the binomial coefficients for polynomials of different degrees $n
 \end{align}
 ```
 
-```{example}
-How many ways can we select $3$ presents  among the $5$ available presents (see figure below)? 
-Assume the order does not matter!
+Combinatorial formulas are also useful in the context of studying permutations and combinations. Let us illustrate by an example. 
 
-\includegraphics[width=0.4\textwidth,height=0.35\textheight]{gifts.pdf}
+Imagine you want to offer our significant other a set of three gifts out of the following five found in the store: 
 
-\includegraphics[width=0.5\textwidth,height=0.2\textheight]{outcomes.pdf}
+- A gorgeous sunflower `r emo::ji("sunflower")` 
+- An old-timey Radio `r emo::ji("radio")` 
+- A book they wanted to read `r emo::ji("book")` 
+- An elegant pen `r emo::ji("pen")` 
+- An incredibly charismatic turtle `r emo::ji("turtle")` 
 
+```{example} 
+How many ways can we select $3$ presents among the $5$ available presents? Assume the order does not matter!
+```  
 
-1. $5!$ gives you the total $\#$ of possible choices when you can select 5 presents 
-(so-called ``permutations'', see next slides); 
-2. If you're going to select $3$ presents from the list, then you have $(5-3)$ presents that you're not going to select.  Therefore, you need to divide out the $(5-3)!$ different ways you can order the presents  you are not going to select from the $5!$ possible choices of all presents. In other words you have $5! / (5-3) !$ ways to select and order the 3 presents;
+If we write this explicitly, 
+
+1. $5!$ gives you the total number of possible choices when you can select 5 presents. These are called  **permutations** of the set of gifts and owe that name to the fact that we are just _reordering_ or _permuting_ the elements of the set;
+
+2. If you're going to select $3$ presents from the list, then you have $(5-3)$ presents that you're not going to select. This latter set has $(5-3)!$ possibilities which have to be **factored out**. In other words you have $5! / (5-3) !$ ways to select and order the 3 presents;
+
 3. Finally, remember you don't care about the order in which you select the $3$ presents. So, 
-in how many ways can you select $3$ presents from the $n$ available ones? The problem is the same as in point 1. aboveexcept that now you don't care about the order of the $3$ presents, and therefore you 
+in how many ways can you select $3$ presents from the $n$ available ones? The problem is the same as in point 1. above except that **now you don't care about the order of the $3$ presents**, and therefore you 
 also need to divide out the $3!$ different ways you can order the presents. 
 
-... so, in formula, you have $$\frac{5!/(5-3)!}{3!}$$ ways to select the $3$ presents:
+If we put this in a formula, we have $$\frac{5!/(5-3)!}{3!}$$ ways to select the $3$ presents:
 
 $$\frac{5!/(5-3)!}{3!}= \frac{5!}{3!2!} = \binom 5 3 = C_5^3.$$
 
-This gives you the total $\#$ of possible ways to select the $3$ presents when the order does not matter.
-```
+This gives you the total number of possible ways to select the $3$ presents when the order does not matter.
 
-As a recommendation, redo the exercise assuming you can select 2 presents from 3 available presents 
-(like for instance F,L,R)...
+```{exercise}
+As a recommendation, redo the exercise assuming you can select 2 presents from 3 available presents. 
+```
 
 ```{remark} 
 **Permutations:** How many different ways can we combine $n$ objects?

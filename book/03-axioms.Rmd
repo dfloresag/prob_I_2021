@@ -90,7 +90,9 @@ $$
     \node[anchor=south] at (current bounding box.north) at (6.5,2.2) {$B \subset A$};
 \end{tikzpicture}
 
-> Insert diagram here
+<mark>
+  Insert diagram here
+</mark>
 
 <!-- %where $A \in \mathcal{B}$ and $B \in \mathcal{B}$ -->
 
@@ -183,11 +185,12 @@ P(A\cup B) &=& P(A) + P(A^c \cap B)  \\
 
 ### Flipping coins
 
+
+![](img/02_set_theory/Example1_GE.png)
+
 ```{example, rleI , name = "Real-life example I"}
-\begin{figure}[h!]
-\centering
-\includegraphics[width=0.9\textwidth,height=0.65\textheight]{Example1.pdf}
-\end{figure}
+
+
 ```
 
 > adapt example here
@@ -195,25 +198,25 @@ P(A\cup B) &=& P(A) + P(A^c \cap B)  \\
 ### Detecting shoppers
 
 ```{example, rleII , name = "Real-life example II"} 
-\begin{figure}[h!]
-\centering
-\includegraphics[width=0.9\textwidth,height=0.65\textheight]{Example2_1.pdf}
-\end{figure}
 
-\begin{figure}[h!]
-\centering
-\includegraphics[width=0.6\textwidth,height=0.6\textheight]{Example2_2.pdf}
-\end{figure}
 
-\begin{figure}[h!]
-\centering
-\includegraphics[width=0.95\textwidth,height=0.7\textheight]{Example2_3.pdf}
-\end{figure}
+![](Example2_1.png)
 
-\begin{figure}[h!]
-\centering
-\includegraphics[width=0.9\textwidth,height=0.5\textheight]{Example2_4.pdf}
-\end{figure}
+
+
+
+![](Example2_2.png)
+
+
+
+
+![][width=0.95\textwidth,height=0.7\textheight](Example2_3.png)
+
+
+
+
+![][width=0.9\textwidth,height=0.5\textheight](Example2_4.png)
+
 ```
 
 > adapt example here
@@ -316,10 +319,10 @@ As a measure of uncertainty, the probability depends on the information availabl
 
 ```{example}
 Suppose you have two dice and throw them; the possible outcomes are:
-\begin{figure}[h!]
-\centering
-\includegraphics[width=0.9\textwidth,height=0.35\textheight]{c1.pdf}
-\end{figure}
+
+
+![][width=0.9\textwidth,height=0.35\textheight](c1.png)
+
 ```
 
 
@@ -334,10 +337,10 @@ Suppose you have two dice and throw them; the possible outcomes are:
 Let us define $A$ = getting $5$, or equivalently $A=\{ 5\}$. What is $P(A)$, namely, the probability of getting $5$?
 
 
-\begin{figure}[h!]
-\centering
-\includegraphics[width=0.9\textwidth,height=0.35\textheight]{c2.pdf}
-\end{figure}
+
+
+![][width=0.9\textwidth,height=0.35\textheight](c2.png)
+
 ```
 
 
@@ -377,10 +380,10 @@ P(5) &=& Pr\left\{ (1,4) \cup (2,3) \cup (3,2) \cup  (4,1) \right\}  \\
 Now, suppose that we throw the die first and e we get 2.\\
 \vspace{0.2cm}
 \color{black}\textbf{Q.} \color{black} What is the probability of getting 5 given that we have observed 2 in the first throw?
-\begin{figure}[h!]
-\centering
-\includegraphics[width=1\textwidth,height=0.3\textheight]{c4.pdf}
-\end{figure}
+
+
+![][width=1\textwidth,height=0.3\textheight](c4.png)
+
 \color{blue}\textbf{A.} \color{black}
 
 $\text{Pr}\{\text{getting 5 given 2 in the first throw}\}= \text{Pr}\{\text{getting 3 in the second throw}\}=1/6$
@@ -399,10 +402,10 @@ $\text{Pr}\{\text{getting 5 given 2 in the first throw}\}= \text{Pr}\{\text{gett
 
 \item Information changes the probability
 \item By knowing that we got 2 in the first throw, we have changed the sample space:
-\begin{figure}[h!]
-\centering
-\includegraphics[width=0.85\textwidth,height=0.35\textheight]{c3.pdf}
-\end{figure}
+
+
+![][width=0.85\textwidth,height=0.35\textheight](c3.png)
+
 \item Probability can change drastically --- e.g., suppose that in our example we have 6 in the first throw $\Rightarrow$ the probability of
 observing 5 in two draws ... is zero !!!
 \end{itemize}
@@ -428,30 +431,32 @@ and it is left undefined if $P(B)=0$.
 
 ### A check
 
+![](/img/03_axioms/c3.png)
+
 ```{example} 
 Let us define the set $B$ as:
 
-\begin{figure}[h!]
-\centering
-\includegraphics[width=0.9\textwidth,height=0.4\textheight]{c3.pdf}
-\end{figure}
+
+
+
+
 So we have
 
 \begin{eqnarray}
-P(B) &=& Pr\left\{ (2,1) \cup (2,2) \cup (2,3) \cup (2,4) \cup (2,5) \cup (2,6)     \right\} \nn \\
- &=&  Pr(2,1) + Pr(2,2) + Pr(2,3) + Pr(2,4) + Pr(2,5) + Pr(2,6) \nn \\
- &=& 6/36 =1/6 \nn
+P(B) &=& Pr\left\{ (2,1) \cup (2,2) \cup (2,3) \cup (2,4) \cup (2,5) \cup (2,6)     \right\}  \\
+ &=&  Pr(2,1) + Pr(2,2) + Pr(2,3) + Pr(2,4) + Pr(2,5) + Pr(2,6)  \\
+ &=& 6/36 =1/6 
 \end{eqnarray}
 
 and consider $A \cap B$
 
-\begin{figure}[h!]
-\centering
-\includegraphics[width=0.9\textwidth,height=0.4\textheight]{c4.pdf}
-\end{figure}
+
+
+![][width=0.9\textwidth,height=0.4\textheight](c4.png)
+
 So we have  $P(A \cap B) = Pr (2,3) = 1/36$ so,
 $$
-P(A\vert B) = \frac{P(A \cap B)}{P(B)}  =  \frac{1/36}{1/6} = \frac{1}{6}. \nn
+P(A\vert B) = \frac{P(A \cap B)}{P(B)}  =  \frac{1/36}{1/6} = \frac{1}{6}. 
 $$
 ```
 
@@ -482,10 +487,10 @@ $$P(A\cap B) = P(A) P(B).$$
 
 
 ```{example}
-\begin{figure}[h!]
-\centering
-\includegraphics[width=0.9\textwidth,height=0.7\textheight]{example7.pdf}
-\end{figure}
+
+
+![][width=0.9\textwidth,height=0.7\textheight](example7.png)
+
 
 ```
 
@@ -496,10 +501,10 @@ $$P(A\cap B) = P(A) P(B).$$
 
 
 ```{example}[cont'd]
-\begin{figure}[h!]
-\centering
-\includegraphics[width=0.9\textwidth,height=0.6\textheight]{example8.pdf}
-\end{figure}
+
+
+![][width=0.9\textwidth,height=0.6\textheight](example8.png)
+
 
 ```
 
@@ -576,9 +581,9 @@ P(B_k\vert A)=\frac{P(A\vert B_k)P(B_k)}{\sum_{i=1}^n P(A\vert B_i) P(B_i)}.
 ```{proof}
 Let us write
 \begin{eqnarray}
-P(B_k\vert A)&=&\frac{P(A\cap B_k)}{P(A)} \nn \\
-&=&\frac{P(A\cap B_k)}{\sum_{i=1}^n P(A\vert B_i) P(B_i)}\nn \\
-&=&\frac{P(A\vert B_k)P(B_k)}{\sum_{i=1}^n P(A\vert B_i) P(B_i)} \nn
+P(B_k\vert A)&=&\frac{P(A\cap B_k)}{P(A)}  \\
+&=&\frac{P(A\cap B_k)}{\sum_{i=1}^n P(A\vert B_i) P(B_i)} \\
+&=&\frac{P(A\vert B_k)P(B_k)}{\sum_{i=1}^n P(A\vert B_i) P(B_i)} 
 \end{eqnarray}
 That concludes the proof.
 ```
@@ -593,10 +598,10 @@ That concludes the proof.
 
 ```{example}
 Let us consider a special case, where we have only two events $A$ and $B$.
-\begin{figure}[h!]
-\centering
-\includegraphics[width=0.9\textwidth,height=0.55\textheight]{example10.pdf}
-\end{figure}
+
+
+![][width=0.9\textwidth,height=0.55\textheight](example10.png)
+
 ... so thanks to Bayes' Theorem we can reverse the role of $A\vert B$ and $B \vert A$.
 
 ```
@@ -608,10 +613,10 @@ Let us consider a special case, where we have only two events $A$ and $B$.
 <!-- % -->
 <!-- %\frametitle{A real-life example} -->
 <!-- %```{example} -->
-<!-- %\begin{figure}[h!] -->
-<!-- %\centering -->
-<!-- %\includegraphics[width=0.9\textwidth,height=0.55\textheight]{example9.pdf} -->
-<!-- %\end{figure} -->
+<!-- % -->
+<!-- % -->
+<!-- %![][width=0.9\textwidth,height=0.55\textheight](example9.png) -->
+<!-- % -->
 <!-- %``` -->
 <!-- %\begin{aim} -->
 <!-- %We know something about $P(B\vert A)$ and we have to say something about $P(A\vert B)$ $\Rightarrow$ Bayes' theorem!! -->
@@ -626,10 +631,10 @@ Let us consider a special case, where we have only two events $A$ and $B$.
 ### Guessing in a multiple choice exam
 
 ```{example}
-\begin{figure}[h!]
-\centering
-\includegraphics[width=0.7\textwidth,height=0.65\textheight]{Ross_Ex.pdf}
-\end{figure}
+
+
+![][width=0.7\textwidth,height=0.65\textheight](Ross_Ex.png)
+
 ```
 
 
@@ -662,10 +667,10 @@ Let us set: $A:=\{\text{car rented from AVIS}\}$ and $B:=\{\text{car needs a tun
 
 \frametitle{A real-life example (cont'd)}
 ```{example}[cont'd]
-\begin{figure}[h!]
-\centering
-\includegraphics[width=0.9\textwidth,height=0.65\textheight]{example9b.pdf}
-\end{figure}
+
+
+![](example9b.png)
+
 ```
 
 

@@ -27,45 +27,57 @@ knitr::write_bib(c(
 ), 'packages.bib')
 ```
 
+```{r}
+library(emo)
+```
+
+<mark>
+  Insert image here.
+</mark>
+
+Hello and welcome to this Lecture. 
+
+
+### Course Contents {-}
+
+This Lecture in 
+
+1. Introduction
+  
+2. Basic calculus for probability
+  <!-- - Random variables   -->
+  <!-- - Trees -->
+  <!-- - Venn diagram -->
+  <!-- - Conditional probability  -->
+  <!-- - Independence & Bayes' theorem -->
+  <!-- - ... -->
+3. Discrete random variables
+  <!-- - Definitions -->
+  <!-- - Expected value and variance -->
+  <!-- - Binomial -->
+  <!-- - Poisson -->
+  <!-- - Negative binomial and hypergeometric -->
+4. Continuous random variables
+  <!-- - Definitions -->
+  <!-- - Expected value and variance -->
+  <!-- - Cumulative distribution function (cdf) and Probability density function (pdf) -->
+  <!-- - Some important examples: Uniform, Exponential, Gamma, Normal, logNormal, Student's... -->
+  <!-- - Relationships -->
+5. Bivariate random variables
+6. Limit theorems
+  <!-- - Weak Law of Large Numbers (WLLN) and Central Limit Theorem (CLT) -->
+7. Elements of simulations 
+  <!-- - numerical methods for the simulation of random variable with a given CDF... -->
+
 ## Practical information {-}
 
 ### Hours {-}
 
-- Lectures (no recording): Thur. from 12 to 14 (MR280) 
+- Lectures : Thursday. from 12 to 14 (MR280) 
 
-- Exercises (no recording, text \& solutions available on Chamilo):  
+- Exercises (exercise sheets \& solutions available on Moodle):  
   - Thur. from 16 to 18 (MS130) 
 
 - **Exam:**  Written exam **open-book, 2 hrs**
 
 - **Book:** _A first course in probability_, S. Ross (any edition), Ed: Pearson New International Edition.
-
-### Course Overview {-}
-
-1. Introduction 
-  - some fundamental math tools 
-2. Basic calculus for probability
-  - Random variables  
-  - Trees
-  - Venn diagram
-  - Conditional probability 
-  - Independence & Bayes' theorem
-  - ...
-3. Discrete random variables
-  - Definitions
-  - Expected value and variance
-  - Binomial
-  - Poisson
-  - Negative binomial and hypergeometric
-4. Continuous random variables
-  - Definitions
-  - Expected value and variance
-  - Cumulative distribution function (cdf) and Probability density function (pdf)
-  - Some important examples: Uniform, Exponential, Gamma, Normal, logNormal, Student's...
-  - Relationships
-5. Bivariate random variables
-6. Limit theorems
-  - Weak Law of Large Numbers (WLLN) and Central Limit Theorem (CLT)
-7. Elements of simulations 
-  - numerical methods for the simulation of random variable with a given CDF...
-

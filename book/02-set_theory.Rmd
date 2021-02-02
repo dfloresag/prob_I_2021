@@ -2,111 +2,114 @@
  
 ## Definitions
 
-In this course we are going to need also some elements of **set theory**.
+In order to develop the Probability theory of this course we are going to need also some elements of set theory. 
 
-To start our journey, let us introduce some definitions. 
+To start our journey, let us introduce some definitions in Probability. 
 
-```{definition}
-A random experiment  is a process that can result in two or more different outcomes with uncertainty as to which will be observed.
+```{definition, randomExperiment}
+
+A **random experiment**  is a process that can result in two or more different outcomes with uncertainty as to which will be observed.
 ```
 
-```{definition}
-An event is an uncertain outcome of a random experiment. An event can be
+```{definition, event}
+
+An **event** is an uncertain outcome of a random experiment. 
+
+An event can be: 
 
 - Elementary: it includes only one particular outcome of the experiment
 - Composite: it includes more than one elementary outcome in the possible sets of outcomes.
-
 ```
 
 
-```{definition}
-The sample space is the complete listing of the elementary events that can occur in a random experiment. We will denote 
-the sample space by $S$.
+```{definition, sampleSpace}
+The **sample space** is the complete listing of the elementary events that can occur in a random experiment. We will denote the sample space by $S$.
+```
+
+```{example, cardGame, name = "A simple card game"}
+
+When playing with a full deck of cards, we can characterise drawing a particular card as a random experiment, where we can identify a set of events and the sample space: 
+
+![](img/02_set_theory/Example1_GE.png)
 ```
 
 
-```{example}
+```{example, flipCoins, name = "Flipping Coins"}
+Flipping a set of two coins can be characterised as another random experiment. In this case, let us denote the outcomes for each coin are $H$ for Head and $T$ for Tail. Hence, the sample space of the experiment "flipping two coins" contains the following four points:
 
-\begin{figure}[h!]
-\centering               
-\includegraphics[width=0.9\textwidth,height=0.55\textheight]{Example1_GE.pdf}
-\end{figure}
+$$S = \{ (HH),(HT),(TH),(TT)  \}.$$
 ```
 
 
-```{example}
-- If we flip two coins (experiment) we have, for each coin, 
+```{example, timePhone, name = "Time on your phone"}
+Say you are interested in measuring the time of your life spent on your phone. The measure of the time (in hours) can be considered as the outcome of a random experiment, and every observation an event. 
 
-  - $H$ for Head
-  - $T$ for Tail
-
-so the sample space contains the following four points
-
-$$
-S = \{ (HH),(HT),(TH),(TT)  \}.
-$$
-
-- If the experiment consists in measuring (in hours) the life time of a your iPhone, the sample space consists of all nonnegative real 
-numbers:
-$$
-S = \{x: 0 \leq x < \infty \}
-$$
-
+Hence, the sample space consists of all nonnegative real  numbers:
+$$ S = \{x: 0 \leq x < \infty \}$$
 or, equivalently, $S\equiv \mathbb{R}^+$.
 ```
 
 
-
-
 ## Some definitions from set theory
 
-To deal with events, we rely on the set theory. Some definitions:
-```{definition}
-- If every element of a set $A$ is also an element of a set $B$, then $A$ is defined to be a \textit{subset} of $B$, and we will write 
-$$ A \subset B$$
-and we read it as ``$A$ is contained in $B$''
-- Two sets $A$ and $B$ are defined to be equal if 
-$$A \subset B \text{ \ and \ } B \subset A;$$
-- If a set $A$ contains no points, it will be called the _null set, or empty set_, and it is typically denoted by $\varnothing$.
+The following definitions from set theory will be useful to deal with events.
 
+```{definition, subsets}
+If every element of a set $A$ is also an element of a set $B$, then **$A$ is a \textit{subset} of $B$**. We write this as : $$A \subset B$$ and we read it as **"$A$ is contained in $B$"**
+```
+
+```{definition, equality}
+Two sets $A$ and $B$ are said to be **equal** if  $$A \subset B \text{ and } B \subset A;$$
+```
+
+```{definition, emptySet}
+If a set $A$ contains no points, it will be called the **null set**, or **empty set**, and it is typically denoted by $\varnothing$.
+```
+ 
+
+## The Venn diagram
+
+```{r, echo = FALSE, fig.align='center', fig.cap="source: [Tenso Graphics](https://cargocollective.com/tensographics)"}
+knitr::include_graphics("img/fun/R9mJR.jpeg")
 ```
 
 
+The Venn diagram is an elementary schematic representation of sets and helps displaying their properties. In this section we will use it to illustrate some of the elements of probability theory that we have previously mentioned and defined. 
+
+- <mark>A generic Venn Diagram</mark>
+
+### Sample Space and Events
+
+For instance, an event, or a series of events, can be represented as an enclosed figure within the Sample space.
 
 
-## Elements of set theory (Venn diagram)
+```{r, echo = FALSE, fig.align='center', fig.cap="source: [Tenso Graphics](https://cargocollective.com/tensographics)"}
+knitr::include_graphics("img/02_set_theory/Venn1.png")
+```
 
-A Venn diagram is an enclosed figure representing the sample space with one or more events defined.
+### Exclusive and Non-Exclusive Events
 
-\begin{figure}[h!]
-\centering               
-\includegraphics[width=0.8\textwidth,height=0.6\textheight]{Venn1.pdf}
-\end{figure}
+Two events are mutually exclusive is they cannot occur jointly. This is represented by two separate enclosed surfaces within the sample space. 
 
+```{r, echo = FALSE, fig.align='center', fig.cap="source: [Tenso Graphics](https://cargocollective.com/tensographics)"}
+knitr::include_graphics("img/02_set_theory/Venn2.png")
+```
 
-Two events are mutually exclusive is they cannot occur jointly...
+<mark>
+  Events of King and Queen
+</mark>
 
+Events that are not mutually exclusive have a shared area, which in set theory constitutes an **intersection** and gets shown in a Venn diagram by two <mark>colliding</mark> figures. 
 
-\begin{figure}[h!]
-\centering               
-\includegraphics[width=1\textwidth,height=0.7\textheight]{Venn2.pdf}
-\end{figure}
+![](img/02_set_theory/Venn3.png)
+<mark>
+  Example : Events of King and Heart.
+</mark>
 
+### Union and Intersection of Events
 
-... and not mutually exclusive ...
+- The union of the events $A$ and $B$ is the event which occurs when either $A$ or $B$ occurs: $A \cup B$ 
 
-
-\begin{figure}[h!]
-\centering               
-\includegraphics[width=1\textwidth,height=0.7\textheight]{Venn3.pdf}
-\end{figure}
-
-
-
-The union of the events $A$ and $B$ is the event which occurs when either $A$ or $B$ occurs: $A \cup B$ \\
-
-\vspace{1cm}
-\hspace{2cm}
 \def\firstcircle{(0,0) circle (1.5cm)}
 \def\secondcircle{(45:2cm) circle (1.5cm)}
 \begin{tikzpicture}
@@ -115,15 +118,13 @@ The union of the events $A$ and $B$ is the event which occurs when either $A$ or
         \fill[blue!20] \secondcircle;
         \draw \firstcircle node[below] {$A$};
         \draw \secondcircle node [above] {$B$};
-%        \draw node [above] {$A \cup B$}
+<!-- %        \draw node [above] {$A \cup B$} -->
     \end{scope}
 \end{tikzpicture}
 
 
+- The intersection of the events $A$ and $B$ is the event which occurs when both $A$ and $B$ occur: $A \cap B$
 
-The intersection of the events $A$ and $B$ is the event which occurs when both $A$ and $B$ occur: $A \cap B$\\
-\vspace{1cm}
-\hspace{2cm}
 \def\firstcircle{(0,0) circle (1.5cm)}
 \def\secondcircle{(45:2cm) circle (1.5cm)}
 \begin{tikzpicture}
@@ -136,54 +137,56 @@ The intersection of the events $A$ and $B$ is the event which occurs when both $
     \end{scope}
 \end{tikzpicture}
 
+### Complement
 
 The complement of an event $A$ is the event which occurs when $A$ does not occur: $A^{c}$ (or $\overline{A}$)
-\begin{figure}[h!]
-\centering               
-\includegraphics[width=0.8\textwidth,height=0.5\textheight]{Venn6.pdf}
-\end{figure}
+
+```{r, echo = FALSE, fig.align='center', fig.cap="source: [Tenso Graphics](https://cargocollective.com/tensographics)"}
+knitr::include_graphics("img/02_set_theory/Venn6.png")
+```
+
 Let $S$ be the complete set of all possible events. Then, $A^c$ is such that $A \cup A^c = S$, or equivalently $A^c = S \setminus A = S-A$.
 
+### Some laws of 
 
 Let $A$, $B$, and $D$ be sets. The following laws hold:
 
-\vspace{0.5cm}
-
-
-
-- \textbf{Commutative laws}: 
+- **Commutative laws**: 
 \begin{eqnarray*}
 A \cup B = B \cup A \\
 A \cap B = B \cap A
 \end{eqnarray*}
 
-- \textbf{Associative laws}: 
+<mark>
+  insert animation 
+</mark>
+
+- **Associative laws**: 
 \begin{eqnarray*}
 A \cup (B \cup D) = (A \cup B) \cup D \\
 A \cap (B \cap D) = (A \cap B) \cap D
 \end{eqnarray*}
 
+<mark>
+  insert animation 
+</mark>
 
-- \textbf{Distributive laws}: 
+- **Distributive laws**: 
 \begin{eqnarray*}
 A \cap (B \cup D) = (A \cap B) \cup (A\cap D)\\
 A \cup (B \cap D) = (A\cup B) \cap (A \cup D)
 \end{eqnarray*}
 
+<mark>
+  insert animation 
+</mark>
 
-
-... verify them using Venn diagrams ...
-
+We can use Venn Diagrams to illustrate these laws. Consider 
 
 ... for instance, let $A_1, A_2, A_3$ be in $S$ and let us introduce the shorthand notation: 
 $$A_1 A_2 = A_1 \cap A_2  \quad \text{and} \quad A_1 A_3 = A_1 \cap A_3$$ 
-Then, we have:
-\begin{figure}[h!]
-\centering               
-\includegraphics[width=0.9\textwidth,height=0.5\textheight]{commutative.pdf}
-\end{figure}
 
-
+![](img/02_set_theory/commutative.png)
 
 ```{exercise}
 \def\firstcircle{(3,0) circle (1.5cm)}
@@ -217,230 +220,183 @@ Then, we have:
 \end{tikzpicture}
 ```
 
+## Countable and Uncountable sets
 
+Events can be represented by means of sets and sets can be either **countable** or **uncountable**. 
 
+In mathematics, a **countable set** is a set with the same cardinality (number of elements) as some subset of the set of natural numbers ($\mathbb{N}$). 
 
-
-
-## More on sets
-
-Events can be represented by means of sets and sets can be either countable or uncountable. 
-
-
-
-
-In mathematics, a {\color{blue} countable set} is a set with the same cardinality (number of elements) as some subset of the set of 
-natural numbers ($\mathbb{N}$). 
-
-- \textit{A countable set is either a finite set or a countably infinite set.} 
+- _A countable set is either a finite set or a countably infinite set._
 - Whether finite or infinite, the elements of a countable set can always be counted one at a time and, although the counting may never finish, every element of the set is associated with a  natural number
     - roughly speaking one can count the elements of the set using $1,2,3,..$ 
-
-
-- G. Cantor introduced the term countable set, contrasting sets that are countable with those that are {\color{blue} uncountable} (i.e., nonenumerable or nondenumerable).
-
-
+    
+- G. Cantor introduced the term countable set, contrasting sets that are countable with those that are **uncountable} (i.e., nonenumerable or nondenumerable).
 
  
-```{example} 
-# [Countable]
+```{example, countableSet, name = "An illustration of a Countable Set"} 
 
-\begin{figure}[h!]
-\centering               
-\includegraphics[width=0.9\textwidth,height=0.6\textheight]{Example2.pdf}
-\end{figure}
+![](img/02_set_theory/Example2.png)
+
 ```
 
+<!-- %Events can be represented by means of sets. -->
 
 
-%Events can be represented by means of sets.
+```{exercise, uncountableSet, name = "An illustration of an Uncountable Set"} 
 
-```{exercise} 
-# [Uncountable]
-\begin{figure}[h!]
-\centering               
-\includegraphics[width=0.9\textwidth,height=0.6\textheight]{Example3.pdf}
-\end{figure}
+![](img/02_set_theory/Example3.png)
+
 
 and using the definition of $A$ and $B$ compute:
 
-\begin{multicols}{2}
-\item $A^c$ 
-\item $B^c$
-\item $B^c \cup A$
-\item $B^c \cup A^c$
-\item $A \cup B$
-\item $A \cap B$
-\item $B \cup A^c$
-\item $A^c \cup A $
-\end{multicols}
 
 
-%\begin{figure}[h!]
-%\centering               
-%\includegraphics[width=0.6\textwidth,height=0.6\textheight]{Example3bis.pdf}
-%\end{figure}
+- $A^c$ 
+- $B^c$
+- $B^c \cup A$
+- $B^c \cup A^c$
+- $A \cup B$
+- $A \cap B$
+- $B \cup A^c$
+- $A^c \cup A$
 ```
 
 
+<!-- %\begin{figure}[h!] -->
+<!-- %\centering                -->
+<!-- %\includegraphics[width=0.6\textwidth,height=0.6\textheight]{Example3bis.pdf} -->
+<!-- %\end{figure} -->
 
 
-\frametitle{More on sets}
-```{exercise}
-# [Countable]
-Let us consider the  experiment where we flip two coins. For each coin we have $H$ for Head and $T$ for Tail. \\
+```{exercise, name = "flipping coins again"}
 
-\vspace{0.5cm}
+Let us consider the  experiment where we flip two coins. For each coin we have $H$ for Head and $T$ for Tail. Remember that the sample space contains the following four points  <mark> add reference here </mark>
 
-The sample space (see Lecture 1) 
-contains the following four points 
-$$ S = \Big\{ (HH),(HT),(TH),(TT)  \Big\}.$$ \\
-
-\vspace{0.5cm}
+$$ S = \{ (HH),(HT),(TH),(TT) \}.$$ 
 
 Then, let us consider the events:
 
-\item $A= H$ is obtained at least once = $\Big\{ (HH),(HT),(TH) \Big\}$ 
-\item $B=$ the second toss yields $T$ =  $\Big\{ (HT),(TT) \Big\}$ 
-
-%\begin{figure}[h!]
-%\centering               
-%\includegraphics[width=0.9\textwidth,height=0.5\textheight]{Example4.pdf}
-%\end{figure}
+- $A= H$ is obtained at least once = $\Big\{ (HH),(HT),(TH) \Big\}$ 
+-  $B=$ the second toss yields $T$ =  $\Big\{ (HT),(TT) \Big\}$ 
 
 and using the definitions of $A$ and $B$ compute:
-%\begin{figure}[h!]
-%\centering               
-%\includegraphics[width=0.8\textwidth,height=0.5\textheight]{Example4bis.pdf}
-%\end{figure}
 
-\begin{multicols}{2}
-\item $A^c $ 
-\item $B^c$
-\item $B^c \cup A$
-
-\item $A \cup B$
-\item $A \cap B$
-\item $B \cup A^c$
-%\item $C^c$
-\end{multicols}
-
+- $A^c$ 
+- $B^c$
+- $B^c \cup A$
+- $A \cup B$
+- $A \cap B$
+- $B \cup A^c$
 ```
 
+<!-- %\begin{figure}[h!] -->
+<!-- %\centering                -->
+<!-- %\includegraphics[width=0.9\textwidth,height=0.5\textheight]{Example4.pdf} -->
+<!-- %\end{figure} -->
 
+<!-- and using the definitions of $A$ and $B$ compute: -->
+<!-- %\begin{figure}[h!] -->
+<!-- %\centering                -->
+<!-- %\includegraphics[width=0.8\textwidth,height=0.5\textheight]{Example4bis.pdf} -->
+<!-- %\end{figure} -->
 
+<!-- \begin{multicols}{2} -->
+<!-- \item $A^c $  -->
+<!-- \item $B^c$ -->
+<!-- \item $B^c \cup A$ -->
 
+<!-- \item $A \cup B$ -->
+<!-- \item $A \cap B$ -->
+<!-- \item $B \cup A^c$ -->
+<!-- %\item $C^c$ -->
+<!-- \end{multicols} -->
 
+<!-- Solution  -->
 
-```{exercise}
-# [cont'd]
-and using the definitions of $A$ and $B$ compute:
-%\begin{figure}[h!]
-%\centering               
-%\includegraphics[width=0.8\textwidth,height=0.5\textheight]{Example4bis.pdf}
-%\end{figure}
+<!-- and using the definitions of $A$ and $B$ compute: -->
+<!-- %\begin{figure}[h!] -->
+<!-- %\centering                -->
+<!-- %\includegraphics[width=0.8\textwidth,height=0.5\textheight]{Example4bis.pdf} -->
+<!-- %\end{figure} -->
 
-\begin{multicols}{2}
-\item $A^c = \{ (TT) \}$ 
-\item $B^c = \{ (HH), (TH) \}$
-\item $B^c \cup A$
+<!-- \begin{multicols}{2} -->
+<!-- \item $A^c = \{ (TT) \}$  -->
+<!-- \item $B^c = \{ (HH), (TH) \}$ -->
+<!-- \item $B^c \cup A$ -->
 
-\item $A \cup B$
-\item $A \cap B$
-\item $B \cup A^c$
-%\item $C^c$
-\end{multicols}
-
-```
-
-
-
+<!-- \item $A \cup B$ -->
+<!-- \item $A \cap B$ -->
+<!-- \item $B \cup A^c$ -->
+<!-- %\item $C^c$ -->
 
 ```{proposition}
-Let $A$ be a set in $S$ and let $\varnothing$ denote the empty set \footnote{A set is called empty if it contains no elements.}. The following relations hold:
+Let $A$ be a set in $S$ and let $\varnothing$ denote the empty set^[A set is called empty if it contains no elements.]. The following relations hold:
 
-\begin{multicols}{2}
-\item $A \cap S = A$;
-\item $A \cup S = S$;
-\item $A \cap \varnothing = \varnothing$; 
-\item $A \cup \varnothing = A$;
-\item $A \cap A^c = \varnothing$;
-\item $A \cup A^c = S$;
-\item $A \cap A = A$;
-\item $A \cup A = A$;
-\end{multicols}
 
+- $A \cap S = A$;
+- $A \cup S = S$;
+- $A \cap \varnothing = \varnothing$; 
+- $A \cup \varnothing = A$;
+- $A \cap A^c = \varnothing$;
+- $A \cup A^c = S$;
+- $A \cap A = A$;
+- $A \cup A = A$;
 ```
-\vspace{0.4cm}
-The relations can be verified easily using Venn diagrams ... [do it!]
 
-
-
+```{exercise}
+Use Venn Diagrams to illustarte these relationships
+```
 
 The above relations are helpful to define some other relations between sets/events. 
+
 ```{example}
-Let $A$ and $B$ be two sets in $S$. Then we have
-$$
-B = (B \cap A) \cup (B \cap A^c).
-$$
-To check it, we can proceed as follows:
-\begin{eqnarray}
-B & = & S \cap B \nn \\
- & = & (A \cup A^c) \cap B \nn \\
- & = &  (B \cap A) \cup (B \cap A^c). \nn 
-\end{eqnarray}
+Let $A$ and $B$ be two sets in $S$. Then we have:
+$$B = (B \cap A) \cup (B \cap A^c).$$
+
+  To check it, we can proceed as follows:
+
+\begin{eqnarray*}
+B & = & S \cap B \\
+ & = & (A \cup A^c) \cap B  \\
+ & = &  (B \cap A) \cup (B \cap A^c). 
+\end{eqnarray*}
+
 That concludes the argument.
 ```
 
 
+## De Morgan's Laws: 
 
-
-
-
-## De Morgan's Laws: 1 \text{st} law
+### First Law
 
 Let $A$ and $B$ be two sets in $S$. Then:
 \begin{eqnarray}
-(A\cap B)^{c} =A^c \cup B^c,  \nn
+(A\cap B)^{c} =A^c \cup B^c,
 \end{eqnarray}
 
 where: 
 
+- Left hand side: $(A\cap B)^{c}$ represents the **set of all elements that are not both $A$ and $B$**; 
+- Right hand side: $A^c \cup B^c$ represents all elements that are not $A$ (namely they are $A^c$) and not $B$ either (namely they are $B^c$) $\Rightarrow$ **set of all elements that are not both $A$ and $B$**.
 
-\item Left hand side: \color{blue}$(A\cap B)^{c}$ \color{black} represents the \textbf{set of all elements that are not both $A$ and $B$}; \vspace
-{0.4cm}
-\item Right hand side:  \color{blue}$A^c \cup B^c$ \color{black} represents all elements that are not $A$ (namely they are $A^c$) and not $B
-$ either (namely they are $B^c$) $\Rightarrow$ \textbf{set of all elements that are not both $A$ and $B$}.
-
-
-
-
-
-
-## De Morgan's Laws: 2\text{nd} law}
+### Second Law 
 
 Let $A$ and $B$ be two sets in $S$. Then:
+
 \begin{eqnarray}
 (A\cup B)^{c} =A^c \cap B^c,  \nn
 \end{eqnarray}
 
 where: 
 
-
-- Left hand side: \color{blue}$(A\cup B)^{c}$ \color{black} represents the \textbf{set of all elements that are neither $A$ nor $B$}; \vspace
-{0.4cm}
--  Right hand side:  \color{blue}$A^c \cap B^c$ \color{black} represents the intersection of all elements that are not $A$ (namely they are $A^c$) and not $B
-$ either (namely they are $B^c$) $\Rightarrow$ \textbf{set of all elements that are neither $A$ nor $B$}.
-
-
-
-
+- Left hand side: $(A\cup B)^{c}$ represents the **set of all elements that are neither $A$ nor $B$**; 
+- Right hand side:$\color{blue}{A^c \cap B^c}$  represents the intersection of all elements that are not $A$ (namely they are $A^c$) and not $B$ either (namely they are $B^c$) $\Rightarrow$ **set of all elements that are neither $A$ nor $B$**.
 
 ## De Morgan's Theorem
 
-More generally, we can consider unions and intersections of many (countable) sets. So, we state the general results,
-```{theorem} 
-# [De Morgan]
+More generally, we can consider unions and intersections of many (countable) sets. So, we state the general results:
+
+```{theorem, deMorgan, name = "De Morgan's Theorem"} 
 Let $\mathbb{N}$ be the set of natural number and $\{A_{i}\}$ a collection (indexed by $i \in \mathbb{N}$) of subsets of $S$. Then:
 
 (i)
@@ -471,18 +427,13 @@ Let $\mathbb{N}$ be the set of natural number and $\{A_{i}\}$ a collection (inde
 <!-- % -->
 <!-- % -->
 
-
-
 ## Back to the events
 
-\textbf{Our primary interest will be not in events per se, but it will be in the \color{blue}\textit{probability that an event does or does not happen}.}
- \color{black} \\ \vspace{0.2cm}
- 
-Intuitively, 
-the probability of an event is the number  associated to the event:
-$$
-\text{event} \rightarrow \text{pr(event)}
-$$
+**Our primary interest** will be not in events per se, but it will be in the _probability that an event does or does not happen_.
+
+
+Intuitively,  the probability of an event is the number  associated to the event:
+$$\text{event} \rightarrow \text{pr(event)}$$
 such that:
 
 1. the probability is positive or more generally non-negative (it can be zero);
@@ -490,18 +441,14 @@ such that:
 1. the probability of two (or more) mutually exclusive events is the sum of the probabilities of each event.
 
 In many experiments, it is natural to assume that all outcomes in the sample space ($S$) are equally likely to occur. That is, consider an experiment whose sample space is a finite set, say, $S=\{1,2,3,...N\}$. Then, it is often natural to assume that
-$$
-P(\{1\})=P(\{2\})=...=P(\{N\})
-$$
+$$P(\{1\})=P(\{2\})=...=P(\{N\})$$
 or equivalently $P(\{i\})= 1/N$, for $i=1,2,...,N$. 
 
-Now, if we define a composite event $A$, there exist $N_A$ realizations having the same likelihood (namely, the have the same
-probability) in the event $A$, so  
-$$
-\boxed{P(A)=\frac{N_A}{N}=\frac{\mbox{\# of favorable outcomes}}{\mbox{total \# of outcomes}}=\frac{\mbox{\# of outcomes in $A$}}{\mbox{ \# of outcomes in $S$}}}
-$$
+Now, if we define a composite event $A$, there exist $N_A$ realizations having the same likelihood (namely, the have the same probability) in the event $A$, so  
 
-where the notation $\# $ means ``number''.
+$$\boxed{P(A)=\frac{N_A}{N}=\frac{\mbox{# of favorable outcomes}}{\mbox{total # of outcomes}}=\frac{\mbox{# of outcomes in $A$}}{\mbox{# of outcomes in $S$}}}$$
+
+where the notation $# $ means "number".
 
 ```{example}
 
@@ -514,10 +461,10 @@ $$S=\{1,2,3,4,5,6\}.$$
   
 Then, we have that 
 
-$$
-P(A)=\frac{N_A}{N} = \frac{\mbox{3 \text{favorable outcomes}}}{\mbox{6 total outcomes}} = \frac{1}{2}. %= \text{pr}(\{1\})+\text{pr}(\{2\})+\text{pr}(\{3\})
-$$
+$$P(A)=\frac{N_A}{N} = \frac{\mbox{3 favorable outcomes}}{\mbox{6 total outcomes}} = \frac{1}{2}. $$
 ```
+
+<!-- %= \text{pr}(\{1\})+\text{pr}(\{2\})+\text{pr}(\{3\}) -->
 
 <!-- # since the die is fair, each outcome is equally -->
 <!-- # %likely, so -->
@@ -527,7 +474,7 @@ $$
 <!-- # %Thus, we conclude that -->
 
 
-Building on the intuition gained in the last example (see boxed formula), we state a first \color{blue} informal \color{black} definition 
+Building on the intuition gained in the last example (see boxed formula), we state a first \color{blue} informal  definition 
 of probability. Specifically, one way of defining the probability of an event is in terms of \textit{relative frequency}.
 
 ```{definition}
@@ -566,7 +513,7 @@ $$
 <!-- %Clearly,  -->
 <!-- %$$0 \leq n(A) \leq n, \quad \text{so} \quad  0 \leq P(A) \leq 1.$$  -->
 <!-- %Thus, we say that  \color{blue} the probability is a set function (it is defined on sets) and it associates to each set/event a number between zero and one.  -->
-<!-- %\color{black}  -->
+<!-- %  -->
 <!-- % -->
 <!-- %\vspace{0.5cm} -->
 <!-- % -->
@@ -578,7 +525,7 @@ $$
 <!-- % -->
 <!-- %\vspace{0.5cm} -->
 <!-- % -->
-<!-- %\color{red} \textbf{Q.} \color{black} In the case of the (function) probability, we already know that the range is $[0,1]$, but what about $D_f$?  -->
+<!-- %\color{red} \textbf{Q.}  In the case of the (function) probability, we already know that the range is $[0,1]$, but what about $D_f$?  -->
 <!-- % -->
 <!-- % -->
 <!-- % -->
@@ -632,7 +579,7 @@ $$
 Clearly, 
 $$0 \leq n(A) \leq n, \quad \text{so} \quad  0 \leq P(A) \leq 1.$$ 
 Thus, we say that  \color{blue} the probability is a set function (it is defined on sets) and it associates to each set/event a number between zero and one. 
-\color{black} 
+ 
 
 
 
@@ -662,15 +609,9 @@ $A_1$ and $A_2$ are two events (so we can say something about their probability 
 
 ## Some references
 
-%The interested Student can find some additional info in the books: \\
+The interested Student can find some additional info in the books by [@rozanov2013probability] and [@hogg2019introduction]. 
 
-
-
--  \textit{Introduction to mathematical statistics}, Hogg, McKean, and Craig, 7th edition (2013), Ed: Pearson.
-\vspace{0.25cm}
-- \textit{Probability theory: a coincise course}, Rozanov, 3rd edtion (1969), Ed: Dover Publication.
-
-
+<!-- You can write citations, too. For example, we are using the **bookdown** package [@R-bookdown] in this sample book, which was built on top of R Markdown and **knitr** [@xie2015]. -->
 
 <!-- % -->
 <!-- % -->
@@ -681,7 +622,7 @@ $A_1$ and $A_2$ are two events (so we can say something about their probability 
 <!-- %%\begin{interpretation} -->
 <!-- %We said earlier that we are not interested in the events per se mainly because our focus is on the \textbf{probability} that an event happens.  -->
 <!-- %As we said, the \textbf{probability is a function}. Now,  any function is a rule (law, formula, recipe) that associates each point in one set of points (the  -->
-<!-- %domain) with one and only one point in another set of points (range). \\ \vspace{0.2cm}  -->
+<!-- %domain) with one and only one point in another set of points (range). \\   -->
 <!-- % -->
 <!-- % -->
 <!-- %(i) When we define the probability we would want the have a domain (namely $\mathcal{B}$) such that it includes the  -->
