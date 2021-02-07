@@ -8,12 +8,12 @@ To start our journey, let us introduce some definitions in Probability.
 
 ```{definition, randomExperiment}
 
-A **random experiment**  is a process that can result in two or more different outcomes with uncertainty as to which will be observed.
+A **Random Experiment**  is a process that can result in two or more different outcomes with uncertainty as to which will be observed.
 ```
 
 ```{definition, event}
 
-An **event** is an uncertain outcome of a random experiment. 
+An **Event** is an uncertain outcome of a random experiment. 
 
 An event can be: 
 
@@ -23,16 +23,17 @@ An event can be:
 
 
 ```{definition, sampleSpace}
-The **sample space** is the complete listing of the elementary events that can occur in a random experiment. We will denote the sample space by $S$.
+The **Sample Space** is the complete listing of the elementary events that can occur in a random experiment. We will denote the sample space by $S$.
 ```
 
 ```{example, cardGame, name = "A simple card game"}
 
 When playing with a full deck of cards, we can characterise drawing a particular card as a random experiment, where we can identify a set of events and the sample space: 
-
-![](img/02_set_theory/Example1_GE.png)
 ```
 
+```{r, echo = FALSE}
+knitr::include_graphics("img/02_set_theory/Example1_GE.png")
+```
 
 ```{example, flipCoins, name = "Flipping Coins"}
 Flipping a set of two coins can be characterised as another random experiment. In this case, let us denote the outcomes for each coin are $H$ for Head and $T$ for Tail. Hence, the sample space of the experiment "flipping two coins" contains the following four points:
@@ -42,9 +43,9 @@ $$S = \{ (HH),(HT),(TH),(TT)  \}.$$
 
 
 ```{example, timePhone, name = "Time on your phone"}
-Say you are interested in measuring the time of your life spent on your phone. The measure of the time (in hours) can be considered as the outcome of a random experiment, and every observation an event. 
+Say you are interested in measuring the time of your life spent on your phone. The measure of the time (in hours) can be considered as the outcome of a random experiment, and every measure of the time, an event. 
 
-Hence, the sample space consists of all nonnegative real  numbers:
+When you take a measure, you will be counting fractions of the hour spent on your phone (e.g. 20 minutes = 1/3 h). Therefore, the possible outcomes of this experiment are are _durations_ measured in fractions ranging from 0 to infinity. Hence, the sample space consists of all nonnegative real numbers:
 $$ S = \{x: 0 \leq x < \infty \}$$
 or, equivalently, $S\equiv \mathbb{R}^+$.
 ```
@@ -73,15 +74,13 @@ If a set $A$ contains no points, it will be called the **null set**, or **empty 
 knitr::include_graphics("img/fun/R9mJR.jpeg")
 ```
 
+The Venn diagram is an elementary schematic representation of sets and helps displaying their properties. As you might remember from your elementary classes, a Venn diagram represents a set with a closed figure, and its elements with some dots. To be even more abstract, most of the times, the dots are scraped and it is assumed that the set elements are in the surface contained by the figure. They are very useful to illustrate inclusion and equality as well as more abstract  notions. 
 
-The Venn diagram is an elementary schematic representation of sets and helps displaying their properties. In this section we will use it to illustrate some of the elements of probability theory that we have previously mentioned and defined. 
-
-- <mark>A generic Venn Diagram</mark>
+- <mark>A generic Venn Diagram of inclusion and equality</mark>
 
 ### Sample Space and Events
 
-For instance, an event, or a series of events, can be represented as an enclosed figure within the Sample space.
-
+By definition, an event or several events, constitute subset of the sample space. This can be represented in a Venn Diagram with a figure enclosed within the Sample Space. 
 
 ```{r, echo = FALSE, fig.align='center', fig.cap="source: [Tenso Graphics](https://cargocollective.com/tensographics)"}
 knitr::include_graphics("img/02_set_theory/Venn1.png")
@@ -89,154 +88,140 @@ knitr::include_graphics("img/02_set_theory/Venn1.png")
 
 ### Exclusive and Non-Exclusive Events
 
-Two events are mutually exclusive is they cannot occur jointly. This is represented by two separate enclosed surfaces within the sample space. 
+Two events are mutually exclusive is they cannot occur jointly. This is represented by two separate enclosed surfaces within the sample space. For illustration, consider our simple card game example. The event "drawing a **King**" and "drawing a **Queen**" are mutually exclusive, as they can't happen at the same time. 
 
-```{r, echo = FALSE, fig.align='center', fig.cap="source: [Tenso Graphics](https://cargocollective.com/tensographics)"}
+```{r, echo = FALSE, fig.align='center', fig.cap='Two mutually exclusive events'}
 knitr::include_graphics("img/02_set_theory/Venn2.png")
 ```
 
 <mark>
-  Events of King and Queen
+  chart: Events of King and Queen
 </mark>
 
-Events that are not mutually exclusive have a shared area, which in set theory constitutes an **intersection** and gets shown in a Venn diagram by two <mark>colliding</mark> figures. 
+Events that are not mutually exclusive have a shared area, which in set theory constitutes an **intersection** and gets shown in a Venn diagram by two <mark>colliding</mark> figures. Coming back to our example with the card game, consider the events "drawing a **King**" and "drawing a **Heart**". Here there is intersection, as one can obtain a **King of Hearts**. 
+```{r, echo = FALSE, fig.align='center', fig.cap='Two Non-mutually exclusive events'}
+knitr::include_graphics("img/02_set_theory/Venn3.png")
+```
 
-![](img/02_set_theory/Venn3.png)
 <mark>
-  Example : Events of King and Heart.
+  Example : chart Events of King and Heart.
 </mark>
 
 ### Union and Intersection of Events
 
-- The union of the events $A$ and $B$ is the event which occurs when either $A$ or $B$ occurs: $A \cup B$ 
+The **union** of the events $A$ and $B$ is the event which occurs when either $A$ or $B$ occurs: $A \cup B$. In a Venn diagram, we can illustrate this by shading the area enclosed by both sets. 
 
-\def\firstcircle{(0,0) circle (1.5cm)}
-\def\secondcircle{(45:2cm) circle (1.5cm)}
-\begin{tikzpicture}
-    \begin{scope}[shift={(6cm,5cm)}, fill opacity=0.65]
-        \fill[blue!20] \firstcircle;
-        \fill[blue!20] \secondcircle;
-        \draw \firstcircle node[below] {$A$};
-        \draw \secondcircle node [above] {$B$};
-<!-- %        \draw node [above] {$A \cup B$} -->
-    \end{scope}
-\end{tikzpicture}
+<mark>
+  Insert chart union
+</mark>
+
+<!-- \def\firstcircle{(0,0) circle (1.5cm)} -->
+<!-- \def\secondcircle{(45:2cm) circle (1.5cm)} -->
+<!-- \begin{tikzpicture} -->
+<!--     \begin{scope}[shift={(6cm,5cm)}, fill opacity=0.65] -->
+<!--         \fill[blue!20] \firstcircle; -->
+<!--         \fill[blue!20] \secondcircle; -->
+<!--         \draw \firstcircle node[below] {$A$}; -->
+<!--         \draw \secondcircle node [above] {$B$}; -->
+<!-- <!-- %        \draw node [above] {$A \cup B$} --> -->
+<!--     \end{scope} -->
+<!-- \end{tikzpicture} -->
 
 
-- The intersection of the events $A$ and $B$ is the event which occurs when both $A$ and $B$ occur: $A \cap B$
+The **intersection** of the events $A$ and $B$ is the event which occurs when both $A$ and $B$ occur: $A \cap B$. In a Venn diagram, we can illustrate this by shading the area shared by both sets. 
 
-\def\firstcircle{(0,0) circle (1.5cm)}
-\def\secondcircle{(45:2cm) circle (1.5cm)}
-\begin{tikzpicture}
-    \begin{scope}[shift={(6cm,5cm)}, fill opacity=0.65]
-    \draw \firstcircle node[below] {$A$};
-    \draw \secondcircle node [above] {$B$};
- 
-      \clip \firstcircle;
-      \fill[blue!20] \secondcircle;
-    \end{scope}
-\end{tikzpicture}
+<!-- \def\firstcircle{(0,0) circle (1.5cm)} -->
+<!-- \def\secondcircle{(45:2cm) circle (1.5cm)} -->
+<!-- \begin{tikzpicture} -->
+<!--     \begin{scope}[shift={(6cm,5cm)}, fill opacity=0.65] -->
+<!--     \draw \firstcircle node[below] {$A$}; -->
+<!--     \draw \secondcircle node [above] {$B$}; -->
+
+<!--       \clip \firstcircle; -->
+<!--       \fill[blue!20] \secondcircle; -->
+<!--     \end{scope} -->
+<!-- \end{tikzpicture} -->
+
+<mark>
+  Insert chart intersection
+</mark>
 
 ### Complement
 
-The complement of an event $A$ is the event which occurs when $A$ does not occur: $A^{c}$ (or $\overline{A}$)
+The complement of an event $A$ is the event which occurs when $A$ does not occur: $A^{c}$ (or $\overline{A}$). A Venn diagram illustrates this by shading the area outside the set. 
 
 ```{r, echo = FALSE, fig.align='center', fig.cap="source: [Tenso Graphics](https://cargocollective.com/tensographics)"}
 knitr::include_graphics("img/02_set_theory/Venn6.png")
 ```
 
-Let $S$ be the complete set of all possible events. Then, $A^c$ is such that $A \cup A^c = S$, or equivalently $A^c = S \setminus A = S-A$.
+Let $S$ be the complete set of all possible events, i.e. the Sample Space. Then, $A^c$ can be written as: $$A^c = S \setminus A = S-A.$$ and is such that $$A \cup A^c = S.$$
 
 ### Some laws of 
 
 Let $A$, $B$, and $D$ be sets. The following laws hold:
 
-- **Commutative laws**: 
+- **Commutative laws**: Union and Intersection of sets are _commutative_, i.e. they produce the same outcome irrespective of the order in which the sets are written. 
 \begin{eqnarray*}
 A \cup B = B \cup A \\
 A \cap B = B \cap A
 \end{eqnarray*}
 
-<mark>
-  insert animation 
-</mark>
-
-- **Associative laws**: 
+- **Associative laws**: Union and Intersection of more than two sets operate irrespective of the order. 
 \begin{eqnarray*}
 A \cup (B \cup D) = (A \cup B) \cup D \\
 A \cap (B \cap D) = (A \cap B) \cap D
 \end{eqnarray*}
 
-<mark>
-  insert animation 
-</mark>
+- **Distributive laws**
 
-- **Distributive laws**: 
-\begin{eqnarray*}
-A \cap (B \cup D) = (A \cap B) \cup (A\cap D)\\
-A \cup (B \cap D) = (A\cup B) \cap (A \cup D)
-\end{eqnarray*}
+  - The intersection is _distributive_ with respect to the union, i.e. the intersection between a set ($A$) and the union of two other sets ($B$ and $D$)  is the union of the intersections. 
+$$ A \cap (B \cup D) = (A \cap B) \cup (A\cap D)$$
+
+  - The union is _distributive_ with respect to the intersection, i.e. the union between a set ($A$) and an intersection of two others is the intersection of the unions. 
+$$A \cup (B \cap D) = (A\cup B) \cap (A \cup D)$$
 
 <mark>
-  insert animation 
+  insert illustration 
 </mark>
 
 We can use Venn Diagrams to illustrate these laws. Consider 
 
-... for instance, let $A_1, A_2, A_3$ be in $S$ and let us introduce the shorthand notation: 
-$$A_1 A_2 = A_1 \cap A_2  \quad \text{and} \quad A_1 A_3 = A_1 \cap A_3$$ 
+<!-- ... for instance, let $A_1, A_2, A_3$ be in $S$ and let us introduce the shorthand notation:  -->
+<!-- $$A_1 A_2 = A_1 \cap A_2  \quad \text{and} \quad A_1 A_3 = A_1 \cap A_3$$  -->
 
 ![](img/02_set_theory/commutative.png)
 
 ```{exercise}
-\def\firstcircle{(3,0) circle (1.5cm)}
-\def\secondcircle{(0:5cm) circle (1.5cm)}
 
-\colorlet{circle edge}{blue!50}
-\colorlet{circle area}{blue!20}
+Let $A$ and $B$ be two sets. Use Venn diagrams to represent:  
 
-\tikzset{filled/.style={fill=circle area, draw=circle edge, thick},
-    outline/.style={draw=circle edge, thick}}
+i) $\overline{A\cap B}$
+ii) $B-A$
 
-%Set A or B but not (A and B) also known a A xor B
-\hspace{1cm} (i) 
-\begin{tikzpicture}\centering  
-    \draw[filled, even odd rule] \firstcircle node {$A$}
-                                 \secondcircle node{$B$};
-    \node[anchor=south] at (current bounding box.north) {$\overline{A \cap B}$};
-\end{tikzpicture}
-
-\hspace{5cm} (ii)
-% Set B but not A
-\begin{tikzpicture}
-    \begin{scope}
-        \clip \secondcircle;
-        \draw[filled, even odd rule] \firstcircle
-                                     \secondcircle node {$B$};
-    \end{scope}
-    \draw[outline] \firstcircle node {$A$}
-                   \secondcircle;
-    \node[anchor=south] at (current bounding box.north) {$B - A$};
-\end{tikzpicture}
 ```
 
 ## Countable and Uncountable sets
 
 Events can be represented by means of sets and sets can be either **countable** or **uncountable**. 
 
-In mathematics, a **countable set** is a set with the same cardinality (number of elements) as some subset of the set of natural numbers ($\mathbb{N}$). 
+In mathematics, a **countable set** is a set with the same _cardinality_ (number of elements) as some subset of the set of natural numbers $\mathbb{N}= \{0, 1, 2, 3, \dots \}$. For illustration, a **cow herd** is a countable set, as you can have 0, 1, 2, 3, ... cows in your herd. 
 
-- _A countable set is either a finite set or a countably infinite set._
-- Whether finite or infinite, the elements of a countable set can always be counted one at a time and, although the counting may never finish, every element of the set is associated with a  natural number
-    - roughly speaking one can count the elements of the set using $1,2,3,..$ 
+<mark>
+  illustrations with cows
+</mark>
+
+A countable set can be  **countably finite** (your cow herd) or **countably infinite**. Whether finite or infinite, the elements of a countable set can always be counted one at a time and, although the counting may never finish, every element of the set is associated with a  natural number. Roughly speaking one can count the elements of the set using $1,2,3,..$ 
     
 - G. Cantor introduced the term countable set, contrasting sets that are countable with those that are **uncountable} (i.e., nonenumerable or nondenumerable).
 
  
+ 
 ```{example, countableSet, name = "An illustration of a Countable Set"} 
+Let's come back to our example with the deck of cards and the event. The follwing events can be considered countably finite sets as they have a limited and countable number of elements:
+```
 
-![](img/02_set_theory/Example2.png)
-
+```{r ,echo = FALSE}
+  knitr::include_graphics("img/02_set_theory/Example2.png")
 ```
 
 <!-- %Events can be represented by means of sets. -->
@@ -394,7 +379,19 @@ where:
 
 ## De Morgan's Theorem
 
-More generally, we can consider unions and intersections of many (countable) sets. So, we state the general results:
+We can extend these laws to three sets. Let us consider three sets $A_{1}$, $A_{2}$ and $A_{3}$. 
+
+(i)
+\begin{eqnarray}
+(A_{1} \cup B )\overline{\bigcup_{i \in \mathbb{N}} A_i} &=& \bigcap_{i \in \mathbb{N}} \overline{A}_i;
+\end{eqnarray}
+
+(ii) 
+\begin{eqnarray}
+\overline{\bigcap_{i \in \mathbb{N}} A_i} &=& \bigcup_{i \in \mathbb{N}} \overline{A}_i.
+\end{eqnarray}
+
+unions and intersections of many (countable) sets. So, we state the general results:
 
 ```{theorem, deMorgan, name = "De Morgan's Theorem"} 
 Let $\mathbb{N}$ be the set of natural number and $\{A_{i}\}$ a collection (indexed by $i \in \mathbb{N}$) of subsets of $S$. Then:

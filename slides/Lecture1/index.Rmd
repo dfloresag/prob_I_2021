@@ -1,9 +1,9 @@
 ---
-title: "Bootstrapping Clustered Data"
-subtitle: "via a Weighted Laplace Approximation"
-author: "Daniel Flores-Agreda"
-institute: "School of Public Health and Preventive Medicine"
-date: "ViCBiostat Work In Progress (WIP) Seminar 9/04/2020"
+title: "Probability I"
+subtitle: "Introduction to the Lecture"
+author: "Dr. Daniel Flores-Agreda"
+# institute: ""
+# date: today
 output:
   xaringan::moon_reader:
     css: ["./css/unige.css", "./css/unige-fonts.css"]

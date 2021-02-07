@@ -1,14 +1,14 @@
 /*
-CSS for xaringan slides in Monash University Flavor
+CSS for xaringan slides in UNIGE Flavor
 (heavily) based on the Middlebury College flavor by Joseph V. Casillas
 some cues were taken from the Sydney U Template by Garth Tarr
 Author: Daniel Flores Agreda
 Updated: 06/29/2018
 */
 
-/* 
+/*
 Primary Palette:
-Monash Blue (official): #006DAE, PMS 2945C
+GSEM BLUE  (official) : #465F7F
 Black                 : #000000
 White                 : #FFFFFF
 Grey 80% Black        : #5A5A5A
@@ -16,11 +16,11 @@ Grey 50% Black        : #969696
 Grey 10% Black        : #E6E6E6
 */
 
-/* 
+/*
 Secondary Palette:
 Blue    : #027EB6
 Purple  : #746FB2
-Fuchsia : #9651A0
+Fuchsia : #CF0063 couleur rectorat
 Ruby    : #C8008F
 Pink    : #EE64A4
 Red     : #EE0220
@@ -38,7 +38,7 @@ a, a > code {
 }
 
 /* slightly lower and bigger than default */
-.footnote{ 
+.footnote{
   position: absolute;
   bottom: 1em;
   padding-right: 4em;
@@ -52,7 +52,7 @@ a, a > code {
 
 /* color tweak */
 .inverse {
-  background-color: #006DAE;
+  background-color: #465F7F;
   color: #FFFFFF;
   text-shadow: 0 0 20px #333;
 }
@@ -192,31 +192,31 @@ thead, tfoot, tr:nth-child(even) { background: none; }
 
 /* Add image and change bg color */
 .title-slide {
-  background-image: url(https://raw.githubusercontent.com/dfloresag/sphpm_xaringan/master/monash-stacked-black-rgb.png);
-  background-position: 5% 5%;
-  background-size: 250px;
-  background-color: #fff;
+  background-image: url(../img/logos/gsem_en_blanc.png);
+  background-position: top right;
+  background-size: 350px;
+  background-color: #465F7F;
   padding-left: 100px;   /* delete this for 4:3 aspect ratio */
 }
 
 /* H1 fonts */
 .title-slide h1 {
-  color:  #006DAE; /* Monash blue */
+  color:  #FFFFFF; /* White */
   padding-top: 250px;
   font-weight: 800;
-  font-size: 45px;
+  font-size: 60px;
   line-height: 0.05;
   text-align: left;
-  text-shadow: none;
+  text-shadow: 0 0 20px #333;
   padding-bottom: 18px;
   margin-bottom: 18px;
 }
 
 /* H2 fonts */
 .title-slide h2 {
-  color: #5A5A5A; /* Grey 80% Black*/ 
+  color: #000000; /* Grey 80% Black*/
   font-weight: 600;
-  font-size: 35px;
+  font-size: 45px;
   text-align: left;
   text-shadow: none;
   padding-top: 0;
@@ -225,7 +225,7 @@ thead, tfoot, tr:nth-child(even) { background: none; }
 
 /* H3 fonts */
 .title-slide h3 {
-  color: #969696; /* Grey 50% Black */
+  color: #E6E6E6; /* Grey 10% Black */
   font-size: 28px;
   font-weight: normal;
   text-align: left;
@@ -282,7 +282,7 @@ thead, tfoot, tr:nth-child(even) { background: none; }
   background-color: #AAA59F;
   color: #fff;
   padding-left: 100px;
-/*  text-shadow: 0 0 3px #333; */  
+/*  text-shadow: 0 0 3px #333; */
   text-align: center;
 }
 
@@ -291,7 +291,8 @@ thead, tfoot, tr:nth-child(even) { background: none; }
 }
 
 .title-slide-final h2 {
-  color: #4C4B4C;
+  color: #000000;
+
 }
 
 .title-slide-final h3 {
@@ -319,8 +320,8 @@ strong {
 }
 
 /* Add blue tag */
-.blue {
-  color: #006DAE;
+.gsemblue {
+  color: #465F7F;
   font-weight: bold;
 }
 
@@ -339,7 +340,7 @@ strong {
 
 /*Secondary Palette:*/
 
-.blue { 
+.blue {
   color: #027EB6;
 }
 .purple {
@@ -370,12 +371,6 @@ strong {
   color: #008A25;
 }
 
-/* Monash Blue Bold */
-.monashblue {
-  color: #006DAE;
-  font-weight: bold;
-}
-
 /* Force black */
 .black {
   color: black;
@@ -395,18 +390,21 @@ strong {
 
 /* Color adjustments to headers */
 h1 {
-  color: #0D395F;
-  font-weight: 700;
+  color: #465F7F;
 }
 
 h2 {
   color: #0D395F;
   font-weight: 600;
+  font-size: 45px;
+  text-align: left;
+  text-shadow: none;
+  padding-top: 0;
+  margin-top: 0;
 }
 
 h3 {
-  color: #4C4B4C;
-  font-weight: 300;
+  color: #5A5A5A;
 }
 
 /* Font size tags */
@@ -414,8 +412,8 @@ h3 {
   font-size: 6em;
 }
 
-/* midd blockquote */
-.monash-blockquote {
+/* unige blockquote */
+.unige-blockquote {
   display: block;
   margin-top: .5em;
   margin-bottom: .5em;
@@ -432,7 +430,7 @@ h3 {
 /*~~~~~~~~~~~~~~~~~~~~~~~~*/
 /* Coloured content boxes*/
 /*~~~~~~~~~~~~~~~~~~~~~~~*/
-.content-box { 
+.content-box {
     box-sizing: border-box;
     background-color: #969696;
 }
@@ -484,7 +482,7 @@ h3 {
 .content-box-orange .remark-inline-code,
 .content-box-umber .remark-inline-code,
 .content-box-olive .remark-inline-code,
-.content-box-green .remark-inline-code{ 
+.content-box-green .remark-inline-code{
   background: none;
 }
 
