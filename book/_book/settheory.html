@@ -24,7 +24,7 @@
 <meta name="author" content="Dr. Daniel Flores Agreda (based on the notes by Prof. Davide La Vecchia)" />
 
 
-<meta name="date" content="2021-02-03" />
+<meta name="date" content="2021-02-07" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -339,42 +339,46 @@ or, equivalently, <span class="math inline">\(S\equiv \mathbb{R}^+\)</span>.
 <div id="the-venn-diagram" class="section level2" number="2.3">
 <h2><span class="header-section-number">2.3</span> The Venn diagram</h2>
 <div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-2"></span>
-<img src="img/fun/R9mJR.jpeg" alt="source: [Tenso Graphics](https://cargocollective.com/tensographics)" width="335" />
+<img src="img/fun/R9mJR.jpeg" alt="_The beaverduck_ source: [Tenso Graphics](https://cargocollective.com/tensographics)" width="335" />
 <p class="caption">
-Figure 2.1: source: <a href="https://cargocollective.com/tensographics">Tenso Graphics</a>
+Figure 2.1: <em>The beaverduck</em> source: <a href="https://cargocollective.com/tensographics">Tenso Graphics</a>
 </p>
 </div>
-<p>The Venn diagram is an elementary schematic representation of sets and helps displaying their properties. As you might remember from your elementary classes, a Venn diagram represents a set with a closed figure, and its elements with some dots. To be even more abstract, most of the times, the dots are scraped and it is assumed that the set elements are in the surface contained by the figure. They are very useful to illustrate inclusion and equality as well as more abstract notions.</p>
-<ul>
-<li><mark>A generic Venn Diagram of inclusion and equality</mark></li>
-</ul>
+<p>The Venn diagram is an elementary schematic representation of sets and helps displaying their properties. As you might remember from your elementary mathematics classes, a Venn diagram represents a set with a closed figure and it is assumed that the set elements are in the surface contained by the figure. They are very useful to illustrate inclusion and equality as well as more abstract notions.</p>
+<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-3"></span>
+<img src="img/02_set_theory/charts/charts.001.png" alt="Inclusion and Equality of sets with Venn Diagrams" width="960" />
+<p class="caption">
+Figure 2.2: Inclusion and Equality of sets with Venn Diagrams
+</p>
+</div>
 <div id="sample-space-and-events" class="section level3" number="2.3.1">
 <h3><span class="header-section-number">2.3.1</span> Sample Space and Events</h3>
-<p>By definition, an event or several events, constitute subset of the sample space. This can be represented in a Venn Diagram with a figure enclosed within the Sample Space.</p>
-<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-3"></span>
-<img src="img/02_set_theory/Venn1.png" alt="source: [Tenso Graphics](https://cargocollective.com/tensographics)" width="636" />
+<p>By definition, an event or several events, constitute a subset of the sample space. This can be represented in a Venn Diagram with a figure enclosed within the Sample Space.</p>
+<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-4"></span>
+<img src="img/02_set_theory/charts/charts.002.png" alt="An event within the Sample Space with Venn Diagrams" width="960" />
 <p class="caption">
-Figure 2.2: source: <a href="https://cargocollective.com/tensographics">Tenso Graphics</a>
+Figure 2.3: An event within the Sample Space with Venn Diagrams
 </p>
 </div>
 </div>
 <div id="exclusive-and-non-exclusive-events" class="section level3" number="2.3.2">
 <h3><span class="header-section-number">2.3.2</span> Exclusive and Non-Exclusive Events</h3>
-<p>Two events are mutually exclusive is they cannot occur jointly. This is represented by two separate enclosed surfaces within the sample space. For illustration, consider our simple card game example. The event “drawing a <strong>King</strong>” and “drawing a <strong>Queen</strong>” are mutually exclusive, as they can’t happen at the same time.</p>
-<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-4"></span>
-<img src="img/02_set_theory/Venn2.png" alt="Two mutually exclusive events" width="1066" />
+<p>Two events are mutually exclusive is they cannot occur jointly. This is represented by two separate enclosed surfaces within the sample space.</p>
+<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-5"></span>
+<img src="img/02_set_theory/charts/charts.003.png" alt="Two mutually exclusive events" width="960" />
 <p class="caption">
-Figure 2.3: Two mutually exclusive events
+Figure 2.4: Two mutually exclusive events
 </p>
 </div>
+<p>For illustration, consider our simple card game example. The event “drawing a <strong>King</strong>” and “drawing a <strong>Queen</strong>” are mutually exclusive, as they can’t happen at the same time.</p>
 <p><mark>
 chart: Events of King and Queen
 </mark></p>
 Events that are not mutually exclusive have a shared area, which in set theory constitutes an <strong>intersection</strong> and gets shown in a Venn diagram by two <mark>colliding</mark> figures. Coming back to our example with the card game, consider the events “drawing a <strong>King</strong>” and “drawing a <strong>Heart</strong>.” Here there is intersection, as one can obtain a <strong>King of Hearts</strong>.
-<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-5"></span>
-<img src="img/02_set_theory/Venn3.png" alt="Two Non-mutually exclusive events" width="1003" />
+<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-6"></span>
+<img src="img/02_set_theory/charts/charts.004.png" alt="Two Non-mutually exclusive events" width="960" />
 <p class="caption">
-Figure 2.4: Two Non-mutually exclusive events
+Figure 2.5: Two Non-mutually exclusive events
 </p>
 </div>
 <p><mark>
@@ -387,40 +391,18 @@ Example : chart Events of King and Heart.
 <p><mark>
 Insert chart union
 </mark></p>
-<!-- \def\firstcircle{(0,0) circle (1.5cm)} -->
-<!-- \def\secondcircle{(45:2cm) circle (1.5cm)} -->
-<!-- \begin{tikzpicture} -->
-<!--     \begin{scope}[shift={(6cm,5cm)}, fill opacity=0.65] -->
-<!--         \fill[blue!20] \firstcircle; -->
-<!--         \fill[blue!20] \secondcircle; -->
-<!--         \draw \firstcircle node[below] {$A$}; -->
-<!--         \draw \secondcircle node [above] {$B$}; -->
-<!-- <!-- %        \draw node [above] {$A \cup B$} -->
-<p>–&gt;
-<!--     \end{scope} -->
-<!-- \end{tikzpicture} --></p>
 <p>The <strong>intersection</strong> of the events <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span> is the event which occurs when both <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span> occur: <span class="math inline">\(A \cap B\)</span>. In a Venn diagram, we can illustrate this by shading the area shared by both sets.</p>
-<!-- \def\firstcircle{(0,0) circle (1.5cm)} -->
-<!-- \def\secondcircle{(45:2cm) circle (1.5cm)} -->
-<!-- \begin{tikzpicture} -->
-<!--     \begin{scope}[shift={(6cm,5cm)}, fill opacity=0.65] -->
-<!--     \draw \firstcircle node[below] {$A$}; -->
-<!--     \draw \secondcircle node [above] {$B$}; -->
-<!--       \clip \firstcircle; -->
-<!--       \fill[blue!20] \secondcircle; -->
-<!--     \end{scope} -->
-<!-- \end{tikzpicture} -->
 <p><mark>
 Insert chart intersection
 </mark></p>
 </div>
 <div id="complement" class="section level3" number="2.3.4">
 <h3><span class="header-section-number">2.3.4</span> Complement</h3>
-<p>The complement of an event <span class="math inline">\(A\)</span> is the event which occurs when <span class="math inline">\(A\)</span> does not occur: <span class="math inline">\(A^{c}\)</span> (or <span class="math inline">\(\overline{A}\)</span>). A Venn diagram illustrates this by shading the area outside the set.</p>
-<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-6"></span>
+<p>The <strong>complement</strong> of an event <span class="math inline">\(A\)</span> is the event which occurs when <span class="math inline">\(A\)</span> does not occur: <span class="math inline">\(A^{c}\)</span> (or <span class="math inline">\(\overline{A}\)</span>). A Venn diagram illustrates this by shading the area outside the set.</p>
+<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-7"></span>
 <img src="img/02_set_theory/Venn6.png" alt="source: [Tenso Graphics](https://cargocollective.com/tensographics)" width="1010" />
 <p class="caption">
-Figure 2.5: source: <a href="https://cargocollective.com/tensographics">Tenso Graphics</a>
+Figure 2.6: source: <a href="https://cargocollective.com/tensographics">Tenso Graphics</a>
 </p>
 </div>
 <p>Let <span class="math inline">\(S\)</span> be the complete set of all possible events, i.e. the Sample Space. Then, <span class="math inline">\(A^c\)</span> can be written as: <span class="math display">\[A^c = S \setminus A = S-A.\]</span> and is such that <span class="math display">\[A \cup A^c = S.\]</span></p>
@@ -456,7 +438,7 @@ insert illustration
 <p><img src="img/02_set_theory/commutative.png" /></p>
 
 <div class="exercise">
-<p><span id="exr:unnamed-chunk-7" class="exercise"><strong>Exercise 2.1  </strong></span>
+<p><span id="exr:unnamed-chunk-8" class="exercise"><strong>Exercise 2.1  </strong></span>
 Let <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span> be two sets. Use Venn diagrams to represent:</p>
 <ol style="list-style-type: lower-roman">
 <li><span class="math inline">\(\overline{A\cap B}\)</span></li>
@@ -478,7 +460,7 @@ illustrations with cows
 </ul>
 
 <div class="example">
-<span id="exm:countableSet" class="example"><strong>Example 2.4  (An illustration of a Countable Set)  </strong></span>Let’s come back to our example with the deck of cards and the event. The follwing events can be considered countably finite sets.
+<span id="exm:countableSet" class="example"><strong>Example 2.4  (An illustration of a Countable Set)  </strong></span>Let’s come back to our example with the deck of cards and the event. The follwing events can be considered countably finite sets as they have a limited and countable number of elements:
 </div>
 <p><img src="img/02_set_theory/Example2.png" width="1041" /></p>
 <!-- %Events can be represented by means of sets. -->
@@ -504,7 +486,7 @@ illustrations with cows
 <!-- %\end{figure} -->
 
 <div class="exercise">
-<p><span id="exr:unnamed-chunk-9" class="exercise"><strong>Exercise 2.3  (flipping coins again)  </strong></span>
+<p><span id="exr:unnamed-chunk-10" class="exercise"><strong>Exercise 2.3  (flipping coins again)  </strong></span>
 Let us consider the experiment where we flip two coins. For each coin we have <span class="math inline">\(H\)</span> for Head and <span class="math inline">\(T\)</span> for Tail. Remember that the sample space contains the following four points <mark> add reference here </mark></p>
 <p><span class="math display">\[ S = \{ (HH),(HT),(TH),(TT) \}.\]</span></p>
 <p>Then, let us consider the events:</p>
@@ -556,7 +538,7 @@ Let us consider the experiment where we flip two coins. For each coin we have <s
 <!-- %\item $C^c$ -->
 
 <div class="proposition">
-<p><span id="prp:unnamed-chunk-10" class="proposition"><strong>Proposition 2.1  </strong></span>Let <span class="math inline">\(A\)</span> be a set in <span class="math inline">\(S\)</span> and let <span class="math inline">\(\varnothing\)</span> denote the empty set<a href="#fn1" class="footnote-ref" id="fnref1"><sup>1</sup></a>. The following relations hold:</p>
+<p><span id="prp:propertiesUnionIntersection" class="proposition"><strong>Proposition 2.1  </strong></span>Let <span class="math inline">\(A\)</span> be a set in <span class="math inline">\(S\)</span> and let <span class="math inline">\(\varnothing\)</span> denote the empty set<a href="#fn1" class="footnote-ref" id="fnref1"><sup>1</sup></a>. The following relations hold:</p>
 <ul>
 <li><span class="math inline">\(A \cap S = A\)</span>;</li>
 <li><span class="math inline">\(A \cup S = S\)</span>;</li>
@@ -570,9 +552,9 @@ Let us consider the experiment where we flip two coins. For each coin we have <s
 </ul>
 
 <div class="exercise">
-<span id="exr:unnamed-chunk-11" class="exercise"><strong>Exercise 2.4  </strong></span>Use Venn Diagrams to illustarte these relationships
+<span id="exr:unnamed-chunk-11" class="exercise"><strong>Exercise 2.4  </strong></span>Use Venn Diagrams to illustrate these relationships
 </div>
-<p>The above relations are helpful to define some other relations between sets/events.</p>
+<p>The identities in the proposition <mark>insert tag</mark> are helpful to define some other relations between sets/events.</p>
 
 <div class="example">
 <p><span id="exm:unnamed-chunk-12" class="example"><strong>Example 2.5  </strong></span>Let <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span> be two sets in <span class="math inline">\(S\)</span>. Then we have:
@@ -588,9 +570,10 @@ That concludes the argument.
 </div>
 <div id="de-morgans-laws" class="section level2" number="2.5">
 <h2><span class="header-section-number">2.5</span> De Morgan’s Laws:</h2>
+<p>Operations of union and intersection of sets have interesting interactions with complementarity. These properties are formulated under the name of <strong>De Morgan’s laws</strong>. We will formulate them for two sets <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span> be two sets in <span class="math inline">\(S\)</span>, but you should keep in mind that they can be generalized for an infinite amount of sets.</p>
 <div id="first-law" class="section level3" number="2.5.1">
 <h3><span class="header-section-number">2.5.1</span> First Law</h3>
-<p>Let <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span> be two sets in <span class="math inline">\(S\)</span>. Then:
+<p>Let <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span> be two sets in <span class="math inline">\(S\)</span>, then
 <span class="math display">\[\begin{eqnarray}
 (A\cap B)^{c} =A^c \cup B^c,
 \end{eqnarray}\]</span></p>
@@ -599,31 +582,63 @@ That concludes the argument.
 <li>Left hand side: <span class="math inline">\((A\cap B)^{c}\)</span> represents the <strong>set of all elements that are not both <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span></strong>;</li>
 <li>Right hand side: <span class="math inline">\(A^c \cup B^c\)</span> represents all elements that are not <span class="math inline">\(A\)</span> (namely they are <span class="math inline">\(A^c\)</span>) and not <span class="math inline">\(B\)</span> either (namely they are <span class="math inline">\(B^c\)</span>) <span class="math inline">\(\Rightarrow\)</span> <strong>set of all elements that are not both <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span></strong>.</li>
 </ul>
+<p>Put in words, the firs law says that</p>
+<blockquote>
+<p>the complement of the intersection between two sets is the union of their complements.</p>
+</blockquote>
+<p>It is easy to see this graphically using Venn Diagrams</p>
+<p><mark>
+insert graph
+</mark></p>
 </div>
 <div id="second-law" class="section level3" number="2.5.2">
 <h3><span class="header-section-number">2.5.2</span> Second Law</h3>
 <p>Let <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span> be two sets in <span class="math inline">\(S\)</span>. Then:</p>
 <p><span class="math display">\[\begin{eqnarray}
-(A\cup B)^{c} =A^c \cap B^c,  \nn
+(A\cup B)^{c} =A^c \cap B^c,
 \end{eqnarray}\]</span></p>
 <p>where:</p>
 <ul>
 <li>Left hand side: <span class="math inline">\((A\cup B)^{c}\)</span> represents the <strong>set of all elements that are neither <span class="math inline">\(A\)</span> nor <span class="math inline">\(B\)</span></strong>;</li>
 <li>Right hand side:<span class="math inline">\(\color{blue}{A^c \cap B^c}\)</span> represents the intersection of all elements that are not <span class="math inline">\(A\)</span> (namely they are <span class="math inline">\(A^c\)</span>) and not <span class="math inline">\(B\)</span> either (namely they are <span class="math inline">\(B^c\)</span>) <span class="math inline">\(\Rightarrow\)</span> <strong>set of all elements that are neither <span class="math inline">\(A\)</span> nor <span class="math inline">\(B\)</span></strong>.</li>
 </ul>
+<p>Put in words, this law says that</p>
+<blockquote>
+<p>the complement of the union between two sets is the intersection of their complements.</p>
+</blockquote>
+<p>Once again, it is easy to see this graphically</p>
+<p><mark>
+insert chart.
+</mark></p>
 </div>
 </div>
 <div id="de-morgans-theorem" class="section level2" number="2.6">
 <h2><span class="header-section-number">2.6</span> De Morgan’s Theorem</h2>
-<p>More generally, we can consider unions and intersections of many (countable) sets. So, we state the general results:</p>
+<p>We can extend these laws to three sets. Let us consider three sets <span class="math inline">\(A_{1}\)</span>, <span class="math inline">\(A_{2}\)</span> and <span class="math inline">\(A_{3}\)</span> in <span class="math inline">\(S\)</span>.</p>
+<ol style="list-style-type: lower-roman">
+<li><p><strong>First law</strong>:
+<span class="math display">\[\overline{\left(A_{1}\cup A_{2}\cup A_{3}\right)} = \overline{A_{1}} \cap \overline{A_{2}} \cap \overline{A_{3}}\]</span></p></li>
+<li><p><strong>Second Law</strong>:
+<span class="math display">\[\overline{\left(A_{1}\cap A_{2}\cap A_{3}\right)} = \overline{A_{1}} \cup \overline{A_{2}} \cup \overline{A_{3}}\]</span></p></li>
+</ol>
+
+<div class="exercise">
+<span id="exr:unnamed-chunk-13" class="exercise"><strong>Exercise 2.5  </strong></span>Show this using diagrams.
+</div>
+<p>More generally, this can be extended to the union of an infinite amount of sets in a theorem that we present without demonstration. Consider the following notation for the union of an infinity of sets :</p>
+<p><span class="math display">\[\bigcup_{i \in \mathbb{N}} A_{i} = A_{1} \cup A_{2} \cup A_{3} \cup \dots \]</span></p>
+<p>and the intersection of an infinite but countable amount of sets</p>
+<p><span class="math display">\[\bigcap_{i \in \mathbb{N}} A_{i} = A_{1} \cap A_{2} \cap A_{3} \cap \dots\]</span></p>
 
 <div class="theorem">
 <p><span id="thm:deMorgan" class="theorem"><strong>Theorem 2.1  (De Morgan’s Theorem)  </strong></span>Let <span class="math inline">\(\mathbb{N}\)</span> be the set of natural number and <span class="math inline">\(\{A_{i}\}\)</span> a collection (indexed by <span class="math inline">\(i \in \mathbb{N}\)</span>) of subsets of <span class="math inline">\(S\)</span>. Then:</p>
 <ol style="list-style-type: lower-roman">
-<li><p><span class="math display">\[\begin{eqnarray}
+<li><p>the complement of the union of all <span class="math inline">\(A_i\)</span> is the intersection of their complements.
+<span class="math display">\[\begin{eqnarray}
 \overline{\bigcup_{i \in \mathbb{N}} A_i} &amp;=&amp; \bigcap_{i \in \mathbb{N}} \overline{A}_i;
 \end{eqnarray}\]</span></p></li>
-<li><p><span class="math display">\[\begin{eqnarray}
+<li><p>the complement of the intersection of all <span class="math inline">\(A_i\)</span> is the union of their complements.
+<span class="math display">\[\begin{eqnarray}
 \overline{\bigcap_{i \in \mathbb{N}} A_i} &amp;=&amp; \bigcup_{i \in \mathbb{N}} \overline{A}_i.
 \end{eqnarray}\]</span></p>
 </div></li>
@@ -646,24 +661,23 @@ That concludes the argument.
 </div>
 <div id="back-to-the-events" class="section level2" number="2.7">
 <h2><span class="header-section-number">2.7</span> Back to the events</h2>
-<p><strong>Our primary interest</strong> will be not in events per se, but it will be in the <em>probability that an event does or does not happen</em>.</p>
-<p>Intuitively, the probability of an event is the number associated to the event:
+<p>When assessing any experiment with an uncertain outcome the, <strong>primary interest</strong> is not necessarily in the events themselves, as they may or may not happen) but in the <em>probability that an event does or does not happen</em>.</p>
+<p>Intuitively, the probability of an event is a <strong>value</strong> associated with the event:
 <span class="math display">\[\text{event} \rightarrow \text{pr(event)}\]</span>
-such that:</p>
+and it is such that:</p>
 <ol style="list-style-type: decimal">
 <li>the probability is positive or more generally non-negative (it can be zero);</li>
-<li>the <span class="math inline">\(\text{pr}(S)=1\)</span> (remember, <span class="math inline">\(S\)</span> is the sample space) and <span class="math inline">\(\text{pr}(\varnothing)=0\)</span>;</li>
+<li>the <span class="math inline">\(\text{pr}(S)=1\)</span>, where <span class="math inline">\(S\)</span> is the sample space and <span class="math inline">\(\text{pr}(\varnothing)=0\)</span>;</li>
 <li>the probability of two (or more) mutually exclusive events is the sum of the probabilities of each event.</li>
 </ol>
-<p>In many experiments, it is natural to assume that all outcomes in the sample space (<span class="math inline">\(S\)</span>) are equally likely to occur. That is, consider an experiment whose sample space is a finite set, say, <span class="math inline">\(S=\{1,2,3,...N\}\)</span>. Then, it is often natural to assume that
-<span class="math display">\[P(\{1\})=P(\{2\})=...=P(\{N\})\]</span>
+<p><span class="math display">\[P(\{1\})=P(\{2\})=...=P(\{N\})\]</span>
 or equivalently <span class="math inline">\(P(\{i\})= 1/N\)</span>, for <span class="math inline">\(i=1,2,...,N\)</span>.</p>
 <p>Now, if we define a composite event <span class="math inline">\(A\)</span>, there exist <span class="math inline">\(N_A\)</span> realizations having the same likelihood (namely, the have the same probability) in the event <span class="math inline">\(A\)</span>, so</p>
 <p><span class="math display">\[\boxed{P(A)=\frac{N_A}{N}=\frac{\mbox{# of favorable outcomes}}{\mbox{total # of outcomes}}=\frac{\mbox{# of outcomes in $A$}}{\mbox{# of outcomes in $S$}}}\]</span></p>
-<p>where the notation $# $ means “number.”</p>
+<p>where the ‘<span class="math inline">\(\#\)</span>’ stands for “number.”</p>
 
 <div class="example">
-<p><span id="exm:unnamed-chunk-13" class="example"><strong>Example 2.6  </strong></span>
+<p><span id="exm:unnamed-chunk-14" class="example"><strong>Example 2.6  </strong></span>
 We roll a fair die and we define the event <span class="math display">\[A=\text{the outcome is an even number}=\{2,4,6\}.\]</span>
 What is the probability of <span class="math inline">\(A\)</span>?</p>
 <p>First, we identify the sample space as
@@ -678,12 +692,11 @@ What is the probability of <span class="math inline">\(A\)</span>?</p>
 <!-- # %\text{pr}(\{1\})=\text{pr}(\{2\})=...=\text{pr}(\{6\})=\frac{1}{6}. \nonumber -->
 <!-- # %\end{eqnarray} -->
 <!-- # %Thus, we conclude that -->
-<p>Building on the intuition gained in the last example (see boxed formula), we state a first  informal definition
-of probability. Specifically, one way of defining the probability of an event is in terms of .</p>
+<p>Building on the intuition gained in the last example (see boxed formula), we state a first <strong>informal</strong> definition
+of probability. Specifically, one way of defining the probability of an event is in terms of <strong>relative frequency</strong>.</p>
 
 <div class="definition">
-<p><span id="def:unnamed-chunk-14" class="definition"><strong>Definition 2.7  </strong></span># [Informal]
-Suppose that an experiment, whose sample space is <span class="math inline">\(S\)</span>, is repeatedly performed under exactly the same conditions. For each event, say <span class="math inline">\(A\)</span>, of the sample space, we define <span class="math inline">\(n(A)\)</span> to be the number of times in the first <span class="math inline">\(n\)</span> repetitions of the experiment that the event <span class="math inline">\(A\)</span> occurs. Then, <span class="math inline">\(P(A)\)</span>, namely the probability of the event <span class="math inline">\(A\)</span>, is defined as:
+<p><span id="def:informalProbability" class="definition"><strong>Definition 2.7  (Informal definition of probability)  </strong></span>Suppose that an experiment, whose sample space is <span class="math inline">\(S\)</span>, is repeatedly performed under exactly the same conditions. For each event, say <span class="math inline">\(A\)</span>, of the sample space, we define <span class="math inline">\(n(A)\)</span> to be the number of times in the first <span class="math inline">\(n\)</span> repetitions of the experiment that the event <span class="math inline">\(A\)</span> occurs. Then, <span class="math inline">\(P(A)\)</span>, namely the probability of the event <span class="math inline">\(A\)</span>, is defined as:
 <span class="math display">\[
 P(A)=\lim_{n \to \infty} \frac{n(A)}{n},
 \]</span></p>
@@ -692,91 +705,23 @@ that is <span class="math inline">\(P(A)\)</span> is defined as the limiting pro
 
 <div class="example">
 <p><span id="exm:unnamed-chunk-15" class="example"><strong>Example 2.7  </strong></span># [Tossing a well-balanced coin]
-In tossing a well-balanced coin, there are 2 mutually exclusive equiprobrable outcomes: H and T. Let <span class="math inline">\(A\)</span>
-be the event of head (H). Since the coin is fair, we have <span class="math inline">\(P(A)=1/2\)</span>. To confirm this intuition/conjecture we can toss the coin a large number of times (each under identical conditions) and count the times we have H. Let <span class="math inline">\(n\)</span> be the  while <span class="math inline">\(n(A)\)</span> is the . Then, the relative frequency:
-<span class="math display">\[
-\lim_{n \to \infty} \frac{n(A)}{n},
-\]</span>
-converges to <span class="math inline">\(P(A)\)</span>. So,
-<span class="math display">\[
-P(A) \sim \frac{n(A)}{n}, \quad \text{for large $n$}.
-\]</span></p>
+In tossing a well-balanced coin, there are 2 mutually exclusive equiprobrable outcomes: “Heads” <span class="math inline">\(H\)</span> and “Tails” <span class="math inline">\(T\)</span>. Let <span class="math inline">\(A\)</span> be the event of <span class="math inline">\(H\)</span>. Since the coin is fair, we have <span class="math inline">\(P(A)=1/2\)</span>. To confirm this intuition/conjecture we can toss the coin a large number of times (each under identical conditions) and count the times we spot <span class="math inline">\(H\)</span>.</p>
+Let <span class="math inline">\(n\)</span> be the <strong>total number of repetitions</strong> while <span class="math inline">\(n(A)\)</span> is the <strong>number of times in which we observe <span class="math inline">\(A\)</span></strong>. Then, the relative frequency:
+<span class="math display">\[\lim_{n \to \infty} \frac{n(A)}{n},\]</span>
+<em>converges</em> to <span class="math inline">\(P(A)\)</span>. So,
+<span class="math display">\[P(A) \sim \frac{n(A)}{n}, \quad \text{for large $n$}.\]</span>
 </div>
-<!-- % -->
-<!-- % -->
-<!-- %\frametitle{Back to the events} -->
-<!-- % -->
-<!-- %Clearly,  -->
-<!-- %$$0 \leq n(A) \leq n, \quad \text{so} \quad  0 \leq P(A) \leq 1.$$  -->
-<!-- %Thus, we say that  \color{blue} the probability is a set function (it is defined on sets) and it associates to each set/event a number between zero and one.  -->
-<!-- %  -->
-<!-- % -->
-<!-- %\vspace{0.5cm} -->
-<!-- % -->
-<!-- %Now, let us recall that a real-valued function is a mapping from $D_f$ to $\mathbb{R}$ and we write: -->
-<!-- %$$ -->
-<!-- %f \quad : \quad D_f \to \mathbb{R},   -->
-<!-- %$$ -->
-<!-- %where $D_f$ is the domain of $f$ and $\mathbb{R}$ is the range. \\ -->
-<!-- % -->
-<!-- %\vspace{0.5cm} -->
-<!-- % -->
-<!-- %\color{red} \textbf{Q.}  In the case of the (function) probability, we already know that the range is $[0,1]$, but what about $D_f$?  -->
-<!-- % -->
-<!-- % -->
-<!-- % -->
-<!-- % -->
-<!-- % -->
-<!-- % -->
-<!-- %\frametitle{Back to the events} -->
-<!-- % -->
-<!-- %To define $D_f$ for -->
-<!-- %the probability, we have to rely on the set theory --- indeed $D_f$ has to be related to sets/events. To this end, -->
-<!-- %%\vspace{0.3cm} -->
-<!-- %```{definition} [$\sigma$-algebra] -->
-<!-- %The $\sigma$-algebra $\mathcal{B}$ generated by the sample space $S$ is defined as the collection of all subsets of $S$ satisfying: -->
-<!-- %\begin{enumerate} -->
-<!-- %\item[(i)] $S \in \mathcal{B}$; -->
-<!-- %\item[(ii)] if $A \in \mathcal{B}$, then $A^c \in \mathcal{B}$; -->
-<!-- %\item[(iii)] if $A_1 \in \mathcal{B}$ and $A_2 \in \mathcal{B}$, then $A_1 \cup A_2 \in \mathcal{B}$. More generally, for a collection of events $\{A_i\}$, with $i \in \mathbb{N}$, we have -->
-<!-- %\begin{eqnarray} -->
-<!-- %A = \bigcup_{i \in \mathbb{N}} A_i \text{ \ is such that \ }  A \in \mathcal{B}. \nn -->
-<!-- %\end{eqnarray} -->
-<!-- % -->
-<!-- %\end{enumerate} -->
-<!-- %``` -->
-<!-- % -->
-<!-- %Thus,  we will have that  -->
-<!-- %$$ -->
-<!-- %\boxed{P \quad : \quad \mathcal{B} \to [0,1]. }  -->
-<!-- %$$ -->
-<!-- % -->
-<!-- % -->
-<!-- % -->
-<!-- % -->
-<!-- % -->
-<!-- %\frametitle{Back to the events} -->
-<!-- % -->
-<!-- %%In this way, we define the domain of the probability. Then,  -->
-<!-- %To provide a formal definition of probability, we will make use of $\mathcal{B}$ and we will need to impose some additional conditions (that we are going to call \textit{axioms}). \\ -->
-<!-- %\vspace{0.5cm} -->
-<!-- %We here briefly state the ideas, then we will formalize them: \\  -->
-<!-- %\vspace{0.3cm} -->
-<!-- %(i) When we define the probability we would want the have a domain (namely $\mathcal{B}$) such that it includes the  -->
-<!-- %sample space $S$, and $P(S)=1$. \\ \vspace{0.1cm} -->
-<!-- %(ii)  Moreover, for the sake of completeness, if $A$ is an event and we can talk about the probability that $A$ happens, then it is  -->
-<!-- %suitable for us that $A^c$ is also an event in $\mathcal{B}$, so that we can talk about the probability that $A$ does not happen. \\ \vspace{0.1cm}  -->
-<!-- %(iii) Similarly, if  -->
-<!-- %$A_1$ and $A_2$ are two events (so we can say something about their probability of happening), so we should be able to say something about the probability of the event $A_1 \cup A_2$.   -->
-<!-- % -->
-<!-- % -->
-<!-- % -->
-<p>Clearly,
-<span class="math display">\[0 \leq n(A) \leq n, \quad \text{so} \quad  0 \leq P(A) \leq 1.\]</span>
-Thus, we say that  the probability is a set function (it is defined on sets) and it associates to each set/event a number between zero and one.</p>
+<p><img src="img/02_set_theory/roz.png" width="447" /></p>
+<p><mark>
+This could be transformed into a shiny app!
+</mark></p>
+<p>Clearly, <span class="math display">\[0 \leq n(A) \leq n, \quad \text{so} \quad  0 \leq P(A) \leq 1.\]</span>
+Thus, we say that <em>the probability is a <strong>set function</strong> (it is defined on sets) and <strong>it associates to each set/event a number between zero and one</strong></em>.</p>
 
 <div class="remark">
- <span class="remark"><em>Remark. </em></span> One can provide a more rigorous definition of probability, as a real-valued function which defines a mapping between sets/events and the interval <span class="math inline">\([0,1]\)</span>. To achieve this goal one needs the concept of sigma-algebra (which represents the domain of the probability), but we do not pursue with that—at the cost of losing the mathematical rigour of the next slide!!
+<p> <span class="remark"><em>Remark. </em></span> One can provide a more rigorous definition of probability, as a <strong>real-valued function</strong> which defines a <strong>mapping between sets/events and the interval <span class="math inline">\([0,1]\)</span></strong>.</p>
+<p><span class="math display">\[P : A \subseteq \mathbb{R} \longrightarrow [0,1]\]</span></p>
+However, to provide this formal definition we need to introduce the concept of <strong>sigma-algebra</strong> (which represents the <strong>domain</strong> of the probability), a concept that narrowly escapes the frame of our course. We will proceed without presenting it, with the very unfortunate cost of losing the mathematical rigour in the following sections.
 </div>
 <!-- %In this way, we define the domain of the probability. Then,  -->
 <p>To express the probability, we need to impose some additional conditions, that we are going to call <strong>axioms</strong>.</p>

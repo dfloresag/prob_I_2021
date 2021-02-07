@@ -24,7 +24,7 @@
 <meta name="author" content="Dr. Daniel Flores Agreda (based on the notes by Prof. Davide La Vecchia)" />
 
 
-<meta name="date" content="2021-02-02" />
+<meta name="date" content="2021-02-07" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -53,6 +53,69 @@
 
 
 
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
 
 <link rel="stylesheet" href="style.css" type="text/css" />
 </head>
@@ -282,49 +345,60 @@
 <h2><span class="header-section-number">3.1</span> An Axiomatic Definition of Probability</h2>
 <!-- %Let $\mathcal{B}$ be the $\sigma$-algebra of subsets of a set $S$ representing the sample space. \\ -->
 <!-- %\vspace{0.1cm} -->
+<p>In order to formalise probability as a branch of mathematics, Andrey Kolmogorov formulated a series of postulates. These <em>axioms</em> are crucial elements of the foundations on which all the mathematical theory of probability is built.</p>
 
 <div class="definition">
-<p><span id="def:probability" class="definition"><strong>Definition 3.1  (Probability)  </strong></span>
-We define probability a set function with values in <span class="math inline">\([0,1]\)</span>, which satisfies the following axioms:</p>
-<ol style="list-style-type: decimal">
-<li><span class="math inline">\(P(A) \geq 0\)</span>, for every event <span class="math inline">\(A\)</span></li>
-<li><span class="math inline">\(P(S)=1\)</span></li>
+<p><span id="def:probability" class="definition"><strong>Definition 3.1  (Probability Axioms)  </strong></span>We define <em>probability</em> as a <strong>set function</strong> with values in <span class="math inline">\([0,1]\)</span>, which satisfies the following axioms:</p>
+<ol style="list-style-type: lower-roman">
+<li><em>The probability of an event <span class="math inline">\(A\)</span> in the Sample Space <span class="math inline">\(S\)</span> is a non-negative real number</em>
+<span class="math display" id="eq:nonnegative">\[\begin{equation}
+P(A) \geq 0, \text{ for every event } A \subset S 
+\tag{3.1}
+\end{equation}\]</span></li>
+<li><em>The probability of the Sample Space is 1</em>
+<span class="math display" id="eq:probss">\[\begin{equation}
+P(S)=1
+\tag{3.2}
+\end{equation}\]</span></li>
 <li>If <span class="math inline">\(A_1,A_2,...\)</span> is
-<ul>
-<li>a sequence of <strong>mutually exclusive events</strong>, i.e.<br />
-<span class="math display">\[A_{i}\cap A_{j}=\varnothing, \ \text{for} \ i\neq j,\ \text{and} \ i,j=1,2,...,\]</span></li>
-<li>such that <span class="math inline">\(A = \bigcup_{i=1}^{\infty} A_i\)</span>, then:</li>
-</ul></li>
+- a sequence of <strong>mutually exclusive events</strong>, i.e.<br />
+<span class="math display">\[A_{i}\cap A_{j}=\varnothing, \ \text{for} \ i\neq j,\ \text{and} \ i,j=1,2,...,\]</span>
+- such that <span class="math inline">\(A = \bigcup_{i=1}^{\infty} A_i\)</span>, then:</li>
 </ol>
-<p><span class="math display">\[P(A)=P\left(\bigcup_{i=1}^{\infty}A_{i}\right)=\sum_{i=1}^{\infty}P(A_i).\]</span></p>
+<span class="math display" id="eq:additivity">\[\begin{equation} 
+P(A)=P\left(\bigcup_{i=1}^{\infty}A_{i}\right)=\sum_{i=1}^{\infty}P(A_i).
+\tag{3.3}
+\end{equation}\]</span>
 </div>
 </div>
 <div id="properties-of-pcdot" class="section level2" number="3.2">
 <h2><span class="header-section-number">3.2</span> Properties of <span class="math inline">\(P(\cdot)\)</span></h2>
-<p>One can make use of the three axioms to build more sophisticated statements. For instance,</p>
+<p>We can make use of the three axioms to build more sophisticated statements. For instance:</p>
 
 <div class="theorem">
-<span id="thm:unnamed-chunk-1" class="theorem"><strong>Theorem 3.1  </strong></span><span class="math inline">\(P(\varnothing)=0\)</span>.
+<span id="thm:probabilityEmptySet" class="theorem"><strong>Theorem 3.1  (The Probability of the Empty Set)  </strong></span><em>The probability of the empty set is 0</em>
+<span class="math display">\[P(\varnothing)=0.\]</span>
 </div>
 
 <div class="proof">
-<p> <span class="proof"><em>Proof. </em></span> Take <span class="math inline">\(A_1=A_2=A_3=....=\varnothing\)</span>. Then by () in Axiom (ii) we have</p>
-<p><span class="math display">\[P(\varnothing)= P\left(  \bigcup_{i=1}^{\infty} A_i \right) = \sum_{i=1}^{\infty} P(A_i) =\sum_{i=1}^{\infty} P(\varnothing)\]</span>
-which is true only if it is an infinite sum of zeros. Thus</p>
+<p> <span class="proof"><em>Proof. </em></span> Consider the sequence of mutually exclusive empty sets. <span class="math inline">\(A_1=A_2=A_3=....=\varnothing\)</span>. Then, by <a href="axioms.html#eq:additivity">(3.3)</a> in Axiom (ii) we have</p>
+<span class="math display">\[P(\varnothing)= P\left(  \bigcup_{i=1}^{\infty} A_i \right) = \sum_{i=1}^{\infty} P(A_i) =\sum_{i=1}^{\infty} P(\varnothing)\]</span>
+which is true <strong>only if</strong> the left hand side is an infinite sum of zeros. Thus:
 <span class="math display">\[P(\varnothing) =  0.\]</span>
 </div>
 
 <div class="theorem">
-<span id="thm:unnamed-chunk-3" class="theorem"><strong>Theorem 3.2  </strong></span>If <span class="math inline">\(A_1, A_2,...\)</span> are mutually exclusive events, then
-<span class="math display">\[\begin{equation}
-P\left(  \bigcup_{i=1}^{n} A_i \right) = \sum_{i=1}^{n} P(A_i).  \label{Eq:ProbUnionDisj}
+<span id="thm:additionLaw" class="theorem"><strong>Theorem 3.2  (The Addition Law of Probability)  </strong></span>If <span class="math inline">\(A_1, A_2,...\)</span> are mutually exclusive events, then the probability of their union is the sum of their probabilities, i.e.
+<span class="math display" id="eq:probuniondisj">\[\begin{equation}
+P\left(  \bigcup_{i=1}^{n} A_i \right) = \sum_{i=1}^{n} P(A_i).  
+\tag{3.4}
 \end{equation}\]</span>
 </div>
 
 <div class="proof">
 <p> <span class="proof"><em>Proof. </em></span> Let <span class="math inline">\(A_{n+1}=A_{n+2}=....=\varnothing\)</span>, then
 <span class="math inline">\(\bigcup_{i=1}^{n} A_i = \bigcup_{i=1}^{\infty} A_i,\)</span>
-and, from () (see Axiom (iii)) it follows that:</p>
+and, from <a href="axioms.html#eq:additivity">(3.3)</a> (see Axiom (iii)) it follows that:</p>
 <span class="math display">\[\begin{eqnarray}
 P\left(  \bigcup_{i=1}^{n} A_i \right) &amp;=&amp; P\left(  \bigcup_{i=1}^{\infty} A_i \right)
 = \sum_{i=1}^{\infty} P(A_i) = \sum_{i=1}^{n} P(A_i) + \underbrace{\sum_{i=n+1}^{\infty} P(A_i)}_{\equiv 0}.
@@ -332,21 +406,28 @@ P\left(  \bigcup_{i=1}^{n} A_i \right) &amp;=&amp; P\left(  \bigcup_{i=1}^{\inft
 </div>
 
 <div class="theorem">
-<span id="thm:unnamed-chunk-5" class="theorem"><strong>Theorem 3.3  </strong></span>If <span class="math inline">\(A\)</span> is an event, then <span class="math inline">\(P(A^c) = 1- P(A).\)</span>
+<span id="thm:complementRule" class="theorem"><strong>Theorem 3.3  (The Complement Rule)  </strong></span>If <span class="math inline">\(A\)</span> is an event, then <span class="math inline">\(P(A^c) = 1- P(A).\)</span>
 </div>
 
 <div class="proof">
- <span class="proof"><em>Proof. </em></span> Let <span class="math inline">\(A \cup A^c =S\)</span> and <span class="math inline">\(A \cap A^c = \varnothing\)</span>, so
-and
-<span class="math display">\[
-P( S ) = P\left(A \cup A^c \right) =P(A) + P\left(A^c \right).
-\]</span>
-By Axiom (i) Axiom (ii) we have <span class="math inline">\(P(S)=1\)</span>, so the desired result follows from:
-<span class="math display">\[
-1 = P(A) + P\left(A^c \right).
-\]</span>
+<p> <span class="proof"><em>Proof. </em></span> By definition, <span class="math inline">\(A\)</span> and its complement <span class="math inline">\(A^c\)</span> are such that:
+- <span class="math inline">\(A \cup A^c = S\)</span> and
+- <span class="math inline">\(A \cap A^c = \varnothing\)</span></p>
+<p>Hence, from the addition law <a href="axioms.html#thm:additionLaw">3.2</a>:
+<span class="math display">\[P( S ) = P\left(A \cup A^c \right) =P(A) + P\left(A^c \right).\]</span></p>
+Finally, by Axiom (ii), <span class="math inline">\(P(S)=1\)</span>, and.
+<span class="math display">\[1 = P(A) + P\left(A^c \right).\]</span>
+The result follows.
 </div>
 <!-- %that $B \subset A$. -->
+
+<div class="theorem">
+<p><span id="thm:monotonicityRule" class="theorem"><strong>Theorem 3.4  (The Monotonicity Rule)  </strong></span>For any two events <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span>, such that <span class="math inline">\(B \subset A\)</span>, we have:</p>
+<span class="math display">\[P(A) \geq P(B).\]</span>
+</div>
+<p><mark>
+Illustrate with an example.
+</mark></p>
 <p><mark>
 Insert diagram here
 </mark></p>
@@ -368,11 +449,6 @@ Insert diagram here
 <!-- %\end{tikzpicture} -->
 <!-- % -->
 <!-- % -->
-
-<div class="theorem">
-<p><span id="thm:unnamed-chunk-7" class="theorem"><strong>Theorem 3.4  </strong></span>For any two events <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span>, such that <span class="math inline">\(B \subset A\)</span>, we have</p>
-<span class="math display">\[P(A) \geq P(B).\]</span>
-</div>
 
 <div class="proof">
  <span class="proof"><em>Proof. </em></span> Let us write
@@ -407,11 +483,11 @@ since <span class="math inline">\(P(A_1 \cap A_2) \geq 0\)</span> by definition.
 $
 P(A_1 A_2 ….A_n) = _{i=1}^{n}P(A_i),
 $
-as stated in ().
+as stated in <span class="citation">(<a href="#ref-ref" role="doc-biblioref"><strong>ref?</strong></a>)</span>{Eq: probuniondisj}).
 </div>
 
 <div class="theorem">
-<span id="thm:unnamed-chunk-10" class="theorem"><strong>Theorem 3.6  </strong></span>For any two events <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span> then
+<span id="thm:unnamed-chunk-6" class="theorem"><strong>Theorem 3.6  </strong></span>For any two events <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span> then
 <span class="math display">\[
 P(A \cup B) = P(A) + P(B) - P(A \cap B).
 \]</span>
@@ -432,31 +508,31 @@ P(A\cup B) &amp;=&amp; P(A) + P(A^c \cap B)  \\
 <p><img src="img/02_set_theory/Example1_GE.png" /></p>
 
 <div class="example">
-<p><span id="exm:rleI " class="example"><strong>(#exm:rleI ) (Real-life example I)  </strong></span></p>
+<p><span id="exm:rleI" class="example"><strong>Example 3.1  </strong></span></p>
 </div>
-<blockquote>
-<p>adapt example here</p>
-</blockquote>
+<p><mark>
+adapt example here
+</mark></p>
 </div>
 <div id="detecting-shoppers" class="section level3" number="3.3.2">
 <h3><span class="header-section-number">3.3.2</span> Detecting shoppers</h3>
 
 <div class="example">
-<p><span id="exm:rleII " class="example"><strong>(#exm:rleII ) (Real-life example II)  </strong></span></p>
-<p><img src="Example2_1.png" /></p>
-<p><img src="Example2_2.png" /></p>
-<p>[][width=0.95,height=0.7](Example2_3.png)</p>
-<p>[][width=0.9,height=0.5](Example2_4.png)</p>
+<span id="exm:unnamed-chunk-8" class="example"><strong>Example 3.2  (Real-life example II)  </strong></span>
 </div>
-<blockquote>
-<p>adapt example here</p>
-</blockquote>
+<p><img src="img/03_axioms/Example2_1.png" width="964" /></p>
+<p><img src="img/03_axioms/Example2_2.png" width="529" /></p>
+<p><img src="img/03_axioms/Example2_3.png" width="1050" /></p>
+<p><img src="img/03_axioms/Example2_4.png" width="990" /></p>
+<p><mark>
+adapt example here
+</mark></p>
 </div>
 <div id="de-morgans-law" class="section level3" number="3.3.3">
 <h3><span class="header-section-number">3.3.3</span> De Morgan’s Law</h3>
 
 <div class="example">
-<p><span id="exm:demorgan" class="example"><strong>Example 3.1  (De Morgan’s law)  </strong></span>Given <span class="math inline">\(P(A\cup B)=0.7\)</span> and <span class="math inline">\(P(A\cup {B}^c) = 0.9\)</span>, find <span class="math inline">\(P(A)\)</span>.</p>
+<p><span id="exm:demorganEx" class="example"><strong>Example 3.3  (Application of De Morgan’s laws)  </strong></span>Given <span class="math inline">\(P(A\cup B)=0.7\)</span> and <span class="math inline">\(P(A\cup {B}^c) = 0.9\)</span>, find <span class="math inline">\(P(A)\)</span>.</p>
 <p>By De Morgan’s law,</p>
 <p><span class="math display">\[P(A^c \cap B^c) = P((A\cup B )^c) = 1 - P(A\cup B) = 1 - 0.7 = 0.3\]</span></p>
 <p>and similarly:</p>
@@ -471,74 +547,84 @@ so
 <h3><span class="header-section-number">3.3.4</span> Probability, union, and complement</h3>
 
 <div class="example">
-<p><span id="exm:unnamed-chunk-12" class="example"><strong>Example 3.2  </strong></span></p>
-<p>John is taking two books along on his holiday vacation. With probability 0.5, he will like the first book; with probability 0.4, he will like the
+<p><span id="exm:unnamed-chunk-13" class="example"><strong>Example 3.4  </strong></span>
+John is taking two books along on his holiday vacation. With probability 0.5, he will like the first book; with probability 0.4, he will like the
 second book; and with probability 0.3, he will like both books. What is the probability that he likes neither book? \</p>
-<p>Let <span class="math inline">\(A_i\)</span> be the event that John likes book <span class="math inline">\(i\)</span>, for <span class="math inline">\(i=1,2\)</span>. Then the probability that he likes at least one book is (remember the short hand notation <span class="math inline">\(A_1 \cap A_2 = A_1 A_2\)</span>)
+Let <span class="math inline">\(A_i\)</span> be the event that John likes book <span class="math inline">\(i\)</span>, for <span class="math inline">\(i=1,2\)</span>. Then the probability that he likes at least one book is (remember the short hand notation <span class="math inline">\(A_1 \cap A_2 = A_1 A_2\)</span>)
 <span class="math display">\[\begin{eqnarray}
 P(\bigcup_{i=1}^2 A_i) &amp;=&amp; P(A_1 \cup A_2) = P(A_1) + P(A_2) - P(A_1A_2)  \\
 &amp;=&amp; 0.5 + 0.4 -0.3 =0.6. 
 \end{eqnarray}\]</span>
 Because the event the John likes neither books is the complement of the event that he likes at leas one of them (namely <span class="math inline">\(A_1 \cup A_2\)</span>), we have
-<span class="math display">\[
-P(A^{c}_1 \cap A^{c}_2 ) = P((A_1 \cup A_2)^c) = 1- P (A_1 \cup A_2) = 0.4.
-\]</span></p>
+<span class="math display">\[P(A^{c}_1 \cap A^{c}_2 ) = P((A_1 \cup A_2)^c) = 1- P (A_1 \cup A_2) = 0.4.\]</span>
 </div>
 
 <div class="example">
-<span id="exm:unnamed-chunk-13" class="example"><strong>Example 3.3  </strong></span># [Real-life example III]
-</div>
-
-<div class="example">
-<span id="exm:unnamed-chunk-14" class="example"><strong>Example 3.4  </strong></span># [cont’d]
-</div>
-<p>As a measure of uncertainty, the probability depends on the information available. \
-</p>
-
-<div class="example">
-<p><span id="exm:unnamed-chunk-15" class="example"><strong>Example 3.5  </strong></span>Suppose you have two dice and throw them; the possible outcomes are:</p>
-<p>[][width=0.9,height=0.35](c1.png)</p>
-</div>
-
-<div class="example">
-<p><span id="exm:unnamed-chunk-16" class="example"><strong>Example 3.6  </strong></span># [cont’d]
-Let us define <span class="math inline">\(A\)</span> = getting <span class="math inline">\(5\)</span>, or equivalently <span class="math inline">\(A=\{ 5\}\)</span>. What is <span class="math inline">\(P(A)\)</span>, namely, the probability of getting <span class="math inline">\(5\)</span>?</p>
-<p>[][width=0.9,height=0.35](c2.png)</p>
-</div>
-<pre class="{example}[cont&#39;d]"><code>The dice are fair so we can get 36 events with equal probability ${1}\big \slash{36}$. Namely:
-$$
-Pr(i,j) = \frac{1}{36}, \quad \text{for} \quad i,j=1,..,6
-$$
-Thus, we can make use of the blue guys as
-\begin{eqnarray}
-P(5) &amp;=&amp; Pr\left\{ (1,4) \cup (2,3) \cup (3,2) \cup  (4,1) \right\}  \\
-&amp;=&amp; Pr\left\{ (1,4)  \right\} +  Pr\left\{ (2,3)  \right\} +  Pr\left\{(3,2)  \right\} + Pr\left\{  (4,1) \right\}  \\
-&amp;=&amp; {1}\big \slash{36} + {1}\big \slash{36} + {1}\big \slash{36} + {1}\big \slash{36}  \\
-&amp;=&amp; {4}\big \slash{36}  \\
-&amp;=&amp; 1 \big \slash{9}. 
-\end{eqnarray}</code></pre>
-<pre class="{example}[cont&#39;d]"><code>Now, suppose that we throw the die first and e we get 2.\\
-\vspace{0.2cm}
-\color{black}\textbf{Q.} \color{black} What is the probability of getting 5 given that we have observed 2 in the first throw?
-
-
-![][width=1\textwidth,height=0.3\textheight](c4.png)
-
-\color{blue}\textbf{A.} \color{black}
-
-$\text{Pr}\{\text{getting 5 given 2 in the first throw}\}= \text{Pr}\{\text{getting 3 in the second throw}\}=1/6$
-</code></pre>
-
-<div class="remark">
- <span class="remark"><em>Remark. </em></span> 
+<p><span id="exm:unnamed-chunk-14" class="example"><strong>Example 3.5  </strong></span>
+# [Real-life example III]
+Let <span class="math inline">\(A\)</span> denote the event that the midtown temperature in Los Angeles (LA) is 70 F, and let <span class="math inline">\(B\)</span> denote the event that the midtown temperature in
+New York (NY) is 70 F. Also, let <span class="math inline">\(C\)</span> denote the event that the maximum of midtown temperatures in NY and LA is 70 F. If</p>
+<p><span class="math display">\[P(A)=0.3, \quad P(B)=0.4 \quad \text{and} \quad P(C)=0.2,\]</span></p>
+<p>find the probability that the minimum of the two midtown temperatures is 70 F.</p>
+Let <span class="math inline">\(D\)</span> denote the event that the minimum temperature is 70 F. Then
+<span class="math display">\[\begin{eqnarray}
+P(A\cup B) &amp;=&amp; P(A) + P(B) - P(AB) = 0.7 -P(AB)  \\
+P(C\cup D) &amp;=&amp; P(C) + P(D) - P(CD) = 0.2 -P(D) - P(DC). 
+\end{eqnarray}\]</span>
+Since <span class="math display">\[A\cup B = C \cup D \quad \text{and} \quad AB = CD,\]</span>
+subtracting one of the preceding equations from the other we get
+<span class="math display">\[\begin{eqnarray*}
+P(A\cup B)-P(C\cup D)  &amp; = &amp;  0.7 -P(AB) - [0.2 -P(D) - P(DC)] \\
+&amp;  = &amp; 0.5 -P(D) = 0 , \\
+\end{eqnarray*}\]</span>
+thus $ P(D) =0.5.$
 </div>
 </div>
 </div>
 <div id="conditional-probability" class="section level2" number="3.4">
 <h2><span class="header-section-number">3.4</span> Conditional probability</h2>
+<p>As a measure of uncertainty, the probability depends on the information available.</p>
+
+<div class="example">
+<span id="exm:unnamed-chunk-15" class="example"><strong>Example 3.6  </strong></span>Suppose you have two dice and throw them; the possible outcomes are:
+</div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="axioms.html#cb1-1" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">include_graphics</span>(<span class="st">&quot;img/03_axioms/c1.png&quot;</span>)</span></code></pre></div>
+<p><img src="img/03_axioms/c1.png" width="643" /></p>
+<p>Let us define <span class="math inline">\(A\)</span> = getting <span class="math inline">\(5\)</span>, or equivalently <span class="math inline">\(A=\{ 5\}\)</span>. What is <span class="math inline">\(P(A)\)</span>, namely, the probability of getting <span class="math inline">\(5\)</span>?</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="axioms.html#cb2-1" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">include_graphics</span>(<span class="st">&quot;img/03_axioms/c2.png&quot;</span>)</span></code></pre></div>
+<p><img src="img/03_axioms/c2.png" width="644" /></p>
+<p>The dice are fair so we can get 36 events with equal probability <span class="math inline">\({1}/{36}\)</span>. Namely:
+<span class="math display">\[Pr(i,j) = \frac{1}{36}, \quad \text{for} \quad i,j=1,..,6\]</span>
+Thus, we can make use of the blue guys as
+<span class="math display">\[\begin{eqnarray}
+P(5) &amp;=&amp; Pr\left\{ (1,4) \cup (2,3) \cup (3,2) \cup  (4,1) \right\}  \\
+&amp;=&amp; Pr\left\{ (1,4)  \right\} +  Pr\left\{ (2,3)  \right\} +  Pr\left\{(3,2)  \right\} + Pr\left\{  (4,1) \right\}  \\
+&amp;=&amp; {1} \slash{36} + {1} \slash{36} + {1} \slash{36} + {1} \slash{36}  \\
+&amp;=&amp; {4} \slash{36}  \\
+&amp;=&amp; 1  \slash{9}. 
+\end{eqnarray}\]</span></p>
+<p>Now, suppose that we throw the die first and e we get 2.\
+
+  What is the probability of getting 5 given that we have observed 2 in the first throw?</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="axioms.html#cb3-1" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">include_graphics</span>(<span class="st">&quot;img/03_axioms/c4.png&quot;</span>)</span></code></pre></div>
+<p><img src="img/03_axioms/c4.png" width="644" /></p>
+<p> </p>
+<p><span class="math inline">\(\text{Pr}\{\text{getting 5 given 2 in the first throw}\}= \text{Pr}\{\text{getting 3 in the second throw}\}=1/6\)</span></p>
+
+<div class="remark">
+ <span class="remark"><em>Remark. </em></span> 
+</div>
+<ul>
+<li>Information changes the probability</li>
+<li>By knowing that we got 2 in the first throw, we have changed the sample space:</li>
+</ul>
+<p><img src="img/03_axioms/c3.png" width="646" /></p>
+<ul>
+<li>Probability can change drastically — e.g., suppose that in our example we have 6 in the first throw <span class="math inline">\(\Rightarrow\)</span> the probability of observing 5 in two draws … is zero !!!</li>
+</ul>
 
 <div class="definition">
-<span id="def:unnamed-chunk-18" class="definition"><strong>Definition 3.2  </strong></span>Let <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span> be two events. The conditional probability of event <span class="math inline">\(A\)</span>
+<span id="def:unnamed-chunk-21" class="definition"><strong>Definition 3.2  </strong></span>Let <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span> be two events. The conditional probability of event <span class="math inline">\(A\)</span>
 given event <span class="math inline">\(B\)</span>, denoted by <span class="math inline">\(P\left(A\vert B\right)\)</span>, is defined by:
 <span class="math display">\[
 P\left(A\vert B\right) = \frac{P(A \cap B)}{P(B)}, \quad \text{if} \quad P(B) &gt;0,
@@ -547,30 +633,30 @@ and it is left undefined if <span class="math inline">\(P(B)=0\)</span>.
 </div>
 <div id="a-check" class="section level3" number="3.4.1">
 <h3><span class="header-section-number">3.4.1</span> A check</h3>
-<p><img src="/img/03_axioms/c3.png" /></p>
+<p><img src="img/03_axioms/c3.png" width="646" /></p>
 
 <div class="example">
-<p><span id="exm:unnamed-chunk-19" class="example"><strong>Example 3.7  </strong></span>Let us define the set <span class="math inline">\(B\)</span> as:</p>
+<p><span id="exm:unnamed-chunk-23" class="example"><strong>Example 3.7  </strong></span>Let us define the set <span class="math inline">\(B\)</span> as:</p>
 <p>So we have</p>
 <p><span class="math display">\[\begin{eqnarray}
 P(B) &amp;=&amp; Pr\left\{ (2,1) \cup (2,2) \cup (2,3) \cup (2,4) \cup (2,5) \cup (2,6)     \right\}  \\
  &amp;=&amp;  Pr(2,1) + Pr(2,2) + Pr(2,3) + Pr(2,4) + Pr(2,5) + Pr(2,6)  \\
  &amp;=&amp; 6/36 =1/6 
 \end{eqnarray}\]</span></p>
-<p>and consider <span class="math inline">\(A \cap B\)</span></p>
-<p>[][width=0.9,height=0.4](c4.png)</p>
-So we have <span class="math inline">\(P(A \cap B) = Pr (2,3) = 1/36\)</span> so,
+and consider <span class="math inline">\(A \cap B\)</span>
+</div>
+<p><img src="img/03_axioms/c4.png" width="644" /></p>
+<p>So we have <span class="math inline">\(P(A \cap B) = Pr (2,3) = 1/36\)</span> so,
 <span class="math display">\[
 P(A\vert B) = \frac{P(A \cap B)}{P(B)}  =  \frac{1/36}{1/6} = \frac{1}{6}. 
-\]</span>
-</div>
+\]</span></p>
 </div>
 </div>
 <div id="independence" class="section level2" number="3.5">
 <h2><span class="header-section-number">3.5</span> Independence</h2>
 
 <div class="definition">
-<span id="def:unnamed-chunk-20" class="definition"><strong>Definition 3.3  </strong></span>Two events <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span> are independent if the occurrence of one event has no effect on the probability of occurrence of the other event. Thus,
+<span id="def:unnamed-chunk-25" class="definition"><strong>Definition 3.3  </strong></span>Two events <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span> are independent if the occurrence of one event has no effect on the probability of occurrence of the other event. Thus,
 <span class="math display">\[P(A\vert B) = P(A)\]</span>
 or equivalently
 <span class="math display">\[P(B\vert A) = P(B)\]</span>
@@ -588,14 +674,15 @@ and rearranging the terms, we find that two events are independent iif
 <span class="math display">\[P(A\cap B) = P(A) P(B).\]</span></p>
 
 <div class="example">
-<p><span id="exm:unnamed-chunk-21" class="example"><strong>Example 3.8  </strong></span></p>
-<p>[][width=0.9,height=0.7](example7.png)</p>
+<span id="exm:unnamed-chunk-26" class="example"><strong>Example 3.8  </strong></span>
 </div>
-<pre class="{example}[cont&#39;d]"><code>
-
-![][width=0.9\textwidth,height=0.6\textheight](example8.png)
-
-</code></pre>
+<div class="figure"><span id="fig:unnamed-chunk-27"></span>
+<img src="img/03_axioms/example7.png" alt="things" width="951" />
+<p class="caption">
+Figure 3.1: things
+</p>
+</div>
+<p><img src="img/03_axioms/example8.png" width="936" /></p>
 </div>
 </div>
 <div id="theorem-i" class="section level2" number="3.6">
@@ -604,9 +691,9 @@ and rearranging the terms, we find that two events are independent iif
 <div class="theorem">
 <span id="thm:totalprob" class="theorem"><strong>Theorem 3.7  (Theorem of total probabilities)  </strong></span>Let <span class="math inline">\(B_1,B_2,...,B_k,...,B_n\)</span> be mutually disjoint events, satisfying
 <span class="math inline">\(S=\cup_{i=1}^{n} B_i,\)</span> and <span class="math inline">\(P(B_i)&gt;0\)</span>, for every <span class="math inline">\(i=1,2,...,n\)</span> then for every <span class="math inline">\(A\)</span> we have that:
-<span class="math display">\[\begin{equation}
-\label{TP}
+<span class="math display" id="eq:TP">\[\begin{equation}
 P(A)=\sum_{i=1}^n P(A\vert B_i) P(B_i).
+\tag{3.5}
 \end{equation}\]</span>
 </div>
 
@@ -616,14 +703,16 @@ P(A)=\sum_{i=1}^n P(A\vert B_i) P(B_i).
 P(A)=P\left(  \cup_{i=1}^{n} (A\cap B_i)  \right)=\sum_{i=1}^n P\left( A\cap B_i  \right ) =\sum_{i=1}^n P(A\vert B_i) P(B_i).
 \end{equation*}\]</span>
 </div>
-<p>. The theorem remains valid even if <span class="math inline">\(n=\infty\)</span> in Eq. (). (Double check, and re-do the proof using <span class="math inline">\(n=\infty\)</span>.)</p>
+
+<div class="remark">
+ <span class="remark"><em>Remark. </em></span> The theorem remains valid even if <span class="math inline">\(n=\infty\)</span> in Eq. <a href="axioms.html#eq:TP">(3.5)</a>. (Double check, and re-do the proof using <span class="math inline">\(n=\infty\)</span>.)
+</div>
 
 <div class="corollary">
-<p><span id="cor:unnamed-chunk-23" class="corollary"><strong>Corollary 3.1  </strong></span>%For a given probability space <span class="math inline">\((S,\mathcal{B},P)\)</span>, let <span class="math inline">\(B\in \cal{B}\)</span> satisfy <span class="math inline">\(0&lt;P(B)&lt;1\)</span>; then for every <span class="math inline">\(A\in \cal{B}\)</span>:
-Let <span class="math inline">\(B\)</span> satisfy <span class="math inline">\(0&lt;P(B)&lt;1\)</span>; then for every event <span class="math inline">\(A\)</span>:</p>
-<p><span class="math display">\[\begin{equation*}
+<p><span id="cor:unnamed-chunk-31" class="corollary"><strong>Corollary 3.1  </strong></span>Let <span class="math inline">\(B\)</span> satisfy <span class="math inline">\(0&lt;P(B)&lt;1\)</span>; then for every event <span class="math inline">\(A\)</span>:</p>
+<span class="math display">\[\begin{equation*}
 P(A)=P(A\vert B)P(B)+P(A\vert B^c) P(B^c)
-\end{equation*}\]</span></p>
+\end{equation*}\]</span>
 </div>
 
 <div class="proof">
@@ -638,9 +727,9 @@ P(A)=P(A\vert B)P(B)+P(A\vert B^c) P(B^c)
 <span id="thm:bayes" class="theorem"><strong>Theorem 3.8  (Bayes’ Theorem)  </strong></span>Let <span class="math inline">\(B_1,B_2,...,B_k,...,B_n\)</span> be mutually disjoint events, satisfying
 <span class="math display">\[S=\cup_{i=1}^{n} B_i,\]</span> and <span class="math inline">\(P(B_i)&gt;0,\)</span>
 for every <span class="math inline">\(i=1,2,...,n\)</span>. Then for every event <span class="math inline">\(A\)</span> for which <span class="math inline">\(P(A)&gt;0\)</span>, we have that
-<span class="math display">\[\begin{equation}
-\label{Bayes}
+<span class="math display" id="eq:Bayes">\[\begin{equation}
 P(B_k\vert A)=\frac{P(A\vert B_k)P(B_k)}{\sum_{i=1}^n P(A\vert B_i) P(B_i)}.
+\tag{3.6}
 \end{equation}\]</span>
 </div>
 
@@ -655,46 +744,35 @@ That concludes the proof.
 </div>
 
 <div class="example">
-<p><span id="exm:unnamed-chunk-26" class="example"><strong>Example 3.9  </strong></span>Let us consider a special case, where we have only two events <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span>.</p>
-<p>[][width=0.9,height=0.55](example10.png)</p>
-<p>… so thanks to Bayes’ Theorem we can reverse the role of <span class="math inline">\(A\vert B\)</span> and <span class="math inline">\(B \vert A\)</span>.</p>
+<span id="exm:unnamed-chunk-34" class="example"><strong>Example 3.9  </strong></span>Let us consider a special case, where we have only two events <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span>.
 </div>
-<!-- % -->
-<!-- % -->
-<!-- %\frametitle{A real-life example} -->
-<!-- %```{example} -->
-<!-- % -->
-<!-- % -->
-<!-- %![][width=0.9\textwidth,height=0.55\textheight](example9.png) -->
-<!-- % -->
-<!-- %``` -->
-<!-- %\begin{aim} -->
-<!-- %We know something about $P(B\vert A)$ and we have to say something about $P(A\vert B)$ $\Rightarrow$ Bayes' theorem!! -->
-<!-- %\end{aim} -->
-<!-- % -->
-<!-- % -->
-<!-- % -->
+<p><img src="img/03_axioms/example10.png" width="947" /></p>
+<p>… so thanks to Bayes’ Theorem we can reverse the role of <span class="math inline">\(A\vert B\)</span> and <span class="math inline">\(B \vert A\)</span>.</p>
 <div id="guessing-in-a-multiple-choice-exam" class="section level3" number="3.7.1">
 <h3><span class="header-section-number">3.7.1</span> Guessing in a multiple choice exam</h3>
 
 <div class="example">
-<p><span id="exm:unnamed-chunk-27" class="example"><strong>Example 3.10  </strong></span></p>
-<p>[][width=0.7,height=0.65](Ross_Ex.png)</p>
+<span id="exm:unnamed-chunk-36" class="example"><strong>Example 3.10  </strong></span>
 </div>
+<p><img src="img/03_axioms/Ross_Ex.png" width="468" /></p>
 </div>
 <div id="rent-car-maintenance" class="section level3" number="3.7.2">
 <h3><span class="header-section-number">3.7.2</span> Rent car maintenance</h3>
 
 <div class="example">
-<span id="exm:unnamed-chunk-28" class="example"><strong>Example 3.11  </strong></span>
-Now consider that
+<p><span id="exm:unnamed-chunk-38" class="example"><strong>Example 3.11  </strong></span>
+- 60% from AVIS
+- 40% from Mobility</p>
+<p>Now consider that</p>
+<ul>
+<li>9% of the cars from AVIS need a tune-up</li>
+<li>20% of the cars from Mobility need a tune-up</li>
+</ul>
 If a car delivered to the consulting firm needs a tune-up, what is the probability that the care came
-from AVIS? 
+from AVIS?
 </div>
-<pre class="{example}[cont&#39;d]"><code>
-
-![](example9b.png)
-</code></pre>
+<p>Let us set: <span class="math inline">\(A:=\{\text{car rented from AVIS}\}\)</span> and <span class="math inline">\(B:=\{\text{car needs a tune-up}\}\)</span>. We know <span class="math inline">\(P(B\vert A)\)</span> and we look for <span class="math inline">\(P(A\vert B)\)</span> <span class="math inline">\(\Rightarrow\)</span> Bayes’ theorem!!</p>
+<p><img src="img/03_axioms/example9b.png" width="945" /></p>
 
 </div>
 </div>

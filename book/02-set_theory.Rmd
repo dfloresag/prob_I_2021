@@ -70,29 +70,34 @@ If a set $A$ contains no points, it will be called the **null set**, or **empty 
 
 ## The Venn diagram
 
-```{r, echo = FALSE, fig.align='center', fig.cap="source: [Tenso Graphics](https://cargocollective.com/tensographics)"}
+```{r, echo = FALSE, fig.align='center', fig.cap="_The beaverduck_ source: [Tenso Graphics](https://cargocollective.com/tensographics)"}
 knitr::include_graphics("img/fun/R9mJR.jpeg")
 ```
 
-The Venn diagram is an elementary schematic representation of sets and helps displaying their properties. As you might remember from your elementary classes, a Venn diagram represents a set with a closed figure, and its elements with some dots. To be even more abstract, most of the times, the dots are scraped and it is assumed that the set elements are in the surface contained by the figure. They are very useful to illustrate inclusion and equality as well as more abstract  notions. 
+The Venn diagram is an elementary schematic representation of sets and helps displaying their properties. As you might remember from your elementary mathematics classes, a Venn diagram represents a set with a closed figure and it is assumed that the set elements are in the surface contained by the figure. They are very useful to illustrate inclusion and equality as well as more abstract notions. 
 
-- <mark>A generic Venn Diagram of inclusion and equality</mark>
+```{r, echo = FALSE, fig.align='center', fig.cap="Inclusion and Equality of sets with Venn Diagrams"}
+knitr::include_graphics("img/02_set_theory/charts/charts.001.png")
+```
 
 ### Sample Space and Events
 
-By definition, an event or several events, constitute subset of the sample space. This can be represented in a Venn Diagram with a figure enclosed within the Sample Space. 
+By definition, an event or several events, constitute a subset of the sample space. This can be represented in a Venn Diagram with a figure enclosed within the Sample Space. 
 
-```{r, echo = FALSE, fig.align='center', fig.cap="source: [Tenso Graphics](https://cargocollective.com/tensographics)"}
-knitr::include_graphics("img/02_set_theory/Venn1.png")
+```{r, echo = FALSE, fig.align='center', fig.cap="An event within the Sample Space with Venn Diagrams"}
+knitr::include_graphics("img/02_set_theory/charts/charts.002.png")
 ```
 
 ### Exclusive and Non-Exclusive Events
 
-Two events are mutually exclusive is they cannot occur jointly. This is represented by two separate enclosed surfaces within the sample space. For illustration, consider our simple card game example. The event "drawing a **King**" and "drawing a **Queen**" are mutually exclusive, as they can't happen at the same time. 
+Two events are mutually exclusive is they cannot occur jointly. This is represented by two separate enclosed surfaces within the sample space. 
 
 ```{r, echo = FALSE, fig.align='center', fig.cap='Two mutually exclusive events'}
-knitr::include_graphics("img/02_set_theory/Venn2.png")
+knitr::include_graphics("img/02_set_theory/charts/charts.003.png")
 ```
+
+
+For illustration, consider our simple card game example. The event "drawing a **King**" and "drawing a **Queen**" are mutually exclusive, as they can't happen at the same time. 
 
 <mark>
   chart: Events of King and Queen
@@ -100,7 +105,7 @@ knitr::include_graphics("img/02_set_theory/Venn2.png")
 
 Events that are not mutually exclusive have a shared area, which in set theory constitutes an **intersection** and gets shown in a Venn diagram by two <mark>colliding</mark> figures. Coming back to our example with the card game, consider the events "drawing a **King**" and "drawing a **Heart**". Here there is intersection, as one can obtain a **King of Hearts**. 
 ```{r, echo = FALSE, fig.align='center', fig.cap='Two Non-mutually exclusive events'}
-knitr::include_graphics("img/02_set_theory/Venn3.png")
+knitr::include_graphics("img/02_set_theory/charts/charts.004.png")
 ```
 
 <mark>
@@ -115,32 +120,8 @@ The **union** of the events $A$ and $B$ is the event which occurs when either $A
   Insert chart union
 </mark>
 
-<!-- \def\firstcircle{(0,0) circle (1.5cm)} -->
-<!-- \def\secondcircle{(45:2cm) circle (1.5cm)} -->
-<!-- \begin{tikzpicture} -->
-<!--     \begin{scope}[shift={(6cm,5cm)}, fill opacity=0.65] -->
-<!--         \fill[blue!20] \firstcircle; -->
-<!--         \fill[blue!20] \secondcircle; -->
-<!--         \draw \firstcircle node[below] {$A$}; -->
-<!--         \draw \secondcircle node [above] {$B$}; -->
-<!-- <!-- %        \draw node [above] {$A \cup B$} --> -->
-<!--     \end{scope} -->
-<!-- \end{tikzpicture} -->
-
 
 The **intersection** of the events $A$ and $B$ is the event which occurs when both $A$ and $B$ occur: $A \cap B$. In a Venn diagram, we can illustrate this by shading the area shared by both sets. 
-
-<!-- \def\firstcircle{(0,0) circle (1.5cm)} -->
-<!-- \def\secondcircle{(45:2cm) circle (1.5cm)} -->
-<!-- \begin{tikzpicture} -->
-<!--     \begin{scope}[shift={(6cm,5cm)}, fill opacity=0.65] -->
-<!--     \draw \firstcircle node[below] {$A$}; -->
-<!--     \draw \secondcircle node [above] {$B$}; -->
-
-<!--       \clip \firstcircle; -->
-<!--       \fill[blue!20] \secondcircle; -->
-<!--     \end{scope} -->
-<!-- \end{tikzpicture} -->
 
 <mark>
   Insert chart intersection
@@ -148,7 +129,7 @@ The **intersection** of the events $A$ and $B$ is the event which occurs when bo
 
 ### Complement
 
-The complement of an event $A$ is the event which occurs when $A$ does not occur: $A^{c}$ (or $\overline{A}$). A Venn diagram illustrates this by shading the area outside the set. 
+The **complement** of an event $A$ is the event which occurs when $A$ does not occur: $A^{c}$ (or $\overline{A}$). A Venn diagram illustrates this by shading the area outside the set. 
 
 ```{r, echo = FALSE, fig.align='center', fig.cap="source: [Tenso Graphics](https://cargocollective.com/tensographics)"}
 knitr::include_graphics("img/02_set_theory/Venn6.png")
@@ -314,7 +295,7 @@ and using the definitions of $A$ and $B$ compute:
 <!-- \item $B \cup A^c$ -->
 <!-- %\item $C^c$ -->
 
-```{proposition}
+```{proposition, propertiesUnionIntersection}
 Let $A$ be a set in $S$ and let $\varnothing$ denote the empty set^[A set is called empty if it contains no elements.]. The following relations hold:
 
 
@@ -329,10 +310,10 @@ Let $A$ be a set in $S$ and let $\varnothing$ denote the empty set^[A set is cal
 ```
 
 ```{exercise}
-Use Venn Diagrams to illustarte these relationships
+Use Venn Diagrams to illustrate these relationships
 ```
 
-The above relations are helpful to define some other relations between sets/events. 
+The identities in the proposition <mark>insert tag</mark> are helpful to define some other relations between sets/events. 
 
 ```{example}
 Let $A$ and $B$ be two sets in $S$. Then we have:
@@ -352,9 +333,11 @@ That concludes the argument.
 
 ## De Morgan's Laws: 
 
+Operations of union and intersection of sets have interesting interactions with complementarity. These properties are formulated under the name of **De Morgan's laws**. We will formulate them for two sets $A$ and $B$ be two sets in $S$, but you should keep in mind that they can be generalized for an infinite amount of sets. 
+
 ### First Law
 
-Let $A$ and $B$ be two sets in $S$. Then:
+Let $A$ and $B$ be two sets in $S$, then
 \begin{eqnarray}
 (A\cap B)^{c} =A^c \cup B^c,
 \end{eqnarray}
@@ -364,12 +347,22 @@ where:
 - Left hand side: $(A\cap B)^{c}$ represents the **set of all elements that are not both $A$ and $B$**; 
 - Right hand side: $A^c \cup B^c$ represents all elements that are not $A$ (namely they are $A^c$) and not $B$ either (namely they are $B^c$) $\Rightarrow$ **set of all elements that are not both $A$ and $B$**.
 
+Put in words, the firs law says that 
+
+> the complement of the intersection between two sets is the union of their complements. 
+
+It is easy to see this graphically using Venn Diagrams
+
+<mark>
+  insert graph
+</mark>
+
 ### Second Law 
 
 Let $A$ and $B$ be two sets in $S$. Then:
 
 \begin{eqnarray}
-(A\cup B)^{c} =A^c \cap B^c,  \nn
+(A\cup B)^{c} =A^c \cap B^c,
 \end{eqnarray}
 
 where: 
@@ -377,31 +370,48 @@ where:
 - Left hand side: $(A\cup B)^{c}$ represents the **set of all elements that are neither $A$ nor $B$**; 
 - Right hand side:$\color{blue}{A^c \cap B^c}$  represents the intersection of all elements that are not $A$ (namely they are $A^c$) and not $B$ either (namely they are $B^c$) $\Rightarrow$ **set of all elements that are neither $A$ nor $B$**.
 
+Put in words, this law says that 
+
+> the complement of the union between two sets is the intersection of their complements. 
+
+Once again, it is easy to see this graphically
+
+<mark>
+  insert chart.
+</mark>
+
 ## De Morgan's Theorem
 
-We can extend these laws to three sets. Let us consider three sets $A_{1}$, $A_{2}$ and $A_{3}$. 
+We can extend these laws to three sets. Let us consider three sets $A_{1}$, $A_{2}$ and $A_{3}$ in $S$. 
 
-(i)
-\begin{eqnarray}
-(A_{1} \cup B )\overline{\bigcup_{i \in \mathbb{N}} A_i} &=& \bigcap_{i \in \mathbb{N}} \overline{A}_i;
-\end{eqnarray}
+(i) **First law**:
+$$\overline{\left(A_{1}\cup A_{2}\cup A_{3}\right)} = \overline{A_{1}} \cap \overline{A_{2}} \cap \overline{A_{3}}$$
 
-(ii) 
-\begin{eqnarray}
-\overline{\bigcap_{i \in \mathbb{N}} A_i} &=& \bigcup_{i \in \mathbb{N}} \overline{A}_i.
-\end{eqnarray}
 
-unions and intersections of many (countable) sets. So, we state the general results:
+(ii) **Second Law**:
+$$\overline{\left(A_{1}\cap A_{2}\cap A_{3}\right)} = \overline{A_{1}} \cup \overline{A_{2}} \cup \overline{A_{3}}$$
+
+```{exercise}
+Show this using diagrams. 
+```
+
+More generally, this can be extended to the union of an infinite amount of sets in a theorem that we present without demonstration. Consider the following notation for the union of an infinity of sets :
+
+$$\bigcup_{i \in \mathbb{N}} A_{i} = A_{1} \cup A_{2} \cup A_{3} \cup \dots $$ 
+
+and the intersection of an infinite but countable amount of sets 
+
+$$\bigcap_{i \in \mathbb{N}} A_{i} = A_{1} \cap A_{2} \cap A_{3} \cap \dots$$
 
 ```{theorem, deMorgan, name = "De Morgan's Theorem"} 
 Let $\mathbb{N}$ be the set of natural number and $\{A_{i}\}$ a collection (indexed by $i \in \mathbb{N}$) of subsets of $S$. Then:
 
-(i)
+(i) the complement of the union of all $A_i$ is the intersection of their complements.
 \begin{eqnarray}
 \overline{\bigcup_{i \in \mathbb{N}} A_i} &=& \bigcap_{i \in \mathbb{N}} \overline{A}_i;
 \end{eqnarray}
 
-(ii) 
+(ii) the complement of the intersection of all $A_i$ is the union of their complements. 
 \begin{eqnarray}
 \overline{\bigcap_{i \in \mathbb{N}} A_i} &=& \bigcup_{i \in \mathbb{N}} \overline{A}_i.
 \end{eqnarray}
@@ -426,18 +436,16 @@ Let $\mathbb{N}$ be the set of natural number and $\{A_{i}\}$ a collection (inde
 
 ## Back to the events
 
-**Our primary interest** will be not in events per se, but it will be in the _probability that an event does or does not happen_.
+When assessing any experiment with an uncertain outcome the, **primary interest** is not necessarily in the events themselves, as they may or may not happen) but in the _probability that an event does or does not happen_.
 
-
-Intuitively,  the probability of an event is the number  associated to the event:
+Intuitively, the probability of an event is a **value** associated with the event:
 $$\text{event} \rightarrow \text{pr(event)}$$
-such that:
+and it is such that:
 
 1. the probability is positive or more generally non-negative (it can be zero);
-1. the $\text{pr}(S)=1$ (remember, $S$ is the sample space) and $\text{pr}(\varnothing)=0$;
+1. the $\text{pr}(S)=1$, where $S$ is the sample space and $\text{pr}(\varnothing)=0$;
 1. the probability of two (or more) mutually exclusive events is the sum of the probabilities of each event.
 
-In many experiments, it is natural to assume that all outcomes in the sample space ($S$) are equally likely to occur. That is, consider an experiment whose sample space is a finite set, say, $S=\{1,2,3,...N\}$. Then, it is often natural to assume that
 $$P(\{1\})=P(\{2\})=...=P(\{N\})$$
 or equivalently $P(\{i\})= 1/N$, for $i=1,2,...,N$. 
 
@@ -445,7 +453,7 @@ Now, if we define a composite event $A$, there exist $N_A$ realizations having t
 
 $$\boxed{P(A)=\frac{N_A}{N}=\frac{\mbox{# of favorable outcomes}}{\mbox{total # of outcomes}}=\frac{\mbox{# of outcomes in $A$}}{\mbox{# of outcomes in $S$}}}$$
 
-where the notation $# $ means "number".
+where the '$\#$' stands for "number".
 
 ```{example}
 
@@ -471,11 +479,10 @@ $$P(A)=\frac{N_A}{N} = \frac{\mbox{3 favorable outcomes}}{\mbox{6 total outcomes
 <!-- # %Thus, we conclude that -->
 
 
-Building on the intuition gained in the last example (see boxed formula), we state a first \color{blue} informal  definition 
-of probability. Specifically, one way of defining the probability of an event is in terms of \textit{relative frequency}.
+Building on the intuition gained in the last example (see boxed formula), we state a first **informal** definition 
+of probability. Specifically, one way of defining the probability of an event is in terms of **relative frequency**.
 
-```{definition}
-# [Informal]
+```{definition, informalProbability, name = "Informal definition of probability"}
 Suppose that an experiment, whose sample space is $S$, is repeatedly performed under exactly the same conditions. For each event, say $A$, of the sample space, we define $n(A)$ to be the number of times in the first $n$ repetitions of the experiment that the event $A$ occurs. Then, $P(A)$, namely the probability of the event $A$, is defined as:
 $$
 P(A)=\lim_{n \to \infty} \frac{n(A)}{n},
@@ -487,102 +494,32 @@ that is $P(A)$ is defined as the limiting proportion/frequency of time that $A$ 
 
 ```{example}
 # [Tossing a well-balanced coin]
-In tossing a well-balanced coin, there are 2 mutually exclusive equiprobrable outcomes: H and T. Let $A$
-be the event of head (H). Since the coin is fair, we have $P(A)=1/2$. To confirm this intuition/conjecture we can toss the coin a large number of times (each under identical conditions) and count the times we have H. Let $n$ be the \textbf{total \# of repetitions} while $n(A)$ is the \textbf{\# of times in which we observe $A$}. Then, the relative frequency:
-$$
-\lim_{n \to \infty} \frac{n(A)}{n},
-$$ 
-converges to $P(A)$. So,
-$$
-P(A) \sim \frac{n(A)}{n}, \quad \text{for large $n$}.
-$$
+In tossing a well-balanced coin, there are 2 mutually exclusive equiprobrable outcomes: "Heads" $H$ and "Tails" $T$. Let $A$ be the event of $H$. Since the coin is fair, we have $P(A)=1/2$. To confirm this intuition/conjecture we can toss the coin a large number of times (each under identical conditions) and count the times we spot $H$. 
 
-\begin{figure}[h!]
-\centering               
-\includegraphics[width=0.7\textwidth,height=0.7\textheight]{roz.pdf}
-\end{figure}
+Let $n$ be the **total number of repetitions** while $n(A)$ is the **number of times in which we observe $A$**. Then, the relative frequency:
+$$\lim_{n \to \infty} \frac{n(A)}{n},$$ 
+_converges_ to $P(A)$. So,
+$$P(A) \sim \frac{n(A)}{n}, \quad \text{for large $n$}.$$
 ```
 
-<!-- % -->
-<!-- % -->
-<!-- %\frametitle{Back to the events} -->
-<!-- % -->
-<!-- %Clearly,  -->
-<!-- %$$0 \leq n(A) \leq n, \quad \text{so} \quad  0 \leq P(A) \leq 1.$$  -->
-<!-- %Thus, we say that  \color{blue} the probability is a set function (it is defined on sets) and it associates to each set/event a number between zero and one.  -->
-<!-- %  -->
-<!-- % -->
-<!-- %\vspace{0.5cm} -->
-<!-- % -->
-<!-- %Now, let us recall that a real-valued function is a mapping from $D_f$ to $\mathbb{R}$ and we write: -->
-<!-- %$$ -->
-<!-- %f \quad : \quad D_f \to \mathbb{R},   -->
-<!-- %$$ -->
-<!-- %where $D_f$ is the domain of $f$ and $\mathbb{R}$ is the range. \\ -->
-<!-- % -->
-<!-- %\vspace{0.5cm} -->
-<!-- % -->
-<!-- %\color{red} \textbf{Q.}  In the case of the (function) probability, we already know that the range is $[0,1]$, but what about $D_f$?  -->
-<!-- % -->
-<!-- % -->
-<!-- % -->
-<!-- % -->
-<!-- % -->
-<!-- % -->
-<!-- %\frametitle{Back to the events} -->
-<!-- % -->
-<!-- %To define $D_f$ for -->
-<!-- %the probability, we have to rely on the set theory --- indeed $D_f$ has to be related to sets/events. To this end, -->
-<!-- %%\vspace{0.3cm} -->
-<!-- %```{definition} [$\sigma$-algebra] -->
-<!-- %The $\sigma$-algebra $\mathcal{B}$ generated by the sample space $S$ is defined as the collection of all subsets of $S$ satisfying: -->
-<!-- %\begin{enumerate} -->
-<!-- %\item[(i)] $S \in \mathcal{B}$; -->
-<!-- %\item[(ii)] if $A \in \mathcal{B}$, then $A^c \in \mathcal{B}$; -->
-<!-- %\item[(iii)] if $A_1 \in \mathcal{B}$ and $A_2 \in \mathcal{B}$, then $A_1 \cup A_2 \in \mathcal{B}$. More generally, for a collection of events $\{A_i\}$, with $i \in \mathbb{N}$, we have -->
-<!-- %\begin{eqnarray} -->
-<!-- %A = \bigcup_{i \in \mathbb{N}} A_i \text{ \ is such that \ }  A \in \mathcal{B}. \nn -->
-<!-- %\end{eqnarray} -->
-<!-- % -->
-<!-- %\end{enumerate} -->
-<!-- %``` -->
-<!-- % -->
-<!-- %Thus,  we will have that  -->
-<!-- %$$ -->
-<!-- %\boxed{P \quad : \quad \mathcal{B} \to [0,1]. }  -->
-<!-- %$$ -->
-<!-- % -->
-<!-- % -->
-<!-- % -->
-<!-- % -->
-<!-- % -->
-<!-- %\frametitle{Back to the events} -->
-<!-- % -->
-<!-- %%In this way, we define the domain of the probability. Then,  -->
-<!-- %To provide a formal definition of probability, we will make use of $\mathcal{B}$ and we will need to impose some additional conditions (that we are going to call \textit{axioms}). \\ -->
-<!-- %\vspace{0.5cm} -->
-<!-- %We here briefly state the ideas, then we will formalize them: \\  -->
-<!-- %\vspace{0.3cm} -->
-<!-- %(i) When we define the probability we would want the have a domain (namely $\mathcal{B}$) such that it includes the  -->
-<!-- %sample space $S$, and $P(S)=1$. \\ \vspace{0.1cm} -->
-<!-- %(ii)  Moreover, for the sake of completeness, if $A$ is an event and we can talk about the probability that $A$ happens, then it is  -->
-<!-- %suitable for us that $A^c$ is also an event in $\mathcal{B}$, so that we can talk about the probability that $A$ does not happen. \\ \vspace{0.1cm}  -->
-<!-- %(iii) Similarly, if  -->
-<!-- %$A_1$ and $A_2$ are two events (so we can say something about their probability of happening), so we should be able to say something about the probability of the event $A_1 \cup A_2$.   -->
-<!-- % -->
-<!-- % -->
-<!-- % -->
 
-Clearly, 
-$$0 \leq n(A) \leq n, \quad \text{so} \quad  0 \leq P(A) \leq 1.$$ 
-Thus, we say that  \color{blue} the probability is a set function (it is defined on sets) and it associates to each set/event a number between zero and one. 
- 
+```{r, echo = FALSE}
+knitr::include_graphics("img/02_set_theory/roz.png")
+```
 
+<mark>
+  This could be transformed into a shiny app!
+</mark>
 
-
+Clearly, $$0 \leq n(A) \leq n, \quad \text{so} \quad  0 \leq P(A) \leq 1.$$ 
+Thus, we say that _the probability is a **set function** (it is defined on sets) and **it associates to each set/event a number between zero and one**_. 
 
 ```{remark}
-One can provide a more rigorous definition of probability, as a real-valued function which defines a mapping between sets/events and the interval $[0,1]$. To achieve this goal one needs the concept of sigma-algebra (which represents the domain of the probability), but we do not pursue with that---at the cost of losing the mathematical rigour of the next slide!!
+One can provide a more rigorous definition of probability, as a **real-valued function** which defines a **mapping between sets/events and the interval $[0,1]$**. 
+
+$$P : A \subseteq \mathbb{R} \longrightarrow [0,1]$$
+
+However, to provide this formal definition we need to introduce the concept of **sigma-algebra** (which represents the **domain** of the probability), a concept that narrowly escapes the frame of our course. We will proceed without presenting it, with the very unfortunate cost of losing the mathematical rigour in the following sections. 
 ```
 
 <!-- %In this way, we define the domain of the probability. Then,  -->

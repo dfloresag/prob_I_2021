@@ -1,55 +1,67 @@
 # Probability Axioms {#axioms}
 
+
+
 ## An Axiomatic Definition of Probability
 
 <!-- %Let $\mathcal{B}$ be the $\sigma$-algebra of subsets of a set $S$ representing the sample space. \\ -->
 <!-- %\vspace{0.1cm} -->
 
-```{definition, probability, name="Probability"}
+In order to formalise probability as a branch of mathematics, Andrey Kolmogorov formulated a series of postulates. These _axioms_ are crucial elements of the foundations on which all the mathematical theory of probability is built.
 
-We define probability a set function with values in $[0,1]$, which satisfies the following axioms:
+```{definition, probability, name="Probability Axioms"}
+We define _probability_ as a **set function** with values in $[0,1]$, which satisfies the following axioms:
 
-1. $P(A) \geq 0$, for every event $A$ 
-2. $P(S)=1$
-3.  If  $A_1,A_2,...$ is 
+(i) _The probability of an event $A$ in the Sample Space $S$ is a non-negative real number_ 
+\begin{equation}
+P(A) \geq 0, \text{ for every event } A \subset S 
+(\#eq:nonnegative)
+\end{equation}
+(ii) _The probability of the Sample Space is 1_ 
+\begin{equation}
+P(S)=1
+(\#eq:probss)
+\end{equation}
+(iii) If  $A_1,A_2,...$ is 
     - a sequence of **mutually exclusive events**, i.e.  
   $$A_{i}\cap A_{j}=\varnothing, \ \text{for} \ i\neq j,\ \text{and} \ i,j=1,2,...,$$ 
     - such that $A = \bigcup_{i=1}^{\infty} A_i$, then:
 
-$$P(A)=P\left(\bigcup_{i=1}^{\infty}A_{i}\right)=\sum_{i=1}^{\infty}P(A_i).$$
-
+\begin{equation} 
+P(A)=P\left(\bigcup_{i=1}^{\infty}A_{i}\right)=\sum_{i=1}^{\infty}P(A_i).
+(\#eq:additivity)
+\end{equation}
 ```
-
 
 ## Properties of $P(\cdot)$
 
-One can make use of the three axioms to build more sophisticated statements. For instance,
+We can make use of the three axioms to build more sophisticated statements. For instance:
 
-```{theorem}
-$P(\varnothing)=0$.
+```{theorem, probabilityEmptySet, name = "The Probability of the Empty Set"}
+_The probability of the empty set is 0_ 
+$$P(\varnothing)=0.$$
 ```
 
 ```{proof}
-Take $A_1=A_2=A_3=....=\varnothing$. Then by (\ref{Eq:additivity}) in Axiom (ii) we have
+Consider the sequence of mutually exclusive empty sets. $A_1=A_2=A_3=....=\varnothing$. Then, by \@ref(eq:additivity) in Axiom (ii) we have
 
 $$P(\varnothing)= P\left(  \bigcup_{i=1}^{\infty} A_i \right) = \sum_{i=1}^{\infty} P(A_i) =\sum_{i=1}^{\infty} P(\varnothing)$$
-which is true only if it is an infinite sum of zeros. Thus
-
+which is true **only if** the left hand side is an infinite sum of zeros. Thus:
 $$P(\varnothing) =  0.$$
 ```
 
-
-```{theorem}
-If $A_1, A_2,...$ are mutually exclusive events, then
+```{theorem, additionLaw, name = "The Addition Law of Probability"}
+If $A_1, A_2,...$ are mutually exclusive events, then the probability of their union is the sum of their probabilities, i.e.
 \begin{equation}
-P\left(  \bigcup_{i=1}^{n} A_i \right) = \sum_{i=1}^{n} P(A_i).  \label{Eq:ProbUnionDisj}
+P\left(  \bigcup_{i=1}^{n} A_i \right) = \sum_{i=1}^{n} P(A_i).  
+(\#eq:probuniondisj)
 \end{equation}
 ``` 
 
 ```{proof}
 Let $A_{n+1}=A_{n+2}=....=\varnothing$, then
 $\bigcup_{i=1}^{n} A_i = \bigcup_{i=1}^{\infty} A_i,$
-and, from (\ref{Eq: additivity}) (see Axiom (iii)) it follows that:
+and, from \@ref(eq:additivity) (see Axiom (iii)) it follows that:
 
 \begin{eqnarray}
 P\left(  \bigcup_{i=1}^{n} A_i \right) &=& P\left(  \bigcup_{i=1}^{\infty} A_i \right)
@@ -58,20 +70,21 @@ P\left(  \bigcup_{i=1}^{n} A_i \right) &=& P\left(  \bigcup_{i=1}^{\infty} A_i \
 ```
 
 
-```{theorem}
+```{theorem, complementRule, name = "The Complement Rule"}
 If $A$ is an event, then $P(A^c) = 1- P(A).$
 ```
 
 ```{proof}
-Let $A \cup A^c =S$ and $A \cap A^c = \varnothing$, so
-and
-$$
-P( S ) = P\left(A \cup A^c \right) =P(A) + P\left(A^c \right).
-$$
-By Axiom (i) Axiom (ii) we have $P(S)=1$, so the desired result follows from:
-$$
-1 = P(A) + P\left(A^c \right).
-$$
+By definition, $A$ and its complement $A^c$ are such that: 
+- $A \cup A^c = S$ and 
+- $A \cap A^c = \varnothing$ 
+
+Hence, from the addition law \@ref(thm:additionLaw): 
+$$P( S ) = P\left(A \cup A^c \right) =P(A) + P\left(A^c \right).$$
+  
+Finally, by Axiom (ii), $P(S)=1$, and. 
+$$1 = P(A) + P\left(A^c \right).$$
+The result follows. 
 ```
 
 <!-- %that $B \subset A$. -->
@@ -89,6 +102,18 @@ $$
                                  \secondcircle node at (2.5,0.5) {$B$};
     \node[anchor=south] at (current bounding box.north) at (6.5,2.2) {$B \subset A$};
 \end{tikzpicture}
+
+
+```{theorem, monotonicityRule, name = "The Monotonicity Rule"}
+For any two events $A$ and $B$, such that $B \subset A$, we have:
+
+$$P(A) \geq P(B).$$
+```
+
+<mark>
+  Illustrate with an example. 
+</mark>
+
 
 <mark>
   Insert diagram here
@@ -114,14 +139,6 @@ $$
 <!-- %\end{tikzpicture} -->
 <!-- % -->
 <!-- % -->
-
-
-
-```{theorem}
-For any two events $A$ and $B$, such that $B \subset A$, we have
-
-$$P(A) \geq P(B).$$
-```
 
 
 ```{proof}
@@ -162,7 +179,7 @@ It is worth noticing that if $A_j \cap A_i = \varnothing$, for every $i$ and $j$
 $
 P(A_1 \cup A_2 \cup....\cup A_n) = \sum_{i=1}^{n}P(A_i),
 $
-as stated in (\ref{Eq: ProbUnionDisj}).
+as stated in @ref{Eq: probuniondisj}).
 ```
 
 ```{theorem}
@@ -188,43 +205,44 @@ P(A\cup B) &=& P(A) + P(A^c \cap B)  \\
 
 ![](img/02_set_theory/Example1_GE.png)
 
-```{example, rleI , name = "Real-life example I"}
+```{example, rleI}
 
 
 ```
 
-> adapt example here
+<mark>
+  adapt example here
+</mark>
 
 ### Detecting shoppers
 
-```{example, rleII , name = "Real-life example II"} 
-
-
-![](Example2_1.png)
-
-
-
-
-![](Example2_2.png)
-
-
-
-
-![][width=0.95\textwidth,height=0.7\textheight](Example2_3.png)
-
-
-
-
-![][width=0.9\textwidth,height=0.5\textheight](Example2_4.png)
-
+```{example, name = "Real-life example II"} 
 ```
 
-> adapt example here
+```{r, echo = FALSE}
+knitr::include_graphics("img/03_axioms/Example2_1.png")
+```
+
+```{r, echo = FALSE}
+knitr::include_graphics("img/03_axioms/Example2_2.png")
+```
+
+```{r, echo = FALSE}
+knitr::include_graphics("img/03_axioms/Example2_3.png")
+```
+
+```{r, echo = FALSE}
+knitr::include_graphics("img/03_axioms/Example2_4.png")
+```
+
+<mark>
+  adapt example here
+</mark>
 
 
 ### De Morgan's Law
 
-```{example, demorgan, name="De Morgan's law"}
+```{example, demorganEx, name="Application of De Morgan's laws"}
 Given  $P(A\cup B)=0.7$ and $P(A\cup {B}^c) = 0.9$, find $P(A)$.
 
 By De Morgan's law,
@@ -246,10 +264,8 @@ $$P(A)=1 - 0.4= 0.6.$$
 
 ```{example}
 
-
 John is taking two books along on his holiday vacation. With probability 0.5, he will like the first book; with probability 0.4, he will like the
 second book; and with probability 0.3, he will like both books. What is the probability that he likes neither book? \\
-
 
 Let $A_i$ be the event that John likes book $i$, for $i=1,2$. Then the probability that he likes at least one book is (remember the short hand notation $A_1 \cap A_2 = A_1 A_2$)
 \begin{eqnarray}
@@ -257,20 +273,14 @@ P(\bigcup_{i=1}^2 A_i) &=& P(A_1 \cup A_2) = P(A_1) + P(A_2) - P(A_1A_2)  \\
 &=& 0.5 + 0.4 -0.3 =0.6. 
 \end{eqnarray}
 Because the event the John likes neither books is the complement of the event that he likes at leas one of them (namely $A_1 \cup A_2$), we have
-$$
-P(A^{c}_1 \cap A^{c}_2 ) = P((A_1 \cup A_2)^c) = 1- P (A_1 \cup A_2) = 0.4.
-$$
-
+$$P(A^{c}_1 \cap A^{c}_2 ) = P((A_1 \cup A_2)^c) = 1- P (A_1 \cup A_2) = 0.4.$$
 ```
 
 
 
-
-
-
 ```{example}
+
 # [Real-life example III]
-\begin{small}
 Let $A$ denote the event that the midtown temperature in Los Angeles (LA) is 70 F, and let $B$ denote the event that the midtown temperature in
 New York (NY) is 70 F. Also, let $C$ denote the event that the maximum of midtown temperatures in NY and LA is 70 F. If
 
@@ -279,20 +289,6 @@ $$P(A)=0.3, \quad P(B)=0.4 \quad \text{and} \quad P(C)=0.2,$$
 find the probability that the minimum of the two midtown temperatures is 70 F.
 
 
-\end{small}
-```
-
-
-
-
-
-
-
-```{example}
-# [cont'd]
-\begin{small}
-
-\vspace{0.2cm}
 Let $D$ denote the event that the minimum temperature is 70 F. Then
 \begin{eqnarray}
 P(A\cup B) &=& P(A) + P(B) - P(AB) = 0.7 -P(AB)  \\
@@ -305,118 +301,68 @@ P(A\cup B)-P(C\cup D)  & = &  0.7 -P(AB) - [0.2 -P(D) - P(DC)] \\
 &  = & 0.5 -P(D) = 0 , \\
 \end{eqnarray*}
 thus $ P(D) =0.5.$
-
-\end{small}
 ```
 
 
+## Conditional probability
 
+As a measure of uncertainty, the probability depends on the information available. 
 
-
-\frametitle{Conditional probability}
-As a measure of uncertainty, the probability depends on the information available. \\
-\vspace{0.4cm}
 
 ```{example}
 Suppose you have two dice and throw them; the possible outcomes are:
-
-
-![][width=0.9\textwidth,height=0.35\textheight](c1.png)
-
 ```
 
 
+```{r}
+knitr::include_graphics("img/03_axioms/c1.png")
+```
 
-
-
-
-\frametitle{Conditional probability}
-
-```{example}
-# [cont'd]
 Let us define $A$ = getting $5$, or equivalently $A=\{ 5\}$. What is $P(A)$, namely, the probability of getting $5$?
 
-
-
-
-![][width=0.9\textwidth,height=0.35\textheight](c2.png)
-
+```{r}
+knitr::include_graphics("img/03_axioms/c2.png")
 ```
 
 
-
-
-
-
-
-\frametitle{Conditional probability}
-
-
-```{example}[cont'd]
-The dice are fair so we can get 36 events with equal probability ${1}\big \slash{36}$. Namely:
-$$
-Pr(i,j) = \frac{1}{36}, \quad \text{for} \quad i,j=1,..,6
-$$
+The dice are fair so we can get 36 events with equal probability ${1}/{36}$. Namely:
+$$Pr(i,j) = \frac{1}{36}, \quad \text{for} \quad i,j=1,..,6$$
 Thus, we can make use of the blue guys as
 \begin{eqnarray}
 P(5) &=& Pr\left\{ (1,4) \cup (2,3) \cup (3,2) \cup  (4,1) \right\}  \\
 &=& Pr\left\{ (1,4)  \right\} +  Pr\left\{ (2,3)  \right\} +  Pr\left\{(3,2)  \right\} + Pr\left\{  (4,1) \right\}  \\
-&=& {1}\big \slash{36} + {1}\big \slash{36} + {1}\big \slash{36} + {1}\big \slash{36}  \\
-&=& {4}\big \slash{36}  \\
-&=& 1 \big \slash{9}. 
+&=& {1} \slash{36} + {1} \slash{36} + {1} \slash{36} + {1} \slash{36}  \\
+&=& {4} \slash{36}  \\
+&=& 1  \slash{9}. 
 \end{eqnarray}
-```
 
 
 
-
-
-
-
-\frametitle{Conditional probability}
-
-
-```{example}[cont'd]
 Now, suppose that we throw the die first and e we get 2.\\
 \vspace{0.2cm}
 \color{black}\textbf{Q.} \color{black} What is the probability of getting 5 given that we have observed 2 in the first throw?
 
 
-![][width=1\textwidth,height=0.3\textheight](c4.png)
+```{r}
+knitr::include_graphics("img/03_axioms/c4.png")
+```
+
 
 \color{blue}\textbf{A.} \color{black}
 
 $\text{Pr}\{\text{getting 5 given 2 in the first throw}\}= \text{Pr}\{\text{getting 3 in the second throw}\}=1/6$
 
-```
-
-
-
-
-
-
-\frametitle{Conditional probability}
-
 ```{remark}
-\begin{itemize}
+```
+- Information changes the probability
+- By knowing that we got 2 in the first throw, we have changed the sample space:
 
-\item Information changes the probability
-\item By knowing that we got 2 in the first throw, we have changed the sample space:
 
-
-![][width=0.85\textwidth,height=0.35\textheight](c3.png)
-
-\item Probability can change drastically --- e.g., suppose that in our example we have 6 in the first throw $\Rightarrow$ the probability of
-observing 5 in two draws ... is zero !!!
-\end{itemize}
+```{r ,echo = FALSE, fig.cap=''}
+  knitr::include_graphics("img/03_axioms/c3.png")
 ```
 
-
-
-
-
-
-## Conditional probability
+-  Probability can change drastically --- e.g., suppose that in our example we have 6 in the first throw $\Rightarrow$ the probability of observing 5 in two draws ... is zero !!!
 
 
 ```{definition}
@@ -431,14 +377,13 @@ and it is left undefined if $P(B)=0$.
 
 ### A check
 
-![](/img/03_axioms/c3.png)
+```{r ,echo = FALSE}
+knitr::include_graphics("img/03_axioms/c3.png")
+```
+
 
 ```{example} 
 Let us define the set $B$ as:
-
-
-
-
 
 So we have
 
@@ -449,16 +394,17 @@ P(B) &=& Pr\left\{ (2,1) \cup (2,2) \cup (2,3) \cup (2,4) \cup (2,5) \cup (2,6) 
 \end{eqnarray}
 
 and consider $A \cap B$
+```
 
-
-
-![][width=0.9\textwidth,height=0.4\textheight](c4.png)
+```{r ,echo = FALSE, fig.cap=''}
+  knitr::include_graphics("img/03_axioms/c4.png")
+```
 
 So we have  $P(A \cap B) = Pr (2,3) = 1/36$ so,
 $$
 P(A\vert B) = \frac{P(A \cap B)}{P(B)}  =  \frac{1/36}{1/6} = \frac{1}{6}. 
 $$
-```
+
 
 
 ## Independence
@@ -487,32 +433,17 @@ $$P(A\cap B) = P(A) P(B).$$
 
 
 ```{example}
-
-
-![][width=0.9\textwidth,height=0.7\textheight](example7.png)
-
-
 ```
 
 
-
-
-
-
-
-```{example}[cont'd]
-
-
-![][width=0.9\textwidth,height=0.6\textheight](example8.png)
-
-
+```{r ,echo = FALSE, fig.cap='things'}
+  knitr::include_graphics("img/03_axioms/example7.png")
 ```
 
 
-
-
-
-
+```{r ,echo = FALSE, fig.cap=''}
+  knitr::include_graphics("img/03_axioms/example8.png")
+```
 
 
 ## Theorem I
@@ -521,8 +452,8 @@ $$P(A\cap B) = P(A) P(B).$$
 Let  $B_1,B_2,...,B_k,...,B_n$ be mutually disjoint events, satisfying
 $S=\cup_{i=1}^{n} B_i,$ and $P(B_i)>0$, for every $i=1,2,...,n$ then for every $A$ we have that:
 \begin{equation}
-\label{TP}
 P(A)=\sum_{i=1}^n P(A\vert B_i) P(B_i).
+(\#eq:TP)
 \end{equation}
 ```
 
@@ -535,24 +466,21 @@ P(A)=P\left(  \cup_{i=1}^{n} (A\cap B_i)  \right)=\sum_{i=1}^n P\left( A\cap B_i
 ```
 
 
-\textbf{Remark}. The theorem remains valid even if $n=\infty$ in Eq. (\ref{TP}). (Double check, and re-do the proof using $n=\infty$.)
-
+```{remark}
+The theorem remains valid even if $n=\infty$ in Eq. \@ref(eq:TP). (Double check, and re-do the proof using $n=\infty$.)
+```
 
 ```{corollary}
-%For a given probability space $(S,\mathcal{B},P)$, let $B\in \cal{B}$ satisfy $0<P(B)<1$; then for every $A\in \cal{B}$:
 Let $B$ satisfy $0<P(B)<1$; then for every event $A$:
 
 \begin{equation*}
 P(A)=P(A\vert B)P(B)+P(A\vert B^c) P(B^c)
 \end{equation*}
-
 ```
 
 ```{proof}
 Exercise [Hint: $S=B \cup B^c$].
 ```
-
-
 
 ## Theorem II
 
@@ -563,20 +491,10 @@ Let $B_1,B_2,...,B_k,...,B_n$ be mutually disjoint events, satisfying
 $$S=\cup_{i=1}^{n} B_i,$$ and $P(B_i)>0,$
 for every $i=1,2,...,n$. Then for every event $A$ for which $P(A)>0$, we have that
 \begin{equation}
-\label{Bayes}
 P(B_k\vert A)=\frac{P(A\vert B_k)P(B_k)}{\sum_{i=1}^n P(A\vert B_i) P(B_i)}.
+(\#eq:Bayes)
 \end{equation}
 ```
-
-
-
-
-
-
-
-
-
-
 
 ```{proof}
 Let us write
@@ -588,90 +506,48 @@ P(B_k\vert A)&=&\frac{P(A\cap B_k)}{P(A)}  \\
 That concludes the proof.
 ```
 
-
-
-
-
-
-
-
-
 ```{example}
 Let us consider a special case, where we have only two events $A$ and $B$.
-
-
-![][width=0.9\textwidth,height=0.55\textheight](example10.png)
-
-... so thanks to Bayes' Theorem we can reverse the role of $A\vert B$ and $B \vert A$.
-
 ```
 
+```{r ,echo = FALSE, fig.cap=''}
+  knitr::include_graphics("img/03_axioms/example10.png")
+```
 
-
-
-<!-- % -->
-<!-- % -->
-<!-- %\frametitle{A real-life example} -->
-<!-- %```{example} -->
-<!-- % -->
-<!-- % -->
-<!-- %![][width=0.9\textwidth,height=0.55\textheight](example9.png) -->
-<!-- % -->
-<!-- %``` -->
-<!-- %\begin{aim} -->
-<!-- %We know something about $P(B\vert A)$ and we have to say something about $P(A\vert B)$ $\Rightarrow$ Bayes' theorem!! -->
-<!-- %\end{aim} -->
-<!-- % -->
-<!-- % -->
-<!-- % -->
-
-
-
+... so thanks to Bayes' Theorem we can reverse the role of $A\vert B$ and $B \vert A$.
 
 ### Guessing in a multiple choice exam
 
 ```{example}
-
-
-![][width=0.7\textwidth,height=0.65\textheight](Ross_Ex.png)
-
 ```
 
+```{r ,echo = FALSE, fig.cap=''}
+  knitr::include_graphics("img/03_axioms/Ross_Ex.png")
+```
 
 ### Rent car maintenance
 
 ```{example}
 
-\begin{itemize}
-\item 60\% from AVIS
-\item 40\% from Mobility
-\end{itemize}
+- 60\% from AVIS
+- 40\% from Mobility
+
 Now consider that
-\begin{itemize}
-\item 9\% of the cars from AVIS need a tune-up
-\item 20\% of the cars from Mobility need a tune-up
-\end{itemize}
+
+- 9\% of the cars from AVIS need a tune-up
+- 20\% of the cars from Mobility need a tune-up
+
 If a car delivered to the consulting firm needs a tune-up, what is the probability that the care came
-from AVIS? \pause
+from AVIS?
 ```
 
-\begin{aim}
 Let us set: $A:=\{\text{car rented from AVIS}\}$ and $B:=\{\text{car needs a tune-up}\}$. We know $P(B\vert A)$ and we look for $P(A\vert B)$ $\Rightarrow$ Bayes' theorem!!
-\end{aim}
 
-
-
-
-
-
-
-\frametitle{A real-life example (cont'd)}
-```{example}[cont'd]
-
-
-![](example9b.png)
-
+```{r ,echo = FALSE, fig.cap=''}
+  knitr::include_graphics("img/03_axioms/example9b.png")
 ```
+
+
 
 
 

@@ -17,7 +17,7 @@ toc-title: "Probability I - Spring 2021"
 # About this Lecture {-}
 
 ```{r setup, include = FALSE}
-knitr::opts_chunk$set(echo = FALSE)
+knitr::opts_chunk$set(echo = FALSE, fig.align = 'center')
 ```
 
 ```{r include=FALSE}
