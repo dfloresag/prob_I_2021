@@ -288,3 +288,12 @@ exm:unnamed-chunk-38
 exm:unnamed-chunk-39
 fig:unnamed-chunk-7
 exr:unnamed-chunk-13
+exr:unnamed-chunk-15
+fig:unnamed-chunk-8
+fig:unnamed-chunk-9
+fig:unnamed-chunk-10
+exr:unnamed-chunk-14
+exr:unnamed-chunk-16
+some-properties-of-union-and-intersection
+exr:unnamed-chunk-18
+exr:unnamed-chunk-17

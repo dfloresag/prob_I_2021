@@ -2,18 +2,16 @@
  
 ## Definitions
 
-In order to develop the Probability theory of this course we are going to need also some elements of set theory. 
+In order to develop the Probability theory of this course we are going to need also some elements of set theory. To start our journey, let us introduce some definitions. 
 
-To start our journey, let us introduce some definitions in Probability. 
+```{definition, randomExperiment, name = "Random Experiment"}
 
-```{definition, randomExperiment}
-
-A **Random Experiment**  is a process that can result in two or more different outcomes with uncertainty as to which will be observed.
+A Random Experiment  is a process that can result in two or more different outcomes with uncertainty as to which will be observed.
 ```
 
-```{definition, event}
+```{definition, event, name = "Event"}
 
-An **Event** is an uncertain outcome of a random experiment. 
+An Event is an uncertain outcome of a random experiment. 
 
 An event can be: 
 
@@ -21,18 +19,44 @@ An event can be:
 - Composite: it includes more than one elementary outcome in the possible sets of outcomes.
 ```
 
-
-```{definition, sampleSpace}
+```{definition, sampleSpace, name = "Sample Space"}
 The **Sample Space** is the complete listing of the elementary events that can occur in a random experiment. We will denote the sample space by $S$.
+```
+
+We encounter all these definitions in our everyday life. In particular, when we gather at home to play board games, such as the game of cards, or when we want to "let chance decide" who gets to kick the ball first in a football game... by flipping a coin. 
+
+```{r ,echo = FALSE, fig.cap='Someone is lucky!', fig.align='center'}
+  knitr::include_graphics("img/02_set_theory/CardDeck/aces.png")
 ```
 
 ```{example, cardGame, name = "A simple card game"}
 
-When playing with a full deck of cards, we can characterise drawing a particular card as a random experiment, where we can identify a set of events and the sample space: 
-```
+When playing with a full deck of cards, we can characterise drawing a card as a random experiment, where we can identify a set of events and the sample space: 
+  
+Suppose we are to draw **one** card at random from a full deck of 52 playing cards.
 
-```{r, echo = FALSE}
-knitr::include_graphics("img/02_set_theory/Example1_GE.png")
+The Sample Space $S$ consists of the values of the cards of all colors and suits. 
+
+<div align="center">S = {<span style='color: black'>A&clubs;</span>, <span style='color: black'>2&clubs;</span>, ...,<span style='color: black'>K&clubs;</span>,<span style='color: red'>A&diams;</span>, <span style='color: red'>2&diams;</span>, ... ,<span style='color: red'>K&diams;</span> , <span style='color: red'>A&hearts;</span>, <span style='color: red'>2&hearts;</span>, ... ,<span style='color: red'>K&hearts;</span>, <span style='color: black'>A&spades;</span>, <span style='color: black'>2&spades;</span>, ... ,<span style='color: black'>K&spades;</span>}</div>
+
+Here, we can define events as subsets of the sample space:
+
+- $K$: _drawing a **King**_ 
+  
+<div align="center">K = {<span style='color: black'>K&clubs;</span>, <span style='color: red'>K&diams;</span>, <span style='color: red'>K&hearts;</span>, <span style='color: black'>K&spades;</span>}</div>
+
+- $H$: Event of drawing a **Heart**
+  
+<div align="center">H = {<span style='color: red'>A&hearts;</span>, <span style='color: red'>2&hearts;</span>, ... ,<span style='color: red'>K&hearts;</span>}</div>
+  
+- $J$: drawing a **Jack or higher** 
+  
+<div align="center">J = {<span style='color: black'>J&clubs;</span>, <span style='color: black'>Q&clubs;</span>,<span style='color: black'>K&clubs;</span>,<span style='color: red'>J&diams;</span>, <span style='color: red'>Q&diams;</span>, <span style='color: red'>K&diams;</span> , <span style='color: red'>J&hearts;</span>, <span style='color: red'>Q&hearts;</span>, <span style='color: red'>K&hearts;</span>, <span style='color: black'>J&spades;</span>, <span style='color: black'>Q&spades;</span>, <span style='color: black'>K&spades;</span>}</div>
+  
+- $Q$: drawing a **Queen**
+    
+<div align="center">Q = {<span style='color: black'>Q&clubs;</span>, <span style='color: red'>Q&diams;</span>, <span style='color: red'>Q&hearts;</span>, <span style='color: black'>Q&spades;</span>}</div>
+
 ```
 
 ```{example, flipCoins, name = "Flipping Coins"}
@@ -84,7 +108,7 @@ knitr::include_graphics("img/02_set_theory/charts/charts.001.png")
 
 By definition, an event or several events, constitute a subset of the sample space. This can be represented in a Venn Diagram with a figure enclosed within the Sample Space. 
 
-```{r, echo = FALSE, fig.align='center', fig.cap="An event within the Sample Space with Venn Diagrams"}
+```{r, echo = FALSE, fig.align='center', fig.cap="Venn Diagram - An event within the Sample Space"}
 knitr::include_graphics("img/02_set_theory/charts/charts.002.png")
 ```
 
@@ -92,7 +116,7 @@ knitr::include_graphics("img/02_set_theory/charts/charts.002.png")
 
 Two events are mutually exclusive is they cannot occur jointly. This is represented by two separate enclosed surfaces within the sample space. 
 
-```{r, echo = FALSE, fig.align='center', fig.cap='Two mutually exclusive events'}
+```{r, echo = FALSE, fig.align='center', fig.cap='Venn Diagram - Two mutually exclusive events'}
 knitr::include_graphics("img/02_set_theory/charts/charts.003.png")
 ```
 
@@ -104,40 +128,35 @@ For illustration, consider our simple card game example. The event "drawing a **
 </mark>
 
 Events that are not mutually exclusive have a shared area, which in set theory constitutes an **intersection** and gets shown in a Venn diagram by two <mark>colliding</mark> figures. Coming back to our example with the card game, consider the events "drawing a **King**" and "drawing a **Heart**". Here there is intersection, as one can obtain a **King of Hearts**. 
-```{r, echo = FALSE, fig.align='center', fig.cap='Two Non-mutually exclusive events'}
+```{r, echo = FALSE, fig.align='center', fig.cap='Venn Diagram - Two Non-mutually exclusive events'}
 knitr::include_graphics("img/02_set_theory/charts/charts.004.png")
 ```
-
-<mark>
-  Example : chart Events of King and Heart.
-</mark>
 
 ### Union and Intersection of Events
 
 The **union** of the events $A$ and $B$ is the event which occurs when either $A$ or $B$ occurs: $A \cup B$. In a Venn diagram, we can illustrate this by shading the area enclosed by both sets. 
 
-<mark>
-  Insert chart union
-</mark>
-
+```{r ,echo = FALSE, fig.cap='Venn Diagram - $A\\cup B$', fig.align='center'}
+  knitr::include_graphics("img/02_set_theory/charts/charts.005.png")
+```
 
 The **intersection** of the events $A$ and $B$ is the event which occurs when both $A$ and $B$ occur: $A \cap B$. In a Venn diagram, we can illustrate this by shading the area shared by both sets. 
 
-<mark>
-  Insert chart intersection
-</mark>
+```{r ,echo = FALSE, fig.cap='Venn Diagram - $A\\cap B$', fig.align='center'}
+  knitr::include_graphics("img/02_set_theory/charts/charts.006.png")
+```
 
 ### Complement
 
-The **complement** of an event $A$ is the event which occurs when $A$ does not occur: $A^{c}$ (or $\overline{A}$). A Venn diagram illustrates this by shading the area outside the set. 
+The **complement** of an event $A$ is the event that occurs when $A$ does not occur: $A^{c}$ (or $\overline{A}$). A Venn diagram illustrates this by shading the area outside the set that defines the event $A$. 
 
-```{r, echo = FALSE, fig.align='center', fig.cap="source: [Tenso Graphics](https://cargocollective.com/tensographics)"}
-knitr::include_graphics("img/02_set_theory/Venn6.png")
+```{r ,echo = FALSE, fig.cap='Venn Diagram - $A^{c}$', fig.align='center'}
+  knitr::include_graphics("img/02_set_theory/charts/charts.007.png")
 ```
 
-Let $S$ be the complete set of all possible events, i.e. the Sample Space. Then, $A^c$ can be written as: $$A^c = S \setminus A = S-A.$$ and is such that $$A \cup A^c = S.$$
+Let $S$ be the complete set of all possible events, i.e. the Sample Space. In such case, $A^c$ can be written as: $$A^c = S \setminus A = S-A.$$ and is such that $$A \cup A^c = S.$$
 
-### Some laws of 
+### Some Properties of union and intersection 
 
 Let $A$, $B$, and $D$ be sets. The following laws hold:
 
@@ -149,34 +168,29 @@ A \cap B = B \cap A
 
 - **Associative laws**: Union and Intersection of more than two sets operate irrespective of the order. 
 \begin{eqnarray*}
-A \cup (B \cup D) = (A \cup B) \cup D \\
-A \cap (B \cap D) = (A \cap B) \cap D
+A \cup (B \cup C) = (A \cup C) \cup C \\
+A \cap (B \cap C) = (A \cap C) \cap C
 \end{eqnarray*}
 
 - **Distributive laws**
 
-  - The intersection is _distributive_ with respect to the union, i.e. the intersection between a set ($A$) and the union of two other sets ($B$ and $D$)  is the union of the intersections. 
-$$ A \cap (B \cup D) = (A \cap B) \cup (A\cap D)$$
+  - **The intersection is _distributive_ with respect to the union**, i.e. the intersection between a set ($A$) and the union of two other sets ($B$ and $D$)  is the union of the intersections. 
+$$ A \cap (B \cup C) = (A \cap B) \cup (A\cap C)$$
+```{r ,echo = FALSE, fig.cap='', fig.align='center'}
+  knitr::include_graphics("img/02_set_theory/charts/charts.008.png")
+```
+  - **The union is _distributive_ with respect to the intersection**, i.e. the union between a set ($A$) and an intersection of two others is the intersection of the unions. 
+$$A \cup (B \cap C) = (A\cup C) \cap (A \cup C)$$
+```{r ,echo = FALSE, fig.cap='', fig.align='center'}
+  knitr::include_graphics("img/02_set_theory/charts/charts.009.png")
+```
 
-  - The union is _distributive_ with respect to the intersection, i.e. the union between a set ($A$) and an intersection of two others is the intersection of the unions. 
-$$A \cup (B \cap D) = (A\cup B) \cap (A \cup D)$$
-
-<mark>
-  insert illustration 
-</mark>
-
-We can use Venn Diagrams to illustrate these laws. Consider 
-
-<!-- ... for instance, let $A_1, A_2, A_3$ be in $S$ and let us introduce the shorthand notation:  -->
-<!-- $$A_1 A_2 = A_1 \cap A_2  \quad \text{and} \quad A_1 A_3 = A_1 \cap A_3$$  -->
-
-![](img/02_set_theory/commutative.png)
 
 ```{exercise}
 
 Let $A$ and $B$ be two sets. Use Venn diagrams to represent:  
 
-i) $\overline{A\cap B}$
+i) $\overline{A\cap B} = (A\cap B)^{c}$
 ii) $B-A$
 
 ```
@@ -185,30 +199,28 @@ ii) $B-A$
 
 Events can be represented by means of sets and sets can be either **countable** or **uncountable**. 
 
-In mathematics, a **countable set** is a set with the same _cardinality_ (number of elements) as some subset of the set of natural numbers $\mathbb{N}= \{0, 1, 2, 3, \dots \}$. For illustration, a **cow herd** is a countable set, as you can have 0, 1, 2, 3, ... cows in your herd. 
+In mathematics, a **Countable Set** is a set with the same _cardinality_ (number of elements) as some subset of the set of natural numbers $\mathbb{N}= \{0, 1, 2, 3, \dots \}$. 
 
-<mark>
-  illustrations with cows
-</mark>
+A countable set can be  **countably finite** or **countably infinite**. Whether finite or infinite, the elements of a countable set can always be counted one at a time and, although the counting may never finish, every element of the set is associated with a  natural number. Roughly speaking one can count the elements of the set using $1,2,3,..$ 
 
-A countable set can be  **countably finite** (your cow herd) or **countably infinite**. Whether finite or infinite, the elements of a countable set can always be counted one at a time and, although the counting may never finish, every element of the set is associated with a  natural number. Roughly speaking one can count the elements of the set using $1,2,3,..$ 
-    
-- G. Cantor introduced the term countable set, contrasting sets that are countable with those that are **uncountable} (i.e., nonenumerable or nondenumerable).
+```{example, countableSet, name = "Our deck of cards and Finite Countable Sets"} 
+Let's come back to our example with the deck of cards and the event. The following events can be considered countably finite sets as they have a limited and countable number of elements:
 
- 
- 
-```{example, countableSet, name = "An illustration of a Countable Set"} 
-Let's come back to our example with the deck of cards and the event. The follwing events can be considered countably finite sets as they have a limited and countable number of elements:
+- $K \cup H$ = {<span style='color: black'>K&clubs;</span>, <span style='color: red'>K&diams;</span>, <span style='color: red'>K&hearts;</span>, <span style='color: black'>K&spades;</span>, <span style='color: red'>A&hearts;</span>, <span style='color: red'>2&hearts;</span>, ... , <span style='color: red'>Q&hearts;</span>}
+- $J \cup H$ = {<span style='color: black'>J&clubs;</span>, <span style='color: black'>Q&clubs;</span>, <span style='color: black'>K&clubs;</span>, <span style='color: red'>J&diams;</span>, <span style='color: red'>Q&diams;</span>, <span style='color: red'>K&diams;</span>, <span style='color: red'>J&hearts;</span>, <span style='color: red'>Q&hearts;</span>, <span style='color: red'>K&hearts;</span>, <span style='color: black'>J&spades;</span>, <span style='color: black'>Q&spades;</span>, <span style='color: black'>K&spades;</span>, <span style='color: red'>A&hearts;</span>, <span style='color: red'>2&hearts;</span>, ... , <span style='color: red'>10&hearts;</span>}
+- $H^{c}$ = {<span style='color: black'>A&clubs;</span>, <span style='color: black'>2&clubs;</span>, ...,<span style='color: black'>K&clubs;</span>,<span style='color: red'>A&diams;</span>, <span style='color: red'>2&diams;</span>, ... ,<span style='color: red'>K&diams;</span> ,<span style='color: black'>A&spades;</span>, <span style='color: black'>2&spades;</span>, ... ,<span style='color: black'>K&spades;</span>}
 ```
 
-```{r ,echo = FALSE}
-  knitr::include_graphics("img/02_set_theory/Example2.png")
-```
+
+<!-- - G. Cantor introduced the term countable set, contrasting sets that are countable with those that are **uncountable** (i.e., nonenumerable or nondenumerable). -->
+
 
 <!-- %Events can be represented by means of sets. -->
 
 
 ```{exercise, uncountableSet, name = "An illustration of an Uncountable Set"} 
+
+
 
 ![](img/02_set_theory/Example3.png)
 
