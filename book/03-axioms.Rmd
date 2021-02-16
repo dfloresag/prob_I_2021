@@ -518,12 +518,30 @@ Let us consider a special case, where we have only two events $A$ and $B$.
 
 ### Guessing in a multiple choice exam
 
-```{example}
+```{example, name = 'Example 3c in @ross2014first'}
+
+_In answering a question on a multiple-choice test, a student either knows the answer
+or guesses. Let p be the probability that the student knows the answer and 1 − p
+be the probability that the student guesses. Assume that a student who guesses at
+the answer will be correct with probability 1/m, where m is the number of multiple choice alternatives._
+
+_What is the conditional probability that a student knew the
+answer to a question given that he or she answered it correctly?_
+  
+**Solution** Let C and K denote, respectively, the events that the student answers the
+question correctly and the event that he or she actually knows the answer. Now,
+
+\begin{align*}
+P(K|C ) & = \frac{P(KC)}{P(C)} \\ 
+&= \frac{P(C|K)P(K)}{P(C|K )P(K) + P(C|Kc)P(Kc)} \\
+&= \frac{p}{p + (1/m)(1 − p)} \\ 
+&= \frac{mp}{1 + (m − 1)p}
+\end{align*}
+
+For example, if $m = 5$, $p = 12$ , then the probability that the student knew the answer to a question he or she answered correctly is 5/6
+.
 ```
 
-```{r ,echo = FALSE, fig.cap=''}
-  knitr::include_graphics("img/03_axioms/Ross_Ex.png")
-```
 
 ### Rent car maintenance
 

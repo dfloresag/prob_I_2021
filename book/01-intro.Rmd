@@ -19,14 +19,20 @@
 <!-- ``` -->
 
 
-## Preliminaries
+## A World of Data
 
-Data has been identified as the main commodity in our connected world of today. Generated at a breakneck pace and related to practically all of the aspects of human life, it has become a valuable resource for the creation of products and services designed to improve people's lives. For illustration, mobile devices provide enormous amounts of information of the location of users, which in turn, can help governments or big companies design better policies in what pertains mobility.
+**Data is the most important commodity in our connected world of today**. Generated at a breakneck pace and related to practically all of the aspects of human life, Data has become a valuable resource for the creation of products and services designed to improve people's lives. 
+
+Think for a few moments  on the incredible amount of data gathered by your mobile phone. In particular, when you activate location services, your device generates enormous amounts of information on your location and your movement. By gathering this data can potentially help companies design better policies and companies design better products. Take for instance the use in location 
+
+<mark>
+  Keep improving this, caption, context of the problem and so on. 
+</mark>
 
 <!-- Insert a better explanation of this -->
 
 ```{r, echo = FALSE, fig.align='center', fig.cap = 'the site'}
-knitr::include_url("https://flowmap.blue/15kwLB4baXZ7jpip8q0JjgR6zDoS5Gt3gMLCTUAboQxk?v=46.719075,7.817990,7.51,0,0&a=0&as=1&b=1&bo=75&c=0&ca=1&d=1&fe=1&lt=1&lfm=ALL&col=Default&f=45")
+knitr::include_url("https://flowmap.blue/15kwLB4baXZ7jpip8q0JjgR6zDoS5Gt3gMLCTUAboQxk?v=46.760927,8.215964,6.51,0,0&a=0&as=1&b=1&bo=75&c=0&ca=1&d=0&fe=1&lt=1&lfm=ALL&col=Default&f=45")
 ```
 
 
@@ -35,7 +41,7 @@ In order to make sense of the immense amounts of Data generated every millisecon
 Here is where mathematical theory contributes the most. The discipline that formalises the important aspects of the randomness in the data generation process and provides the tools necessary for data analysis is the field of **Statistics**. That said, in order to construct tools that capture these phenomena appropriately, mathematical assumptions on how the randomness/uncertainty of our data is generated. The field of mathematics that formalises randomness is the field of **Probability**
 
 
-## "What to expect from this Lecture?"
+## What to expect from this Lecture?
 
 In this course, **we study Probability as a way to introduce Statistics**. Thus we **do not study Probability as a subject of interest in itself** i.e. we do not develop deep probability theory using all the formal theoretical arguments, but rather **we set up a few principles and methods** which will be **helpful to study Statistics**. 
 
@@ -148,7 +154,7 @@ The random behaviour of $W$ can be described by a probability density function:
 <!-- \includegraphics[width=0.4\textwidth,height=0.6\textheight, angle = 0]{W.pdf} -->
 
 
-## Appendix: Mathematical Formulae
+## A quick reminder of Mathematics
 
 Probability theory is a mathematical tool. Hence, it is important to review some elemental mathematical concepts. Here are some of the formulae that we will use throughout the course. 
  

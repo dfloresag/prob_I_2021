@@ -21,10 +21,9 @@
   <meta name="twitter:description" content="Course Materials" />
   
 
-<meta name="author" content="Dr. Daniel Flores Agreda (based on the notes by Prof. Davide La Vecchia)" />
+<meta name="author" content="Dr. Daniel Flores Agreda (based on the Lecture by Prof. Davide La Vecchia)" />
 
 
-<meta name="date" content="2021-02-07" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -134,9 +133,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li><a href="https://moodle.unige.ch/course/view.php?id=7133"><strong>Probability I (Spring 2021)</strong></a></li>
 
 <li class="divider"></li>
-<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>About this Lecture</a>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>About</a>
 <ul>
-<li class="chapter" data-level="" data-path="index.html"><a href="index.html#course-contents"><i class="fa fa-check"></i>Course Contents</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#the-contents-in-a-nutshell"><i class="fa fa-check"></i>The contents in a nutshell</a></li>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html#practical-information"><i class="fa fa-check"></i>Practical information</a>
 <ul>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html#hours"><i class="fa fa-check"></i>Hours</a></li>
@@ -144,8 +143,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li class="chapter" data-level="1" data-path="introduction.html"><a href="introduction.html"><i class="fa fa-check"></i><b>1</b> Introduction</a>
 <ul>
-<li class="chapter" data-level="1.1" data-path="introduction.html"><a href="introduction.html#preliminaries"><i class="fa fa-check"></i><b>1.1</b> Preliminaries</a></li>
-<li class="chapter" data-level="1.2" data-path="introduction.html"><a href="introduction.html#what-to-expect-from-this-lecture"><i class="fa fa-check"></i><b>1.2</b> “What to expect from this Lecture?”</a>
+<li class="chapter" data-level="1.1" data-path="introduction.html"><a href="introduction.html#a-world-of-data"><i class="fa fa-check"></i><b>1.1</b> A World of Data</a></li>
+<li class="chapter" data-level="1.2" data-path="introduction.html"><a href="introduction.html#what-to-expect-from-this-lecture"><i class="fa fa-check"></i><b>1.2</b> What to expect from this Lecture?</a>
 <ul>
 <li class="chapter" data-level="1.2.1" data-path="introduction.html"><a href="introduction.html#one-intuitive-illustration"><i class="fa fa-check"></i><b>1.2.1</b> One intuitive illustration</a></li>
 </ul></li>
@@ -168,7 +167,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="2.3.2" data-path="settheory.html"><a href="settheory.html#exclusive-and-non-exclusive-events"><i class="fa fa-check"></i><b>2.3.2</b> Exclusive and Non-Exclusive Events</a></li>
 <li class="chapter" data-level="2.3.3" data-path="settheory.html"><a href="settheory.html#union-and-intersection-of-events"><i class="fa fa-check"></i><b>2.3.3</b> Union and Intersection of Events</a></li>
 <li class="chapter" data-level="2.3.4" data-path="settheory.html"><a href="settheory.html#complement"><i class="fa fa-check"></i><b>2.3.4</b> Complement</a></li>
-<li class="chapter" data-level="2.3.5" data-path="settheory.html"><a href="settheory.html#some-laws-of"><i class="fa fa-check"></i><b>2.3.5</b> Some laws of</a></li>
+<li class="chapter" data-level="2.3.5" data-path="settheory.html"><a href="settheory.html#some-properties-of-union-and-intersection"><i class="fa fa-check"></i><b>2.3.5</b> Some Properties of union and intersection</a></li>
 </ul></li>
 <li class="chapter" data-level="2.4" data-path="settheory.html"><a href="settheory.html#countable-and-uncountable-sets"><i class="fa fa-check"></i><b>2.4</b> Countable and Uncountable sets</a></li>
 <li class="chapter" data-level="2.5" data-path="settheory.html"><a href="settheory.html#de-morgans-laws"><i class="fa fa-check"></i><b>2.5</b> De Morgan’s Laws:</a>
@@ -752,15 +751,30 @@ That concludes the proof.
 <h3><span class="header-section-number">3.7.1</span> Guessing in a multiple choice exam</h3>
 
 <div class="example">
-<span id="exm:unnamed-chunk-36" class="example"><strong>Example 3.10  </strong></span>
+<p><span id="exm:unnamed-chunk-36" class="example"><strong>Example 3.10  (Example 3c in <span class="citation"><a href="references.html#ref-ross2014first" role="doc-biblioref">Ross</a> (<a href="references.html#ref-ross2014first" role="doc-biblioref">2014</a>)</span>)  </strong></span>
+<em>In answering a question on a multiple-choice test, a student either knows the answer
+or guesses. Let p be the probability that the student knows the answer and 1 − p
+be the probability that the student guesses. Assume that a student who guesses at
+the answer will be correct with probability 1/m, where m is the number of multiple choice alternatives.</em></p>
+<p><em>What is the conditional probability that a student knew the
+answer to a question given that he or she answered it correctly?</em></p>
+<p><strong>Solution</strong> Let C and K denote, respectively, the events that the student answers the
+question correctly and the event that he or she actually knows the answer. Now,</p>
+<p><span class="math display">\[\begin{align*}
+P(K|C ) &amp; = \frac{P(KC)}{P(C)} \\ 
+&amp;= \frac{P(C|K)P(K)}{P(C|K )P(K) + P(C|Kc)P(Kc)} \\
+&amp;= \frac{p}{p + (1/m)(1 − p)} \\ 
+&amp;= \frac{mp}{1 + (m − 1)p}
+\end{align*}\]</span></p>
+For example, if <span class="math inline">\(m = 5\)</span>, <span class="math inline">\(p = 12\)</span> , then the probability that the student knew the answer to a question he or she answered correctly is 5/6
+.
 </div>
-<p><img src="img/03_axioms/Ross_Ex.png" width="468" /></p>
 </div>
 <div id="rent-car-maintenance" class="section level3" number="3.7.2">
 <h3><span class="header-section-number">3.7.2</span> Rent car maintenance</h3>
 
 <div class="example">
-<p><span id="exm:unnamed-chunk-38" class="example"><strong>Example 3.11  </strong></span>
+<p><span id="exm:unnamed-chunk-37" class="example"><strong>Example 3.11  </strong></span>
 - 60% from AVIS
 - 40% from Mobility</p>
 <p>Now consider that</p>

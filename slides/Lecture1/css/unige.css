@@ -8,32 +8,33 @@ Updated: 06/29/2018
 
 /*
 Primary Palette:
-GSEM BLUE  (official) : #465F7F
-Black                 : #000000
 White                 : #FFFFFF
-Grey 80% Black        : #5A5A5A
-Grey 50% Black        : #969696
-Grey 10% Black        : #E6E6E6
+GSEM BLUE LIGHT       : #A3AFBF
+GSEM BLUE  (official) : #465F7F
+GSEM BLUE DARK        : #233040
+Black                 : #000000
 */
+
+
 
 /*
 Secondary Palette:
-Blue    : #027EB6
-Purple  : #746FB2
-Fuchsia : #CF0063 couleur rectorat
-Ruby    : #C8008F
-Pink    : #EE64A4
-Red     : #EE0220
-Orange  : #D93F00
-Umber   : #795549
-Olive   : #6F7C4D
-Green   : #008A25
+
+RECTORAT PINK	    : #CF0063
+DROIT RED	        : #F42941
+LETTRES BLUE	    : #0067C5
+MEDECINE BURGUNDY	: #96004B
+SCIENCES GREEN    :	#007E64
+SDS YELLOW	      : #F1AB00
+PSYCHO MARINE	    : #00B1AE
+THEOLOGY PURPLE	  : #4B0B71
+FTI ORANGE	      : #FF5C00
 */
 
 /* Package defaults */
 
 a, a > code {
-  color: #97BBD5; /* blue accent 2 */
+  color: #0067C5; /* lettre blue */
   text-decoration: none;
 }
 
@@ -45,67 +46,76 @@ a, a > code {
   font-size: 95%;
 }
 
-/* important code slightly blue */
+/* important code slightly yellow
+/*
 .remark-code-line-highlighted {
-  background-color: #97BBD5 !important;
+  background-color: #F1AB00 !important;
 }
+*/
 
-/* color tweak */
-.inverse {
-  background-color: #465F7F;
+/* section separator*/
+.section {
+  background-color: #233040;
   color: #FFFFFF;
   text-shadow: 0 0 20px #333;
 }
 
-
-/* color tweak */
-.dark {
-  background-color: #000000;
-  color: #FFFFFF;
-  text-shadow: 0 0 20px #333;
-}
-
-
-/* slightly spacing change */
-.dark h1, .dark h2, .dark h3 {
+.section h1, .section h2, .section h3 {
   color: #FFFFFF;
   line-height: 1.0em;
 }
 
-/* slightly spacing change */
-.inverse h1, .inverse h2, .inverse h3 {
-  color: #f3f3f3;
+/* subsection separator */
+.subsection {
+  background-color: #000000;
+  color: #FFFFFF;
+  text-shadow: 0 0 20px #333;
+}
+.subsection h1, .subsection h2, .subsection h3 {
+  color: #FFFFFF;
+  line-height: 1.0em;
+}
+
+/* subsubsection */
+.subsubsection {
+  background-color: #A3AFBF;
+  color: #FFFFFF;
+  text-shadow: 0 0 20px #333;
+}
+
+.subsubsection h1, .subsubsection h2, .subsubsection h3 {
+  color: #FFFFFF;
   line-height: 1.0em;
 }
 
 /* Two-column layout (slightly wider for aspect ratio) */
 .left-column {
   color: #777;
-  width: 25%;
-  height: 92%;
+  width: 27%;
   float: left;
-}
-
-.left-column h2:last-of-type, .left-column h3:last-child {
-  color: #000;
 }
 
 /* slightly thinner to support aspect ratio */
 .right-column {
-  width: 70%;
+  color: #777;
+  width: 68%;
   float: right;
-  padding-top: 1em;
 }
 
 .pull-left {
   float: left;
-  width: 45%;
+  width: 48%;
 }
 
 .pull-right {
   float: right;
-  width: 45%;
+  width: 48%;
 }
+
+.pull-right ~ * {
+  clear: both;
+}
+
 
 .tothe-left {
   float: left;
@@ -117,15 +127,23 @@ a, a > code {
   width: 40%;
 }
 
-.pull-right ~ * {
-  clear: both;
-}
 
-.column {
+
+.column-left{
   float: left;
   width: 30%;
-  padding: 10px;
-  height: 300px; /* Should be removed. Only for demonstration */
+}
+.column-right{
+  float: right;
+  width: 30%; }
+
+.column-center{
+  display: inline-block;
+  padding-left: 5%;
+  width: 30%;}
+
+.column-right ~ * {
+  clear: both;
 }
 
 /* Clear floats after the columns */
@@ -162,15 +180,18 @@ th, td {
     padding:0 15px 0 15px;
 }
 
-/* remove color from tables */
+/* remove color from tables*/
 table {
   margin: auto;
   border-top: none;
   border-bottom: none;
 }
-
 table thead th { border-bottom: none; }
 thead, tfoot, tr:nth-child(even) { background: none; }
+
+
+
+
 
 /* leave this alone */
 @page { margin: 0; }
@@ -185,7 +206,7 @@ thead, tfoot, tr:nth-child(even) { background: none; }
 }
 
 /*~~~~~>>~~~~~~~~~*/
-/* MIDD additions */
+/* UNIGE additions */
 /*~~~~~~~>>~~~~~~~*/
 
 /* Title slide */
@@ -310,18 +331,29 @@ thead, tfoot, tr:nth-child(even) { background: none; }
 
 /* Color adjustments for text */
 
-/* Make bold syntax compile to midd-blue */
+/* Make bold syntax compile to gsem */
 strong {
   color: #006DAE;
+  font-weight: bold;
 }
 
-.RUred {
-  color: #cc0033;
+
+/* Add gsemblue tag */
+
+
+
+.gsembluelight {
+  color: #A3AFBF;
+  font-weight: bold;
 }
 
-/* Add blue tag */
 .gsemblue {
   color: #465F7F;
+  font-weight: bold;
+}
+
+.gsembluedark {
+  color: #233040;
   font-weight: bold;
 }
 
@@ -340,38 +372,45 @@ strong {
 
 /*Secondary Palette:*/
 
+.pink{
+  color : #CF0063;
+  font-weight: bold;
+}
+.red{
+  color: #F42941;
+  font-weight: bold;
+}
 .blue {
-  color: #027EB6;
+  color: #0067C5;
+  font-weight: bold;
 }
-.purple {
-  color: #746FB2;
+.burgundy {
+  color: #96004B;
+  font-weight: bold;
 }
-.fuchsia {
-  color: #9651A0;
+.green{
+  color: #007E64;
+  font-weight: bold;
 }
-.ruby {
-  color: #C8008F;
+.yellow{
+  color: #F1AB00;
+  font-weight: bold;
 }
-.pink {
-  color: #EE64A4;
+.marine{
+  color:: #00B1AE;
+  font-weight: bold;
 }
-.red {
-  color: #EE0220;
+.purple{
+  color	  : #4B0B71;
+  font-weight: bold;
 }
-.orange {
-  color: #D93F00;
-}
-.umber {
-  color: #795549;
-}
-.olive {
-  color: #6F7C4D;
-}
-.green {
-  color: #008A25;
+.orange{
+  color : #FF5C00;
+  font-weight: bold;
 }
 
 /* Force black */
+
 .black {
   color: black;
   font-weight: bold;
@@ -381,12 +420,9 @@ strong {
 
 .white{
   color: white;
-}
-
-.white-bold {
-  color: white;
   font-weight: bold;
 }
+
 
 /* Color adjustments to headers */
 h1 {
@@ -395,12 +431,6 @@ h1 {
 
 h2 {
   color: #0D395F;
-  font-weight: 600;
-  font-size: 45px;
-  text-align: left;
-  text-shadow: none;
-  padding-top: 0;
-  margin-top: 0;
 }
 
 h3 {
@@ -435,19 +465,22 @@ h3 {
     background-color: #969696;
 }
 
+.content-box-gsemlight,
+.content-box-gsemblue,
+.content-box-gsemdark,
+.content-box-black,
 .content-box-darkgrey,
 .content-box-grey,
 .content-box-lightgrey,
-.content-box-blue,
-.content-box-purple,
-.content-box-fuchsia,
-.content-box-ruby,
 .content-box-pink,
 .content-box-red,
-.content-box-orange,
-.content-box-umber,
-.content-box-olive,
-.content-box-green{
+.content-box-blue,
+.content-box-burgundy,
+.content-box-green,
+.content-box-yellow,
+.content-box-marine,
+.content-box-purple,
+.content-box-orange{
   box-sizing: border-box;
   border-radius: 15px;
   margin: 0 0 15px;
@@ -456,33 +489,38 @@ h3 {
   width: 100%;
 }
 
-.content-box-darkgrey { background-color: #5A5A5A; }
-.content-box-grey { background-color: #969696; }
-.content-box-lightgrey { background-color: #E6E6E6; }
-.content-box-blue { background-color: #027EB6; }
-.content-box-purple{ background-color: #746FB2; }
-.content-box-fuchsia{ background-color: #9651A0; }
-.content-box-ruby{ background-color: #C8008F; }
-.content-box-pink{ background-color: #EE64A4; }
-.content-box-red{ background-color: #EE0220; }
-.content-box-orange{ background-color: #D93F00; }
-.content-box-umber{ background-color: #795549; }
-.content-box-olive{ background-color: #6F7C4D; }
-.content-box-green{ background-color: #008A25; }
+.content-box-gsemlight{background-color: #A3AFBF;}
+.content-box-gsemblue{background-color: #465F7F;}
+.content-box-gsemdark{background-color: #233040;}
+.content-box-black { background-color: #000000;}
+.content-box-darkgrey { background-color: #5A5A5A;}
+.content-box-grey { background-color: #969696;}
+.content-box-lightgrey { background-color: #E6E6E6;}
+.content-box-pink{background-color: #CF0063;}
+.content-box-red{background-color: #F42941;}
+.content-box-blue{background-color: #0067C5;}
+.content-box-burgundy{background-color: #96004B;}
+.content-box-green{background-color: #007E64;}
+.content-box-yellow{background-color: #F1AB00;}
+.content-box-marine{background-color: #00B1AE;}
+.content-box-purple{background-color: #4B0B71;}
+.content-box-orange{background-color: #FF5C00;}
 
+.content-box-gsemlight .remark-inline-code,
+.content-box-gsemblue .remark-inline-code,
+.content-box-gsemdark .remark-inline-code,
 .content-box-darkgrey .remark-inline-code,
 .content-box-grey .remark-inline-code,
 .content-box-lightgray .remark-inline-code,
-.content-box-blue .remark-inline-code,
-.content-box-purple .remark-inline-code,
-.content-box-fuchsia .remark-inline-code,
-.content-box-ruby .remark-inline-code,
 .content-box-pink .remark-inline-code,
 .content-box-red .remark-inline-code,
-.content-box-orange .remark-inline-code,
-.content-box-umber .remark-inline-code,
-.content-box-olive .remark-inline-code,
-.content-box-green .remark-inline-code{
+.content-box-blue .remark-inline-code,
+.content-box-burgundy .remark-inline-code,
+.content-box-green .remark-inline-code,
+.content-box-yellow .remark-inline-code,
+.content-box-marine .remark-inline-code,
+.content-box-purple .remark-inline-code,
+.content-box-orange .remark-inline-code{
   background: none;
 }
 

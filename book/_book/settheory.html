@@ -21,10 +21,9 @@
   <meta name="twitter:description" content="Course Materials" />
   
 
-<meta name="author" content="Dr. Daniel Flores Agreda (based on the notes by Prof. Davide La Vecchia)" />
+<meta name="author" content="Dr. Daniel Flores Agreda (based on the Lecture by Prof. Davide La Vecchia)" />
 
 
-<meta name="date" content="2021-02-09" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -71,9 +70,9 @@
 <li><a href="https://moodle.unige.ch/course/view.php?id=7133"><strong>Probability I (Spring 2021)</strong></a></li>
 
 <li class="divider"></li>
-<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>About this Lecture</a>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>About</a>
 <ul>
-<li class="chapter" data-level="" data-path="index.html"><a href="index.html#course-contents"><i class="fa fa-check"></i>Course Contents</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#the-contents-in-a-nutshell"><i class="fa fa-check"></i>The contents in a nutshell</a></li>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html#practical-information"><i class="fa fa-check"></i>Practical information</a>
 <ul>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html#hours"><i class="fa fa-check"></i>Hours</a></li>
@@ -81,8 +80,8 @@
 </ul></li>
 <li class="chapter" data-level="1" data-path="introduction.html"><a href="introduction.html"><i class="fa fa-check"></i><b>1</b> Introduction</a>
 <ul>
-<li class="chapter" data-level="1.1" data-path="introduction.html"><a href="introduction.html#preliminaries"><i class="fa fa-check"></i><b>1.1</b> Preliminaries</a></li>
-<li class="chapter" data-level="1.2" data-path="introduction.html"><a href="introduction.html#what-to-expect-from-this-lecture"><i class="fa fa-check"></i><b>1.2</b> “What to expect from this Lecture?”</a>
+<li class="chapter" data-level="1.1" data-path="introduction.html"><a href="introduction.html#a-world-of-data"><i class="fa fa-check"></i><b>1.1</b> A World of Data</a></li>
+<li class="chapter" data-level="1.2" data-path="introduction.html"><a href="introduction.html#what-to-expect-from-this-lecture"><i class="fa fa-check"></i><b>1.2</b> What to expect from this Lecture?</a>
 <ul>
 <li class="chapter" data-level="1.2.1" data-path="introduction.html"><a href="introduction.html#one-intuitive-illustration"><i class="fa fa-check"></i><b>1.2.1</b> One intuitive illustration</a></li>
 </ul></li>
@@ -490,7 +489,7 @@ Let <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</
 <p><span id="exm:countableSet" class="example"><strong>Example 2.4  (Our deck of cards and Finite Countable Sets)  </strong></span>Let’s come back to our example with the deck of cards and the event. The following events can be considered countably finite sets as they have a limited and countable number of elements:</p>
 <ul>
 <li><span class="math inline">\(K \cup H\)</span> = {<span style="color: black">K♣</span>, <span style="color: red">K♦</span>, <span style="color: red">K♥</span>, <span style="color: black">K♠</span>, <span style="color: red">A♥</span>, <span style="color: red">2♥</span>, … , <span style="color: red">Q♥</span>}</li>
-<li><span class="math inline">\(J \cup H\)</span> = {<span style="color: black">J♣</span>, <span style="color: black">Q♣</span>,<span style="color: black">K♣</span>,<span style="color: red">J♦</span>, <span style="color: red">Q♦</span>, <span style="color: red">K♦</span> , <span style="color: red">J♥</span>, <span style="color: red">Q♥</span>, <span style="color: red">K♥</span>, <span style="color: black">J♠</span>, <span style="color: black">Q♠</span>, <span style="color: black">K♠</span>, <span style="color: red">A♥</span>, <span style="color: red">2♥</span>, … , <span style="color: red">10♥</span>}</li>
+<li><span class="math inline">\(J \cup H\)</span> = {<span style="color: black">J♣</span>, <span style="color: black">Q♣</span>, <span style="color: black">K♣</span>, <span style="color: red">J♦</span>, <span style="color: red">Q♦</span>, <span style="color: red">K♦</span>, <span style="color: red">J♥</span>, <span style="color: red">Q♥</span>, <span style="color: red">K♥</span>, <span style="color: black">J♠</span>, <span style="color: black">Q♠</span>, <span style="color: black">K♠</span>, <span style="color: red">A♥</span>, <span style="color: red">2♥</span>, … , <span style="color: red">10♥</span>}</li>
 <li><span class="math inline">\(H^{c}\)</span> = {<span style="color: black">A♣</span>, <span style="color: black">2♣</span>, …,<span style="color: black">K♣</span>,<span style="color: red">A♦</span>, <span style="color: red">2♦</span>, … ,<span style="color: red">K♦</span> ,<span style="color: black">A♠</span>, <span style="color: black">2♠</span>, … ,<span style="color: black">K♠</span>}
 </div></li>
 </ul>
@@ -498,8 +497,8 @@ Let <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</
 <!-- %Events can be represented by means of sets. -->
 
 <div class="exercise">
-<p><span id="exr:uncountableSet" class="exercise"><strong>Exercise 2.2  (An illustration of an Uncountable Set)  </strong></span>
-<img src="img/02_set_theory/Example3.png" /></p>
+<p><span id="exr:uncountableSet" class="exercise"><strong>Exercise 2.2  (An illustration of an Uncountable Set)  </strong></span></p>
+<p><img src="img/02_set_theory/Example3.png" /></p>
 <p>and using the definition of <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span> compute:</p>
 <ul>
 <li><span class="math inline">\(A^c\)</span></li>

@@ -78,6 +78,7 @@ Compute the following integrals: \\
 Combinatorics is a branch of mathematics concerning the study of finite or countable discrete structures.
 We will enumerate the number of ways of selecting $k$ items from a collection of $n$ objects.
 In this class we will use several kinds of combinations:
+
 \begin{enumerate}
   \item Permutation with repetition: $n^k$  \\
   we draw (with replacement) $k$ elements from $n$ objects.

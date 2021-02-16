@@ -15,7 +15,7 @@ output:
       # ratio: '4:3' # alternatives '16:9' or '4:3' or others e.g. 13:9
       ratio: '16:9' # or '4:3' or others e.g. 13:9
       navigation:
-        scroll: true # disable slide transitions by scrolling
+        scroll: false # disable slide transitions by scrolling
 ---
 class: center, middle
 
@@ -23,15 +23,7 @@ class: center, middle
 
 ???
 
-Dear Ms Hickey, 
-
-Please find these slides for your review. This version includes the previously mentioned Simpsons memes.
-
-The planned special pre-booked session will follow very shortly (i.e. tomorrow, for example? tonight there's Tennis! *shrug)
-
-Kindest regards, 
-
-Dan/Dani/Bear
+My comments when I present
 
 ---
 class: center, middle
@@ -88,7 +80,7 @@ class: center
 5. Discussion and Current Work
 
 ---
-class: inverse, center, middle
+class: section, center, middle
 
 ```{r , include = FALSE}
 knitr::opts_chunk$set(
@@ -110,7 +102,7 @@ knitr::opts_chunk$set(
 pal_monashblue  <- "#006DAE"
 pal_black       <- "#000000"
 pal_white       <- "#FFFFFF"
-pal_darkgrey    <- "#5A5A5A"
+pal_subsectiongrey    <- "#5A5A5A"
 pal_grey        <- "#969696"
 pal_lightGrey   <- "#E6E6E6"
 
@@ -276,7 +268,7 @@ which can be written for convenience as the exponents in the log
 
 ### e.g. via the **Laplace Approximation** $\rightarrow \color{red}{\tilde{\mathcal{L}}\left(\mathbf{\theta}\right)}$.
 ---
-class: inverse, center, middle
+class: section, center, middle
 
 # Bootstrapping Clustered Data
 
@@ -343,7 +335,7 @@ class: center, middle
 At this point in the talk it appears that Parametric Bootstrap (approach based on simulations) is the only feasible and convenient alternative 
 
 ---
-class: inverse, center, middle
+class: section, center, middle
 
 # Bootstrapping Clustered Data via a Weighted Laplace Approximation* 
 
@@ -360,7 +352,7 @@ That said, it also help us segue into the title of the talk
 What is it that we propose?
 
 ---
-class: dark, center, middle
+class: subsection, center, middle
 
 
 
@@ -416,12 +408,12 @@ $$\mathcal{L}_i^{*} \left(\mathbf{\theta}\right) =
 ### 3.(4. and 5.)  **Evaluate** : Package `TMB` (`C++` Templates and `R`)
 
 ---
-class: inverse, center, middle
+class: section, center, middle
 
 # (Some) Properties
 
 ---
-class: dark, center, middle
+class: subsection, center, middle
 
 # The Good `r icon::fontawesome("thumbs-up")`
 
@@ -515,7 +507,7 @@ class: middle
 ### `r icon::fontawesome("arrow-circle-right")`  $\sqrt{n} \left(\widehat{\mathbf{\sigma}}^{*} - \widehat{\sigma}\right)$ is `r icon::fontawesome("check-circle")` 
 
 ---
-class: dark, middle, center 
+class: subsection, middle, center 
 
 # Simulations
 --
@@ -977,7 +969,7 @@ coverage_ratios.df%>%
   theme_classic() 
 ```
 ---
-class: dark, middle, center 
+class: subsection, middle, center 
 
 # Simulations
 --
@@ -1316,7 +1308,7 @@ th_dta %>%
     - Possible **fix**: increases in $n_i$. 
     
 ---
-class: inverse, center, middle
+class: section, center, middle
 
 # Discussion and Current Work
 
@@ -1408,12 +1400,12 @@ Travel Grant accorded by ViCBiostat and Monash University, Melbourne.
 
 ---
 
-class: inverse, center, middle
+class: section, center, middle
 
 # Appendix
 
 ---
-class: dark , center, middle
+class: subsection , center, middle
 
 # (Some) Theory
 
@@ -1573,7 +1565,7 @@ $$\mathbf{y}_i = \mathbf{X}_{i}\mathbf{\beta} + \sum_{r=0}^{q} \sigma_r \mathbf{
 ]
 ]
 ---
-class: dark, middle, center
+class: subsection, middle, center
 
 # Simulations 
 

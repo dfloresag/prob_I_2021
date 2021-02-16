@@ -297,3 +297,8 @@ exr:unnamed-chunk-16
 some-properties-of-union-and-intersection
 exr:unnamed-chunk-18
 exr:unnamed-chunk-17
+a-world-of-data
+date-2021-02-12
+exercises
+references
+a-quick-reminder-of-mathematics

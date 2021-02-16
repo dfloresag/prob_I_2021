@@ -1,7 +1,7 @@
 --- 
-title: "Probability I"
-author: "Dr. Daniel Flores Agreda (based on the notes by Prof. Davide La Vecchia)"
-date: "`r Sys.Date()`"
+title: "`r emo::ji('joker')` Probability I"
+subtitle: "Spring Semester 2021"
+author: "Dr. Daniel Flores Agreda (based on the Lecture by Prof. Davide La Vecchia)"
 site: bookdown::bookdown_site
 output: bookdown::gitbook
 documentclass: book
@@ -13,9 +13,6 @@ description: "Course Materials"
 code_folding: hide 
 toc-title: "Probability I - Spring 2021"
 ---
-
-# About this Lecture {-}
-
 ```{r setup, include = FALSE}
 knitr::opts_chunk$set(echo = FALSE, fig.align = 'center')
 ```
@@ -27,57 +24,143 @@ knitr::write_bib(c(
 ), 'packages.bib')
 ```
 
+
 ```{r}
+library(tidyverse)
 library(emo)
 ```
 
-<mark>
-  Insert image here.
-</mark>
 
-Hello and welcome to this Lecture. 
+# About this lecture {-}
 
 
-### Course Contents {-}
+```{r ,echo = FALSE, fig.align='center'}
+  knitr::include_url("https://giant.gfycat.com/ApprehensiveEarnestFlounder.mp4")
+```
 
-This Lecture in 
+```{r, eval= FALSE, echo = FALSE}
+library(plinko)
+library(dplyr)
+library(ggplot2)
+library(distributional)
+library(ggdist)
 
-1. Introduction
-  
-2. Basic calculus for probability
-  <!-- - Random variables   -->
-  <!-- - Trees -->
-  <!-- - Venn diagram -->
-  <!-- - Conditional probability  -->
-  <!-- - Independence & Bayes' theorem -->
-  <!-- - ... -->
-3. Discrete random variables
-  <!-- - Definitions -->
-  <!-- - Expected value and variance -->
-  <!-- - Binomial -->
-  <!-- - Poisson -->
-  <!-- - Negative binomial and hypergeometric -->
-4. Continuous random variables
-  <!-- - Definitions -->
-  <!-- - Expected value and variance -->
-  <!-- - Cumulative distribution function (cdf) and Probability density function (pdf) -->
-  <!-- - Some important examples: Uniform, Exponential, Gamma, Normal, logNormal, Student's... -->
-  <!-- - Relationships -->
-5. Bivariate random variables
-6. Limit theorems
-  <!-- - Weak Law of Large Numbers (WLLN) and Central Limit Theorem (CLT) -->
-7. Elements of simulations 
-  <!-- - numerical methods for the simulation of random variable with a given CDF... -->
+theme_set(theme_ggdist())
+
+# You can construct plinko boards using distributions from the distributional package:
+
+set.seed(1234)  # for reproducibility
+
+dist = dist_normal(2, 1)
+board = plinko_board(dist, n_bin = 1000, n_ball = 1000)
+autoplot(board)
+
+board %>%
+  tween_balls(frame_mult = 4) %>%
+  animate(height = 350, fps = 30, end_pause = 2 * 30)
+```
+
+
+Hello and Welcome to this introductory Lecture in Probability! 
+
+This "book" is a complement to the Lecture. 
+
+## The contents in a nutshell {-}
+
+The Lecture is divided in the following units, and each unit contains several themes. 
+
+| Number| Name  | Themes |
+|:------:|:-------|:-------|
+| 1 |**Introduction** | Intro, Mathematics reminder and Combinatorics. |
+| 2 |**Basic calculus for probability** | Random variables, Trees, Venn diagram, Conditional probability, Independence & Bayes' theorem. | 
+| 3 | **Discrete random variables**| Definitions, Expected value and variance,  Binomial, Poisson, Negative binomial and Hypergeometric |
+| 4 | **Continuous random variables** | Definitions, Expected value and variance, Cumulative distribution function (cdf) and Probability density function (pdf), Some important examples: Uniform, Exponential, Gamma, Normal, logNormal, Student's..., Relationships | 
+| 5 | **Bivariate random variables** | | 
+| 6 | **Limit theorems** | Weak Law of Large Numbers (WLLN) and Central Limit Theorem (CLT) |
+| 7 | **Elements of Simulation** | Numerical methods for the simulation of random variable with a given CDF. | 
+
 
 ## Practical information {-}
 
-### Hours {-}
+### Who we are {-}
 
-- Lectures : Thursday. from 12 to 14 (MR280) 
+```{r}
+library(htmltools)
 
-- Exercises (exercise sheets \& solutions available on Moodle):  
-  - Thur. from 16 to 18 (MS130) 
+card_component <- function(name, title, portrait, e_mail) {
+  div(
+    img(src = portrait,
+        alt = name, 
+        style = "
+        border-radius: 100%;
+        object-fit: cover;
+        width: 200px;
+        height: 200px;"), 
+    div(
+      h5(name),
+      h6(title), 
+      a(e_mail)
+    )
+  )
+}
+```
 
-- **Exam:**  Written exam **open-book, 2 hrs**
 
-- **Book:** _A first course in probability_, S. Ross (any edition), Ed: Pearson New International Edition.
+```{r}
+lecturers <- tibble(
+  name = c("Daniel FLORES AGREDA", "Edoardo VIGNOTTO"),
+  title = c("Data Science Course Developer and Instructor" , "Teaching and Research Assistant"),
+  portrait = c(
+    "https://d33wubrfki0l68.cloudfront.net/bb2b2f1c0fb1d52f4c61c9bacdc49dcbfc4c756c/58288/daniel.3c796e13.jpg",
+    "https://www.unige.ch/gsem/files/cache/5825d0668aa3e7ad3ff8ec085e7f3498_f3901.jpg"), 
+  e_mail = c("Daniel.Flores@unige.ch", "Edoardo.Vignotto@unige.ch")
+)
+```
+
+```{r}
+lecturers %>%
+  purrr::pmap(card_component) %>%
+  div(
+    style = "display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    grid-gap: 25px 30px;"
+  ) %>%
+  doRenderTags()
+```
+
+
+
+
+
+### Lectures {-}
+
+The Lectures will take place over [Zoom](https://unige.zoom.us/j/7938361073) on **Thursdays** from **12h to 14h**. 
+
+- Lectures will consist on a presentation of the contents of the class. 
+
+- During the class, there will be some exercises. You are invited to download the app [Wooclap]()
+
+- On certain occasions, a video of the week presentation will be available beforehand. In those cases, the session will be replaced by a quiz and Q\& A session. 
+
+### Exercises {-}
+
+Exercise sessions will take place on **Thursdays**  from **16 to 18** over [Zoom](https://unige.zoom.us/j/7938361073)
+
+- Problem sets are not graded
+
+- The problem set will be posted on-line one week before
+
+- Solutions will be made available [Moodle]()
+
+
+### Tools {-}
+
+- Moodle 
+
+- Wooclap
+
+- 
+
+#### References {-}
+
+- _A first course in probability_, S. Ross (any edition), Ed: Pearson New International Edition. 

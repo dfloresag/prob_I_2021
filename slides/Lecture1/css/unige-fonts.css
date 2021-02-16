@@ -10,4 +10,12 @@ h1, h2, h3 {
 }
 
 .remark-code, .remark-inline-code { font-family: 'Inconsolata', monospace; }
-.remark-code-line-highlighted     { background-color: #ffff88; }
+.remark-code-line-highlighted     { background-color: #F1AB00; }
+
+
+.Large       , .Large .remark-code, .Large .remark-inline-code { font-size: 144%; }
+.large       , .large .remark-code, .large .remark-inline-code { font-size: 120%; }
+.small       , .small .remark-code, .small .remark-inline-code { font-size: 90%; }
+.footnotesize, .footnotesize .remark-code, .footnotesize .remark-inline-code { font-size: 80%; }
+.scriptsize  , .scriptsize .remark-code, .scriptsize .remark-inline-code { font-size: 70%; }
+.tiny        , .tiny .remark-code, .tiny .remark-inline-code { font-size: 60%; }
