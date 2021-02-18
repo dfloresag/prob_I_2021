@@ -1,0 +1,619 @@
+/*
+CSS for xaringan slides in UNIGE Flavor
+(heavily) based on the Middlebury College flavor by Joseph V. Casillas
+some cues were taken from the Sydney U Template by Garth Tarr
+Author: Daniel Flores Agreda
+Updated: 06/29/2018
+*/
+
+/*
+Primary Palette:
+White                 : #FFFFFF
+GSEM BLUE LIGHT       : #A3AFBF
+GSEM BLUE  (official) : #465F7F
+GSEM BLUE DARK        : #233040
+Black                 : #000000
+*/
+
+
+/* Grey tags
+.darkgrey : #5A5A5A;
+.grey : #969696;
+.lightgrey : #E6E6E6;
+*/
+
+
+
+/*
+Secondary Palette:
+
+RECTORAT PINK	    : #CF0063
+DROIT RED	        : #F42941
+LETTRES BLUE	    : #0067C5
+MEDECINE BURGUNDY	: #96004B
+SCIENCES GREEN    :	#007E64
+SDS YELLOW	      : #F1AB00
+PSYCHO MARINE	    : #00B1AE
+THEOLOGY PURPLE	  : #4B0B71
+FTI ORANGE	      : #FF5C00
+*/
+
+/* Package defaults */
+
+a, a > code {
+  color: #0067C5; /* lettres blue */
+  text-decoration: none;
+}
+
+/* slightly lower and bigger than default */
+.footnote{
+  position: absolute;
+  bottom: 1em;
+  padding-right: 4em;
+  font-size: 95%;
+}
+
+/* important code slightly yellow
+/*
+.remark-code-line-highlighted {
+  background-color: #F1AB00 !important;
+}
+*/
+
+/* section separator*/
+.section {
+  background-color: #233040;
+  color: #FFFFFF;
+  text-shadow: 0 0 20px #333;
+}
+
+.section h1, .section h2, .section h3 {
+  color: #FFFFFF;
+  line-height: 1.0em;
+}
+
+/* subsection separator */
+.subsection {
+  background-color: #000000;
+  color: #FFFFFF;
+  text-shadow: 0 0 20px #333;
+}
+.subsection h1, .subsection h2, .subsection h3 {
+  color: #FFFFFF;
+  line-height: 1.0em;
+}
+
+/* subsubsection */
+.subsubsection {
+  background-color: #A3AFBF;
+  color: #FFFFFF;
+  text-shadow: 0 0 20px #333;
+}
+
+.subsubsection h1, .subsubsection h2, .subsubsection h3 {
+  color: #FFFFFF;
+  line-height: 1.0em;
+}
+
+/* Two-column layout (slightly wider for aspect ratio) */
+.left-column {
+  color: #777;
+  width: 27%;
+  float: left;
+}
+
+/* slightly thinner to support aspect ratio */
+.right-column {
+  color: #777;
+  width: 68%;
+  float: right;
+}
+
+.pull-left {
+  float: left;
+  width: 48%;
+}
+
+.pull-right {
+  float: right;
+  width: 48%;
+}
+
+.pull-right ~ * {
+  clear: both;
+}
+
+
+.tothe-left {
+  float: left;
+  width: 55%;
+}
+
+.tothe-right {
+  float: right;
+  width: 40%;
+}
+
+
+
+.column-left{
+  float: left;
+  width: 30%;
+}
+.column-right{
+  float: right;
+  width: 30%; }
+
+.column-center{
+  display: inline-block;
+  padding-left: 5%;
+  width: 30%;}
+
+.column-right ~ * {
+  clear: both;
+}
+
+/* Clear floats after the columns */
+
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.crop {
+    width: 200px;
+    height: 150px;
+    overflow: hidden;
+}
+
+.crop img {
+    width: 400px;
+    height: 300px;
+    margin: -75px 0 0 -100px;
+}
+
+img, video, iframe {
+  max-width: 100%;
+}
+
+.blockquote {
+  border-left: solid 10px #A3AFBF;
+  padding-left: 1em;
+  padding-right: 1em;
+  padding-top: .1em;
+  padding-bottom: .1em;
+  margin-top: 1em;
+  margin-bottom: 1em;
+  margin-left: 30px;
+  margin-right: 30px;
+}
+
+/* unige blockquote */
+.blockquote-math {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  margin-left: 5px;
+  margin-right: 5px;
+  border-left: solid 10px #465F7F;
+  border-top: solid 2px #465F7F;
+  border-bottom: solid 2px #465F7F;
+  border-right: solid 2px #465F7F;
+  box-shadow: 0 0 6px rgba(0,0,0,0.5);
+  /*background-color: lightgrey;*/
+  /*padding: 0.5em;*/
+  padding-left: 1em;
+  color: #000000;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+}
+
+.blockquote-math p {
+  margin-top: 0px;
+  margin-bottom: 5px;
+}
+.blockquote-math > h1:first-of-type {
+  margin-top: 0px;
+  margin-bottom: 5px;
+  color: #465F7F;
+  font-weight: bold;
+}
+.blockquote-math > h2:first-of-type {
+  margin-top: 0px;
+  margin-bottom: 5px;
+  color: #465F7F;
+  font-weight: bold;
+}
+.blockquote-math > h3:first-of-type {
+  margin-top: 0px;
+  margin-bottom: 5px;
+  color: #465F7F;
+  font-weight: bold;
+}
+.blockquote-math > h4:first-of-type {
+  margin-top: 0px;
+  margin-bottom: 5px;
+  color: #465F7F;
+  font-weight: bold;
+}
+
+.blockquote-math-ex{
+  margin-top: 10px;
+  margin-bottom: 10px;
+  margin-left: 5px;
+  margin-right: 5px;
+  border-left: solid 10px #CF0063;
+  border-top: solid 2px #CF0063;
+  border-bottom: solid 2px #CF0063;
+  border-right: solid 2px #CF0063;
+  box-shadow: 0 0 6px rgba(0,0,0,0.5);
+  /*background-color: lightgrey;*/
+  /*padding: 0.5em;*/
+  padding-left: 1em;
+  color: #000000;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+}
+
+.blockquote-math-ex > h1:first-of-type {
+  margin-top: 0px;
+  margin-bottom: 5px;
+  color: #CF0063;
+  font-weight: bold;
+}
+.blockquote-math-ex > h2:first-of-type {
+  margin-top: 0px;
+  margin-bottom: 5px;
+  color: #CF0063;
+  font-weight: bold;
+}
+.blockquote-math-ex > h3:first-of-type {
+  margin-top: 0px;
+  margin-bottom: 5px;
+  color: #CF0063;
+  font-weight: bold;
+}
+.blockquote-math-ex > h4:first-of-type {
+  margin-top: 0px;
+  margin-bottom: 5px;
+  color: #CF0063;
+  font-weight: bold;
+}
+
+/* adjust table horizontal spacing */
+th, td {
+    padding:0 15px 0 15px;
+}
+
+/* remove color from tables*/
+table {
+  margin: auto;
+  border-top: none;
+  border-bottom: none;
+}
+
+table thead th {
+  border-bottom: none;
+}
+thead, tfoot, tr:nth-child(even){
+  background: none;
+}
+
+/* leave this alone */
+@page { margin: 0; }
+@media print {
+  .remark-slide-scaler {
+    width: 100% !important;
+    height: 100% !important;
+    transform: scale(1) !important;
+    top: 0 !important;
+    left: 0 !important;
+  }
+}
+
+/*~~~~~>>~~~~~~~~~*/
+/* UNIGE additions */
+/*~~~~~~~>>~~~~~~~*/
+
+/* Title slide */
+
+/* Add image and change bg color */
+.title-slide {
+  background-image: url(../img/logos/gsem_en_blanc.png);
+  background-position: top right;
+  background-size: 350px;
+  background-color: #465F7F;
+  padding-left: 100px;   /* delete this for 4:3 aspect ratio */
+}
+
+/* H1 fonts */
+.title-slide h1 {
+  color:  #FFFFFF; /* White */
+  padding-top: 250px;
+  font-weight: 800;
+  font-size: 60px;
+  line-height: 0.05;
+  text-align: left;
+  text-shadow: 0 0 20px #333;
+  padding-bottom: 18px;
+  margin-bottom: 18px;
+}
+
+/* H2 fonts */
+.title-slide h2 {
+  color: #000000; /* Grey 80% Black*/
+  font-weight: 600;
+  font-size: 45px;
+  text-align: left;
+  text-shadow: none;
+  padding-top: 0;
+  margin-top: 0;
+}
+
+/* H3 fonts */
+.title-slide h3 {
+  color: #E6E6E6; /* Grey 10% Black */
+  font-size: 28px;
+  font-weight: normal;
+  text-align: left;
+  text-shadow: none;
+  padding: 0px;
+  margin: 0px;
+  line-height: 1;
+}
+
+/* Remove slide count */
+.title-slide .remark-slide-number {
+  text-shadow: none;
+}
+
+/*~~~~~~~~~~~~~~~~~~*/
+/* SECTION DIVIDERS */
+/*~~~~~~~~~~~~~~~~~~*/
+
+/* section divider blue */
+.title-slide-section-blue {
+  background-color: #006DAE;
+  padding-left: 100px;  /* delete this for 4:3 aspect ratio */
+}
+
+/* section divider blue H1 fonts */
+.title-slide-section-blue h1,
+.title-slide-section-blue h2,
+.title-slide-section-blue h3,
+.title-slide-section-blue p{
+  color: #006DAE;
+}
+
+/* section divider grey */
+.title-slide-section-grey {
+  background-color: #4C4B4C;
+  padding-left: 100px;  /* delete this for 4:3 aspect ratio */
+}
+
+/* section divider grey H1 fonts */
+.title-slide-section-grey h1, .title-slide-section-grey h2, .title-slide-section-grey h3 {
+  color: #AAA59F;
+}
+
+.title-slide-section-grey p {
+  color: #fff;
+}
+
+/*~~~~~~~~~~~~~~~~~~*/
+/* FINAL SLIDE      */
+/*~~~~~~~~~~~~~~~~~~*/
+
+.title-slide-final {
+  background-color: #AAA59F;
+  color: #fff;
+  padding-left: 100px;
+/*  text-shadow: 0 0 3px #333; */
+  text-align: center;
+}
+
+.title-slide-final h1 {
+  color: #006DAE;
+}
+
+.title-slide-final h2 {
+  color: #000000;
+
+}
+
+.title-slide-final h3 {
+  color: #0D395F;
+}
+
+/*~~~~~~~~~~~~~~~~~~~~*/
+/* Global adjustments */
+/*~~~~~~~~~~~~~~~~~~~~*/
+
+/* Add padding to all slides for 16:9 aspect ratio */
+.remark-slide-content {
+  padding-left: 50px;  /* delete this for 4:3 aspect ratio */
+}
+
+/* Color adjustments for text */
+
+/* Make bold syntax compile to gsem */
+strong {
+  color: #006DAE;
+  font-weight: bold;
+}
+
+
+/* Add gsemblue tag */
+
+.gsemlight {
+  color: #A3AFBF;
+  font-weight: bold;
+}
+
+.gsemblue {
+  color: #465F7F;
+  font-weight: bold;
+}
+
+.gsemdark {
+  color: #233040;
+  font-weight: bold;
+}
+
+/* Grey tags */
+.darkgrey {
+  color: #5A5A5A;
+}
+
+.grey {
+  color: #969696;
+}
+
+.lightgrey {
+  color: #E6E6E6;
+}
+
+/*Secondary Palette:*/
+
+.pink{
+  color : #CF0063;
+  font-weight: bold;
+}
+.red{
+  color: #F42941;
+  font-weight: bold;
+}
+.blue {
+  color: #0067C5;
+  font-weight: bold;
+}
+.burgundy {
+  color: #96004B;
+  font-weight: bold;
+}
+.green{
+  color: #007E64;
+  font-weight: bold;
+}
+.yellow{
+  color: #F1AB00;
+  font-weight: bold;
+}
+.marine{
+  color:: #00B1AE;
+  font-weight: bold;
+}
+.purple{
+  color	  : #4B0B71;
+  font-weight: bold;
+}
+.orange{
+  color : #FF5C00;
+  font-weight: bold;
+}
+
+/* Force black */
+
+.black {
+  color: black;
+  font-weight: bold;
+}
+
+/* Add white tag */
+
+.white{
+  color: white;
+  font-weight: bold;
+}
+
+
+
+/* Font size tags */
+.big {
+  font-size: 6em;
+}
+
+
+/*~~~~~~~~~~~~~~~~~~~~~~~~*/
+/* Coloured content boxes*/
+/*~~~~~~~~~~~~~~~~~~~~~~~*/
+.content-box {
+    box-sizing: border-box;
+    background-color: #969696;
+}
+
+.content-box-white,
+.content-box-gsemlight,
+.content-box-gsemblue,
+.content-box-gsemdark,
+.content-box-black,
+.content-box-darkgrey,
+.content-box-grey,
+.content-box-lightgrey,
+.content-box-pink,
+.content-box-red,
+.content-box-blue,
+.content-box-burgundy,
+.content-box-green,
+.content-box-yellow,
+.content-box-marine,
+.content-box-purple,
+.content-box-orange{
+  box-sizing: border-box;
+  border-radius: 15px;
+  margin: 0 0 15px;
+  overflow: hidden;
+  padding: 0px 20px 0px 20px;
+  width: 100%;
+}
+
+.content-box-white{
+  box-sizing: border-box;
+  background-color: #FFFFFF;
+  border: 3px solid black;
+  margin: 0px 0px 15px;
+}
+
+.content-box-gsemlight{background-color: #A3AFBF;}
+.content-box-gsemblue{background-color: #465F7F; color: #FFFFFF; }
+.content-box-gsemdark{background-color: #233040;color: #FFFFFF;}
+.content-box-black { background-color: #000000;color: #FFFFFF;}
+.content-box-darkgrey { background-color: #5A5A5A;color: #FFFFFF;}
+.content-box-grey { background-color: #969696;}
+.content-box-lightgrey { background-color: #E6E6E6;}
+
+.content-box-pink{background-color: #CF0063;color: #FFFFFF;}
+.content-box-red{background-color: #F42941;}
+.content-box-blue{background-color: #0067C5;color: #FFFFFF;}
+.content-box-burgundy{background-color: #96004B;color: #FFFFFF;}
+.content-box-green{background-color: #007E64;color: #FFFFFF;}
+.content-box-yellow{background-color: #F1AB00;}
+.content-box-marine{background-color: #00B1AE;}
+.content-box-purple{background-color: #4B0B71;color: #FFFFFF;}
+.content-box-orange{background-color: #FF5C00;}
+
+.content-box-gsemlight .remark-inline-code,
+.content-box-gsemblue .remark-inline-code,
+.content-box-gsemdark .remark-inline-code,
+.content-box-darkgrey .remark-inline-code,
+.content-box-grey .remark-inline-code,
+.content-box-lightgray .remark-inline-code,
+.content-box-pink .remark-inline-code,
+.content-box-red .remark-inline-code,
+.content-box-blue .remark-inline-code,
+.content-box-burgundy .remark-inline-code,
+.content-box-green .remark-inline-code,
+.content-box-yellow .remark-inline-code,
+.content-box-marine .remark-inline-code,
+.content-box-purple .remark-inline-code,
+.content-box-orange .remark-inline-code{
+  background: none;
+}
+
+.full-width {
+    display: flex;
+    width: 100%;
+    flex: 1 1 auto;
+}
+
+

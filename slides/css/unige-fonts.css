@@ -1,0 +1,69 @@
+/* Add maven for code font (keep other xaringan defaults */
+
+/*
+Primary Palette:
+White                 : #FFFFFF
+GSEM BLUE LIGHT       : #A3AFBF
+GSEM BLUE  (official) : #465F7F
+GSEM BLUE DARK        : #233040
+Black                 : #000000
+*/
+
+/* Grey tags
+.darkgrey : #5A5A5A;
+.grey : #969696;
+.lightgrey : #E6E6E6;
+*/
+
+/*
+Secondary Palette:
+
+RECTORAT PINK	    : #CF0063
+DROIT RED	        : #F42941
+LETTRES BLUE	    : #0067C5
+MEDECINE BURGUNDY	: #96004B
+SCIENCES GREEN    :	#007E64
+SDS YELLOW	      : #F1AB00
+PSYCHO MARINE	    : #00B1AE
+THEOLOGY PURPLE	  : #4B0B71
+FTI ORANGE	      : #FF5C00
+*/
+
+
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800);
+@import url(https://fonts.googleapis.com/css?family=Inconsolata);
+@import url(https://fonts.googleapis.com/css?family=Source+Code+Pro:400,700);
+
+body { font-family: 'Open Sans', 'Open Sans Condensed', 'Palatino', 'Microsoft YaHei', 'Songti SC', serif; }
+
+h1, h2, h3 {
+  font-family: 'Open Sans';
+}
+
+h1{
+  font-weight: 800;
+  color: #233040;
+}
+h2 {
+  font-weight: 700;
+  color: #465F7F;
+}
+h3{
+  font-weight: 700;
+  color: #5A5A5A;
+}
+
+.remark-code, .remark-inline-code {
+  font-family: 'Inconsolata', monospace;
+}
+.remark-code-line-highlighted{
+  background-color: #F1AB00;
+}
+
+
+.Large       , .Large .remark-code, .Large .remark-inline-code { font-size: 144%; }
+.large       , .large .remark-code, .large .remark-inline-code { font-size: 120%; }
+.small       , .small .remark-code, .small .remark-inline-code { font-size: 90%; }
+.footnotesize, .footnotesize .remark-code, .footnotesize .remark-inline-code { font-size: 80%; }
+.scriptsize  , .scriptsize .remark-code, .scriptsize .remark-inline-code { font-size: 70%; }
+.tiny        , .tiny .remark-code, .tiny .remark-inline-code { font-size: 60%; }
