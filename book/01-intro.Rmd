@@ -21,74 +21,68 @@
 
 ## A World of Data
 
-**Data is the most important commodity in our connected world of today**. Generated at a breakneck pace and related to practically all of the aspects of human life, Data has become a valuable resource for the creation of products and services designed to improve people's lives. 
+**Data is the most important commodity in our connected world of today**. Generated at a breakneck pace and related to practically all of the aspects of human life, Data has become a valuable resource for the creation of products and services designed to improve people's lives. Gathering this data can potentially help companies design better policies and companies design better products.
 
-Think for a few moments  on the incredible amount of data gathered by your mobile phone. In particular, when you activate location services, your device generates enormous amounts of information on your location and your movement. By gathering this data can potentially help companies design better policies and companies design better products. Take for instance the use in location 
-
-<mark>
-  Keep improving this, caption, context of the problem and so on. 
-</mark>
+To illustrate this point, take a look at the following interactive map of the internal migration in Switzerland in 2016. Gathering historical data like this could help decision makers, such as politicians or managers in housing firms, identify migration trends and inform their decisions in what pertains, say housing projects or other infrastructure investments.
 
 <!-- Insert a better explanation of this -->
 
-```{r, echo = FALSE, fig.align='center', fig.cap = 'the site'}
+```{r, echo = FALSE, fig.align='center', fig.cap = 'Inter-cantonal migration in Switzerland in 2016, an interactive map by Ilya Bobadin with data from the Swiss Federal Statistical Office. [https://flowmap.blue/](https://flowmap.blue/).'}
 knitr::include_url("https://flowmap.blue/15kwLB4baXZ7jpip8q0JjgR6zDoS5Gt3gMLCTUAboQxk?v=46.760927,8.215964,6.51,0,0&a=0&as=1&b=1&bo=75&c=0&ca=1&d=0&fe=1&lt=1&lfm=ALL&col=Default&f=45")
 ```
 
+In order to make sense of the immense amounts of Data generated every millisecond, computational tools are needed. Thankfully, in this day and age, computing power allows easy and fast manipulation of that enormous amount of information, **yet it is not only by "brute force", or  algorithmic power that appropriate insights are found**. To make sense of the data, we also need to consider its features from a **mathematical standpoint**. 
 
-In order to make sense of the immense amounts of Data generated every millisecond, computational tools are needed. Thankfully, in this day and age, computing power allows easy and fast manipulation of that enormous amount of information, yet it is not only by "brute force" (i.e. algorithmic power)  that appropriate insights are found. 
-
-Here is where mathematical theory contributes the most. The discipline that formalises the important aspects of the randomness in the data generation process and provides the tools necessary for data analysis is the field of **Statistics**. That said, in order to construct tools that capture these phenomena appropriately, mathematical assumptions on how the randomness/uncertainty of our data is generated. The field of mathematics that formalises randomness is the field of **Probability**
-
+The field of Mathematics that provides a formal framework of the data generation process the field of **Probability**, and it is the building block for **Statistics**, the domain of knoweledge that deals with the creation of tools analise data.  
 
 ## What to expect from this Lecture?
 
-In this course, **we study Probability as a way to introduce Statistics**. Thus we **do not study Probability as a subject of interest in itself** i.e. we do not develop deep probability theory using all the formal theoretical arguments, but rather **we set up a few principles and methods** which will be **helpful to study Statistics**. 
+In this course, **we study Probability as a way to introduce Statistics**.
+
+Thus we do not study Probability as a subject of interest in itself. This means that we do not develop deep probability theory using all the formal theoretical arguments, but rather **we set up a few principles and methods** which will be **helpful to study Statistics**. 
 
 <!-- \includegraphics[width=0.6\textwidth,height=0.7\textheight]{y.pdf} -->
 
 Hence, for the purposes of this lecture, we shall consider:  
 
-- **Statistics**: as the discipline that deals with the **collection**, **presentation**, **analysis** and **interpretation** of data. In future lectures, you will learn classical Statistical methods as well as their modern reincarnation (or "rebranding"): algorithmic tools known as Machine Learning, Deep Learning, etc.
+- **Statistics**: as the discipline that deals with the **collection**, **presentation**, **analysis** and **interpretation** of data. In future Classes, you will learn classical Statistical methods as well as their modern reincarnation (or "rebranding"): algorithmic tools known as Machine Learning, Deep Learning, etc.
+
 - **Probability** as the mathematical formalisation of randomness and uncertainty the main building block of Statistical methods. 
 
-<mark>
-  keep it on
-</mark>
+```{r ,echo = FALSE, fig.cap='_Thinking of learning ML this weekend, is there math?_ (2020). Retrieved from [r/DataScienceMemes](https://www.reddit.com/r/DataScienceMemes/comments/hqi8sv/thinking_of_learning_ml_this_weekend_is_there_math/?utm_source=share&utm_medium=web2x&context=3)',fig.align='center'}
+  knitr::include_graphics("https://i.redd.it/8r2fd78pgna51.png")
+```
 
 ### One intuitive illustration
 
-Before jumping into the core of the subject, I would like to make a little detour that helps illustrate intuitively the importance of Probability in everyday life. Let's imagine you are facing a situation with an uncertain outcome, say you are attempting to _gamble_ in a casino 
+Before jumping into the core of the subject, I would like to make a little detour that helps illustrate how probabilities are present in practically every aspect of daily life.
 
-> What are my **chances** of success? 
+Oftentimes, in Movies and TV shows, we hear characters facing uncertain outcomes. When our protagonists are about to make life altering decisions they often ask themselves: 
 
-And sometimes, hearing you think aloud, someone in the room would attempt to **quantify these chances**, say, by throwing some **number**. 
+> What are my **chances** of winning? 
+
+To which some other character replies with some phrase like:
 
 > "I'd say more like one out of a million."
 
-In your mind, this number becomes an indication of the _likelihood_ of winning your gamble, being successful in the investment.
+In your mind, this number becomes an indication of the _likelihood_ of the event happening. 
 
 > "So, you're telling me that THERE IS A CHANCE!"
 
-<mark>
-  jim carrey
-</mark>
-
-Intuitively, you understand this as the result as the result of a computation. Were you to _repeat_ the _experiment_ (gamble, investment) your chances of success results from a ratio between the number of times you are successful, versus the number of attempts.
+Intuitively, you understand this as the result of a computation. Were you to _repeat_ the _experiment_ your chances of success results from a ratio between the number of times you succeed, versus the number of attempts.
 
 $$\text{my chances} = \frac{\text{number of times I succeed}}{\text{number of times I fail}}$$
-In a bit of an abuse of language, this value, constitutes the **probability** of success. When it's small, success is very _unlikely_, but if it is large (or at least closer to 1), the event seems more likely 
+In a bit of an abuse of language, this value, constitutes the **probability** of success. When it's small, success is very _unlikely_, but if it is large (or at least closer to 1), your success seems more likely. 
 
-
-
-Probability constitutes then the **measure of the "likelihood" of an event or random outcome**. Hence, we can measure Uncertainty units of \textit{probability}, which _is the currency of statistics_. 
+Probability constitutes then the **measure of the "likelihood" of an event or random outcome**. Hence, we can measure uncertainty in units of probability.
 
  <!-- Statistics is concerned with **study of uncertainty** and with the _study of data-driven decision making in the face of uncertainty_. -->
 
 <!-- To answer this question we make use of Probability. Indeed, Probability is all about the certainty/uncertainty and the prediction of something happening. Some events are impossible, other events are certain to occur, while many are possible, but not certain to occur... -->
 
 >   "In this world there is nothing certain but death and taxes."
--  Benjamin Franklin
+>
+> ---  Benjamin Franklin
 
 <!-- \includegraphics[width=0.4\textwidth,height=0.5\textheight]{profit.pdf} -->
 
@@ -97,59 +91,70 @@ Probability constitutes then the **measure of the "likelihood" of an event or ra
 
 #### Another illustration: Stock price evolution
 
-<mark>
-  stonks
-</mark>
+Let us see how to characterise the uncertainty of the Stock price of an asset with a simple probabilistic model. To account of the fluctuations, we can thus make the following simple assumptions:
 
+Let $S_0$ denote the price of the Stock at time $t_0$, and consider that:
 
-Let us see how a simple probabilistic model can help us characterise the  **uncertainty** of the Stock price of an asset. With probability $p=1/2$ the stock price moves up of a factor $u$, and with probability $1-p$ the price moves down of a factor $d$. We denote the price at time $t_1$  by $uS_0 $ if the price goes up, and by $dS_0 $  if the price goes down. 
+- with probability $p$ the stock price increases by a factor $u>1$, and 
+- with probability $1-p$ the price goes down a factor $d<1$. 
 
-Let us set $S_0=1$, $u=2$ and $d=1/2$. Can we say something about the price at time $t_2$?
+We can therefore infer the price at time $t_1$  by $S_1 = uS_0$ if the price goes up, and by $S_1=dS_0$  if the price goes down. 
 
-The price evolution is represented by a tree:
+Let us set $S_0=1$ (US Dollar) and the factors $u=2$ (i.e. doubling the price) and $d=1/2$ (i.e. halving the price). **What can we say about the price at time $t_2$?**
 
-<mark>
-  Insert illustration or animation
-</mark>
+To answer this last question we could represent the evolution of the price using a **Probability Tree Diagram**. In such charts, we organise the different **outcomes in branches**. At the end of each branch (in the _nodes_) , we place the outcomes while, hovering over each branch (on the _edges_) we place the probability associated with the outcome. 
 
-<!-- \tikzstyle{bag} = [text width=8em, text centered] -->
-<!-- \tikzstyle{end} = [] -->
-<!-- \begin{tikzpicture}[sloped] -->
-<!--    \node (a) at ( 0,0) [bag] {$\$ 1$}; -->
-<!--    \node (b) at ( 4,-1.5) [bag] {$\$ d =\$ 0.5$}; -->
-<!--    \node (c) at ( 4,1.5) [bag] {$\$ u= \$ 2$}; -->
-<!--    \node (d) at ( 8,-3) [bag] {$\$ d^2= \$ 0.25$}; -->
-<!--    \node (e) at ( 8,0) [bag] {$\$ ud= \$ du = \$ 1$}; -->
-<!--    \node (f) at ( 8,3) [bag] {$\$ u^2=\$ 4$}; -->
-<!--    \draw [->] (a) to node [below] {$(1-p)$} (b); -->
-<!--    \draw [->] (a) to node [above] {$p$} (c); -->
-<!--    \draw [->] (c) to node [below] {$p^2$} (f); -->
-<!--    \draw [->] (c) to node [above] {$(1-p)p$} (e); -->
-<!--    \draw [->] (b) to node [below] {$(1-p)p$} (e); -->
-<!--    \draw [->] (b) to node [above] {$(1-p)^2$} (d); -->
-<!-- \end{tikzpicture} -->
-
-
-#### Example: Quanta
+```{r, echo=FALSE, engine='tikz', fig.cap='Stock Price Evolution as a Probability Tree Diagram', fig.align='center'}
+\tikzstyle{bag} = [text width=8em, text centered]
+\tikzstyle{end} = []
+\begin{tikzpicture}[sloped]
+   \node (a) at ( 0,0) [bag] {$\$ 1$};
+   \node (b) at ( 4,-1.5) [bag] {$\$ d =\$ 0.5$};
+   \node (c) at ( 4,1.5) [bag] {$\$ u= \$ 2$};
+   \node (d) at ( 8,-3) [bag] {$\$ d^2= \$ 0.25$};
+   \node (e) at ( 8,0) [bag] {$\$ ud= \$ du = \$ 1$};
+   \node (f) at ( 8,3) [bag] {$\$ u^2=\$ 4$};
+   \draw [->] (a) to node [below] {$(1-p)$} (b);
+   \draw [->] (a) to node [above] {$p$} (c);
+   \draw [->] (c) to node [below] {$p^2$} (f);
+   \draw [->] (c) to node [above] {$(1-p)p$} (e);
+   \draw [->] (b) to node [below] {$(1-p)p$} (e);
+   \draw [->] (b) to node [above] {$(1-p)^2$} (d);
+\end{tikzpicture}
+```
 
 <mark>
-  I'm not sure about this example
+  Ask davide what this is about. 
 </mark>
+
+The computation of the probabilities on this chart 
+
+- To compute the probability of successive outcomes, we **_multiply_ the probabilities** on the edges leading to this outcome. 
+- If there is more than one path leading to a given outcome, we **sum the total probabilty** yielding the outcome.  
+
+Hence: 
+
+- The probability of $S_2 = u^2 = 4$ is $p^2$
+- The probability of $S_2 = d^2 = 4$ is $(1-p)^2$
+- The probability of $S_2 = d^2 = 1$ is $(1-p)p+p(1-p)$
+
+<!-- #### Example: Quanta -->
+
 
 <!-- \includegraphics[width=0.3\textwidth,height=0.2\textheight]{Quantum.pdf} -->
 
 <!-- \includegraphics[width=0.4\textwidth,height=0.9\textheight, angle = -90]{cern.pdf} -->
 
 
-Probability models are the basis for quantum physics: they characterize the **uncertainty** of properties of single energy ``quanta'' emitted by a ``perfect radiator" with a given temperature ($T$). Specifically, recall the famous Einstein's equation $$\boxed{\mathcal{E} = m c^2}$$ which expresses the energy $\mathcal{E}$  in terms of the mass \underline{$m$, a random quantity,} and $c$, the speed of light. Moreover, consider the geometric energy mean defined by ${\mathcal{E}_G} = c_0 k_B T$, where $c_0 \approx 2.134$ and $k_B$ is Boltzmann's constant. Thus, one can define the random quantity
+<!-- Probability models are the basis for quantum physics: they characterize the **uncertainty** of properties of single energy ``quanta'' emitted by a ``perfect radiator" with a given temperature ($T$). Specifically, recall the famous Einstein's equation $$\boxed{\mathcal{E} = m c^2}$$ which expresses the energy $\mathcal{E}$  in terms of the mass \underline{$m$, a random quantity,} and $c$, the speed of light. Moreover, consider the geometric energy mean defined by ${\mathcal{E}_G} = c_0 k_B T$, where $c_0 \approx 2.134$ and $k_B$ is Boltzmann's constant. Thus, one can define the random quantity -->
 
-$$W = \frac{\mathcal{E}}{{\mathcal{E}_G}},$$
-which is called _quantum mass ratio_.
+<!-- $$W = \frac{\mathcal{E}}{{\mathcal{E}_G}},$$ -->
+<!-- which is called _quantum mass ratio_. -->
 
 
-The random behaviour of $W$ can be described by a probability density function:
+<!-- The random behaviour of $W$ can be described by a probability density function: -->
 
-> Insert Illustration or animation of the quantum mass ratio. 
+<!-- > Insert Illustration or animation of the quantum mass ratio.  -->
 
 <!-- \includegraphics[width=0.4\textwidth,height=0.6\textheight, angle = 0]{W.pdf} -->
 
@@ -169,7 +174,7 @@ Probability theory is a mathematical tool. Hence, it is important to review some
 
 ### Differentiation 
 
-**derivatives** will also play a pivotal role. For instance:
+**Derivatives** will also play a pivotal role. Start by remembering some of the basic derivation operations:
 
 - Derivative of _$x$ to the power $n$_, $f(x)= x^n$
 $$\frac{d x^n}{dx} = n \cdot x^{n-1}$$ 
@@ -220,6 +225,7 @@ $$\int f(x) dx = F(x) + \text{const}$$
 - while the **definite integral** is
 
 $$F(b)-F(a)= \int_{a}^{b} f(x) dx, \quad b \geq a.$$
+And in both cases: $f(x) = F'(x)$
 
 ### Sums
 
@@ -228,6 +234,7 @@ Besides integrals we are also going to use **sums**:
 - Sums are denoted with a $\Sigma$ operator and an _index_ $i$, as in:
 
 $$\sum_{i=1}^{n} X_{i} = X_1 + X_2 +....+ X_n,$$
+
 - Moreover, for every $\alpha_i \in \mathbb{R}$,  
 $$\sum_{i=1}^{n} \alpha_i X_{i} = \alpha_1 X_1 + \alpha_2 X_2 +....+ \alpha_n X_n;$$ 
 <!-- %whose special case is -->
@@ -250,20 +257,144 @@ $$\sum_{i=1}^{n} \sum_{j=1}^{m}  x_{i}y_{j}  = x_1y_1 + x_1 y_2 +... +x_2y_1+ x_
 
 ### Combinatorics
 
-Finally, we also rely on some **combinatorial formulas**. Specifically,
+Finally, we will also rely on some **combinatorial formulas**. Specifically,
 
 #### Factorial 
 
 $$ n! = n \times (n-1) \times (n-2) \times \dots \times 1;$$
-where $0! =1$, by definition;
+where $0! =1$, by convention. 
 
-- The **Binomial coefficient**, for $n \geq k$ is defined by the following ratio:
-$$\binom n k =\frac{n!}{k!(n-k)!}{\color{blue}{=C^{k}_n}}$$ which is helpful to express the **Binomial Theorem** 
+#### The Binomial Coefficient 
+
+The **Binomial coefficient**, for $n \geq k$ is defined by the following ratio:
+$$\binom n k =\frac{n!}{k!(n-k)!}{\color{blue}{=C^{k}_n}}$$.
+
+In English, the symbol $\binom n k$ is read as "$n$ choose $k$". We will see why in a few paragraphs.  
+
+Combinatorial formulas are very useful when studying **permutations** and **combinations** both very recurrent concepts.
+
+##### Permutations {-}
+
+A permutation is an **ordered rearrangement** of the elements of a set. 
+
+```{example, name = "Three friends and three chairs"}
+Let us start with a very simple example Suppose we have three friends Aline ($A$), Bridget ($B$) and Carmen ($C$) that want to sit on three chairs during lunchtime.
+
+- One day, you see Aline on the left, Bridget in the center and Carmen on the right, i.e. $(A, B, C)$
+- The next day, Bridget sits first, Aline Second and Carmen right, i.e. $(B, A, C)$
+```
+
+These rearrangements constitute two **Permutations** of the set of three friends $\{A, B, C\}$.
+
+You then start wondering in how many ways these three friends can sit. With such a small set, it is easy to take a pen and some paper to write down all the possible permutations:
+
+$$(A, B, C), (A, C, B), (B, A, C), (B, C, A), (C, A, B), (C, B, A)$$
+
+As you can see, the total number of permutations is : $N = 6.$ But also $6= 3 \times 2 \times 1 = 3!$. This is by no means a coincidence. To see in detail why let us consider each chair as an "experiment" and its occupant an "outcome". 
+
+- **Chair (Experiment) 1** : has 3 possible occupants (outcomes): {$A$, $B$, $C$}. 
+- **Chair (Experiment) 2** : has 2 possible occupants (outcomes): either $\{B,C\}$, $\{A,C\}$ or $\{A,B\}$
+- **Chair (Experiment) 3** : has 1 possible occupant (outcomes) : $\{A\}$, $\{B\}$ or $\{C\}$
+
+Here, we can apply the Fundamental Counting Principle, i.e. from @ross2014first:
+
+> If $r$ experiments that are to be performed are such that the first one may result
+in any of $n_1$ possible outcomes; and if, for each of these $n_1$ possible outcomes,
+there are $n_2$ possible outcomes of the second experiment; and if, for each of the
+possible outcomes of the first two experiments, there are $n_3$ possible outcomes
+of the third experiment; and so on, then there is a total of $n_1 \times n_2 \times \cdots \times n_r$ possible
+outcomes of the $r$ experiments.
+
+Hence: $3 \times 2 \times 1 = 3! = 6$
+
+```{definition} 
+**Permutations:** How many different ways can we combine $n$ objects?
+
+- In the 1st place: $n$ possibilities
+- In the 2nd place: $(n-1)$ possibilities 
+- ...
+- Finally, $1$ possibility
+
+Thus, in total we have $n\times(n-1)\times(n-2)\times...\times1 = n!$
+``` 
+
+```{exercise, name = "Gifts on the Shelf"}
+You own a gift store and you have a shelf with 5 products:
+```
+
+- A gorgeous sunflower `r emo::ji("sunflower")` 
+- An old-timey Radio `r emo::ji("radio")` 
+- A book they wanted to read `r emo::ji("book")` 
+- An elegant pen `r emo::ji("pen")` 
+- An incredibly charismatic turtle `r emo::ji("turtle")` 
+
+In how many ways can you arrange them on the shelf? 
+
+<!-- Response: $5!$ gives you the total number of possible choices when you can select 5 presents. These are called  **permutations** of the set of gifts and owe that name to the fact that we are just _reordering_ or _permuting_ the elements of the set; -->
 
 
-```{theorem}
 
-(Pascal 1654). For $n=0,1, 2,\dots$,  we have
+##### Combinations {-}
+
+Imagine that, due to budgetary constraints, one chair has been stolen from our friends and they make turns on who stays standing. There are of course 3 configurations in which they sit $(A,B)$, $(A,C)$ and $(B,C)$ , but we can achieve the same result with combinatorial formulae. 
+
+Let us come back to the Example of the Shelf. Suppose that the shelf is now a bit more narrow, and you can only show 3 products instead of 5. How many ways can we select $3$ items among the $5$? 
+
+By the Fundamental Counting Principle you have $5\times4\times3$ ways of selecting a the 3 elements. If we write them in factorial notation, this represents 
+$$
+5\times4\times3 = \frac{5\times4\times3\times2\times1}{2\times1} = \frac{5!}{2!} = \frac{5!}{(5-3)!}
+$$
+This formula can be interpreted as follows: If you're going to select $3$ presents from the list, then you have $(5-3)$ other presents that you're not going to select. This latter set has $(5-3)!$ possibilities which have to be **factored out** from the $5!$ possible permutations.
+
+As you can see, we are slowly but surely arriving to the definition of $\binom n k$. There is still one more element to reach the formula. 
+
+Implicit in both examples, there is the notion of **order**. Think of how Aline, Bridget and Carmen were sitting from your perspective. 
+
+- If the order left to right is important for you $(A, C, B)$ is a different configuration from $(B, C, A)$. 
+- However, if you don't care about the order, these two configurations are equivalent, as they can be read in the same way if you read the second from right to left. 
+
+In the case of the shelf, once the 3 gifts are chosen **all the permutations of this subset are deemed equivalent**. Say, we have chosen (`r emo::ji("sunflower")`, `r emo::ji("book")`,  `r emo::ji("turtle")`), this is deemed equivalent as all the $3! = 6$ permutations. Hence, the need to also *factor out* this value from the permutations also need to divide out the $3!$ different ways you can order the presents. 
+
+If we put this in a formula, we have $$\frac{5!/(5-3)!}{3!}$$ ways to select the $3$ presents:
+
+$$\frac{5!/(5-3)!}{3!}= \frac{5!}{3!2!} = \binom 5 3 = C_5^3.$$
+This gives you the total number of possible ways to select the $3$ presents when the order does not matter. There are thus *"$5$ choose $k$" ways of choosing 3 elements among 5*. 
+
+```{exercise}
+What if you have only room for 2 products in your shelf? 
+```
+
+
+In general, $n \choose k$ results from the following computations.
+
+- In the 1st place: $n$
+- In the 2nd place: $(n-1)$
+- ...
+- In the $k$-th place: $(n-k+1)$
+
+
+- We have $k!$ ways to permute the $k$ objects that we selected 
+- The number of possibilities (without considering the order) is:
+
+$$\frac{n!/(n-k)!}{k!} = \frac{n!}{k!(n-k)!}{\color{gray}{=C^{k}_n}}$$
+
+For the Problem Set $2$, you will have to make use of $C^{k}_n$ in Ex2-Ex3-Ex5. Indeed, 
+to compute the probability for an event $E$, will have to make use of the formula:
+
+\begin{equation} 
+P(E)=\dfrac{\text{number of cases in E}}{\text{number of possible cases}}.
+(\#eq:pe)
+\end{equation}
+
+This is a first intuitive definition of probability, which we will justify in the next chapter;. For the time being, let us say that the combinatorial calculus will be needed to express both the quantities (numerator and denominator) in (\@ref{eq: pe}).  
+
+
+
+One of the case uses of the Binomial Coefficient is the **Binomial Theorem**:
+
+```{theorem, name = "Binomial Theorem (Pascal 1654)"}
+
+For $n=0,1, 2,\dots$,  we have:
 
 $$(x+y)^n = {n \choose 0}x^n y^0 + {n \choose 1}x^{n-1}y^1 + \cdots + {n \choose n-1}x^1 y^{n-1} + {n \choose n}x^0 y^n;$$
 
@@ -299,98 +430,7 @@ Let us compute the binomial coefficients for polynomials of different degrees $n
 \end{align}
 ```
 
-Combinatorial formulas are also useful in the context of studying permutations and combinations. Let us illustrate by an example. 
-
-Imagine you want to offer our significant other a set of three gifts out of the following five found in the store: 
-
-- A gorgeous sunflower `r emo::ji("sunflower")` 
-- An old-timey Radio `r emo::ji("radio")` 
-- A book they wanted to read `r emo::ji("book")` 
-- An elegant pen `r emo::ji("pen")` 
-- An incredibly charismatic turtle `r emo::ji("turtle")` 
-
-```{example} 
-How many ways can we select $3$ presents among the $5$ available presents? Assume the order does not matter!
-```  
-
-If we write this explicitly, 
-
-1. $5!$ gives you the total number of possible choices when you can select 5 presents. These are called  **permutations** of the set of gifts and owe that name to the fact that we are just _reordering_ or _permuting_ the elements of the set;
-
-2. If you're going to select $3$ presents from the list, then you have $(5-3)$ presents that you're not going to select. This latter set has $(5-3)!$ possibilities which have to be **factored out**. In other words you have $5! / (5-3) !$ ways to select and order the 3 presents;
-
-3. Finally, remember you don't care about the order in which you select the $3$ presents. So, 
-in how many ways can you select $3$ presents from the $n$ available ones? The problem is the same as in point 1. above except that **now you don't care about the order of the $3$ presents**, and therefore you 
-also need to divide out the $3!$ different ways you can order the presents. 
-
-If we put this in a formula, we have $$\frac{5!/(5-3)!}{3!}$$ ways to select the $3$ presents:
-
-$$\frac{5!/(5-3)!}{3!}= \frac{5!}{3!2!} = \binom 5 3 = C_5^3.$$
-
-This gives you the total number of possible ways to select the $3$ presents when the order does not matter.
-
-```{exercise}
-As a recommendation, redo the exercise assuming you can select 2 presents from 3 available presents. 
-```
-
-```{remark} 
-**Permutations:** How many different ways can we combine $n$ objects?
-
-- In the 1st place: $n$ possibilities
-- In the 2nd place: $(n-1)$ possibilities 
-- ...
-- Finally, $1$ possibility
-
-
-Thus, in total we have $n\times(n-1)\times(n-2)\times...\times1 = n!$
-``` 
-
-
-```{example}
-How many ways can Aline, Brigitte and Carmen seat on 3 spots, from left to right? Possible outcomes: 
-$$
-(A, B, C), (A, C, B), (B, A, C), (B, C, A), (C, A, B), (C, B, A)
-$$
-
-Total $\#$ of permutations: $N = 6 = 3 \times 2 \times 1 = 3!$
-```
-
-
-
-
-
-
-```{remark} 
-
-[continued]
-
-**Combinations:** How many ways can we select $k$ objects among $n$?
-To answer this question, we proceed as follows:
-
-
-- How many ways can we combine $k$ objects among $n$?
-
-- In the 1st place: $n$
-- In the 2nd place: $(n-1)$
-- ....
-- In the $k$-th place: $(n-k+1)$
-
-
-- We have $k!$ ways to permute the $k$ objects that we selected 
-- The number of possibilities (without considering the order) is:
-
-$$\frac{n!/(n-k)!}{k!} = \frac{n!}{k!(n-k)!}{\color{gray}{=C^{k}_n}}$$
-
-For the Problem Set $2$, you will have to make use of $C^{k}_n$ in Ex2-Ex3-Ex5. Indeed, 
-to compute the probability for an event $E$, will have to make use of the formula 
-
-\begin{equation} \label{Eq: PE}
-P(E)=\dfrac{\text{number of cases in E}}{\text{number of possible cases}}.
-\end{equation}
-
-This is a first intuitive definition of probability, which we will justify in the next lecture; see Lecture 1, slide 28. For the time being, let us say that the combinatorial calculus will be needed to express both the quantities (numerator
-and denominator) in (\ref{Eq: PE}).  
-``` 
+#### Limits
 
 Finally, the following **limits** will be crucial in many tasks:
 

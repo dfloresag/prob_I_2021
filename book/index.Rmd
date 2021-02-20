@@ -150,17 +150,17 @@ Exercise sessions will take place on **Thursdays**  from **16 to 18** over [Zoom
 
 - The problem set will be posted on-line one week before
 
-- Solutions will be made available [Moodle]()
+- Solutions will be made available [Moodle](https://moodle.unige.ch/course/view.php?id=7133)
 
 
 ### Tools {-}
 
-- Moodle 
+- [Moodle](https://moodle.unige.ch/course/view.php?id=7133): 
 
-- Wooclap
+- [Wooclap]() : Web application allowing to choose among a wide range of questions (multiple choice, word cloud, visual questions...)
 
-- 
+- [Speakup]() : Platform allowing students to ask questions anonymously. Possibility to remove anonymity with integration on Moodle.
 
-#### References {-}
+#### Reference {-}
 
-- _A first course in probability_, S. Ross (any edition), Ed: Pearson New International Edition. 
+- **Textbook** [_A first course in probability_](https://www.pearson.com/us/higher-education/product/Ross-First-Course-in-Probability-A-9th-Edition/9780321794772.html), S. Ross (any edition), Ed: Pearson New International Edition, cited as @ross2014first
