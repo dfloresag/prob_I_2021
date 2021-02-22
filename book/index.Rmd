@@ -61,23 +61,22 @@ board %>%
 ```
 
 
-Hello and Welcome to this introductory Lecture in Probability! 
+Hello and Welcome to this introductory Lecture in Probability! These Course Notes are a complement to the Lecture.  
 
-These Course Notes are a complement to the Lecture.  
-
-## The contents in a nutshell {-}
+## Contents {-}
 
 The Lecture is divided in the following Chapters, and each Chapter contains several themes.
 
-| Number| Name  | Themes | 
-|:------:|:-------|:-------|
-| 1 |**Introduction** | Intro, Mathematics reminder and Combinatorics. |
-| 2 |**Basic calculus for probability** | Random variables, Trees, Venn diagram, Conditional probability, Independence & Bayes' theorem. | 
-| 3 | **Discrete random variables**| Definitions, Expected value and variance,  Binomial, Poisson, Negative binomial and Hypergeometric |
-| 4 | **Continuous random variables** | Definitions, Expected value and variance, Cumulative distribution function (cdf) and Probability density function (pdf), Some important examples: Uniform, Exponential, Gamma, Normal, logNormal, Student's..., Relationships | 
-| 5 | **Bivariate random variables** | | 
-| 6 | **Limit theorems** | Weak Law of Large Numbers (WLLN) and Central Limit Theorem (CLT) |
-| 7 | **Elements of Simulation** | Numerical methods for the simulation of random variable with a given CDF. | 
+| Number| Name  | Themes | Status |
+|:------:|:-------|:-------|:-------:| 
+| 1 |**Introduction** | Intro, Mathematics reminder and Combinatorics. | Fine-tuning...  | 
+| 2 |**Elements of Set Theory For Probability** | Random variables, Trees, Venn diagram, Conditional probability, Independence & Bayes' theorem. | Fine-tuning... | 
+| 3 |**Axiomatic Foundations of Proability** | Probability Axioms, Illustrations of use, Conditional probability, Independence & Bayes' theorem. | Fine-tuning... | 
+| 4 | **Discrete random variables**| Definitions, Expected value and variance,  Binomial, Poisson, Negative binomial and Hypergeometric | Writing | 
+| 5 | **Continuous random variables** | Definitions, Expected value and variance, Cumulative distribution function (cdf) and Probability density function (pdf), Some important examples: Uniform, Exponential, Gamma, Normal, logNormal, Student's t, Relationships | Writing |
+| 6 | **Limit Theorems** | Weak Law of Large Numbers (WLLN) and Central Limit Theorem (CLT) |Writing  | 
+| 7 | **Bivariate Discrete Random Variables** | | Writing |
+| 8 | **Elements of Simulation** | Numerical methods for the simulation of random variable with a given CDF. | Writing |
 
 ## Practical information {-}
 
