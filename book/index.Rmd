@@ -1,6 +1,6 @@
 --- 
 title: "`r emo::ji('joker')` Probability I"
-subtitle: "Spring Semester 2021"
+subtitle: "Course Notes"
 author: "Dr. Daniel Flores Agreda (based on the Lecture by Prof. Davide La Vecchia)"
 site: bookdown::bookdown_site
 output: bookdown::gitbook
@@ -63,7 +63,7 @@ board %>%
 
 Hello and Welcome to this introductory Lecture in Probability! 
 
-This "book" is a complement to the Lecture. 
+These Course Notes are a complement to the Lecture.  
 
 ## The contents in a nutshell {-}
 
@@ -153,4 +153,8 @@ The Lectures will take place over [Zoom](https://unige.zoom.us/j/7938361073) on 
 
 #### Reference {-}
 
-Aside from these Course Notes, you can check [_A first course in probability_](https://www.pearson.com/us/higher-education/product/Ross-First-Course-in-Probability-A-9th-Edition/9780321794772.html), S. Ross (any edition), Ed: Pearson New International Edition, cited as @ross2014first.  We will not be following the content of this book beat-by-beat, but it is available for reference and/or in case you want a different explanation or go deeper in the context of the Course.
+Aside from these Course Notes, you can check: 
+
+- [_A first course in probability_](https://www.pearson.com/us/higher-education/product/Ross-First-Course-in-Probability-A-9th-Edition/9780321794772.html), S. Ross (any edition), Ed: Pearson New International Edition, cited as @ross2014first.  
+
+We will not be following the content of this book beat-by-beat, but it is available for reference and/or in case you want a different explanation or go deeper in the context of the Course.
