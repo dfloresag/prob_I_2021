@@ -67,9 +67,9 @@ This "book" is a complement to the Lecture.
 
 ## The contents in a nutshell {-}
 
-The Lecture is divided in the following units, and each unit contains several themes. 
+The Lecture is divided in the following Chapters, and each Chapter contains several themes.
 
-| Number| Name  | Themes |
+| Number| Name  | Themes | 
 |:------:|:-------|:-------|
 | 1 |**Introduction** | Intro, Mathematics reminder and Combinatorics. |
 | 2 |**Basic calculus for probability** | Random variables, Trees, Venn diagram, Conditional probability, Independence & Bayes' theorem. | 
@@ -78,7 +78,6 @@ The Lecture is divided in the following units, and each unit contains several th
 | 5 | **Bivariate random variables** | | 
 | 6 | **Limit theorems** | Weak Law of Large Numbers (WLLN) and Central Limit Theorem (CLT) |
 | 7 | **Elements of Simulation** | Numerical methods for the simulation of random variable with a given CDF. | 
-
 
 ## Practical information {-}
 
@@ -129,38 +128,29 @@ lecturers %>%
 ```
 
 
-
-
-
 ### Lectures {-}
 
 The Lectures will take place over [Zoom](https://unige.zoom.us/j/7938361073) on **Thursdays** from **12h to 14h**. 
 
 - Lectures will consist on a presentation of the contents of the class. 
 
-- During the class, there will be some exercises. You are invited to download the app [Wooclap]()
-
-- On certain occasions, a video of the week presentation will be available beforehand. In those cases, the session will be replaced by a quiz and Q\& A session. 
+- During the class, there will be some exercises. You are invited to download the app [Wooclap](https://www.wooclap.com)
 
 ### Exercises {-}
 
-Exercise sessions will take place on **Thursdays**  from **16 to 18** over [Zoom](https://unige.zoom.us/j/7938361073)
+- **Q&A sessions on the exercises will take place on Thursdays from 16 to 18 over Zoom**. We will soon be making available a platform to raise and vote on your questions.
 
-- Problem sets are not graded
+- **The problem set and their solutions will be posted on-line one week before**. You must are warmly reminded to try the exercises by yourselves before looking at the solution. If you are blocked in a point, or you don't understand a step, you can raise your questions to the T.A.
 
-- The problem set will be posted on-line one week before
-
-- Solutions will be made available [Moodle](https://moodle.unige.ch/course/view.php?id=7133)
-
+- **Problem sets are not graded.**
 
 ### Tools {-}
 
-- [Moodle](https://moodle.unige.ch/course/view.php?id=7133): 
+- [Moodle](https://moodle.unige.ch/course/view.php?id=7133). All the resources of the class will be available in this page.
 
-- [Wooclap]() : Web application allowing to choose among a wide range of questions (multiple choice, word cloud, visual questions...)
+- [Wooclap](https://www.wooclap.com) A Web application allowing to choose among a wide range of questions (multiple choice, word cloud, visual questions)
 
-- [Speakup]() : Platform allowing students to ask questions anonymously. Possibility to remove anonymity with integration on Moodle.
 
 #### Reference {-}
 
-- **Textbook** [_A first course in probability_](https://www.pearson.com/us/higher-education/product/Ross-First-Course-in-Probability-A-9th-Edition/9780321794772.html), S. Ross (any edition), Ed: Pearson New International Edition, cited as @ross2014first
+Aside from these Course Notes, you can check [_A first course in probability_](https://www.pearson.com/us/higher-education/product/Ross-First-Course-in-Probability-A-9th-Edition/9780321794772.html), S. Ross (any edition), Ed: Pearson New International Edition, cited as @ross2014first.  We will not be following the content of this book beat-by-beat, but it is available for reference and/or in case you want a different explanation or go deeper in the context of the Course.

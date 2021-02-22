@@ -32,7 +32,7 @@
   
 <link rel="prev" href="index.html"/>
 <link rel="next" href="settheory.html"/>
-<script src="libs/header-attrs-2.6/header-attrs.js"></script>
+<script src="libs/header-attrs-2.7/header-attrs.js"></script>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -95,6 +95,7 @@
 <li class="chapter" data-level="1.3.3" data-path="introduction.html"><a href="introduction.html#integration"><i class="fa fa-check"></i><b>1.3.3</b> Integration</a></li>
 <li class="chapter" data-level="1.3.4" data-path="introduction.html"><a href="introduction.html#sums"><i class="fa fa-check"></i><b>1.3.4</b> Sums</a></li>
 <li class="chapter" data-level="1.3.5" data-path="introduction.html"><a href="introduction.html#combinatorics"><i class="fa fa-check"></i><b>1.3.5</b> Combinatorics</a></li>
+<li class="chapter" data-level="1.3.6" data-path="introduction.html"><a href="introduction.html#limits"><i class="fa fa-check"></i><b>1.3.6</b> Limits</a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="2" data-path="settheory.html"><a href="settheory.html"><i class="fa fa-check"></i><b>2</b> Elements of Set Theory for Probability</a>
@@ -293,16 +294,22 @@
 <!-- #   booktabs = TRUE -->
 <!-- # ) -->
 <!-- ``` -->
+<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-1"></span>
+<img src="img/fun/EC_Talking_statistics_to_schools.png" alt="Taking statistics to schools : Enrico Chavez" width="423" />
+<p class="caption">
+Figure 1.1: Taking statistics to schools : Enrico Chavez
+</p>
+</div>
 <div id="a-world-of-data" class="section level2" number="1.1">
 <h2><span class="header-section-number">1.1</span> A World of Data</h2>
 <p><strong>Data is the most important commodity in our connected world of today</strong>. Generated at a breakneck pace and related to practically all of the aspects of human life, Data has become a valuable resource for the creation of products and services designed to improve people’s lives. Gathering this data can potentially help companies design better policies and companies design better products.</p>
 <p>To illustrate this point, take a look at the following interactive map of the internal migration in Switzerland in 2016. Gathering historical data like this could help decision makers, such as politicians or managers in housing firms, identify migration trends and inform their decisions in what pertains, say housing projects or other infrastructure investments.</p>
 <!-- Insert a better explanation of this -->
-<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-1"></span>
+<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-2"></span>
 <iframe src="https://flowmap.blue/15kwLB4baXZ7jpip8q0JjgR6zDoS5Gt3gMLCTUAboQxk?v=46.760927,8.215964,6.51,0,0&amp;a=0&amp;as=1&amp;b=1&amp;bo=75&amp;c=0&amp;ca=1&amp;d=0&amp;fe=1&amp;lt=1&amp;lfm=ALL&amp;col=Default&amp;f=45" width="672" height="400px">
 </iframe>
 <p class="caption">
-Figure 1.1: Inter-cantonal migration in Switzerland in 2016, an interactive map by Ilya Bobadin with data from the Swiss Federal Statistical Office. <a href="https://flowmap.blue/">https://flowmap.blue/</a>.
+Figure 1.2: Inter-cantonal migration in Switzerland in 2016, an interactive map by Ilya Bobadin with data from the Swiss Federal Statistical Office. <a href="https://flowmap.blue/">https://flowmap.blue/</a>.
 </p>
 </div>
 <p>In order to make sense of the immense amounts of Data generated every millisecond, computational tools are needed. Thankfully, in this day and age, computing power allows easy and fast manipulation of that enormous amount of information, <strong>yet it is not only by “brute force,” or algorithmic power that appropriate insights are found</strong>. To make sense of the data, we also need to consider its features from a <strong>mathematical standpoint</strong>.</p>
@@ -318,10 +325,10 @@ Figure 1.1: Inter-cantonal migration in Switzerland in 2016, an interactive map 
 <li><p><strong>Statistics</strong>: as the discipline that deals with the <strong>collection</strong>, <strong>presentation</strong>, <strong>analysis</strong> and <strong>interpretation</strong> of data. In future Classes, you will learn classical Statistical methods as well as their modern reincarnation (or “rebranding”): algorithmic tools known as Machine Learning, Deep Learning, etc.</p></li>
 <li><p><strong>Probability</strong> as the mathematical formalisation of randomness and uncertainty the main building block of Statistical methods.</p></li>
 </ul>
-<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-2"></span>
+<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-3"></span>
 <img src="https://i.redd.it/8r2fd78pgna51.png" alt="_Thinking of learning ML this weekend, is there math?_ (2020). Retrieved from [r/DataScienceMemes](https://www.reddit.com/r/DataScienceMemes/comments/hqi8sv/thinking_of_learning_ml_this_weekend_is_there_math/?utm_source=share&amp;utm_medium=web2x&amp;context=3)"  />
 <p class="caption">
-Figure 1.2: <em>Thinking of learning ML this weekend, is there math?</em> (2020). Retrieved from <a href="https://www.reddit.com/r/DataScienceMemes/comments/hqi8sv/thinking_of_learning_ml_this_weekend_is_there_math/?utm_source=share&amp;utm_medium=web2x&amp;context=3">r/DataScienceMemes</a>
+Figure 1.3: <em>Thinking of learning ML this weekend, is there math?</em> (2020). Retrieved from <a href="https://www.reddit.com/r/DataScienceMemes/comments/hqi8sv/thinking_of_learning_ml_this_weekend_is_there_math/?utm_source=share&amp;utm_medium=web2x&amp;context=3">r/DataScienceMemes</a>
 </p>
 </div>
 <div id="one-intuitive-illustration" class="section level3" number="1.2.1">
@@ -362,15 +369,12 @@ In a bit of an abuse of language, this value, constitutes the <strong>probabilit
 <p>We can therefore infer the price at time <span class="math inline">\(t_1\)</span> by <span class="math inline">\(S_1 = uS_0\)</span> if the price goes up, and by <span class="math inline">\(S_1=dS_0\)</span> if the price goes down.</p>
 <p>Let us set <span class="math inline">\(S_0=1\)</span> (US Dollar) and the factors <span class="math inline">\(u=2\)</span> (i.e. doubling the price) and <span class="math inline">\(d=1/2\)</span> (i.e. halving the price). <strong>What can we say about the price at time <span class="math inline">\(t_2\)</span>?</strong></p>
 <p>To answer this last question we could represent the evolution of the price using a <strong>Probability Tree Diagram</strong>. In such charts, we organise the different <strong>outcomes in branches</strong>. At the end of each branch (in the <em>nodes</em>) , we place the outcomes while, hovering over each branch (on the <em>edges</em>) we place the probability associated with the outcome.</p>
-<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-3"></span>
-<img src="Prob1-GSEM-UNIGE_files/figure-html/unnamed-chunk-3-1.png" alt="Stock Price Evolution as a Probability Tree Diagram" width="672" />
+<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-4"></span>
+<img src="Prob1-GSEM-UNIGE_files/figure-html/unnamed-chunk-4-1.png" alt="Stock Price Evolution as a Probability Tree Diagram" width="672" />
 <p class="caption">
-Figure 1.3: Stock Price Evolution as a Probability Tree Diagram
+Figure 1.4: Stock Price Evolution as a Probability Tree Diagram
 </p>
 </div>
-<p><mark>
-Ask davide what this is about.
-</mark></p>
 <p>The computation of the probabilities on this chart</p>
 <ul>
 <li>To compute the probability of successive outcomes, we <strong><em>multiply</em> the probabilities</strong> on the edges leading to this outcome.</li>
@@ -502,7 +506,7 @@ where <span class="math inline">\(0! =1\)</span>, by convention.</p>
 <p>A permutation is an <strong>ordered rearrangement</strong> of the elements of a set.</p>
 
 <div class="example">
-<p><span id="exm:unnamed-chunk-4" class="example"><strong>Example 1.1  (Three friends and three chairs)  </strong></span>Let us start with a very simple example Suppose we have three friends Aline (<span class="math inline">\(A\)</span>), Bridget (<span class="math inline">\(B\)</span>) and Carmen (<span class="math inline">\(C\)</span>) that want to sit on three chairs during lunchtime.</p>
+<p><span id="exm:unnamed-chunk-5" class="example"><strong>Example 1.1  (Three friends and three chairs)  </strong></span>Let us start with a very simple example Suppose we have three friends Aline (<span class="math inline">\(A\)</span>), Bridget (<span class="math inline">\(B\)</span>) and Carmen (<span class="math inline">\(C\)</span>) that want to sit on three chairs during lunchtime.</p>
 <ul>
 <li>One day, you see Aline on the left, Bridget in the center and Carmen on the right, i.e. <span class="math inline">\((A, B, C)\)</span></li>
 <li>The next day, Bridget sits first, Aline Second and Carmen right, i.e. <span class="math inline">\((B, A, C)\)</span>
@@ -529,7 +533,7 @@ outcomes of the <span class="math inline">\(r\)</span> experiments.</p>
 <p>Hence: <span class="math inline">\(3 \times 2 \times 1 = 3! = 6\)</span></p>
 
 <div class="definition">
-<p><span id="def:unnamed-chunk-5" class="definition"><strong>Definition 1.1  </strong></span><strong>Permutations:</strong> How many different ways can we combine <span class="math inline">\(n\)</span> objects?</p>
+<p><span id="def:unnamed-chunk-6" class="definition"><strong>Definition 1.1  </strong></span><strong>Permutations:</strong> How many different ways can we combine <span class="math inline">\(n\)</span> objects?</p>
 <ul>
 <li>In the 1st place: <span class="math inline">\(n\)</span> possibilities</li>
 <li>In the 2nd place: <span class="math inline">\((n-1)\)</span> possibilities</li>
@@ -540,7 +544,7 @@ Thus, in total we have <span class="math inline">\(n\times(n-1)\times(n-2)\times
 </div>
 
 <div class="exercise">
-<span id="exr:unnamed-chunk-6" class="exercise"><strong>Exercise 1.1  (Gifts on the Shelf)  </strong></span>You own a gift store and you have a shelf with 5 products:
+<span id="exr:unnamed-chunk-7" class="exercise"><strong>Exercise 1.1  (Gifts on the Shelf)  </strong></span>You own a gift store and you have a shelf with 5 products:
 </div>
 <ul>
 <li>A gorgeous sunflower 🌻</li>
@@ -573,7 +577,7 @@ This formula can be interpreted as follows: If you’re going to select <span cl
 This gives you the total number of possible ways to select the <span class="math inline">\(3\)</span> presents when the order does not matter. There are thus <em>“<span class="math inline">\(5\)</span> choose <span class="math inline">\(k\)</span>” ways of choosing 3 elements among 5</em>.</p>
 
 <div class="exercise">
-<span id="exr:unnamed-chunk-7" class="exercise"><strong>Exercise 1.2  </strong></span>What if you have only room for 2 products in your shelf?
+<span id="exr:unnamed-chunk-8" class="exercise"><strong>Exercise 1.2  </strong></span>What if you have only room for 2 products in your shelf?
 </div>
 <p>In general, <span class="math inline">\(n \choose k\)</span> results from the following computations.</p>
 <ul>
@@ -595,7 +599,7 @@ P(E)=\dfrac{\text{number of cases in E}}{\text{number of possible cases}}.
 <p>One of the case uses of the Binomial Coefficient is the <strong>Binomial Theorem</strong>:</p>
 
 <div class="theorem">
-<p><span id="thm:unnamed-chunk-8" class="theorem"><strong>Theorem 1.1  (Binomial Theorem (Pascal 1654))  </strong></span>
+<p><span id="thm:unnamed-chunk-9" class="theorem"><strong>Theorem 1.1  (Binomial Theorem (Pascal 1654))  </strong></span>
 For <span class="math inline">\(n=0,1, 2,\dots\)</span>, we have:</p>
 <p><span class="math display">\[(x+y)^n = {n \choose 0}x^n y^0 + {n \choose 1}x^{n-1}y^1 + \cdots + {n \choose n-1}x^1 y^{n-1} + {n \choose n}x^0 y^n;\]</span></p>
 The sum is finite and stops after n+1 terms.
@@ -604,7 +608,7 @@ The sum is finite and stops after n+1 terms.
 <p><span class="math display">\[(x+y)^n = \sum_{k=0}^n {n \choose k}x^{n-k}y^k = \sum_{k=0}^n {n \choose k}x^{k}y^{n-k}.\]</span></p>
 
 <div class="example">
-<p><span id="exm:unnamed-chunk-9" class="example"><strong>Example 1.2  </strong></span>Let us compute the binomial coefficients for polynomials of different degrees <span class="math inline">\(n\)</span>:</p>
+<p><span id="exm:unnamed-chunk-10" class="example"><strong>Example 1.2  </strong></span>Let us compute the binomial coefficients for polynomials of different degrees <span class="math inline">\(n\)</span>:</p>
 <ul>
 <li>for <span class="math inline">\(n=1\)</span></li>
 </ul>
@@ -629,8 +633,9 @@ The sum is finite and stops after n+1 terms.
 </ul>
 </div>
 </div>
-<div id="limits" class="section level4" number="1.3.5.3">
-<h4><span class="header-section-number">1.3.5.3</span> Limits</h4>
+</div>
+<div id="limits" class="section level3" number="1.3.6">
+<h3><span class="header-section-number">1.3.6</span> Limits</h3>
 <p>Finally, the following <strong>limits</strong> will be crucial in many tasks:</p>
 <ul>
 <li><span class="math display">\[\lim_{n \to \infty} \sum_{i=1}^n x_i = \sum_{i=1 }^\infty x_i \nonumber\]</span></li>
@@ -640,7 +645,6 @@ The sum is finite and stops after n+1 terms.
 <li><span class="math display">\[e^x = \sum_{i = 0}^{\infty} {x^i \over i!} = 1 + x + {x^2 \over 2!} + {x^3 \over 3!} + {x^4 \over 4!} + \dots\]</span></li>
 </ul>
 
-</div>
 </div>
 </div>
 </div>

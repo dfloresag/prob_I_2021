@@ -18,6 +18,9 @@
 <!-- # ) -->
 <!-- ``` -->
 
+```{r ,echo = FALSE, fig.cap='Taking statistics to schools : Enrico Chavez', fig.align='center'}
+  knitr::include_graphics("img/fun/EC_Talking_statistics_to_schools.png")
+```
 
 ## A World of Data
 
@@ -123,9 +126,6 @@ To answer this last question we could represent the evolution of the price using
 \end{tikzpicture}
 ```
 
-<mark>
-  Ask davide what this is about. 
-</mark>
 
 The computation of the probabilities on this chart 
 
@@ -430,7 +430,7 @@ Let us compute the binomial coefficients for polynomials of different degrees $n
 \end{align}
 ```
 
-#### Limits
+### Limits
 
 Finally, the following **limits** will be crucial in many tasks:
 
