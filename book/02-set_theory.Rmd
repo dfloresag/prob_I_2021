@@ -1,13 +1,23 @@
-# Elements of Set Theory for Probability {#settheory}
- 
+# 🔧 Elements of Set Theory for Probability {#settheory}
+
+```{r, echo = FALSE, fig.align='center', fig.cap="_The beaverduck_ from [Tenso Graphics](https://cargocollective.com/tensographics)", out.width=  "75%"}
+knitr::include_graphics("img/fun/R9mJR.jpeg")
+```
+
+In order to formalise the theory of probability, our first step consists in formulating events with uncertain outcomes as mathematical objects. To do this, we take advantage of **Set Theory**.
+
+In this chapter, we will overview some elements of Set Theory, and link them with uncertain outcomes. 
+
 ## Definitions
 
-In order to develop the Probability theory of this course we are going to need also some elements of set theory. To start our journey, let us introduce some definitions. 
+Let us start our journey with some definitions: 
 
 ```{definition, randomExperiment, name = "Random Experiment"}
 
-A Random Experiment  is a process that can result in two or more different outcomes with uncertainty as to which will be observed.
+A Random Experiment is a process that can **result in two or more different outcomes** with **uncertainty as to which will be observed**.
 ```
+
+We perform Random Experiments almost every day in our everyday life. Some are very deliberate, such as the referee flipping a coin to decide who gets to kick the ball first in a football game. However, some are less deliberate, such as the rise or fall of the price of a Stock which, as we have illustrated in the introductory lecture, falls within this definition. 
 
 ```{definition, event, name = "Event"}
 
@@ -19,48 +29,44 @@ An event can be:
 - Composite: it includes more than one elementary outcome in the possible sets of outcomes.
 ```
 
+For instance, in some card games, you have to draw more than one card, and in some dice games, (such as the Bolivian game of "Cacho Alalay"), you have to throw more 5 dice. The result of your throw is therefore the composition of elementary events (the result of each die). 
+
+<!-- https://www.paginasiete.bo/u/fotografias/fotosnoticias/2015/9/19/78124.jpg -->
+
 ```{definition, sampleSpace, name = "Sample Space"}
 The **Sample Space** is the complete listing of the elementary events that can occur in a random experiment. We will denote the sample space by $S$.
 ```
 
-We encounter all these definitions in our everyday life. In particular, when we gather at home to play board games, such as the game of cards, or when we want to "let chance decide" who gets to kick the ball first in a football game... by flipping a coin. 
-
-```{r ,echo = FALSE, fig.cap='Someone is lucky!', fig.align='center'}
-  knitr::include_graphics("img/02_set_theory/CardDeck/aces.png")
-```
-
 ```{example, cardGame, name = "A simple card game"}
 
-When playing with a full deck of cards, we can characterise drawing a card as a random experiment, where we can identify a set of events and the sample space: 
-  
-Suppose we are to draw **one** card at random from a full deck of 52 playing cards.
+To illustrate all these definitions, we will use a game of cards. 
 
-The Sample Space $S$ consists of the values of the cards of all colors and suits. 
+- Let us suppose that the game requires drawing **one** card at random from a full deck of 52 playing cards. This draw consitutes a **Random Experiment**
+  
+- The **Sample Space** $S$ consists of the values of the cards of all colors and suits. 
 
 <div align="center">S = {<span style='color: black'>A&clubs;</span>, <span style='color: black'>2&clubs;</span>, ...,<span style='color: black'>K&clubs;</span>,<span style='color: red'>A&diams;</span>, <span style='color: red'>2&diams;</span>, ... ,<span style='color: red'>K&diams;</span> , <span style='color: red'>A&hearts;</span>, <span style='color: red'>2&hearts;</span>, ... ,<span style='color: red'>K&hearts;</span>, <span style='color: black'>A&spades;</span>, <span style='color: black'>2&spades;</span>, ... ,<span style='color: black'>K&spades;</span>}</div>
 
-Here, we can define events as subsets of the sample space:
-
-- $K$: _drawing a **King**_ 
-  
+- Here, we can define Events as subsets of the sample space, To keep it simple, let's consider **Elementary Events**:
+  - $K$: _drawing a **King**_ 
 <div align="center">K = {<span style='color: black'>K&clubs;</span>, <span style='color: red'>K&diams;</span>, <span style='color: red'>K&hearts;</span>, <span style='color: black'>K&spades;</span>}</div>
-
-- $H$: Event of drawing a **Heart**
-  
+  - $H$: Event of drawing a **Heart**
 <div align="center">H = {<span style='color: red'>A&hearts;</span>, <span style='color: red'>2&hearts;</span>, ... ,<span style='color: red'>K&hearts;</span>}</div>
-  
-- $J$: drawing a **Jack or higher** 
-  
+  - $J$: drawing a **Jack or higher** 
 <div align="center">J = {<span style='color: black'>J&clubs;</span>, <span style='color: black'>Q&clubs;</span>,<span style='color: black'>K&clubs;</span>,<span style='color: red'>J&diams;</span>, <span style='color: red'>Q&diams;</span>, <span style='color: red'>K&diams;</span> , <span style='color: red'>J&hearts;</span>, <span style='color: red'>Q&hearts;</span>, <span style='color: red'>K&hearts;</span>, <span style='color: black'>J&spades;</span>, <span style='color: black'>Q&spades;</span>, <span style='color: black'>K&spades;</span>}</div>
-  
-- $Q$: drawing a **Queen**
-    
+  - $Q$: drawing a **Queen**
 <div align="center">Q = {<span style='color: black'>Q&clubs;</span>, <span style='color: red'>Q&diams;</span>, <span style='color: red'>Q&hearts;</span>, <span style='color: black'>Q&spades;</span>}</div>
+```
 
+With a game of cards, we can also illustrate **Composite Events**, e.g. drawing 4 **Aces**
+```{r ,echo = FALSE, fig.cap='Someone is lucky!', fig.align='center', out.width = "50%"}
+  knitr::include_graphics("img/02_set_theory/CardDeck/aces.png")
 ```
 
 ```{example, flipCoins, name = "Flipping Coins"}
-Flipping a set of two coins can be characterised as another random experiment. In this case, let us denote the outcomes for each coin are $H$ for Head and $T$ for Tail. Hence, the sample space of the experiment "flipping two coins" contains the following four points:
+Flipping a set of two coins can be characterised as another random experiment allowing for composite events. In this case, let us denote the outcomes for each coin are $H$ for Head and $T$ for Tail. 
+
+Hence, the sample space of the experiment "flipping two coins" contains the following four points:
 
 $$S = \{ (HH),(HT),(TH),(TT)  \}.$$
 ```
@@ -74,13 +80,14 @@ $$ S = \{x: 0 \leq x < \infty \}$$
 or, equivalently, $S\equiv \mathbb{R}^+$.
 ```
 
-
 ## Some definitions from set theory
 
 The following definitions from set theory will be useful to deal with events.
 
 ```{definition, subsets}
-If every element of a set $A$ is also an element of a set $B$, then **$A$ is a \textit{subset} of $B$**. We write this as : $$A \subset B$$ and we read it as **"$A$ is contained in $B$"**
+If every element of a set $A$ is also an element of a set $B$, then **$A$ is a _subset_ of $B$**. 
+
+We write this as : $$A \subset B$$ and we read it as **"$A$ is contained in $B$"**
 ```
 
 ```{definition, equality}
@@ -90,13 +97,8 @@ Two sets $A$ and $B$ are said to be **equal** if  $$A \subset B \text{ and } B \
 ```{definition, emptySet}
 If a set $A$ contains no points, it will be called the **null set**, or **empty set**, and it is typically denoted by $\varnothing$.
 ```
- 
 
 ## The Venn diagram
-
-```{r, echo = FALSE, fig.align='center', fig.cap="_The beaverduck_ source: [Tenso Graphics](https://cargocollective.com/tensographics)"}
-knitr::include_graphics("img/fun/R9mJR.jpeg")
-```
 
 The Venn diagram is an elementary schematic representation of sets and helps displaying their properties. As you might remember from your elementary mathematics classes, a Venn diagram represents a set with a closed figure and it is assumed that the set elements are in the surface contained by the figure. They are very useful to illustrate inclusion and equality as well as more abstract notions. 
 
@@ -120,17 +122,23 @@ Two events are mutually exclusive is they cannot occur jointly. This is represen
 knitr::include_graphics("img/02_set_theory/charts/charts.003.png")
 ```
 
-
 For illustration, consider our simple card game example. The event "drawing a **King**" and "drawing a **Queen**" are mutually exclusive, as they can't happen at the same time. 
 
 <mark>
-  chart: Events of King and Queen
+  Chart is coming
 </mark>
 
-Events that are not mutually exclusive have a shared area, which in set theory constitutes an **intersection** and gets shown in a Venn diagram by two <mark>colliding</mark> figures. Coming back to our example with the card game, consider the events "drawing a **King**" and "drawing a **Heart**". Here there is intersection, as one can obtain a **King of Hearts**. 
+Events that are not mutually exclusive have a shared area, which in set theory constitutes an **intersection** and gets shown in a Venn diagram by two figures that share some of their areas. 
+
 ```{r, echo = FALSE, fig.align='center', fig.cap='Venn Diagram - Two Non-mutually exclusive events'}
 knitr::include_graphics("img/02_set_theory/charts/charts.004.png")
 ```
+
+Coming back to our example with the card game, consider the events "drawing a **King**" and "drawing a **Heart**". Here there is intersection, as one can obtain a **King of Hearts**. 
+
+<mark>
+  Chart is coming
+</mark>
 
 ### Union and Intersection of Events
 

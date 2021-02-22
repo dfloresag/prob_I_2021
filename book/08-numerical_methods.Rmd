@@ -1,4 +1,4 @@
-# Numerical Methods {#numericalmethods}
+# 📝 Numerical Methods {#numericalmethods}
 
 
 ## Introduction to simulation

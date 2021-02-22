@@ -1,4 +1,4 @@
-# Introduction {#introduction}
+# 🔧 Introduction {#introduction}
 
 <!-- You can label chapter and section titles using `{#label}` after them, e.g., we can reference Chapter \@ref(intro). If you do not manually label them, there will be automatic labels anyway, e.g., Chapter \@ref(methods). -->
 
@@ -18,7 +18,7 @@
 <!-- # ) -->
 <!-- ``` -->
 
-```{r ,echo = FALSE, fig.cap='Taking statistics to schools : Enrico Chavez', fig.align='center'}
+```{r ,echo = FALSE, fig.cap='_Taking statistics to schools_ by Enrico Chavez', fig.align='center', out.width="75%"}
   knitr::include_graphics("img/fun/EC_Talking_statistics_to_schools.png")
 ```
 
@@ -52,7 +52,7 @@ Hence, for the purposes of this lecture, we shall consider:
 
 - **Probability** as the mathematical formalisation of randomness and uncertainty the main building block of Statistical methods. 
 
-```{r ,echo = FALSE, fig.cap='_Thinking of learning ML this weekend, is there math?_ (2020). Retrieved from [r/DataScienceMemes](https://www.reddit.com/r/DataScienceMemes/comments/hqi8sv/thinking_of_learning_ml_this_weekend_is_there_math/?utm_source=share&utm_medium=web2x&context=3)',fig.align='center'}
+```{r ,echo = FALSE, fig.cap='_Thinking of learning ML this weekend, is there math?_ (2020). Retrieved from [r/DataScienceMemes](https://www.reddit.com/r/DataScienceMemes/comments/hqi8sv/thinking_of_learning_ml_this_weekend_is_there_math/?utm_source=share&utm_medium=web2x&context=3)',fig.align='center', out.width="75%"}
   knitr::include_graphics("https://i.redd.it/8r2fd78pgna51.png")
 ```
 
@@ -331,7 +331,6 @@ You own a gift store and you have a shelf with 5 products:
 In how many ways can you arrange them on the shelf? 
 
 <!-- Response: $5!$ gives you the total number of possible choices when you can select 5 presents. These are called  **permutations** of the set of gifts and owe that name to the fact that we are just _reordering_ or _permuting_ the elements of the set; -->
-
 
 
 ##### Combinations {-}

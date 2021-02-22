@@ -1,6 +1,4 @@
-# Probability Axioms {#axioms}
-
-
+# 🔧 Probability Axioms {#axioms}
 
 ## An Axiomatic Definition of Probability
 
@@ -331,9 +329,9 @@ Thus, we can make use of the blue guys as
 \begin{eqnarray}
 P(5) &=& Pr\left\{ (1,4) \cup (2,3) \cup (3,2) \cup  (4,1) \right\}  \\
 &=& Pr\left\{ (1,4)  \right\} +  Pr\left\{ (2,3)  \right\} +  Pr\left\{(3,2)  \right\} + Pr\left\{  (4,1) \right\}  \\
-&=& {1} \slash{36} + {1} \slash{36} + {1} \slash{36} + {1} \slash{36}  \\
-&=& {4} \slash{36}  \\
-&=& 1  \slash{9}. 
+&=& {1} /{36} + {1} /{36} + {1} /{36} + {1} /{36}  \\
+&=& {4} /{36}  \\
+&=& 1  /{9}. 
 \end{eqnarray}
 
 

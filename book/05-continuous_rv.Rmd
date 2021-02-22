@@ -1,4 +1,4 @@
-# Continuous Random Variable {#continuousrv}
+# 📝 Continuous Random Variable {#continuousrv}
 
 
 ## Continuous Distributions

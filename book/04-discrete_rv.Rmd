@@ -1,4 +1,4 @@
-# Discrete Random Variables {#discreterv}
+# 📝 Discrete Random Variables {#discreterv}
 
 ## Random variables - what are they?
 

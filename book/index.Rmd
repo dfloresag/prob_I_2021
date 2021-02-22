@@ -3,7 +3,12 @@ title: "`r emo::ji('joker')` Probability I"
 subtitle: "Course Notes"
 author: "Dr. Daniel Flores Agreda (based on the Lecture by Prof. Davide La Vecchia)"
 site: bookdown::bookdown_site
-output: bookdown::gitbook
+output: 
+  bookdown::gitbook:
+    config:
+      sharing:
+        facebook: false
+        twitter: false
 documentclass: book
 bibliography: [book.bib, packages.bib]
 biblio-style: apalike
@@ -33,35 +38,17 @@ library(emo)
 
 # About this lecture {-}
 
+<center> 
 
-```{r ,echo = FALSE, fig.align='center'}
+```{r ,echo = FALSE, , out.width = "75%"}
   knitr::include_url("https://giant.gfycat.com/ApprehensiveEarnestFlounder.mp4")
 ```
 
-```{r, eval= FALSE, echo = FALSE}
-library(plinko)
-library(dplyr)
-library(ggplot2)
-library(distributional)
-library(ggdist)
+Hello and Welcome to this introductory Lecture in Probability! 
 
-theme_set(theme_ggdist())
+These Course Notes are a complement to the Lecture Probability I. 
 
-# You can construct plinko boards using distributions from the distributional package:
-
-set.seed(1234)  # for reproducibility
-
-dist = dist_normal(2, 1)
-board = plinko_board(dist, n_bin = 1000, n_ball = 1000)
-autoplot(board)
-
-board %>%
-  tween_balls(frame_mult = 4) %>%
-  animate(height = 350, fps = 30, end_pause = 2 * 30)
-```
-
-
-Hello and Welcome to this introductory Lecture in Probability! These Course Notes are a complement to the Lecture.  
+</center> 
 
 ## Contents {-}
 
@@ -69,14 +56,14 @@ The Lecture is divided in the following Chapters, and each Chapter contains seve
 
 | Number| Name  | Themes | Status |
 |:------:|:-------|:-------|:-------:| 
-| 1 |**Introduction** | Intro, Mathematics reminder and Combinatorics. | Fine-tuning...  | 
-| 2 |**Elements of Set Theory For Probability** | Random variables, Trees, Venn diagram, Conditional probability, Independence & Bayes' theorem. | Fine-tuning... | 
-| 3 |**Axiomatic Foundations of Proability** | Probability Axioms, Illustrations of use, Conditional probability, Independence & Bayes' theorem. | Fine-tuning... | 
-| 4 | **Discrete random variables**| Definitions, Expected value and variance,  Binomial, Poisson, Negative binomial and Hypergeometric | Writing | 
-| 5 | **Continuous random variables** | Definitions, Expected value and variance, Cumulative distribution function (cdf) and Probability density function (pdf), Some important examples: Uniform, Exponential, Gamma, Normal, logNormal, Student's t, Relationships | Writing |
-| 6 | **Limit Theorems** | Weak Law of Large Numbers (WLLN) and Central Limit Theorem (CLT) |Writing  | 
-| 7 | **Bivariate Discrete Random Variables** | | Writing |
-| 8 | **Elements of Simulation** | Numerical methods for the simulation of random variable with a given CDF. | Writing |
+| 1 |**Introduction** | Intro, Mathematics reminder and Combinatorics. | Fine-tuning 🔧 | 
+| 2 |**Elements of Set Theory For Probability** | Random variables, Trees, Venn diagram, Conditional probability, Independence & Bayes' theorem. | Fine-tuning 🔧 | 
+| 3 |**Axiomatic Foundations of Proability** | Probability Axioms, Illustrations of use, Conditional probability, Independence & Bayes' theorem. | Fine-tuning 🔧 | 
+| 4 | **Discrete random variables**| Definitions, Expected value and variance,  Binomial, Poisson, Negative binomial and Hypergeometric | Writing 📝 | 
+| 5 | **Continuous random variables** | Definitions, Expected value and variance, Cumulative distribution function (cdf) and Probability density function (pdf), Some important examples: Uniform, Exponential, Gamma, Normal, logNormal, Student's t, Relationships | Writing 📝 |
+| 6 | **Limit Theorems** | Weak Law of Large Numbers (WLLN) and Central Limit Theorem (CLT) | Writing 📝 | 
+| 7 | **Bivariate Discrete Random Variables** | | Writing 📝 |
+| 8 | **Elements of Simulation** | Numerical methods for the simulation of random variable with a given CDF. | Writing 📝 |
 
 ## Practical information {-}
 
@@ -129,7 +116,7 @@ lecturers %>%
 
 ### Lectures {-}
 
-The Lectures will take place over [Zoom](https://unige.zoom.us/j/7938361073) on **Thursdays** from **12h to 14h**. 
+The Lectures will take place over [Zoom](https://unige.zoom.us/j/98257116213?pwd=S2VkVWwzbys5SzcyeUMyVERlV1c2UT09) on **Thursdays** from **12h to 14h**. 
 
 - Lectures will consist on a presentation of the contents of the class. 
 

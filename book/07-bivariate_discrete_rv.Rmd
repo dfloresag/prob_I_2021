@@ -1,4 +1,4 @@
-# Bivariate Discrete Random Variables {#bivariatediscreterv}
+# 📝 Bivariate Discrete Random Variables {#bivariatediscreterv}
 
 
 <!--  -->
