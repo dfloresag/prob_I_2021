@@ -177,7 +177,7 @@ It is worth noticing that if $A_j \cap A_i = \varnothing$, for every $i$ and $j$
 $
 P(A_1 \cup A_2 \cup....\cup A_n) = \sum_{i=1}^{n}P(A_i),
 $
-as stated in @ref{Eq: probuniondisj}).
+as stated in \@ref(eq:probuniondisj).
 ```
 
 ```{theorem}

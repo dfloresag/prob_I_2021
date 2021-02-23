@@ -178,7 +178,7 @@
 <li class="chapter" data-level="4.8.19" data-path="discreterv.html"><a href="discreterv.html#the-geometric-distribution-1"><i class="fa fa-check"></i><b>4.8.19</b> The Geometric Distribution</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="5" data-path="continuousrv.html"><a href="continuousrv.html"><i class="fa fa-check"></i><b>5</b> Continuous Random Variable</a>
+<li class="chapter" data-level="5" data-path="continuousrv.html"><a href="continuousrv.html"><i class="fa fa-check"></i><b>5</b> 📝 Continuous Random Variable</a>
 <ul>
 <li class="chapter" data-level="5.1" data-path="continuousrv.html"><a href="continuousrv.html#continuous-distributions"><i class="fa fa-check"></i><b>5.1</b> Continuous Distributions</a></li>
 <li class="chapter" data-level="5.2" data-path="continuousrv.html"><a href="continuousrv.html#cumulative-distribution-function-cdf"><i class="fa fa-check"></i><b>5.2</b> Cumulative Distribution Function (CDF)</a>
@@ -214,7 +214,7 @@
 </ul></li>
 <li class="chapter" data-level="5.9" data-path="continuousrv.html"><a href="continuousrv.html#the-big-picture"><i class="fa fa-check"></i><b>5.9</b> The big picture</a></li>
 </ul></li>
-<li class="chapter" data-level="6" data-path="limittheorems.html"><a href="limittheorems.html"><i class="fa fa-check"></i><b>6</b> Limit Theorems</a>
+<li class="chapter" data-level="6" data-path="limittheorems.html"><a href="limittheorems.html"><i class="fa fa-check"></i><b>6</b> 📝 Limit Theorems</a>
 <ul>
 <li class="chapter" data-level="6.1" data-path="limittheorems.html"><a href="limittheorems.html#sequences-of-random-variables"><i class="fa fa-check"></i><b>6.1</b> Sequences of Random Variables</a>
 <ul>
@@ -290,61 +290,11 @@
 <span class="math inline">\(HH\)</span>’)</li>
 <li>events defined as combinations of sets (an event in `<span class="math inline">\(A\cup B^{c}\)</span>’)</li>
 </ul>
-
-<div class="definition">
-<span id="def:unnamed-chunk-1" class="definition"><strong>Definition 4.1  </strong></span>A <strong>random variable</strong> is a variable that takes on different
-<strong>numerical</strong> values (different outcomes) with various probabilities of
-occurrence associated with each different outcome.
-</div>
 <p>To define a random variable, we need:</p>
 <ol style="list-style-type: decimal">
 <li>to list all possible numerical outcomes, and</li>
 <li>the corresponding probability for each numerical outcome</li>
 </ol>
-
-<div class="example">
-<p><span id="exm:unnamed-chunk-2" class="example"><strong>Example 4.1  </strong></span>1. Roll a single die, and record the number of dots on the top side
-2. The list of all possible outcomes of the random process is the number
-shown on the die
-- i.e. the possible outcomes are 1, 2, 3, 4, 5 and 6
-3. If we say each outcome is equally likely, then the probability of each outcome must be 1/6</p>
-</div>
-
-<div class="example">
-<p><span id="exm:unnamed-chunk-3" class="example"><strong>Example 4.2  </strong></span>
-- Flip a coin 10 times, and record the number of times T (tail) occurs
-- The possible outcomes of the random process are%</p>
-<p><span class="math display">\[\begin{equation*}
-\text{0, 1, 2, 3, 4, 5, 6, 7, 8, 9 and 10}
-\end{equation*}\]</span></p>
-<ul>
-<li><p>For each number we associate a probability</p></li>
-<li><p>The probabilities are determined by the assumptions made about the
-coin flips, e.g.</p>
-<ul>
-<li>what is the probability of a ‘tail’ (or ‘head’) appearing on a single
-coin flip</li>
-<li>whether this probability is the same for every coin flip</li>
-</ul></li>
-<li><p>whether the 10 coin flips are `independent’ of each other</p>
-</div></li>
-</ul>
-
-<div class="example">
-<p><span id="exm:unnamed-chunk-4" class="example"><strong>Example 4.3  </strong></span>
-- Suppose we want to study the time taken by school students to complete
-a test. Suppose that no student is given more than 2 hours to finish the
-test.</p>
-<ul>
-<li><p>If <span class="math inline">\(X=\)</span> completion time (in minutes), the possible values of the
-random variable <span class="math inline">\(X\)</span> are contained in the interval
-<span class="math display">\[(0,120]=\{x:0&lt;x\leq 120\}.
-\]</span></p></li>
-<li><p>We then need to associate probabilities with all events we may wish to
-consider, such as
-<span class="math display">\[P\left(\{ X\leq 15\}\right) \quad  \text{or} \quad P\left(\{ X&gt;60\}\right).\]</span></p></li>
-</ul>
-</div>
 </div>
 <div id="formal-definition-of-a-random-variable-i" class="section level2" number="4.2">
 <h2><span class="header-section-number">4.2</span> Formal definition of a random variable (I)</h2>
@@ -361,43 +311,6 @@ consider, such as
 </div>
 <div id="example-from-s-to-d-via-xcdot" class="section level2" number="4.3">
 <h2><span class="header-section-number">4.3</span> Example: from <span class="math inline">\(S\)</span> to <span class="math inline">\(D\)</span>, via <span class="math inline">\(X(\cdot)\)</span></h2>
-
-<div class="example">
-<p><span id="exm:unnamed-chunk-5" class="example"><strong>Example 4.4  </strong></span>
-[Roll the die]</p>
-<p>*<strong>Experiment:</strong> We roll two dice and we consider the number of points in the first die, and the number of points in the second die. We already know that the sample space <span class="math inline">\({\color{green}S}\)</span> is given by:</p>
-<p>For the elements related to <span class="math inline">\(\color{green}S\)</span> we have a probability <span class="math inline">\({\color{green}Pr}\)</span></p>
-<p>Now define <span class="math inline">\(X(\color{green}s_{ij})\)</span> as the sum of the outcome of the outcome <span class="math inline">\(i\)</span> of the first die and the outcome <span class="math inline">\(j\)</span> of the second die. Thus:</p>
-<p><span class="math display">\[\begin{eqnarray*}
-X(\color{green}s_{ij})= X(i,j)= i+j, &amp; \textit{for} &amp; i=1,...,6,  \textit{and  }   j=1,...,6 
-\end{eqnarray*}\]</span></p>
-<p>In this notation <span class="math inline">\(\color{green}s_{ij}=(i,j)\)</span> and $ s_{ij} S $, each having probability <span class="math inline">\(1/36\)</span>.</p>
-<p><strong>Facts:</strong></p>
-<ul>
-<li><span class="math inline">\(X(\cdot)\)</span> maps $ S $ into <span class="math inline">\(\color{blue}D\)</span>. The (new) sample space <span class="math inline">\(\color{blue}D\)</span> is given by:</li>
-</ul>
-<p><span class="math display">\[\begin{equation*}
-\color{blue}D=\left\{2,3,4,5,6,7,8,9,10,11,12\right\}
-\end{equation*}\]</span></p>
-<p>where, e.g., <span class="math inline">\(\color{blue}2\)</span> is related to the pair <span class="math inline">\((1,1)\)</span>, <span class="math inline">\(\color{blue}3\)</span> is related to the pairs <span class="math inline">\((1,2)\)</span> and <span class="math inline">\((2,1)\)</span>, etc etc. To <span class="math inline">\(\color{blue}D\)</span> is related the new <span class="math inline">\(\color{blue}{P}\)</span>
-%triplet <span class="math inline">\((\color{blue}D,\mathcal{B}_{\color{blue}{D}},P)\)</span> .</p>
-<ul>
-<li>To each element (event) in <span class="math inline">\(\color{blue}D\)</span> we can attach a probability, using the probability of the corresponding event(s) in <span class="math inline">\(S\)</span>. For instance,
-<span class="math display">\[
-P(\color{blue}2)=Pr(1,1)=1/36, \quad \text{or} \quad P(\color{blue}3)=Pr(1,2)+Pr(2,1)=2/36.
-\]</span>
-</li>
-<li>How about the <span class="math inline">\(P(\color{blue}7)\)</span>?<br />
-<span class="math display">\[\begin{equation*}
-P(\color{blue}7)=Pr(3,4)+Pr(2,5)+Pr(1,6)+Pr(4,3)+Pr(5,2)+Pr(6,1)=6/36. 
-\end{equation*}\]</span>
-</li>
-<li>The latter equality can also be re-written as
-<span class="math display">\[P(\color{blue}7)=2(Pr(3,4)+Pr(2,5)+Pr(1,6))=6 \ Pr(3,4),\]</span>
-</li>
-<li>What is <span class="math inline">\(P(\color{blue} 9 )\)</span>? What is <span class="math inline">\(P(\color{blue} 13 )\)</span>? [Hint: does  13 belong to $ D $?]</li>
-</ul>
-</div>
 </div>
 <div id="formal-definition-of-a-random-variable-ii" class="section level2" number="4.4">
 <h2><span class="header-section-number">4.4</span> Formal definition of a random variable (II)</h2>
@@ -441,65 +354,11 @@ A_{i}\right) . \]</span></li>
 </div>
 <div id="an-example-from-gambling" class="section level2" number="4.5">
 <h2><span class="header-section-number">4.5</span> An Example from gambling</h2>
-
-<div class="example">
-<p><span id="exm:unnamed-chunk-6" class="example"><strong>Example 4.5  </strong></span>
-[Geometric random variable]</p>
-<p>Consider the problem of rolling a die until a 6 appears.</p>
-<ul>
-<li><p>Let <span class="math inline">\(X\)</span> denote the number of rolls required for the process to end</p></li>
-<li><p>The possible values of <span class="math inline">\(X\)</span> are: <span class="math inline">\(1, 2, 3,\ldots,n,\ldots\)</span> (<span class="math inline">\(\equiv \mathbb{N}\)</span>).</p></li>
-<li><p><span class="math inline">\(P(\{X=1\}) =\Pr (\text{&#39;6&#39; appears on the 1st roll})= \frac{1}{6}\)</span></p></li>
-<li><p><span class="math inline">\(P (\{X=2\})=\Pr \left( \text{no `}6\text{&#39; on the 1st roll and `}6\text{%
-&#39; on the 2nd roll}\right) =\frac{5}{6}\cdot \frac{1}{6}=\frac{5}{36}\)</span></p></li>
-<li><p><span class="math inline">\(P(\{X=3\})=\Pr \left( \text{no `}6\text{&#39; on either the 1st or 2nd
-roll and &#39;6&#39; on the third roll}\right)\)</span>
-<span class="math inline">\(=\frac{5}{6}\cdot \frac{5}{6}\cdot \frac{1}{6}=\frac{25}{216}\)</span></p></li>
-<li><p><span class="math inline">\(\ldots\)</span> and so on <span class="math inline">\(\ldots\)</span></p></li>
-<li><p><span class="math inline">\(P(\{X=n\})=\Pr( \text{no `}6\text{&#39; on the first }\)</span>n-1<span class="math inline">\(\text{ rolls
-and &#39;6&#39; on the last roll})\)</span> 
-<span class="math inline">\(=\left(\frac{5}{6}\right)^{n-1}\cdot \frac{1}{6}\)</span></p></li>
-<li><p><span class="math inline">\(\ldots\)</span> and so on <span class="math inline">\(\ldots\)</span>.</p></li>
-<li><p>Rather than list the possible values of <span class="math inline">\(X\)</span> along with the associated
-probabilities in a table, we can provide a formula that gives the required
-probabilities.</p></li>
-<li><p>The probability distribution of the random variable <span class="math inline">\(X\)</span>
-is given by</p></li>
-</ul>
-<p><span class="math display">\[\begin{equation*}
-P(\left\{ X=n \right\})=\left(\frac{5}{6}\right)^{n-1}\frac{1}{6}\quad\text{for}%
-\quad n=1,2,\ldots
-\end{equation*}\]</span></p>
-<ul>
-<li>Note that (using properties of geometric series)
-<span class="math display">\[\begin{equation*}
-\sum_{n=1}^\infty\left(\frac{5}{6}\right)^{n-1}\frac{1}{6}=1.
-\end{equation*}\]</span></li>
-</ul>
-</div>
 </div>
 <div id="discrete-random-variables" class="section level2" number="4.6">
 <h2><span class="header-section-number">4.6</span> Discrete random variables</h2>
-Discrete random variables are often associated with the process of counting (see previous
-example). More generally,
-
-<div class="definition">
-<p><span id="def:unnamed-chunk-7" class="definition"><strong>Definition 4.2  </strong></span>Suppose <span class="math inline">\(X\)</span> can take the values <span class="math inline">\(x_{1},x_{2},x_{3},\ldots ,x_{n}\)</span>. The probability of <span class="math inline">\(x_{i}\)</span> is
-<span class="math display">\[p_{i}= P(\left\{ X=x_i\right\})\]</span></p>
-and we must have <span class="math inline">\(p_{1}+p_{2}+p_{3}+\cdots +p_{n}=1\)</span> and all <span class="math inline">\(p_{i}\geq 0\)</span>. These probabilities may be put in a table%
-<span class="math display">\[\begin{equation*}
-\begin{tabular}{|c|c|}
-\hline
-$x_i $ &amp; $P(\left\{ X=x_i\right\}) $ \\ \hline\hline
-$x_{1}$ &amp; $p_{1}$ \\ \hline
-$x_{2}$ &amp; $p_{2}$ \\ \hline
-$x_{3}$ &amp; $p_{3}$ \\ \hline
-$\vdots $ &amp; $\vdots $ \\ \hline
-$x_{n}$ &amp; $p_{n}$ \\ \hline\hline
-Total &amp; $1$ \\ \hline
-\end{tabular}%
-\end{equation*}\]</span>
-</div>
+<p>Discrete random variables are often associated with the process of counting (see previous
+example). More generally,</p>
 <p>For a , any table listing all
 possible nonzero probabilities provides the entire <strong>probability distribution</strong>.
 The  <span class="math inline">\(p(a)\)</span> of <span class="math inline">\(X\)</span> is defined by
@@ -545,46 +404,6 @@ $\vdots $ &amp; $\vdots $ \\ \hline
 $x_{n}$ &amp; $p_{1}+p_{2}+\cdots +p_{n}=1$ \\ \hline
 \end{tabular}%
 \end{equation*}\]</span></p>
-
-<div class="example">
-<span id="exm:unnamed-chunk-8" class="example"><strong>Example 4.6  </strong></span>
-
-<p><span class="math display">\[F_X(x) = \left\{ 
-\begin{array}{ll}
-0 &amp; x&lt;0 \\
-4/35 &amp; 0 \leq x &lt; 1\\
-22/35 &amp; 1 \leq x &lt; 2\\
-34/35 &amp; 2 \leq x &lt; 3 \\
-1 &amp; x \geq 3.
-\end{array} \right.\]</span></p>
-<p>… or graphically, you get  …</p>
-</div>
-
-<div class="remark">
-<p> <span class="remark"><em>Remark. </em></span> Suppose <span class="math inline">\(a\leq b\)</span>. Then, because the event <span class="math inline">\(\{X\leq a \}\)</span> is contained in the event <span class="math inline">\(\{X\leq b \}\)</span>, namely
-<span class="math display">\[
-\{X\leq a \} \subseteq \{X\leq b \},
-\]</span>
-it follows that
-<span class="math display">\[F_X(a) \leq F_X(b),
- \]</span>
-so, the probability of the former is less than or equal to the probability of the latter. \</p>
-</div>
-
-<div class="example">
-<p><span id="exm:unnamed-chunk-10" class="example"><strong>Example 4.7  </strong></span>
-[Quantiles]</p>
-<p>The CDF can be inverted to define the value <span class="math inline">\(x\)</span> of <span class="math inline">\(X\)</span> that corresponds to a given probability <span class="math inline">\(\alpha\)</span>, namely <span class="math inline">\(\alpha = P (X \leq x )\)</span>, for <span class="math inline">\(\alpha \in [0,1]\)</span>. \</p>
-<p>The inverse CDF <span class="math inline">\(F_X^{-1}(\alpha)\)</span> or quantile of order <span class="math inline">\(\alpha\)</span>, and labelled as <span class="math inline">\(Q(\alpha)\)</span>, is the smallest
-realisation of <span class="math inline">\(X\)</span> associated to a CDF greater or equal to <span class="math inline">\(\alpha\)</span>; in formula, the
-<span class="math inline">\(\alpha\)</span>-quantile <span class="math inline">\(Q(\alpha)\)</span> is the smallest number satisfying:</p>
-<p><span class="math display">\[
-F_X [F^{-1}_X (\alpha)] = P[X \leq \underbrace{F^{-1}_X (\alpha)}_{Q(\alpha)}] \geq \alpha, \quad \text{for} \quad \alpha\in[0,1]. 
-\]</span></p>
-<p>By construction, a quantile of a discrete random variable is a realization of <span class="math inline">\(X\)</span>. More to come in Lecture 5…</p>
-<p>[contd, graphically]</p>
-…calling (only for this slide) <span class="math inline">\(R\)</span> the rv, <span class="math inline">\(r\)</span> its realizations and <span class="math inline">\(F_R(r)\)</span> its CDF at <span class="math inline">\(r\)</span>…
-</div>
 </div>
 <div id="distributional-summaries-for-discrete-random-variables" class="section level2" number="4.8">
 <h2><span class="header-section-number">4.8</span> Distributional summaries for discrete random variables</h2>
@@ -607,15 +426,6 @@ s.d\left( X\right) &amp;=&amp;\sqrt{Var\left( X\right) } \\
 is a measure of </p></li>
 </ul>
 <p>If <span class="math inline">\(X\)</span> is a discrete random variable and <span class="math inline">\(a\)</span> is any real number, then</p>
-
-<div class="definition">
-<span id="def:unnamed-chunk-11" class="definition"><strong>Definition 4.3  </strong></span>Consider two discrete random variables <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span>. Then, <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span> are  if%
-<span class="math display">\[\begin{equation*}
-P \left(\left\{ \ X=x\right\} \cap \left\{ Y=y\right\} \right) =P \left(\{
-X=x\}\right) \cdot P \left(\{ Y=y \}\right)
-\end{equation*}\]</span>
-for all values <span class="math inline">\(x\)</span> that <span class="math inline">\(X\)</span> can take and all values <span class="math inline">\(y\)</span> that <span class="math inline">\(Y\)</span> can take.
-</div>
 <ul>
 <li><p>If <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span> are two discrete random variables, then%
 <span class="math display">\[\begin{equation*}
@@ -626,10 +436,6 @@ E\left[ X+Y\right] =E\left[ X\right] +E\left[ Y\right]
 Var\left( X+Y\right) =Var\left( X\right) +Var\left( Y\right) \label{Eq. Var}
 \end{equation}\]</span></p></li>
 </ul>
-
-<div class="remark">
- <span class="remark"><em>Remark. </em></span> Note that Eq. () does not (typically) hold if <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span> are NOT independent—more to come on this later on…
-</div>
 <p>Recall that the expectation of X was defined as
 <span class="math display">\[\begin{equation*}
 E\left[ X\right] = \sum_{i=1}^{n} p_i x_i
@@ -697,36 +503,6 @@ k+2\right) }{12} \\
 </ul>
 <p>E.g. when <span class="math inline">\(k=6\)</span>, the variance of <span class="math inline">\(X\)</span> is equal to <span class="math inline">\(4,\)</span> and the standard
 deviation of <span class="math inline">\(X\)</span> is equal to <span class="math inline">\(\sqrt{4}=2.\)</span></p>
-
-<div class="example">
-<p><span id="exm:unnamed-chunk-14" class="example"><strong>Example 4.8  </strong></span>
-An example of discrete uniform is related to the experiment of rolling a die—remark, the outcome zero is not allowed in this specific example. \</p>
-<p>Let us call <span class="math inline">\(X\)</span> the corresponding random variable and <span class="math inline">\(\{x_1,x_2,...,x_6\}\)</span> its realizations. \</p>
-<p>The possible outcomes
-are
-<span class="math display">\[
-\{1,2,3,4,5,6\}
-\]</span>
-each having probability <span class="math inline">\(\frac{1}{6}\)</span>.</p>
-<p>Moreover,</p>
-<p><span class="math display">\[
-E(X) = (1+2+3+4+5+6) \cdot \frac{1}{6} = 3.5,
-\]</span></p>
-<p>which is not one of the possible outcomes!!!</p>
-</div>
-
-<div class="definition">
-<p><span id="def:unnamed-chunk-15" class="definition"><strong>Definition 4.4  </strong></span>
- is the name given to the random variable <span class="math inline">\(X\)</span> having probability distribution given by%</p>
-<span class="math display">\[\begin{equation*}
-\begin{tabular}{|l|l|}
-\hline
-$x_i$ &amp; $P(\left\{ X=x_i\right\}) $ \\ \hline\hline
-$1$ &amp; $p$ \\ \hline
-$0$ &amp; $1-p$ \\ \hline
-\end{tabular}%
-\end{equation*}\]</span>
-</div>
 Often we write
 <span class="math display">\[\begin{equation*}
 P(\left\{ X=x\right\} ) =p^{x}\left( 1-p\right) ^{1-x}, \quad \text{ for }x=0,1
@@ -737,23 +513,6 @@ P(\left\{ X=x\right\} ) =p^{x}\left( 1-p\right) ^{1-x}, \quad \text{ for }x=0,1
 %</li>
 <li>Failure occurs with probability <span class="math inline">\(1-p\)</span>.</li>
 </ul>
-
-<div class="remark">
- <span class="remark"><em>Remark. </em></span> Just for the sake of notation, let us set <span class="math inline">\(X=1\)</span> if  occurs, and <span class="math inline">\(X=0\)</span> if  occurs
-</div>
-
-<div class="example">
-<p><span id="exm:unnamed-chunk-17" class="example"><strong>Example 4.9  </strong></span>Coin tossing: we can define a random variable</p>
-<p><span class="math display">\[\begin{equation*}
-\begin{tabular}{|l|l|}
-\hline
-$x_i$ &amp; $P(\left\{ X=x_i\right\}) $ \\ \hline\hline
-$1$ &amp; $p$ \\ \hline
-$0$ &amp; $1-p$ \\ \hline
-\end{tabular}%
-\end{equation*}\]</span>
-and say that <span class="math inline">\(X=1\)</span> if <span class="math inline">\(H\)</span> and <span class="math inline">\(X=0\)</span> if <span class="math inline">\(T\)</span>.</p>
-</div>
 <ul>
 <li><p>Mean:
 <span class="math display">\[\begin{eqnarray*}
@@ -767,22 +526,6 @@ Var\left( X\right) &amp;=&amp;\left( 1-p\right) ^{2} \cdot p+\left( 0-p\right)
 &amp;=&amp;p\left( 1-p\right).
 \end{eqnarray*}\]</span></p></li>
 </ul>
-
-<div class="definition">
-<p><span id="def:unnamed-chunk-18" class="definition"><strong>Definition 4.5  </strong></span>Let us consider the random experiment consisting in a series of <span class="math inline">\(n\)</span> trials having 3
-characteristics</p>
-<span class="math inline">\(X\)</span> is the  occurring in <span class="math inline">\(n\)</span> (Bernoulli) trials. Binomial probability distribution given by%
-<span class="math display">\[\begin{eqnarray}
-P ( \left\{ X=x\right\})  &amp;=&amp;\left(
-\begin{array}{c}
-n \nonumber \\
-x%
-\end{array}%
-\right) p^{x}\left( 1-p\right) ^{n-x} \\
-&amp;=&amp;\frac{n!}{x!\left( n-x\right) !}p^{x}\left( 1-p\right) ^{n-x},\text{ for }%
-x=0,1,2,...,n \label{Eq: Binom}
-\end{eqnarray}\]</span>
-</div>
 <p>Recall (see Intro lecture) that combinations are defined as:</p>
 <p><span class="math display">\[\begin{equation*}
 \left(
@@ -811,11 +554,6 @@ x $ <code>successes' and $n-x$</code>failures’.</p></li>
 <li><p>The second factor <span class="math display">\[p^{x}\left( 1-p\right) ^{n-x}\]</span> is the probability associated with any one
 sequence of <span class="math inline">\(x\)</span> <code>successes' and $(n-x)$</code>failures’.</p></li>
 </ul>
-
-<div class="remark">
- <span class="remark"><em>Remark. </em></span> Short-hand notation: <span class="math display">\[ X \sim \text{B}(x,n,p)\]</span>
-or, occasionally, simply $ X  (n,p)$ (no <span class="math inline">\(x\)</span> in the formula).
-</div>
 <ul>
 <li><p>Mean:
 <span class="math display">\[\begin{eqnarray*}
@@ -834,12 +572,6 @@ Var\left( X\right) &amp;=&amp;\sum_{x=0}^{n}\left( x-np\right) ^{2} P (\left\{
 X=x\right\}) \\
 &amp;=&amp;np\left( 1-p\right)
 \end{eqnarray*}\]</span></p>
-
-<div class="remark">
- <span class="remark"><em>Remark. </em></span> Looking at (), we remark that the Bernoulli distribution is a special case (<span class="math inline">\(n=1\)</span>)
-of the Binomial distribution. Roughly speaking, ``a Binomial random variable arises when we sum <span class="math inline">\(n\)</span> independent
-Bernoulli trails.’’
-</div>
 %%
 %%EndExpansion
 %
@@ -862,87 +594,15 @@ Bernoulli trails.’’
 </div>
 <div id="binomial-distribution" class="section level3" number="4.8.2">
 <h3><span class="header-section-number">4.8.2</span> Binomial Distribution</h3>
-
-<div class="example">
-<p><span id="exm:unnamed-chunk-21" class="example"><strong>Example 4.10  </strong></span>
-[cherry trees]</p>
-<p>One night a storm washes three cherries ashore on an island. For each cherry, there is a probability <span class="math inline">\(p=0.8\)</span> that its seed will
-produce a tree. What is the probability that these three cherries will produce two
-trees?</p>
-<p>First, we notice that this can be determined using a . To this end, consider whether each seed will produce a tree as a sequence of <span class="math inline">\(n=3\)</span>
-trials. For each cherry:</p>
-<ul>
-<li><p>either the cherry produces a tree (Success) or it
-does not (Failure);</p></li>
-<li><p>the event that a cherry produces a tree is independent from the event
-that any of the other two cherries produces a tree.</p></li>
-<li><p>The probability that a cherry produces a tree is the same for all
-three cherries</p></li>
-</ul>
-</div>
 </div>
 <div id="binomial-distribution-1" class="section level3" number="4.8.3">
 <h3><span class="header-section-number">4.8.3</span> Binomial Distribution</h3>
-
-<div class="example">
-<p><span id="exm:unnamed-chunk-22" class="example"><strong>Example 4.11  </strong></span>
-- There are <span class="math inline">\(2^{3}=8\)</span> possible outcomes from the <span class="math inline">\(3\)</span> individual trials</p>
-<ul>
-<li><p>It does not matter which of the three cherries produce a tree</p></li>
-<li><p>Consider all of the possible sequences of outcomes (S=success, F=failure)</p></li>
-</ul>
-<p><span class="math display">\[\begin{equation*}
-\text{SSS, {\color{red} SSF}, {\color{red} SFS}, SFF, {\color{red} FSS}, FSF, FFS, FFF}
-\end{equation*}\]</span></p>
-<ul>
-<li><p>We are interested in { SSF} , { SFS}, { FSS}</p></li>
-<li><p>These possible events are , so</p></li>
-</ul>
-<p><span class="math display">\[\begin{equation*}
-\Pr (\left\{\color{red} SSF \cup \color{red} SFS \cup \color{red} FSS \right\}) = \Pr (\left\{\color{red}SSF\right\}) +\Pr (\left\{\color{red}SFS\right\}) +\Pr (\left\{\color{red}FSS\right\})
-\end{equation*}\]</span></p>
-<p>The three trials are assumed to be , so each of the three seed events corresponding to two trees growing has the same probability</p>
-<p><span class="math display">\[\begin{eqnarray*}
-\Pr (\left\{\color{red}SSF \right\})  &amp;=&amp;\Pr (\left\{ \color{red}S \right\}) \cdot \Pr (\left\{\color{red} S\right\} ) \cdot (\Pr \left\{\color{red} F \right\}  ) \\
-&amp;=&amp;0.8\cdot 0.8\cdot (1-0.8) \\
-&amp;=&amp;0.8\cdot (1-0.8)\cdot 0.8 =\Pr (\left\{\color{red} SFS \right\})  \\
-&amp;=&amp;(1-0.8)\cdot 0.8\cdot 0.8= \Pr (\left\{ \color{red} FSS \right\} ) \\
-&amp;=&amp;0.128
-\end{eqnarray*}\]</span></p>
-<p>So the probability of two trees resulting from the three seeds must be</p>
-<span class="math display">\[\begin{eqnarray*}
-\Pr (\left\{ \color{red}SSF \cup \color{red} SFS \cup \color{red} FSS \right\} ) &amp;=&amp;3\cdot 0.128 \\
-&amp;=&amp;0.384.
-\end{eqnarray*}\]</span>
-</div>
 </div>
 <div id="binomial-distribution-2" class="section level3" number="4.8.4">
 <h3><span class="header-section-number">4.8.4</span> Binomial Distribution</h3>
-
-<div class="example">
-<p><span id="exm:unnamed-chunk-23" class="example"><strong>Example 4.12  </strong></span>Finally, we notice that we can obtain the same result (in a more direct way), using the  for the random variable
-<span class="math display">\[X= \text{number of trees that grows
-from 3 seeds}.\]</span></p>
-<p>Indeed</p>
-<span class="math display">\[\begin{eqnarray*}
-\Pr (\left\{ X=2\right\})  &amp;=&amp;\frac{3!}{2!\left( 3-2\right) !}\cdot \left(
-0.8\right) ^{2} \cdot \left( 1-0.8\right) ^{3-2} \\
-&amp;=&amp;3 \cdot \left( 0.8\right) ^{2} \cdot \left( 0.2\right)  \\
-&amp;=&amp;0.384.
-\end{eqnarray*}\]</span>
-</div>
 </div>
 <div id="poisson-distribution" class="section level3" number="4.8.5">
 <h3><span class="header-section-number">4.8.5</span> Poisson Distribution</h3>
-
-<div class="definition">
-<span id="def:unnamed-chunk-24" class="definition"><strong>Definition 4.6  </strong></span>Let us consider random variable <span class="math inline">\(X\)</span> which takes values <span class="math inline">\(0,1,2,...\)</span>, namely the nonnegative integers in <span class="math inline">\(\mathbb{N}\)</span>. <span class="math inline">\(X\)</span> is said to be a Poisson random variable if its probability mass function, with <span class="math inline">\(\lambda &gt;0\)</span> fixed and providing info on the intensity, is
-<span class="math display">\[\begin{equation}
-p(x)=\Pr \left( \{ X = x \}\right) =\frac{\lambda ^{x}e^{-\lambda }}{x!}\text{,\qquad }%
-x=0,1,2,... \label{Eq. Poisson}
-\end{equation}\]</span>
-and we write <span class="math inline">\(X\sim \text{Poisson}(\lambda)\)</span>.
-</div>
 <p>The Eq. () defines a genuine probability mass function, since <span class="math inline">\(p(x) \geq 0\)</span> and</p>
 <p><span class="math display">\[\begin{eqnarray}
 \sum_{x=0}^{\infty} p(x) &amp;=&amp; \sum_{x=0}^{\infty}  \frac{\lambda ^{x}e^{-\lambda }}{x!}   \\
@@ -969,39 +629,9 @@ Var\left( X\right) &amp;=&amp;\lambda.
 </div>
 <div id="poisson-distribution-2" class="section level3" number="4.8.8">
 <h3><span class="header-section-number">4.8.8</span> Poisson Distribution</h3>
-
-<div class="example">
-<p><span id="exm:unnamed-chunk-25" class="example"><strong>Example 4.13  </strong></span>The average number of newspapers sold by Alfred is 5 per minute. What is the probability that Alfred will sell at least 1 newspaper in a minute?</p>
-<p>To answer, let <span class="math inline">\(X\)</span> be the <span class="math inline">\(\#\)</span> of newspapers sold by Alfred in a minute. We have</p>
-<p><span class="math display">\[ X \sim \text{Poisson}(\lambda) \]</span></p>
-with <span class="math inline">\(\lambda = 5\)</span>, so
-<span class="math display">\[\begin{eqnarray*}
-P(X \geq 1) &amp; = &amp; 1- P(\{X=0\}) \\
-&amp; = &amp; 1 - \exp^{-5} \frac{5^0}{0!} \\
-%&amp; = &amp; 1-\exp^{-5} \\
-&amp; \approx &amp; 1- 0.0067 \approx 99.33\%.
-\end{eqnarray*}\]</span>
-How about <span class="math inline">\(P(X \geq 2)\)</span>? Is it <span class="math inline">\(P(X \geq 2) \geq P(X \geq 1)\)</span> or not? Answer the question…
-</div>
 </div>
 <div id="poisson-distribution-3" class="section level3" number="4.8.9">
 <h3><span class="header-section-number">4.8.9</span> Poisson Distribution</h3>
-
-<div class="example">
-<p><span id="exm:unnamed-chunk-26" class="example"><strong>Example 4.14  </strong></span>A telephone switchboard handles 300 calls, on the average, during one hour. The board
-can make maximum 10 connections per minute. Use the Poisson
-distribution to evaluate the probability that the board will be overtaxed during a given minute.</p>
-To answer, let us set <span class="math inline">\(\lambda = 300\)</span> per hour, which is equivalent to 5 calls per minute. Noe let us define
-<span class="math display">\[
-X = \text{\# of connections in a minute}
-\]</span>
-and by assumption we have <span class="math inline">\(X \sim \text{Poisson}(\lambda)\)</span>. Thus,
-<span class="math display">\[\begin{eqnarray}
-P[\text{overtaxed}] &amp;=&amp; P(\{X &gt; 10\})  \\ 
-&amp;=&amp; 1 \quad - \underbrace{P(\{X \leq 10\})}_{\text{using $\lambda=5$,  minute base}}  \\ 
-&amp;\approx&amp; 0.0137. 
-\end{eqnarray}\]</span>
-</div>
 </div>
 <div id="poisson-distribution-link-to-binomial" class="section level3" number="4.8.10">
 <h3><span class="header-section-number">4.8.10</span> Poisson Distribution (link to Binomial)</h3>
@@ -1036,72 +666,10 @@ p(k) &amp;\approx&amp; \frac{\lambda}{k!}p(k-1) \approx \underbrace{\frac{\lambd
 </div>
 <div id="poisson-distribution-example" class="section level3" number="4.8.12">
 <h3><span class="header-section-number">4.8.12</span> Poisson Distribution: example</h3>
-
-<div class="example">
-<p><span id="exm:unnamed-chunk-27" class="example"><strong>Example 4.15  </strong></span>[two-fold use of Poisson]
-Suppose a certain high-speed printer makes errors at random on printed paper. Assuming that the Poisson
-distribution with parameter <span class="math inline">\(\lambda = 4\)</span> is appropriate to model the number of errors per page (say, <span class="math inline">\(X\)</span>), what is the probability that in a book containing 300 pages (produced by the printer) at least 7 will have no errors?</p>
-<p>Let <span class="math inline">\(X\)</span> denote the number of errors per page, so that
-<span class="math display">\[
-p(x) = \exp^{-4}\frac{4^x}{x!}, \quad \text{for} \quad x = 0,1,2,....
-\]</span>
-The probability of any page to be error free is then
-<span class="math display">\[p(0) = \exp^{-4}\frac{4^0}{0!} = \exp^{-4} \approx 0.018.\]</span></p>
-<p>Having no errors on a page is a success, and there are 300 independent pages. Hence, let us define</p>
-<p><span class="math display">\[
-Y = \text{the number of pages without any errors}. 
-\]</span></p>
-<p><span class="math inline">\(Y\)</span> is binomially distributed with parameters <span class="math inline">\(n = 300\)</span>
-and <span class="math inline">\(p = 0.018\)</span>, namely
-<span class="math display">\[Y\sim B(n,p).\]</span></p>
-But here we have
-<p>thus, we can compute <span class="math inline">\(P(\{Y \geq 7\})\)</span> using either the exact Binomial or its Poisson approximation. So</p>
-<ul>
-<li><p>using <span class="math inline">\(B(300,0.018)\)</span>, we get: <span class="math inline">\(P(\{Y \geq 7\}) \approx 0.297\)</span> \ </p></li>
-<li><p>using Poisson(5.4), we get <span class="math inline">\(P(\{Y \geq 7\}) \approx 0.298.\)</span></p></li>
-</ul>
-</div>
 <!--  %The two outcomes differ at the 3rd digits after the comma. -->
 </div>
 <div id="the-hypergeometric-distribution" class="section level3" number="4.8.13">
 <h3><span class="header-section-number">4.8.13</span> The Hypergeometric Distribution</h3>
-
-<div class="definition">
-<p><span id="def:unnamed-chunk-28" class="definition"><strong>Definition 4.7  </strong></span>Let us consider a random experiment consisting of a series of <span class="math inline">\(n\)</span> trials,
-having the following properties</p>
-<ul>
-<li><p>Only two mutually exclusive outcomes are possible in each trials:
-success (S) and failure (F)</p></li>
-<li><p>The population has <span class="math inline">\(N\)</span> elements in which <span class="math inline">\(k\)</span> are looked upon as
-S and the other <span class="math inline">\(N-k\)</span> are looked upon as F</p></li>
-<li><p>Sampling from the population is done  replacement (so
-that the trials are not independent).</p></li>
-</ul>
-<p>The random variable
-<span class="math display">\[
-X= \text{number of successes in $n$ such
-trials}
-\]</span>
-has an hypergeometric distribution and the probability that <span class="math inline">\(X=x\)</span> is</p>
-<span class="math display">\[\begin{equation*}
-\Pr (\left\{ X=x\right\}) =\frac{\left(
-\begin{array}{c}
-k \\
-x%
-\end{array}%
-\right) \left(
-\begin{array}{c}
-N-k \\
-n-x%
-\end{array}%
-\right) }{\left(
-\begin{array}{c}
-N \\
-n%
-\end{array}%
-\right) }.
-\end{equation*}\]</span>
-</div>
 <p>Moreover,</p>
 <p><span class="math display">\[\begin{eqnarray*}
 E\left[ X\right] &amp;=&amp;\frac{nk}{N} \\
@@ -1111,40 +679,6 @@ N^{2}\left( N-1\right) }
 </div>
 <div id="hypergeometric-distribution-example" class="section level3" number="4.8.14">
 <h3><span class="header-section-number">4.8.14</span> Hypergeometric Distribution Example</h3>
-
-<div class="example">
-<p><span id="exm:unnamed-chunk-29" class="example"><strong>Example 4.16  </strong></span>
-[Psychological experiment]</p>
-<p>A group of 8 students includes 5 women and 3 men: 3 students are randomly chosen to participate in a psychological
-experiment. What is the probability that  2 women will be included
-in the sample?%</p>
-Consider each of the three participants being selected as a separate
-trial $$ there are <span class="math inline">\(n=3\)</span> trials. Consider a woman being selected in a trial as a `success’
-\
-Then here <span class="math inline">\(N=8\)</span>, <span class="math inline">\(k=5\)</span>, <span class="math inline">\(n=3\)</span>, and <span class="math inline">\(x=2\)</span>, so that%
-<span class="math display">\[\begin{eqnarray*}
-\Pr (\left\{ X=2\right\})  &amp;=&amp;\frac{\left(
-\begin{array}{c}
-5 \\
-2%
-\end{array}%
-\right) \left(
-\begin{array}{c}
-8-5 \\
-3-2%
-\end{array}%
-\right) }{\left(
-\begin{array}{c}
-8 \\
-3%
-\end{array}%
-\right) } \\
-&amp;&amp; \\
-&amp;=&amp;\frac{\frac{5!}{2!3!}\frac{3!}{1!2!}}{\frac{8!}{5!3!}} \\
-&amp;&amp; \\
-&amp;=&amp;0.53571
-\end{eqnarray*}\]</span>
-</div>
 </div>
 <div id="the-negative-binomial-distribution" class="section level3" number="4.8.15">
 <h3><span class="header-section-number">4.8.15</span> The Negative Binomial Distribution</h3>
@@ -1162,22 +696,6 @@ trial to trial</p></li>
 </div>
 <div id="the-negative-binomial-distribution-1" class="section level3" number="4.8.16">
 <h3><span class="header-section-number">4.8.16</span> The Negative Binomial Distribution</h3>
-
-<div class="definition">
-<span id="def:unnamed-chunk-30" class="definition"><strong>Definition 4.8  </strong></span>Let
-<span class="math display">\[X= \text{the total number of trials required until a total of $r$ successes is accumulated}.\]</span>
-Then <span class="math inline">\(X\)</span> is said to be a Negative Binomial random variable and its probability mass function<br />
-<span class="math inline">\(\Pr (\left\{ X=n\right\})\)</span> equals the probability of <span class="math inline">\(r-1\)</span> ‘successes’ in the first <span class="math inline">\(n-1\)</span> trials, times the probability of a ‘success’ on
-the last trial. These probabilities are given by%
-<span class="math display">\[\begin{equation*}
-\Pr (\left\{ X=n\right\}) =\left(
-\begin{array}{c}
-n-1 \\
-r-1
-\end{array}
-\right) p^{r}\left( 1-p\right) ^{n-r}\quad \text{ for }n=r,r+1,...
-\end{equation*}\]</span>
-</div>
 <p>The mean and variance for <span class="math inline">\(X\)</span> are, respectively,%</p>
 <p><span class="math display">\[\begin{eqnarray*}
 E\left[ X\right] &amp;=&amp;\frac{r}{p} \\
@@ -1186,45 +704,9 @@ Var\left( X\right) &amp;=&amp;\frac{r\left( 1-p\right) }{p^{2}}
 </div>
 <div id="negative-binomial-distribution-example" class="section level3" number="4.8.17">
 <h3><span class="header-section-number">4.8.17</span> Negative Binomial Distribution Example</h3>
-
-<div class="example">
-<p><span id="exm:unnamed-chunk-31" class="example"><strong>Example 4.17  </strong></span>
-[marketing research]</p>
-<ul>
-<li><p>A marketing researcher wants to find 5 people to join her focus group</p></li>
-<li><p>Let <span class="math inline">\(p\)</span> denote the probability that a randomly selected individual
-agrees to participate in the focus group</p></li>
-<li><p>If <span class="math inline">\(p=0.2\)</span>, what is the probability that the researcher must ask 15
-individuals before 5 are found who agree to participate?</p></li>
-</ul>
-<p>%- That is, what is the probability that 10 people will decline the
-%request to participate before a 5<span class="math inline">\(^{th}\)</span> person agrees?</p>
-<ul>
-<li>In this case, <span class="math inline">\(p=0.2\)</span>, <span class="math inline">\(r=5\)</span>, <span class="math inline">\(n=15\)</span>: we are looking for <span class="math inline">\(\Pr (\left\{ X=15\right\}).\)</span> By the negative binomial formula we have</li>
-</ul>
-<p><span class="math display">\[\begin{eqnarray*}
-\Pr (\left\{ X=15\right\}) &amp;=&amp;\left(
-\begin{array}{c}
-14 \\
-4%
-\end{array}%
-\right) \left( 0.2\right) ^{5}\left( 0.8\right) ^{10} \\
-&amp;=&amp;0.034
-\end{eqnarray*}\]</span></p>
-</div>
 </div>
 <div id="the-geometric-distribution" class="section level3" number="4.8.18">
 <h3><span class="header-section-number">4.8.18</span> The Geometric Distribution</h3>
-
-<div class="definition">
-<p><span id="def:unnamed-chunk-32" class="definition"><strong>Definition 4.9  </strong></span>[a special case]</p>
-<p>When <span class="math inline">\(r=1\)</span>, the negative binomial distribution is equivalent to the
- — see Example in slide 13. \</p>
-In this case, probabilities are given by%
-<span class="math display">\[\begin{equation*}
-\Pr (\left\{ X=n\right\}) =p\left( 1-p\right) ^{n-1}\text{, for }n=1,2,...
-\end{equation*}\]</span>
-</div>
 <p>The corresponding mean and variance for <span class="math inline">\(X\)</span> are, respectively,%
 <span class="math display">\[\begin{eqnarray*}
 E\left[ X\right] &amp;=&amp;\frac{ 1 }{p} \\
@@ -1233,25 +715,6 @@ Var\left( X\right) &amp;=&amp;\frac{\left( 1-p\right) }{p^{2}}
 </div>
 <div id="the-geometric-distribution-1" class="section level3" number="4.8.19">
 <h3><span class="header-section-number">4.8.19</span> The Geometric Distribution</h3>
-
-<div class="example">
-<p><span id="exm:unnamed-chunk-33" class="example"><strong>Example 4.18  </strong></span>
-[failure of a machine]</p>
-<p>Items are produced by a machine having a 3% defective rate.</p>
-<ul>
-<li>What is the probability that the first defective occurs in the fifth item inspected? \
-<span class="math display">\[\begin{eqnarray}
-P(\{X   =   5\})    &amp;=&amp; P (\text{first  4   non-defective}) P (\text{5th defective})  \\
-&amp;=&amp; (0.97)^4(0.03) \approx 0.026 
-\end{eqnarray}\]</span></li>
-<li>What is the probability that the first defective occurs in the first five inspections?
-<span class="math display">\[\begin{eqnarray}
-P(\{X   \leq 5  \}) = P(\{X &lt; 6 \}) &amp;=&amp;  P (\{X=1\})+ ... + P(\{X=5\})  \\
-&amp;=&amp; 1- P(\text{first 5 non-defective}) = 0.1412.   %\\
-%&amp;=&amp; 1- (0.97)^5 \approx 0.1412 
-\end{eqnarray}\]</span>
-</div></li>
-</ul>
 <p>More generally, for a geometric random variable we have:</p>
 <p><span class="math display">\[P(\{X \geq k \}) = (1-p)^{k-1}\]</span></p>
 <p>Thus, in the example we have <span class="math inline">\(P( \{X \geq 6 \}) = (1-0.03)^{6-1}\approx 0.8587\)</span></p>
@@ -1285,8 +748,8 @@ gitbook.require(["gitbook"], function(gitbook) {
 gitbook.start({
 "sharing": {
 "github": false,
-"facebook": true,
-"twitter": true,
+"facebook": false,
+"twitter": false,
 "linkedin": false,
 "weibo": false,
 "instapaper": false,
@@ -1310,7 +773,7 @@ gitbook.start({
 "link": null,
 "text": null
 },
-"download": ["Prob1-GSEM-UNIGE.pdf", "Prob1-GSEM-UNIGE.epub"],
+"download": null,
 "toc": {
 "collapse": "subsection"
 }

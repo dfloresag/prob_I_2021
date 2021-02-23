@@ -1,4 +1,4 @@
-# 🔧 Introduction {#introduction}
+# Introduction {#introduction}
 
 <!-- You can label chapter and section titles using `{#label}` after them, e.g., we can reference Chapter \@ref(intro). If you do not manually label them, there will be automatic labels anyway, e.g., Chapter \@ref(methods). -->
 
@@ -26,7 +26,7 @@
 
 **Data is the most important commodity in our connected world of today**. Generated at a breakneck pace and related to practically all of the aspects of human life, Data has become a valuable resource for the creation of products and services designed to improve people's lives. Gathering this data can potentially help companies design better policies and companies design better products.
 
-To illustrate this point, take a look at the following interactive map of the internal migration in Switzerland in 2016. Gathering historical data like this could help decision makers, such as politicians or managers in housing firms, identify migration trends and inform their decisions in what pertains, say housing projects or other infrastructure investments.
+To illustrate this point, take a look at the following interactive map of the internal migration in Switzerland in 2016. Seizing historical data like this could help decision makers, such as politicians or managers in housing firms, identify migration trends and inform their decisions in what pertains, say housing projects or other infrastructure investments.
 
 <!-- Insert a better explanation of this -->
 
@@ -34,9 +34,9 @@ To illustrate this point, take a look at the following interactive map of the in
 knitr::include_url("https://flowmap.blue/15kwLB4baXZ7jpip8q0JjgR6zDoS5Gt3gMLCTUAboQxk?v=46.760927,8.215964,6.51,0,0&a=0&as=1&b=1&bo=75&c=0&ca=1&d=0&fe=1&lt=1&lfm=ALL&col=Default&f=45")
 ```
 
-In order to make sense of the immense amounts of Data generated every millisecond, computational tools are needed. Thankfully, in this day and age, computing power allows easy and fast manipulation of that enormous amount of information, **yet it is not only by "brute force", or  algorithmic power that appropriate insights are found**. To make sense of the data, we also need to consider its features from a **mathematical standpoint**. 
+In order to make sense of the immense amounts of information generated every millisecond, computational tools are needed. Thankfully, in this day and age, computing power allows easy and fast manipulation of that enormous amount of information, and more and more sophisticated algorithms are designed to analyse it, **yet it is not only by "brute force" i.e. algorithmic power that appropriate insights are found**. To make sense of the data, we also need to consider its features from a **mathematical standpoint**. 
 
-The field of Mathematics that provides a formal framework of the data generation process the field of **Probability**, and it is the building block for **Statistics**, the domain of knoweledge that deals with the creation of tools analise data.  
+The field of Mathematics that provides a formal framework of the data generation process the field of **Probability**, and it is the building block for **Statistics**, the domain of knowledge that deals with the creation of mathematical tools to analyse data.  
 
 ## What to expect from this Lecture?
 
@@ -58,9 +58,7 @@ Hence, for the purposes of this lecture, we shall consider:
 
 ### One intuitive illustration
 
-Before jumping into the core of the subject, I would like to make a little detour that helps illustrate how probabilities are present in practically every aspect of daily life.
-
-Oftentimes, in Movies and TV shows, we hear characters facing uncertain outcomes. When our protagonists are about to make life altering decisions they often ask themselves: 
+Before jumping into the core of the subject, I would like to make a little detour that helps illustrate how prevalent  probabilities are in practically every aspect of daily life. Oftentimes, in Movies and TV shows, we hear characters facing uncertain outcomes. When our protagonists are about to make life altering decisions they often ask themselves: 
 
 > What are my **chances** of winning? 
 
@@ -72,12 +70,16 @@ In your mind, this number becomes an indication of the _likelihood_ of the event
 
 > "So, you're telling me that THERE IS A CHANCE!"
 
-Intuitively, you understand this as the result of a computation. Were you to _repeat_ the _experiment_ your chances of success results from a ratio between the number of times you succeed, versus the number of attempts.
+Intuitively, you understand this as the result of the following rationale: were you to _repeat_ the _experiment_, your "chances of success" result from a ratio between the number of times you succeed, versus the number of attempts.
 
 $$\text{my chances} = \frac{\text{number of times I succeed}}{\text{number of times I fail}}$$
-In a bit of an abuse of language, this value, constitutes the **probability** of success. When it's small, success is very _unlikely_, but if it is large (or at least closer to 1), your success seems more likely. 
+In a bit of an abuse of language, this value, constitutes the **probability** of success. 
 
-Probability constitutes then the **measure of the "likelihood" of an event or random outcome**. Hence, we can measure uncertainty in units of probability.
+When it's small, success is very _unlikely_, but if it is large (or at least closer to 1), your success seems more likely, as the times you succeed in the experiments are more frequent. 
+
+Probability constitutes then the **measure of the "likelihood"** of an event or random outcome.
+
+<!-- Hence, we can measure uncertainty in units of probability. -->
 
  <!-- Statistics is concerned with **study of uncertainty** and with the _study of data-driven decision making in the face of uncertainty_. -->
 
@@ -94,7 +96,7 @@ Probability constitutes then the **measure of the "likelihood" of an event or ra
 
 #### Another illustration: Stock price evolution
 
-Let us see how to characterise the uncertainty of the Stock price of an asset with a simple probabilistic model. To account of the fluctuations, we can thus make the following simple assumptions:
+Let us see how to characterise the uncertainty of the price of a financial asset, such as a Stock, with a simple probabilistic model. To account for the fluctuations in the price, we can make the following simple assumptions:
 
 Let $S_0$ denote the price of the Stock at time $t_0$, and consider that:
 
@@ -127,16 +129,15 @@ To answer this last question we could represent the evolution of the price using
 ```
 
 
-The computation of the probabilities on this chart 
-
 - To compute the probability of successive outcomes, we **_multiply_ the probabilities** on the edges leading to this outcome. 
-- If there is more than one path leading to a given outcome, we **sum the total probabilty** yielding the outcome.  
+- If there is more than one path leading to a given outcome, we **sum the total probabilty** of the edges yielding the outcome.  
 
 Hence: 
 
 - The probability of $S_2 = u^2 = 4$ is $p^2$
 - The probability of $S_2 = d^2 = 4$ is $(1-p)^2$
 - The probability of $S_2 = d^2 = 1$ is $(1-p)p+p(1-p)$
+
 
 <!-- #### Example: Quanta -->
 
@@ -161,7 +162,7 @@ Hence:
 
 ## A quick reminder of Mathematics
 
-Probability theory is a mathematical tool. Hence, it is important to review some elemental mathematical concepts. Here are some of the formulae that we will use throughout the course. 
+Probability theory is a mathematical tool. Hence, it is important to review some elemental concepts. Here are some of the formulae that we will use throughout the course. 
  
 ### Powers and Logarithms
 
@@ -171,6 +172,20 @@ Probability theory is a mathematical tool. Hence, it is important to review some
 - $a=\ln(\exp^{a}) = \ln(e^a)$;
 - $\ln(a^n) = n \times \ln a$;
 - $\ln (a \times b) = \ln (a) + \ln (b)$;
+
+### Limits
+
+The study of **limits** will be crucial in many tasks:
+
+- The limit of a finite sum is an infinite series:
+$$\lim_{n \to \infty} \sum_{i=1}^n x_i = \sum_{i=1 }^\infty x_i \nonumber$$
+- The Exponential function, characterised as a limit:
+$$ e^x = \lim_{n \rightarrow \infty} \left(1 + \frac{x}{n}\right)^n \nonumber$$
+- The Limit of a Negative Exponential function: Let $\alpha >0$
+$$\lim_{x \to \infty} {\alpha e^{-\alpha x}} = 0 \nonumber$$ 
+- The Exponential function, characterised as an infinite series:
+$$e^x = \sum_{i = 0}^{\infty} {x^i \over i!} = 1 + x + {x^2 \over 2!} + {x^3 \over 3!} + {x^4 \over 4!} + \dots$$
+
 
 ### Differentiation 
 
@@ -255,19 +270,27 @@ $$\sum_{i=1}^{n} \sum_{j=1}^{m}  x_{i}y_{j}  = x_1y_1 + x_1 y_2 +... +x_2y_1+ x_
 \end{align}
 
 
+
 ### Combinatorics
 
 Finally, we will also rely on some **combinatorial formulas**. Specifically,
 
 #### Factorial 
 
-$$ n! = n \times (n-1) \times (n-2) \times \dots \times 1;$$
+\begin{equation} 
+n! = n \times (n-1) \times (n-2) \times \dots \times 1;
+(\#eq:factorial)
+\end{equation}
+
 where $0! =1$, by convention. 
 
 #### The Binomial Coefficient 
 
 The **Binomial coefficient**, for $n \geq k$ is defined by the following ratio:
-$$\binom n k =\frac{n!}{k!(n-k)!}{\color{blue}{=C^{k}_n}}$$.
+\begin{equation}
+\binom n k =\frac{n!}{k!(n-k)!}{\color{blue}{=C^{k}_n}}.
+(\#eq:binomialcoef)
+\end{equation}
 
 In English, the symbol $\binom n k$ is read as "$n$ choose $k$". We will see why in a few paragraphs.  
 
@@ -278,10 +301,10 @@ Combinatorial formulas are very useful when studying **permutations** and **comb
 A permutation is an **ordered rearrangement** of the elements of a set. 
 
 ```{example, name = "Three friends and three chairs"}
-Let us start with a very simple example Suppose we have three friends Aline ($A$), Bridget ($B$) and Carmen ($C$) that want to sit on three chairs during lunchtime.
+Suppose we have three friends Aline ($A$), Bridget ($B$) and Carmen ($C$) that want to sit on three chairs during lunchtime.
 
 - One day, you see Aline on the left, Bridget in the center and Carmen on the right, i.e. $(A, B, C)$
-- The next day, Bridget sits first, Aline Second and Carmen right, i.e. $(B, A, C)$
+- The next day, Bridget sits first, Aline second and Carmen right, i.e. $(B, A, C)$
 ```
 
 These rearrangements constitute two **Permutations** of the set of three friends $\{A, B, C\}$.
@@ -308,7 +331,7 @@ outcomes of the $r$ experiments.
 Hence: $3 \times 2 \times 1 = 3! = 6$
 
 ```{definition} 
-**Permutations:** How many different ways can we combine $n$ objects?
+**Permutations** help you answer the question: _How many different ways can we arrange $n$ objects?_
 
 - In the 1st place: $n$ possibilities
 - In the 2nd place: $(n-1)$ possibilities 
@@ -319,12 +342,12 @@ Thus, in total we have $n\times(n-1)\times(n-2)\times...\times1 = n!$
 ``` 
 
 ```{exercise, name = "Gifts on the Shelf"}
-You own a gift store and you have a shelf with 5 products:
+Imagine that you own a gift store and you have a shelf where you want to display 5 products:
 ```
 
 - A gorgeous sunflower `r emo::ji("sunflower")` 
 - An old-timey Radio `r emo::ji("radio")` 
-- A book they wanted to read `r emo::ji("book")` 
+- A best-selling book `r emo::ji("book")` 
 - An elegant pen `r emo::ji("pen")` 
 - An incredibly charismatic turtle `r emo::ji("turtle")` 
 
@@ -332,27 +355,29 @@ In how many ways can you arrange them on the shelf?
 
 <!-- Response: $5!$ gives you the total number of possible choices when you can select 5 presents. These are called  **permutations** of the set of gifts and owe that name to the fact that we are just _reordering_ or _permuting_ the elements of the set; -->
 
+<!-- Imagine that, due to budgetary constraints, one chair has been stolen from our friends and they make turns on who stays standing. There are of course 3 configurations in which they sit $(A,B)$, $(A,C)$ and $(B,C)$ , but we can achieve the same result with combinatorial formulae.  -->
 
-##### Combinations {-}
-
-Imagine that, due to budgetary constraints, one chair has been stolen from our friends and they make turns on who stays standing. There are of course 3 configurations in which they sit $(A,B)$, $(A,C)$ and $(B,C)$ , but we can achieve the same result with combinatorial formulae. 
-
-Let us come back to the Example of the Shelf. Suppose that the shelf is now a bit more narrow, and you can only show 3 products instead of 5. How many ways can we select $3$ items among the $5$? 
+Let us use this Exercise to go further. Suppose now that the shelf is now a bit more narrow, and you can only show 3 products instead of 5. How many ways can we select $3$ items among the $5$? 
 
 By the Fundamental Counting Principle you have $5\times4\times3$ ways of selecting a the 3 elements. If we write them in factorial notation, this represents 
 $$
 5\times4\times3 = \frac{5\times4\times3\times2\times1}{2\times1} = \frac{5!}{2!} = \frac{5!}{(5-3)!}
 $$
-This formula can be interpreted as follows: If you're going to select $3$ presents from the list, then you have $(5-3)$ other presents that you're not going to select. This latter set has $(5-3)!$ possibilities which have to be **factored out** from the $5!$ possible permutations.
+This formula can be interpreted as follows: 
 
-As you can see, we are slowly but surely arriving to the definition of $\binom n k$. There is still one more element to reach the formula. 
+_If you select $3$ presents from the list, then you have $(5-3)$ other presents that you won't select. The latter set has $(5-3)!$ possibilities which have to be **factored out** from the $5!$ possible permutations._
 
-Implicit in both examples, there is the notion of **order**. Think of how Aline, Bridget and Carmen were sitting from your perspective. 
+As you can see, we are slowly but surely arriving to the definition of $\binom n k$ in \@ref(eq:binomialcoef). However, there is still one more element... 
 
-- If the order left to right is important for you $(A, C, B)$ is a different configuration from $(B, C, A)$. 
-- However, if you don't care about the order, these two configurations are equivalent, as they can be read in the same way if you read the second from right to left. 
+##### Combinations {-}
 
-In the case of the shelf, once the 3 gifts are chosen **all the permutations of this subset are deemed equivalent**. Say, we have chosen (`r emo::ji("sunflower")`, `r emo::ji("book")`,  `r emo::ji("turtle")`), this is deemed equivalent as all the $3! = 6$ permutations. Hence, the need to also *factor out* this value from the permutations also need to divide out the $3!$ different ways you can order the presents. 
+Implicit in this example, is the notion that **the order** in which these elements are displayed is **important**. This means, that the set (`r emo::ji("sunflower")`, `r emo::ji("book")`,  `r emo::ji("turtle")`) is different from the set ( `r emo::ji("book")`,  `r emo::ji("turtle")`, `r emo::ji("sunflower")`) which, as you can assess, is a **permutation** of the original draw.
+
+Let us suppose that the **order is not important**. This implies that once the 3 gifts are chosen  **all the permutations of this subset are deemed equivalent**. Hence, the subset (`r emo::ji("sunflower")`, `r emo::ji("book")`,  `r emo::ji("turtle")`), is deemed equivalent as all its $3! = 6$ permutations and we have to *factor out* this amount from the previous result, by dividing the $3!$ different ways you can order the selected presents. 
+<!-- Think of how Aline, Bridget and Carmen were sitting from your perspective. -->
+<!-- - If the order left to right is important for you $(A, C, B)$ is a different configuration from $(B, C, A)$. -->
+<!-- - However, if you don't care about the order, these two configurations are equivalent, as they can be read in the same way if you read the second from right to left. -->
+
 
 If we put this in a formula, we have $$\frac{5!/(5-3)!}{3!}$$ ways to select the $3$ presents:
 
@@ -385,13 +410,11 @@ P(E)=\dfrac{\text{number of cases in E}}{\text{number of possible cases}}.
 (\#eq:pe)
 \end{equation}
 
-This is a first intuitive definition of probability, which we will justify in the next chapter;. For the time being, let us say that the combinatorial calculus will be needed to express both the quantities (numerator and denominator) in (\@ref{eq: pe}).  
+This is a first intuitive definition of probability, which we will justify in the next chapter. For the time being, let us say that the combinatorial calculus will be needed to express both the quantities (numerator and denominator) in \@ref(eq:pe).  
 
+The name "Binomial Coefficient" is closely associated with the **Binomial Theorem**, which provides the expression for the power $n$ of the sum of two variables $(x+y)$ as a sum:
 
-
-One of the case uses of the Binomial Coefficient is the **Binomial Theorem**:
-
-```{theorem, name = "Binomial Theorem (Pascal 1654)"}
+```{theorem, name = "Binomial Theorem - Pascal 1654"}
 
 For $n=0,1, 2,\dots$,  we have:
 
@@ -428,26 +451,4 @@ Let us compute the binomial coefficients for polynomials of different degrees $n
 &= y^3 + 3xy^2 + 3x^2y+x^3 
 \end{align}
 ```
-
-### Limits
-
-Finally, the following **limits** will be crucial in many tasks:
-
-- $$\lim_{n \to \infty} \sum_{i=1}^n x_i = \sum_{i=1 }^\infty x_i \nonumber$$
--
-$$ e^x = \lim_{n \rightarrow \infty} \left(1 + \frac{x}{n}\right)^n \nonumber$$
-- for $\alpha >0$
-$$\lim_{x \to \infty} {\alpha e^{-\alpha x}} = 0 \nonumber$$ 
-- 
-$$e^x = \sum_{i = 0}^{\infty} {x^i \over i!} = 1 + x + {x^2 \over 2!} + {x^3 \over 3!} + {x^4 \over 4!} + \dots$$
-
-
-
-
-
-
-
-
-
-
 

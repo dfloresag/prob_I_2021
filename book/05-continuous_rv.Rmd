@@ -1028,7 +1028,6 @@ x_{i}\right)  \} \right) \\
 
 
 ```{example} 
-
 [option pricing]
 
 Let us imagine that we are tossing a balanced coin ($p=1/2$), and when we get a ``Head'' ($H$) the stock price moves up of a factor $u$, but when we get a ``Tail'' ($T$) the price moves down of a factor $d$. We denote the price at time $t_1$  by $S_1(H)=u S_0 $ if the toss results in head ($H$), and by $S_1(T)=d S_0 $  if it results in tail ($T$). After the second toss, the price will be one of:
@@ -1061,9 +1060,10 @@ although not all of them result in different stock prices at time  $t_2$.
 
 
 Let us set $S_0=1$, $u=2$ and $d=1/2$: we represent the price evolution by a tree:
+```
 
 
-%
+```{r, engine = 'tikz'} 
 %% Define styles for bags and leafs
 \tikzstyle{bag} = [text width=8em, text centered]
 \tikzstyle{end} = []
@@ -1081,6 +1081,7 @@ Let us set $S_0=1$, $u=2$ and $d=1/2$: we represent the price evolution by a tre
    \draw [->] (b) to node [below] {$(1-p)p$} (e);
    \draw [->] (b) to node [above] {$(1-p)^2$} (d);
 \end{tikzpicture}
+```
 
 
 Now consider an European option call with maturity $t_2$ and strike price $K=0.5$, whose random pay-off at $t_2$ is $C=\max(0;S_2-0.5)$. Thus, 
@@ -1101,10 +1102,9 @@ $\$ u^2$ & $p^2$ & $\qquad \Rightarrow \qquad $ & $\$ 3.5$ & $p^2$
 $\$ ud$ & $2p(1-p)$ &  & $\$ 0.5$ & $2p(1-p)$ \\ 
 %$\$ du$ & $(1-p)p$ &  & $\$ 0.5$ & $(1-p)p$ \\ 
 $\$ d^2$ & $(1-p)^2$  &  & $\$ 0$ & $(1-p)^2$%
-\end{tabular}%
+\end{tabular}
 \end{equation*}
 \tiny{Since $ud=du$ the corresponding values of $S_2$ and $C$ can be aggregated, without loss of info.}
-```
 
 
 ### Transformation of variables using the CDF
