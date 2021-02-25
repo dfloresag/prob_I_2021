@@ -56,6 +56,10 @@ div(
 ```
 ]
 ]
+
+???
+
+My name is Daniel Flores Agreda and I'm a Data Science CD and Instructor
 --
 .pull-right[
 .center[
@@ -209,6 +213,16 @@ knitr::include_url("https://flowmap.blue/15kwLB4baXZ7jpip8q0JjgR6zDoS5Gt3gMLCTUA
 
 .footnote[.footnotesize[Inter-cantonal migration in Switzerland in 2016, an interactive map by Ilya Bobadin with data from the Swiss Federal Statistical Office. [https://flowmap.blue/](https://flowmap.blue/)].]
 
+???
+
+Data is produced at a breakneck pace. Generated from surveys but also from devices and (more or less invasive) websites and apps. 
+
+This example comes from a survey on the relocation and migration. Here one can see the amounts  of local migration between cantons. 
+
+Accessing this data could inform decision-makers on projects such as housing or mobility infrastructure. It can inform economists on the reasons why some cantons become more attractive over time, etc. 
+
+But this data needs to be analised in order to make value. 
+
 ---
 class: subsection, center, middle
 
@@ -223,6 +237,11 @@ class: center, middle
 
 ### The discipline that deals with the .pink[collection] , .pink[presentation], .pink[analysis] and .pink[interpretation] of **Data**.
 
+
+???
+
+Today, we have enormous algorithmic and computing power,but in the end, it those methods rely to a great extent on statistical methods. 
+
 ---
 background-image: url(https://i.redd.it/8r2fd78pgna51.png)
 background-size: fill
@@ -231,10 +250,18 @@ class: center, middle
 
 
 .footnote[.footnotesize[_Thinking of learning ML this weekend, is there math?_ (2020). Retrieved from [r/DataScienceMemes](https://www.reddit.com/r/DataScienceMemes/comments/hqi8sv/thinking_of_learning_ml_this_weekend_is_there_math/?utm_source=share&utm_medium=web2x&context=3)]]
+
+???
+
+In other words, they have always been about statistics.
 ---
 class: subsection, center, middle
 
 # To build **Statistical Methods** we rely on **Probability**
+
+???
+
+But statistics is a mathematical tool that relies on mathematics to model random phenomena. 
 
 ---
 class: center, middle
@@ -254,8 +281,23 @@ class: subsubsection, center, middle
 
 # Illustration
 
+???
+
+Let me illustrate with a very simple model how to characterise a simple 
+
 ---
 # Illustration : Price of a Stock
+
+Prices of stocks move up on down according to the wills of investors.
+
+--
+
+To a great extent they are **uncertain**
+
+???
+We could model these fluctuations using a probability model, e.g :
+
+--
 
 Let $S_0$ denote the price of the Stock at time $t_0$, and consider that:
 
@@ -303,10 +345,10 @@ Organise the **outcomes in branches**.
    \node (f) at ( 8,3) [bag] {$\$ u^2=\$ 4$};
    \draw [->] (a) to node [below] {$(1-p)$} (b);
    \draw [->] (a) to node [above] {$p$} (c);
-   \draw [->] (c) to node [below] {$p^2$} (f);
-   \draw [->] (c) to node [above] {$(1-p)p$} (e);
-   \draw [->] (b) to node [below] {$(1-p)p$} (e);
-   \draw [->] (b) to node [above] {$(1-p)^2$} (d);
+   \draw [->] (c) to node [below] {$p$} (f);
+   \draw [->] (c) to node [above] {$(1-p)$} (e);
+   \draw [->] (b) to node [below] {$p$} (e);
+   \draw [->] (b) to node [above] {$(1-p)$} (d);
 \end{tikzpicture}
 ```
 ]
@@ -328,7 +370,8 @@ Hence, with $S_0 = 1$:
 
 - The probability of $S_2 = d^2 = 4$ is $(1-p)^2$
 
-- The probability of $S_2 = d^2 = 1$ is $(1-p)p+p(1-p)$
+- The probability of $S_2 = ud = 1$ is $(1-p)p+p(1-p)$
+
 ---
 
 class: section, center, middle
