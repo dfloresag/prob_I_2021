@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+  <head>
+    <title>Probability 1</title>
+    <meta charset="utf-8" />
+    <meta name="author" content="Dr. Daniel Flores Agreda" />
+    <script src="libs/header-attrs-2.7/header-attrs.js"></script>
+    <link href="libs/countdown-0.3.5/countdown.css" rel="stylesheet" />
+    <script src="libs/countdown-0.3.5/countdown.js"></script>
+    <link rel="stylesheet" href="css/unige.css" type="text/css" />
+    <link rel="stylesheet" href="css/unige-fonts.css" type="text/css" />
+  </head>
+  <body>
+    <textarea id="source">
+class: center, middle, inverse, title-slide
+
+# Probability 1
+## Introduction to the Lecture
+### Dr. Daniel Flores Agreda
+
+---
+
+
+
+
+class: section, center, middle
+
+# Welcome to this class
+
+---
+# Who we are
+
+--
+
+.pull-left[
+.center[
+<div>
+<img src="https://d33wubrfki0l68.cloudfront.net/bb2b2f1c0fb1d52f4c61c9bacdc49dcbfc4c756c/58288/daniel.3c796e13.jpg" alt="Daniel FLORES AGREDA" style="&#10;        border-radius: 100%;&#10;        object-fit: cover;&#10;        width: 200px;&#10;        height: 200px;"/>
+<div>
+<h4>Daniel FLORES AGREDA</h4>
+<h5>Data Science Course Developer and Instructor</h5>
+<a>Daniel.Flores@unige.ch</a>
+</div>
+</div>
+]
+]
+--
+.pull-right[
+.center[
+<div>
+<img src="https://www.unige.ch/gsem/files/cache/5825d0668aa3e7ad3ff8ec085e7f3498_f3901.jpg" alt="Edoardo VIGNOTTO" style="&#10;        border-radius: 100%;&#10;        object-fit: cover;&#10;        width: 200px;&#10;        height: 200px;"/>
+<div>
+<h4>Edoardo VIGNOTTO</h4>
+<h5>Teaching and Research Assistant</h5>
+<a>Edoardo.Vignotto@unige.ch</a>
+</div>
+</div>
+]
+]
+
+---
+# Logistics
+
+--
+
+.pull-left[
+## &lt;svg viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg" style="height:1em;fill:currentColor;position:relative;display:inline-block;top:.1em;"&gt;  [ comment ]  &lt;path d="M352 96c0-53.02-42.98-96-96-96s-96 42.98-96 96 42.98 96 96 96 96-42.98 96-96zM233.59 241.1c-59.33-36.32-155.43-46.3-203.79-49.05C13.55 191.13 0 203.51 0 219.14v222.8c0 14.33 11.59 26.28 26.49 27.05 43.66 2.29 131.99 10.68 193.04 41.43 9.37 4.72 20.48-1.71 20.48-11.87V252.56c-.01-4.67-2.32-8.95-6.42-11.46zm248.61-49.05c-48.35 2.74-144.46 12.73-203.78 49.05-4.1 2.51-6.41 6.96-6.41 11.63v245.79c0 10.19 11.14 16.63 20.54 11.9 61.04-30.72 149.32-39.11 192.97-41.4 14.9-.78 26.49-12.73 26.49-27.06V219.14c-.01-15.63-13.56-28.01-29.81-27.09z"&gt;&lt;/path&gt;&lt;/svg&gt; Lectures
+
+- **Thursdays** from **12h15 to 14h** over [Zoom](https://unige.zoom.us/j/98257116213?pwd=S2VkVWwzbys5SzcyeUMyVERlV1c2UT09) 
+
+- **Presentations** of the contents. 
+
+- [SpeakUp room](https://web.speakup.info/ng/room/60364a4a97ca6c67c16e9e7f) to raise and vote on questions
+
+]
+
+--
+
+.pull-right[
+## &lt;svg viewBox="0 0 640 512" xmlns="http://www.w3.org/2000/svg" style="height:1em;fill:currentColor;position:relative;display:inline-block;top:.1em;"&gt;  [ comment ]  &lt;path d="M104 96H56c-13.3 0-24 10.7-24 24v104H8c-4.4 0-8 3.6-8 8v48c0 4.4 3.6 8 8 8h24v104c0 13.3 10.7 24 24 24h48c13.3 0 24-10.7 24-24V120c0-13.3-10.7-24-24-24zm528 128h-24V120c0-13.3-10.7-24-24-24h-48c-13.3 0-24 10.7-24 24v272c0 13.3 10.7 24 24 24h48c13.3 0 24-10.7 24-24V288h24c4.4 0 8-3.6 8-8v-48c0-4.4-3.6-8-8-8zM456 32h-48c-13.3 0-24 10.7-24 24v168H256V56c0-13.3-10.7-24-24-24h-48c-13.3 0-24 10.7-24 24v400c0 13.3 10.7 24 24 24h48c13.3 0 24-10.7 24-24V288h128v168c0 13.3 10.7 24 24 24h48c13.3 0 24-10.7 24-24V56c0-13.3-10.7-24-24-24z"&gt;&lt;/path&gt;&lt;/svg&gt; Exercises 
+
+- **Thursdays** from **16h15 to 18h** over Zoom.
+
+- **Q&amp;A sessions** on the Problem Sets. 
+
+- **Problem Set and Solution** available on-line one week before.
+  - **Try the exercises yourselves** before looking at the solution.
+
+- **SpeakUp room : TBA** - **No session Today (Feb 25th)**
+]
+
+---
+# Logistics
+
+.pull-left[
+## &lt;svg viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg" style="height:1em;fill:currentColor;position:relative;display:inline-block;top:.1em;"&gt;  [ comment ]  &lt;path d="M501.1 395.7L384 278.6c-23.1-23.1-57.6-27.6-85.4-13.9L192 158.1V96L64 0 0 64l96 128h62.1l106.6 106.6c-13.6 27.8-9.2 62.3 13.9 85.4l117.1 117.1c14.6 14.6 38.2 14.6 52.7 0l52.7-52.7c14.5-14.6 14.5-38.2 0-52.7zM331.7 225c28.3 0 54.9 11 74.9 31l19.4 19.4c15.8-6.9 30.8-16.5 43.8-29.5 37.1-37.1 49.7-89.3 37.9-136.7-2.2-9-13.5-12.1-20.1-5.5l-74.4 74.4-67.9-11.3L334 98.9l74.4-74.4c6.6-6.6 3.4-17.9-5.7-20.2-47.4-11.7-99.6.9-136.6 37.9-28.5 28.5-41.9 66.1-41.2 103.6l82.1 82.1c8.1-1.9 16.5-2.9 24.7-2.9zm-103.9 82l-56.7-56.7L18.7 402.8c-25 25-25 65.5 0 90.5s65.5 25 90.5 0l123.6-123.6c-7.6-19.9-9.9-41.6-5-62.7zM64 472c-13.2 0-24-10.8-24-24 0-13.3 10.7-24 24-24s24 10.7 24 24c0 13.2-10.7 24-24 24z"&gt;&lt;/path&gt;&lt;/svg&gt; Tools
+
+- [Moodle](https://moodle.unige.ch/course/view.php?id=7133) for content.
+
+- [SpeakUp](http://speakup.info/) On class questions - upvote.
+
+- [Wooclap](https://www.wooclap.com) Live polls and exercises.
+
+]
+.pull-right[
+## &lt;svg viewBox="0 0 576 512" xmlns="http://www.w3.org/2000/svg" style="height:1em;fill:currentColor;position:relative;display:inline-block;top:.1em;"&gt;  [ comment ]  &lt;path d="M542.22 32.05c-54.8 3.11-163.72 14.43-230.96 55.59-4.64 2.84-7.27 7.89-7.27 13.17v363.87c0 11.55 12.63 18.85 23.28 13.49 69.18-34.82 169.23-44.32 218.7-46.92 16.89-.89 30.02-14.43 30.02-30.66V62.75c.01-17.71-15.35-31.74-33.77-30.7zM264.73 87.64C197.5 46.48 88.58 35.17 33.78 32.05 15.36 31.01 0 45.04 0 62.75V400.6c0 16.24 13.13 29.78 30.02 30.66 49.49 2.6 149.59 12.11 218.77 46.95 10.62 5.35 23.21-1.94 23.21-13.46V100.63c0-5.29-2.62-10.14-7.27-12.99z"&gt;&lt;/path&gt;&lt;/svg&gt; References
+- [Course Notes](https://bookdown.org/daniel_flores_agreda/Prob1-GSEM-UNIGE/). 
+  - **Work in Progress** Discretionally updated.
+
+- [_A first course in probability_](https://www.pearson.com/us/higher-education/product/Ross-First-Course-in-Probability-A-9th-Edition/9780321794772.html), S. Ross   
+  - Any edition
+]
+
+---
+# Contents
+--
+
+### 1. Introduction
+
+.center[.purple[A tiny, tiny Mathematics Reminder] ]
+
+--
+### 2. Set Theory
+.center[.purple[Uncertain Events as Sets]]
+--
+
+### 3. Probability Axioms
+
+.center[.purple[Mathematical characterisation of "Probability"]]
+
+---
+
+# Contents
+--
+
+### 4. Discrete random variables 
+
+.center[.purple[_"What is the Probability of X=4?"_]]
+
+--
+
+### 5. Continuous random variables: 
+
+.center[.purple[_"What is the Probability of 3.1&lt;X&lt;4.5?"_]]
+
+--
+
+### 7. Bivariate Discrete Random Variables
+
+.center[.purple[_"What is the Probability of X=4 AND Y=6"?_]]
+
+---
+
+# Contents
+
+### 6. Limit Theorems 
+
+`$$\color{purple}{``\textit{What happens to } \overline{X}_{n} = \frac{1}{n}(X_1+X_2 + \dots + X_n) \textit{  as  }  n \rightarrow \infty?"}$$`
+
+--
+
+### 8. Elements of Simulation
+
+.center[.purple["_How to generate (pseudo-) random numbers?_"]]
+
+---
+class: section, center, middle
+
+# Motivations
+
+--
+
+# _WHY?_
+
+![](https://media.giphy.com/media/pPhyAv5t9V8djyRFJH/giphy.gif)
+
+
+
+---
+class: subsection, center, middle
+
+# **Data** is **Everywhere**
+
+---
+class: center, middle
+&lt;iframe src="https://flowmap.blue/15kwLB4baXZ7jpip8q0JjgR6zDoS5Gt3gMLCTUAboQxk?v=46.760927,8.215964,6.51,0,0&amp;amp;a=0&amp;amp;as=1&amp;amp;b=1&amp;amp;bo=75&amp;amp;c=0&amp;amp;ca=1&amp;amp;d=0&amp;amp;fe=1&amp;amp;lt=1&amp;amp;lfm=ALL&amp;amp;col=Default&amp;amp;f=45" width="100%" height="400px"&gt;&lt;/iframe&gt;
+
+.footnote[.footnotesize[Inter-cantonal migration in Switzerland in 2016, an interactive map by Ilya Bobadin with data from the Swiss Federal Statistical Office. [https://flowmap.blue/](https://flowmap.blue/)].]
+
+---
+class: subsection, center, middle
+
+# To make sense of **Data** we need **Statistical Methods**
+
+---
+class: center, middle
+
+# Statistics
+
+--
+
+### The discipline that deals with the .pink[collection] , .pink[presentation], .pink[analysis] and .pink[interpretation] of **Data**.
+
+---
+background-image: url(https://i.redd.it/8r2fd78pgna51.png)
+background-size: fill
+background-position: 50% 50%
+class: center, middle
+
+
+.footnote[.footnotesize[_Thinking of learning ML this weekend, is there math?_ (2020). Retrieved from [r/DataScienceMemes](https://www.reddit.com/r/DataScienceMemes/comments/hqi8sv/thinking_of_learning_ml_this_weekend_is_there_math/?utm_source=share&amp;utm_medium=web2x&amp;context=3)]]
+---
+class: subsection, center, middle
+
+# To build **Statistical Methods** we rely on **Probability**
+
+---
+class: center, middle
+
+# Probability
+
+--
+
+### A .pink[mathematical formalisation] of .pink[randomness] and .pink[uncertainty]
+
+--
+
+### The main **building block** of **Statistical methods**
+
+---
+class: subsubsection, center, middle
+
+# Illustration
+
+---
+# Illustration : Price of a Stock
+
+Let `\(S_0\)` denote the price of the Stock at time `\(t_0\)`, and consider that:
+
+- with **probability `\(p\)`** the stock price increases by a factor `\(u&gt;1\)`, and 
+
+- with **probability `\(1-p\)`** the price decreases by a factor `\(d&lt;1\)`. 
+
+--
+
+Then, the price at time `\(t_1\)`  
+
+- `\(S_1 = uS_0\)` if the price goes up,
+
+- `\(S_1=dS_0\)`  if the price goes down. 
+
+Let us set `\(S_0=1\)` (US Dollar) and the factors `\(u=2\)` (i.e. doubling the price) and `\(d=1/2\)` (i.e. halving the price). 
+
+**What can we say about the price at time `\(t_2\)`?**]
+
+---
+
+# Illustration : Price of a Stock
+
+### Probability Tree Diagram. 
+
+.left-column[
+
+Organise the **outcomes in branches**. 
+
+- **nodes**: outcomes 
+
+- **edges**: probability associated with the outcome. 
+]
+
+.right-column[
+&lt;img src="Lecture0_files/figure-html/unnamed-chunk-4-1.png" style="display: block; margin: auto;" /&gt;
+]
+
+---
+# Illustration : Price of a Stock
+
+### Probability Tree Diagram. 
+
+- Probability of successive outcomes:  **_multiply_ the probabilities** on the edges 
+
+- More than one path leading to a given outcome:  **_sum_ the total probabilty** of the edges outcome.  
+
+--
+
+Hence, with `\(S_0 = 1\)`: 
+
+- The probability of `\(S_2 = u^2 = 4\)` is `\(p^2\)`
+
+- The probability of `\(S_2 = d^2 = 4\)` is `\((1-p)^2\)`
+
+- The probability of `\(S_2 = d^2 = 1\)` is `\((1-p)p+p(1-p)\)`
+---
+
+class: section, center, middle
+
+# Break
+
+<div class="countdown" id="timer_60370156" style="top:50%;right:0;left:0;margin:5%;padding:50px;font-size:6em;" data-warnwhen="0">
+<code class="countdown-time"><span class="countdown-digits minutes">10</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
+</div>
+
+
+    </textarea>
+<style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
+<script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
+<script>var slideshow = remark.create({
+"highlightStyle": "github",
+"highlightLines": true,
+"countIncrementalSlides": false,
+"ratio": "13:9",
+"navigation": {
+"scroll": false
+}
+});
+if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
+  window.dispatchEvent(new Event('resize'));
+});
+(function(d) {
+  var s = d.createElement("style"), r = d.querySelector(".remark-slide-scaler");
+  if (!r) return;
+  s.type = "text/css"; s.innerHTML = "@page {size: " + r.style.width + " " + r.style.height +"; }";
+  d.head.appendChild(s);
+})(document);
+
+(function(d) {
+  var el = d.getElementsByClassName("remark-slides-area");
+  if (!el) return;
+  var slide, slides = slideshow.getSlides(), els = el[0].children;
+  for (var i = 1; i < slides.length; i++) {
+    slide = slides[i];
+    if (slide.properties.continued === "true" || slide.properties.count === "false") {
+      els[i - 1].className += ' has-continuation';
+    }
+  }
+  var s = d.createElement("style");
+  s.type = "text/css"; s.innerHTML = "@media print { .has-continuation { display: none; } }";
+  d.head.appendChild(s);
+})(document);
+// delete the temporary CSS (for displaying all slides initially) when the user
+// starts to view slides
+(function() {
+  var deleted = false;
+  slideshow.on('beforeShowSlide', function(slide) {
+    if (deleted) return;
+    var sheets = document.styleSheets, node;
+    for (var i = 0; i < sheets.length; i++) {
+      node = sheets[i].ownerNode;
+      if (node.dataset["target"] !== "print-only") continue;
+      node.parentNode.removeChild(node);
+    }
+    deleted = true;
+  });
+})();
+(function() {
+  "use strict"
+  // Replace <script> tags in slides area to make them executable
+  var scripts = document.querySelectorAll(
+    '.remark-slides-area .remark-slide-container script'
+  );
+  if (!scripts.length) return;
+  for (var i = 0; i < scripts.length; i++) {
+    var s = document.createElement('script');
+    var code = document.createTextNode(scripts[i].textContent);
+    s.appendChild(code);
+    var scriptAttrs = scripts[i].attributes;
+    for (var j = 0; j < scriptAttrs.length; j++) {
+      s.setAttribute(scriptAttrs[j].name, scriptAttrs[j].value);
+    }
+    scripts[i].parentElement.replaceChild(s, scripts[i]);
+  }
+})();
+(function() {
+  var links = document.getElementsByTagName('a');
+  for (var i = 0; i < links.length; i++) {
+    if (/^(https?:)?\/\//.test(links[i].getAttribute('href'))) {
+      links[i].target = '_blank';
+    }
+  }
+})();
+// adds .remark-code-has-line-highlighted class to <pre> parent elements
+// of code chunks containing highlighted lines with class .remark-code-line-highlighted
+(function(d) {
+  const hlines = d.querySelectorAll('.remark-code-line-highlighted');
+  const preParents = [];
+  const findPreParent = function(line, p = 0) {
+    if (p > 1) return null; // traverse up no further than grandparent
+    const el = line.parentElement;
+    return el.tagName === "PRE" ? el : findPreParent(el, ++p);
+  };
+
+  for (let line of hlines) {
+    let pre = findPreParent(line);
+    if (pre && !preParents.includes(pre)) preParents.push(pre);
+  }
+  preParents.forEach(p => p.classList.add("remark-code-has-line-highlighted"));
+})(document);</script>
+
+<script>
+slideshow._releaseMath = function(el) {
+  var i, text, code, codes = el.getElementsByTagName('code');
+  for (i = 0; i < codes.length;) {
+    code = codes[i];
+    if (code.parentNode.tagName !== 'PRE' && code.childElementCount === 0) {
+      text = code.textContent;
+      if (/^\\\((.|\s)+\\\)$/.test(text) || /^\\\[(.|\s)+\\\]$/.test(text) ||
+          /^\$\$(.|\s)+\$\$$/.test(text) ||
+          /^\\begin\{([^}]+)\}(.|\s)+\\end\{[^}]+\}$/.test(text)) {
+        code.outerHTML = code.innerHTML;  // remove <code></code>
+        continue;
+      }
+    }
+    i++;
+  }
+};
+slideshow._releaseMath(document);
+</script>
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+(function () {
+  var script = document.createElement('script');
+  script.type = 'text/javascript';
+  script.src  = 'https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML';
+  if (location.protocol !== 'file:' && /^https?:/.test(script.src))
+    script.src  = script.src.replace(/^https?:/, '');
+  document.getElementsByTagName('head')[0].appendChild(script);
+})();
+</script>
+  </body>
+</html>

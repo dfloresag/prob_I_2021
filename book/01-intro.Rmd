@@ -173,19 +173,6 @@ Probability theory is a mathematical tool. Hence, it is important to review some
 - $\ln(a^n) = n \times \ln a$;
 - $\ln (a \times b) = \ln (a) + \ln (b)$;
 
-### Limits
-
-The study of **limits** will be crucial in many tasks:
-
-- The limit of a finite sum is an infinite series:
-$$\lim_{n \to \infty} \sum_{i=1}^n x_i = \sum_{i=1 }^\infty x_i \nonumber$$
-- The Exponential function, characterised as a limit:
-$$ e^x = \lim_{n \rightarrow \infty} \left(1 + \frac{x}{n}\right)^n \nonumber$$
-- The Limit of a Negative Exponential function: Let $\alpha >0$
-$$\lim_{x \to \infty} {\alpha e^{-\alpha x}} = 0 \nonumber$$ 
-- The Exponential function, characterised as an infinite series:
-$$e^x = \sum_{i = 0}^{\infty} {x^i \over i!} = 1 + x + {x^2 \over 2!} + {x^3 \over 3!} + {x^4 \over 4!} + \dots$$
-
 
 ### Differentiation 
 
@@ -451,4 +438,18 @@ Let us compute the binomial coefficients for polynomials of different degrees $n
 &= y^3 + 3xy^2 + 3x^2y+x^3 
 \end{align}
 ```
+
+### Limits
+
+The study of **limits** will be crucial in many tasks:
+
+- The limit of a finite sum is an infinite series:
+$$\lim_{n \to \infty} \sum_{i=1}^n x_i = \sum_{i=1 }^\infty x_i \nonumber$$
+- The Exponential function, characterised as a limit:
+$$ e^x = \lim_{n \rightarrow \infty} \left(1 + \frac{x}{n}\right)^n \nonumber$$
+- The Limit of a Negative Exponential function: Let $\alpha >0$
+$$\lim_{x \to \infty} {\alpha e^{-\alpha x}} = 0 \nonumber$$ 
+- The Exponential function, characterised as an infinite series:
+$$e^x = \sum_{i = 0}^{\infty} {x^i \over i!} = 1 + x + {x^2 \over 2!} + {x^3 \over 3!} + {x^4 \over 4!} + \dots$$
+
 

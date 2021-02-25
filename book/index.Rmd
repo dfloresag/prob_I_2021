@@ -6,9 +6,7 @@ site: bookdown::bookdown_site
 output: 
   bookdown::gitbook:
     config:
-      sharing:
-        facebook: false
-        twitter: false
+      sharing: null
 documentclass: book
 bibliography: [book.bib, packages.bib]
 biblio-style: apalike
@@ -58,7 +56,7 @@ The Lecture is divided in the following Chapters, and each Chapter contains seve
 |:------:|:-------|:-------|:-------:| 
 | 1 |**Introduction** | Intro, Mathematics reminder and Combinatorics. | ☑️ | 
 | 2 |**Elements of Set Theory For Probability** | Random variables, Trees, Venn diagram, Conditional probability, Independence & Bayes' theorem. | 🔧 | 
-| 3 |**Axiomatic Foundations of Proability** | Probability Axioms, Illustrations of use, Conditional probability, Independence & Bayes' theorem. | 🔧 | 
+| 3 |**Axiomatic Foundations of Probability** | Probability Axioms, Illustrations of use | 🔧 | 
 | 4 | **Discrete random variables**| Definitions, Expected value and variance,  Binomial, Poisson, Negative binomial and Hypergeometric | 📝 | 
 | 5 | **Continuous random variables** | Definitions, Expected value and variance, Cumulative distribution function (cdf) and Probability density function (pdf), Some important examples: Uniform, Exponential, Gamma, Normal, logNormal, Student's t, Relationships | 📝 |
 | 6 | **Limit Theorems** | Weak Law of Large Numbers (WLLN) and Central Limit Theorem (CLT) | 📝 | 

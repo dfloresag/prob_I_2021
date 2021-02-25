@@ -312,11 +312,6 @@ of games that we win can be reasonably applied to get an estimate of <span class
 having <span class="math inline">\(U(0,1)\)</span> distribution: these values are called <em>random numbers</em>.</li>
 <li>Starting from a <span class="math inline">\(U \sim U(0,1)\)</span> distribution, we can in principle simulate any random variable having a CDF, by means of the <span class="math inline">\(F^{-1}\)</span> transformation % (see tutorial, <span class="math inline">\(Y=F^{-1}(U)\)</span>).</li>
 </ul>
-
-<div class="remark">
- <span class="remark"><em>Remark. </em></span> In fact, the computer makes use of the so called : an algorithm produces a sequence of numbers which are (only) pseudo-
-random. Namely, the generator yields a sequence of numbers that, PRACTICALLY, is VERY SIMILAR to a sample drawn form <span class="math inline">\(U(0,1)\)</span>. The way in which this algorithm works is behind the scope of this course: let’s simply say that you can use the statistical software to achieve the task.
-</div>
 </div>
 <div id="simulation-in-r" class="section level2" number="8.3">
 <h2><span class="header-section-number">8.3</span> Simulation in R</h2>
@@ -337,10 +332,6 @@ on its edge <span class="math inline">\(0.1\)</span></p>
 </div>
 <div id="summarizing" class="section level2" number="8.5">
 <h2><span class="header-section-number">8.5</span> Summarizing</h2>
-
-<div class="remark">
- <span class="remark"><em>Remark. </em></span> We can make use of the computer power of calculus to shed light on some probabilistic questions.\ The use of the computer power of calculus and the theory of probability are not mutually exclusive. Rather, I firmly believe that they complement each other: using the computer without any underpinning theoretical development is pointless, while the development of probability theory can strongly benefit from the use of computer power of calculus.
-</div>
 
 </div>
 </div>
@@ -365,16 +356,7 @@ on its edge <span class="math inline">\(0.1\)</span></p>
 <script>
 gitbook.require(["gitbook"], function(gitbook) {
 gitbook.start({
-"sharing": {
-"github": false,
-"facebook": false,
-"twitter": false,
-"linkedin": false,
-"weibo": false,
-"instapaper": false,
-"vk": false,
-"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
-},
+"sharing": null,
 "fontsettings": {
 "theme": "white",
 "family": "sans",

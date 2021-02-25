@@ -1,0 +1,6 @@
+\beamer@sectionintoc {1}{Powers and Logs}{3}{0}{1}
+\beamer@sectionintoc {2}{Derivatives}{5}{0}{2}
+\beamer@sectionintoc {3}{Integrals}{7}{0}{3}
+\beamer@sectionintoc {4}{Sums}{9}{0}{4}
+\beamer@sectionintoc {5}{Combinatorics}{11}{0}{5}
+\beamer@sectionintoc {6}{Limits}{20}{0}{6}

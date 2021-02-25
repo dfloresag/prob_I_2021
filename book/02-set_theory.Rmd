@@ -388,7 +388,7 @@ Let $A$ and $B$ be two sets in $S$. Then:
 where: 
 
 - Left hand side: $(A\cup B)^{c}$ represents the **set of all elements that are neither $A$ nor $B$**; 
-- Right hand side:$\color{blue}{A^c \cap B^c}$  represents the intersection of all elements that are not $A$ (namely they are $A^c$) and not $B$ either (namely they are $B^c$) $\Rightarrow$ **set of all elements that are neither $A$ nor $B$**.
+- Right hand side: $\color{blue}{A^c \cap B^c}$  represents the intersection of all elements that are not $A$ (namely they are $A^c$) and not $B$ either (namely they are $B^c$) $\Rightarrow$ **set of all elements that are neither $A$ nor $B$**.
 
 Put in words, this law says that 
 

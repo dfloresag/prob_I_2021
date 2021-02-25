@@ -1,0 +1,343 @@
+---
+title: "Probability 1"
+subtitle: "Introduction to the Lecture"
+author: "Dr. Daniel Flores Agreda"
+output:
+  xaringan::moon_reader:
+    css: ["./css/unige.css", "./css/unige-fonts.css"]
+    lib_dir: libs
+    nature:
+      highlightStyle: github
+      highlightLines: true
+      countIncrementalSlides: false
+      ratio: '13:9' # alternatives: '4:3' or others e.g. 16:9
+      navigation:
+        scroll: false # disable slide transitions by scrollingd
+---
+```{r setup, include= FALSE, message= FALSE, warning = FALSE}
+knitr::opts_chunk$set(
+  echo = FALSE, 
+  message = FALSE,
+  warning = FALSE,
+  fig.align='center',
+  fig.height = 5)
+```
+
+```{r rsetup}
+source("R/setup.R")
+library(htmltools)
+```
+class: section, center, middle
+
+# Welcome to this class
+
+---
+# Who we are
+
+--
+
+.pull-left[
+.center[
+```{r}
+div(
+    img(src = "https://d33wubrfki0l68.cloudfront.net/bb2b2f1c0fb1d52f4c61c9bacdc49dcbfc4c756c/58288/daniel.3c796e13.jpg",
+        alt = "Daniel FLORES AGREDA", 
+        style = "
+        border-radius: 100%;
+        object-fit: cover;
+        width: 200px;
+        height: 200px;"), 
+    div(
+      h4("Daniel FLORES AGREDA"),
+      h5("Data Science Course Developer and Instructor"), 
+      a("Daniel.Flores@unige.ch")
+    )
+  )
+```
+]
+]
+--
+.pull-right[
+.center[
+```{r}
+div(
+    img(src = "https://www.unige.ch/gsem/files/cache/5825d0668aa3e7ad3ff8ec085e7f3498_f3901.jpg",
+        alt = "Edoardo VIGNOTTO", 
+        style = "
+        border-radius: 100%;
+        object-fit: cover;
+        width: 200px;
+        height: 200px;"), 
+    div(
+      h4("Edoardo VIGNOTTO"),
+      h5("Teaching and Research Assistant"), 
+      a("Edoardo.Vignotto@unige.ch")
+    )
+  )
+```
+]
+]
+
+---
+# Logistics
+
+--
+
+.pull-left[
+## `r icon::fontawesome("book-reader", style = "solid")` Lectures
+
+- **Thursdays** from **12h15 to 14h** over [Zoom](https://unige.zoom.us/j/98257116213?pwd=S2VkVWwzbys5SzcyeUMyVERlV1c2UT09) 
+
+- **Presentations** of the contents. 
+
+- [SpeakUp room](https://web.speakup.info/ng/room/60364a4a97ca6c67c16e9e7f) to raise and vote on questions
+
+]
+
+--
+
+.pull-right[
+## `r icon::fontawesome("dumbbell", style = "solid")` Exercises 
+
+- **Thursdays** from **16h15 to 18h** over Zoom.
+
+- **Q&A sessions** on the Problem Sets. 
+
+- **Problem Set and Solution** available on-line one week before.
+  - **Try the exercises yourselves** before looking at the solution.
+
+- **SpeakUp room : TBA** - **No session Today (Feb 25th)**
+]
+
+---
+# Logistics
+
+.pull-left[
+## `r icon::fontawesome("tools", style = "solid")` Tools
+
+- [Moodle](https://moodle.unige.ch/course/view.php?id=7133) for content.
+
+- [SpeakUp](http://speakup.info/) On class questions - upvote.
+
+- [Wooclap](https://www.wooclap.com) Live polls and exercises.
+
+]
+.pull-right[
+## `r icon::fontawesome("book-open", style = "solid")` References
+- [Course Notes](https://bookdown.org/daniel_flores_agreda/Prob1-GSEM-UNIGE/). 
+  - **Work in Progress** Discretionally updated.
+
+- [_A first course in probability_](https://www.pearson.com/us/higher-education/product/Ross-First-Course-in-Probability-A-9th-Edition/9780321794772.html), S. Ross   
+  - Any edition
+]
+
+---
+# Contents
+--
+
+### 1. Introduction
+
+.center[.purple[A tiny, tiny Mathematics Reminder] ]
+
+--
+### 2. Set Theory
+.center[.purple[Uncertain Events as Sets]]
+--
+
+### 3. Probability Axioms
+
+.center[.purple[Mathematical characterisation of "Probability"]]
+
+---
+
+# Contents
+--
+
+### 4. Discrete random variables 
+
+.center[.purple[_"What is the Probability of X=4?"_]]
+
+--
+
+### 5. Continuous random variables: 
+
+.center[.purple[_"What is the Probability of 3.1<X<4.5?"_]]
+
+--
+
+### 7. Bivariate Discrete Random Variables
+
+.center[.purple[_"What is the Probability of X=4 AND Y=6"?_]]
+
+---
+
+# Contents
+
+### 6. Limit Theorems 
+
+$$\color{purple}{``\textit{What happens to } \overline{X}_{n} = \frac{1}{n}(X_1+X_2 + \dots + X_n) \textit{  as  }  n \rightarrow \infty?"}$$
+
+--
+
+### 8. Elements of Simulation
+
+.center[.purple["_How to generate (pseudo-) random numbers?_"]]
+
+---
+class: section, center, middle
+
+# Motivations
+
+--
+
+# _WHY?_
+
+![](https://media.giphy.com/media/pPhyAv5t9V8djyRFJH/giphy.gif)
+
+
+
+---
+class: subsection, center, middle
+
+# **Data** is **Everywhere**
+
+---
+class: center, middle
+```{r, echo = FALSE, out.width="100%"}
+knitr::include_url("https://flowmap.blue/15kwLB4baXZ7jpip8q0JjgR6zDoS5Gt3gMLCTUAboQxk?v=46.760927,8.215964,6.51,0,0&a=0&as=1&b=1&bo=75&c=0&ca=1&d=0&fe=1&lt=1&lfm=ALL&col=Default&f=45")
+```
+
+.footnote[.footnotesize[Inter-cantonal migration in Switzerland in 2016, an interactive map by Ilya Bobadin with data from the Swiss Federal Statistical Office. [https://flowmap.blue/](https://flowmap.blue/)].]
+
+---
+class: subsection, center, middle
+
+# To make sense of **Data** we need **Statistical Methods**
+
+---
+class: center, middle
+
+# Statistics
+
+--
+
+### The discipline that deals with the .pink[collection] , .pink[presentation], .pink[analysis] and .pink[interpretation] of **Data**.
+
+---
+background-image: url(https://i.redd.it/8r2fd78pgna51.png)
+background-size: fill
+background-position: 50% 50%
+class: center, middle
+
+
+.footnote[.footnotesize[_Thinking of learning ML this weekend, is there math?_ (2020). Retrieved from [r/DataScienceMemes](https://www.reddit.com/r/DataScienceMemes/comments/hqi8sv/thinking_of_learning_ml_this_weekend_is_there_math/?utm_source=share&utm_medium=web2x&context=3)]]
+---
+class: subsection, center, middle
+
+# To build **Statistical Methods** we rely on **Probability**
+
+---
+class: center, middle
+
+# Probability
+
+--
+
+### A .pink[mathematical formalisation] of .pink[randomness] and .pink[uncertainty]
+
+--
+
+### The main **building block** of **Statistical methods**
+
+---
+class: subsubsection, center, middle
+
+# Illustration
+
+---
+# Illustration : Price of a Stock
+
+Let $S_0$ denote the price of the Stock at time $t_0$, and consider that:
+
+- with **probability $p$** the stock price increases by a factor $u>1$, and 
+
+- with **probability $1-p$** the price decreases by a factor $d<1$. 
+
+--
+
+Then, the price at time $t_1$  
+
+- $S_1 = uS_0$ if the price goes up,
+
+- $S_1=dS_0$  if the price goes down. 
+
+Let us set $S_0=1$ (US Dollar) and the factors $u=2$ (i.e. doubling the price) and $d=1/2$ (i.e. halving the price). 
+
+**What can we say about the price at time $t_2$?**]
+
+---
+
+# Illustration : Price of a Stock
+
+### Probability Tree Diagram. 
+
+.left-column[
+
+Organise the **outcomes in branches**. 
+
+- **nodes**: outcomes 
+
+- **edges**: probability associated with the outcome. 
+]
+
+.right-column[
+```{r, echo=FALSE, engine='tikz', fig.align='center'}
+\tikzstyle{bag} = [text width=8em, text centered]
+\tikzstyle{end} = []
+\begin{tikzpicture}[sloped]
+   \node (a) at ( 0,0) [bag] {$\$ 1$};
+   \node (b) at ( 4,-1.5) [bag] {$\$ d =\$ 0.5$};
+   \node (c) at ( 4,1.5) [bag] {$\$ u= \$ 2$};
+   \node (d) at ( 8,-3) [bag] {$\$ d^2= \$ 0.25$};
+   \node (e) at ( 8,0) [bag] {$\$ ud= \$ du = \$ 1$};
+   \node (f) at ( 8,3) [bag] {$\$ u^2=\$ 4$};
+   \draw [->] (a) to node [below] {$(1-p)$} (b);
+   \draw [->] (a) to node [above] {$p$} (c);
+   \draw [->] (c) to node [below] {$p^2$} (f);
+   \draw [->] (c) to node [above] {$(1-p)p$} (e);
+   \draw [->] (b) to node [below] {$(1-p)p$} (e);
+   \draw [->] (b) to node [above] {$(1-p)^2$} (d);
+\end{tikzpicture}
+```
+]
+
+---
+# Illustration : Price of a Stock
+
+### Probability Tree Diagram. 
+
+- Probability of successive outcomes:  **_multiply_ the probabilities** on the edges 
+
+- More than one path leading to a given outcome:  **_sum_ the total probabilty** of the edges outcome.  
+
+--
+
+Hence, with $S_0 = 1$: 
+
+- The probability of $S_2 = u^2 = 4$ is $p^2$
+
+- The probability of $S_2 = d^2 = 4$ is $(1-p)^2$
+
+- The probability of $S_2 = d^2 = 1$ is $(1-p)p+p(1-p)$
+---
+
+class: section, center, middle
+
+# Break
+
+```{r}
+countdown_gsem(minutes = 10, seconds = 0, left = 0, right=0, top = "50%",           
+               padding = "50px",margin = "5%",font_size = "6em")
+```
+
+
