@@ -1,4 +1,4 @@
-\documentclass[notes=show]{beamer}
+\documentclass[notes=show, handout]{beamer}
 \usepackage{amsmath}
 \usepackage{graphicx}
 \usepackage{mathpazo}
@@ -435,7 +435,7 @@ Most importantly, \textbf{Combinatorics}
 \begin{itemize}
 \item A set with $n$ elements has \textbf{$n!$ possible permutations}
 \item There are $n!/(n-k)!$ ways of choosing $k$ elements from $n$ \textbf{when the order is important}
-\item There are $n!/(k!(n-k)!)$ ways of choosing $k$ elements from $n$ \textbf{when the order is important}
+\item There are $n!/(k!(n-k)!)$ ways of choosing $k$ elements from $n$ \textbf{when the order is not important}
 \end{itemize}
 
 
