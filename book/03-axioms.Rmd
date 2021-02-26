@@ -2,6 +2,10 @@
 
 ## An Axiomatic Definition of Probability
 
+```{r ,echo = FALSE, fig.cap="'Is it clear to Everyone?' - by Enrico Chavez", fig.align='center'}
+  knitr::include_graphics("img/fun/EC_clear2everyone.png")
+```
+
 <!-- %Let $\mathcal{B}$ be the $\sigma$-algebra of subsets of a set $S$ representing the sample space. \\ -->
 <!-- %\vspace{0.1cm} -->
 
@@ -33,7 +37,7 @@ P(A)=P\left(\bigcup_{i=1}^{\infty}A_{i}\right)=\sum_{i=1}^{\infty}P(A_i).
 
 ## Properties of $P(\cdot)$
 
-We can make use of the three axioms to build more sophisticated statements. For instance:
+These three axioms are the building block of other, more sophisticated statements. For instance:
 
 ```{theorem, probabilityEmptySet, name = "The Probability of the Empty Set"}
 _The probability of the empty set is 0_ 
@@ -174,9 +178,7 @@ since $P(A_1 \cap A_2) \geq 0$ by definition.
 
 ```{remark}
 It is worth noticing that if $A_j \cap A_i = \varnothing$, for every $i$ and $j$, with $i\neq j$, then
-$
-P(A_1 \cup A_2 \cup....\cup A_n) = \sum_{i=1}^{n}P(A_i),
-$
+$P(A_1 \cup A_2 \cup....\cup A_n) = \sum_{i=1}^{n}P(A_i),$
 as stated in \@ref(eq:probuniondisj).
 ```
 
@@ -217,19 +219,19 @@ P(A\cup B) &=& P(A) + P(A^c \cap B)  \\
 ```{example, name = "Real-life example II"} 
 ```
 
-```{r, echo = FALSE}
+```{r ,echo = FALSE, fig.cap='', fig.align='center'}
 knitr::include_graphics("img/03_axioms/Example2_1.png")
 ```
 
-```{r, echo = FALSE}
+```{r ,echo = FALSE, fig.cap='', fig.align='center'}
 knitr::include_graphics("img/03_axioms/Example2_2.png")
 ```
 
-```{r, echo = FALSE}
+```{r ,echo = FALSE, fig.cap=' ', fig.align='center'}
 knitr::include_graphics("img/03_axioms/Example2_3.png")
 ```
 
-```{r, echo = FALSE}
+```{r ,echo = FALSE, fig.cap='', fig.align='center'}
 knitr::include_graphics("img/03_axioms/Example2_4.png")
 ```
 
@@ -261,7 +263,6 @@ $$P(A)=1 - 0.4= 0.6.$$
 ### Probability, union, and complement
 
 ```{example}
-
 John is taking two books along on his holiday vacation. With probability 0.5, he will like the first book; with probability 0.4, he will like the
 second book; and with probability 0.3, he will like both books. What is the probability that he likes neither book? \\
 

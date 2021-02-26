@@ -420,8 +420,8 @@ Let us compute the binomial coefficients for polynomials of different degrees $n
 - for $n=1$ 
 
 \begin{align}
-(x+y)^1 &= {1 \choose 0}x^1 y^0 + {2 \choose 1}x^{1}y^1 +  {2 \choose 0}x^0 y^{2}\\  
-&=  x^2 +  2 x y +  y^{2} 
+(x+y)^1 &= {1 \choose 0}x^1 y^0 +  {1 \choose 1}x^0 y^{1}\\  
+&=  x +  y 
 \end{align}
 
 - for $n=2$ we have 
