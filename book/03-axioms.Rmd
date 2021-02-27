@@ -1,10 +1,10 @@
 # 🔧 Probability Axioms {#axioms}
 
-## An Axiomatic Definition of Probability
-
-```{r ,echo = FALSE, fig.cap="'Is it clear to Everyone?' - by Enrico Chavez", fig.align='center'}
+```{r ,echo = FALSE, fig.cap="'Is it clear to Everyone?' by Enrico Chavez", fig.align='center'}
   knitr::include_graphics("img/fun/EC_clear2everyone.png")
 ```
+
+## An Axiomatic Definition of Probability
 
 <!-- %Let $\mathcal{B}$ be the $\sigma$-algebra of subsets of a set $S$ representing the sample space. \\ -->
 <!-- %\vspace{0.1cm} -->

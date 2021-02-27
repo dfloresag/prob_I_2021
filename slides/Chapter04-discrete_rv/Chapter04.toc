@@ -1,0 +1,2 @@
+\beamer@sectionintoc {1}{Random variables}{2}{0}{1}
+\beamer@subsectionintoc {1}{1}{Discrete random variables}{15}{0}{1}

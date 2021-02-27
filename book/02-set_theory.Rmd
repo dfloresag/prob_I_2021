@@ -122,11 +122,9 @@ Two events are mutually exclusive is they cannot occur jointly. This is represen
 knitr::include_graphics("img/02_set_theory/charts/charts.003.png")
 ```
 
-For illustration, consider our simple card game example. The event "drawing a **King**" and "drawing a **Queen**" are mutually exclusive, as they can't happen at the same time. 
-
-<mark>
-  Chart is coming
-</mark>
+```{exercise}
+Consider our simple card game example. Build Venn Diagrams of the events "drawing a **King**" and "drawing a **Queen**". Do they have element in common? What does that say about these events?
+```
 
 Events that are not mutually exclusive have a shared area, which in set theory constitutes an **intersection** and gets shown in a Venn diagram by two figures that share some of their areas. 
 
@@ -134,11 +132,9 @@ Events that are not mutually exclusive have a shared area, which in set theory c
 knitr::include_graphics("img/02_set_theory/charts/charts.004.png")
 ```
 
-Coming back to our example with the card game, consider the events "drawing a **King**" and "drawing a **Heart**". Here there is intersection, as one can obtain a **King of Hearts**. 
-
-<mark>
-  Chart is coming
-</mark>
+```{exercise}
+Coming back to our example with the card game, build Venn diagrams for the events "drawing a **King**" and "drawing a **Heart**". Do they have element in common? What does that say about these events?
+```
 
 ### Union and Intersection of Events
 
@@ -156,7 +152,7 @@ The **intersection** of the events $A$ and $B$ is the event which occurs when bo
 
 ### Complement
 
-The **complement** of an event $A$ is the event that occurs when $A$ does not occur: $A^{c}$ (or $\overline{A}$). A Venn diagram illustrates this by shading the area outside the set that defines the event $A$. 
+The **complement** of an event $A$ is the event that occurs when $A$ does not occur: We write $A^{c}$ or $\overline{A}$. A Venn diagram illustrates this by shading the area outside the set that defines the event $A$. 
 
 ```{r ,echo = FALSE, fig.cap='Venn Diagram - $A^{c}$', fig.align='center'}
   knitr::include_graphics("img/02_set_theory/charts/charts.007.png")
@@ -182,7 +178,7 @@ A \cap (B \cap C) = (A \cap C) \cap C
 
 - **Distributive laws**
 
-  - **The intersection is _distributive_ with respect to the union**, i.e. the intersection between a set ($A$) and the union of two other sets ($B$ and $D$)  is the union of the intersections. 
+  - **The intersection is _distributive_ with respect to the union**, i.e. the intersection between a set ($A$) and the union of two other sets ($B$ and $C$)  is the union of the intersections. 
 $$ A \cap (B \cup C) = (A \cap B) \cup (A\cap C)$$
 ```{r ,echo = FALSE, fig.cap='', fig.align='center'}
   knitr::include_graphics("img/02_set_theory/charts/charts.008.png")
@@ -196,7 +192,7 @@ $$A \cup (B \cap C) = (A\cup C) \cap (A \cup C)$$
 
 ```{exercise}
 
-Let $A$ and $B$ be two sets. Use Venn diagrams to represent:  
+Let $A$ and $B$ be two non-exclusive Events in the Sample Space $S$. Use Venn diagrams to represent:  
 
 i) $\overline{A\cap B} = (A\cap B)^{c}$
 ii) $B-A$
@@ -207,7 +203,7 @@ ii) $B-A$
 
 Events can be represented by means of sets and sets can be either **countable** or **uncountable**. 
 
-In mathematics, a **Countable Set** is a set with the same _cardinality_ (number of elements) as some subset of the set of natural numbers $\mathbb{N}= \{0, 1, 2, 3, \dots \}$. 
+In mathematics, a **Countable Set** is a set with the same _cardinality_ (number of elements) as some subset of the set of natural numbers $\mathbb{N}= \{0, 1, 2, 3, \dots \}$.
 
 A countable set can be  **countably finite** or **countably infinite**. Whether finite or infinite, the elements of a countable set can always be counted one at a time and, although the counting may never finish, every element of the set is associated with a  natural number. Roughly speaking one can count the elements of the set using $1,2,3,..$ 
 
@@ -223,19 +219,20 @@ Let's come back to our example with the deck of cards and the event. The followi
 <!-- - G. Cantor introduced the term countable set, contrasting sets that are countable with those that are **uncountable** (i.e., nonenumerable or nondenumerable). -->
 
 
-<!-- %Events can be represented by means of sets. -->
+<!-- Events can be represented by means of sets. -->
 
 
-```{exercise, uncountableSet, name = "An illustration of an Uncountable Set"} 
+```{exercise, uncountableSet, name = "Illustrations within an Uncountable Set"} 
 
+Any segment of the Real line is an Uncountable set. Consider the segment ranging from (but excluding) 0 to 1 the Sample Space 
+$$S = \{x : 0 <x <1\}$$ 
+and the sets
+\begin{align*}
+A &= \{x \in S : 0.4<x<0.8\} \text{and}\\
+B &= \{x \in S : 0.6<x<1\}
+\end{align*}
 
-
-![](img/02_set_theory/Example3.png)
-
-
-and using the definition of $A$ and $B$ compute:
-
-
+Using these definitions, compute: 
 
 - $A^c$ 
 - $B^c$
@@ -255,17 +252,16 @@ and using the definition of $A$ and $B$ compute:
 
 
 ```{exercise, name = "flipping coins again"}
-
-Let us consider the  experiment where we flip two coins. For each coin we have $H$ for Head and $T$ for Tail. Remember that the sample space contains the following four points  <mark> add reference here </mark>
+Let us come back to the experiment where we flip two coins. For each coin we have $H$ for Head and $T$ for Tail. Remember that the sample space contains the following four points:
 
 $$ S = \{ (HH),(HT),(TH),(TT) \}.$$ 
 
 Then, let us consider the events:
 
 - $A= H$ is obtained at least once = $\Big\{ (HH),(HT),(TH) \Big\}$ 
--  $B=$ the second toss yields $T$ =  $\Big\{ (HT),(TT) \Big\}$ 
+- $B=$ the second toss yields $T$ =  $\Big\{ (HT),(TT) \Big\}$ 
 
-and using the definitions of $A$ and $B$ compute:
+Using these definitions of $A$ and $B$ compute:
 
 - $A^c$ 
 - $B^c$
@@ -315,7 +311,7 @@ and using the definitions of $A$ and $B$ compute:
 <!-- \item $B \cup A^c$ -->
 <!-- %\item $C^c$ -->
 
-```{proposition, propertiesUnionIntersection}
+```{proposition, propUnionInter}
 Let $A$ be a set in $S$ and let $\varnothing$ denote the empty set^[A set is called empty if it contains no elements.]. The following relations hold:
 
 
@@ -333,7 +329,7 @@ Let $A$ be a set in $S$ and let $\varnothing$ denote the empty set^[A set is cal
 Use Venn Diagrams to illustrate these relationships
 ```
 
-The identities in the proposition <mark>insert tag</mark> are helpful to define some other relations between sets/events. 
+The identities in proposition \@ref(prp:propUnionInter) are helpful to define some other relations between sets/events. 
 
 ```{example}
 Let $A$ and $B$ be two sets in $S$. Then we have:
@@ -353,7 +349,9 @@ That concludes the argument.
 
 ## De Morgan's Laws: 
 
-Operations of union and intersection of sets have interesting interactions with complementarity. These properties are formulated under the name of **De Morgan's laws**. We will formulate them for two sets $A$ and $B$ be two sets in $S$, but you should keep in mind that they can be generalized for an infinite amount of sets. 
+Operations of union and intersection of sets have interesting interactions with complementarity. These properties are formulated under the name of **De Morgan's laws**. 
+
+For simplicity, let us illustrate these laws in the case of two sets $A$ and $B$ both included in the Sample Space $S$. Just keep in mind that they can be generalized for an infinite amount of sets. 
 
 ### First Law
 
@@ -371,11 +369,9 @@ Put in words, the firs law says that
 
 > the complement of the intersection between two sets is the union of their complements. 
 
-It is easy to see this graphically using Venn Diagrams
-
-<mark>
-  insert graph
-</mark>
+```{exercise}
+It is easy to see this graphically using Venn Diagrams. Try it, as an exercise. 
+```
 
 ### Second Law 
 
@@ -388,31 +384,31 @@ Let $A$ and $B$ be two sets in $S$. Then:
 where: 
 
 - Left hand side: $(A\cup B)^{c}$ represents the **set of all elements that are neither $A$ nor $B$**; 
-- Right hand side: $\color{blue}{A^c \cap B^c}$  represents the intersection of all elements that are not $A$ (namely they are $A^c$) and not $B$ either (namely they are $B^c$) $\Rightarrow$ **set of all elements that are neither $A$ nor $B$**.
+- Right hand side: $\color{blue}{A^c \cap B^c}$  represents the intersection of all elements that are not in $A$ (namely they are $A^c$) and not $B$ either (namely they are $B^c$) $\Rightarrow$ **set of all elements that are neither $A$ nor $B$**.
 
 Put in words, this law says that 
 
 > the complement of the union between two sets is the intersection of their complements. 
 
-Once again, it is easy to see this graphically
 
-<mark>
-  insert chart.
-</mark>
+
+```{exercise}
+Once again, it is easy to see this graphically with Venn Diagrams. Try it, as an exercise.
+```
 
 ## De Morgan's Theorem
 
-We can extend these laws to three sets. Let us consider three sets $A_{1}$, $A_{2}$ and $A_{3}$ in $S$. 
+We can extend these laws to three sets. Let us consider three sets $A_{1}$, $A_{2}$ and $A_{3}$ in $S$, and use the overline notation to denote the complement of a set, (i.e. $A^{c}_{1} = \overline{A_{1}})$, 
 
-(i) **First law**:
+(i) The **First law** then becomes:
 $$\overline{\left(A_{1}\cup A_{2}\cup A_{3}\right)} = \overline{A_{1}} \cap \overline{A_{2}} \cap \overline{A_{3}}$$
 
 
-(ii) **Second Law**:
+(ii) While the **Second Law** becomes:
 $$\overline{\left(A_{1}\cap A_{2}\cap A_{3}\right)} = \overline{A_{1}} \cup \overline{A_{2}} \cup \overline{A_{3}}$$
 
 ```{exercise}
-Show this using diagrams. 
+Show this using Venn diagrams. 
 ```
 
 More generally, this can be extended to the union of an infinite amount of sets in a theorem that we present without demonstration. Consider the following notation for the union of an infinity of sets :
@@ -454,9 +450,9 @@ Let $\mathbb{N}$ be the set of natural number and $\{A_{i}\}$ a collection (inde
 <!-- % -->
 <!-- % -->
 
-## Back to the events
+## An Intuitive defintion of Probability, using Events as Sets 
 
-When assessing any experiment with an uncertain outcome the, **primary interest** is not necessarily in the events themselves, as they may or may not happen) but in the _probability that an event does or does not happen_.
+When assessing any experiment with an uncertain outcome the, **primary interest** is not necessarily in the events itself (as they may or may not happen) but in the _degree of likelihood that it can happen_. That is, we are interested in the **probability of the event happening** 
 
 Intuitively, the probability of an event is a **value** associated with the event:
 $$\text{event} \rightarrow \text{pr(event)}$$
@@ -464,18 +460,29 @@ and it is such that:
 
 1. the probability is positive or more generally non-negative (it can be zero);
 1. the $\text{pr}(S)=1$, where $S$ is the sample space and $\text{pr}(\varnothing)=0$;
-1. the probability of two (or more) mutually exclusive events is the sum of the probabilities of each event.
+1. the probability of two (or more) mutually exclusive events is the **sum of the probabilities of each event**.
+
+In **many experiments**, it is natural to assume that all outcomes in the
+sample space ($S$) are **equally likely to occur**. Think of when you throw a well balanced die, for example. If the die is well balanced, you would assume that all 6 numbers have an equal chance of happening. 
+
+Let us apply this logic in the abstract with an experiment whose sample 
+space is a finite set, say, $S = \{1, 2, 3, \dots N\}$. If you believe that all 
+outcomes are equally likely to occur, you are assuming that the probability of 
+every event, every subset with one element has the same probability: 
 
 $$P(\{1\})=P(\{2\})=...=P(\{N\})$$
 or equivalently $P(\{i\})= 1/N$, for $i=1,2,...,N$. 
 
-Now, if we define a composite event $A$, there exist $N_A$ realizations having the same likelihood (namely, the have the same probability) in the event $A$, so  
+Now, if we define a composite event $A$, a subset of $S$, composed of $N_A$ _realizations_ i.e. elements of $S$ having the same likelihood (namely, the same probability). Then, the probability of the event $A$ becomes the ratio of the outcomes in $A$ with respect to the total possible outcomes. 
 
-$$\boxed{P(A)=\frac{N_A}{N}=\frac{\mbox{# of favorable outcomes}}{\mbox{total # of outcomes}}=\frac{\mbox{# of outcomes in $A$}}{\mbox{# of outcomes in $S$}}}$$
+\begin{equation}
+\boxed{P(A)=\frac{N_A}{N}=\frac{\mbox{# of favorable outcomes}}{\mbox{total # of outcomes}}=\frac{\mbox{# of outcomes in $A$}}{\mbox{# of outcomes in $S$}}}
+(\#eq:ratioproba)
+\end{equation}
 
-where the '$\#$' stands for "number".
+where the "hash" '$\#$' stands for "number".
 
-```{example}
+```{example, name="An even number among 6 dice"}
 
 We roll a fair die and we define the event $$A=\text{the outcome is an even number}=\{2,4,6\}.$$ 
 What is the probability of $A$?
@@ -499,22 +506,32 @@ $$P(A)=\frac{N_A}{N} = \frac{\mbox{3 favorable outcomes}}{\mbox{6 total outcomes
 <!-- # %Thus, we conclude that -->
 
 
-Building on the intuition gained in the last example (see boxed formula), we state a first **informal** definition 
-of probability. Specifically, one way of defining the probability of an event is in terms of **relative frequency**.
+Building on the intuition gained in the last example and formula \@ref(eq:ratioproba), we state a first **informal** definition, which establishes the probability of an event in terms of **relative frequency**.
 
 ```{definition, informalProbability, name = "Informal definition of probability"}
-Suppose that an experiment, whose sample space is $S$, is repeatedly performed under exactly the same conditions. For each event, say $A$, of the sample space, we define $n(A)$ to be the number of times in the first $n$ repetitions of the experiment that the event $A$ occurs. Then, $P(A)$, namely the probability of the event $A$, is defined as:
-$$
-P(A)=\lim_{n \to \infty} \frac{n(A)}{n},
-$$
 
-that is $P(A)$ is defined as the limiting proportion/frequency of time that $A$ occurs: it is the limit of relative frequency of $A$.
+Suppose that an experiment, whose sample space is $S$, is repeatedly performed under exactly the same conditions. 
+
+For each event, say $A$, of the sample space, we define $n(A)$ to be the **number of times in the first $n$ repetitions of the experiment** that the **event $A$ occurs**. 
+
+Then, $P(A)$, namely the probability of the event $A$, is defined as:
+
+\begin{equation}
+P(A)=\lim_{n \to \infty} \frac{n(A)}{n},
+(\#eq:ratioprobaInf)
+\end{equation}
+
+put in words:
+  
+$P(A)$ is the limiting proportion/frequency of time that $A$ occurs. $P(A)$ is the limit of relative frequency of $A$.
 ```
 
 
-```{example}
-# [Tossing a well-balanced coin]
-In tossing a well-balanced coin, there are 2 mutually exclusive equiprobrable outcomes: "Heads" $H$ and "Tails" $T$. Let $A$ be the event of $H$. Since the coin is fair, we have $P(A)=1/2$. To confirm this intuition/conjecture we can toss the coin a large number of times (each under identical conditions) and count the times we spot $H$. 
+```{example, name ='Tossing a well-balanced coin'}
+
+In tossing a well-balanced coin, there are 2 mutually exclusive equiprobrable outcomes: "Heads" $H$ and "Tails" $T$. 
+
+Let $A$ be the event of $H$. Since the coin is fair, we have $P(A)=1/2$. To confirm this intuition/conjecture we can toss the coin a large number of times (each under identical conditions) and count the times we spot $H$. 
 
 Let $n$ be the **total number of repetitions** while $n(A)$ is the **number of times in which we observe $A$**. Then, the relative frequency:
 $$\lim_{n \to \infty} \frac{n(A)}{n},$$ 
@@ -522,14 +539,19 @@ _converges_ to $P(A)$. So,
 $$P(A) \sim \frac{n(A)}{n}, \quad \text{for large $n$}.$$
 ```
 
+Inspired from @ross2014first
 
 ```{r, echo = FALSE}
+
+toss100_100 <- rbinom(n = 100, size = 100, prob = 0.5)
+
+toss10_1000 <- rbinom(n = 10, size = 1000, prob = 0.5)
+
+
+
 knitr::include_graphics("img/02_set_theory/roz.png")
 ```
 
-<mark>
-  This could be transformed into a shiny app!
-</mark>
 
 Clearly, $$0 \leq n(A) \leq n, \quad \text{so} \quad  0 \leq P(A) \leq 1.$$ 
 Thus, we say that _the probability is a **set function** (it is defined on sets) and **it associates to each set/event a number between zero and one**_. 
@@ -563,7 +585,7 @@ $A_1$ and $A_2$ are two events (so we can say something about their probability 
 
 ## Some references
 
-The interested Student can find some additional info in the books by [@rozanov2013probability] and [@hogg2019introduction]. 
+The interested Student can find some additional info in @rozanov2013probability and @hogg2019introduction. 
 
 <!-- You can write citations, too. For example, we are using the **bookdown** package [@R-bookdown] in this sample book, which was built on top of R Markdown and **knitr** [@xie2015]. -->
 
