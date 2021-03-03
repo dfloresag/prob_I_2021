@@ -1,6 +1,8 @@
 # 📝 Bivariate Discrete Random Variables {#bivariatediscreterv}
 
-
+```{r ,echo = FALSE, fig.cap="'Correlation' by Enrico Chavez", fig.align='center'}
+  knitr::include_graphics("img/fun/EC_correlation.png")
+```
 <!--  -->
 <!--  -->
 <!-- %% -->

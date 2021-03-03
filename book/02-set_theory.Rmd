@@ -1,4 +1,4 @@
-# 🔧 Elements of Set Theory for Probability {#settheory}
+# Elements of Set Theory for Probability {#settheory}
 
 ```{r, echo = FALSE, fig.align='center', fig.cap="_The beaverduck_ from [Tenso Graphics](https://cargocollective.com/tensographics)", out.width=  "75%"}
 knitr::include_graphics("img/fun/R9mJR.jpeg")
@@ -8,7 +8,7 @@ In order to formalise the theory of probability, our first step consists in form
 
 In this chapter, we will overview some elements of Set Theory, and link them with uncertain outcomes. 
 
-## Definitions
+## Random Experiments, Events and Sample Spaces
 
 Let us start our journey with some definitions: 
 
@@ -347,7 +347,7 @@ That concludes the argument.
 ```
 
 
-## De Morgan's Laws: 
+## De Morgan's Laws
 
 Operations of union and intersection of sets have interesting interactions with complementarity. These properties are formulated under the name of **De Morgan's laws**. 
 
@@ -396,7 +396,7 @@ Put in words, this law says that
 Once again, it is easy to see this graphically with Venn Diagrams. Try it, as an exercise.
 ```
 
-## De Morgan's Theorem
+### De Morgan's Theorem
 
 We can extend these laws to three sets. Let us consider three sets $A_{1}$, $A_{2}$ and $A_{3}$ in $S$, and use the overline notation to denote the complement of a set, (i.e. $A^{c}_{1} = \overline{A_{1}})$, 
 
@@ -450,7 +450,7 @@ Let $\mathbb{N}$ be the set of natural number and $\{A_{i}\}$ a collection (inde
 <!-- % -->
 <!-- % -->
 
-## An Intuitive defintion of Probability, using Events as Sets 
+## Probability as Frequency
 
 When assessing any experiment with an uncertain outcome the, **primary interest** is not necessarily in the events itself (as they may or may not happen) but in the _degree of likelihood that it can happen_. That is, we are interested in the **probability of the event happening** 
 
@@ -535,21 +535,23 @@ Let $A$ be the event of $H$. Since the coin is fair, we have $P(A)=1/2$. To conf
 
 Let $n$ be the **total number of repetitions** while $n(A)$ is the **number of times in which we observe $A$**. Then, the relative frequency:
 $$\lim_{n \to \infty} \frac{n(A)}{n},$$ 
-_converges_ to $P(A)$. So,
+_converges_ to $P(A)$. 
+
+So,
 $$P(A) \sim \frac{n(A)}{n}, \quad \text{for large $n$}.$$
+  
+The taable shon in Figure \@ref(fig:roz) , taken from @ross2014first illustrates this point. 
 ```
 
-Inspired from @ross2014first
 
-```{r, echo = FALSE}
+```{r roz,echo = FALSE, fig.cap='Taken from @ross2014first', fig.align='center'}
+  knitr::include_graphics("img/02_set_theory/roz.png")
+```
 
+
+```{r, echo = FALSE, include = FALSE}
 toss100_100 <- rbinom(n = 100, size = 100, prob = 0.5)
-
 toss10_1000 <- rbinom(n = 10, size = 1000, prob = 0.5)
-
-
-
-knitr::include_graphics("img/02_set_theory/roz.png")
 ```
 
 
@@ -561,7 +563,9 @@ One can provide a more rigorous definition of probability, as a **real-valued fu
 
 $$P : A \subseteq \mathbb{R} \longrightarrow [0,1]$$
 
-However, to provide this formal definition we need to introduce the concept of **sigma-algebra** (which represents the **domain** of the probability), a concept that narrowly escapes the frame of our course. We will proceed without presenting it, with the very unfortunate cost of losing the mathematical rigour in the following sections. 
+However, to provide this formal definition we need to introduce the concept of **sigma-algebra** (which represents the **domain** of the probability), a concept that narrowly escapes the frame of our course. 
+
+We will proceed without presenting it, with the very unfortunate cost of losing the mathematical rigour in the following sections and chapters.
 ```
 
 <!-- %In this way, we define the domain of the probability. Then,  -->
@@ -578,14 +582,9 @@ suitable for us that $A^c$ is also an event, so that we can talk about the proba
 $A_1$ and $A_2$ are two events (so we can say something about their probability of happening), so we should be able to say something about the probability of the event $A_1 \cup A_2$.  
 
 
-
-
-
-
-
 ## Some references
 
-The interested Student can find some additional info in @rozanov2013probability and @hogg2019introduction. 
+The interested reader can find some additional info in @rozanov2013probability and @hogg2019introduction. 
 
 <!-- You can write citations, too. For example, we are using the **bookdown** package [@R-bookdown] in this sample book, which was built on top of R Markdown and **knitr** [@xie2015]. -->
 

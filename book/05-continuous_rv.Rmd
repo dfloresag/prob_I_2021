@@ -1,5 +1,8 @@
 # 📝 Continuous Random Variable {#continuousrv}
 
+```{r ,echo = FALSE, fig.cap="'Statistical Cow' by Enrico Chavez", fig.align='center'}
+  knitr::include_graphics("img/fun/EC_Stat_Cow.png")
+```
 
 ## Continuous Distributions
 

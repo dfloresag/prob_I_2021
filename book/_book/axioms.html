@@ -163,7 +163,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li class="chapter" data-level="2" data-path="settheory.html"><a href="settheory.html"><i class="fa fa-check"></i><b>2</b> 🔧 Elements of Set Theory for Probability</a>
 <ul>
-<li class="chapter" data-level="2.1" data-path="settheory.html"><a href="settheory.html#definitions"><i class="fa fa-check"></i><b>2.1</b> Definitions</a></li>
+<li class="chapter" data-level="2.1" data-path="settheory.html"><a href="settheory.html#random-experiments-events-and-sample-spaces"><i class="fa fa-check"></i><b>2.1</b> Random Experiments, Events and Sample Spaces</a></li>
 <li class="chapter" data-level="2.2" data-path="settheory.html"><a href="settheory.html#some-definitions-from-set-theory"><i class="fa fa-check"></i><b>2.2</b> Some definitions from set theory</a></li>
 <li class="chapter" data-level="2.3" data-path="settheory.html"><a href="settheory.html#the-venn-diagram"><i class="fa fa-check"></i><b>2.3</b> The Venn diagram</a>
 <ul>
@@ -174,14 +174,14 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="2.3.5" data-path="settheory.html"><a href="settheory.html#some-properties-of-union-and-intersection"><i class="fa fa-check"></i><b>2.3.5</b> Some Properties of union and intersection</a></li>
 </ul></li>
 <li class="chapter" data-level="2.4" data-path="settheory.html"><a href="settheory.html#countable-and-uncountable-sets"><i class="fa fa-check"></i><b>2.4</b> Countable and Uncountable sets</a></li>
-<li class="chapter" data-level="2.5" data-path="settheory.html"><a href="settheory.html#de-morgans-laws"><i class="fa fa-check"></i><b>2.5</b> De Morgan’s Laws:</a>
+<li class="chapter" data-level="2.5" data-path="settheory.html"><a href="settheory.html#de-morgans-laws"><i class="fa fa-check"></i><b>2.5</b> De Morgan’s Laws</a>
 <ul>
 <li class="chapter" data-level="2.5.1" data-path="settheory.html"><a href="settheory.html#first-law"><i class="fa fa-check"></i><b>2.5.1</b> First Law</a></li>
 <li class="chapter" data-level="2.5.2" data-path="settheory.html"><a href="settheory.html#second-law"><i class="fa fa-check"></i><b>2.5.2</b> Second Law</a></li>
+<li class="chapter" data-level="2.5.3" data-path="settheory.html"><a href="settheory.html#de-morgans-theorem"><i class="fa fa-check"></i><b>2.5.3</b> De Morgan’s Theorem</a></li>
 </ul></li>
-<li class="chapter" data-level="2.6" data-path="settheory.html"><a href="settheory.html#de-morgans-theorem"><i class="fa fa-check"></i><b>2.6</b> De Morgan’s Theorem</a></li>
-<li class="chapter" data-level="2.7" data-path="settheory.html"><a href="settheory.html#an-intuitive-defintion-of-probability-using-events-as-sets"><i class="fa fa-check"></i><b>2.7</b> An Intuitive defintion of Probability, using Events as Sets</a></li>
-<li class="chapter" data-level="2.8" data-path="settheory.html"><a href="settheory.html#some-references"><i class="fa fa-check"></i><b>2.8</b> Some references</a></li>
+<li class="chapter" data-level="2.6" data-path="settheory.html"><a href="settheory.html#probability-as-frequency"><i class="fa fa-check"></i><b>2.6</b> Probability as Frequency</a></li>
+<li class="chapter" data-level="2.7" data-path="settheory.html"><a href="settheory.html#some-references"><i class="fa fa-check"></i><b>2.7</b> Some references</a></li>
 </ul></li>
 <li class="chapter" data-level="3" data-path="axioms.html"><a href="axioms.html"><i class="fa fa-check"></i><b>3</b> 🔧 Probability Axioms</a>
 <ul>
@@ -202,8 +202,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <ul>
 <li class="chapter" data-level="3.5.1" data-path="axioms.html"><a href="axioms.html#independence-another-characterization"><i class="fa fa-check"></i><b>3.5.1</b> Independence – another characterization</a></li>
 </ul></li>
-<li class="chapter" data-level="3.6" data-path="axioms.html"><a href="axioms.html#theorem-i"><i class="fa fa-check"></i><b>3.6</b> Theorem I</a></li>
-<li class="chapter" data-level="3.7" data-path="axioms.html"><a href="axioms.html#theorem-ii"><i class="fa fa-check"></i><b>3.7</b> Theorem II</a>
+<li class="chapter" data-level="3.6" data-path="axioms.html"><a href="axioms.html#the-theorem-of-total-probabilities"><i class="fa fa-check"></i><b>3.6</b> The Theorem of Total Probabilities</a></li>
+<li class="chapter" data-level="3.7" data-path="axioms.html"><a href="axioms.html#bayes-theorem"><i class="fa fa-check"></i><b>3.7</b> Bayes’ Theorem</a>
 <ul>
 <li class="chapter" data-level="3.7.1" data-path="axioms.html"><a href="axioms.html#guessing-in-a-multiple-choice-exam"><i class="fa fa-check"></i><b>3.7.1</b> Guessing in a multiple choice exam</a></li>
 <li class="chapter" data-level="3.7.2" data-path="axioms.html"><a href="axioms.html#rent-car-maintenance"><i class="fa fa-check"></i><b>3.7.2</b> Rent car maintenance</a></li>
@@ -512,7 +512,7 @@ P(A\cup B) &amp;=&amp; P(A) + P(A^c \cap B)  \\
 <h2><span class="header-section-number">3.3</span> Illustrations of use</h2>
 <div id="flipping-coins" class="section level3" number="3.3.1">
 <h3><span class="header-section-number">3.3.1</span> Flipping coins</h3>
-<p><img src="img/02_set_theory/Example1_GE.png" /></p>
+<p><img src="img/03_axioms/Example1.png" width="960" style="display: block; margin: auto;" /></p>
 
 <div class="example">
 <p><span id="exm:rleI" class="example"><strong>Example 3.1  </strong></span></p>
@@ -525,7 +525,7 @@ adapt example here
 <h3><span class="header-section-number">3.3.2</span> Detecting shoppers</h3>
 
 <div class="example">
-<span id="exm:unnamed-chunk-9" class="example"><strong>Example 3.2  (Real-life example II)  </strong></span>
+<span id="exm:unnamed-chunk-10" class="example"><strong>Example 3.2  (Real-life example II)  </strong></span>
 </div>
 <p><img src="img/03_axioms/Example2_1.png" width="964" style="display: block; margin: auto;" /></p>
 <p><img src="img/03_axioms/Example2_2.png" width="529" style="display: block; margin: auto;" /></p>
@@ -558,7 +558,7 @@ so
 <h3><span class="header-section-number">3.3.4</span> Probability, union, and complement</h3>
 
 <div class="example">
-<p><span id="exm:unnamed-chunk-14" class="example"><strong>Example 3.4  </strong></span>John is taking two books along on his holiday vacation. With probability 0.5, he will like the first book; with probability 0.4, he will like the
+<p><span id="exm:unnamed-chunk-15" class="example"><strong>Example 3.4  </strong></span>John is taking two books along on his holiday vacation. With probability 0.5, he will like the first book; with probability 0.4, he will like the
 second book; and with probability 0.3, he will like both books. What is the probability that he likes neither book? \</p>
 Let <span class="math inline">\(A_i\)</span> be the event that John likes book <span class="math inline">\(i\)</span>, for <span class="math inline">\(i=1,2\)</span>. Then the probability that he likes at least one book is (remember the short hand notation <span class="math inline">\(A_1 \cap A_2 = A_1 A_2\)</span>)
 <span class="math display">\[\begin{eqnarray}
@@ -570,7 +570,7 @@ Because the event the John likes neither books is the complement of the event th
 </div>
 
 <div class="example">
-<p><span id="exm:unnamed-chunk-15" class="example"><strong>Example 3.5  </strong></span>
+<p><span id="exm:unnamed-chunk-16" class="example"><strong>Example 3.5  </strong></span>
 # [Real-life example III]
 Let <span class="math inline">\(A\)</span> denote the event that the midtown temperature in Los Angeles (LA) is 70 F, and let <span class="math inline">\(B\)</span> denote the event that the midtown temperature in
 New York (NY) is 70 F. Also, let <span class="math inline">\(C\)</span> denote the event that the maximum of midtown temperatures in NY and LA is 70 F. If</p>
@@ -596,7 +596,7 @@ thus $ P(D) =0.5.$
 <p>As a measure of uncertainty, the probability depends on the information available.</p>
 
 <div class="example">
-<span id="exm:unnamed-chunk-16" class="example"><strong>Example 3.6  </strong></span>Suppose you have two dice and throw them; the possible outcomes are:
+<span id="exm:unnamed-chunk-17" class="example"><strong>Example 3.6  </strong></span>Suppose you have two dice and throw them; the possible outcomes are:
 </div>
 <div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="axioms.html#cb1-1" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">include_graphics</span>(<span class="st">&quot;img/03_axioms/c1.png&quot;</span>)</span></code></pre></div>
 <p><img src="img/03_axioms/c1.png" width="643" /></p>
@@ -634,7 +634,7 @@ P(5) &amp;=&amp; Pr\left\{ (1,4) \cup (2,3) \cup (3,2) \cup  (4,1) \right\}  \\
 </ul>
 
 <div class="definition">
-<span id="def:unnamed-chunk-22" class="definition"><strong>Definition 3.2  </strong></span>Let <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span> be two events. The conditional probability of event <span class="math inline">\(A\)</span>
+<span id="def:unnamed-chunk-23" class="definition"><strong>Definition 3.2  </strong></span>Let <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span> be two events. The conditional probability of event <span class="math inline">\(A\)</span>
 given event <span class="math inline">\(B\)</span>, denoted by <span class="math inline">\(P\left(A\vert B\right)\)</span>, is defined by:
 <span class="math display">\[
 P\left(A\vert B\right) = \frac{P(A \cap B)}{P(B)}, \quad \text{if} \quad P(B) &gt;0,
@@ -646,7 +646,7 @@ and it is left undefined if <span class="math inline">\(P(B)=0\)</span>.
 <p><img src="img/03_axioms/c3.png" width="646" /></p>
 
 <div class="example">
-<p><span id="exm:unnamed-chunk-24" class="example"><strong>Example 3.7  </strong></span>Let us define the set <span class="math inline">\(B\)</span> as:</p>
+<p><span id="exm:unnamed-chunk-25" class="example"><strong>Example 3.7  </strong></span>Let us define the set <span class="math inline">\(B\)</span> as:</p>
 <p>So we have</p>
 <p><span class="math display">\[\begin{eqnarray}
 P(B) &amp;=&amp; Pr\left\{ (2,1) \cup (2,2) \cup (2,3) \cup (2,4) \cup (2,5) \cup (2,6)     \right\}  \\
@@ -666,7 +666,7 @@ P(A\vert B) = \frac{P(A \cap B)}{P(B)}  =  \frac{1/36}{1/6} = \frac{1}{6}.
 <h2><span class="header-section-number">3.5</span> Independence</h2>
 
 <div class="definition">
-<span id="def:unnamed-chunk-26" class="definition"><strong>Definition 3.3  </strong></span>Two events <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span> are independent if the occurrence of one event has no effect on the probability of occurrence of the other event. Thus,
+<span id="def:unnamed-chunk-27" class="definition"><strong>Definition 3.3  </strong></span>Two events <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span> are independent if the occurrence of one event has no effect on the probability of occurrence of the other event. Thus,
 <span class="math display">\[P(A\vert B) = P(A)\]</span>
 or equivalently
 <span class="math display">\[P(B\vert A) = P(B)\]</span>
@@ -684,9 +684,9 @@ and rearranging the terms, we find that two events are independent iif
 <span class="math display">\[P(A\cap B) = P(A) P(B).\]</span></p>
 
 <div class="example">
-<span id="exm:unnamed-chunk-27" class="example"><strong>Example 3.8  </strong></span>
+<span id="exm:unnamed-chunk-28" class="example"><strong>Example 3.8  </strong></span>
 </div>
-<div class="figure"><span id="fig:unnamed-chunk-28"></span>
+<div class="figure"><span id="fig:unnamed-chunk-29"></span>
 <img src="img/03_axioms/example7.png" alt="things" width="951" />
 <p class="caption">
 Figure 3.2: things
@@ -695,8 +695,8 @@ Figure 3.2: things
 <p><img src="img/03_axioms/example8.png" width="936" /></p>
 </div>
 </div>
-<div id="theorem-i" class="section level2" number="3.6">
-<h2><span class="header-section-number">3.6</span> Theorem I</h2>
+<div id="the-theorem-of-total-probabilities" class="section level2" number="3.6">
+<h2><span class="header-section-number">3.6</span> The Theorem of Total Probabilities</h2>
 
 <div class="theorem">
 <span id="thm:totalprob" class="theorem"><strong>Theorem 3.7  (Theorem of total probabilities)  </strong></span>Let <span class="math inline">\(B_1,B_2,...,B_k,...,B_n\)</span> be mutually disjoint events, satisfying
@@ -719,7 +719,7 @@ P(A)=P\left(  \cup_{i=1}^{n} (A\cap B_i)  \right)=\sum_{i=1}^n P\left( A\cap B_i
 </div>
 
 <div class="corollary">
-<p><span id="cor:unnamed-chunk-32" class="corollary"><strong>Corollary 3.1  </strong></span>Let <span class="math inline">\(B\)</span> satisfy <span class="math inline">\(0&lt;P(B)&lt;1\)</span>; then for every event <span class="math inline">\(A\)</span>:</p>
+<p><span id="cor:unnamed-chunk-33" class="corollary"><strong>Corollary 3.1  </strong></span>Let <span class="math inline">\(B\)</span> satisfy <span class="math inline">\(0&lt;P(B)&lt;1\)</span>; then for every event <span class="math inline">\(A\)</span>:</p>
 <span class="math display">\[\begin{equation*}
 P(A)=P(A\vert B)P(B)+P(A\vert B^c) P(B^c)
 \end{equation*}\]</span>
@@ -729,8 +729,8 @@ P(A)=P(A\vert B)P(B)+P(A\vert B^c) P(B^c)
  <span class="proof"><em>Proof. </em></span> Exercise [Hint: <span class="math inline">\(S=B \cup B^c\)</span>].
 </div>
 </div>
-<div id="theorem-ii" class="section level2" number="3.7">
-<h2><span class="header-section-number">3.7</span> Theorem II</h2>
+<div id="bayes-theorem" class="section level2" number="3.7">
+<h2><span class="header-section-number">3.7</span> Bayes’ Theorem</h2>
 <p>Theorem I can be applied to derive the well-celebrated Bayes’ Theorem.</p>
 
 <div class="theorem">
@@ -754,7 +754,7 @@ That concludes the proof.
 </div>
 
 <div class="example">
-<span id="exm:unnamed-chunk-35" class="example"><strong>Example 3.9  </strong></span>Let us consider a special case, where we have only two events <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span>.
+<span id="exm:unnamed-chunk-36" class="example"><strong>Example 3.9  </strong></span>Let us consider a special case, where we have only two events <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span>.
 </div>
 <p><img src="img/03_axioms/example10.png" width="947" /></p>
 <p>… so thanks to Bayes’ Theorem we can reverse the role of <span class="math inline">\(A\vert B\)</span> and <span class="math inline">\(B \vert A\)</span>.</p>
@@ -762,7 +762,7 @@ That concludes the proof.
 <h3><span class="header-section-number">3.7.1</span> Guessing in a multiple choice exam</h3>
 
 <div class="example">
-<p><span id="exm:unnamed-chunk-37" class="example"><strong>Example 3.10  (Example 3c in <span class="citation"><a href="references.html#ref-ross2014first" role="doc-biblioref">Ross</a> (<a href="references.html#ref-ross2014first" role="doc-biblioref">2014</a>)</span>)  </strong></span>
+<p><span id="exm:unnamed-chunk-38" class="example"><strong>Example 3.10  (Example 3c in <span class="citation"><a href="references.html#ref-ross2014first" role="doc-biblioref">Ross</a> (<a href="references.html#ref-ross2014first" role="doc-biblioref">2014</a>)</span>)  </strong></span>
 <em>In answering a question on a multiple-choice test, a student either knows the answer
 or guesses. Let p be the probability that the student knows the answer and 1 − p
 be the probability that the student guesses. Assume that a student who guesses at
@@ -785,7 +785,7 @@ For example, if <span class="math inline">\(m = 5\)</span>, <span class="math in
 <h3><span class="header-section-number">3.7.2</span> Rent car maintenance</h3>
 
 <div class="example">
-<p><span id="exm:unnamed-chunk-38" class="example"><strong>Example 3.11  </strong></span>
+<p><span id="exm:unnamed-chunk-39" class="example"><strong>Example 3.11  </strong></span>
 - 60% from AVIS
 - 40% from Mobility</p>
 <p>Now consider that</p>

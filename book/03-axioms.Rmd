@@ -201,9 +201,9 @@ P(A\cup B) &=& P(A) + P(A^c \cap B)  \\
 ## Illustrations of use
 
 ### Flipping coins
-
-
-![](img/02_set_theory/Example1_GE.png)
+```{r ,echo = FALSE, fig.cap='', fig.align='center'}
+  knitr::include_graphics("img/03_axioms/Example1.png")
+```
 
 ```{example, rleI}
 
@@ -445,9 +445,9 @@ $$P(A\cap B) = P(A) P(B).$$
 ```
 
 
-## Theorem I
+## The Theorem of Total Probabilities
 
-```{theorem, totalprob, name="Theorem of  total probabilities"}
+```{theorem, totalprob, name="Theorem of total probabilities"}
 Let  $B_1,B_2,...,B_k,...,B_n$ be mutually disjoint events, satisfying
 $S=\cup_{i=1}^{n} B_i,$ and $P(B_i)>0$, for every $i=1,2,...,n$ then for every $A$ we have that:
 \begin{equation}
@@ -481,7 +481,7 @@ P(A)=P(A\vert B)P(B)+P(A\vert B^c) P(B^c)
 Exercise [Hint: $S=B \cup B^c$].
 ```
 
-## Theorem II
+## Bayes' Theorem
 
 Theorem I can be applied to derive the well-celebrated Bayes' Theorem.
 

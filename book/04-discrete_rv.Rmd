@@ -1,6 +1,10 @@
 # 📝 Discrete Random Variables {#discreterv}
 
-## Random variables - what are they?
+```{r ,echo = FALSE, fig.cap="'Alea Acta Est' by Enrico Chavez", fig.align='center'}
+  knitr::include_graphics("img/fun/EC_Latin.png")
+```
+
+## What is a Random Variable?
 
 Up to now we have considered probabilities associated with random experiments characterized by different types of events, e.g.
 
