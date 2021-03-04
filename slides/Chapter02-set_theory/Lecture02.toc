@@ -1,6 +1,6 @@
 \beamer@sectionintoc {1}{Random Experiments, Events and Sample Spaces}{4}{0}{1}
 \beamer@sectionintoc {2}{Some Definitions from Set Theory}{16}{0}{2}
 \beamer@sectionintoc {3}{The Venn Diagram}{19}{0}{3}
-\beamer@sectionintoc {4}{Countable and Uncountable Sets}{32}{0}{4}
-\beamer@sectionintoc {5}{De Morgan’s Laws}{45}{0}{5}
-\beamer@sectionintoc {6}{Probability as Frequency}{49}{0}{6}
+\beamer@sectionintoc {4}{Countable and Uncountable Sets}{33}{0}{4}
+\beamer@sectionintoc {5}{De Morgan’s Laws}{46}{0}{5}
+\beamer@sectionintoc {6}{Probability as Frequency}{50}{0}{6}
