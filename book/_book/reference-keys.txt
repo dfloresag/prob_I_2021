@@ -275,3 +275,9 @@ exm:unnamed-chunk-12
 def:unnamed-chunk-13
 def:unnamed-chunk-17
 fig:roz
+def:unnamed-chunk-10
+exm:unnamed-chunk-13
+def:unnamed-chunk-14
+def:unnamed-chunk-3
+prp:unnamed-chunk-4
+thm:unnamed-chunk-12
