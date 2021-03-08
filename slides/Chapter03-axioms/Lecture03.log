@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020) (preloaded format=pdflatex 2020.8.26)  26 FEB 2021 21:06
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020) (preloaded format=pdflatex 2020.8.26)  8 MAR 2021 21:21
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1212,7 +1212,7 @@ Package pdftex.def Info: img/Example1.pdf  used on input line 370.
 <img/Example2_1.pdf, id=148, 696.05038pt x 366.61537pt>
 File: img/Example2_1.pdf Graphic file (type pdf)
 <use img/Example2_1.pdf>
-Package pdftex.def Info: img/Example2_1.pdf  used on input line 384.
+Package pdftex.def Info: img/Example2_1.pdf  used on input line 383.
 (pdftex.def)             Requested size: 308.06865pt x 169.3108pt.
  [12
 
@@ -1220,7 +1220,7 @@ Package pdftex.def Info: img/Example2_1.pdf  used on input line 384.
 <img/Example2_2.pdf, id=181, 382.17921pt x 335.48769pt>
 File: img/Example2_2.pdf Graphic file (type pdf)
 <use img/Example2_2.pdf>
-Package pdftex.def Info: img/Example2_2.pdf  used on input line 396.
+Package pdftex.def Info: img/Example2_2.pdf  used on input line 395.
 (pdftex.def)             Requested size: 205.38232pt x 156.28682pt.
  [13
 
@@ -1228,7 +1228,7 @@ Package pdftex.def Info: img/Example2_2.pdf  used on input line 396.
 <img/Example2_3.pdf, id=214, 758.30586pt x 436.65273pt>
 File: img/Example2_3.pdf Graphic file (type pdf)
 <use img/Example2_3.pdf>
-Package pdftex.def Info: img/Example2_3.pdf  used on input line 409.
+Package pdftex.def Info: img/Example2_3.pdf  used on input line 408.
 (pdftex.def)             Requested size: 325.18579pt x 182.33351pt.
  [14
 
@@ -1236,19 +1236,19 @@ Package pdftex.def Info: img/Example2_3.pdf  used on input line 409.
 <img/Example2_4.pdf, id=257, 715.07294pt x 312.14186pt>
 File: img/Example2_4.pdf Graphic file (type pdf)
 <use img/Example2_4.pdf>
-Package pdftex.def Info: img/Example2_4.pdf  used on input line 421.
+Package pdftex.def Info: img/Example2_4.pdf  used on input line 420.
 (pdftex.def)             Requested size: 308.06458pt x 130.2366pt.
  [15
 
  <./img/Example2_4.pdf>]
 LaTeX Font Info:    Font shape `U/msa/m/n' will be
-(Font)              scaled to size 7.91925pt on input line 447.
+(Font)              scaled to size 7.91925pt on input line 446.
 LaTeX Font Info:    Font shape `U/msb/m/n' will be
-(Font)              scaled to size 7.91925pt on input line 447.
+(Font)              scaled to size 7.91925pt on input line 446.
  [16
 
 ]
-Overfull \vbox (10.81985pt too high) detected at line 471
+Overfull \vbox (10.81985pt too high) detected at line 470
  []
 
 [17
@@ -1261,7 +1261,7 @@ Overfull \vbox (10.81985pt too high) detected at line 471
 <img/c1.pdf, id=308, 464.48962pt x 101.0747pt>
 File: img/c1.pdf Graphic file (type pdf)
 <use img/c1.pdf>
-Package pdftex.def Info: img/c1.pdf  used on input line 531.
+Package pdftex.def Info: img/c1.pdf  used on input line 530.
 (pdftex.def)             Requested size: 308.07375pt x 91.17305pt.
  [20
 
@@ -1269,7 +1269,7 @@ Package pdftex.def Info: img/c1.pdf  used on input line 531.
 <img/c2.pdf, id=326, 465.62529pt x 101.07481pt>
 File: img/c2.pdf Graphic file (type pdf)
 <use img/c2.pdf>
-Package pdftex.def Info: img/c2.pdf  used on input line 548.
+Package pdftex.def Info: img/c2.pdf  used on input line 547.
 (pdftex.def)             Requested size: 308.08096pt x 91.17314pt.
  [21
 
@@ -1279,7 +1279,7 @@ Package pdftex.def Info: img/c2.pdf  used on input line 548.
 <img/c4.pdf, id=350, 465.62532pt x 89.71808pt>
 File: img/c4.pdf Graphic file (type pdf)
 <use img/c4.pdf>
-Package pdftex.def Info: img/c4.pdf  used on input line 595.
+Package pdftex.def Info: img/c4.pdf  used on input line 594.
 (pdftex.def)             Requested size: 342.3122pt x 78.14992pt.
  [23
 
@@ -1287,7 +1287,7 @@ Package pdftex.def Info: img/c4.pdf  used on input line 595.
 <img/c3.pdf, id=370, 466.76097pt x 91.98936pt>
 File: img/c3.pdf Graphic file (type pdf)
 <use img/c3.pdf>
-Package pdftex.def Info: img/c3.pdf  used on input line 616.
+Package pdftex.def Info: img/c3.pdf  used on input line 615.
 (pdftex.def)             Requested size: 290.95569pt x 91.1736pt.
 [24
 
@@ -1296,10 +1296,10 @@ Package pdftex.def Info: img/c3.pdf  used on input line 616.
 ]
 File: img/c3.pdf Graphic file (type pdf)
 <use img/c3.pdf>
-Package pdftex.def Info: img/c3.pdf  used on input line 660.
+Package pdftex.def Info: img/c3.pdf  used on input line 659.
 (pdftex.def)             Requested size: 308.06319pt x 104.19519pt.
 
-Overfull \vbox (11.75876pt too high) detected at line 660
+Overfull \vbox (11.75876pt too high) detected at line 659
  []
 
 [26
@@ -1307,7 +1307,7 @@ Overfull \vbox (11.75876pt too high) detected at line 660
 ]
 File: img/c4.pdf Graphic file (type pdf)
 <use img/c4.pdf>
-Package pdftex.def Info: img/c4.pdf  used on input line 680.
+Package pdftex.def Info: img/c4.pdf  used on input line 679.
 (pdftex.def)             Requested size: 308.08098pt x 104.1976pt.
  [27
 
@@ -1319,7 +1319,7 @@ Package pdftex.def Info: img/c4.pdf  used on input line 680.
 <img/example7.pdf, id=420, 686.93791pt x 414.41225pt>
 File: img/example7.pdf Graphic file (type pdf)
 <use img/example7.pdf>
-Package pdftex.def Info: img/example7.pdf  used on input line 741.
+Package pdftex.def Info: img/example7.pdf  used on input line 740.
 (pdftex.def)             Requested size: 308.07101pt x 182.33562pt.
  [30
 
@@ -1327,7 +1327,7 @@ Package pdftex.def Info: img/example7.pdf  used on input line 741.
 <img/example8.pdf, id=457, 676.55598pt x 384.99672pt>
 File: img/example8.pdf Graphic file (type pdf)
 <use img/example8.pdf>
-Package pdftex.def Info: img/example8.pdf  used on input line 758.
+Package pdftex.def Info: img/example8.pdf  used on input line 757.
 (pdftex.def)             Requested size: 308.07089pt x 156.29291pt.
  [31
 
@@ -1344,7 +1344,7 @@ Package pdftex.def Info: img/example8.pdf  used on input line 758.
 <img/example10.pdf, id=539, 684.34253pt x 377.21025pt>
 File: img/example10.pdf Graphic file (type pdf)
 <use img/example10.pdf>
-Package pdftex.def Info: img/example10.pdf  used on input line 867.
+Package pdftex.def Info: img/example10.pdf  used on input line 866.
 (pdftex.def)             Requested size: 308.06616pt x 143.26656pt.
  [36
 
@@ -1352,7 +1352,7 @@ Package pdftex.def Info: img/example10.pdf  used on input line 867.
 <img/Ross_Ex.pdf, id=601, 337.51164pt x 258.77419pt>
 File: img/Ross_Ex.pdf Graphic file (type pdf)
 <use img/Ross_Ex.pdf>
-Package pdftex.def Info: img/Ross_Ex.pdf  used on input line 898.
+Package pdftex.def Info: img/Ross_Ex.pdf  used on input line 897.
 (pdftex.def)             Requested size: 239.60918pt x 169.31471pt.
  [37
 
@@ -1363,7 +1363,7 @@ Package pdftex.def Info: img/Ross_Ex.pdf  used on input line 898.
 <img/example9b.pdf, id=623, 682.75076pt x 453.48303pt>
 File: img/example9b.pdf Graphic file (type pdf)
 <use img/example9b.pdf>
-Package pdftex.def Info: img/example9b.pdf  used on input line 934.
+Package pdftex.def Info: img/example9b.pdf  used on input line 933.
 (pdftex.def)             Requested size: 308.06844pt x 169.3084pt.
  [39
 
@@ -1377,17 +1377,17 @@ Package pdftex.def Info: img/example9b.pdf  used on input line 934.
 \tf@snm=\write8
 \openout8 = `Lecture03.snm'.
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 943.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 943.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 942.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 942.
  (./Lecture03.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 943.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 943.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 942.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 942.
 Package rerunfilecheck Info: File `Lecture03.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
  ) 
 Here is how much of TeX's memory you used:
  23858 strings out of 480608
- 489976 string characters out of 5903630
+ 489970 string characters out of 5903630
  764544 words of memory out of 5000000
  39031 multiletter control sequences out of 15000+600000
  572928 words of font info for 147 fonts, out of 8000000 for 9000

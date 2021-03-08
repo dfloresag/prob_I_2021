@@ -4,12 +4,12 @@
   knitr::include_graphics("img/fun/EC_clear2everyone.png")
 ```
 
+In order to formalise probability as a branch of mathematics, Andrey Kolmogorov formulated a series of postulates. These _axioms_ are crucial elements of the foundations on which all the mathematical theory of probability is built.
+
 ## An Axiomatic Definition of Probability
 
 <!-- %Let $\mathcal{B}$ be the $\sigma$-algebra of subsets of a set $S$ representing the sample space. \\ -->
 <!-- %\vspace{0.1cm} -->
-
-In order to formalise probability as a branch of mathematics, Andrey Kolmogorov formulated a series of postulates. These _axioms_ are crucial elements of the foundations on which all the mathematical theory of probability is built.
 
 ```{definition, probability, name="Probability Axioms"}
 We define _probability_ as a **set function** with values in $[0,1]$, which satisfies the following axioms:
@@ -25,9 +25,10 @@ P(S)=1
 (\#eq:probss)
 \end{equation}
 (iii) If  $A_1,A_2,...$ is 
-    - a sequence of **mutually exclusive events**, i.e.  
+    
+  - a sequence of **mutually exclusive events**, i.e.  
   $$A_{i}\cap A_{j}=\varnothing, \ \text{for} \ i\neq j,\ \text{and} \ i,j=1,2,...,$$ 
-    - such that $A = \bigcup_{i=1}^{\infty} A_i$, then:
+  - such that $A = \bigcup_{i=1}^{\infty} A_i$, then:
 
 \begin{equation} 
 P(A)=P\left(\bigcup_{i=1}^{\infty}A_{i}\right)=\sum_{i=1}^{\infty}P(A_i).
@@ -48,7 +49,7 @@ $$P(\varnothing)=0.$$
 Consider the sequence of mutually exclusive empty sets. $A_1=A_2=A_3=....=\varnothing$. Then, by \@ref(eq:additivity) in Axiom (ii) we have
 
 $$P(\varnothing)= P\left(  \bigcup_{i=1}^{\infty} A_i \right) = \sum_{i=1}^{\infty} P(A_i) =\sum_{i=1}^{\infty} P(\varnothing)$$
-which is true **only if** the left hand side is an infinite sum of zeros. Thus:
+which is true **only if** the right hand side is an infinite sum of zeros. Thus:
 $$P(\varnothing) =  0.$$
 ```
 
@@ -71,7 +72,6 @@ P\left(  \bigcup_{i=1}^{n} A_i \right) &=& P\left(  \bigcup_{i=1}^{\infty} A_i \
 \end{eqnarray}
 ```
 
-
 ```{theorem, complementRule, name = "The Complement Rule"}
 If $A$ is an event, then $P(A^c) = 1- P(A).$
 ```
@@ -89,21 +89,9 @@ $$1 = P(A) + P\left(A^c \right).$$
 The result follows. 
 ```
 
-<!-- %that $B \subset A$. -->
+<!-- <!-- %that $B \subset A$. --> 
 
-\def\firstcircle{(3,1) circle (2.95cm)}
-\def\secondcircle{(1:3cm) circle (1.65cm)}
 
-\colorlet{circle edge}{blue!50}
-\colorlet{circle area}{blue!20}
-\tikzset{filled/.style={fill=circle area, draw=circle edge, thick},
-    outline/.style={draw=circle edge, thick}}
-\hspace{3cm} \vspace{2cm}
-\begin{tikzpicture}
-    \draw[even odd rule] \firstcircle node at (1.95,1.9) {$A$}
-                                 \secondcircle node at (2.5,0.5) {$B$};
-    \node[anchor=south] at (current bounding box.north) at (6.5,2.2) {$B \subset A$};
-\end{tikzpicture}
 
 
 ```{theorem, monotonicityRule, name = "The Monotonicity Rule"}
@@ -112,14 +100,15 @@ For any two events $A$ and $B$, such that $B \subset A$, we have:
 $$P(A) \geq P(B).$$
 ```
 
-<mark>
-  Illustrate with an example. 
-</mark>
+<!-- <mark> -->
+<!--   Illustrate with an example.  -->
+<!-- </mark> -->
 
 
-<mark>
-  Insert diagram here
-</mark>
+<!-- <mark> -->
+<!--   Insert diagram here -->
+<!-- </mark> -->
+
 
 <!-- %where $A \in \mathcal{B}$ and $B \in \mathcal{B}$ -->
 
@@ -151,12 +140,32 @@ and notice that $B \cap (B^c \cap A) = \phi$, so that
 P(A) &=& P\left\{ B \cup (B^c \cap A)   \right\}  \\
 &=& P(B) + P(B^c \cap A) 
 \end{eqnarray}
-which implies (since $P(B^c \cap A) \geq 0$) that
+which implies, since $P(B^c \cap A) \geq 0$, that
 $$
 P(A) \geq   P(B).
 $$
 ```
 
+
+```{remark}
+If we draw a Venn diagram, we can notice that this rule also implies that you can view probability behaving in a similar way as the area. For illustration, take a look at figure \@ref(fig:inclusion), where the area of set $B$ is smaller than that of $A$, a fact that also extends to their probability measure.
+```
+
+```{r inclusion, echo = FALSE, fig.cap='The areas of $B\\subset A$', fig.align='center', engine = 'tikz'}
+\def\firstcircle{(3,1) circle (2.95cm)}
+\def\secondcircle{(1:3cm) circle (1.65cm)}
+
+\colorlet{circle edge}{blue!50}
+\colorlet{circle area}{blue!20}
+\tikzset{filled/.style={fill=circle area, draw=circle edge, thick},
+    outline/.style={draw=circle edge, thick}}
+\hspace{3cm} \vspace{2cm}
+\begin{tikzpicture}
+    \draw[even odd rule] \firstcircle node at (1.95,1.9) {$A$}
+                                 \secondcircle node at (2.5,0.5) {$B$};
+    \node[anchor=south] at (current bounding box.north) at (6.5,2.2) {$B \subset A$};
+\end{tikzpicture}
+```
 
 ```{theorem, boolsinequality, name = "Boole's inequality"} 
 For the events $A_1,A_2,... A_n$,
@@ -198,46 +207,68 @@ P(A\cup B) &=& P(A) + P(A^c \cap B)  \\
 
 ```
 
-## Illustrations of use
+## Examples and Illustrations
 
 ### Flipping coins
-```{r ,echo = FALSE, fig.cap='', fig.align='center'}
-  knitr::include_graphics("img/03_axioms/Example1.png")
+
+```{example, name = "Flipping Coins"}
+_If we flip a balanced coin twice, **what is the probability of getting at least one head?**_
+
+The sample space is: $S = \{HH, HT, TH, TT\}$ 
+  
+Since the coin is balanced, these outcomes are equally likely and we assign to each sample point probability  $= 1/4$
+  
+Let $A$ denote the event **obtaining at least one Head**, i.e. $H = \{HH, HT, TH\}$
+  
+\begin{align}
+Pr(A) &= Pr( \{HH \cup HT \cup TH\}) = Pr(\{HH\}) +   Pr(\{HT\}) + Pr(\{TH\})\\
+  &= \frac{1}{4} +\frac{1}{4}+\frac{1}{4} = \frac{3}{4}
+\end{align}
 ```
-
-```{example, rleI}
-
-
-```
-
-<mark>
-  adapt example here
-</mark>
 
 ### Detecting shoppers
+  
+```{example, name = "Detecting Shoppers"} 
 
-```{example, name = "Real-life example II"} 
+_Shopper TRK is an electronic device designed to count the number of shoppers entering a shopping centre. When two shoppers enter the shopping centre together, one walking in front of the other, the following probabilities apply:_
+
+1. _There is a 0.98 probability that the first shopper is detected_.
+2. _There is a 0.94 probability that the second shopper is detected_.
+3. _There is a 0.93 probability that both shoppers are detected_.
+
+**_What is the probability that the device will detect at least one of the two shoppers entering?_** 
+Let us define the events $D$ (shopper is detected) and $U$ (shopper is undetected). Then, the Sample Space is $S=\{ DD, DU, UD, UU\}$
+  
+We can futher proceed to interpret the probabilities that were previously mentioned:
+
+1. $Pr(DD \cup DU) = 0.98$ 
+1. $Pr(DD \cup UD) = 0.94$ 
+1. $Pr(DD) = 0.93$
+
+\begin{align} 
+Pr(DD \cup UD \cup DU) &= Pr(\{DD \cup UD\} \cup \{DD \cup DU\})\\
+&= Pr(\{DD \cup UD\}) + Pr(\{DD \cup DU\}) - Pr(\{DD \cup UD\} \cap \{DD \cup DU\})
+\end{align}
+
+Let's study the event $\{DD \cup UD\} \cap \{DD \cup DU\}$ to compute its probability. 
+
+As we have seen in Chapter 2, the union is distributive with respect to the intersection operations, hence: 
+
+$$(DD \cup UD) \cap (DD \cup DU) = DD \cup (UD \cap DU) =DD \cup \varnothing = DD$$
+
+This can also be assessed graphically, as illustrated on figure \@ref(fig:dduddu), where the intersection between events $(DD \cup UD)$ and $(DD \cup DU)$ is clearly given by $DD$. 
+
+So, the desired probability is:
+\begin{align}
+Pr(DD \cup UD \cup DU) &= Pr(\{DD \cup UD\}) + Pr(\{DD \cup DU\}) - Pr(DD) \\
+&= 0.98 + 0.94-0.93 \\
+&= 0.99
+\end{align}
 ```
 
-```{r ,echo = FALSE, fig.cap='', fig.align='center'}
-knitr::include_graphics("img/03_axioms/Example2_1.png")
+```{r dduddu,echo = FALSE, fig.cap='Schematic illustration of the sets in Exercise 3.2', fig.align='center'}
+knitr::include_graphics("img/03_axioms/Example2_3_v2.png")
 ```
-
-```{r ,echo = FALSE, fig.cap='', fig.align='center'}
-knitr::include_graphics("img/03_axioms/Example2_2.png")
-```
-
-```{r ,echo = FALSE, fig.cap=' ', fig.align='center'}
-knitr::include_graphics("img/03_axioms/Example2_3.png")
-```
-
-```{r ,echo = FALSE, fig.cap='', fig.align='center'}
-knitr::include_graphics("img/03_axioms/Example2_4.png")
-```
-
-<mark>
-  adapt example here
-</mark>
 
 
 ### De Morgan's Law
@@ -263,30 +294,26 @@ $$P(A)=1 - 0.4= 0.6.$$
 ### Probability, union, and complement
 
 ```{example}
-John is taking two books along on his holiday vacation. With probability 0.5, he will like the first book; with probability 0.4, he will like the
-second book; and with probability 0.3, he will like both books. What is the probability that he likes neither book? \\
+_John is taking two books along on his holiday vacation. With probability 0.5, he will like the first book; with probability 0.4, he will like the second book; and with probability 0.3, he will like both books._ 
 
-Let $A_i$ be the event that John likes book $i$, for $i=1,2$. Then the probability that he likes at least one book is (remember the short hand notation $A_1 \cap A_2 = A_1 A_2$)
+**_What is the probability that he likes neither book?_**
+
+Let $A_i$ be the event that John likes book $i$, for $i=1,2$. Then the probability that he likes at least one book is:
 \begin{eqnarray}
-P(\bigcup_{i=1}^2 A_i) &=& P(A_1 \cup A_2) = P(A_1) + P(A_2) - P(A_1A_2)  \\
+P\left(\bigcup_{i=1}^2 A_i\right) &=& P(A_1 \cup A_2) = P(A_1) + P(A_2) - P(A_1 \cap A_2)\\
 &=& 0.5 + 0.4 -0.3 =0.6. 
 \end{eqnarray}
-Because the event the John likes neither books is the complement of the event that he likes at leas one of them (namely $A_1 \cup A_2$), we have
+Because the event the John likes neither books is the complement of the event that he likes at least one of them (namely $A_1 \cup A_2$), we have
 $$P(A^{c}_1 \cap A^{c}_2 ) = P((A_1 \cup A_2)^c) = 1- P (A_1 \cup A_2) = 0.4.$$
 ```
 
-
-
 ```{example}
 
-# [Real-life example III]
-Let $A$ denote the event that the midtown temperature in Los Angeles (LA) is 70 F, and let $B$ denote the event that the midtown temperature in
-New York (NY) is 70 F. Also, let $C$ denote the event that the maximum of midtown temperatures in NY and LA is 70 F. If
+_Let $A$ denote the event that the midtown temperature in Los Angeles (LA) is 70 F, and let $B$ denote the event that the midtown temperature in New York (NY) is 70 F. Also, let $C$ denote the event that the maximum of midtown temperatures in NY and LA is 70 F._ 
 
+_If_
 $$P(A)=0.3, \quad P(B)=0.4 \quad \text{and} \quad P(C)=0.2,$$
-
-find the probability that the minimum of the two midtown temperatures is 70 F.
-
+_find the **probability that the minimum of the two midtown temperatures is 70 F**._
 
 Let $D$ denote the event that the minimum temperature is 70 F. Then
 \begin{eqnarray}
@@ -305,28 +332,31 @@ thus $ P(D) =0.5.$
 
 ## Conditional probability
 
-As a measure of uncertainty, the probability depends on the information available. 
-
-
-```{example}
-Suppose you have two dice and throw them; the possible outcomes are:
+```{r ,echo = FALSE, fig.cap="'Probability of a walk' from the [Cartoon Guide to Statistics](http://www.larrygonick.com/titles/science/the-cartoon-guide-to-statistics/)", fig.align='center'}
+  knitr::include_graphics("img/fun/probconditionnelle2.png")
 ```
 
+As a measure of uncertainty, the probability depends on the information available. The notion of Conditional Probability captures the fact that in some scenarios, the **probability of an event will change** according to the **realisation of another event**. 
 
-```{r}
+Let us illustrate this with an example:
+
+```{example, name = "Throwing two dice"}
+Suppose you have two dice and throw them. The possible outcomes can be listed in the shape of the table below:
+```
+
+```{r ,echo = FALSE, fig.cap='', fig.align='center'}
 knitr::include_graphics("img/03_axioms/c1.png")
 ```
 
-Let us define $A$ = getting $5$, or equivalently $A=\{ 5\}$. What is $P(A)$, namely, the probability of getting $5$?
+Now let us define the event _$A$ = getting $5$_, or equivalently $A=\{ 5\}$. **What is $P(A)$, i.e. the probability of getting $5$?**. In the table above, we can identify and highlight the scenarios where the sum of both dice is 5:
 
-```{r}
+```{r ,echo = FALSE, fig.cap='', fig.align='center'}
 knitr::include_graphics("img/03_axioms/c2.png")
 ```
 
-
-The dice are fair so we can get 36 events with equal probability ${1}/{36}$. Namely:
+Since both dice are fair, we get 36 mutually exclusive scenarios with equal probability ${1}/{36}$, i.e.
 $$Pr(i,j) = \frac{1}{36}, \quad \text{for} \quad i,j=1,..,6$$
-Thus, we can make use of the blue guys as
+Hence, to compute the probability of $A$, we can sum their probability of the highlighted events:
 \begin{eqnarray}
 P(5) &=& Pr\left\{ (1,4) \cup (2,3) \cup (3,2) \cup  (4,1) \right\}  \\
 &=& Pr\left\{ (1,4)  \right\} +  Pr\left\{ (2,3)  \right\} +  Pr\left\{(3,2)  \right\} + Pr\left\{  (4,1) \right\}  \\
@@ -335,56 +365,46 @@ P(5) &=& Pr\left\{ (1,4) \cup (2,3) \cup (3,2) \cup  (4,1) \right\}  \\
 &=& 1  /{9}. 
 \end{eqnarray}
 
+Now, suppose that, instead of throwing both dice simultaneously, **we throw them one at a time**. In this scenario, imagine that **our first die yields a 2**.
 
+**Q.** What is the probability of **getting 5 given that we have gotten 2** in the first throw?
 
-Now, suppose that we throw the die first and e we get 2.\\
-\vspace{0.2cm}
-\color{black}\textbf{Q.} \color{black} What is the probability of getting 5 given that we have observed 2 in the first throw?
+To answer this question, let us highlight the outcomes where the first die yields a 2 in the table of events. 
 
-
-```{r}
-knitr::include_graphics("img/03_axioms/c4.png")
+```{r ,echo = FALSE, fig.cap='', fig.align='center'}
+  knitr::include_graphics("img/03_axioms/c4.png")
 ```
 
+**A.**
 
-\color{blue}\textbf{A.} \color{black}
+As we see in the table, the only scenario where we have $A$ is when we obtain $3$ in the second throw. Since the event "obtaining a 3" for one of the dice, has a probability$=1/6$:
 
-$\text{Pr}\{\text{getting 5 given 2 in the first throw}\}= \text{Pr}\{\text{getting 3 in the second throw}\}=1/6$
+$\text{Pr}\{\text{getting 5 given 2 in the first throw}\}= \text{Pr}\{\text{getting 3 in the second throw}\}=1/6.$
 
 ```{remark}
+It is important to notice that the information changes the probability, i.e. by knowing that we got 2 in the first throw, we have changed the sample space:
 ```
-- Information changes the probability
-- By knowing that we got 2 in the first throw, we have changed the sample space:
-
 
 ```{r ,echo = FALSE, fig.cap=''}
   knitr::include_graphics("img/03_axioms/c3.png")
 ```
 
--  Probability can change drastically --- e.g., suppose that in our example we have 6 in the first throw $\Rightarrow$ the probability of observing 5 in two draws ... is zero !!!
+Also, sometimes the probability can change drastically. For example, suppose that in our example we have 6 in the first throw. Then, the probability of observing 5 in two draws is zero(!)
 
-
-```{definition}
-Let $A$ and $B$ be two events. The conditional probability of event $A$
-given event $B$, denoted by $P\left(A\vert B\right)$, is defined by:
-$$
-P\left(A\vert B\right) = \frac{P(A \cap B)}{P(B)}, \quad \text{if} \quad P(B) >0,
-$$
+```{definition, label = condProba, name = 'Conditional Probability'}
+Let $A$ and $B$ be two events. The _Conditional Probability of event $A$
+given event $B$_, denoted by $P\left(A\vert B\right)$, is defined by:
+$$P\left(A\vert B\right) = \frac{P(A \cap B)}{P(B)}, \quad \text{if} \quad P(B) >0,$$
 and it is left undefined if $P(B)=0$.
 ```
 
+Let us come back to the example of the two dice and assess whether the formula applies. Let us define the event $B$ as "obtaining a 2 on the first throw", i.e. 
 
-### A check
-
-```{r ,echo = FALSE}
+```{r ,echo = FALSE, fig.cap='', fig.align='center'}
 knitr::include_graphics("img/03_axioms/c3.png")
 ```
 
-
-```{example} 
-Let us define the set $B$ as:
-
-So we have
+The probability of this event can be computed as follows: 
 
 \begin{eqnarray}
 P(B) &=& Pr\left\{ (2,1) \cup (2,2) \cup (2,3) \cup (2,4) \cup (2,5) \cup (2,6)     \right\}  \\
@@ -392,19 +412,16 @@ P(B) &=& Pr\left\{ (2,1) \cup (2,2) \cup (2,3) \cup (2,4) \cup (2,5) \cup (2,6) 
  &=& 6/36 =1/6 
 \end{eqnarray}
 
-and consider $A \cap B$
-```
+Let us now focus on the event $A \cap B$, i.e. "sum of both dice = 5" **and** "getting a 2 on the first throw**. As we have seen in the previous tables, this event arises only when the second die yields a 3, i.e.
 
-```{r ,echo = FALSE, fig.cap=''}
+```{r ,echo = FALSE, fig.cap='', fig.align='center'}
   knitr::include_graphics("img/03_axioms/c4.png")
 ```
 
-So we have  $P(A \cap B) = Pr (2,3) = 1/36$ so,
+Hence,  $P(A \cap B) = Pr (2,3) = 1/36$ and thus:
 $$
 P(A\vert B) = \frac{P(A \cap B)}{P(B)}  =  \frac{1/36}{1/6} = \frac{1}{6}. 
 $$
-
-
 
 ## Independence
 
@@ -418,7 +435,7 @@ $$P(B\vert A) = P(B)$$
 Clearly, if $P(A\vert B) \neq P(A)$, then $A$ and $B$ are \textit{dependent}.
 
 
-### Independence -- another characterization
+### Another characterisation
 
 Two events $A$ and $B$ are independent if
 $$P(A \vert B) = {P(A)},$$
@@ -429,23 +446,39 @@ $$P(A) = \frac{P(A \cap B)}{P(B)},$$
 and rearranging the terms, we find that two events are independent iif
 $$P(A\cap B) = P(A) P(B).$$
 
-
-
 ```{example}
+A coin is tossed three times and the eight possible outcomes 
+$$S = \{HHH, HHT, HTH, THH, HTT, THT, TTH, TTT\}$$
+are assumed to be equally likely owith probability $1/8$. 
+
+Define: 
+  
+- $A$: an $H$ occurs on each of the first two tosses
+- $B$: $T$ occurs on the third toss
+- $D$: Two $T$s occur in three tosses
+
+1. **Q1**: Are $A$ and $B$ independent? 
+2. **Q2**: Are $B$ and $D$ independent? 
+  
+We have:
+
+| Event | Probability |
+|-------|-------------|
+|$A = \{ HHH, HHT\}$ | $Pr(A)=\frac{2}{8}=\frac{1}{4}$ | 
+|$B = \{HHT, HTT, THT, TTT\}$ | $Pr(B)=\frac{4}{8}=\frac{1}{2}$ |
+|$D = \{HHT, THT, TTH\}$ | $Pr(D)=\frac{3}{8}$ |
+|$A\cap B = \{ HHT\}$ | $Pr(A\cap B)=\frac{1}{8}$|
+|$B\cap D = \{ HTT, THT\}$ |$Pr(B\cap D)=\frac{2}{8}=\frac{1}{4}$|  
+
+Now, if we compute the probabilities of the products and compare with the 
+
+- $Pr(A) \times Pr(B) = \frac{1}{4}\times  \frac{1}{2}=  \frac{1}{8} = Pr(A\cap B)$, hence $A$ and $C$ are independent.
+- $Pr(B) \times Pr(D) = \frac{1}{2}\times  \frac{3}{8}=  \frac{3}{16} \neq \frac{1}{4} = Pr(B\cap D)$, hence $B$ and $D$ are dependent.
 ```
 
 
-```{r ,echo = FALSE, fig.cap='things'}
-  knitr::include_graphics("img/03_axioms/example7.png")
-```
 
-
-```{r ,echo = FALSE, fig.cap=''}
-  knitr::include_graphics("img/03_axioms/example8.png")
-```
-
-
-## The Theorem of Total Probabilities
+## Theorem I: The Theorem of Total Probabilities
 
 ```{theorem, totalprob, name="Theorem of total probabilities"}
 Let  $B_1,B_2,...,B_k,...,B_n$ be mutually disjoint events, satisfying
@@ -481,7 +514,7 @@ P(A)=P(A\vert B)P(B)+P(A\vert B^c) P(B^c)
 Exercise [Hint: $S=B \cup B^c$].
 ```
 
-## Bayes' Theorem
+## Theorem II: Bayes' Theorem
 
 Theorem I can be applied to derive the well-celebrated Bayes' Theorem.
 
@@ -507,13 +540,17 @@ That concludes the proof.
 
 ```{example}
 Let us consider a special case, where we have only two events $A$ and $B$.
-```
 
-```{r ,echo = FALSE, fig.cap=''}
-  knitr::include_graphics("img/03_axioms/example10.png")
-```
+From the definition of conditional probability: 
+$$P(A|B) = \frac{P(A\cap B)}{P(B)} \qquad P(B|A) = \frac{P(A\cap B)}{P(A)}.$$
+This can be written as:
+$$P(A\cap B) = P(A|B) \times P(B) \qquad P(B\cap A) = P(B|A) \times P(A),$$
+which entails:
+$$P(A|B) \times P(B) = P(B|A) \times P(A),$$
+which is the expression of Bayes' Theorem. 
 
 ... so thanks to Bayes' Theorem we can reverse the role of $A\vert B$ and $B \vert A$.
+```
 
 ### Guessing in a multiple choice exam
 
@@ -556,16 +593,18 @@ Now consider that
 
 If a car delivered to the consulting firm needs a tune-up, what is the probability that the care came
 from AVIS?
-```
-
+  
 Let us set: $A:=\{\text{car rented from AVIS}\}$ and $B:=\{\text{car needs a tune-up}\}$. We know $P(B\vert A)$ and we look for $P(A\vert B)$ $\Rightarrow$ Bayes' theorem!!
 
-```{r ,echo = FALSE, fig.cap=''}
-  knitr::include_graphics("img/03_axioms/example9b.png")
+$$P(A) =0.6 \qquad P(B|A) =0.09 \qquad P(B|A^c) =0.2$$
+
+\begin{align}
+P(B)&=P((B\cap A) \cup (B\cap A^c))\\
+&=P(B\cap A)+P(B\cap A^c)\\
+&=P(B|A)\times P(A)+P(B|A^c)P(A^c)\\
+&=0.09\times 0.6 + 0.2 \times 0.4 \\
+&=0.134
+\end{align}
+
+$$P(A|B) = \frac{P(A)}{P(B)}\times P(B|A) = \frac{0.6}{0.134}0.09 = 0.402985$$
 ```
-
-
-
-
-
-

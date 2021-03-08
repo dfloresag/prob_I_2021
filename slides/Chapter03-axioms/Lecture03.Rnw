@@ -85,7 +85,7 @@
 \begin{document}
 
 \title[S110015]{Probability 1}
-\subtitle{Lecture 03 : Elements of Set Theory}
+\subtitle{Lecture 03 : Probability Axioms}
 \author[Flores-Agreda, La Vecchia]{Dr. Daniel Flores-Agreda, \\[0.5em] \tiny{(based on the notes of Prof. Davide La Vecchia)}}
 \date{Spring Semester 2021}
 
@@ -98,98 +98,99 @@
 \tableofcontents
 \end{frame}
 
-\begin{frame}
-\frametitle{Probability[Axiomatic definition]}
-%Let $\mathcal{B}$ be the $\sigma$-algebra of subsets of a set $S$ representing the sample space. \\
-%\vspace{0.1cm}
-
-\begin{definition}
-We define probability a set function with values in $[0,1]$, which
-satisfies the following axioms:
-\begin{itemize}
-\item[ (i)] $P(A) \geq 0$, for every event $A$
-\item[ (ii)] $P(S)=1$
-\item[ (iii)] If $A_1,A_2,...$ is a sequence of mutually exclusive events (namely \color{red}$A_i \cap A_j =\varnothing$, for $i \neq j$, and $i,j=1,2,...$\color{black}),
-and such that
-$A = \bigcup_{i=1}^{\infty} A_i$, then
-\bea
-\label{Eq: additivity}
-P(A) &=& P\left(  \bigcup_{i=1}^\infty A_i \right) = \sum_{i=1}^{\infty} P(A_i).
-\eea
-\end{itemize}
-\end{definition}
-
-
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{An Axiomatic Definition of Probability}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}{secname}
+  %Let $\mathcal{B}$ be the $\sigma$-algebra of subsets of a set $S$ representing the sample space. \\
+  %\vspace{0.1cm}
+  \begin{definition}
+  We define probability a set function with values in $[0,1]$, which
+  satisfies the following axioms:
+  \begin{itemize}
+  \item[ (i)] $P(A) \geq 0$, for every event $A$
+  \item[ (ii)] $P(S)=1$
+  \item[ (iii)] If $A_1,A_2,...$ is a sequence of mutually exclusive events (namely \color{red}$A_i \cap A_j =\varnothing$, for $i \neq j$, and $i,j=1,2,...$\color{black}),
+  and such that
+  $A = \bigcup_{i=1}^{\infty} A_i$, then
+  \bea
+  \label{Eq: additivity}
+  P(A) &=& P\left(  \bigcup_{i=1}^\infty A_i \right) = \sum_{i=1}^{\infty} P(A_i).
+  \eea
+  \end{itemize}
+  \end{definition}
 \end{frame}
 
-\begin{frame}
-\frametitle{Properties of $P(\cdot)$}
-One can make use of the three axioms to build more sophisticated statements. For instance,
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Implications: Properties of $P(\cdot)$}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\begin{theorem}
-$P(\varnothing)=0$.
-\end{theorem}
-\vspace{0.3cm}
-\begin{footnotesize}{ \begin{proof}
-Take $A_1=A_2=A_3=....=\varnothing$. Then by (\ref{Eq: additivity}) in Axiom (ii) we have
-$$
-P(\varnothing)= P\left(  \bigcup_{i=1}^{\infty} A_i \right) = \sum_{i=1}^{\infty} P(A_i) =\sum_{i=1}^{\infty} P(\varnothing)
-$$
-which is true only if it is an infinite sum of zeros. Thus
-$$
-P(\varnothing) =  0.
-$$
-\end{proof} }\end{footnotesize}
+\begin{frame}{secname}
+  One can make use of the three axioms to build more sophisticated statements. For instance,
+
+  \begin{theorem}[Probability of the Empty Set]
+  $P(\varnothing)=0$.
+  \end{theorem}
+  \vspace{0.3cm}
+  \begin{footnotesize}{ \begin{proof}
+  Take $A_1=A_2=A_3=....=\varnothing$. Then by (\ref{Eq: additivity}) in Axiom (ii) we have
+  $$
+  P(\varnothing)= P\left(  \bigcup_{i=1}^{\infty} A_i \right) = \sum_{i=1}^{\infty} P(A_i) =\sum_{i=1}^{\infty} P(\varnothing)
+  $$
+  which is true only if it is an infinite sum of zeros. Thus
+  $$
+  P(\varnothing) =  0.
+  $$
+  \end{proof} }\end{footnotesize}
 \end{frame}
 
-\begin{frame}
-\frametitle{Properties of $P(\cdot)$ (cont'd)}
-\begin{theorem}
-If $A_1, A_2,...$ are mutually exclusive events, then
-\begin{equation}
-P\left(  \bigcup_{i=1}^{n} A_i \right) = \sum_{i=1}^{n} P(A_i).  \label{Eq: ProbUnionDisj}
-\end{equation}
-\end{theorem} %\vspace{0.1cm}
+\begin{frame}{secname}
+  \begin{theorem}[The Addition Law of Probability]
+  If $A_1, A_2,...$ are mutually exclusive events, then
+  \begin{equation}
+  P\left(  \bigcup_{i=1}^{n} A_i \right) = \sum_{i=1}^{n} P(A_i).  \label{Eq: ProbUnionDisj}
+  \end{equation}
+  \end{theorem} %\vspace{0.1cm}
 
+  \pause
 
-\begin{footnotesize}
-\begin{proof}
-Let $A_{n+1}=A_{n+2}=....=\varnothing$, then
-$
-\bigcup_{i=1}^{n} A_i = \bigcup_{i=1}^{\infty} A_i,
-$
-and, from (\ref{Eq: additivity}) (see Axiom (iii)) it follows
-\bea
-P\left(  \bigcup_{i=1}^{n} A_i \right) &=& P\left(  \bigcup_{i=1}^{\infty} A_i \right)
-= \sum_{i=1}^{\infty} P(A_i) = \sum_{i=1}^{n} P(A_i) + \underbrace{\sum_{i=n+1}^{\infty} P(A_i)}_{\equiv 0}. \nn
-\eea
-\end{proof}
-\end{footnotesize}
+  \begin{footnotesize}
+  \begin{proof}
+  Let $A_{n+1}=A_{n+2}=....=\varnothing$, then
+  $
+  \bigcup_{i=1}^{n} A_i = \bigcup_{i=1}^{\infty} A_i,
+  $
+  and, from (\ref{Eq: additivity}) (see Axiom (iii)) it follows
+  \bea
+  P\left(  \bigcup_{i=1}^{n} A_i \right) &=& P\left(  \bigcup_{i=1}^{\infty} A_i \right)
+  = \sum_{i=1}^{\infty} P(A_i) = \sum_{i=1}^{n} P(A_i) + \underbrace{\sum_{i=n+1}^{\infty} P(A_i)}_{\equiv 0}. \nn
+  \eea
+  \end{proof}
+  \end{footnotesize}
 \end{frame}
 
-\begin{frame}
-\frametitle{Properties of $P(\cdot)$ (cont'd)}
-\begin{theorem}
-If $A$ is an event, then
-$
-P(  A^c ) = 1- P(A).
-$
-\end{theorem} \vspace{0.1cm}
+\begin{frame}{secname}
+  \begin{theorem}
+  If $A$ is an event, then
+  $
+  P(  A^c ) = 1- P(A).
+  $
+  \end{theorem} \vspace{0.1cm}
 
 
-\begin{footnotesize}
-\begin{proof}
-Let $A \cup A^c =S$ and $A \cap A^c = \varnothing$, so
-and
-$$
-P( S ) = P\left(A \cup A^c \right) =P(A) + P\left(A^c \right). \nn
-$$
-By Axiom (i) Axiom (ii) we have $P(S)=1$, so the desired result follows from:
-$$
-1 = P(A) + P\left(A^c \right).
-$$
-\end{proof}
-\end{footnotesize}
+  \begin{footnotesize}
+  \begin{proof}
+  Let $A \cup A^c =S$ and $A \cap A^c = \varnothing$, so
+  and
+  $$
+  P( S ) = P\left(A \cup A^c \right) =P(A) + P\left(A^c \right). \nn
+  $$
+  By Axiom (i) Axiom (ii) we have $P(S)=1$, so the desired result follows from:
+  $$
+  1 = P(A) + P\left(A^c \right).
+  $$
+  \end{proof}
+  \end{footnotesize}
 \end{frame}
 
 \begin{frame}
