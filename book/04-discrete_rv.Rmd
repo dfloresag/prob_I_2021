@@ -1,6 +1,6 @@
 # 🔧 Discrete Random Variables {#discreterv}
 
-```{r ,echo = FALSE, fig.cap="'Alea Acta Est' by Enrico Chavez", fig.align='center'}
+```{r ,echo = FALSE, fig.cap="'Alea Acta Est' by Enrico Chavez", fig.align='center', out.width = "80%"}
   knitr::include_graphics("img/fun/EC_Latin.png")
 ```
 
@@ -18,9 +18,9 @@ To continue further in our path of formalising the theory of probability, we sha
 Broadly speaking, a **Random Variable** is a variable that takes on different **numerical** values  with various probabilities of occurrence associated with each different outcome.
 ```
 
-To define a random variable, we need:
+Hence, to define a random variable, we need:
 
-1. to list all possible numerical outcomes , and
+1. to list all possible numerical outcomes, and
 2. the corresponding probability for each numerical outcome
 
 ```{example, name = "Rolling the dice (again)"} 

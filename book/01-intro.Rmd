@@ -18,7 +18,7 @@
 <!-- # ) -->
 <!-- ``` -->
 
-```{r ,echo = FALSE, fig.cap='_Taking statistics to schools_ by Enrico Chavez', fig.align='center', out.width="75%"}
+```{r ,echo = FALSE, fig.cap='_Taking statistics to schools_ by Enrico Chavez', fig.align='center', out.width="80%"}
   knitr::include_graphics("img/fun/EC_Talking_statistics_to_schools.png")
 ```
 

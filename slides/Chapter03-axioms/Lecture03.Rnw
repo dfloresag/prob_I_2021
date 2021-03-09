@@ -93,15 +93,17 @@
 \titlepage
 \end{frame}
 
-\begin{frame}
-\frametitle{Outline}
+\begin{frame}{Objective}
+\end{frame}
+
+\begin{frame}{Outline}
 \tableofcontents
 \end{frame}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{An Axiomatic Definition of Probability}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{frame}{secname}
+\begin{frame}{\secname}
   %Let $\mathcal{B}$ be the $\sigma$-algebra of subsets of a set $S$ representing the sample space. \\
   %\vspace{0.1cm}
   \begin{definition}
@@ -125,26 +127,30 @@
 \section{Implications: Properties of $P(\cdot)$}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\begin{frame}{secname}
+\begin{frame}{\secname}
   One can make use of the three axioms to build more sophisticated statements. For instance,
 
   \begin{theorem}[Probability of the Empty Set]
-  $P(\varnothing)=0$.
+  $$P(\varnothing)=0$$
   \end{theorem}
-  \vspace{0.3cm}
-  \begin{footnotesize}{ \begin{proof}
+  \pause
+  \begin{proof}
+  \begin{footnotesize}
   Take $A_1=A_2=A_3=....=\varnothing$. Then by (\ref{Eq: additivity}) in Axiom (ii) we have
   $$
-  P(\varnothing)= P\left(  \bigcup_{i=1}^{\infty} A_i \right) = \sum_{i=1}^{\infty} P(A_i) =\sum_{i=1}^{\infty} P(\varnothing)
+  P(\varnothing)= P\left(  \bigcup_{i=1}^{\infty} A_i \right)
+  = \sum_{i=1}^{\infty} P(A_i)
+  =\sum_{i=1}^{\infty} P(\varnothing)
   $$
   which is true only if it is an infinite sum of zeros. Thus
   $$
   P(\varnothing) =  0.
   $$
-  \end{proof} }\end{footnotesize}
+  \end{footnotesize}
+  \end{proof}
 \end{frame}
 
-\begin{frame}{secname}
+\begin{frame}{\secname}
   \begin{theorem}[The Addition Law of Probability]
   If $A_1, A_2,...$ are mutually exclusive events, then
   \begin{equation}
@@ -169,8 +175,8 @@
   \end{footnotesize}
 \end{frame}
 
-\begin{frame}{secname}
-  \begin{theorem}
+\begin{frame}{\secname}
+  \begin{theorem}[The Complement Rule]
   If $A$ is an event, then
   $
   P(  A^c ) = 1- P(A).
@@ -193,8 +199,8 @@
   \end{footnotesize}
 \end{frame}
 
-\begin{frame}
-\frametitle{Properties of $P(\cdot)$ (cont'd)}
+\begin{frame}{\secname}
+
 %that $B \subset A$.
 
 \def\firstcircle{(3,1) circle (2.95cm)}
@@ -231,8 +237,7 @@
 %\end{frame}
 %
 
-\begin{frame}
-\frametitle{Properties of $P(\cdot)$ (cont'd)}
+\begin{frame}{\secname}
 \begin{theorem}
 For any two events $A$ and $B$, such that $B \subset A$, we have
 $$
@@ -258,9 +263,28 @@ $$
 
 \end{frame}
 
+\begin{frame}{\secname}
+  \begin{theorem}
+  For any two events $A$ and $B$ then
+  $$
+  P(A \cup B) = P(A) + P(B) - P(A \cap B).
+  $$
+  \end{theorem}
+  \vspace{0.1cm}
+  \begin{footnotesize}
+  \begin{proof}
+  Consider that $A\cup B = A \cup (A^c \cap B)$, and $A\cap(A^c \cap B) = \phi$. Now remember\footnote{See Lecture 1 for the meaning of set difference.} that $A^c \cap B = B -(A \cap B)$, so,
+  \bea
+  P(A\cup B) &=& P(A) + P(A^c \cap B) \nn \\
+  &=& P(A) + P(B) - P(A\cap B). \nn
+  \eea
 
-\begin{frame}
-\frametitle{Properties of $P(\cdot)$ (cont'd)}
+  \end{proof}
+  \end{footnotesize}
+\end{frame}
+
+
+\begin{frame}{\secname}
 \begin{theorem} [Boole's inequality]
 For the events $A_1,A_2,... A_n$,
 $$
@@ -288,537 +312,467 @@ as stated in (\ref{Eq: ProbUnionDisj}).
 
 
 
-\begin{frame}
-\frametitle{Properties of $P(\cdot)$ (cont'd)}
-\begin{theorem}
-For any two events $A$ and $B$ then
-$$
-P(A \cup B) = P(A) + P(B) - P(A \cap B).
-$$
-\end{theorem}
-\vspace{0.1cm}
-\begin{footnotesize}
-\begin{proof}
-Consider that $A\cup B = A \cup (A^c \cap B)$, and $A\cap(A^c \cap B) = \phi$. Now remember\footnote{See Lecture 1 for the meaning of set difference.} that $A^c \cap B = B -(A \cap B)$, so,
-\bea
-P(A\cup B) &=& P(A) + P(A^c \cap B) \nn \\
-&=& P(A) + P(B) - P(A\cap B). \nn
-\eea
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Examples and Illustrations}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\end{proof}
-\end{footnotesize}
+\begin{frame}{\secname}
+  \begin{example}[Flipping a coin twice]
+    \begin{footnotesize}
+    \textbf{If we flip a balanced coin twice, {what is the probability of getting at least one head?}}
+
+    \begin{itemize}
+    \item The sample space is: $S = \{HH, HT, TH, TT\}$
+    \item Balanced coin: outcomes are equally likely and $p_{HH} = p_{HT} = p_{TH} = p_{TT} = p = 1/4$
+    \item Let $A$ denote the event \textbf{obtaining at least one Head}, i.e. $H = \{HH, HT, TH\}$
+    \end{itemize}
+    \begin{align*}
+    Pr(A) &= Pr(\{HH \cup HT \cup TH\}) \\
+          &= Pr(\{HH\}) +   Pr(\{HT\}) + Pr(\{TH\})\\
+          &= \frac{1}{4} +\frac{1}{4}+\frac{1}{4} = \frac{3}{4}
+    \end{align*}
+    \end{footnotesize}
+  \end{example}
 \end{frame}
 
-\begin{frame}
-\frametitle{How  to use these properties?}
+\begin{frame}{\secname}
+  \begin{example}[Detecting Shoppers]
+      \begin{footnotesize}
+      \textit{Shopper TRK is an electronic device that counts the number of shoppers entering a shopping centre.}
 
-\begin{example} [Real-life example I]
+      \textit{Two shoppers enter the shopping centre together, one walking in front of the other:}
 
-\begin{figure}[h!]
-\centering
-\includegraphics[width=0.9\textwidth,height=0.65\textheight]{img/Example1.pdf}
-\end{figure}
-\end{example}
+      \begin{enumerate}
+      \item \textit{There is a 0.98 probability that the first shopper is detected}
+      \item \textit{There is a 0.94 probability that the second shopper is detected}.
+      \item \textit{There is a 0.93 probability that both shoppers are detected}.
+      \end{enumerate}
+      \textbf{What is the probability that the device will detect at least one of the two shoppers entering?}
+    \end{footnotesize}
+  \end{example}
 \end{frame}
 
+\begin{frame}{\secname}
+  \begin{example}[Detecting Shoppers, continued]
+    \begin{footnotesize}
+      Define the \textbf{events}:
 
-\begin{frame}
-\frametitle{How to use these properties?}
+      \begin{itemize}
+      \item $D$ (shopper is detected) and
+      \item $U$ (shopper is undetected).
+      \end{itemize}
 
-\begin{example} [Real-life example II]
+      Then, the Sample Space is $S=\{ DD, DU, UD, UU\}$
 
-\begin{figure}[h!]
-\centering
-\includegraphics[width=0.9\textwidth,height=0.65\textheight]{img/Example2_1.pdf}
-\end{figure}
-\end{example}
+      Define the \textbf{probabilities}:
+      \begin{itemize}
+      \item $Pr(DD \cup DU) = 0.98$
+      \item $Pr(DD \cup UD) = 0.94$
+      \item $Pr(DD) = 0.93$
+      \end{itemize}
+    \end{footnotesize}
+  \end{example}
 \end{frame}
 
-\begin{frame}
-\frametitle{How to use these properties?}
+\begin{frame}{\secname}
+  \begin{example}[Detecting Shoppers, continued]
 
-\begin{example} [Real-life example II, cont'd]
+  \begin{footnotesize}
+  \begin{align*}
+  Pr(DD \cup UD \cup DU) &= Pr(\{DD \cup UD\} \cup \{DD \cup DU\})\\
+  &= Pr(\{DD \cup UD\}) + Pr(\{DD \cup DU\})\\
+  &- Pr(\{DD \cup UD\} \cap \{DD \cup DU\})
+  \end{align*}
 
-\begin{figure}[h!]
-\centering
-\includegraphics[width=0.6\textwidth,height=0.6\textheight]{img/Example2_2.pdf}
-\end{figure}
-\end{example}
+  The only missing probability is : $P\{DD \cup UD\} \cap \{DD \cup DU\} = ?$
+
+  To compute it, let's use the fact that \textbf{the union is distributive with respect to the intersection} (see Ch 2):
+
+  $$(DD \cup UD) \cap (DD \cup DU) = DD \cup (UD \cap DU) =DD \cup \varnothing = DD$$
+  \end{footnotesize}
+  \end{example}
 \end{frame}
 
+\begin{frame}{\secname}
+  \begin{example}[Detecting Shoppers, continued]
+  \begin{footnotesize}
+  Graphically:
+  \begin{figure}[h!]
+  \centering
+  \includegraphics[scale = 0.1]{../../book/img/03_axioms/Example2_3_v2.png}
+  \end{figure}
 
-\begin{frame}
-\frametitle{How to use these properties?}
-
-\begin{example} [Real-life example II, cont'd]
-
-\begin{figure}[h!]
-\centering
-\includegraphics[width=0.95\textwidth,height=0.7\textheight]{img/Example2_3.pdf}
-\end{figure}
-\end{example}
-\end{frame}
-
-\begin{frame}
-\frametitle{How to use these properties?}
-
-\begin{example} [Real-life example II, cont'd]
-
-\begin{figure}[h!]
-\centering
-\includegraphics[width=0.9\textwidth,height=0.5\textheight]{img/Example2_4.pdf}
-\end{figure}
-\end{example}
-\end{frame}
-
-
-\begin{frame}
-\frametitle{How to use these properties?}
-
-\begin{example}[De Morgan's law]
-\begin{small}
-Given  $P(A\cup B)=0.7$ and $P(A\cup {B}^c) = 0.9$, find $P(A)$.
-
-
-\vspace{0.2cm}
-
-
-By De Morgan's law,
-$$P(A^c \cap B^c) = P((A\cup B )^c) = 1 - P(A\cup B) = 1 - 0.7 = 0.3$$
-and similarly
-$$P(A^c \cap B) = 1 - P(A \cup B^c) = 1- 0.9 = 0.1.$$
-
-Thus,
-$$P(A^c)=P(A^c \cap B^c )+P(A^c \cap B)= 0.3+ 0.1= 0.4,$$
-
-so
-$$P(A)=1 - 0.4= 0.6.$$
-\end{small}
- \end{example}
+  So, the desired probability is:
+  \begin{align*}
+    Pr(DD \cup UD \cup DU) &= Pr(\{DD \cup UD\}) + Pr(\{DD \cup DU\}) - Pr(DD) \\
+    &= 0.98 + 0.94-0.93 \\
+    &= 0.99
+  \end{align*}
+  \end{footnotesize}
+  \end{example}
 \end{frame}
 
 
-\begin{frame}
-\frametitle{How to use these properties?}
-
-\begin{example}[Probability, union, and complement]
-\begin{small}
-John is taking two books along on his holiday vacation. With probability 0.5, he will like the first book; with probability 0.4, he will like the
-second book; and with probability 0.3, he will like both books. What is the probability that he likes neither book? \\
-
-\vspace{0.2cm}
-Let $A_i$ be the event that John likes book $i$, for $i=1,2$. Then the probability that he likes at least one book is (remember the short hand notation $A_1 \cap A_2 = A_1 A_2$)
-\bea
-P(\bigcup_{i=1}^2 A_i) &=& P(A_1 \cup A_2) = P(A_1) + P(A_2) - P(A_1A_2) \nn \\
-&=& 0.5 + 0.4 -0.3 =0.6. \nn
-\eea
-Because the event the John likes neither books is the complement of the event that he likes at leas one of them (namely $A_1 \cup A_2$), we have
-$$
-P(A^{c}_1 \cap A^{c}_2 ) = P((A_1 \cup A_2)^c) = 1- P (A_1 \cup A_2) = 0.4.
-$$
-\end{small}
- \end{example}
-
-\end{frame}
-
-\begin{frame}
-\frametitle{How to use these properties?}
-
-\begin{example}[Real-life example III]
-\begin{small}
-Let $A$ denote the event that the midtown temperature in Los Angeles (LA) is 70 F, and let $B$ denote the event that the midtown temperature in
-New York (NY) is 70 F. Also, let $C$ denote the event that the maximum of midtown temperatures in NY and LA is 70 F. If
-
-$$P(A)=0.3, \quad P(B)=0.4 \quad \text{and} \quad P(C)=0.2,
-$$
-
-find the probability that the minimum of the two midtown temperatures is 70 F.
+\begin{frame}{\secname}
+  \begin{example}[De Morgan's law]
+  \begin{small}
+  Given  $P(A\cup B)=0.7$ and $P(A\cup {B}^c) = 0.9$, find $P(A)$.
 
 
-\end{small}
- \end{example}
+  \vspace{0.2cm}
 
+
+  By De Morgan's law,
+  $$P(A^c \cap B^c) = P((A\cup B )^c) = 1 - P(A\cup B) = 1 - 0.7 = 0.3$$
+  and similarly
+  $$P(A^c \cap B) = 1 - P(A \cup B^c) = 1- 0.9 = 0.1.$$
+
+  Thus,
+  $$P(A^c)=P(A^c \cap B^c )+P(A^c \cap B)= 0.3+ 0.1= 0.4,$$
+
+  so
+  $$P(A)=1 - 0.4= 0.6.$$
+  \end{small}
+   \end{example}
 \end{frame}
 
 
-\begin{frame}
-\frametitle{How to use these properties?}
+\begin{frame}{\secname}
 
-\begin{example}[cont'd]
-\begin{small}
+  \begin{example}[Probability, union, and complement]
+  \begin{small}
+  \textit{John is taking two books along on his holiday vacation. With probability 0.5, he will like the first book; with probability 0.4, he will like the
+  second book; and with probability 0.3, he will like both books. What is the probability that he likes neither book?}
 
-\vspace{0.2cm}
-Let $D$ denote the event that the minimum temperature is 70 F. Then
-\bea
-P(A\cup B) &=& P(A) + P(B) - P(AB) = 0.7 -P(AB) \nn \\
-P(C\cup D) &=& P(C) + P(D) - P(CD) = 0.2 -P(D) - P(DC). \nn
-\eea
-Since $$A\cup B = C \cup D \quad \text{and} \quad AB = CD,$$
-subtracting one of the preceding equations from the other we get
-\begin{eqnarray*}
-P(A\cup B)-P(C\cup D)  & = &  0.7 -P(AB) - [0.2 -P(D) - P(DC)] \\
-&  = & 0.5 -P(D) = 0 , \\
-\end{eqnarray*}
-thus $ P(D) =0.5.$
+  \vspace{0.2cm}
 
-\end{small}
- \end{example}
-
+  \begin{footnotesize}
+  Let $A_i$ be the event that John likes book $i$, for $i=1,2$. Then the probability that he likes at least one book is:
+  \bea
+  P(\bigcup_{i=1}^2 A_i) &=& P(A_1 \cup A_2) = P(A_1) + P(A_2) - P(A_1\cap A_2) \nn \\
+  &=& 0.5 + 0.4 -0.3 =0.6. \nn
+  \eea
+  Because the event the John likes neither books is the complement of the event that he likes at leas one of them (namely $A_1 \cup A_2$), we have
+  $$
+  P(A^{c}_1 \cap A^{c}_2 ) = P((A_1 \cup A_2)^c) = 1- P (A_1 \cup A_2) = 0.4.
+  $$
+  \end{footnotesize}
+  \end{small}
+  \end{example}
 \end{frame}
 
-
-\begin{frame}
-\frametitle{Conditional probability}
-As a measure of uncertainty, the probability depends on the information available. \\
-\vspace{0.4cm}
-
-\begin{example}
-Suppose you have two dice and throw them; the possible outcomes are:
-\begin{figure}[h!]
-\centering
-\includegraphics[width=0.9\textwidth,height=0.35\textheight]{img/c1.pdf}
-\end{figure}
-\end{example}
-\end{frame}
-
-
-
-
-\begin{frame}
-\frametitle{Conditional probability}
-
-\begin{example}[cont'd]
-Let us define $A$ = getting $5$, or equivalently $A=\{ 5\}$. What is $P(A)$, namely, the probability of getting $5$?
-
-
-\begin{figure}[h!]
-\centering
-\includegraphics[width=0.9\textwidth,height=0.35\textheight]{img/c2.pdf}
-\end{figure}
-\end{example}
-\end{frame}
-
-
-
-
-
-\begin{frame}
-\frametitle{Conditional probability}
-
-
-\begin{example}[cont'd]
-The dice are fair so we can get 36 events with equal probability ${1}\big \slash{36}$. Namely:
-$$
-Pr(i,j) = \frac{1}{36}, \quad \text{for} \quad i,j=1,..,6
-$$
-Thus, we can make use of the blue guys as
-\bea
-P(5) &=& Pr\left\{ (1,4) \cup (2,3) \cup (3,2) \cup  (4,1) \right\} \nn \\
-&=& Pr\left\{ (1,4)  \right\} +  Pr\left\{ (2,3)  \right\} +  Pr\left\{(3,2)  \right\} + Pr\left\{  (4,1) \right\} \nn \\
-&=& {1}\big \slash{36} + {1}\big \slash{36} + {1}\big \slash{36} + {1}\big \slash{36} \nn \\
-&=& {4}\big \slash{36} \nn \\
-&=& 1 \big \slash{9}. \nn
-\eea
-\end{example}
-\end{frame}
-
-
-
-
-
-\begin{frame}
-\frametitle{Conditional probability}
-
-
-\begin{example}[cont'd]
-Now, suppose that we throw the die first and e we get 2.\\
-\vspace{0.2cm}
-\color{black}\textbf{Q.} \color{black} What is the probability of getting 5 given that we have observed 2 in the first throw?
-\begin{figure}[h!]
-\centering
-\includegraphics[width=1\textwidth,height=0.3\textheight]{img/c4.pdf}
-\end{figure}
-\color{blue}\textbf{A.} \color{black}
-\begin{footnotesize}
-$\text{Pr}\{\text{getting 5 given 2 in the first throw}\}= \text{Pr}\{\text{getting 3 in the second throw}\}=1/6$
-\end{footnotesize}
-\end{example}
-\end{frame}
-
-
-
-
-\begin{frame}
-\frametitle{Conditional probability}
-
-\begin{remark}
-\begin{itemize}
-
-\item Information changes the probability
-\item By knowing that we got 2 in the first throw, we have changed the sample space:
-\begin{figure}[h!]
-\centering
-\includegraphics[width=0.85\textwidth,height=0.35\textheight]{img/c3.pdf}
-\end{figure}
-\item Probability can change drastically --- e.g., suppose that in our example we have 6 in the first throw $\Rightarrow$ the probability of
-observing 5 in two draws ... is zero !!!
-\end{itemize}
-\end{remark}
-\end{frame}
-
-
-
-
-\begin{frame}
-\frametitle{Conditional probability}
-
-
-\begin{definition}
-Let $A$ and $B$ be two events. The conditional probability of event $A$
-given event $B$, denoted by $P\left(A\vert B\right)$, is defined by:
-$$
-P\left(A\vert B\right) = \frac{P(A \cap B)}{P(B)}, \quad \text{if} \quad P(B) >0,
-$$
-and it is left undefined if $P(B)=0$.
-\end{definition}
-\end{frame}
-
-
-
-
-
-\begin{frame}
-\frametitle{Conditional probability}
-
-\begin{example} [A check]
-Let us define the set $B$ as:
-
-\begin{figure}[h!]
-\centering
-\includegraphics[width=0.9\textwidth,height=0.4\textheight]{img/c3.pdf}
-\end{figure}
-So we have
-\footnotesize{
-\bea
-P(B) &=& Pr\left\{ (2,1) \cup (2,2) \cup (2,3) \cup (2,4) \cup (2,5) \cup (2,6)     \right\} \nn \\
- &=&  Pr(2,1) + Pr(2,2) + Pr(2,3) + Pr(2,4) + Pr(2,5) + Pr(2,6) \nn \\
- &=& 6/36 =1/6 \nn
-\eea}
-
-\end{example}
-
-
-\end{frame}
-
-
-\begin{frame}
-\frametitle{Conditional probability}
-
-\begin{example} [A check]
-and consider $A \cap B$
-
-\begin{figure}[h!]
-\centering
-\includegraphics[width=0.9\textwidth,height=0.4\textheight]{img/c4.pdf}
-\end{figure}
-So we have  $P(A \cap B) = Pr (2,3) = 1/36$ so,
-$$
-P(A\vert B) = \frac{P(A \cap B)}{P(B)}  =  \frac{1/36}{1/6} = \frac{1}{6}. \nn
-$$
-\end{example}
-
-
-\end{frame}
-
-
-\begin{frame}
-\frametitle{Independence}
-\begin{definition}
-Two events $A$ and $B$ are independent if the occurrence of one event has no effect on the probability of occurrence of the other event. Thus,
-$$
-P(A\vert B) = P(A)
-$$
-or equivalently
-$$
-P(B\vert A) = P(B)
-$$
-\end{definition}
-
-Clearly, if $P(A\vert B) \neq P(A)$, then $A$ and $B$ are \textit{dependent}.
-
-
-\end{frame}
-
-
-\begin{frame}
-\frametitle{Independence -- another characterization}
-
-Two events $A$ and $B$ are independent if
-$$
-P(A \vert B) = {P(A)},
-$$
-now by definition of conditional probability we know that
-$$
-P(A \vert B) = \frac{P(A \cap B)}{P(B)},
-$$
-so we have
-$$
-P(A) = \frac{P(A \cap B)}{P(B)},
-$$
-and rearranging the terms, we find that two events are independent iif
-$$
-P(A\cap B) = P(A) P(B).
-$$
-
-\end{frame}
-
-
-
-
-\begin{frame}
-\frametitle{Independence}
-
-\begin{example}
-\begin{figure}[h!]
-\centering
-\includegraphics[width=0.9\textwidth,height=0.7\textheight]{img/example7.pdf}
-\end{figure}
-
-\end{example}
-
-
-
-
-\end{frame}
-
-
-\begin{frame}
-\frametitle{Independence}
-
-\begin{example}[cont'd]
-\begin{figure}[h!]
-\centering
-\includegraphics[width=0.9\textwidth,height=0.6\textheight]{img/example8.pdf}
-\end{figure}
-
-\end{example}
-
-
-
-
-\end{frame}
-
-
-\begin{frame}
-\frametitle{Theorem I}
-
-\begin{theorem} [Th. of  total probabilities]
-\label{Th:totprob}
-Let  $B_1,B_2,...,B_k,...,B_n$ be mutually disjoint events, satisfying
-$S=\cup_{i=1}^{n} B_i,$ and $P(B_i)>0$, for every $i=1,2,...,n$ then for every $A$ we have that:
-\begin{equation}
-\label{TP}
-P(A)=\sum_{i=1}^n P(A\vert B_i) P(B_i).
-\end{equation}
-\end{theorem}
-
-\begin{footnotesize}
-\begin{proof}
-Write $A=A\cap S = A\cap (\cup_{i=1}^{n} B_i) = \cup_{i=1}^{n} (A\cap B_i)$. Since the $\{B_i \cap A \}$ are mutually disjoint, we have
-\begin{equation*}
-P(A)=P\left(  \cup_{i=1}^{n} (A\cap B_i)  \right)=\sum_{i=1}^n P\left( A\cap B_i  \right ) =\sum_{i=1}^n P(A\vert B_i) P(B_i).
-\end{equation*}
-\end{proof}
-\end{footnotesize}
-
-\end{frame}
-
-
-\begin{frame}
-\frametitle{Theorem I (cont'd)}
-
-\textbf{Remark}. The theorem remains valid even if $n=\infty$ in Eq. (\ref{TP}). (Double check, and re-do the proof using $n=\infty$.)
-
-
-\begin{corollary}
-%For a given probability space $(S,\mathcal{B},P)$, let $B\in \cal{B}$ satisfy $0<P(B)<1$; then for every $A\in \cal{B}$:
-Let $B$ satisfy $0<P(B)<1$; then for every event $A$:
-
-\begin{equation*}
-P(A)=P(A\vert B)P(B)+P(A\vert B^c) P(B^c)
-\end{equation*}
-
-\end{corollary}
-
-\begin{proof}
-Exercise [Hint: $S=B \cup B^c$].
-\end{proof}
-
-
-
-\end{frame}
-
-
-
-\begin{frame}
-\frametitle{Theorem II}
-
-Theorem I can be applied to derive the well-celebrated Bayes' Theorem.
-
-\begin{theorem} [Bayes' Theorem]
-\label{Th:Bayes}
-Let $B_1,B_2,...,B_k,...,B_n$ be mutually disjoint events, satisfying
-$$S=\cup_{i=1}^{n} B_i,$$ and $P(B_i)>0,$
-for every $i=1,2,...,n$. Then for every event $A$ for which $P(A)>0$, we have that
-\begin{equation}
-\label{Bayes}
-P(B_k\vert A)=\frac{P(A\vert B_k)P(B_k)}{\sum_{i=1}^n P(A\vert B_i) P(B_i)}.
-\end{equation}
-\end{theorem}
-
-
-
-
-
-\end{frame}
-
-
-\begin{frame}
-\frametitle{Theorem II (cont'd)}
-
-
-\begin{proof}
-Let us write
-\bea
-P(B_k\vert A)&=&\frac{P(A\cap B_k)}{P(A)} \nn \\
-&=&\frac{P(A\cap B_k)}{\sum_{i=1}^n P(A\vert B_i) P(B_i)}\nn \\
-&=&\frac{P(A\vert B_k)P(B_k)}{\sum_{i=1}^n P(A\vert B_i) P(B_i)} \nn
-\eea
-That concludes the proof.
-\end{proof}
-
-
-\end{frame}
-
-
-
-
-\begin{frame}
-\frametitle{Theorem II (cont'd)}
-\begin{example}
-Let us consider a special case, where we have only two events $A$ and $B$.
-\begin{figure}[h!]
-\centering
-\includegraphics[width=0.9\textwidth,height=0.55\textheight]{img/example10.pdf}
-\end{figure}
-... so thanks to Bayes' Theorem we can reverse the role of $A\vert B$ and $B \vert A$.
-
-\end{example}
-
-\end{frame}
-
-
+% \begin{frame}{\secname}
+%   \begin{example}[Temperatures]
+%   \begin{small}
+%   \textit{Let $A$ denote the event that the midtown temperature in Los Angeles (LA) is 70 F, $B$ the event that the midtown temperature in New York (NY) is 70 F, and $C$ the event that the maximum of midtown temperatures in NY and LA is 70 F.}
+%   \textit{If $P(A)=0.3, \ P(B)=0.4, \text{and} P(C)=0.2$, find the probability that the minimum of the two midtown temperatures is 70 F}.
+%   \end{small}
+%   \end{example}
+% \end{frame}
 %
+% \begin{frame}{\secname}
+%   \begin{example}[Temperatures, cont'd]
+%   \begin{small}
+%
+%   \vspace{0.2cm}
+%   Let $D$ denote the event that the minimum temperature is 70 F. Then
+%   \bea
+%   P(A\cup B) &=& P(A) + P(B) - P(AB) = 0.7 -P(AB) \nn \\
+%   P(C\cup D) &=& P(C) + P(D) - P(CD) = 0.2 -P(D) - P(DC). \nn
+%   \eea
+%   Since $$A\cup B = C \cup D \quad \text{and} \quad A\cap B = C\cap D,$$
+%   subtracting one of the preceding equations from the other we get
+%   \begin{eqnarray*}
+%   P(A\cup B)-P(C\cup D)  & = &  0.7 -P(AB) - [0.2 -P(D) - P(D\cap C)] \\
+%   &  = & 0.5 -P(D) = 0 , \\
+%   \end{eqnarray*}
+%   thus $ P(D) =0.5.$
+%   \end{small}
+%   \end{example}
+% \end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Conditional Probability}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}{\secname}
+  \begin{figure}[h!]
+  \centering
+  \includegraphics[scale=2]{../../book/img/fun/probconditionnelle2.png}
+  \end{figure}
+
+\end{frame}
+
+
+\begin{frame}{\secname}
+Sometimes, probability depends on the information available.
+  \begin{example}
+  Suppose you have two dice and throw them; the possible outcomes are:
+  \begin{figure}[h!]
+  \centering
+  \includegraphics[scale=0.7]{img/c1.pdf}
+  \end{figure}
+  \end{example}
+\end{frame}
+
+
+\begin{frame}{\secname}
+
+  \begin{example}[cont'd]
+  Consider the event $A$ = getting $5$, or equivalently $A=\{ 5\}$.
+
+  What is $P(A)$, namely, the probability of getting $5$?
+
+  \begin{figure}[h!]
+  \centering
+  \includegraphics[scale=0.7]{img/c2.pdf}
+  \end{figure}
+  \end{example}
+\end{frame}
+
+
+\begin{frame}{\secname}
+
+  \begin{example}[cont'd]
+  The dice are fair so we can get 36 events with equal probability ${1}\big \slash{36}$. Namely:
+  $$
+  Pr(i,j) = \frac{1}{36}, \quad \text{for} \quad i,j=1,..,6
+  $$
+  Thus, we can make use of the highlighted probabilities
+  \bea
+  P(5) &=& Pr\left\{ (1,4) \cup (2,3) \cup (3,2) \cup  (4,1) \right\} \nn \\
+  &=& Pr\left\{ (1,4)  \right\} +  Pr\left\{ (2,3)  \right\} +  Pr\left\{(3,2)  \right\} + Pr\left\{  (4,1) \right\} \nn \\
+  &=& {1}\big \slash{36} + {1}\big \slash{36} + {1}\big \slash{36} + {1}\big \slash{36} \nn \\
+  &=& {4}\big \slash{36} \nn \\
+  &=& 1 \big \slash{9}. \nn
+  \eea
+  \end{example}
+\end{frame}
+
+\begin{frame}{\secname}
+  \begin{example}[cont'd]
+  Now, suppose that we throw the die first and we get 2.\\
+  \vspace{0.2cm}
+  \textbf{What is the probability of getting 5 given that we have observed 2 in the first throw?}
+  \begin{figure}[h!]
+  \centering
+  \includegraphics[scale=0.7]{img/c4.pdf}
+  \end{figure}
+  \begin{footnotesize}
+  $\text{Pr}\{\text{getting 5 given 2 in the first throw}\}= \text{Pr}\{\text{getting 3 in the second throw}\}=1/6$
+  \end{footnotesize}
+  \end{example}
+\end{frame}
+
+\begin{frame}{\secname}
+  \begin{remark}
+  \begin{itemize}
+  \item Information changes the probability
+  \item By knowing that we got 2 in the first throw, we have changed the sample space:
+  \begin{figure}[h!]
+  \centering
+  \includegraphics[scale=0.65]{img/c3.pdf}
+  \end{figure}
+  \item Probability can change drastically --- e.g., suppose that in our example we have 6 in the first throw $\Rightarrow$ the probability of
+  observing 5 in two draws ... is zero !!!
+  \end{itemize}
+  \end{remark}
+\end{frame}
+
+\begin{frame}{\secname}
+
+  \begin{definition}
+  Let $A$ and $B$ be two events. The conditional probability of event $A$
+  given event $B$, denoted by $P\left(A\vert B\right)$, is defined by:
+  $$
+  P\left(A\vert B\right) = \frac{P(A \cap B)}{P(B)}, \quad \text{if} \quad P(B) >0,
+  $$
+  and it is left undefined if $P(B)=0$.
+  \end{definition}
+\end{frame}
+
+\begin{frame}{\secname}
+
+  \begin{example}[A check]
+  Let us define the set $B$ as:
+
+  \begin{figure}[h!]
+  \centering
+  \includegraphics[scale=0.7]{img/c3.pdf}
+  \end{figure}
+  So we have
+  \footnotesize{
+  \bea
+  P(B) &=& Pr\left\{ (2,1) \cup (2,2) \cup (2,3) \cup (2,4) \cup (2,5) \cup (2,6)     \right\} \nn \\
+   &=&  Pr(2,1) + Pr(2,2) + Pr(2,3) + Pr(2,4) + Pr(2,5) + Pr(2,6) \nn \\
+   &=& 6/36 =1/6 \nn
+  \eea}
+
+  \end{example}
+\end{frame}
+
+
+\begin{frame}{\secname}
+
+  \begin{example} [A check]
+  and consider $A \cap B$
+
+  \begin{figure}[h!]
+  \centering
+  \includegraphics[scale=0.7]{img/c4.pdf}
+  \end{figure}
+  So we have  $P(A \cap B) = Pr (2,3) = 1/36$ so,
+  $$
+  P(A\vert B) = \frac{P(A \cap B)}{P(B)}  =  \frac{1/36}{1/6} = \frac{1}{6}. \nn
+  $$
+  \end{example}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Independence}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}{\secname}
+  \begin{definition}
+  Two events $A$ and $B$ are independent if the occurrence of one event has no effect on the probability of occurrence of the other event. Thus,
+  $$
+  P(A\vert B) = P(A)
+  $$
+  or equivalently
+  $$
+  P(B\vert A) = P(B)
+  $$
+  \end{definition}
+  Clearly, if $P(A\vert B) \neq P(A)$, then $A$ and $B$ are \textit{dependent}.
+\end{frame}
+
+
+\begin{frame}{\secname}
+  \framesubtitle{A second characterisation}
+  Two events $A$ and $B$ are independent if
+  $$
+  P(A \vert B) = {P(A)},
+  $$
+  now by definition of conditional probability we know that
+  $$
+  P(A \vert B) = \frac{P(A \cap B)}{P(B)},
+  $$
+  so we have
+  $$
+  P(A) = \frac{P(A \cap B)}{P(B)},
+  $$
+  and rearranging the terms, we find that two events are independent iif
+  $$
+  P(A\cap B) = P(A) P(B).
+  $$
+\end{frame}
+
+\begin{frame}{\secname}
+  \begin{example}
+  \begin{figure}[h!]
+  \centering
+  \includegraphics[width=0.9\textwidth,height=0.7\textheight]{img/example7.pdf}
+  \end{figure}
+  \end{example}
+\end{frame}
+
+
+\begin{frame}{\secname}
+  \begin{example}[cont'd]
+  \begin{figure}[h!]
+  \centering
+  \includegraphics[width=0.9\textwidth,height=0.6\textheight]{img/example8.pdf}
+  \end{figure}
+  \end{example}
+\end{frame}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Theorem I: The Theorem of Total Probability}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}{\secname}
+  \begin{theorem}[Total Probabilities]
+  \label{Th:totprob}
+  Let  $B_1,B_2,...,B_k,...,B_n$ be mutually disjoint events, satisfying
+  $S=\cup_{i=1}^{n} B_i,$ and $P(B_i)>0$, for every $i=1,2,...,n$ then for every $A$ we have that:
+  \begin{equation}
+  \label{TP}
+  P(A)=\sum_{i=1}^n P(A\vert B_i) P(B_i).
+  \end{equation}
+  \end{theorem}
+
+  \begin{footnotesize}
+  \begin{proof}
+  Write $A=A\cap S = A\cap (\cup_{i=1}^{n} B_i) = \cup_{i=1}^{n} (A\cap B_i)$. Since the $\{B_i \cap A \}$ are mutually disjoint, we have
+  \begin{equation*}
+  P(A)=P\left(  \cup_{i=1}^{n} (A\cap B_i)  \right)=\sum_{i=1}^n P\left( A\cap B_i  \right ) =\sum_{i=1}^n P(A\vert B_i) P(B_i).
+  \end{equation*}
+  \end{proof}
+  \end{footnotesize}
+\end{frame}
+
+
+\begin{frame}{\secname}
+  \textbf{Remark}. The theorem remains valid even if $n=\infty$ in Eq. (\ref{TP}). (Double check, and re-do the proof using $n=\infty$.)
+  \begin{corollary}
+  %For a given probability space $(S,\mathcal{B},P)$, let $B\in \cal{B}$ satisfy $0<P(B)<1$; then for every $A\in \cal{B}$:
+  Let $B$ satisfy $0<P(B)<1$; then for every event $A$:
+
+  \begin{equation*}
+  P(A)=P(A\vert B)P(B)+P(A\vert B^c) P(B^c)
+  \end{equation*}
+
+  \end{corollary}
+
+  \begin{proof}
+  Exercise [Hint: $S=B \cup B^c$].
+  \end{proof}
+\end{frame}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Theorem II: Bayes' Theorem}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\begin{frame}{\secname}
+  Theorem I can be applied to derive the well-celebrated Bayes' Theorem.
+  \begin{theorem} [Bayes' Theorem]
+  \label{Th:Bayes}
+  Let $B_1,B_2,...,B_k,...,B_n$ be mutually disjoint events, satisfying
+  $$S=\cup_{i=1}^{n} B_i,$$ and $P(B_i)>0,$
+  for every $i=1,2,...,n$. Then for every event $A$ for which $P(A)>0$, we have that
+  \begin{equation}
+  \label{Bayes}
+  P(B_k\vert A)=\frac{P(A\vert B_k)P(B_k)}{\sum_{i=1}^n P(A\vert B_i) P(B_i)}.
+  \end{equation}
+  \end{theorem}
+\end{frame}
+
+\begin{frame}{\secname}
+  \begin{proof}
+  Let us write
+  \bea
+  P(B_k\vert A)&=&\frac{P(A\cap B_k)}{P(A)} \nn \\
+  &=&\frac{P(A\cap B_k)}{\sum_{i=1}^n P(A\vert B_i) P(B_i)}\nn \\
+  &=&\frac{P(A\vert B_k)P(B_k)}{\sum_{i=1}^n P(A\vert B_i) P(B_i)} \nn
+  \eea
+  That concludes the proof.
+  \end{proof}
+\end{frame}
+
+\begin{frame}{\secname}
+  \begin{example}
+  Let us consider a special case, where we have only two events $A$ and $B$.
+  \begin{figure}[h!]
+  \centering
+  \includegraphics[width=0.9\textwidth,height=0.55\textheight]{img/example10.pdf}
+  \end{figure}
+  ... so thanks to Bayes' Theorem we can reverse the role of $A\vert B$ and $B \vert A$.
+  \end{example}
+\end{frame}
+
 %\begin{frame}
 %\frametitle{A real-life example}
 %\begin{example}
@@ -832,64 +786,57 @@ Let us consider a special case, where we have only two events $A$ and $B$.
 %\end{aim}
 %
 %\end{frame}
-%
 
-
-
-
-\begin{frame}
-\frametitle{A real-life example}
-\begin{example}[Guessing in a multiple choice exam]
-\begin{figure}[h!]
-\centering
-\includegraphics[width=0.7\textwidth,height=0.65\textheight]{img/Ross_Ex.pdf}
-\end{figure}
-\end{example}
-
+\begin{frame}{\secname}
+\framesubtitle{Application}
+  \begin{example}[Guessing in a multiple choice exam]
+  \begin{figure}[h!]
+  \centering
+  \includegraphics[width=0.7\textwidth,height=0.65\textheight]{img/Ross_Ex.pdf}
+  \end{figure}
+  \end{example}
 \end{frame}
 
-\begin{frame}
-\frametitle{Another real-life example}
-\begin{example}
-Members of a consulting firm in Geneva rent cars from two rental agencies:
-\begin{itemize}
-\item 60\% from AVIS
-\item 40\% from Mobility
-\end{itemize}
-Now consider that
-\begin{itemize}
-\item 9\% of the cars from AVIS need a tune-up
-\item 20\% of the cars from Mobility need a tune-up
-\end{itemize}
-If a car delivered to the consulting firm needs a tune-up, what is the probability that the care came
-from AVIS? \pause
-\end{example}
-\begin{aim}
-Let us set: $A:=\{\text{car rented from AVIS}\}$ and $B:=\{\text{car needs a tune-up}\}$. We know $P(B\vert A)$ and we look for $P(A\vert B)$ $\Rightarrow$ Bayes' theorem!!
-\end{aim}
-
+\begin{frame}{\secname}
+\framesubtitle{Application}
+  \begin{example}
+  \begin{footnotesize}
+  Members of a consulting firm in Geneva rent cars from two rental agencies:
+  \begin{itemize}
+  \item 60\% from AVIS
+  \item 40\% from Mobility
+  \end{itemize}
+  Now consider that
+  \begin{itemize}
+  \item 9\% of the cars from AVIS need a tune-up
+  \item 20\% of the cars from Mobility need a tune-up
+  \end{itemize}
+  If a car delivered to the consulting firm needs a tune-up, what is the probability that the care came
+  from AVIS?
+  \end{footnotesize}
+  \end{example}
+  \begin{aim}
+  \begin{footnotesize}
+  $A:=\{\text{car rented from AVIS}\}$ and $B:=\{\text{car needs a tune-up}\}$. We know $P(B\vert A)$ and we look for $P(A\vert B)$ $\Rightarrow$ Bayes' theorem!!
+  \end{footnotesize}
+  \end{aim}
 \end{frame}
 
-
-
-
-\begin{frame}
-\frametitle{A real-life example (cont'd)}
-\begin{example}[cont'd]
-\begin{figure}[h!]
-\centering
-\includegraphics[width=0.9\textwidth,height=0.65\textheight]{img/example9b.pdf}
-\end{figure}
-\end{example}
-
+\begin{frame}{\secname}
+\framesubtitle{Application}
+  \begin{example}[cont'd]
+  \begin{figure}[h!]
+  \centering
+  \includegraphics[width=0.9\textwidth,height=0.65\textheight]{img/example9b.pdf}
+  \end{figure}
+  \end{example}
 \end{frame}
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+\begin{frame}{Wrap-up}
 
-
-
-
-
+\end{frame}
 
 \end{document}
 

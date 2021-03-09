@@ -1,5 +1,8 @@
 # 📝 Limit Theorems {#limittheorems}
 
+```{r ,echo = FALSE, fig.cap="'AreUnormal' by Enrico Chavez", fig.align='center', out.width = "80%"}
+  knitr::include_graphics("img/fun/areUnormal.png")
+```
 
 ## Sequences of Random Variables
 

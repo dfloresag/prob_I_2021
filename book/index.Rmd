@@ -56,9 +56,9 @@ The Lecture is divided in the following Chapters, and each Chapter contains seve
 |:------:|:-------|:-------|:-------:| 
 | 1 |**Introduction** | Intro, Mathematics reminder and Combinatorics. | ☑️ | 
 | 2 |**Elements of Set Theory For Probability** | Random variables, Trees, Venn diagram, Conditional probability, Independence & Bayes' theorem. | ☑️ | 
-| 3 |**Axiomatic Foundations of Probability** | Probability Axioms, Illustrations of use | 🔧 | 
+| 3 |**Axiomatic Foundations of Probability** | Probability Axioms, Illustrations of use | ☑️ | 
 | 4 | **Discrete random variables**| Definitions, Expected value and variance,  Binomial, Poisson, Negative binomial and Hypergeometric | 🔧 | 
-| 5 | **Continuous random variables** | Definitions, Expected value and variance, Cumulative distribution function (cdf) and Probability density function (pdf), Some important examples: Uniform, Exponential, Gamma, Normal, logNormal, Student's t, Relationships | 📝 |
+| 5 | **Continuous random variables** | Definitions, Expected value and variance, Cumulative distribution function (cdf) and Probability density function (pdf), Some important examples: Uniform, Exponential, Gamma, Normal, logNormal, Student's t, Relationships | 🔧 |
 | 6 | **Limit Theorems** | Weak Law of Large Numbers (WLLN) and Central Limit Theorem (CLT) | 📝 | 
 | 7 | **Bivariate Discrete Random Variables** | | 📝 |
 | 8 | **Elements of Simulation** | Numerical methods for the simulation of random variable with a given CDF. | 📝 |

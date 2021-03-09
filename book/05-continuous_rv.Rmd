@@ -1,6 +1,6 @@
-# 📝 Continuous Random Variable {#continuousrv}
+# 🔧 Continuous Random Variable {#continuousrv}
 
-```{r ,echo = FALSE, fig.cap="'Statistical Cow' by Enrico Chavez", fig.align='center'}
+```{r ,echo = FALSE, fig.cap="'Statistical Cow' by Enrico Chavez", fig.align='center', out.width = "80%"}
   knitr::include_graphics("img/fun/EC_Stat_Cow.png")
 ```
 

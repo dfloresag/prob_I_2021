@@ -120,7 +120,7 @@
 <li class="chapter" data-level="2.6" data-path="settheory.html"><a href="settheory.html#probability-as-frequency"><i class="fa fa-check"></i><b>2.6</b> Probability as Frequency</a></li>
 <li class="chapter" data-level="2.7" data-path="settheory.html"><a href="settheory.html#some-references"><i class="fa fa-check"></i><b>2.7</b> Some references</a></li>
 </ul></li>
-<li class="chapter" data-level="3" data-path="axioms.html"><a href="axioms.html"><i class="fa fa-check"></i><b>3</b> 🔧 Probability Axioms</a>
+<li class="chapter" data-level="3" data-path="axioms.html"><a href="axioms.html"><i class="fa fa-check"></i><b>3</b> Probability Axioms</a>
 <ul>
 <li class="chapter" data-level="3.1" data-path="axioms.html"><a href="axioms.html#an-axiomatic-definition-of-probability"><i class="fa fa-check"></i><b>3.1</b> An Axiomatic Definition of Probability</a></li>
 <li class="chapter" data-level="3.2" data-path="axioms.html"><a href="axioms.html#properties-of-pcdot"><i class="fa fa-check"></i><b>3.2</b> Properties of <span class="math inline">\(P(\cdot)\)</span></a></li>
@@ -164,7 +164,7 @@
 <li class="chapter" data-level="4.7.9" data-path="discreterv.html"><a href="discreterv.html#the-geometric-distribution"><i class="fa fa-check"></i><b>4.7.9</b> The Geometric Distribution</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="5" data-path="continuousrv.html"><a href="continuousrv.html"><i class="fa fa-check"></i><b>5</b> 📝 Continuous Random Variable</a>
+<li class="chapter" data-level="5" data-path="continuousrv.html"><a href="continuousrv.html"><i class="fa fa-check"></i><b>5</b> 🔧 Continuous Random Variable</a>
 <ul>
 <li class="chapter" data-level="5.1" data-path="continuousrv.html"><a href="continuousrv.html#continuous-distributions"><i class="fa fa-check"></i><b>5.1</b> Continuous Distributions</a></li>
 <li class="chapter" data-level="5.2" data-path="continuousrv.html"><a href="continuousrv.html#cumulative-distribution-function-cdf"><i class="fa fa-check"></i><b>5.2</b> Cumulative Distribution Function (CDF)</a>
@@ -267,11 +267,17 @@
             <section class="normal" id="section-">
 <div id="limittheorems" class="section level1" number="6">
 <h1><span class="header-section-number">Chapter 6</span> 📝 Limit Theorems</h1>
+<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-1"></span>
+<img src="img/fun/areUnormal.png" alt="'AreUnormal' by Enrico Chavez" width="80%" />
+<p class="caption">
+Figure 6.1: ‘AreUnormal’ by Enrico Chavez
+</p>
+</div>
 <div id="sequences-of-random-variables" class="section level2" number="6.1">
 <h2><span class="header-section-number">6.1</span> Sequences of Random Variables</h2>
 
 <div class="definition">
-<p><span id="def:unnamed-chunk-1" class="definition"><strong>Definition 6.1  </strong></span> A sequence of random variables is an ordered list of random variables
+<p><span id="def:unnamed-chunk-2" class="definition"><strong>Definition 6.1  </strong></span> A sequence of random variables is an ordered list of random variables
 of the form</p>
 <p><span class="math display">\[\begin{equation*}
 S_{1},S\,_{2},...,S_{n},...
@@ -328,7 +334,7 @@ so, in what way?”  \</p>
 <p>More formally,</p>
 
 <div class="definition">
-<p><span id="def:unnamed-chunk-3" class="definition"><strong>Definition 6.2  </strong></span>A sequence of random variables <span class="math inline">\(X_{1},X_{2},...,X_{n},...\)</span> is said to <strong>converge in probability</strong> to a number <span class="math inline">\(\alpha\)</span> if for any arbitrary constant <span class="math inline">\(\varepsilon &gt;0\)</span></p>
+<p><span id="def:unnamed-chunk-4" class="definition"><strong>Definition 6.2  </strong></span>A sequence of random variables <span class="math inline">\(X_{1},X_{2},...,X_{n},...\)</span> is said to <strong>converge in probability</strong> to a number <span class="math inline">\(\alpha\)</span> if for any arbitrary constant <span class="math inline">\(\varepsilon &gt;0\)</span></p>
 <p><span class="math display">\[\begin{equation*}
 \lim_{n\rightarrow \infty }\Pr \left( \left\vert X_{n}-\alpha \right\vert
 &gt;\varepsilon \right) =0
@@ -434,7 +440,7 @@ M_{(r,n)}\overset{p}{\rightarrow }\mu_r.
 <h3><span class="header-section-number">6.2.3</span> The Weak Law of Large Numbers (WLLN)</h3>
 
 <div class="proposition">
-<p><span id="prp:unnamed-chunk-4" class="proposition"><strong>Proposition 6.1  </strong></span> Let <span class="math inline">\(X_{1},X_{2},...,X_{n},...\)</span> be a sequence of  random variables with common probability distribution <span class="math inline">\(F_X(x)\)</span>, and let <span class="math inline">\(Y=h(X)\)</span> be such that
+<p><span id="prp:unnamed-chunk-5" class="proposition"><strong>Proposition 6.1  </strong></span> Let <span class="math inline">\(X_{1},X_{2},...,X_{n},...\)</span> be a sequence of  random variables with common probability distribution <span class="math inline">\(F_X(x)\)</span>, and let <span class="math inline">\(Y=h(X)\)</span> be such that
 <span class="math display">\[\begin{eqnarray*}
 E[Y]=E\left[ h(X)\right]  &amp;=&amp;\mu_Y  \\
 Var(Y)=Var\left( h(X)\right)  &amp;=&amp;\sigma_Y ^{2}&lt;\infty\,.
@@ -504,7 +510,7 @@ It can be used to construct crude bounds on the probabilities associated with de
 <h3><span class="header-section-number">6.2.6</span> Example: Markov’s Inequality</h3>
 
 <div class="example">
-<p><span id="exm:unnamed-chunk-5" class="example"><strong>Example 6.1  </strong></span>
+<p><span id="exm:unnamed-chunk-6" class="example"><strong>Example 6.1  </strong></span>
 <strong>Q.</strong> On the A2 highway (in the Luzern Canton), the speed limit is <span class="math inline">\(80\)</span> Km/h. Most drivers are not driving so fast and the average speed on the high way is <span class="math inline">\(70\)</span> Km/h.
 If <span class="math inline">\(Z\)</span> denotes a randomly chosen driver’s speed, what is the probability that such a person is driving faster than the speed limit? \</p>
 <p><strong>A.</strong> Since we do not have the whole distribution of <span class="math inline">\(Z\)</span>, but we have only limited info (i.e. we know <span class="math inline">\(E[Z]=70\)</span> Km/h), we have to resort on Markov’s inequality. So using () we obtain an upper bound to the probability:</p>
@@ -512,7 +518,7 @@ If <span class="math inline">\(Z\)</span> denotes a randomly chosen driver’s s
 </div>
 
 <div class="example">
-<p><span id="exm:unnamed-chunk-6" class="example"><strong>Example 6.2  </strong></span>
+<p><span id="exm:unnamed-chunk-7" class="example"><strong>Example 6.2  </strong></span>
 <strong>Q.</strong> On the A2 highway (in the Luzern Canton), the speed limit is <span class="math inline">\(80\)</span> Km/h. Most drivers are not driving so fast and the average speed on the high way is <span class="math inline">\(70\)</span> Km/h, .
 If <span class="math inline">\(Z\)</span> denotes a randomly chosen driver’s speed, what is the probability that such a person is driving faster than the speed limit? \</p>
 <p><strong>A.</strong> Since we do not have the whole distribution of <span class="math inline">\(Z\)</span>, but we have only limited info (i.e. we know <span class="math inline">\(E[Z]=70\)</span> Km/h <strong>AND</strong> <span class="math inline">\(V(Z)=9\)</span> <span class="math inline">\((Km/h)^2\)</span>), we have to resort on Chebyshev’s inequality and give an upper bound to the probability. Thus,</p>
@@ -635,7 +641,7 @@ Do the check as an exercise!!
 <!-- % -->
 
 <div class="definition">
-<span id="def:unnamed-chunk-8" class="definition"><strong>Definition 6.3  </strong></span>Consider, therefore, a sequence of random variables <span class="math inline">\(X_{1},X_{2},...,X_{n},...\)</span> with corresponding CDFs <span class="math inline">\(F_{X_{1}}\left( x\right) ,F_{X_{2}}\left( x\right),...,F_{X_{n}}\left(x\right) ,...\)</span>. We say that the sequence <span class="math inline">\(X_{1},X_{2},...,X_{n},...\)</span> <strong>converges in distribution</strong> to the random variable <span class="math inline">\(X\)</span>, having probability distribution <span class="math inline">\(F_X(x)\)</span>, if and only if
+<span id="def:unnamed-chunk-9" class="definition"><strong>Definition 6.3  </strong></span>Consider, therefore, a sequence of random variables <span class="math inline">\(X_{1},X_{2},...,X_{n},...\)</span> with corresponding CDFs <span class="math inline">\(F_{X_{1}}\left( x\right) ,F_{X_{2}}\left( x\right),...,F_{X_{n}}\left(x\right) ,...\)</span>. We say that the sequence <span class="math inline">\(X_{1},X_{2},...,X_{n},...\)</span> <strong>converges in distribution</strong> to the random variable <span class="math inline">\(X\)</span>, having probability distribution <span class="math inline">\(F_X(x)\)</span>, if and only if
 <span class="math display">\[\begin{equation*}
 \lim_{n\rightarrow \infty }F_{X_n}\left( x\right) =F_{X}\left( x\right)
 \end{equation*}\]</span>
@@ -660,7 +666,7 @@ continuous function, then <span class="math inline">\(g\left( X_{n}\right) \over
 <!-- % -->
 
 <div class="example">
-<p><span id="exm:unnamed-chunk-9" class="example"><strong>Example 6.3  </strong></span>Suppose <span class="math inline">\(X_{1},X_{2},...,X_{n},...\)</span> is a sequence of independent
+<p><span id="exm:unnamed-chunk-10" class="example"><strong>Example 6.3  </strong></span>Suppose <span class="math inline">\(X_{1},X_{2},...,X_{n},...\)</span> is a sequence of independent
 random variables where <span class="math inline">\(X_n\sim B(n,p)\)</span> with probability of “Success” <span class="math inline">\(p\)</span>.</p>
 <ul>
 <li><p>We already know that, if <span class="math inline">\(p=\lambda/n\)</span>, where <span class="math inline">\(\lambda&gt;0\)</span> is fixed, then as <span class="math inline">\(n\)</span> goes to infinity, <span class="math inline">\(F_{X_{n}}\left( x\right)\)</span> converges to
@@ -674,12 +680,12 @@ converges, as <span class="math inline">\(n\)</span> goes to infinity, to that o
 </div>
 
 <div class="example">
-<p><span id="exm:unnamed-chunk-10" class="example"><strong>Example 6.4  </strong></span></p>
+<p><span id="exm:unnamed-chunk-11" class="example"><strong>Example 6.4  </strong></span></p>
 <p>%</p>
 </div>
 
 <div class="example">
-<p><span id="exm:unnamed-chunk-11" class="example"><strong>Example 6.5  </strong></span>Let us consider a sequence of continuous r.v.’s <span class="math inline">\(X_1, X_2, ..., X_n,...\)</span>, where <span class="math inline">\(X_n\)</span> has range <span class="math inline">\((0, n]\)</span>, for <span class="math inline">\(n &gt; 0\)</span> and CDF
+<p><span id="exm:unnamed-chunk-12" class="example"><strong>Example 6.5  </strong></span>Let us consider a sequence of continuous r.v.’s <span class="math inline">\(X_1, X_2, ..., X_n,...\)</span>, where <span class="math inline">\(X_n\)</span> has range <span class="math inline">\((0, n]\)</span>, for <span class="math inline">\(n &gt; 0\)</span> and CDF
 <span class="math display">\[
 F_{X_n} (x) = 1- \left( 1- \frac{x}{n} \right)^n,  \ \ 0&lt;x\leq n.
 \]</span>
@@ -696,7 +702,7 @@ X_n \overset{D}{\rightarrow } X, \quad X \sim \exp(1).
 <p>The following theorem is often said to be one of the most important results. Its significance lies in the fact that it allows accurate probability calculations to be made without knowledge of the underlying distributions!</p>
 
 <div class="theorem">
-<p><span id="thm:unnamed-chunk-12" class="theorem"><strong>Theorem 6.1  </strong></span>
+<p><span id="thm:unnamed-chunk-13" class="theorem"><strong>Theorem 6.1  </strong></span>
 Let <span class="math inline">\(X_{1},X_{2},...,X_{n},...\)</span> be a sequence of  random variables and let <span class="math inline">\(Y=h(X)\)</span> be such that
 <span class="math display">\[\begin{eqnarray*}
 E[Y]=E\left[ h(X)\right]  &amp;=&amp;\mu_Y  \\

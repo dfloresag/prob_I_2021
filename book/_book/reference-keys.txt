@@ -321,3 +321,5 @@ link-to-binomial
 examples-and-illustrations-1
 examples-and-illustrations-2
 fig:inclusion
+prp:unnamed-chunk-5
+thm:unnamed-chunk-13

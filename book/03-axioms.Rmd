@@ -1,6 +1,6 @@
-# 🔧 Probability Axioms {#axioms}
+# Probability Axioms {#axioms}
 
-```{r ,echo = FALSE, fig.cap="'Is it clear to Everyone?' by Enrico Chavez", fig.align='center'}
+```{r ,echo = FALSE, fig.cap="'Is it clear to Everyone?' by Enrico Chavez", fig.align='center', out.width = "80%"}
   knitr::include_graphics("img/fun/EC_clear2everyone.png")
 ```
 
@@ -78,6 +78,7 @@ If $A$ is an event, then $P(A^c) = 1- P(A).$
 
 ```{proof}
 By definition, $A$ and its complement $A^c$ are such that: 
+
 - $A \cup A^c = S$ and 
 - $A \cap A^c = \varnothing$ 
 
@@ -167,6 +168,24 @@ If we draw a Venn diagram, we can notice that this rule also implies that you ca
 \end{tikzpicture}
 ```
 
+
+```{theorem, name = "The Probability of the Union"}
+For any two events $A$ and $B$ then
+$$
+P(A \cup B) = P(A) + P(B) - P(A \cap B).
+$$
+```
+
+```{proof}
+Consider that $A\cup B = A \cup (A^c \cap B)$, and $A\cap(A^c \cap B) = \phi$. Now remember\footnote{See Lecture 1 for the meaning of set difference.} that $A^c \cap B = B -(A \cap B)$, so,
+\begin{eqnarray}
+P(A\cup B) &=& P(A) + P(A^c \cap B)  \\
+&=& P(A) + P(B) - P(A\cap B). 
+\end{eqnarray}
+
+```
+
+
 ```{theorem, boolsinequality, name = "Boole's inequality"} 
 For the events $A_1,A_2,... A_n$,
 $$
@@ -189,22 +208,6 @@ since $P(A_1 \cap A_2) \geq 0$ by definition.
 It is worth noticing that if $A_j \cap A_i = \varnothing$, for every $i$ and $j$, with $i\neq j$, then
 $P(A_1 \cup A_2 \cup....\cup A_n) = \sum_{i=1}^{n}P(A_i),$
 as stated in \@ref(eq:probuniondisj).
-```
-
-```{theorem}
-For any two events $A$ and $B$ then
-$$
-P(A \cup B) = P(A) + P(B) - P(A \cap B).
-$$
-```
-
-```{proof}
-Consider that $A\cup B = A \cup (A^c \cap B)$, and $A\cap(A^c \cap B) = \phi$. Now remember\footnote{See Lecture 1 for the meaning of set difference.} that $A^c \cap B = B -(A \cap B)$, so,
-\begin{eqnarray}
-P(A\cup B) &=& P(A) + P(A^c \cap B)  \\
-&=& P(A) + P(B) - P(A\cap B). 
-\end{eqnarray}
-
 ```
 
 ## Examples and Illustrations
@@ -266,15 +269,14 @@ Pr(DD \cup UD \cup DU) &= Pr(\{DD \cup UD\}) + Pr(\{DD \cup DU\}) - Pr(DD) \\
 \end{align}
 ```
 
-```{r dduddu,echo = FALSE, fig.cap='Schematic illustration of the sets in Exercise 3.2', fig.align='center'}
+```{r dduddu,echo = FALSE, fig.cap='Schematic illustration of the sets in Exercise 3.2',out.width="50%", fig.align='center'}
 knitr::include_graphics("img/03_axioms/Example2_3_v2.png")
 ```
-
 
 ### De Morgan's Law
 
 ```{example, demorganEx, name="Application of De Morgan's laws"}
-Given  $P(A\cup B)=0.7$ and $P(A\cup {B}^c) = 0.9$, find $P(A)$.
+_Given $P(A\cup B)=0.7$ and $P(A\cup {B}^c) = 0.9$, **find $P(A)$**_
 
 By De Morgan's law,
 
@@ -286,8 +288,7 @@ $$P(A^c \cap B) = 1 - P(A \cup B^c) = 1- 0.9 = 0.1.$$
 
 Thus,
 $$P(A^c)=P(A^c \cap B^c )+P(A^c \cap B)= 0.3+ 0.1= 0.4,$$
-
-so
+so:
 $$P(A)=1 - 0.4= 0.6.$$
 ```
 
@@ -307,32 +308,34 @@ Because the event the John likes neither books is the complement of the event th
 $$P(A^{c}_1 \cap A^{c}_2 ) = P((A_1 \cup A_2)^c) = 1- P (A_1 \cup A_2) = 0.4.$$
 ```
 
-```{example}
 
-_Let $A$ denote the event that the midtown temperature in Los Angeles (LA) is 70 F, and let $B$ denote the event that the midtown temperature in New York (NY) is 70 F. Also, let $C$ denote the event that the maximum of midtown temperatures in NY and LA is 70 F._ 
 
-_If_
-$$P(A)=0.3, \quad P(B)=0.4 \quad \text{and} \quad P(C)=0.2,$$
-_find the **probability that the minimum of the two midtown temperatures is 70 F**._
 
-Let $D$ denote the event that the minimum temperature is 70 F. Then
-\begin{eqnarray}
-P(A\cup B) &=& P(A) + P(B) - P(AB) = 0.7 -P(AB)  \\
-P(C\cup D) &=& P(C) + P(D) - P(CD) = 0.2 -P(D) - P(DC). 
-\end{eqnarray}
-Since $$A\cup B = C \cup D \quad \text{and} \quad AB = CD,$$
-subtracting one of the preceding equations from the other we get
-\begin{eqnarray*}
-P(A\cup B)-P(C\cup D)  & = &  0.7 -P(AB) - [0.2 -P(D) - P(DC)] \\
-&  = & 0.5 -P(D) = 0 , \\
-\end{eqnarray*}
-thus $ P(D) =0.5.$
-```
+<!-- ```{example} -->
+
+<!-- _Let $A$ denote the event that the midtown temperature in Los Angeles (LA) is 70F, and let $B$ denote the event that the midtown temperature in New York (NY) is 70F. Also, let $C$ denote the event that the maximum of midtown temperatures in NY and LA is 70F._  -->
+
+
+<!-- _If $P(A)=0.3$, $P(B)=0.4$ and $P(C)=0.2$, find the **probability that the minimum of the two midtown temperatures is 70F**._ -->
+
+<!-- Let $D$ denote the event that the minimum temperature is 70F. Then -->
+<!-- \begin{eqnarray} -->
+<!-- P(A\cup B) &=& P(A) + P(B) - P(A\cap B) = 0.7 -P(A\cap B)  \\ -->
+<!-- P(C\cup D) &=& P(C) + P(D) - P(C\cap D) = 0.2 -P(D) - P(D\cap C).  -->
+<!-- \end{eqnarray} -->
+<!-- Since: $$A\cup B = C \cup D \quad \text{and} \quad AB = CD,$$ -->
+<!-- subtracting one of the preceding equations from the other we get -->
+<!-- \begin{eqnarray*} -->
+<!-- P(A\cup B)-P(C\cup D)  & = &  0.7 -P(AB) - [0.2 -P(D) - P(DC)] \\ -->
+<!-- &  = & 0.5 -P(D) = 0 , \\ -->
+<!-- \end{eqnarray*} -->
+<!-- thus $P(D) =0.5$. -->
+<!-- ``` -->
 
 
 ## Conditional probability
 
-```{r ,echo = FALSE, fig.cap="'Probability of a walk' from the [Cartoon Guide to Statistics](http://www.larrygonick.com/titles/science/the-cartoon-guide-to-statistics/)", fig.align='center'}
+```{r ,echo = FALSE, fig.cap="'Probability of a walk' from the [Cartoon Guide to Statistics](http://www.larrygonick.com/titles/science/the-cartoon-guide-to-statistics/)", fig.align='center', out.width = "80%"}
   knitr::include_graphics("img/fun/probconditionnelle2.png")
 ```
 
@@ -367,15 +370,13 @@ P(5) &=& Pr\left\{ (1,4) \cup (2,3) \cup (3,2) \cup  (4,1) \right\}  \\
 
 Now, suppose that, instead of throwing both dice simultaneously, **we throw them one at a time**. In this scenario, imagine that **our first die yields a 2**.
 
-**Q.** What is the probability of **getting 5 given that we have gotten 2** in the first throw?
+_What is the probability of **getting 5 given that we have gotten 2** in the first throw?_
 
 To answer this question, let us highlight the outcomes where the first die yields a 2 in the table of events. 
 
 ```{r ,echo = FALSE, fig.cap='', fig.align='center'}
   knitr::include_graphics("img/03_axioms/c4.png")
 ```
-
-**A.**
 
 As we see in the table, the only scenario where we have $A$ is when we obtain $3$ in the second throw. Since the event "obtaining a 3" for one of the dice, has a probability$=1/6$:
 
@@ -385,7 +386,8 @@ $\text{Pr}\{\text{getting 5 given 2 in the first throw}\}= \text{Pr}\{\text{gett
 It is important to notice that the information changes the probability, i.e. by knowing that we got 2 in the first throw, we have changed the sample space:
 ```
 
-```{r ,echo = FALSE, fig.cap=''}
+
+```{r ,echo = FALSE, fig.cap='', fig.align='center'}
   knitr::include_graphics("img/03_axioms/c3.png")
 ```
 
@@ -398,7 +400,7 @@ $$P\left(A\vert B\right) = \frac{P(A \cap B)}{P(B)}, \quad \text{if} \quad P(B) 
 and it is left undefined if $P(B)=0$.
 ```
 
-Let us come back to the example of the two dice and assess whether the formula applies. Let us define the event $B$ as "obtaining a 2 on the first throw", i.e. 
+Let us come back to the example of the two dice and assess whether the formula applies. Let us define the event $B$ as "_obtaining a 2 on the first throw_", i.e. 
 
 ```{r ,echo = FALSE, fig.cap='', fig.align='center'}
 knitr::include_graphics("img/03_axioms/c3.png")
@@ -412,7 +414,7 @@ P(B) &=& Pr\left\{ (2,1) \cup (2,2) \cup (2,3) \cup (2,4) \cup (2,5) \cup (2,6) 
  &=& 6/36 =1/6 
 \end{eqnarray}
 
-Let us now focus on the event $A \cap B$, i.e. "sum of both dice = 5" **and** "getting a 2 on the first throw**. As we have seen in the previous tables, this event arises only when the second die yields a 3, i.e.
+Let us now focus on the event $A \cap B$, i.e. "_sum of both dice = 5_" **and** "_getting a 2 on the first throw_**. As we have seen in the previous tables, this event arises only when the second die yields a 3, i.e.
 
 ```{r ,echo = FALSE, fig.cap='', fig.align='center'}
   knitr::include_graphics("img/03_axioms/c4.png")
@@ -470,7 +472,7 @@ We have:
 |$A\cap B = \{ HHT\}$ | $Pr(A\cap B)=\frac{1}{8}$|
 |$B\cap D = \{ HTT, THT\}$ |$Pr(B\cap D)=\frac{2}{8}=\frac{1}{4}$|  
 
-Now, if we compute the probabilities of the products and compare with the 
+Now, if we compute the probabilities of the products and compare with the definition of independence: 
 
 - $Pr(A) \times Pr(B) = \frac{1}{4}\times  \frac{1}{2}=  \frac{1}{8} = Pr(A\cap B)$, hence $A$ and $C$ are independent.
 - $Pr(B) \times Pr(D) = \frac{1}{2}\times  \frac{3}{8}=  \frac{3}{16} \neq \frac{1}{4} = Pr(B\cap D)$, hence $B$ and $D$ are dependent.
