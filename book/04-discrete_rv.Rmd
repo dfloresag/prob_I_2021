@@ -79,18 +79,19 @@ Let $\color{blue}{X}(\color{green}{s})$ be a function that takes an element $\co
 
 ```{example, name = "Rolling two dice"}
 
-***Experiment:** We roll two dice and we consider the number of points in the first die, and the number of points in the second die. We already know that the sample space ${\color{green}S}$ is given by:
+**Experiment:** We roll two dice and we consider the number of points in the first die, and the number of points in the second die. We already know that the sample space ${\color{green}S}$ is given by:
 ```
+
 ```{r ,echo = FALSE, fig.cap='', fig.align='center'}
   knitr::include_graphics("img/04_discrete_rv/C.png")
 ```
 
-For the elements related to $\color{green}S$ we have a probability ${\color{green}Pr}$
+For the elements related to $\color{green}S$ we have a probability $\color{green}{Pr}$
 
-Now define $X(\color{green}{s_{ij}})$ as the sum of the outcome of the outcome $i$ of the first die and the outcome $j$ of the second die. Thus:
+Now define $X(\color{green}{s_{ij}})$ as the sum of the outcome $i$ of the first die and the outcome $j$ of the second die. Thus:
 
 \begin{eqnarray*}
-X(\color{green}s_{ij})= X(i,j)= i+j, & \textit{for} & i=1,...,6,  \textit{and  }   j=1,...,6 
+X(\color{green}s_{ij})= X(i,j)= i+j, & \text{ for } & i=1,...,6,  \text{ and }   j=1,...,6 
 \end{eqnarray*}
 
 In this notation $\color{green}{s_{ij}=(i,j)}$ and $\color{green}{s_{ij}\in S}$, each having probability $1/36$.
@@ -120,9 +121,6 @@ P(\color{blue}7)=Pr(3,4)+Pr(2,5)+Pr(1,6)+Pr(4,3)+Pr(5,2)+Pr(6,1)=6/36.
 
 Let us formalize all these ideas: 
 
-
-
-
 - Let $D$ be the set of all values $x$ that can be obtained by $X\left(s\right)$, for all $s\in S$:
 
 \begin{equation*}
@@ -143,8 +141,8 @@ for each $A$ (as "made" by elements in $D$)
 \color{blue}P\left( A\right) = \color{green} {Pr} ( \left\{ s\in S :X\left(  s  \right) \in A\right\}) 
 \end{equation*}
 
-where $\color{blue}P $ and $\color{green} Pr $ stand for ``probability'' on $\color{blue} D $
-and on $\color{green} S $, respectively. 
+where $\color{blue}{P}$ and $\color{green}{Pr}$ stand for "probability" on $\color{blue}{D}$
+and on $\color{green}{S}$, respectively. 
 
 So:
 
@@ -165,9 +163,7 @@ From now on, I drop the colors.
 
 ## An Example from gambling 
 
-```{example} 
-
-[Geometric random variable]
+```{example, name = 'Geometric random variable'}
 
 Consider the problem of rolling a die until a 6 appears.
 
@@ -193,7 +189,6 @@ $=\left(\frac{5}{6}\right)^{n-1}\cdot \frac{1}{6}$
 
 - $\ldots$ and so on $\ldots$.
 
-
 - Rather than list the possible values of $X$ along with the associated
 probabilities in a table, we can provide a formula that gives the required
 probabilities.
@@ -210,41 +205,34 @@ P(\left\{ X=n \right\})=\left(\frac{5}{6}\right)^{n-1}\frac{1}{6}\quad\text{for}
 \begin{equation*}
 \sum_{n=1}^\infty\left(\frac{5}{6}\right)^{n-1}\frac{1}{6}=1.
 \end{equation*}
-
 ```
-
 
 ## Discrete random variables
 
-
-
-
 Discrete random variables are often associated with the process of counting (see previous
 example). More generally, 
+
 ```{definition}
 Suppose $X$ can take the values $x_{1},x_{2},x_{3},\ldots ,x_{n}$. The probability of $x_{i}$ is 
 $$p_{i}= P(\left\{ X=x_i\right\})$$
 
-and we must have $p_{1}+p_{2}+p_{3}+\cdots +p_{n}=1$ and all $p_{i}\geq 0$. These probabilities may be put in a table%
-\begin{equation*}
-\begin{tabular}{|c|c|}
-\hline
-$x_i $ & $P(\left\{ X=x_i\right\}) $ \\ \hline\hline
-$x_{1}$ & $p_{1}$ \\ \hline
-$x_{2}$ & $p_{2}$ \\ \hline
-$x_{3}$ & $p_{3}$ \\ \hline
-$\vdots $ & $\vdots $ \\ \hline
-$x_{n}$ & $p_{n}$ \\ \hline\hline
-Total & $1$ \\ \hline
-\end{tabular}%
-\end{equation*}
+and we must have $p_{1}+p_{2}+p_{3}+\cdots +p_{n}=1$ and all $p_{i}\geq 0$. These probabilities may be put in a table:
+
+|$x_i$ | $P(\left\{ X=x_i\right\})$|
+|:-------:|:---------------------------:|
+|$x_{1}$ | $p_{1}$|
+|$x_{2}$ | $p_{2}$|
+|$x_{3}$ | $p_{3}$|
+|$\vdots$ | $\vdots$|
+|$x_{n}$ | $p_{n}$|
+|Total | $1$ |
+
 ```
-
-
 
 
 For a **discrete random variable $X$**, any table listing all
 possible nonzero probabilities provides the entire **probability distribution**. 
+
 The **probability mass function** $p(a)$ of $X$ is defined by
 $$ 
 p_a = p(a)= P(\{X=a \}),
@@ -262,45 +250,38 @@ $$
 \sum_{i=1}^{\infty} p(x_i) = 1.
 $$
 
-%The probabilities $p_{i}=P\left( X=x_{i}\right)$ may be given by an appropriate mathematical formula: i.e. 
-%$$
-%p_{i}=P\left( X=x_{i}\right)=f(x_{i}) 
-%$$ 
+<!-- %The probabilities $p_{i}=P\left( X=x_{i}\right)$ may be given by an appropriate mathematical formula: i.e.  -->
+<!-- %$$ -->
+<!-- %p_{i}=P\left( X=x_{i}\right)=f(x_{i})  -->
+<!-- %$$  -->
 
-## Cumulative Distribution Function (I)}
+## Cumulative Distribution Function
 
 The **cumulative distribution function (CDF)** is a table listing the values that $X$ can take, along with 
-$$F_X(a) = P \left(\{ X\leq a\}\right)= \sum_{\text{all \ \ } x \leq a } p(x).$$ 
+$$F_X(a) = P \left(\{ X\leq a\}\right)= \sum_{\text{all } x \leq a } p(x).$$ 
 
 If the random variable $X$ takes on values $x_{1},x_{2},x_{3},\ldots .,x_{n}$ _listed in
 increasing order_ $x_{1}<x_{2}<x_{3}<\cdots <x_{n}$, the CDF is a step function, that it its value is constant in the intervals $(x_{i-1},x_i]$ and takes a step/jump of size $p_i$
 at each $x_i$:
 
-\begin{equation*}
-\begin{tabular}{|c|c|}
-\hline
-$x_i $ & $F_X(x_i) =P \left(\{ X\leq x_i\}\right) $ \\ \hline\hline
-$x_{1}$ & $p_{1}$ \\ \hline
-$x_{2}$ & $p_{1}+p_{2}$ \\ \hline
-$x_{3}$ & $p_{1}+p_{2}+p_{3}$ \\ \hline
-$\vdots $ & $\vdots $ \\ \hline
-$x_{n}$ & $p_{1}+p_{2}+\cdots +p_{n}=1$ \\ \hline
-\end{tabular}
-\end{equation*}
 
+|$x_i$ | $F_X(x_i)=P\left(\{ X\leq x_i\}\right)$|
+|:------:|:------:|
+|$x_{1}$ | $p_{1}$ | 
+|$x_{2}$ | $p_{1}+p_{2}$ | 
+|$x_{3}$ | $p_{1}+p_{2}+p_{3}$ | 
+|$\vdots$ | $\vdots$ | 
+|$x_{n}$ | $p_{1}+p_{2}+\cdots +p_{n}=1$ | 
 
-\frametitle{Cumulative Distribution Function (II)}
 
 ```{example}
 
-\noindent 
-\begin{center}
-\begin{tabular}{c|cccc|c}
-$x_i$ & 0 & 1 & 2 & 3 & Tot \\ \hline
-$P(\{X=x_i\})$ & 4/35 & 18/35 & 12/35 & 1/35 & 1 \\ 
-$P(\{X\leq x_i\})$ & 4/35 & 22/35 & 34/35 & 35/35 & 
-\end{tabular}
-\end{center}
+
+
+|$x_i$               | 0    | 1     | 2     | 3      | Total |
+|:------------------:|:----:|:-----:|:-----:|:------:|:-----:|
+|$P(\{X=x_i\})$      | 4/35 | 18/35 | 12/35 | 1/35   | 1     |
+|$P(\{X\leq x_i\})$  | 4/35 | 22/35 | 34/35 | 35/35  |       |
 
 
 $$F_X(x) = \left\{ 
@@ -313,65 +294,35 @@ $$F_X(x) = \left\{
 \end{array} \right.$$
 
 ... or graphically, you get _a step function_ ...
-
-
-
 ```
  
  
-```{r ,echo = FALSE, fig.cap='', fig.align='center'}
+```{r ,echo = FALSE, fig.cap='Step function', fig.align='center', out.width = "50%"}
   knitr::include_graphics("img/04_discrete_rv/repartbis.png")
 ``` 
 
 
-\frametitle{Cumulative Distribution Function (IV)}
-
 ```{remark} 
 Suppose $a\leq b$. Then, because the event $\{X\leq a \}$ is contained in the event $\{X\leq b \}$, namely
-$$
-\{X\leq a \} \subseteq \{X\leq b \},
-$$
- it follows that 
- $$F_X(a) \leq F_X(b),
- $$
-so, the probability of the former is less than or equal to the probability of the latter. \\
+$$\{X\leq a \} \subseteq \{X\leq b \},$$ it follows that 
+$$F_X(a) \leq F_X(b),$$
+so, the probability of the former is less than or equal to the probability of the latter.
 
-\begin{center}
 **In other words, $F_X(x)$ is a nondecreasing function of $x$.**
-\end{center}
 ``` 
 
+```{example, name = 'Quantiles'} 
 
+The CDF can be inverted to define the value $x$ of $X$ that corresponds to a given probability $\alpha$, namely $\alpha = P (X \leq x )$, for $\alpha \in [0,1]$.
 
-
-
-
-
-
-\frametitle{Cumulative Distribution Function (V)}
-
-```{example} 
-
-[Quantiles]
-
-The CDF can be inverted to define the value $x$ of $X$ that corresponds to a given probability $\alpha$, namely $\alpha = P (X \leq x )$, for $\alpha \in [0,1]$. \\ 
-
-
-The inverse CDF $F_X^{-1}(\alpha)$ or quantile of order $\alpha$, and labelled as  $Q(\alpha)$, is the smallest 
-realisation of $X$ associated to a CDF greater or equal to $\alpha$; in formula, the 
+The inverse CDF $F_X^{-1}(\alpha)$ or quantile of order $\alpha$, and labelled as  $Q(\alpha)$, is the smallest realisation of $X$ associated to a CDF greater or equal to $\alpha$; in formula, the 
 $\alpha$-quantile $Q(\alpha)$ is the smallest number satisfying:
 
-$$
-F_X [F^{-1}_X (\alpha)] = P[X \leq \underbrace{F^{-1}_X (\alpha)}_{Q(\alpha)}] \geq \alpha, \quad \text{for} \quad \alpha\in[0,1]. 
-$$
+$$F_X [F^{-1}_X (\alpha)] = P[X \leq \underbrace{F^{-1}_X (\alpha)}_{Q(\alpha)}] \geq \alpha, \quad \text{for} \quad \alpha\in[0,1].$$
 
 By construction, a quantile of a discrete random variable is a realization of $X$. More to come in Lecture 5...
-
-
 ```
-
-[contd, graphically]
-
+graphically.: 
 ```{r ,echo = FALSE, fig.cap='', fig.align='center'}
   knitr::include_graphics('img/04_discrete_rv/Quantiles_Discr.png')
 ```
@@ -381,17 +332,12 @@ By construction, a quantile of a discrete random variable is a realization of $X
 ## Distributional summaries for discrete random variables
 
 - For a discrete random variable, it is useful to describe some attributes or properties of the distribution
-
-
 - such as a measure of location and a measure of spread
-
-
 - The **expected value**, or **mean value**, of the distribution 
 \begin{equation*}
 E\left[ X\right] =p_{1}x_{1}+p_{2}x_{2}+\cdots + p_{n}x_{n} = \sum_{i=1}^{n} p_i x_i
 \end{equation*}
 is a measure of _location_ --- roughly speaking this is the _center_ of the distribution;
-
 - The **square root of the variance**, or **standard deviation**, of the distribution
 \begin{eqnarray*}
 s.d\left( X\right) &=&\sqrt{Var\left( X\right) } \\
@@ -401,39 +347,27 @@ s.d\left( X\right) &=&\sqrt{Var\left( X\right) } \\
 \end{eqnarray*}
 is a measure of _spread (or 'variability' or 'dispersion')._
 
-
-\frametitle{Important properties}
+### Properties
 
 If $X$ is a discrete random variable and $a$ is any real number, then
 
+- $E\left[ \alpha X\right] =\alpha E\left[ X\right]$
+- $E\left[ \alpha+X\right] =\alpha+E\left[ X\right]$
+- $Var\left( \alpha X\right) =\alpha^{2}Var\left( X\right)$
+- $Var\left( \alpha+X\right) =Var\left( X\right)$
 
+```{exercise}
+Let us verify the first property:
+$E\left[ \alpha X \right] =\alpha E\left[ X\right]$.
 
-\begin{stepenumerate}
-- $E\left[ \alpha X\right] =\alpha E\left[ X\right] $
-
-- $E\left[ \alpha+X\right] =\alpha+E\left[ X\right] $
-
-- $Var\left( \alpha X\right) =\alpha^{2}Var\left( X\right) $
-
-- $Var\left( \alpha+X\right) =Var\left( X\right) $
-\end{stepenumerate}
-
-\begin{exercise}
-Let us very the first property:
-$
-E\left[ \alpha X \right] =\alpha E\left[ X\right].
-$
 From the Intro lecture we know that, for every $\alpha_i \in \mathbb{R}$,  
 $$\sum_{i=1}^{n} \alpha_i X_{i} = \alpha_1 X_1 + \alpha_2 X_2 +....+ \alpha_n X_n.$$ So, the
-required result follows as a special case, setting $\alpha_i= \alpha$, for every $i$, and applying the definition
-of expected value. Verify this and the other properties as an exercise. [Hint: set $\alpha_i = \alpha p_i$.]
-\end{exercise}
+required result follows as a special case, setting $\alpha_i= \alpha$, for every $i$, and applying the definition of expected value. 
 
+Verify this and the other properties as an exercise. [Hint: set $\alpha_i = \alpha p_i$.]
+```
 
-
-
-
-\frametitle{Dependence/Independence}
+## Dependence/Independence
 
 ```{definition}
 Consider two discrete random variables\footnote{Technically speaking, $X$ and $Y$ should be defined on the same probability space, 
@@ -447,7 +381,7 @@ for all values $x$ that $X$ can take and all values $y$ that $Y$ can take.
 ```
 
 
-\frametitle{More important properties}
+### More important properties
 
 
 - If $X$ and $Y$ are two discrete random variables, then%
@@ -465,8 +399,7 @@ Note that Eq. (\ref{Eq. Var})  does not (typically) hold if $X$ and $Y$ are NOT 
 ```
 
 
-
-\frametitle{More on expectations}
+### More on expectations
 
 Recall that the expectation of X was defined as 
 \begin{equation*}
@@ -496,65 +429,45 @@ Var\left( X\right) =E\left[ X^{2}\right] -E\left[ X\right] ^{2}.
 \end{exercise}
 
 
-
-
-\frametitle{Some discrete distributions of interest}
-
+## Some discrete distributions of interest
 
 - Discrete Uniform
-
 - Bernoulli
-
 - Binomial
-
 - Poisson
-
 - Hypergeometric
-
 - Negative binomial
 
-
-
 Their main characteristic is that the probability $P\left(\left\{ X=x_i\right\}\right)$ is given by an appropriate mathematical formula: i.e. 
-$$
-p_{i}=P\left(\left\{ X=x_i\right\}\right)=h(x_{i}) 
-$$ 
+$$p_{i}=P\left(\left\{ X=x_i\right\}\right)=h(x_{i})$$ 
 for a suitably specified function $h(\cdot)$.
 
-
-\frametitle{Discrete uniform distribution} 
+### Discrete uniform distribution 
 
 ```{definition}
 We say $X$ has a **discrete uniform distribution** when
 
 - $X$ can take the values $x=0,1,2,...,k$ (for some specified finite value $k\in \mathbb{N}$)
-
-- The probability that $X=x$ is $1/\left( k+1\right) $, namely 
+- The probability that $X=x$ is $1/\left( k+1\right)$, namely 
 
 $$P\left(\left\{ X=x\right\}\right) = \frac{1}{\left( k+1\right)}.$$
 
 
 The probability distribution is given by
 
-
-\begin{equation*}
-\begin{tabular}{|c|c|}
-\hline
-$x_i$ & $P \left(\left\{ X=x_i\right\}\right) $ \\ \hline\hline
-$0$ & $\frac{1}{\left( k+1\right) }$ \\ \hline
-$1$ & $\frac{1}{\left( k+1\right) }$ \\ \hline
-$\vdots $ & $\vdots $ \\ \hline
-$k$ & $\frac{1}{\left( k+1\right) }$ \\ \hline\hline
-Total & $1$ \\ \hline
-\end{tabular}%
-\end{equation*}
-
+|$x_i$ | $P \left(\left\{ X=x_i\right\}\right)$ | 
+|:------:|:--------------------------:|
+|$0$ | $\frac{1}{\left( k+1\right) }$ | 
+|$1$ | $\frac{1}{\left( k+1\right) }$ | 
+|$\vdots$ | $\vdots$ | 
+|$k$ | $\frac{1}{\left( k+1\right) }$ | 
+|Total | $1$ | 
+  
 ```
 
-\frametitle{Discrete uniform: expected value}
+#### Expectation
 
-
-- The expected value of $X$ is%
+- The expected value of $X$ is
 \begin{eqnarray*}
 E\left[ X\right] &=&  x_1 p_1 + ... +  x_k p_k\\
 &=& 0\cdot \frac{1}{\left( k+1\right) }+1\cdot \frac{1}{%
@@ -568,7 +481,7 @@ E.g. when $k=6$, then $X$ can take on one of the seven distinct values
 $x=0,1,2,3,4,5,6,$ each with equal probability $\frac{1}{7}$, but the
 expected value of $X$ is equal to $3$, which is  one of the possible outcomes!!!
 
-\frametitle{Discrete uniform: variance}
+#### Variance
 
 - The variance of $X$ -- we will be denoting it as $Var(X)$  -- is%
 \begin{eqnarray*}
@@ -588,8 +501,7 @@ k+2\right) }{12} \\
 E.g. when $k=6$, the variance of $X$ is equal to $4,$ and the standard
 deviation of $X$ is equal to $\sqrt{4}=2.$
 
-
-\frametitle{Some illustrations of discrete uniform}
+#### Illustrations
 
 ```{r ,echo = FALSE, fig.cap='', fig.align='center'}
   knitr::include_graphics('img/04_discrete_rv/discrete_uniforms__1.png')
@@ -597,7 +509,7 @@ deviation of $X$ is equal to $\sqrt{4}=2.$
 
 ```{example}
 
-An example of discrete uniform is related to the experiment of rolling a die---remark, the outcome zero is not allowed in this specific example.
+An example of discrete uniform is related to the experiment of rolling a die- with the important remark that the outcome zero is not allowed in this specific example.
 
 Let us call $X$ the corresponding random variable and $\{x_1,x_2,...,x_6\}$ its realizations.  \\ 
 
@@ -614,40 +526,34 @@ $$
 E(X) = (1+2+3+4+5+6) \cdot \frac{1}{6} = 3.5,
 $$
 
-which is not one of the possible outcomes!!!
+which is not one of the possible outcomes(!)
 
 ```
 
-\frametitle{Bernoulli Trials}
+### Bernoulli Trials
+
 ```{definition}
 
 _Bernoulli trial_ is the name given to the random variable $X$ having probability distribution given by%
 
-\begin{equation*}
-\begin{tabular}{|l|l|}
-\hline
-$x_i$ & $P(\left\{ X=x_i\right\}) $ \\ \hline\hline
-$1$ & $p$ \\ \hline
-$0$ & $1-p$ \\ \hline
-\end{tabular}%
-\end{equation*}
+|$x_i$|$P(\left\{ X=x_i\right\})$| 
+|:--------:|:-------------|
+|$1$|$p$|
+|$0$|$1-p$| 
+
 ```
 
+Often we write:
 
-
-Often we write
 \begin{equation*}
-P(\left\{ X=x\right\} ) =p^{x}\left( 1-p\right) ^{1-x}, \quad \text{ for }x=0,1
+P(\left\{ X=x\right\})=p^{x}\left( 1-p\right) ^{1-x}, \quad \text{ for }x=0,1
 \end{equation*}
-\frametitle{Bernoulli Trials}
+
+
 
 A Bernoulli trial represents the most primitive form of all random variables. It derives from a random experiment having only two possible mutually exclusive outcomes. These are often labelled Success and Failure and
 
-
-
-
 - Success occurs with probability $p$
-%
 - Failure occurs with probability $1-p$.
 
 
@@ -655,129 +561,85 @@ A Bernoulli trial represents the most primitive form of all random variables. It
 Just for the sake of notation, let us set $X=1$ if _Success_ occurs, and $X=0$ if _Failure_ occurs
 ```
 
-
 ```{example}
 Coin tossing:  we can define a random variable
 
-\begin{equation*}
-\begin{tabular}{|l|l|}
-\hline
-$x_i$ & $P(\left\{ X=x_i\right\}) $ \\ \hline\hline
-$1$ & $p$ \\ \hline
-$0$ & $1-p$ \\ \hline
-\end{tabular}%
-\end{equation*}
+
+|$x_i$ | $P(\left\{ X=x_i\right\})$| 
+|:------:|:--------------------------:|
+|$1$ | $p$ | 
+|$0$ | $1-p$ |
+
 and say that $X=1$ if $H$ and $X=0$ if $T$.
 
 ```
 
 
+#### Expectation
 
-
-
-\frametitle{Bernoulli Trials}
-
-
-- Mean:
 \begin{eqnarray*}
 E\left[ X\right] &=&1 \cdot p+0 \cdot (1-p) \\
 &=&p
 \end{eqnarray*}
 
-- Variance:%
+#### Variance
+
 \begin{eqnarray*}
 Var\left( X\right) &=&\left( 1-p\right) ^{2} \cdot p+\left( 0-p\right)
 ^{2} \cdot \left( 1-p\right) \\
 &=&p\left( 1-p\right).
 \end{eqnarray*}
 
-\frametitle{The Binomial Distribution}
+### The Binomial Distribution
 
 ```{definition}
 Let us consider the  random experiment consisting in a series of $n$ trials having 3
 characteristics
 
-\begin{stepenumerate}
 - Only two mutually exclusive outcomes are possible in each trial: _success_ (_S_) and _failure_ (_F_)
-
 - The outcomes in the series of $n$ trials constitute independent events
-
 - The probability of success $p$ in each trial is constant from trial to
 trial
-\end{stepenumerate}
 
-$X$ is the _number of successes_ occurring in $n$ (Bernoulli) trials. Binomial probability distribution given by%
+$X$ is the _number of successes_ occurring in $n$ (Bernoulli) trials. Binomial probability distribution given by:
 \begin{eqnarray}
-P ( \left\{ X=x\right\})  &=&\left(
-\begin{array}{c}
-n \nonumber \\
-x%
-\end{array}%
-\right) p^{x}\left( 1-p\right) ^{n-x} \\
+P(\left\{ X=x\right\})&=&{n \choose k} p^{x}\left(1-p\right)^{n-x} \\
 &=&\frac{n!}{x!\left( n-x\right) !}p^{x}\left( 1-p\right) ^{n-x},\text{ for }%
 x=0,1,2,...,n \label{Eq: Binom}
 \end{eqnarray}
 ```
 
 
-\frametitle{The Binomial Distribution}
-
 Recall (see Intro lecture) that combinations are defined as:
 
 \begin{equation*}
-\n \choose \k =\frac{n!}{k!\left( n-k\right) !}=C^{k}_{n}
+{n \choose k} =\frac{n!}{k!\left( n-k\right) !}=C^{k}_{n}
 \end{equation*}
 and, for $n \geq k$, we say ``$n$ choose $k$''.
 
-The binomial coefficient $n \choose k$
-represents the number of possible combinations of $n$ objects taken $k$ at a time, without regard of the order.
+The binomial coefficient $n \choose k$ represents the number of possible combinations of $n$ objects taken $k$ at a time, without regard of the order.
 
 \color{blue} Thus, $C^{k}_{n}$ represents the number of different groups of size $k$ that could be selected from a set of $n$ objects 
 when the order of selection is not relevant. 
 
-%
-
-
-\frametitle{The Binomial Distribution}
-
 So, ''What is the interpretation of the formula? "
 
-
-
-- The first factor $$\left(
-\begin{array}{c}
-n \\
-x%
-\end{array}%
-\right) =\frac{n!}{x!\left( n-x\right) !}$$ is the number of different
-combinations of individual `successes' and `failures'  in $n$ (Bernoulli) trials that result in a sequence containing a total of $%
-x $ `successes' and $n-x$ `failures'.
-
-
+- The first factor $${n \choose k} =\frac{n!}{x!\left( n-x\right)!}$$ is the number of different combinations of individual `successes' and `failures'  in $n$ (Bernoulli) trials that result in a sequence containing a total of $x$ 'successes' and $n-x$ `failures'.
 - The second factor $$p^{x}\left( 1-p\right) ^{n-x}$$ is the probability associated with any one
-sequence of $x$ `successes' and $(n-x)$ `failures'.
-
+sequence of $x$ 'successes' and $(n-x)$ `failures'.
 
 ```{remark}
-Short-hand notation: $$ X \sim \text{B}(x,n,p)$$
- or, occasionally, simply $ X \sim \text{B} (n,p)$ (no $x$ in the formula).
+Short-hand notation: $$X \sim \text{B}(x,n,p)$$ or, occasionally, simply $ X \sim \text{B} (n,p)$ (no $x$ in the formula).
 ```
 
-\frametitle{The Binomial Distribution: expectation and variance}
+#### Expectation 
 
-- Mean:
 \begin{eqnarray*}
 E\left[ X\right] &=&\sum_{x=0}^{n}x\Pr \left\{ X=x\right\} \\
-&=&\sum_{x=0}^{n}x\left(
-\begin{array}{c}
-n \\
-x%
-\end{array}%
-\right) p^{x}\left( 1-p\right) ^{n-x} = np
+&=&\sum_{x=0}^{n}x {n\choose k} p^{x}\left(1-p\right) ^{n-x} = np
 \end{eqnarray*}
 
-
-- Variance:
+#### Variance
 
 \begin{eqnarray*}
 Var\left( X\right) &=&\sum_{x=0}^{n}\left( x-np\right) ^{2} P (\left\{
@@ -815,7 +677,7 @@ Bernoulli trails.''
 <!-- % -->
 <!-- %EndExpansion -->
 
-### Some illustrations of Binomial
+#### Illustrations
 
 ... same barplot as in slide 30, just a bit fancier...
 
@@ -823,36 +685,24 @@ Bernoulli trails.''
   knitr::include_graphics('img/04_discrete_rv/distbin.png')
 ```
 
-### Binomial Distribution
 
-```{example} 
-
-[cherry trees]
+```{example, name = 'cherry trees'} 
 
 One night a storm washes three cherries ashore on an island. For each cherry, there is a probability $p=0.8$ that its seed will
 produce a tree. What is the probability that these three cherries will produce two
 trees?
 
-
 First,  we notice that this can be determined using a **Bernoulli distribution**. To this end, consider whether each seed will produce a tree as a sequence of $n=3$
 trials. For each cherry:
-
-
-
-- either the cherry produces a tree (Success) or it
-does not (Failure); 
-- the event that a cherry produces a tree is independent from the event
-that any of the other two cherries produces a tree.
-
-- The probability that a cherry produces a tree is the same for all
-three cherries
+  
+- either the cherry produces a tree (Success) or it does not (Failure); 
+- the event that a cherry produces a tree is independent from the event that any of the other two cherries produces a tree.
+- The probability that a cherry produces a tree is the same for all three cherries
 ```
 
 ```{r ,echo = FALSE, fig.cap='', fig.align='center'}
   knitr::include_graphics('img/04_discrete_rv/BINOMIALpic__1.png')
 ```
-
-### Binomial Distribution
 
 ```{example}
 
@@ -862,18 +712,17 @@ three cherries
 
 - Consider all of the possible sequences of outcomes (S=success, F=failure)
 
-\begin{equation*}
-\text{SSS, \color{red}{SSF}, \color{red}{SFS}, SFF, \color{red}{FSS, FSF, FFS, FFF}
-\end{equation*}
+$$SSS, \color{red}{SSF}, \color{red}{SFS}, SFF, \color{red}{FSS, FSF, FFS, FFF}$$
 
-- We are interested in \color{red}{SSF} , \color{red}{SFS}, \color{red}{FSS}
+- We are interested in $\color{red}{SSF}$ , $\color{red}{SFS}$, $\color{red}{FSS}$
 
 - These possible events are _mutually exclusive_, so
 
 \begin{equation*}
-\Pr (\left\{\color{red} SSF \cup \color{red} SFS \cup \color{red} FSS \right\}) = \Pr (\left\{\color{red}{SSF}\right\}) +\Pr (\left\{\color{red}{SFS}\right\}) +\Pr (\left\{\color{red}{FSS}\right\})
+\Pr(\left\{\color{red}{SSF} \cup \color{red}{SFS} \cup \color{red}{FSS} \right\}) = 
+  \Pr (\left\{\color{red}{SSF}\right\}) +\Pr (\left\{\color{red}{SFS}\right\}) +
+  \Pr (\left\{\color{red}{FSS}\right\})
 \end{equation*}
-
 
 The three trials are assumed to be _independent_, so each of the three seed events corresponding to two trees growing has the same probability
 
@@ -894,8 +743,6 @@ So the probability of two trees resulting from the three seeds must be
 ```
 
 
-### Binomial Distribution
-
 ```{example}
 Finally, we notice that we can obtain the same result (in a more direct way), using the **binomial probability** for the random variable
 $$X= \text{number of trees that grows from 3 seeds}.$$
@@ -913,12 +760,14 @@ Indeed
 ### Poisson Distribution
 
 ```{definition}
+
 Let us consider random variable $X$ which takes values $0,1,2,...$, namely the nonnegative integers in $\mathbb{N}$. $X$ is said to be a Poisson random variable if its probability mass function, with $\lambda >0$ fixed and providing info on the intensity, is
 \begin{equation}
 p(x)=\Pr \left( \{ X = x \}\right) =\frac{\lambda ^{x}e^{-\lambda }}{x!}\text{,\qquad }%
 x=0,1,2,... \label{Eq. Poisson}
 \end{equation}
 and we write $X\sim \text{Poisson}(\lambda)$.
+
 ```
 
 The Eq. (\ref{Eq. Poisson}) defines a genuine probability mass function, since $p(x) \geq 0$ and
@@ -936,7 +785,7 @@ F_X(2)=\Pr \left( \{X\leq 2\}\right) =e^{-\lambda }+\lambda e^{-\lambda }+\frac{
 ^{2}e^{-\lambda }}{2},
 \end{equation*}
 
-and the Expected value and Variance for Poisson distribution (see tutorial) can be obtained by ``sum algebra'' (and/or some algebra)
+and the Expected value and Variance for Poisson distribution (see tutorial) can be obtained by ''sum algebra'' (and/or some algebra)
 
 \begin{eqnarray*}
 E\left[ X\right] &=&\lambda \\
@@ -944,7 +793,7 @@ Var\left( X\right) &=&\lambda.
 \end{eqnarray*}
 
 
-#### Some illustrations
+#### Illustrations
 
 ... same barplot as in slide 30, just a bit fancier...
 
@@ -1026,8 +875,7 @@ p(k) &\approx& \frac{\lambda}{k!}p(k-1) \approx \underbrace{\frac{\lambda^k}{k!}
 
 thus, we remark that $p(k)$ can be approximated by the probability mass function of a Poisson---which is easier to implement.
 
-```{example}
-[two-fold use of Poisson]
+```{example, name = 'two-fold use of Poisson'}
 Suppose a certain high-speed printer makes errors at random on printed paper\footnote{This exercise is related to Ex 2 of PS6. The calculation is similar but not identical: note the difference between the size of $p$ in this example and in the tutorial.}. Assuming that the Poisson 
 distribution with parameter $\lambda = 4$ is appropriate to model the number of errors per page (say, $X$), what is the probability that in a book containing 300 pages (produced by the printer) at least 7 will have no errors?
 
@@ -1061,9 +909,6 @@ thus, we can compute $P(\{Y \geq 7\})$  using either the exact Binomial or its P
 
 - using Poisson(5.4), we get $P(\{Y \geq 7\})  \approx  0.298.$
 
-
-
-
 ```
 
 <!--  %The two outcomes differ at the 3rd digits after the comma. -->
@@ -1085,10 +930,7 @@ S and the other $N-k$ are looked upon as F
 that the trials are not independent).
 
 The random variable 
-$$
-X= \text{number of successes in $n$ such
-trials}
-$$
+$$X= \text{number of successes in $n$ such trials}$$
 has an hypergeometric distribution and the probability that $X=x$ is
 
 \begin{equation*}
@@ -1096,18 +938,18 @@ has an hypergeometric distribution and the probability that $X=x$ is
 \begin{array}{c}
 k \\
 x%
-\end{array}%
+\end{array}
 \right) \left(
 \begin{array}{c}
 N-k \\
-n-x%
-\end{array}%
+n-x
+\end{array}
 \right) }{\left(
 \begin{array}{c}
 N \\
-n%
-\end{array}%
-\right) }.
+n
+\end{array}
+\right)}.
 \end{equation*}
 ```
 
@@ -1119,7 +961,7 @@ Var\left( X\right) &=&\frac{nk\left( N-k\right) \left( N-n\right) }{%
 N^{2}\left( N-1\right) }
 \end{eqnarray*}
 
-#### Examples and Illustrations
+#### Illustrations
 
 ```{example}
 [Psychological experiment]
@@ -1202,7 +1044,7 @@ E\left[ X\right] &=&\frac{r}{p} \\
 Var\left( X\right) &=&\frac{r\left( 1-p\right) }{p^{2}}
 \end{eqnarray*}
 
-### Examples and Illustrations
+### Illustrations
 
 ```{example}
 
@@ -1236,11 +1078,9 @@ X=15\right\}).$ By the negative binomial formula we have
 
 ###  The Geometric Distribution
 
-```{definition}
-[a special case]
+```{definition, name = 'a special case'}
 
-When $r=1$, the negative binomial distribution is equivalent to the
-**Geometric distribution** - see Example in slide 13.
+When $r=1$, the negative binomial distribution is equivalent to the **Geometric distribution**
 
 In this case, probabilities are given by
 \begin{equation*}
@@ -1248,27 +1088,26 @@ In this case, probabilities are given by
 \end{equation*}
 ```
 
-The corresponding mean and variance for $X$ are, respectively,%
+The corresponding mean and variance for $X$ are, respectively,
+
 \begin{eqnarray*}
 E\left[ X\right] &=&\frac{ 1 }{p} \\
 Var\left( X\right) &=&\frac{\left( 1-p\right) }{p^{2}}
 \end{eqnarray*}
 
-```{example}
+```{example, name = 'failure of a machine'}
 
-[failure of a machine]
+Items are produced by a machine having a 3% defective rate. 
 
-Items are produced by a machine having a 3\% defective rate. 
-
-- What is the probability that the first defective occurs in the fifth item inspected? \\ 
+- What is the probability that the first defective occurs in the fifth item inspected?
 \begin{eqnarray}
-P(\{X	=	5\})	&=&	P (\text{first	4	non-defective}) P (\text{5th defective})  \\
+P(\{X	=	5\})	&=&	P (\text{first	4	non-defective}) P (\text{5th defective})
 &=& (0.97)^4(0.03) \approx 0.026 
 \end{eqnarray}
 - What is the probability that the first defective occurs in the first five inspections?
 \begin{eqnarray}
-P(\{X	\leq 5	\}) = P(\{X	< 6	\})	&=&	 P (\{X=1\})+ ... + P(\{X=5\})  \\
-&=& 1- P(\text{first 5 non-defective}) = 0.1412.   %\\
+P(\{X	\leq 5	\}) = P(\{X	< 6	\})	&=&	 P (\{X=1\})+ ... + P(\{X=5\})
+&=& 1- P(\text{first 5 non-defective}) = 0.1412.
 %&=& 1- (0.97)^5 \approx 0.1412 
 \end{eqnarray}
 ```
@@ -1280,6 +1119,6 @@ $$P(\{X \geq k \}) = (1-p)^{k-1}$$
 Thus, in the example we have $P( \{X	\geq 6	\}) = (1-0.03)^{6-1}\approx 0.8587$
 
 \begin{eqnarray}
-P(\{X	\leq 5	\}) = 1-P( \{X	\geq 6	\}) \approx 1- 0.8587 \approx 0.1412. 
+P(\{X	\leq 5\}) = 1-P( \{X	\geq 6	\}) \approx 1- 0.8587 \approx 0.1412. 
 \end{eqnarray}
 

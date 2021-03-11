@@ -81,7 +81,6 @@
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-
 \begin{document}
 
 \title[S110015]{Probability 1}
@@ -90,10 +89,17 @@
 \date{Spring Semester 2021}
 
 \begin{frame}
-\titlepage
+  \titlepage
 \end{frame}
 
 \begin{frame}{Objective}
+  \begin{itemize}
+  \item Provide the Axioms upon which the Probability Theory is built.
+  \item Explore some rules that result from the Axioms
+  \item Illustrate how these rules can be used to compute probabilities ``in real life''
+  \item Introduce the concepts of Independence and Conditional Probability
+  \item Present two important Theorems and illustrate their consequences.
+  \end{itemize}
 \end{frame}
 
 \begin{frame}{Outline}
@@ -103,6 +109,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{An Axiomatic Definition of Probability}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 \begin{frame}{\secname}
   %Let $\mathcal{B}$ be the $\sigma$-algebra of subsets of a set $S$ representing the sample space. \\
   %\vspace{0.1cm}
@@ -128,8 +135,19 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \begin{frame}{\secname}
-  One can make use of the three axioms to build more sophisticated statements. For instance,
+  We can use the three axioms to build more sophisticated statements, e.g.
+  \bigskip
+  \begin{itemize}
+  \item The Probability of the Empty Set
+  \item The Addition Law of Probability
+  \item The Complement Rule
+  \item The Monotonicity Rule
+  \item The Probability of the Union
+  \item Boole's Inequality
+  \end{itemize}
+\end{frame}
 
+\begin{frame}{\secname}
   \begin{theorem}[Probability of the Empty Set]
   $$P(\varnothing)=0$$
   \end{theorem}
@@ -199,25 +217,6 @@
   \end{footnotesize}
 \end{frame}
 
-\begin{frame}{\secname}
-
-%that $B \subset A$.
-
-\def\firstcircle{(3,1) circle (2.95cm)}
-\def\secondcircle{(1:3cm) circle (1.65cm)}
-
-\colorlet{circle edge}{blue!50}
-\colorlet{circle area}{blue!20}
-\tikzset{filled/.style={fill=circle area, draw=circle edge, thick},
-    outline/.style={draw=circle edge, thick}}
-\hspace{3cm} \vspace{2cm}
-\begin{tikzpicture}
-    \draw[even odd rule] \firstcircle node at (1.95,1.9) {$A$}
-                                 \secondcircle node at (2.5,0.5) {$B$};
-    \node[anchor=south] at (current bounding box.north) at (6.5,2.2) {$B \subset A$};
-\end{tikzpicture}
-%where $A \in \mathcal{B}$ and $B \in \mathcal{B}$
-\end{frame}
 
 %\begin{frame}
 %\frametitle{Properties of $P(\cdot)$ (cont'd)}
@@ -238,33 +237,53 @@
 %
 
 \begin{frame}{\secname}
-\begin{theorem}
-For any two events $A$ and $B$, such that $B \subset A$, we have
-$$
-P(A) \geq P(B).
-$$
-\end{theorem} \vspace{0.1cm}
-\begin{footnotesize}
-\begin{proof}
-Let us write
-$$A = B \cup (B^c \cap A) $$
-and notice that $B \cap (B^c \cap A) = \phi$, so that
-\bea
-P(A) &=& P\left\{ B \cup (B^c \cap A)   \right\} \nn \\
-&=& P(B) + P(B^c \cap A) \nn
-\eea
-which implies (since $P(B^c \cap A) \geq 0$) that
-$$
-P(A) \geq   P(B).
-$$
+  \begin{theorem}[The Monotonicity Rule]
+  For any two events $A$ and $B$, such that $B \subset A$, we have
+  $$
+  P(A) \geq P(B).
+  $$
+  \end{theorem} \vspace{0.1cm}
+  \begin{footnotesize}
+  \begin{proof}
+  Let us write
+  $$A = B \cup (B^c \cap A) $$
+  and notice that $B \cap (B^c \cap A) = \phi$, so that
+  \bea
+  P(A) &=& P\left\{ B \cup (B^c \cap A)   \right\} \nn \\
+  &=& P(B) + P(B^c \cap A) \nn
+  \eea
+  which implies (since $P(B^c \cap A) \geq 0$) that
+  $$
+  P(A) \geq   P(B).
+  $$
 
-\end{proof}
-\end{footnotesize}
-
+  \end{proof}
+  \end{footnotesize}
 \end{frame}
 
 \begin{frame}{\secname}
-  \begin{theorem}
+  \def\firstcircle{(3,1) circle (2.95cm)}
+  \def\secondcircle{(1:3cm) circle (1.65cm)}
+
+  \colorlet{circle edge}{blue!50}
+  \colorlet{circle area}{blue!20}
+  \tikzset{filled/.style={fill=circle area, draw=circle edge, thick},
+      outline/.style={draw=circle edge, thick}}
+  \hspace{3cm} \vspace{2cm}
+  \begin{tikzpicture}
+      \draw[even odd rule] \firstcircle node at (1.95,1.9) {$A$}
+                                   \secondcircle node at (2.5,0.5) {$B$};
+      \node[anchor=south] at (current bounding box.north) at (6.5,2.2) {$B \subset A$};
+  \end{tikzpicture}
+  %where $A \in \mathcal{B}$ and $B \in \mathcal{B}$
+  \begin{center}
+  In some sense, Probability works like areas.
+  \end{center}
+\end{frame}
+
+
+\begin{frame}{\secname}
+  \begin{theorem}[Probability of the Union of Two Events]
   For any two events $A$ and $B$ then
   $$
   P(A \cup B) = P(A) + P(B) - P(A \cap B).
@@ -285,32 +304,30 @@ $$
 
 
 \begin{frame}{\secname}
-\begin{theorem} [Boole's inequality]
-For the events $A_1,A_2,... A_n$,
-$$
-P(A_1 \cup A_2 \cup....\cup A_n) \leq \sum_{i=1}^{n}P(A_i).
-$$
-\end{theorem}
-\vspace{0.1cm}
-%\begin{footnotesize}
-%\begin{proof}
-For instance, let us consider $n=2$. Then we have:
-$$
-P(A_1 \cup A_2 ) = P(A_1) + P(A_2) - P(A_1 \cap A_2) \leq P(A_1) + P(A_2)
-$$
-since $P(A_1 \cap A_2) \geq 0$ by definition.
-%\end{proof}
-%\end{footnotesize}
-\begin{remark}
-It is worth notice that if $A_j \cap A_i = \varnothing$, for every $i$ and $j$, with $i\neq j$, then
-$
-P(A_1 \cup A_2 \cup....\cup A_n) = \sum_{i=1}^{n}P(A_i),
-$
-as stated in (\ref{Eq: ProbUnionDisj}).
-\end{remark}
+  \begin{theorem} [Boole's inequality]
+  For the events $A_1,A_2,... A_n$,
+  $$
+  P(A_1 \cup A_2 \cup....\cup A_n) \leq \sum_{i=1}^{n}P(A_i).
+  $$
+  \end{theorem}
+  \vspace{0.1cm}
+  %\begin{footnotesize}
+  %\begin{proof}
+  For instance, let us consider $n=2$. Then we have:
+  $$
+  P(A_1 \cup A_2 ) = P(A_1) + P(A_2) - P(A_1 \cap A_2) \leq P(A_1) + P(A_2)
+  $$
+  since $P(A_1 \cap A_2) \geq 0$ by definition.
+  %\end{proof}
+  %\end{footnotesize}
+  \begin{remark}
+  It is worth notice that if $A_j \cap A_i = \varnothing$, for every $i$ and $j$, with $i\neq j$, then
+  $
+  P(A_1 \cup A_2 \cup....\cup A_n) = \sum_{i=1}^{n}P(A_i),
+  $
+  as stated in (\ref{Eq: ProbUnionDisj}).
+  \end{remark}
 \end{frame}
-
-
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Examples and Illustrations}
@@ -500,7 +517,6 @@ as stated in (\ref{Eq: ProbUnionDisj}).
   \centering
   \includegraphics[scale=2]{../../book/img/fun/probconditionnelle2.png}
   \end{figure}
-
 \end{frame}
 
 
@@ -836,7 +852,31 @@ Sometimes, probability depends on the information available.
 
 \begin{frame}{Wrap-up}
 
+Take-home message
+
+\begin{itemize}
+\item The Probability Axioms are important, since they imply \textbf{computation rules}.
+\item These rules are key to compute probabilities ``in real life''.
+\item Probability of an event can be \textbf{conditional} on the realisation of another event.
+\item When an event has the \textbf{same probability} regardless of another it is called independent
+\item Theorem I (basic) $$P(A)=P(A \cap B)+P(A\cap B^c) = P(A\vert B)P(B)+P(A\vert B^c) P(B^c)$$
+\item Theorem II (basic) If we have $P(A|B)$, we can find $P(B|A)$
+$$P(B|A) = \frac{P(A|B)P(B)}{P(A|B)P(B) + P(A|B^c)P(B^c)}$$
+\end{itemize}
 \end{frame}
+
+\begin{frame}
+	\begin{center}
+
+		\LARGE{Thank you for your attention!}
+
+		\pause
+
+		\LARGE{``See you" next week!}
+	\end{center}
+\end{frame}
+
+
 
 \end{document}
 

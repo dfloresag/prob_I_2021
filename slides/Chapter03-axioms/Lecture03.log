@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020) (preloaded format=pdflatex 2020.8.26)  9 MAR 2021 23:25
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020) (preloaded format=pdflatex 2020.8.26)  10 MAR 2021 23:16
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1118,52 +1118,51 @@ Package hyperref Warning: Option `pdfauthor' has already been used,
 [1
 
 {/usr/local/texlive/2020/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
-[2
-
-] (./Lecture03.toc
 LaTeX Font Info:    Trying to load font information for OML+zplm on input line 
-2.
+153.
 
 (/usr/local/texlive/2020/texmf-dist/tex/latex/psnfss/omlzplm.fd
 File: omlzplm.fd 2002/09/08 Fontinst v1.914 font definitions for OML/zplm.
 )
 LaTeX Font Info:    Trying to load font information for OMS+zplm on input line 
-2.
+153.
 
 (/usr/local/texlive/2020/texmf-dist/tex/latex/psnfss/omszplm.fd
 File: omszplm.fd 2002/09/08 Fontinst v1.914 font definitions for OMS/zplm.
 )
 LaTeX Font Info:    Trying to load font information for OMX+zplm on input line 
-2.
+153.
 
 (/usr/local/texlive/2020/texmf-dist/tex/latex/psnfss/omxzplm.fd
 File: omxzplm.fd 2002/09/08 Fontinst v1.914 font definitions for OMX/zplm.
 )
 LaTeX Font Info:    Font shape `U/msa/m/n' will be
-(Font)              scaled to size 11.40997pt on input line 2.
+(Font)              scaled to size 11.40997pt on input line 153.
 LaTeX Font Info:    Font shape `U/msa/m/n' will be
-(Font)              scaled to size 8.33606pt on input line 2.
+(Font)              scaled to size 8.33606pt on input line 153.
 LaTeX Font Info:    Font shape `U/msa/m/n' will be
-(Font)              scaled to size 6.25204pt on input line 2.
+(Font)              scaled to size 6.25204pt on input line 153.
 LaTeX Font Info:    Font shape `U/msb/m/n' will be
-(Font)              scaled to size 11.40997pt on input line 2.
+(Font)              scaled to size 11.40997pt on input line 153.
 LaTeX Font Info:    Font shape `U/msb/m/n' will be
-(Font)              scaled to size 8.33606pt on input line 2.
+(Font)              scaled to size 8.33606pt on input line 153.
 LaTeX Font Info:    Font shape `U/msb/m/n' will be
-(Font)              scaled to size 6.25204pt on input line 2.
+(Font)              scaled to size 6.25204pt on input line 153.
 LaTeX Font Info:    Trying to load font information for OT1+zplm on input line 
-2.
+153.
 
 (/usr/local/texlive/2020/texmf-dist/tex/latex/psnfss/ot1zplm.fd
 File: ot1zplm.fd 2002/09/08 Fontinst v1.914 font definitions for OT1/zplm.
 )
 LaTeX Font Info:    Trying to load font information for OT1+mathkerncmss on inp
-ut line 2.
+ut line 153.
 
 (/usr/local/texlive/2020/texmf-dist/tex/latex/sansmathaccent/ot1mathkerncmss.fd
 File: ot1mathkerncmss.fd 2020/01/31 Fontinst v1.933 font definitions for OT1/ma
 thkerncmss.
-)) [3
+) [2
+
+] (./Lecture03.toc) [3
 
 ] (./Lecture03.toc) [4
 
@@ -1172,42 +1171,43 @@ thkerncmss.
 ]
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 176.
+(hyperref)                removing `math shift' on input line 184.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\cdot' on input line 176.
+(hyperref)                removing `\cdot' on input line 184.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 176.
+(hyperref)                removing `math shift' on input line 184.
 
 (./Lecture03.toc) [6
 
 ]
 LaTeX Font Info:    Font shape `U/msa/m/n' will be
-(Font)              scaled to size 9.37807pt on input line 200.
+(Font)              scaled to size 15.0049pt on input line 198.
 LaTeX Font Info:    Font shape `U/msa/m/n' will be
-(Font)              scaled to size 7.29405pt on input line 200.
-LaTeX Font Info:    Font shape `U/msa/m/n' will be
-(Font)              scaled to size 5.21004pt on input line 200.
+(Font)              scaled to size 10.42007pt on input line 198.
 LaTeX Font Info:    Font shape `U/msb/m/n' will be
-(Font)              scaled to size 9.37807pt on input line 200.
+(Font)              scaled to size 15.0049pt on input line 198.
 LaTeX Font Info:    Font shape `U/msb/m/n' will be
-(Font)              scaled to size 7.29405pt on input line 200.
-LaTeX Font Info:    Font shape `U/msb/m/n' will be
-(Font)              scaled to size 5.21004pt on input line 200.
-LaTeX Font Info:    Font shape `U/msa/m/n' will be
-(Font)              scaled to size 15.0049pt on input line 200.
-LaTeX Font Info:    Font shape `U/msa/m/n' will be
-(Font)              scaled to size 10.42007pt on input line 200.
-LaTeX Font Info:    Font shape `U/msb/m/n' will be
-(Font)              scaled to size 15.0049pt on input line 200.
-LaTeX Font Info:    Font shape `U/msb/m/n' will be
-(Font)              scaled to size 10.42007pt on input line 200.
+(Font)              scaled to size 10.42007pt on input line 198.
  [7
 
-] [8
+]
+LaTeX Font Info:    Font shape `U/msa/m/n' will be
+(Font)              scaled to size 9.37807pt on input line 219.
+LaTeX Font Info:    Font shape `U/msa/m/n' will be
+(Font)              scaled to size 7.29405pt on input line 219.
+LaTeX Font Info:    Font shape `U/msa/m/n' will be
+(Font)              scaled to size 5.21004pt on input line 219.
+LaTeX Font Info:    Font shape `U/msb/m/n' will be
+(Font)              scaled to size 9.37807pt on input line 219.
+LaTeX Font Info:    Font shape `U/msb/m/n' will be
+(Font)              scaled to size 7.29405pt on input line 219.
+LaTeX Font Info:    Font shape `U/msb/m/n' will be
+(Font)              scaled to size 5.21004pt on input line 219.
+ [8
 
 ] [9
 
@@ -1215,14 +1215,17 @@ LaTeX Font Info:    Font shape `U/msb/m/n' will be
 
 ] [11
 
-] [12
+]
+Overfull \vbox (19.83514pt too high) detected at line 332
+ []
+
+[12
 
 ] [13
 
-] (./Lecture03.toc)
-[14
+] [14
 
-] [15
+] (./Lecture03.toc) [15
 
 ] [16
 
@@ -1230,148 +1233,152 @@ LaTeX Font Info:    Font shape `U/msb/m/n' will be
 
 ] [18
 
+] [19
+
 ]
-<../../book/img/03_axioms/Example2_3_v2.png, id=226, 899.36pt x 806.01125pt>
+<../../book/img/03_axioms/Example2_3_v2.png, id=233, 899.36pt x 806.01125pt>
 File: ../../book/img/03_axioms/Example2_3_v2.png Graphic file (type png)
 <use ../../book/img/03_axioms/Example2_3_v2.png>
 Package pdftex.def Info: ../../book/img/03_axioms/Example2_3_v2.png  used on in
-put line 462.
+put line 480.
 (pdftex.def)             Requested size: 89.94127pt x 80.60583pt.
- [19
+ [20
 
  <../../book/img/03_axioms/Example2_3_v2.png>]
 LaTeX Font Info:    Font shape `U/msa/m/n' will be
-(Font)              scaled to size 7.91925pt on input line 486.
+(Font)              scaled to size 7.91925pt on input line 504.
 LaTeX Font Info:    Font shape `U/msb/m/n' will be
-(Font)              scaled to size 7.91925pt on input line 486.
+(Font)              scaled to size 7.91925pt on input line 504.
+ [21
 
-[20
+] [22
 
-] [21
-
-] (./Lecture03.toc) [22
+] (./Lecture03.toc) [23
 
 ]
-<../../book/img/fun/probconditionnelle2.png, id=260, 141.52875pt x 75.28125pt>
+<../../book/img/fun/probconditionnelle2.png, id=266, 141.52875pt x 75.28125pt>
 File: ../../book/img/fun/probconditionnelle2.png Graphic file (type png)
 <use ../../book/img/fun/probconditionnelle2.png>
 Package pdftex.def Info: ../../book/img/fun/probconditionnelle2.png  used on in
-put line 553.
+put line 570.
 (pdftex.def)             Requested size: 283.0568pt x 150.5621pt.
- [23
-
- <../../book/img/fun/probconditionnelle2.png (PNG copy)>]
-<img/c1.pdf, id=267, 464.48962pt x 101.0747pt>
-File: img/c1.pdf Graphic file (type pdf)
-<use img/c1.pdf>
-Package pdftex.def Info: img/c1.pdf  used on input line 565.
-(pdftex.def)             Requested size: 325.14052pt x 70.7518pt.
  [24
 
- <./img/c1.pdf>]
-<img/c2.pdf, id=285, 465.62529pt x 101.07481pt>
-File: img/c2.pdf Graphic file (type pdf)
-<use img/c2.pdf>
-Package pdftex.def Info: img/c2.pdf  used on input line 580.
-(pdftex.def)             Requested size: 325.93547pt x 70.75188pt.
+ <../../book/img/fun/probconditionnelle2.png (PNG copy)>]
+<img/c1.pdf, id=273, 464.48962pt x 101.0747pt>
+File: img/c1.pdf Graphic file (type pdf)
+<use img/c1.pdf>
+Package pdftex.def Info: img/c1.pdf  used on input line 582.
+(pdftex.def)             Requested size: 325.14052pt x 70.7518pt.
  [25
 
- <./img/c2.pdf>] [26
+ <./img/c1.pdf>]
+<img/c2.pdf, id=293, 465.62529pt x 101.07481pt>
+File: img/c2.pdf Graphic file (type pdf)
+<use img/c2.pdf>
+Package pdftex.def Info: img/c2.pdf  used on input line 597.
+(pdftex.def)             Requested size: 325.93547pt x 70.75188pt.
+ [26
+
+ <./img/c2.pdf>] [27
 
 ]
-<img/c4.pdf, id=311, 465.62532pt x 89.71808pt>
+<img/c4.pdf, id=317, 465.62532pt x 89.71808pt>
 File: img/c4.pdf Graphic file (type pdf)
 <use img/c4.pdf>
-Package pdftex.def Info: img/c4.pdf  used on input line 614.
+Package pdftex.def Info: img/c4.pdf  used on input line 631.
 (pdftex.def)             Requested size: 325.9355pt x 62.80222pt.
- [27
+ [28
 
  <./img/c4.pdf>]
-<img/c3.pdf, id=329, 466.76097pt x 91.98936pt>
+<img/c3.pdf, id=335, 466.76097pt x 91.98936pt>
 File: img/c3.pdf Graphic file (type pdf)
 <use img/c3.pdf>
-Package pdftex.def Info: img/c3.pdf  used on input line 629.
+Package pdftex.def Info: img/c3.pdf  used on input line 646.
 (pdftex.def)             Requested size: 303.39104pt x 59.79236pt.
-[28
+ [29
 
- <./img/c3.pdf>] [29
+ <./img/c3.pdf>] [30
 
 ]
 File: img/c3.pdf Graphic file (type pdf)
 <use img/c3.pdf>
-Package pdftex.def Info: img/c3.pdf  used on input line 661.
+Package pdftex.def Info: img/c3.pdf  used on input line 678.
 (pdftex.def)             Requested size: 326.73045pt x 64.39209pt.
- [30
+ [31
 
 ]
 File: img/c4.pdf Graphic file (type pdf)
 <use img/c4.pdf>
-Package pdftex.def Info: img/c4.pdf  used on input line 678.
+Package pdftex.def Info: img/c4.pdf  used on input line 695.
 (pdftex.def)             Requested size: 325.9355pt x 62.80222pt.
- [31
+ [32
 
-] (./Lecture03.toc) [32
-
-] [33
+]
+(./Lecture03.toc) [33
 
 ] [34
 
+] [35
+
 ]
-<img/example7.pdf, id=391, 686.93791pt x 414.41225pt>
+<img/example7.pdf, id=397, 686.93791pt x 414.41225pt>
 File: img/example7.pdf Graphic file (type pdf)
 <use img/example7.pdf>
-Package pdftex.def Info: img/example7.pdf  used on input line 726.
+Package pdftex.def Info: img/example7.pdf  used on input line 743.
 (pdftex.def)             Requested size: 308.07101pt x 182.33562pt.
- [35
-
- <./img/example7.pdf>]
-<img/example8.pdf, id=428, 676.55598pt x 384.99672pt>
-File: img/example8.pdf Graphic file (type pdf)
-<use img/example8.pdf>
-Package pdftex.def Info: img/example8.pdf  used on input line 736.
-(pdftex.def)             Requested size: 308.07089pt x 156.29291pt.
  [36
 
- <./img/example8.pdf>] (./Lecture03.toc) [37
+ <./img/example7.pdf>]
+<img/example8.pdf, id=434, 676.55598pt x 384.99672pt>
+File: img/example8.pdf Graphic file (type pdf)
+<use img/example8.pdf>
+Package pdftex.def Info: img/example8.pdf  used on input line 753.
+(pdftex.def)             Requested size: 308.07089pt x 156.29291pt.
+ [37
 
-] [38
+ <./img/example8.pdf>] (./Lecture03.toc) [38
 
 ] [39
 
-]
-(./Lecture03.toc) [40
+] [40
 
-] [41
+] (./Lecture03.toc) [41
 
 ] [42
 
+] [43
+
 ]
-<img/example10.pdf, id=534, 684.34253pt x 377.21025pt>
+<img/example10.pdf, id=542, 684.34253pt x 377.21025pt>
 File: img/example10.pdf Graphic file (type pdf)
 <use img/example10.pdf>
-Package pdftex.def Info: img/example10.pdf  used on input line 823.
+Package pdftex.def Info: img/example10.pdf  used on input line 840.
 (pdftex.def)             Requested size: 308.06616pt x 143.26656pt.
- [43
+
+[44
 
  <./img/example10.pdf>]
-<img/Ross_Ex.pdf, id=597, 337.51164pt x 258.77419pt>
+<img/Ross_Ex.pdf, id=603, 337.51164pt x 258.77419pt>
 File: img/Ross_Ex.pdf Graphic file (type pdf)
 <use img/Ross_Ex.pdf>
-Package pdftex.def Info: img/Ross_Ex.pdf  used on input line 847.
+Package pdftex.def Info: img/Ross_Ex.pdf  used on input line 864.
 (pdftex.def)             Requested size: 239.60918pt x 169.31471pt.
- [44
+ [45
 
- <./img/Ross_Ex.pdf>] [45
+ <./img/Ross_Ex.pdf>] [46
 
 ]
-<img/example9b.pdf, id=618, 682.75076pt x 453.48303pt>
+<img/example9b.pdf, id=624, 682.75076pt x 453.48303pt>
 File: img/example9b.pdf Graphic file (type pdf)
 <use img/example9b.pdf>
-Package pdftex.def Info: img/example9b.pdf  used on input line 882.
+Package pdftex.def Info: img/example9b.pdf  used on input line 899.
 (pdftex.def)             Requested size: 308.06844pt x 169.3084pt.
- [46
+ [47
 
- <./img/example9b.pdf>] [47
+ <./img/example9b.pdf>] [48
+
+] [49
 
 ]
 \tf@nav=\write6
@@ -1383,20 +1390,20 @@ Package pdftex.def Info: img/example9b.pdf  used on input line 882.
 \tf@snm=\write8
 \openout8 = `Lecture03.snm'.
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 890.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 890.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 931.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 931.
  (./Lecture03.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 890.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 890.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 931.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 931.
 Package rerunfilecheck Info: File `Lecture03.out' has not changed.
 (rerunfilecheck)             Checksum: 4EB4EEC45D74723E257C7B45DF1288D4;446.
  ) 
 Here is how much of TeX's memory you used:
- 23987 strings out of 480608
- 492545 string characters out of 5903630
- 764573 words of memory out of 5000000
- 39128 multiletter control sequences out of 15000+600000
- 571679 words of font info for 143 fonts, out of 8000000 for 9000
+ 23997 strings out of 480608
+ 492643 string characters out of 5903630
+ 764655 words of memory out of 5000000
+ 39133 multiletter control sequences out of 15000+600000
+ 571985 words of font info for 144 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  58i,17n,67p,861b,644s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/2020/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/local/t
@@ -1405,22 +1412,23 @@ xlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/tex
 live/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texli
 ve/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmss10.pfb></usr/local/texliv
 e/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmss12.pfb></usr/local/texlive
-/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmss8.pfb></usr/local/texlive/2
-020/texmf-dist/fonts/type1/public/amsfonts/cm/cmss9.pfb></usr/local/texlive/202
-0/texmf-dist/fonts/type1/public/amsfonts/cm/cmssbx10.pfb></usr/local/texlive/20
-20/texmf-dist/fonts/type1/public/amsfonts/cm/cmssi10.pfb></usr/local/texlive/20
-20/texmf-dist/fonts/type1/public/amsfonts/cm/cmssi12.pfb></usr/local/texlive/20
-20/texmf-dist/fonts/type1/public/amsfonts/cm/cmssi8.pfb></usr/local/texlive/202
-0/texmf-dist/fonts/type1/public/amsfonts/cm/cmssi9.pfb></usr/local/texlive/2020
-/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2020/
-texmf-dist/fonts/type1/public/mathpazo/fplmr.pfb></usr/local/texlive/2020/texmf
--dist/fonts/type1/public/mathpazo/fplmri.pfb></usr/local/texlive/2020/texmf-dis
-t/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/local/texlive/2020/texmf
--dist/fonts/type1/urw/palatino/uplr8a.pfb>
-Output written on Lecture03.pdf (47 pages, 643090 bytes).
+/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmss17.pfb></usr/local/texlive/
+2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmss8.pfb></usr/local/texlive/20
+20/texmf-dist/fonts/type1/public/amsfonts/cm/cmss9.pfb></usr/local/texlive/2020
+/texmf-dist/fonts/type1/public/amsfonts/cm/cmssbx10.pfb></usr/local/texlive/202
+0/texmf-dist/fonts/type1/public/amsfonts/cm/cmssi10.pfb></usr/local/texlive/202
+0/texmf-dist/fonts/type1/public/amsfonts/cm/cmssi12.pfb></usr/local/texlive/202
+0/texmf-dist/fonts/type1/public/amsfonts/cm/cmssi8.pfb></usr/local/texlive/2020
+/texmf-dist/fonts/type1/public/amsfonts/cm/cmssi9.pfb></usr/local/texlive/2020/
+texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2020/t
+exmf-dist/fonts/type1/public/mathpazo/fplmr.pfb></usr/local/texlive/2020/texmf-
+dist/fonts/type1/public/mathpazo/fplmri.pfb></usr/local/texlive/2020/texmf-dist
+/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/local/texlive/2020/texmf-
+dist/fonts/type1/urw/palatino/uplr8a.pfb>
+Output written on Lecture03.pdf (49 pages, 656090 bytes).
 PDF statistics:
- 748 PDF objects out of 1000 (max. 8388607)
- 604 compressed objects within 7 object streams
- 108 named destinations out of 1000 (max. 500000)
+ 767 PDF objects out of 1000 (max. 8388607)
+ 620 compressed objects within 7 object streams
+ 112 named destinations out of 1000 (max. 500000)
  200 words of extra memory for PDF output out of 10000 (max. 10000000)
 
