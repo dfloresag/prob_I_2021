@@ -1,4 +1,4 @@
-\documentclass[notes=show,handout]{beamer}
+\documentclass[notes=show, handout]{beamer}
 \usepackage{amsmath}
 \usepackage{graphicx}
 \usepackage{mathpazo}
@@ -154,7 +154,7 @@
   \pause
   \begin{proof}
   \begin{footnotesize}
-  Take $A_1=A_2=A_3=....=\varnothing$. Then by (\ref{Eq: additivity}) in Axiom (ii) we have
+  Take $A_1=A_2=A_3=....=\varnothing$. Then by (\ref{Eq: additivity}) in Axiom (iii) we have
   $$
   P(\varnothing)= P\left(  \bigcup_{i=1}^{\infty} A_i \right)
   = \sum_{i=1}^{\infty} P(A_i)
@@ -195,13 +195,12 @@
 
 \begin{frame}{\secname}
   \begin{theorem}[The Complement Rule]
+  \begin{center}
   If $A$ is an event, then
-  $
-  P(  A^c ) = 1- P(A).
-  $
-  \end{theorem} \vspace{0.1cm}
-
-
+  $P(  A^c ) = 1- P(A).$
+  \end{center}
+  \end{theorem} 
+  \pause
   \begin{footnotesize}
   \begin{proof}
   Let $A \cup A^c =S$ and $A \cap A^c = \varnothing$, so
@@ -242,7 +241,7 @@
   $$
   P(A) \geq P(B).
   $$
-  \end{theorem} \vspace{0.1cm}
+  \end{theorem} \bigskip \pause
   \begin{footnotesize}
   \begin{proof}
   Let us write
@@ -289,7 +288,8 @@
   P(A \cup B) = P(A) + P(B) - P(A \cap B).
   $$
   \end{theorem}
-  \vspace{0.1cm}
+  \bigskip
+  \pause
   \begin{footnotesize}
   \begin{proof}
   Consider that $A\cup B = A \cup (A^c \cap B)$, and $A\cap(A^c \cap B) = \phi$. Now remember\footnote{See Lecture 1 for the meaning of set difference.} that $A^c \cap B = B -(A \cap B)$, so,
@@ -717,7 +717,7 @@ Sometimes, probability depends on the information available.
   P(A)=\sum_{i=1}^n P(A\vert B_i) P(B_i).
   \end{equation}
   \end{theorem}
-
+\pause
   \begin{footnotesize}
   \begin{proof}
   Write $A=A\cap S = A\cap (\cup_{i=1}^{n} B_i) = \cup_{i=1}^{n} (A\cap B_i)$. Since the $\{B_i \cap A \}$ are mutually disjoint, we have
@@ -730,7 +730,7 @@ Sometimes, probability depends on the information available.
 
 
 \begin{frame}{\secname}
-  \textbf{Remark}. The theorem remains valid even if $n=\infty$ in Eq. (\ref{TP}). (Double check, and re-do the proof using $n=\infty$.)
+  \textbf{Remark}. The theorem remains valid even if $n=\infty$ in Eq. (\ref{TP}). %(Double check, and re-do the proof using $n=\infty$.)
   \begin{corollary}
   %For a given probability space $(S,\mathcal{B},P)$, let $B\in \cal{B}$ satisfy $0<P(B)<1$; then for every $A\in \cal{B}$:
   Let $B$ satisfy $0<P(B)<1$; then for every event $A$:

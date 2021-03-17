@@ -51,21 +51,16 @@ ASSIGNMENT 04
 
 \section*{Exercise 1}
 
-Amanda, Deborah and Rebecca work in a company as operators. They have to redirect the phone calls from the central contact service to the different services of the company. Sometimes they make mistakes with
-probability 0.02, 0.03 and 0.05. Amanda takes care of 50\% of the connections, Deborah 30\% and Rebecca 20\%. We say that an operator provides a good service if she does not commit any error.
+Albert, David and Rebecca work in a company as operators. They have to redirect the phone calls from the central contact service to the different services of the company. Sometimes they make mistakes with
+probability 0.02, 0.03 and 0.05. Albert takes care of 50\% of the connections, David 30\% and Rebecca 20\%. We say that an operator provides a good service if they do not commit any error.
 
 \begin{enumerate}
-  \item Among the bad services provided by the company, what is the proportion provided by Amanda?
+  \item Among the bad services provided by the company, what is the proportion provided by Albert?
   \item What is the total proportion of good services ?
-  \item  Deborah goes often to parties during the night and then sometimes she gets suddenly sick the next day. She is absent with a probability of 10\%.
-  During her absences, Amanda takes care of 65\% of the connections and Rebecca of 35\%, but because of the stress, the probability of making a mistake
-  increases to 0.04 for Amanda and to 0.06 for Rebecca. If a client is redirected to a wrong phone line, what is the probability that Deborah went dancing during the preceding night and then she was sick ?
+  \item  David often goes out partying and then sometimes he gets suddenly sick the next day. He is absent with a probability of 10\%.
+  During his absences, Albert takes care of 65\% of the connections and Rebecca of 35\%, but because of the stress, the probability of making a mistake
+  increases to 0.04 for Albert and to 0.06 for Rebecca. If a client is redirected to a wrong phone line, what is the probability that David went dancing during the preceding night and that he was sick ?
 \end{enumerate}
-
-
-
-
-
 
 
 \section*{Exercise 2}

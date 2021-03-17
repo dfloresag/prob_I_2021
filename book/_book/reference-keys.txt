@@ -351,3 +351,8 @@ cumulative-distribution-function
 expectation-2
 variance-2
 properties
+exr:unnamed-chunk-9
+def:unnamed-chunk-35
+def:unnamed-chunk-45
+exm:unnamed-chunk-46
+eq:binom
