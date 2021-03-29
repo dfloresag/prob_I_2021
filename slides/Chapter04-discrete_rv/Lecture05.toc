@@ -1,2 +1,7 @@
-\beamer@sectionintoc {1}{Random variables}{2}{0}{1}
-\beamer@subsectionintoc {1}{1}{Discrete random variables}{48}{0}{1}
+\beamer@sectionintoc {1}{Discrete Uniform}{5}{0}{1}
+\beamer@sectionintoc {2}{Bernoulli Trials}{14}{0}{2}
+\beamer@sectionintoc {3}{Binomial}{20}{0}{3}
+\beamer@sectionintoc {4}{Poisson}{37}{0}{4}
+\beamer@sectionintoc {5}{Hypergeometric}{49}{0}{5}
+\beamer@sectionintoc {6}{Negative Binomial}{56}{0}{6}
+\beamer@sectionintoc {7}{Geometric}{65}{0}{7}

@@ -129,6 +129,9 @@
 }
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
 \IfFileExists{upquote.sty}{\usepackage{upquote}}{}
 \begin{document}
 
@@ -255,18 +258,18 @@
 
 \begin{frame}{\secname}
 \framesubtitle{A more formal definition}
-  \begin{stepitemize}
+  \begin{itemize}
   \item Suppose we have:
 
-  \begin{stepenumerate}[a.]
+  \begin{enumerate}[a.]
   \item[a.] A sample space $\color{Mygreen} S \color{black}$ ``for the events''
   \item[b.] A probability measure ($\color{Mygreen} Pr \color{black}$) ``for the events'' in $\color{Mygreen} S \color{black}$
-  \end{stepenumerate}
-
+  \end{enumerate}
+  \pause
   \item Let $\color{blue} X \color{black}(\color{Mygreen} s \color{black})$ be a function that takes an element $\color{Mygreen}  s\in S\color{black}$ to a number $x$
 
-  \end{stepitemize}
-
+  \end{itemize}
+  \pause
   \begin{minipage}{1.0\textwidth}
   \begin{figure}[h!]
   \centering
@@ -381,7 +384,7 @@
 \begin{frame}{\secname}
 
 Moreover, because $\color{blue}{P}$ is defined from $\color{Mygreen}{Pr}$, it is also {a probability measure} on $\color{blue}{D}$.
-
+\pause
 For each $A$:
   \begin{equation*}
   \color{blue}P\color{black}\left( A\right) = \color{Mygreen} {Pr} \color{black}( \left\{ s\in S :X\left(  s  \right) \in
@@ -409,66 +412,87 @@ For each $A$:
 
 \begin{frame}{\secname}
   \begin{example}[Geometric random variable]
-  Consider the problem of rolling a die until a 6 appears.
-  \begin{stepitemize}
-  \item Let $X=$ number of rolls until we get a 6
-
-  \item Possible values of $X$ are: $1, 2, 3,\ldots,n,\ldots$ ($\equiv
-  \mathbb{N}$).
-
-  \item $P(\{X=1\}) =Pr(\text{'6' on the 1st roll})= \frac{1}{6}$
-
-  \item $P (\{X=2\})=Pr \left( \text{no `}6\text{' on the 1st roll`}6\text{%
-  ' on the 2nd roll}\right) =\frac{5}{6}\cdot \frac{1}{6}=\frac{5}{36}$
-
-  \item $P(\{X=3\})=Pr \left( \text{no `}6\text{' on either the 1st or 2nd
-  roll and '6' on the third roll}\right)$\newline
-  $=\frac{5}{6}\cdot \frac{5}{6}\cdot \frac{1}{6}=\frac{25}{216}$
-  \item $\ldots$ and so on $\ldots$
-  \item $P(\{X=n\})=Pr( \text{no `}6\text{' on the first }$n-1$\text{ rolls
-  and '6' on the last roll})$ \newline
-  $=\left(\frac{5}{6}\right)^{n-1}\cdot \frac{1}{6}$
-  \item $\ldots$ and so on $\ldots$.
-  \end{stepitemize}
-
-
+  \begin{footnotesize}
+  \textbf{Experiment:} rolling a die until a 6 appears.
+  \begin{itemize}
+  \item Let $X=$ ``number of rolls until we get a 6''
+  \item $D = \{1, 2, 3,\ldots,n, \ldots \} \equiv \mathbb{N}$.
+  \end{itemize}
+  \begin{align*}
+  P(\{X=1\}) &=Pr(\text{`6' on the 1st roll})= \frac{1}{6}\\
+  P(\{X=2\})&=Pr \left( \text{no `6' on the 1st roll and `6' on the 2nd roll}\right) =\frac{5}{6}\cdot \frac{1}{6}=\frac{5}{36}\\
+  P(\{X=3\})&=Pr \left( \text{no `6' on either the 1st nor 2nd roll and `6' on the third roll}\right)\\
+  &=\frac{5}{6}\cdot \frac{5}{6}\cdot \frac{1}{6}=\frac{25}{216}\\
+  &\vdots \\
+  P(\{X=n\})&=Pr( \text{no `}6\text{' on the first }n-1\text{ rolls and '6' on the last roll})\\
+  &=\left(\frac{5}{6}\right)^{n-1}\cdot \frac{1}{6} \\
+  &\vdots
+  \end{align*}
+  \end{footnotesize}
   \end{example}
 \end{frame}
 
 \begin{frame}{\secname}
+\begin{example}[continued]
+
+
+
+\begin{knitrout}
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}
+
+\hfill{}\includegraphics[width=0.5\linewidth]{figure/unnamed-chunk-2-1} 
+
+
+
+\end{knitrout}
+\end{example}
+\end{frame}
+
+\begin{frame}{\secname}
   \begin{example}[continued]
+  \begin{footnotesize}
   \begin{stepitemize}
+
   \item Rather than list the possible values of $X$ along with the associated
   probabilities in a table, we can provide a formula that gives the required
   probabilities.
 
-  \item The probability distribution of the random variable $X$
-  is given by
   \begin{equation*}
-  P(\left\{ X=n \right\})=\left(\frac{5}{6}\right)^{n-1}\frac{1}{6}\quad\text{for}%
+  P(\left\{ X=n \right\})=\left(\frac{5}{6}\right)^{n-1}\frac{1}{6}\quad\text{for}
   \quad n=1,2,\ldots
   \end{equation*}
-
-  \item Note that (using properties of geometric series)
+  \end{stepitemize}
+  \end{footnotesize}
+  \end{example}
+  \begin{exercise}
+  Show that
   \begin{equation*}
   \sum_{n=1}^\infty\left(\frac{5}{6}\right)^{n-1}\frac{1}{6}=1.
   \end{equation*}
-  \end{stepitemize}
-
-  \end{example}
-\end{frame}%
+  \end{exercise}
+\end{frame}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Discrete random variables}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+% \begin{frame}{\secname}
+% \begin{figure}[h!]
+%   \centering
+%   \includegraphics[scale=0.20]{../../book/img/fun/EC_Latin.png}
+%   \end{figure}
+% \end{frame}
+
 
 \begin{frame}{\secname}
-  Discrete random variables are often associated with the process of counting (see previous
-  example). More generally,
-  \begin{definition}
-  Suppose $X$ can take the values $x_{1},x_{2},x_{3},\ldots ,x_{n}$. The probability of $x_{i}$ is
-  $$p_{i}= P(\left\{ X=x_i\right\})$$
+  Discrete random variables are often associated with the process of counting.
+
+  More generally:
+  \begin{definition}[Probability of a Discrete Random Variable]
+  \begin{footnotesize}
+  Suppose $X$ can take the values $x_{1},x_{2},x_{3},\ldots ,x_{n}$.
+
+  The probability of $x_{i}$ is $$p_{i}= P(\left\{ X=x_i\right\})$$
 
   and we must have $p_{1}+p_{2}+p_{3}+\cdots +p_{n}=1$ and all $p_{i}\geq 0$. These probabilities may be put in a table%
   \begin{equation*}
@@ -483,16 +507,22 @@ For each $A$:
   Total & $1$ \\ \hline
   \end{tabular}
   \end{equation*}
+  \end{footnotesize}
   \end{definition}
 \end{frame}
 
 \begin{frame}{\secname}
-  For a \textbf{discrete random variable $X$}, any table listing all
-  possible nonzero probabilities provides the entire \textbf{probability
-  distribution}. The \textbf{probability mass function} $p(a)$ of $X$ is defined by
-  $$ p_a = p(a)= P(\{X=a \}),
-  $$
-  and this is positive for at most a countable number of values of $a$. For instance,
+  \begin{itemize}
+  \item For a \textbf{discrete random variable $X$}, any table listing all
+  possible nonzero probabilities provides the entire \textbf{Probability
+  Distribution}.
+  \pause
+  \item The \textbf{probability mass function} $p(a)$ of $X$ is defined by
+  $$ p_a = p(a)= P(\{X=a \})$$
+  and this is positive for at most a countable number of values of $a$.
+  \end{itemize}
+  \pause
+  For instance,
   $p_{1} = P(\left\{ X=x_1\right\})$, $p_{2} = P(\left\{ X=x_2\right\})$, and so on.
   That is, if $X$ must assume
   one of the values $x_1,x_2,...$, then
@@ -502,16 +532,15 @@ For each $A$:
   \eea
 
   Clearly, we must have
-
   $$\sum_{i=1}^{\infty} p(x_i) = 1.$$
-
 \end{frame}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Cumulative Distribution Function}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{frame}{\secname}
-  The \textbf{cumulative distribution function} (\textbf{CDF}) is a
+\begin{footnotesize}
+  The \textbf{Cumulative Distribution Function} (\textbf{CDF}) is a
   table listing the values that $X$ can take, along with
   $$
   F_X(a) = P \left(\{ X\leq a\}\right)= \sum_{\text{all \ \ } x \leq a } p(x).
@@ -532,15 +561,11 @@ For each $A$:
   $x_{3}$ & $p_{1}+p_{2}+p_{3}$ \\ \hline
   $\vdots $ & $\vdots $ \\ \hline
   $x_{n}$ & $p_{1}+p_{2}+\cdots +p_{n}=1$ \\ \hline
-  \end{tabular}%
+  \end{tabular}
   \end{equation*}
   \vspace{0.2cm}
-  %TCIMACRO{\TeXButton{EndFrame}{\end{frame}}}%
-  %BeginExpansion
-\end{frame}%
-%EndExpansion
-
-
+  \end{footnotesize}
+\end{frame}
 
 \begin{frame}{\secname}
   \begin{example}
@@ -597,27 +622,26 @@ For each $A$:
 \end{frame}
 
 \begin{frame}{\secname}
-  \begin{example} [Quantiles]
+  \begin{definition} [Quantiles]
 
-  The CDF can be inverted to define the value $x$ of $X$ that corresponds to a given probability $\alpha$, namely $\alpha = P (X \leq x )$, for $\alpha \in [0,1]$. \\ \vspace{0.4cm}
+  The CDF can be inverted to define the value $x$ of $X$ that corresponds to a given probability $\alpha$, namely $\alpha = P (X \leq x )$, for $\alpha \in [0,1]$.
 
-  The inverse CDF $F_X^{-1}(\alpha)$ or quantile of order $\alpha$, and labelled as  $Q(\alpha)$, is the smallest
-  realisation of $X$ associated to a CDF greater or equal to $\alpha$; in formula, the
-  $\alpha$-quantile $Q(\alpha)$ is the smallest number satisfying:
+  \medskip
+
+  The inverse CDF $F_X^{-1}(\alpha)$ or \textbf{quantile of order $\alpha$}, $Q(\alpha)$, is the smallest realisation of $X$ associated to a CDF greater or equal to $\alpha$
+
+  In formula, the $\alpha$-quantile $Q(\alpha)$ is the smallest number satisfying:
 
   $$
   F_X [F^{-1}_X (\alpha)] = P[X \leq \underbrace{F^{-1}_X (\alpha)}_{Q(\alpha)}] \geq \alpha, \quad \text{for} \quad \alpha\in[0,1].
   $$
 
-  By construction, a quantile of a discrete random variable is a realization of $X$. More to come in Lecture 5...
-  \end{example}
+  By construction, a quantile of a discrete random variable is a realization of $X$\footnote{More to come in future chapters}
+  \end{definition}
 \end{frame}
 
 \begin{frame}{\secname}
-
-%\frametitle{Cumulative Distribution Function (VI)}
-
-\begin{example} [cont'd, graphically]
+\begin{example}[cont'd, graphically]
   \begin{figure}[h!]
   \centering
   \includegraphics[width=0.5\textwidth,height=0.95\textheight, angle = 90]{img/Quantiles_Discr.pdf}
@@ -630,76 +654,82 @@ For each $A$:
 \section{Distributional Summaries}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-%TCIMACRO{\TeXButton{BeginFrame}{\begin{frame}{\secname}}}%
-%BeginExpansion
-\begin{frame}{\secname}%
-%EndExpansion
-  \begin{stepitemize}
-  \item For a discrete random variable, it is useful to describe some
-  attributes or properties of the distribution
-
-  \begin{stepitemize}
-  \item such as a measure of location and a measure of spread
-  \end{stepitemize}
-
-  \item The \textbf{expected value}, or\textbf{\ mean value}, of the
-  distribution \begin{equation*}
-  E\left[ X\right] =p_{1}x_{1}+p_{2}x_{2}+\cdots + p_{n}x_{n} = \sum_{i=1}^{n} p_i x_i
+\begin{frame}{\secname}
+For a discrete random variable, it is useful to provide values that describe some
+  \textbf{attributes} of its distribution
+  \pause
+  \begin{definition}
+  \begin{footnotesize}
+  The \textbf{Expectation}, a.k.a. \textbf{Expected} or \textbf{Mean} value, of the
+  distribution is (roughly speaking) its \emph{center}.
+  \begin{equation*}
+  E\left[ X\right] =p_{1}x_{1}+p_{2}x_{2}+\cdots + p_{n}x_{n} = \sum_{i=1}^{n} p_i x_i,
   \end{equation*}%
-  is a measure of \emph{location} --- roughly speaking this is the \emph{center} of the distribution;
+  and constitutes a measure of \emph{location}.
+  \end{footnotesize}
+  \end{definition}
+  \pause
+\begin{knitrout}
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}
+
+\includegraphics[width=0.5\linewidth]{figure/unnamed-chunk-3-1} \hfill{}
 
 
-  \item The \textbf{square root of the variance}, or\textbf{\ standard
-  deviation,} of the distribution%
+
+\end{knitrout}
+\end{frame}
+
+\begin{frame}{\secname}
+  \begin{definition}
+  \begin{footnotesize}
+   The \textbf{Square root of the Variance}, or \textbf{Standard
+  Deviation,} of the distribution
   \begin{eqnarray*}
   s.d\left( X\right) &=&\sqrt{Var\left( X\right) } \\
   &=&\sqrt{p_{1}\left( x_{1}-E\left[ X\right] \right) ^{2}+p_{2}\left( x_{2}-E%
   \left[ X\right] \right) ^{2}+\cdots + p_{n}\left( x_{n}-E\left[ X\right]
-  \right) ^{2}}
-  \end{eqnarray*}%
-  is a measure of \emph{spread (or `variability' or `dispersion').}
-  \end{stepitemize}
+  \right)^{2}}
+  \end{eqnarray*}
+  is a measure of \emph{spread} a.k.a. `variability' or `dispersion').
+  \end{footnotesize}
+  \end{definition}
+\pause
+\begin{knitrout}
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}
 
-  %TCIMACRO{\TeXButton{EndFrame}{\end{frame}}}%
-  %BeginExpansion
-\end{frame}%
-%EndExpansion
+\includegraphics[width=0.95\linewidth]{figure/unnamed-chunk-4-1} \hfill{}
 
-%TCIMACRO{\TeXButton{BeginFrame}{\begin{frame}{\secname}}}%
-%BeginExpansion
+
+
+\end{knitrout}
+\end{frame}
+
 \begin{frame}{\secname}%
-%EndExpansion
-  If $X$ is a discrete random variable and $a$ is any real number, then
-
-  \vspace{0.2cm}
-
-  \begin{stepenumerate}
-  \item $E\left[ \alpha X\right] =\alpha E\left[ X\right] $
-
-  \item $E\left[ \alpha+X\right] =\alpha+E\left[ X\right] $
-
-  \item $Var\left( \alpha X\right) =\alpha^{2}Var\left( X\right) $
-
-  \item $Var\left( \alpha+X\right) =Var\left( X\right) $
-  \end{stepenumerate}
-
+  If $X$ is a discrete random variable and $a$ is any real number, then:
+  \begin{align*}
+  E\left[  \alpha X\right]  &=\alpha E\left[ X\right]\\
+  E\left[  \alpha+X\right]  &=\alpha+E\left[ X\right] \\
+  Var\left(\alpha X\right)  &=\alpha^{2}Var\left( X\right)\\
+  Var\left( \alpha+X\right) &=Var\left( X\right)
+  \end{align*}
+  \pause
   \begin{exercise}
+  \begin{footnotesize}
   Let us very the first property:
-  $
-  E\left[ \alpha X \right] =\alpha E\left[ X\right].
-  $
-  From the Intro lecture we know that, for every $\alpha_i \in \mathbb{R}$,
+  $E\left[ \alpha X \right] =\alpha E\left[ X\right].$
+  From the intro lecture we know that, for every $\alpha_i \in \mathbb{R}$,
   $$\sum_{i=1}^{n} \alpha_i X_{i} = \alpha_1 X_1 + \alpha_2 X_2 +....+ \alpha_n X_n.$$ So, the
-  required result follows as a special case, setting $\alpha_i= \alpha$, for every $i$, and applying the definition
-  of expected value. Verify this and the other properties as an exercise. [Hint: set $\alpha_i = \alpha p_i$.]
+  required result follows as a special case, setting $\alpha_i= \alpha$, for every $i$, and applying the definition of Expectation. Verify this and the other properties as an exercise. [Hint: set $\alpha_i = \alpha p_i$.]
+  \end{footnotesize}
   \end{exercise}
 \end{frame}
 
 \begin{frame}{\secname}
   \begin{definition}
-  Consider two discrete random variables\footnote{Technically speaking, $X$ and $Y$ should be defined on the same probability space,
-  %$(S,\mathcal{B},P)$,
-  but we do not pursue this argument.} $X$ and $Y$. Then, $X$ and $Y$ are \textbf{independent} if%
+  Consider two discrete random variables
+  % \footnote{Technically speaking, $X$ and $Y$ should be defined on the same probability space .} $X$ and $Y$.
+  \medskip
+  Then, $X$ and $Y$ are \textbf{independent} if%
   \begin{equation*}
   P \left(\left\{ \ X=x\right\} \cap \left\{ Y=y\right\} \right) =P \left(\{
   X=x\}\right) \cdot P \left(\{ Y=y \}\right)
@@ -752,7 +782,8 @@ Now, suppose we are interested in a function $m$ of the random variable $X$, say
 E\left[ m\left( X\right) \right] =p_{1}m\left( x_{1}\right) +p_{2}m\left(
 x_{2}\right) +\cdots p_{n}m\left( x_{n}\right).
 \end{equation*}
-
+\begin{remark}
+\begin{footnotesize}
 Notice that the variance is a special case of expectation where,
 \begin{equation*}
 m(X)=(X-E\left[ X\right] )^{2}.
@@ -761,1277 +792,1271 @@ Indeed,
 \begin{equation*}
 Var\left( X\right) =E\left[ (X-E\left[ X\right] )^{2}\right].
 \end{equation*}
+\end{footnotesize}
+\vspace{-0.3cm}
+\end{remark}
 
 \begin{exercise}
+\begin{footnotesize}
 Show that
 \begin{equation*}
 Var\left( X\right) =E\left[ X^{2}\right] -E\left[ X\right] ^{2}.
 \end{equation*}
+\end{footnotesize}
+\vspace{-0.3cm}
 \end{exercise}
 
 \end{frame}
 
-
-
 \begin{frame}{Wrap-up (to this point)}
+  \begin{itemize}
+  \item A \textbf{Random Variable} \emph{maps} events from the \textbf{Sample Space of the Events} onto \textcolor{blue}{a set of numerical values}.
+  \medskip
+  \item This entails a new sample space and a new probability measure $\color{blue}P(\cdot)$
+  \medskip
+  \item When the mapping is onto a \textbf{countable set} the Random Variable is \textbf{Discrete}.
+  \medskip
+  \item A Discrete Random Variable is endowed of a \textbf{Probability Distribution}, which is a \textbf{listing of the probabilities of each value}.
+  \medskip
+  \item This Distribution can be displayed as a \textbf{table} or as \textbf{functions} : Probability Mass Function (PMF) or Cumulative Distribution Function (CDF).
+  \medskip
+  \item A Distribution has a ``gravity center'' The \textbf{Expectation}.
+  \item A Distribution has a measure of ``spread'' with respect to this center:
+  the Standard Deviation, which depends on the \textbf{Variance}.
+  \end{itemize}
 \end{frame}
 
-
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Some important Discrete Distributions (time allowing)}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-%TCIMACRO{\TeXButton{BeginFrame}{\begin{frame}{\secname}}}%
-%BeginExpansion
-\begin{frame}{\secname}%
-%EndExpansion
-
-%\frametitle{Some discrete distributions of interest}
-
-\begin{stepitemize}
-\item Discrete Uniform
-\vspace{0.15cm}
-\item Bernoulli
-\vspace{0.15cm}
-\item Binomial
-\vspace{0.15cm}
-\item Poisson
-\vspace{0.15cm}
-\item Hypergeometric
-\vspace{0.15cm}
-\item Negative binomial
-\end{stepitemize}
-
-\vspace{0.5cm}
-Their main characteristic is that the probability $P\left(\left\{ X=x_i\right\}\right)$ is given by an appropriate mathematical formula: i.e.
-$$
-p_{i}=P\left(\left\{ X=x_i\right\}\right)=h(x_{i})
-$$
-for a suitably specified function $h(\cdot)$.
-
-%TCIMACRO{\TeXButton{EndFrame}{\end{frame}}}%
-%BeginExpansion
-\end{frame}%
-%EndExpansion
-
-%TCIMACRO{\TeXButton{BeginFrame}{\begin{frame}{\secname}}}%
-%BeginExpansion
-\begin{frame}{\secname}%
-%EndExpansion
-
-%\frametitle{Discrete uniform distribution}
-\begin{small}
-\begin{definition}
-We say $X$ has a \textbf{discrete uniform distribution} when
-
-\begin{stepitemize}
-\item $X$ can take the values $x=0,1,2,...,k$ (for some specified finite value $k\in \mathbb{N}$)
-
-\item The probability that $X=x$ is $1/\left( k+1\right) $, namely
-$$
-P\left(\left\{ X=x\right\}\right) = \frac{1}{\left( k+1\right)}.
-$$
-\end{stepitemize}
-
-The probability distribution is given by
-\begin{small}
-\begin{equation*}
-\begin{tabular}{|c|c|}
-\hline
-$x_i$ & $P \left(\left\{ X=x_i\right\}\right) $ \\ \hline\hline
-$0$ & $\frac{1}{\left( k+1\right) }$ \\ \hline
-$1$ & $\frac{1}{\left( k+1\right) }$ \\ \hline
-$\vdots $ & $\vdots $ \\ \hline
-$k$ & $\frac{1}{\left( k+1\right) }$ \\ \hline\hline
-Total & $1$ \\ \hline
-\end{tabular}%
-\end{equation*}
-\end{small}
-\end{definition}
-\end{small}
-\end{frame}
-
-\begin{frame}{\secname}
-
-%\frametitle{Discrete uniform: expected value}
-
-\begin{stepitemize}
-\item The expected value of $X$ is%
-\begin{eqnarray*}
-E\left[ X\right] &=&  x_1 p_1 + ... +  x_k p_k\\
-&=& 0\cdot \frac{1}{\left( k+1\right) }+1\cdot \frac{1}{%
-\left( k+1\right) }+\cdots +k\cdot \frac{1}{\left( k+1\right) } \\
-&=&\frac{1}{\left( k+1\right) }\cdot\left( 0+1+\cdots +k\right) \\
-&=&\frac{1}{\left( k+1\right) }\cdot \frac{k\left( k+1\right) }{2} \\
-&=&\frac{k}{2}.
-\end{eqnarray*}
-
-E.g. when $k=6$, then $X$ can take on one of the seven distinct values
-$x=0,1,2,3,4,5,6,$ each with equal probability $\frac{1}{7}$, but the
-expected value of $X$ is equal to $3$, which is  one of the possible outcomes!!!
-
-\end{stepitemize}
-
-%TCIMACRO{\TeXButton{EndFrame}{\end{frame}}}%
-%BeginExpansion
-\end{frame}%
-%EndExpansion
-
-%TCIMACRO{\TeXButton{BeginFrame}{\begin{frame}{\secname}}}%
-%BeginExpansion
-\begin{frame}{\secname}%
-%EndExpansion
-
-
-\begin{stepitemize}
-\item The variance of $X$ -- we will be denoting it as $Var(X)$  -- is%
-\begin{eqnarray*}
-Var\left( X\right) &=&\left( 0-\frac{k}{2}\right) ^{2}\cdot \frac{1}{\left(
-k+1\right) }+\left( 1-\frac{k}{2}\right) ^{2}\cdot \frac{1}{\left(
-k+1\right) }+ \\
-&&\cdots +\left( k-\frac{k}{2}\right) ^{2}\cdot \frac{1}{\left( k+1\right) }
-\\
-&=&\frac{1}{\left( k+1\right) }\cdot\left\{ \left( 0-\frac{k}{2}\right)
-^{2}+\left( 1-\frac{k}{2}\right) ^{2}+\cdots +\left( k-\frac{k}{2}\right)
-^{2}\right\} \\
-&=&\frac{1}{\left( k+1\right) }\cdot \frac{k\left( k+1\right) \left(
-k+2\right) }{12} \\
-&=&\frac{k\left( k+2\right) }{12}
-\end{eqnarray*}
-
-E.g. when $k=6$, the variance of $X$ is equal to $4,$ and the standard
-deviation of $X$ is equal to $\sqrt{4}=2.$
-\end{stepitemize}
-
-\end{frame}%
-
-\begin{frame}{\secname}%
-%\frametitle{Some illustrations of discrete uniform}
-
-\begin{figure}[ptb]\centering
-\includegraphics[width=0.55\textwidth, height=0.8 \textheight]{img/discrete_uniforms__1.pdf}%
-\end{figure}
-\end{frame}
-
-\begin{frame}{\secname}%
-%\frametitle{Some illustrations of discrete uniform}
-
-\begin{example}
-
-An example of discrete uniform is related to the experiment of rolling a die---remark, the outcome zero is not allowed in this specific example. \\ \vspace{0.3cm}
-
-Let us call $X$ the corresponding random variable and $\{x_1,x_2,...,x_6\}$ its realizations.  \\ \vspace{0.3cm}
-
-The possible outcomes
-are
-$$
-\{1,2,3,4,5,6\}
-$$
-each having probability $\frac{1}{6}$. \vspace{0.3cm}
-
-Moreover,
-
-$$
-E(X) = (1+2+3+4+5+6) \cdot \frac{1}{6} = 3.5,
-$$
-
-which is not one of the possible outcomes!!!
-
-\end{example}
-
-\end{frame}
-
-\begin{frame}{\secname}%
-%\frametitle{Bernoulli Trials}
-\begin{definition}
-
-\textit{Bernoulli trial} is the name given to the random variable $X$ having probability distribution given by%
-
-\begin{equation*}
-\begin{tabular}{|l|l|}
-\hline
-$x_i$ & $P(\left\{ X=x_i\right\}) $ \\ \hline\hline
-$1$ & $p$ \\ \hline
-$0$ & $1-p$ \\ \hline
-\end{tabular}%
-\end{equation*}
-\end{definition}
-
-\vspace{0.5cm}
-
-Often we write%
-\begin{equation*}
-P(\left\{ X=x\right\} ) =p^{x}\left( 1-p\right) ^{1-x}, \quad \text{ for }x=0,1
-\end{equation*}
-
-%TCIMACRO{\TeXButton{EndFrame}{\end{frame}}}%
-%BeginExpansion
-\end{frame}%
-
-
-\begin{frame}{\secname}%
-%\frametitle{Bernoulli Trials}
-
-A Bernoulli trial represents the most primitive form of all random variables. It derives from a random experiment having only two possible mutually exclusive outcomes. These are often labelled Success and Failure and
-
-%\vspace{0.5cm}
-
-\begin{stepitemize}
-\item Success occurs with probability $p$
-%\vspace{0.25cm}
-\item Failure occurs with probability $1-p$.
-\end{stepitemize}
-
-
-%\vspace{0.5cm}
-\begin{remark}
-Just for the sake of notation, let us set $X=1$ if \emph{Success} occurs, and $X=0$ if \emph{Failure} occurs
-\end{remark}
-
-
-\begin{example}
-Coin tossing:  we can define a random variable
-
-\begin{equation*}
-\begin{tabular}{|l|l|}
-\hline
-$x_i$ & $P(\left\{ X=x_i\right\}) $ \\ \hline\hline
-$1$ & $p$ \\ \hline
-$0$ & $1-p$ \\ \hline
-\end{tabular}%
-\end{equation*}
-and say that $X=1$ if $H$ and $X=0$ if $T$.
-
-\end{example}
-
-\end{frame}
-
-\begin{frame}{\secname}%
-%EndExpansion
-
-%\frametitle{Bernoulli Trials}
-
-\begin{stepitemize}
-\item Mean:
-\begin{eqnarray*}
-E\left[ X\right] &=&1 \cdot p+0 \cdot (1-p) \\
-&=&p
-\end{eqnarray*}
-
-\item Variance:%
-\begin{eqnarray*}
-Var\left( X\right) &=&\left( 1-p\right) ^{2} \cdot p+\left( 0-p\right)
-^{2} \cdot \left( 1-p\right) \\
-&=&p\left( 1-p\right).
-\end{eqnarray*}
-\end{stepitemize}
-
-
-
-
-\end{frame}%
-
-\begin{frame}{\secname}%
-
-%\frametitle{The Binomial Distribution}
-
-\begin{definition}
-Let us consider the  random experiment consisting in a series of $n$ trials having 3
-characteristics
-
-\begin{stepenumerate}
-\item Only two mutually exclusive outcomes are possible in each trial: \emph{%
-success} (\emph{S}) and \emph{failure} (\emph{F})
-
-\item The outcomes in the series of $n$ trials constitute independent events
-
-\item The probability of success $p$ in each trial is constant from trial to
-trial
-\end{stepenumerate}
-
-$X$ is the \emph{number of successes} occurring in $n$ (Bernoulli) trials. Binomial probability distribution given by%
-\begin{eqnarray}
-P ( \left\{ X=x\right\})  &=&\left(
-\begin{array}{c}
-n \nonumber \\
-x%
-\end{array}%
-\right) p^{x}\left( 1-p\right) ^{n-x} \\
-&=&\frac{n!}{x!\left( n-x\right) !}p^{x}\left( 1-p\right) ^{n-x},\text{ for }%
-x=0,1,2,...,n \label{Eq: Binom}
-\end{eqnarray}
-\end{definition}
-
-\end{frame}%
-
-
-\begin{frame}{\secname}%
-
-%\frametitle{The Binomial Distribution}
-
-Recall (see Intro lecture) that combinations are defined as:
-
-\begin{equation*}
-\left(
-\begin{array}{c}
-n \\
-k%
-\end{array}%
-\right) =\frac{n!}{k!\left( n-k\right) !}=C^{k}_{n}
-\end{equation*}
-and, for $n \geq k$, we say ``$n$ choose $k$''. \\
-\vspace{0.4cm}
-The binomial coefficient $\left(
-\begin{array}{c}
-n \\
-k%
-\end{array}%
-\right)$
-represents the number of possible combinations of $n$ objects taken $k$ at a time, without regard of the order. \\% Rozanov page 7
-\vspace{0.4cm}
-\color{blue} Thus, $C^{k}_{n}$ represents the number of different groups of size $k$ that could be selected from a set of $n$ objects
-when the order of selection is not relevant. \color{black}
-
-\end{frame}%
-
-\begin{frame}{\secname}
-%\frametitle{The Binomial Distribution}
-
-So, ''What is the interpretation of the formula? "
-
-
-\begin{stepenumerate}
-\item The first factor $$\left(
-\begin{array}{c}
-n \\
-x%
-\end{array}%
-\right) =\frac{n!}{x!\left( n-x\right) !}$$ is the number of different
-combinations of individual `successes' and `failures'  in $n$ (Bernoulli) trials that result in a sequence containing a total of $%
-x $ `successes' and $n-x$ `failures'.
-
-
-\item The second factor $$p^{x}\left( 1-p\right) ^{n-x}$$ is the probability associated with any one
-sequence of $x$ `successes' and $(n-x)$ `failures'.
-\end{stepenumerate}
-
-\begin{remark}
-Short-hand notation: $$ X \sim \text{B}(x,n,p)$$
- or, occasionally, simply $ X \sim \text{B} (n,p)$ (no $x$ in the formula).
-\end{remark}
-
-\end{frame}%
-
-
-
-\begin{frame}{\secname}%
-
-%\frametitle{The Binomial Distribution: expectation and variance}
-
-\begin{stepitemize}
-\item Mean:
-\begin{eqnarray*}
-E\left[ X\right] &=&\sum_{x=0}^{n}x\Pr \left\{ X=x\right\} \\
-&=&\sum_{x=0}^{n}x\left(
-\begin{array}{c}
-n \\
-x%
-\end{array}%
-\right) p^{x}\left( 1-p\right) ^{n-x} = np
-\end{eqnarray*}
-
-%\begin{stepitemize}
-%\item Here $\sum_{x=1}^{n}$ denotes the sum over each value of $x$ from $0$
-%to $n$
-%\end{stepitemize}
-\item Variance:%
-\begin{eqnarray*}
-Var\left( X\right) &=&\sum_{x=0}^{n}\left( x-np\right) ^{2} P (\left\{
-X=x\right\}) \\
-&=&np\left( 1-p\right)
-\end{eqnarray*}
-\end{stepitemize}
-\begin{remark}
-Looking at (\ref{Eq: Binom}), we remark that the Bernoulli distribution is a special case ($n=1$)
-of the Binomial distribution. Roughly speaking, ``a Binomial random variable arises when we sum $n$ independent
-Bernoulli trails.''
-\end{remark}
-%TCIMACRO{\TeXButton{EndFrame}{\end{frame}}}%
-%BeginExpansion
-\end{frame}%
-%EndExpansion
-
-%TCIMACRO{\TeXButton{BeginFrame}{\begin{frame}{\secname}}}%
-%BeginExpansion
-
-
-
-%\begin{frame}{\secname}%
-%%EndExpansion
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% \section{Some important Discrete Distributions (time allowing)}
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %
-%%\frametitle{Some illustrations of Binomial \begin{small}(introducing a tool)\end{small}}
-%Let us provide a graphical illustration of $X\sim B(x,n,p)$ via some numerical method. Specifically, we first  \color{blue}simulate \color{black} a large number of
-%realizations of $X$, then we draw their \color{blue}histrogram \color{black} (or barplot). \\
-%\vspace{0.3cm}
-%%\begin{remark}
-%A \textbf{histogram} is a representation of a distribution by means of rectangles whose widths represent class intervals and whose areas are proportional
-%to the corresponding frequencies. The purpose of a histogram is to graphically summarize the distribution of a data set -- roughly speaking, a histogram is a graphical representation of a table of frequencies. \\
-%\vspace{0.3cm}
+% \begin{frame}{\secname}
 %
-%\begin{remark}[How to draw it?]
-%The most common form of
-%the histogram is obtained by splitting the range of the data into equal-sized bins. Then for each bin, the number of points from the data set
-%that fall into each bin are counted. That is: on the \color{blue} vertical axis we read the (relative) frequency \color{black} (i.e., counts for each bin); on the \color{red} horizontal axis we read the observed values of $X$\color{black}. The classes can either be defined arbitrarily by the user or via some systematic rule.
-%\end{remark}
-%\end{frame}
-
-
-\begin{frame}{\secname}%
-%EndExpansion
-
-%\frametitle{Some illustrations of Binomial}
-
-... same barplot as in slide 30, just a bit fancier...
-
-\begin{figure}[ptb]\centering
-\includegraphics[width=0.75\textwidth,height=0.6\textheight]{img/distbin.pdf}
-\end{figure}
-\end{frame}%
-
-\begin{frame}{\secname}%
-%EndExpansion
-
-
-%\frametitle{Binomial Distribution}
-
-\begin{example} [cherry trees]
-
-One night a storm washes three cherries ashore on an island. For each cherry, there is a probability $p=0.8$ that its seed will
-produce a tree. What is the probability that these three cherries will produce two
-trees?
-
-\bigskip
-
-First,  we notice that this can be determined using a \textbf{Bernoulli distribution}. To this end, consider whether each seed will produce a tree as a sequence of $n=3$
-trials. For each cherry:
-
-\begin{itemize}
-
-\item either the cherry produces a tree (Success) or it
-does not (Failure);
-\item the event that a cherry produces a tree is independent from the event
-that any of the other two cherries produces a tree.
-
-\item The probability that a cherry produces a tree is the same for all
-three cherries
-\end{itemize}
-
-\end{example}
-
-\end{frame}%
-
-
-\begin{frame}{\secname}%
-
-%\frametitle{Binomial Distribution }
-
-\begin{example}[continued]
-
-\begin{figure}[ptb]\centering
-\includegraphics[]{img/BINOMIALpic__1.pdf}
-\end{figure}
-
-\end{example}
-\end{frame}%
-
-\begin{frame}{\secname}%
-
-%\frametitle{Binomial Distribution}
-
-\begin{example}[continued]
-
-\begin{stepitemize}
-\item There are $2^{3}=8$ possible outcomes from the $3$ individual trials
-
-\item It does not matter which of the three cherries produce a tree
-
-\item Consider all of the possible sequences of outcomes (S=success,
-F=failure)%
-\begin{equation*}
-\text{SSS,
-\color{red}%
-SSF,
-\color{black}%
-\color{red}%
-SFS%
-\color{black}%
-, SFF,
-\color{red}%
-FSS
-\color{black}, FSF, FFS, FFF}
-\end{equation*}
-
-\item We are interested in
-%TCIMACRO{\TeXButton{red}{\color{red}}}%
-%BeginExpansion
-\color{red}%
-SSF%
-%TCIMACRO{\TeXButton{black}{\color{black}}}%
-%BeginExpansion
-\color{black}%
-,
-\color{red}%
-SFS%
-%TCIMACRO{\TeXButton{black}{\color{black}}}%
-%BeginExpansion
-\color{black}%
-%EndExpansion
-,
-%TCIMACRO{\TeXButton{red}{\color{red}}}%
-%BeginExpansion
-\color{red}%
-%EndExpansion
-FSS%
-%TCIMACRO{\TeXButton{black}{\color{black}}}%
-%BeginExpansion
-\color{black}%
-%EndExpansion
-
-\item These possible events are \emph{mutually exclusive}, so%
-\begin{equation*}
-\Pr (\left\{
-%TCIMACRO{\TeXButton{red}{\color{red}}}%
-%BeginExpansion
-\color{red}%
-%EndExpansion
-SSF%
-%TCIMACRO{\TeXButton{black}{\color{black}}}%
-%BeginExpansion
-\color{black}%
-%EndExpansion
-\cup
-%TCIMACRO{\TeXButton{red}{\color{red}}}%
-%BeginExpansion
-\color{red}%
-%EndExpansion
-SFS%
-%TCIMACRO{\TeXButton{black}{\color{black}}}%
-%BeginExpansion
-\color{black}%
-%EndExpansion
-\cup
-%TCIMACRO{\TeXButton{red}{\color{red}}}%
-%BeginExpansion
-\color{red}%
-%EndExpansion
-FSS%
-%TCIMACRO{\TeXButton{black}{\color{black}}}%
-%BeginExpansion
-\color{black}%
-%EndExpansion
-\right\}) =\Pr (\left\{
-%TCIMACRO{\TeXButton{red}{\color{red}}}%
-%BeginExpansion
-\color{red}%
-%EndExpansion
-SSF%
-%TCIMACRO{\TeXButton{black}{\color{black}}}%
-%BeginExpansion
-\color{black}%
-%EndExpansion
-\right\}) +\Pr (\left\{
-%TCIMACRO{\TeXButton{red}{\color{red}}}%
-%BeginExpansion
-\color{red}%
-%EndExpansion
-SFS%
-%TCIMACRO{\TeXButton{black}{\color{black}}}%
-%BeginExpansion
-\color{black}%
-%EndExpansion
-\right\}) +\Pr (\left\{
-%TCIMACRO{\TeXButton{red}{\color{red}}}%
-%BeginExpansion
-\color{red}%
-%EndExpansion
-FSS%
-%TCIMACRO{\TeXButton{black}{\color{black}}}%
-%BeginExpansion
-\color{black}%
-%EndExpansion
-\right\})
-\end{equation*}
-\end{stepitemize}
-\end{example}
-%TCIMACRO{\TeXButton{EndFrame}{\end{frame}}}%
-%BeginExpansion
-\end{frame}%
-%EndExpansion
-
-%TCIMACRO{\TeXButton{BeginFrame}{\begin{frame}{\secname}}}%
-%BeginExpansion
-\begin{frame}{\secname}%
-%EndExpansion
-
-%\frametitle{Binomial Distribution}
-
-\begin{example}[continued]
-
-The three trials are assumed to be \emph{independent}, so
-each of the three seed events corresponding to two trees growing has
-the same probability%\footnote{Here the symbol ''$\times$" indicates the product}:%
-\begin{eqnarray*}
-\Pr (\left\{
-%TCIMACRO{\TeXButton{red}{\color{red}}}%
-%BeginExpansion
-\color{red}%
-%EndExpansion
-SSF%
-%TCIMACRO{\TeXButton{black}{\color{black}}}%
-%BeginExpansion
-\color{black}%
-%EndExpansion
-\right\})  &=&\Pr (\left\{
-%TCIMACRO{\TeXButton{red}{\color{red}}}%
-%BeginExpansion
-\color{red}%
-%EndExpansion
-S%
-%TCIMACRO{\TeXButton{black}{\color{black}}}%
-%BeginExpansion
-\color{black}%
-%EndExpansion
-\right\}) \cdot \Pr (\left\{
-%TCIMACRO{\TeXButton{red}{\color{red}}}%
-%BeginExpansion
-\color{red}%
-%EndExpansion
-S%
-%TCIMACRO{\TeXButton{black}{\color{black}}}%
-%BeginExpansion
-\color{black}%
-%EndExpansion
-\right\} ) \cdot (\Pr \left\{
-%TCIMACRO{\TeXButton{red}{\color{red}}}%
-%BeginExpansion
-\color{red}%
-%EndExpansion
-F%
-%TCIMACRO{\TeXButton{black}{\color{black}}}%
-%BeginExpansion
-\color{black}%
-%EndExpansion
-\right\}  ) \\
-&=&0.8\cdot 0.8\cdot (1-0.8) \\
-&=&0.8\cdot (1-0.8)\cdot 0.8 =\Pr (\left\{
-%TCIMACRO{\TeXButton{red}{\color{red}}}%
-%BeginExpansion
-\color{red}%
-%EndExpansion
-SFS%
-%TCIMACRO{\TeXButton{black}{\color{black}}}%
-%BeginExpansion
-\color{black}%
-%EndExpansion
-\right\})  \\
-&=&(1-0.8)\cdot 0.8\cdot 0.8= \Pr (\left\{
-%TCIMACRO{\TeXButton{red}{\color{red}}}%
-%BeginExpansion
-\color{red}%
-%EndExpansion
-FSS
-%TCIMACRO{\TeXButton{black}{\color{black}}}%
-%BeginExpansion
-\color{black}%
-%EndExpansion
-\right\} ) \\
-&=&0.128
-\end{eqnarray*}
-
-So the probability of two trees resulting from the three seeds must be%
-\begin{eqnarray*}
-\Pr (\left\{
-%TCIMACRO{\TeXButton{red}{\color{red}}}%
-%BeginExpansion
-\color{red}%
-%EndExpansion
-SSF%
-%TCIMACRO{\TeXButton{black}{\color{black}}}%
-%BeginExpansion
-\color{black}%
-%EndExpansion
-\cup
-%TCIMACRO{\TeXButton{red}{\color{red}}}%
-%BeginExpansion
-\color{red}%
-%EndExpansion
-SFS%
-%TCIMACRO{\TeXButton{black}{\color{black}}}%
-%BeginExpansion
-\color{black}%
-%EndExpansion
-\cup
-%TCIMACRO{\TeXButton{red}{\color{red}}}%
-%BeginExpansion
-\color{red}%
-%EndExpansion
-FSS%
-%TCIMACRO{\TeXButton{black}{\color{black}}}%
-%BeginExpansion
-\color{black}%
-%EndExpansion
-\right\} ) &=&3\cdot 0.128 \\
-&=&0.384.
-\end{eqnarray*}
-
-\end{example}
-
-
-
-\end{frame}%
-
-
-
-\begin{frame}{\secname}%
-%EndExpansion
-
-%\frametitle{Binomial Distribution}
-
-\begin{example}
-Finally, we notice that we can obtain the same result (in a more direct way), using the \textbf{binomial probability} for the random variable
-$$X= \text{number of trees that grows
-from 3 seeds}.$$
-
-Indeed
-
-\begin{eqnarray*}
-\Pr (\left\{ X=2\right\})  &=&\frac{3!}{2!\left( 3-2\right) !}\cdot \left(
-0.8\right) ^{2} \cdot \left( 1-0.8\right) ^{3-2} \\
-&=&3 \cdot \left( 0.8\right) ^{2} \cdot \left( 0.2\right)  \\
-&=&0.384.
-\end{eqnarray*}
-\end{example}
-
-%TCIMACRO{\TeXButton{EndFrame}{\end{frame}}}%
-%BeginExpansion
-\end{frame}%
-
-
-\begin{frame}{\secname}%
-%EndExpansion
-
-%\frametitle{Poisson Distribution}
-
-\begin{definition}
-Let us consider random variable $X$ which takes values $0,1,2,...$, namely the nonnegative integers in $\mathbb{N}$. $X$ is said to be a Poisson random variable if its probability mass function, with $\lambda >0$ fixed and providing info on the intensity, is
-\begin{equation}
-p(x)=\Pr \left( \{ X = x \}\right) =\frac{\lambda ^{x}e^{-\lambda }}{x!}\text{,\qquad }%
-x=0,1,2,... \label{Eq. Poisson}
-\end{equation}
-and we write $X\sim \text{Poisson}(\lambda)$.
-\end{definition}
-\vspace{0.2cm}
-The Eq. (\ref{Eq. Poisson}) defines a genuine probability mass function, since $p(x) \geq 0$ and
-\bea
-\sum_{x=0}^{\infty} p(x) &=& \sum_{x=0}^{\infty}  \frac{\lambda ^{x}e^{-\lambda }}{x!}  \nn \\
-& = & e^{-\lambda } \sum_{x=0}^{\infty}   \frac{\lambda ^{x}}{x!} \nn \\
-& = & e^{-\lambda } e^{\lambda } = 1 \nn \quad \text{(see Intro Lecture).}
-\eea
-\end{frame}%
-
-
-\begin{frame}{\secname}%
-%EndExpansion
-
-%\frametitle{Poisson Distribution}
-
-
-Moreover, for a given value of $\lambda $ also the CDF can be easily defined. E.g.
-
-\begin{equation*}
-F_X(2)=\Pr \left( \{X\leq 2\}\right) =e^{-\lambda }+\lambda e^{-\lambda }+\frac{\lambda
-^{2}e^{-\lambda }}{2},
-\end{equation*}
-
-and the Expected value and Variance for Poisson distribution (see tutorial) can be obtained by ``sum algebra'' (and/or some algebra)
-
-\begin{eqnarray*}
-E\left[ X\right] &=&\lambda \\
-Var\left( X\right) &=&\lambda.
-\end{eqnarray*}
-
-\end{frame}%
-
-
-\begin{frame}{\secname}%
-%EndExpansion
-
-%\frametitle{Some illustrations of Poisson}
-
-... same barplot as in slide 30, just a bit fancier...
-
-\begin{figure}[ptb]\centering
-\includegraphics[width=0.75\textwidth]{img/distpois.pdf}
-\end{figure}
-
-\end{frame}%
-
-
-\begin{frame}{\secname}%
-%\frametitle{Poisson Distribution}
-
-\begin{example}
-The average number of newspapers sold by Alfred is 5 per minute\footnote{This number provides info on the intensity
-at which a random phenomenon occurs.}. What is the probability that Alfred will sell at least 1 newspaper in a minute? \vspace{0.3cm}
-
-
-To answer, let $X$ be the $\#$ of newspapers sold by Alfred in a minute. We have
-$$
-X \sim \text{Poisson}(\lambda)
-$$
-with $\lambda = 5$, so
-\begin{eqnarray*}
-P(X \geq 1) & = & 1- P(\{X=0\}) \\
-& = & 1 - \exp^{-5} \frac{5^0}{0!} \\
-%& = & 1-\exp^{-5} \\
-& \approx & 1- 0.0067 \approx 99.33\%.
-\end{eqnarray*}
-How about $P(X \geq 2)$? Is it $P(X \geq 2) \geq P(X \geq 1)$ or not? Answer the question...
-\end{example}
-\end{frame}%
-
-
-
-\begin{frame}{\secname}%
-%\frametitle{Poisson Distribution}
-
-\begin{example}
-A telephone switchboard handles 300 calls, on the average, during one hour. The board
-can make maximum 10 connections per minute. Use the Poisson
-distribution to evaluate the probability that the board will be overtaxed during a given minute.
-
-\vspace{0.4cm}
-
-To answer, let us set  $\lambda = 300$ per hour, which is equivalent to 5 calls per minute. Noe let us define
-$$
-X = \text{\# of connections in a minute}
-$$
-and by assumption we have $X \sim \text{Poisson}(\lambda)$. Thus,
-\bea
-P[\text{overtaxed}] &=& P(\{X > 10\}) \nn \\
-&=& 1 \quad - \underbrace{P(\{X \leq 10\})}_{\text{using $\lambda=5$,  minute base}} \nn \\
-&\approx& 0.0137. \nn
-\eea
-\end{example}
-\end{frame}
-
-
-\begin{frame}{\secname}%
-%EndExpansion
-
-%\frametitle{Poisson Distribution (link to Binomial)}
-Let us consider $X \sim B(x,n,p)$, \color{red} where $n$ is large, $p$ is small, and the product $np$ is appreciable\color{black}. Setting, $\lambda=np$, we
-then have that, for the Binomial probability as in Eq.(\ref{Eq: Binom}), it is a good approximation to write:
-$$
-p(k) = P(\{X=k\}) \approx \frac{\lambda^k}{k!} e^{-\lambda}.
-$$
-To see this, remember that
-$$
-\lim_{n\rightarrow\infty} \left( 1- \frac{\lambda}{n} \right)^n = e^{-\lambda}.
-$$
-Then, let us consider that in our setting, we have $p=\lambda/n$. From the formula of the binomial probability mass function we have:
-$$
-p(0) = (1-p)^{n}=\left( 1- \frac{\lambda}{n} \right)^{n} \approx e^{-\lambda}, \quad \text{\ as \ \ } n\rightarrow\infty.
-$$
-\end{frame}%
-
-
-\begin{frame}{\secname}%
-%EndExpansion
-
-%\frametitle{Poisson Distribution  (link to Binomial)}
-
-Moreover, it is easily found that
-
-\bea
-\frac{p(k)}{p(k-1)} &=& \frac{np-(k-1)p}{k(1-p)} \approx \frac{\lambda}{k}, \quad \text{\ as \ \ } n\rightarrow\infty. \nn
-\eea
-Therefore, we have
-\bea
-p(1) &\approx& \frac{\lambda}{1!}p(0) \approx \lambda e^{-\lambda} \nn \\
-p(2) &\approx& \frac{\lambda}{2!}p(1) \approx \frac{\lambda^2}{2} e^{-\lambda} \nn \\
-\dotsm & \dotsm &  \dotsm  \nn \\
-p(k) &\approx& \frac{\lambda}{k!}p(k-1) \approx \underbrace{\frac{\lambda^k}{k!} e^{-\lambda}}_{\text{\ see \ \ Eq. (\ref{Eq. Poisson})  }} \nn
-\eea
-
-thus, we remark that $p(k)$ can be approximated by the probability mass function of a Poisson---which is easier to implement.
-
-\end{frame}%
-
-
-\begin{frame}{\secname}%
-%EndExpansion
-
-%\frametitle{Poisson Distribution: example}
-\begin{example}[two-fold use of Poisson]
-Suppose a certain high-speed printer makes errors at random on printed paper\footnote{This exercise is related to Ex 2 of PS6. The calculation is similar but not identical: note the difference between the size of $p$ in this example and in the tutorial.}. Assuming that the Poisson
-distribution with parameter $\lambda = 4$ is appropriate to model the number of errors per page (say, $X$), what is the probability that in a book containing 300 pages (produced by the printer) at least 7 will have no errors?
-
-\vspace{0.3cm}
-Let $X$ denote the number of errors per page, so that
-$$
-p(x) = \exp^{-4}\frac{4^x}{x!}, \quad \text{for} \quad x = 0,1,2,....
-$$
-The probability of any page to be error free is then
-$$p(0) = \exp^{-4}\frac{4^0}{0!} = \exp^{-4} \approx 0.018.$$
-
-\end{example}
-\end{frame}%
-
-\begin{frame}{\secname}%
-%EndExpansion
-
-%\frametitle{Poisson Distribution: example}
-\begin{example}[cont'd]
-
-Having no errors on a page is a success, and there are 300 independent pages. Hence, let us define
-$$
-Y = \text{the number of pages without any errors}.
-$$
-
-$Y$ is binomially distributed with parameters $n = 300$
-and $p = 0.018$, namely
-$$Y\sim B(n,p).$$
-
-%\vspace{0.3cm}
-But here we have
-\begin{center}
-$n$ large, $p$ small, and $n p = 5.4$
-\end{center}
-thus, we can compute $P(\{Y \geq 7\})$  using either the exact Binomial or its Poisson approximation. So
-\begin{itemize}
-\item using $B(300,0.018)$, we get: $P(\{Y \geq 7\}) \approx  0.297$ \\ \vspace{0.1cm}
-
-\item using Poisson(5.4), we get $P(\{Y \geq 7\})  \approx  0.298.$
-\end{itemize}
-
-%The two outcomes differ at the 3rd digits after the comma.
-
-
-\end{example}
-\end{frame}%
-
-
-\begin{frame}{\secname}
-%\frametitle{The Hypergeometric Distribution}
-
-\begin{definition}
-Let us consider a random experiment consisting of a series of $n$ trials,
-having the following properties
-
-\begin{stepenumerate}
-\item Only two mutually exclusive outcomes are possible in each trials:
-success (S) and failure (F)
-
-\item The population has $N$ elements in which $k$ are looked upon as
-S and the other $N-k$ are looked upon as F
-
-\item Sampling from the population is done \textbf{without} replacement (so
-that the trials are not independent).
-\end{stepenumerate}
-The random variable
-$$
-X= \text{number of successes in $n$ such
-trials}
-$$
-has an hypergeometric distribution and ....
-\end{definition}
-
-%TCIMACRO{\TeXButton{EndFrame}{\end{frame}}}%
-%BeginExpansion
-\end{frame}%
-%EndExpansion
-
-%TCIMACRO{\TeXButton{BeginFrame}{\begin{frame}{\secname}}}%
-%BeginExpansion
-\begin{frame}{\secname}%
-%EndExpansion
-
-%\frametitle{The Hypergeometric Distribution}
-
-\begin{definition}[cont'd]
-... the probability that $X=x$ is
-\begin{equation*}
-\Pr (\left\{ X=x\right\}) =\frac{\left(
-\begin{array}{c}
-k \\
-x%
-\end{array}%
-\right) \left(
-\begin{array}{c}
-N-k \\
-n-x%
-\end{array}%
-\right) }{\left(
-\begin{array}{c}
-N \\
-n%
-\end{array}%
-\right) }.
-\end{equation*}
-\end{definition}
-
-Moreover,
-\begin{eqnarray*}
-E\left[ X\right] &=&\frac{nk}{N} \\
-Var\left( X\right) &=&\frac{nk\left( N-k\right) \left( N-n\right) }{%
-N^{2}\left( N-1\right) }
-\end{eqnarray*}
-
-%TCIMACRO{\TeXButton{EndFrame}{\end{frame}}}%
-%BeginExpansion
-\end{frame}%
-%EndExpansion
-
-%TCIMACRO{\TeXButton{BeginFrame}{\begin{frame}{\secname}}}%
-%BeginExpansion
-\begin{frame}{\secname}%
-%EndExpansion
-
-%\frametitle{Hypergeometric Distribution Example}
-
-\begin{example}[Psychological experiment]
-A group of 8 students includes 5 women and 3 men: 3 students are randomly chosen to participate in a psychological
-experiment. What is the probability that \emph{exactly} 2 women will be included
-in the sample?%
-%TCIMACRO{%
-%\FRAME{ftbpF}{2.1966in}{2.207in}{0pt}{}{}{urnpic.gif}{%
-%\special{language "Scientific Word";type "GRAPHIC";maintain-aspect-ratio TRUE;display "USEDEF";valid_file "F";width 2.1966in;height 2.207in;depth 0pt;original-width 6.9168in;original-height 6.9479in;cropleft "0";croptop "1";cropright "1";cropbottom "0";filename '../URNpic.GIF';file-properties "XNPEU";}}}%
-%BeginExpansion
-\begin{figure}[ptb]\centering
-%\includegraphics[natheight=6.9479in, natwidth=6.9168in, height=2.207in, width=2.1966in]
-%{//ad.monash.edu/home/User063/scipione/Documents/CF2015/teaching/ETC2520/NEW_ETC25250/lecture6_2015/graphics/img/URNpic__2.pdf}%
-\includegraphics[width=0.4\textwidth]{img/URNpic_2.pdf}
-\end{figure}%
-%EndExpansion
-\end{example}
-
-%TCIMACRO{\TeXButton{EndFrame}{\end{frame}}}%
-%BeginExpansion
-\end{frame}%
-%EndExpansion
-
-%TCIMACRO{\TeXButton{BeginFrame}{\begin{frame}{\secname}}}%
-%BeginExpansion
-\begin{frame}{\secname}%
-%EndExpansion
-
-%\frametitle{Hypergeometric Distribution Example}
-
-\begin{example}[cont'd]
-Consider each of the three participants being selected as a separate
-trial $\Rightarrow $ there are $n=3$ trials. Consider a woman being selected in a trial as a `success'
-\\
-Then here $N=8$, $k=5$, $n=3$, and $x=2$, so that%
-\begin{eqnarray*}
-\Pr (\left\{ X=2\right\})  &=&\frac{\left(
-\begin{array}{c}
-5 \\
-2%
-\end{array}%
-\right) \left(
-\begin{array}{c}
-8-5 \\
-3-2%
-\end{array}%
-\right) }{\left(
-\begin{array}{c}
-8 \\
-3%
-\end{array}%
-\right) } \\
-&& \\
-&=&\frac{\frac{5!}{2!3!}\frac{3!}{1!2!}}{\frac{8!}{5!3!}} \\
-&& \\
-&=&0.53571
-\end{eqnarray*}
-\end{example}
-
-%TCIMACRO{\TeXButton{EndFrame}{\end{frame}}}%
-%BeginExpansion
-\end{frame}%
-%EndExpansion
-
-%TCIMACRO{\TeXButton{BeginFrame}{\begin{frame}{\secname}}}%
-%BeginExpansion
-\begin{frame}{\secname}%
-%EndExpansion
-
-%\frametitle{The Negative Binomial Distribution}
-
-Let us consider a random experiment consisting of a series of trials, having
-the following properties \vspace{0.5cm}
-
-\begin{stepenumerate}
-\item Only two mutually exclusive outcomes are possible in each trial:
-`success' (S) and `failure' (F)
-\vspace{0.25cm}
-\item The outcomes in the series of trials constitute \emph{independent
-events}
-\vspace{0.25cm}
-\item The probability of success $p$ in each trial is \emph{constant }from
-trial to trial
-\end{stepenumerate}
-\vspace{0.5cm}
-What is the probability of having exactly $y$ F's before the $r^{th}$
-S? \\ \vspace{0.25cm}
-
-Equivalently: What is the probability that in a sequence of $y+r$ (Bernoulli) trials the last trial yields the
-$r^{th}$ S?
-
-
-%TCIMACRO{\TeXButton{EndFrame}{\end{frame}}}%
-%BeginExpansion
-\end{frame}%
-%EndExpansion
-
-%TCIMACRO{\TeXButton{BeginFrame}{\begin{frame}{\secname}}}%
-%BeginExpansion
-\begin{frame}{\secname}%
-%EndExpansion
-
-%\frametitle{The Negative Binomial Distribution}
-
-\begin{definition}
-Let
-$$X= \text{the total number of trials required until a total of $r$ successes is accumulated}.$$
-Then $X$ is said to be a Negative Binomial random variable and its probability mass function
-$\Pr (\left\{ X=n\right\})$ equals the probability of $r-1$ `successes' in the first $n-1$ trials, times the probability of a `success' on
-the last trial. These probabilities are given by%
-\begin{equation*}
-\Pr (\left\{ X=n\right\}) =\left(
-\begin{array}{c}
-n-1 \\
-r-1%
-\end{array}%
-\right) p^{r}\left( 1-p\right) ^{n-r}\quad \text{ for }n=r,r+1,...
-\end{equation*}
-\end{definition}
-
-The mean and variance for $X$ are, respectively,%
-\begin{eqnarray*}
-E\left[ X\right] &=&\frac{r}{p} \\
-Var\left( X\right) &=&\frac{r\left( 1-p\right) }{p^{2}}
-\end{eqnarray*}
-
-%TCIMACRO{\TeXButton{EndFrame}{\end{frame}}}%
-%BeginExpansion
-\end{frame}%
-%EndExpansion
-
-%TCIMACRO{\TeXButton{BeginFrame}{\begin{frame}{\secname}}}%
-%BeginExpansion
-\begin{frame}{\secname}%
-%EndExpansion
-
-%\frametitle{Negative Binomial Distribution Example}
-
-\begin{example}[marketing research]
-\begin{stepitemize}
-
-\item A marketing researcher wants to find 5 people to join her focus group
-
-\item Let $p$ denote the probability that a randomly selected individual
-agrees to participate in the focus group
-
-\item If $p=0.2$, what is the probability that the researcher must ask 15
-individuals before 5 are found who agree to participate?
-
-%\item That is, what is the probability that 10 people will decline the
-%request to participate before a 5$^{th}$ person agrees?
-
-\item In this case, $p=0.2$, $r=5$, $n=15$:  we are looking for $\Pr (\left\{
-X=15\right\}).$ By the negative binomial formula we have
-
-\begin{eqnarray*}
-\Pr (\left\{ X=15\right\}) &=&\left(
-\begin{array}{c}
-14 \\
-4%
-\end{array}%
-\right) \left( 0.2\right) ^{5}\left( 0.8\right) ^{10} \\
-&=&0.034
-\end{eqnarray*}
-\end{stepitemize}
-\end{example}
-%TCIMACRO{\TeXButton{EndFrame}{\end{frame}}}%
-%BeginExpansion
-\end{frame}%
-%EndExpansion
-
-%TCIMACRO{\TeXButton{BeginFrame}{\begin{frame}{\secname}}}%
-%BeginExpansion
-\begin{frame}{\secname}%
-%EndExpansion
-
-%\frametitle{The Geometric Distribution}
-
-\begin{definition}[a special case]
-
-When $r=1$, the negative binomial distribution is equivalent to the
-\textbf{Geometric distribution} --- see Example in slide 13. \\
-\vspace{0.5cm}
-In this case, probabilities are given by%
-\begin{equation*}
-\Pr (\left\{ X=n\right\}) =p\left( 1-p\right) ^{n-1}\text{, for }n=1,2,...
-\end{equation*}
-\end{definition}
-
-The corresponding mean and variance for $X$ are, respectively,%
-\begin{eqnarray*}
-E\left[ X\right] &=&\frac{ 1 }{p} \\
-Var\left( X\right) &=&\frac{\left( 1-p\right) }{p^{2}}
-\end{eqnarray*}
-
-
-\end{frame}
-
-\begin{frame}{\secname}
-
-%\frametitle{The Geometric Distribution}
-\begin{small}
-
-\begin{example}[failure of a machine]
-Items are produced by a machine having a 3\% defective rate.
-\begin{itemize}
-\item What is the probability that the first defective occurs in the fifth item inspected? \\
-\bea
-P(\{X	=	5\})	&=&	P (\text{first	4	non-defective}) P (\text{5th defective}) \nn \\
-&=& (0.97)^4(0.03) \approx 0.026 \nn
-\eea
-\item What is the probability that the first defective occurs in the first five inspections?
-\bea
-P(\{X	\leq 5	\}) = P(\{X	< 6	\})	&=&	 P (\{X=1\})+ ... + P(\{X=5\}) \nn \\
-&=& 1- P(\text{first 5 non-defective}) = 0.1412.  \nn %\\
-%&=& 1- (0.97)^5 \approx 0.1412 \nn
-\eea
-\end{itemize}
-\end{example}
-
-More generally, for a geometric random variable we have:
-$$
-P(\{X \geq k \}) = (1-p)^{k-1}.
-$$
-Thus, in the example we have $P( \{X	\geq 6	\}) = (1-0.03)^{6-1}\approx 0.8587$
-\bea
-P(\{X	\leq 5	\}) = 1-P( \{X	\geq 6	\}) \approx 1- 0.8587 \approx 0.1412. \nn
-\eea
-
-\end{small}
-
-
-
+% \begin{itemize}
+% \item Discrete Uniform
+% \vspace{0.15cm}
+% \item Bernoulli
+% \vspace{0.15cm}
+% \item Binomial
+% \vspace{0.15cm}
+% \item Poisson
+% \vspace{0.15cm}
+% \item Hypergeometric
+% \vspace{0.15cm}
+% \item Negative binomial
+% \end{itemize}
+% \pause
+% \medskip
+% \begin{remark}
+% Their main characteristic is that the probability $P\left(\left\{ X=x_i\right\}\right)$ is given by an appropriate mathematical formula: i.e.
+% $$
+% p_{i}=P\left(\left\{ X=x_i\right\}\right)=h(x_{i})
+% $$
+% for a suitably specified function $h(\cdot)$.
+% \end{remark}
+% \end{frame}
+%
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% \subsection{The Discrete Uniform Distribution}
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+% \begin{frame}{\subsecname}
+%   \begin{small}
+%   \begin{definition}
+%   We say $X$ has a \textbf{discrete uniform distribution} when
+%
+%   \begin{itemize}
+%   \item $X$ can take the values $x=0,1,2,...,k$ (for some specified finite value $k\in \mathbb{N}$)
+%
+%   \item The probability that $X=x$ is $1/\left( k+1\right) $, namely
+%   $$
+%   P\left(\left\{ X=x\right\}\right) = \frac{1}{\left( k+1\right)}.
+%   $$
+%   \end{itemize}
+%   \pause
+%
+%   The probability distribution is given by
+%   \begin{small}
+%   \begin{equation*}
+%   \begin{tabular}{|c|c|}
+%   \hline
+%   $x_i$ & $P \left(\left\{ X=x_i\right\}\right) $ \\ \hline\hline
+%   $0$ & $\frac{1}{\left( k+1\right) }$ \\ \hline
+%   $1$ & $\frac{1}{\left( k+1\right) }$ \\ \hline
+%   $\vdots $ & $\vdots $ \\ \hline
+%   $k$ & $\frac{1}{\left( k+1\right) }$ \\ \hline\hline
+%   Total & $1$ \\ \hline
+%   \end{tabular}%
+%   \end{equation*}
+%   \end{small}
+%   \end{definition}
+%   \end{small}
+% \end{frame}
+%
+%
+%
+% \begin{frame}{\subsecname}
+% \framesubtitle{Expectation}
+%   \begin{stepitemize}
+%   \item The expected value of $X$ is
+%   \begin{eqnarray*}
+%   E\left[ X\right] &=&  x_1 p_1 + ... +  x_k p_k\\
+%   &=& 0\cdot \frac{1}{\left( k+1\right) }+1\cdot \frac{1}{
+%   \left( k+1\right) }+\cdots +k\cdot \frac{1}{\left( k+1\right) } \\
+%   &=&\frac{1}{\left( k+1\right) }\cdot\left( 0+1+\cdots +k\right) \\
+%   &=&\frac{1}{\left( k+1\right) }\cdot \frac{k\left( k+1\right) }{2} \\
+%   &=&\frac{k}{2}.
+%   \end{eqnarray*}
+%
+%   E.g. when $k=6$, then $X$ can take on one of the seven distinct values
+%   $x=0,1,2,3,4,5,6,$ each with equal probability $\frac{1}{7}$, but the
+%   expected value of $X$ is equal to $3$, which is  one of the possible outcomes!!!
+%   \end{stepitemize}
+% \end{frame}
+%
+% \begin{frame}{\subsecname}
+% \framesubtitle{Variance and Standard Deviation}
+%   \begin{stepitemize}
+%   \item The variance of $X$ -- we will be denoting it as $Var(X)$  -- is%
+%   \begin{eqnarray*}
+%   Var\left( X\right) &=&\left( 0-\frac{k}{2}\right) ^{2}\cdot \frac{1}{\left(
+%   k+1\right) }+\left( 1-\frac{k}{2}\right) ^{2}\cdot \frac{1}{\left(
+%   k+1\right) }+ \\
+%   &&\cdots +\left( k-\frac{k}{2}\right) ^{2}\cdot \frac{1}{\left( k+1\right) }
+%   \\
+%   &=&\frac{1}{\left( k+1\right) }\cdot\left\{ \left( 0-\frac{k}{2}\right)
+%   ^{2}+\left( 1-\frac{k}{2}\right) ^{2}+\cdots +\left( k-\frac{k}{2}\right)
+%   ^{2}\right\} \\
+%   &=&\frac{1}{\left( k+1\right) }\cdot \frac{k\left( k+1\right) \left(
+%   k+2\right) }{12} \\
+%   &=&\frac{k\left( k+2\right) }{12}
+%   \end{eqnarray*}
+%
+%   E.g. when $k=6$, the variance of $X$ is equal to $4,$ and the standard
+%   deviation of $X$ is equal to $\sqrt{4}=2.$
+%   \end{stepitemize}
+% \end{frame}
+%
+% \begin{frame}{\subsecname}%
+% \framesubtitle{Illustrations}
+%   \begin{figure}[ptb]\centering
+%   \includegraphics[width=0.55\textwidth, height=0.8 \textheight]{img/discrete_uniforms__1.pdf}%
+%   \end{figure}
+% \end{frame}
+%
+% \begin{frame}{\subsecname}
+%   \framesubtitle{Illustrations}
+%   \begin{example}
+%   An example of discrete uniform is related to the experiment of rolling a die---remark, the outcome zero is not allowed in this specific example. \\ \vspace{0.3cm}
+%
+%   Let us call $X$ the corresponding random variable and $\{x_1,x_2,...,x_6\}$ its realizations.  \\ \vspace{0.3cm}
+%
+%   The possible outcomes
+%   are
+%   $$
+%   \{1,2,3,4,5,6\}
+%   $$
+%   each having probability $\frac{1}{6}$. \vspace{0.3cm}
+%
+%   Moreover,
+%
+%   $$
+%   E(X) = (1+2+3+4+5+6) \cdot \frac{1}{6} = 3.5,
+%   $$
+%
+%   which is not one of the possible outcomes!!!
+%
+%   \end{example}
+%
+% \end{frame}
+%
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% \subsection{Bernoulli Trials}
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+%
+% \begin{frame}{\subsecname}%
+%   \begin{definition}
+%   \textit{Bernoulli trial} is the name given to the random variable $X$ having probability distribution given by%
+%
+%   \begin{equation*}
+%   \begin{tabular}{|l|l|}
+%   \hline
+%   $x_i$ & $P(\left\{ X=x_i\right\}) $ \\ \hline\hline
+%   $1$ & $p$ \\ \hline
+%   $0$ & $1-p$ \\ \hline
+%   \end{tabular}%
+%   \end{equation*}
+%   \end{definition}
+%
+%   \vspace{0.5cm}
+%
+%   Often we write%
+%   \begin{equation*}
+%   P(\left\{ X=x\right\} ) =p^{x}\left( 1-p\right) ^{1-x}, \quad \text{ for }x=0,1
+%   \end{equation*}
+% \end{frame}
+%
+%
+% \begin{frame}{\subsecname}%
+%
+%   A Bernoulli trial represents the most primitive form of all random variables. It derives from a random experiment having only two possible mutually exclusive outcomes. These are often labelled Success and Failure and
+%
+%
+%
+%   \begin{stepitemize}
+%   \item Success occurs with probability $p$
+%
+%   \item Failure occurs with probability $1-p$.
+%   \end{stepitemize}
+%
+%
+%
+%   \begin{remark}
+%   Just for the sake of notation, let us set $X=1$ if \emph{Success} occurs, and $X=0$ if \emph{Failure} occurs
+%   \end{remark}
+%
+%
+%   \begin{example}
+%   Coin tossing:  we can define a random variable
+%
+%   \begin{equation*}
+%   \begin{tabular}{|l|l|}
+%   \hline
+%   $x_i$ & $P(\left\{ X=x_i\right\}) $ \\ \hline\hline
+%   $1$ & $p$ \\ \hline
+%   $0$ & $1-p$ \\ \hline
+%   \end{tabular}%
+%   \end{equation*}
+%   and say that $X=1$ if $H$ and $X=0$ if $T$.
+%   \end{example}
+% \end{frame}
+%
+% \begin{frame}{\subsecname}
+% \framesubtitle{Expectation and Variance}
+%   \begin{stepitemize}
+%   \item Mean:
+%   \begin{eqnarray*}
+%   E\left[ X\right] &=&1 \cdot p+0 \cdot (1-p) \\
+%   &=&p
+%   \end{eqnarray*}
+%
+%   \item Variance:
+%   \begin{eqnarray*}
+%   Var\left( X\right) &=&\left( 1-p\right) ^{2} \cdot p+\left( 0-p\right)
+%   ^{2} \cdot \left( 1-p\right) \\
+%   &=&p\left( 1-p\right).
+%   \end{eqnarray*}
+%   \end{stepitemize}
+% \end{frame}
+
+% \begin{frame}{\subsecname}
+%   \begin{definition}
+%   Let us consider the  random experiment consisting in a series of $n$ trials having 3
+%   characteristics
+%
+%   \begin{stepenumerate}
+%   \item Only two mutually exclusive outcomes are possible in each trial: \emph{
+%   success} (\emph{S}) and \emph{failure} (\emph{F})
+%
+%   \item The outcomes in the series of $n$ trials constitute independent events
+%
+%   \item The probability of success $p$ in each trial is constant from trial to
+%   trial
+%   \end{stepenumerate}
+%
+%   $X$ is the \emph{number of successes} occurring in $n$ (Bernoulli) trials. Binomial probability distribution given by%
+%   \begin{eqnarray}
+%   P ( \left\{ X=x\right\})  &=&\left(
+%   \begin{array}{c}
+%   n \nonumber \\
+%   x
+%   \end{array}
+%   \right) p^{x}\left( 1-p\right) ^{n-x} \\
+%   &=&\frac{n!}{x!\left( n-x\right) !}p^{x}\left( 1-p\right) ^{n-x},\text{ for }
+%   x=0,1,2,...,n \label{Eq: Binom}
+%   \end{eqnarray}
+%   \end{definition}
+% \end{frame}
+%
+%
+% \begin{frame}{\subsecname}
+%
+%
+%
+% Recall (see Intro lecture) that combinations are defined as:
+%
+% \begin{equation*}
+% \left(
+% \begin{array}{c}
+% n \\
+% k%
+% \end{array}%
+% \right) =\frac{n!}{k!\left( n-k\right) !}=C^{k}_{n}
+% \end{equation*}
+% and, for $n \geq k$, we say ``$n$ choose $k$''. \\
+% \vspace{0.4cm}
+% The binomial coefficient $\left(
+% \begin{array}{c}
+% n \\
+% k%
+% \end{array}%
+% \right)$
+% represents the number of possible combinations of $n$ objects taken $k$ at a time, without regard of the order. \\% Rozanov page 7
+% \vspace{0.4cm}
+% \color{blue} Thus, $C^{k}_{n}$ represents the number of different groups of size $k$ that could be selected from a set of $n$ objects
+% when the order of selection is not relevant. \color{black}
+%
+% \end{frame}%
+%
+% \begin{frame}{\subsecname}
+% %\frametitle{The Binomial Distribution}
+%
+% So, ''What is the interpretation of the formula? "
+%
+%
+% \begin{stepenumerate}
+% \item The first factor $$\left(
+% \begin{array}{c}
+% n \\
+% x%
+% \end{array}%
+% \right) =\frac{n!}{x!\left( n-x\right) !}$$ is the number of different
+% combinations of individual `successes' and `failures'  in $n$ (Bernoulli) trials that result in a sequence containing a total of $%
+% x $ `successes' and $n-x$ `failures'.
+%
+%
+% \item The second factor $$p^{x}\left( 1-p\right) ^{n-x}$$ is the probability associated with any one
+% sequence of $x$ `successes' and $(n-x)$ `failures'.
+% \end{stepenumerate}
+%
+% \begin{remark}
+% Short-hand notation: $$ X \sim \text{B}(x,n,p)$$
+%  or, occasionally, simply $ X \sim \text{B} (n,p)$ (no $x$ in the formula).
+% \end{remark}
+%
+% \end{frame}%
+%
+%
+%
+% \begin{frame}{\subsecname}%
+%
+% %\frametitle{The Binomial Distribution: expectation and variance}
+%
+% \begin{stepitemize}
+% \item Mean:
+% \begin{eqnarray*}
+% E\left[ X\right] &=&\sum_{x=0}^{n}x\Pr \left\{ X=x\right\} \\
+% &=&\sum_{x=0}^{n}x\left(
+% \begin{array}{c}
+% n \\
+% x%
+% \end{array}%
+% \right) p^{x}\left( 1-p\right) ^{n-x} = np
+% \end{eqnarray*}
+%
+% %\begin{stepitemize}
+% %\item Here $\sum_{x=1}^{n}$ denotes the sum over each value of $x$ from $0$
+% %to $n$
+% %\end{stepitemize}
+% \item Variance:%
+% \begin{eqnarray*}
+% Var\left( X\right) &=&\sum_{x=0}^{n}\left( x-np\right) ^{2} P (\left\{
+% X=x\right\}) \\
+% &=&np\left( 1-p\right)
+% \end{eqnarray*}
+% \end{stepitemize}
+% \begin{remark}
+% Looking at (\ref{Eq: Binom}), we remark that the Bernoulli distribution is a special case ($n=1$)
+% of the Binomial distribution. Roughly speaking, ``a Binomial random variable arises when we sum $n$ independent
+% Bernoulli trails.''
+% \end{remark}
+% %TCIMACRO{\TeXButton{EndFrame}{\end{frame}}}%
+% %BeginExpansion
+% \end{frame}%
+% %EndExpansion
+%
+% %TCIMACRO{\TeXButton{BeginFrame}{\begin{frame}{\subsecname}}}%
+% %BeginExpansion
+%
+%
+%
+% %\begin{frame}{\subsecname}%
+% %%EndExpansion
+% %
+% %%\frametitle{Some illustrations of Binomial \begin{small}(introducing a tool)\end{small}}
+% %Let us provide a graphical illustration of $X\sim B(x,n,p)$ via some numerical method. Specifically, we first  \color{blue}simulate \color{black} a large number of
+% %realizations of $X$, then we draw their \color{blue}histrogram \color{black} (or barplot). \\
+% %\vspace{0.3cm}
+% %%\begin{remark}
+% %A \textbf{histogram} is a representation of a distribution by means of rectangles whose widths represent class intervals and whose areas are proportional
+% %to the corresponding frequencies. The purpose of a histogram is to graphically summarize the distribution of a data set -- roughly speaking, a histogram is a graphical representation of a table of frequencies. \\
+% %\vspace{0.3cm}
+% %
+% %\begin{remark}[How to draw it?]
+% %The most common form of
+% %the histogram is obtained by splitting the range of the data into equal-sized bins. Then for each bin, the number of points from the data set
+% %that fall into each bin are counted. That is: on the \color{blue} vertical axis we read the (relative) frequency \color{black} (i.e., counts for each bin); on the \color{red} horizontal axis we read the observed values of $X$\color{black}. The classes can either be defined arbitrarily by the user or via some systematic rule.
+% %\end{remark}
+% %\end{frame}
+%
+%
+% \begin{frame}{\subsecname}%
+% %EndExpansion
+%
+% %\frametitle{Some illustrations of Binomial}
+%
+% ... same barplot as in slide 30, just a bit fancier...
+%
+% \begin{figure}[ptb]\centering
+% \includegraphics[width=0.75\textwidth,height=0.6\textheight]{img/distbin.pdf}
+% \end{figure}
+% \end{frame}%
+%
+% \begin{frame}{\subsecname}%
+% %EndExpansion
+%
+%
+% %\frametitle{Binomial Distribution}
+%
+% \begin{example} [cherry trees]
+%
+% One night a storm washes three cherries ashore on an island. For each cherry, there is a probability $p=0.8$ that its seed will
+% produce a tree. What is the probability that these three cherries will produce two
+% trees?
+%
+% \bigskip
+%
+% First,  we notice that this can be determined using a \textbf{Bernoulli distribution}. To this end, consider whether each seed will produce a tree as a sequence of $n=3$
+% trials. For each cherry:
+%
+% \begin{itemize}
+%
+% \item either the cherry produces a tree (Success) or it
+% does not (Failure);
+% \item the event that a cherry produces a tree is independent from the event
+% that any of the other two cherries produces a tree.
+%
+% \item The probability that a cherry produces a tree is the same for all
+% three cherries
+% \end{itemize}
+%
+% \end{example}
+%
+% \end{frame}%
+%
+%
+% \begin{frame}{\subsecname}%
+%
+% %\frametitle{Binomial Distribution }
+%
+% \begin{example}[continued]
+%
+% \begin{figure}[ptb]\centering
+% \includegraphics[]{img/BINOMIALpic__1.pdf}
+% \end{figure}
+%
+% \end{example}
+% \end{frame}%
+%
+% \begin{frame}{\subsecname}%
+%
+% %\frametitle{Binomial Distribution}
+%
+% \begin{example}[continued]
+%
+% \begin{stepitemize}
+% \item There are $2^{3}=8$ possible outcomes from the $3$ individual trials
+%
+% \item It does not matter which of the three cherries produce a tree
+%
+% \item Consider all of the possible sequences of outcomes (S=success,
+% F=failure)%
+% \begin{equation*}
+% \text{SSS,
+% \color{red}%
+% SSF,
+% \color{black}%
+% \color{red}%
+% SFS%
+% \color{black}%
+% , SFF,
+% \color{red}%
+% FSS
+% \color{black}, FSF, FFS, FFF}
+% \end{equation*}
+%
+% \item We are interested in
+% %TCIMACRO{\TeXButton{red}{\color{red}}}%
+% %BeginExpansion
+% \color{red}%
+% SSF%
+% %TCIMACRO{\TeXButton{black}{\color{black}}}%
+% %BeginExpansion
+% \color{black}%
+% ,
+% \color{red}%
+% SFS%
+% %TCIMACRO{\TeXButton{black}{\color{black}}}%
+% %BeginExpansion
+% \color{black}%
+% %EndExpansion
+% ,
+% %TCIMACRO{\TeXButton{red}{\color{red}}}%
+% %BeginExpansion
+% \color{red}%
+% %EndExpansion
+% FSS%
+% %TCIMACRO{\TeXButton{black}{\color{black}}}%
+% %BeginExpansion
+% \color{black}%
+% %EndExpansion
+%
+% \item These possible events are \emph{mutually exclusive}, so%
+% \begin{equation*}
+% \Pr (\left\{
+% %TCIMACRO{\TeXButton{red}{\color{red}}}%
+% %BeginExpansion
+% \color{red}%
+% %EndExpansion
+% SSF%
+% %TCIMACRO{\TeXButton{black}{\color{black}}}%
+% %BeginExpansion
+% \color{black}%
+% %EndExpansion
+% \cup
+% %TCIMACRO{\TeXButton{red}{\color{red}}}%
+% %BeginExpansion
+% \color{red}%
+% %EndExpansion
+% SFS%
+% %TCIMACRO{\TeXButton{black}{\color{black}}}%
+% %BeginExpansion
+% \color{black}%
+% %EndExpansion
+% \cup
+% %TCIMACRO{\TeXButton{red}{\color{red}}}%
+% %BeginExpansion
+% \color{red}%
+% %EndExpansion
+% FSS%
+% %TCIMACRO{\TeXButton{black}{\color{black}}}%
+% %BeginExpansion
+% \color{black}%
+% %EndExpansion
+% \right\}) =\Pr (\left\{
+% %TCIMACRO{\TeXButton{red}{\color{red}}}%
+% %BeginExpansion
+% \color{red}%
+% %EndExpansion
+% SSF%
+% %TCIMACRO{\TeXButton{black}{\color{black}}}%
+% %BeginExpansion
+% \color{black}%
+% %EndExpansion
+% \right\}) +\Pr (\left\{
+% %TCIMACRO{\TeXButton{red}{\color{red}}}%
+% %BeginExpansion
+% \color{red}%
+% %EndExpansion
+% SFS%
+% %TCIMACRO{\TeXButton{black}{\color{black}}}%
+% %BeginExpansion
+% \color{black}%
+% %EndExpansion
+% \right\}) +\Pr (\left\{
+% %TCIMACRO{\TeXButton{red}{\color{red}}}%
+% %BeginExpansion
+% \color{red}%
+% %EndExpansion
+% FSS%
+% %TCIMACRO{\TeXButton{black}{\color{black}}}%
+% %BeginExpansion
+% \color{black}%
+% %EndExpansion
+% \right\})
+% \end{equation*}
+% \end{stepitemize}
+% \end{example}
+% %TCIMACRO{\TeXButton{EndFrame}{\end{frame}}}%
+% %BeginExpansion
+% \end{frame}%
+% %EndExpansion
+%
+% %TCIMACRO{\TeXButton{BeginFrame}{\begin{frame}{\subsecname}}}%
+% %BeginExpansion
+% \begin{frame}{\subsecname}%
+% %EndExpansion
+%
+% %\frametitle{Binomial Distribution}
+%
+% \begin{example}[continued]
+%
+% The three trials are assumed to be \emph{independent}, so
+% each of the three seed events corresponding to two trees growing has
+% the same probability%\footnote{Here the symbol ''$\times$" indicates the product}:%
+% \begin{eqnarray*}
+% \Pr (\left\{
+% %TCIMACRO{\TeXButton{red}{\color{red}}}%
+% %BeginExpansion
+% \color{red}%
+% %EndExpansion
+% SSF%
+% %TCIMACRO{\TeXButton{black}{\color{black}}}%
+% %BeginExpansion
+% \color{black}%
+% %EndExpansion
+% \right\})  &=&\Pr (\left\{
+% %TCIMACRO{\TeXButton{red}{\color{red}}}%
+% %BeginExpansion
+% \color{red}%
+% %EndExpansion
+% S%
+% %TCIMACRO{\TeXButton{black}{\color{black}}}%
+% %BeginExpansion
+% \color{black}%
+% %EndExpansion
+% \right\}) \cdot \Pr (\left\{
+% %TCIMACRO{\TeXButton{red}{\color{red}}}%
+% %BeginExpansion
+% \color{red}%
+% %EndExpansion
+% S%
+% %TCIMACRO{\TeXButton{black}{\color{black}}}%
+% %BeginExpansion
+% \color{black}%
+% %EndExpansion
+% \right\} ) \cdot (\Pr \left\{
+% %TCIMACRO{\TeXButton{red}{\color{red}}}%
+% %BeginExpansion
+% \color{red}%
+% %EndExpansion
+% F%
+% %TCIMACRO{\TeXButton{black}{\color{black}}}%
+% %BeginExpansion
+% \color{black}%
+% %EndExpansion
+% \right\}  ) \\
+% &=&0.8\cdot 0.8\cdot (1-0.8) \\
+% &=&0.8\cdot (1-0.8)\cdot 0.8 =\Pr (\left\{
+% %TCIMACRO{\TeXButton{red}{\color{red}}}%
+% %BeginExpansion
+% \color{red}%
+% %EndExpansion
+% SFS%
+% %TCIMACRO{\TeXButton{black}{\color{black}}}%
+% %BeginExpansion
+% \color{black}%
+% %EndExpansion
+% \right\})  \\
+% &=&(1-0.8)\cdot 0.8\cdot 0.8= \Pr (\left\{
+% %TCIMACRO{\TeXButton{red}{\color{red}}}%
+% %BeginExpansion
+% \color{red}%
+% %EndExpansion
+% FSS
+% %TCIMACRO{\TeXButton{black}{\color{black}}}%
+% %BeginExpansion
+% \color{black}%
+% %EndExpansion
+% \right\} ) \\
+% &=&0.128
+% \end{eqnarray*}
+%
+% So the probability of two trees resulting from the three seeds must be%
+% \begin{eqnarray*}
+% \Pr (\left\{
+% %TCIMACRO{\TeXButton{red}{\color{red}}}%
+% %BeginExpansion
+% \color{red}%
+% %EndExpansion
+% SSF%
+% %TCIMACRO{\TeXButton{black}{\color{black}}}%
+% %BeginExpansion
+% \color{black}%
+% %EndExpansion
+% \cup
+% %TCIMACRO{\TeXButton{red}{\color{red}}}%
+% %BeginExpansion
+% \color{red}%
+% %EndExpansion
+% SFS%
+% %TCIMACRO{\TeXButton{black}{\color{black}}}%
+% %BeginExpansion
+% \color{black}%
+% %EndExpansion
+% \cup
+% %TCIMACRO{\TeXButton{red}{\color{red}}}%
+% %BeginExpansion
+% \color{red}%
+% %EndExpansion
+% FSS%
+% %TCIMACRO{\TeXButton{black}{\color{black}}}%
+% %BeginExpansion
+% \color{black}%
+% %EndExpansion
+% \right\} ) &=&3\cdot 0.128 \\
+% &=&0.384.
+% \end{eqnarray*}
+%
+% \end{example}
+%
+%
+%
+% \end{frame}%
+%
+%
+%
+% \begin{frame}{\subsecname}%
+% %EndExpansion
+%
+% %\frametitle{Binomial Distribution}
+%
+% \begin{example}
+% Finally, we notice that we can obtain the same result (in a more direct way), using the \textbf{binomial probability} for the random variable
+% $$X= \text{number of trees that grows
+% from 3 seeds}.$$
+%
+% Indeed
+%
+% \begin{eqnarray*}
+% \Pr (\left\{ X=2\right\})  &=&\frac{3!}{2!\left( 3-2\right) !}\cdot \left(
+% 0.8\right) ^{2} \cdot \left( 1-0.8\right) ^{3-2} \\
+% &=&3 \cdot \left( 0.8\right) ^{2} \cdot \left( 0.2\right)  \\
+% &=&0.384.
+% \end{eqnarray*}
+% \end{example}
+%
+% %TCIMACRO{\TeXButton{EndFrame}{\end{frame}}}%
+% %BeginExpansion
+% \end{frame}%
+%
+%
+% \begin{frame}{\subsecname}%
+% %EndExpansion
+%
+% %\frametitle{Poisson Distribution}
+%
+% \begin{definition}
+% Let us consider random variable $X$ which takes values $0,1,2,...$, namely the nonnegative integers in $\mathbb{N}$. $X$ is said to be a Poisson random variable if its probability mass function, with $\lambda >0$ fixed and providing info on the intensity, is
+% \begin{equation}
+% p(x)=\Pr \left( \{ X = x \}\right) =\frac{\lambda ^{x}e^{-\lambda }}{x!}\text{,\qquad }%
+% x=0,1,2,... \label{Eq. Poisson}
+% \end{equation}
+% and we write $X\sim \text{Poisson}(\lambda)$.
+% \end{definition}
+% \vspace{0.2cm}
+% The Eq. (\ref{Eq. Poisson}) defines a genuine probability mass function, since $p(x) \geq 0$ and
+% \bea
+% \sum_{x=0}^{\infty} p(x) &=& \sum_{x=0}^{\infty}  \frac{\lambda ^{x}e^{-\lambda }}{x!}  \nn \\
+% & = & e^{-\lambda } \sum_{x=0}^{\infty}   \frac{\lambda ^{x}}{x!} \nn \\
+% & = & e^{-\lambda } e^{\lambda } = 1 \nn \quad \text{(see Intro Lecture).}
+% \eea
+% \end{frame}%
+%
+%
+% \begin{frame}{\subsecname}%
+% %EndExpansion
+%
+% %\frametitle{Poisson Distribution}
+%
+%
+% Moreover, for a given value of $\lambda $ also the CDF can be easily defined. E.g.
+%
+% \begin{equation*}
+% F_X(2)=\Pr \left( \{X\leq 2\}\right) =e^{-\lambda }+\lambda e^{-\lambda }+\frac{\lambda
+% ^{2}e^{-\lambda }}{2},
+% \end{equation*}
+%
+% and the Expected value and Variance for Poisson distribution (see tutorial) can be obtained by ``sum algebra'' (and/or some algebra)
+%
+% \begin{eqnarray*}
+% E\left[ X\right] &=&\lambda \\
+% Var\left( X\right) &=&\lambda.
+% \end{eqnarray*}
+%
+% \end{frame}%
+%
+%
+% \begin{frame}{\subsecname}%
+% %EndExpansion
+%
+% %\frametitle{Some illustrations of Poisson}
+%
+% ... same barplot as in slide 30, just a bit fancier...
+%
+% \begin{figure}[ptb]\centering
+% \includegraphics[width=0.75\textwidth]{img/distpois.pdf}
+% \end{figure}
+%
+% \end{frame}%
+%
+%
+% \begin{frame}{\subsecname}%
+% %\frametitle{Poisson Distribution}
+%
+% \begin{example}
+% The average number of newspapers sold by Alfred is 5 per minute\footnote{This number provides info on the intensity
+% at which a random phenomenon occurs.}. What is the probability that Alfred will sell at least 1 newspaper in a minute? \vspace{0.3cm}
+%
+%
+% To answer, let $X$ be the $\#$ of newspapers sold by Alfred in a minute. We have
+% $$
+% X \sim \text{Poisson}(\lambda)
+% $$
+% with $\lambda = 5$, so
+% \begin{eqnarray*}
+% P(X \geq 1) & = & 1- P(\{X=0\}) \\
+% & = & 1 - \exp^{-5} \frac{5^0}{0!} \\
+% %& = & 1-\exp^{-5} \\
+% & \approx & 1- 0.0067 \approx 99.33\%.
+% \end{eqnarray*}
+% How about $P(X \geq 2)$? Is it $P(X \geq 2) \geq P(X \geq 1)$ or not? Answer the question...
+% \end{example}
+% \end{frame}%
+%
+%
+%
+% \begin{frame}{\subsecname}%
+% %\frametitle{Poisson Distribution}
+%
+% \begin{example}
+% A telephone switchboard handles 300 calls, on the average, during one hour. The board
+% can make maximum 10 connections per minute. Use the Poisson
+% distribution to evaluate the probability that the board will be overtaxed during a given minute.
+%
+% \vspace{0.4cm}
+%
+% To answer, let us set  $\lambda = 300$ per hour, which is equivalent to 5 calls per minute. Noe let us define
+% $$
+% X = \text{\# of connections in a minute}
+% $$
+% and by assumption we have $X \sim \text{Poisson}(\lambda)$. Thus,
+% \bea
+% P[\text{overtaxed}] &=& P(\{X > 10\}) \nn \\
+% &=& 1 \quad - \underbrace{P(\{X \leq 10\})}_{\text{using $\lambda=5$,  minute base}} \nn \\
+% &\approx& 0.0137. \nn
+% \eea
+% \end{example}
+% \end{frame}
+%
+%
+% \begin{frame}{\subsecname}%
+% %EndExpansion
+%
+% %\frametitle{Poisson Distribution (link to Binomial)}
+% Let us consider $X \sim B(x,n,p)$, \color{red} where $n$ is large, $p$ is small, and the product $np$ is appreciable\color{black}. Setting, $\lambda=np$, we
+% then have that, for the Binomial probability as in Eq.(\ref{Eq: Binom}), it is a good approximation to write:
+% $$
+% p(k) = P(\{X=k\}) \approx \frac{\lambda^k}{k!} e^{-\lambda}.
+% $$
+% To see this, remember that
+% $$
+% \lim_{n\rightarrow\infty} \left( 1- \frac{\lambda}{n} \right)^n = e^{-\lambda}.
+% $$
+% Then, let us consider that in our setting, we have $p=\lambda/n$. From the formula of the binomial probability mass function we have:
+% $$
+% p(0) = (1-p)^{n}=\left( 1- \frac{\lambda}{n} \right)^{n} \approx e^{-\lambda}, \quad \text{\ as \ \ } n\rightarrow\infty.
+% $$
+% \end{frame}%
+%
+%
+% \begin{frame}{\subsecname}%
+% %EndExpansion
+%
+% %\frametitle{Poisson Distribution  (link to Binomial)}
+%
+% Moreover, it is easily found that
+%
+% \bea
+% \frac{p(k)}{p(k-1)} &=& \frac{np-(k-1)p}{k(1-p)} \approx \frac{\lambda}{k}, \quad \text{\ as \ \ } n\rightarrow\infty. \nn
+% \eea
+% Therefore, we have
+% \bea
+% p(1) &\approx& \frac{\lambda}{1!}p(0) \approx \lambda e^{-\lambda} \nn \\
+% p(2) &\approx& \frac{\lambda}{2!}p(1) \approx \frac{\lambda^2}{2} e^{-\lambda} \nn \\
+% \dotsm & \dotsm &  \dotsm  \nn \\
+% p(k) &\approx& \frac{\lambda}{k!}p(k-1) \approx \underbrace{\frac{\lambda^k}{k!} e^{-\lambda}}_{\text{\ see \ \ Eq. (\ref{Eq. Poisson})  }} \nn
+% \eea
+%
+% thus, we remark that $p(k)$ can be approximated by the probability mass function of a Poisson---which is easier to implement.
+%
+% \end{frame}%
+%
+%
+% \begin{frame}{\subsecname}%
+% %EndExpansion
+%
+% %\frametitle{Poisson Distribution: example}
+% \begin{example}[two-fold use of Poisson]
+% Suppose a certain high-speed printer makes errors at random on printed paper\footnote{This exercise is related to Ex 2 of PS6. The calculation is similar but not identical: note the difference between the size of $p$ in this example and in the tutorial.}. Assuming that the Poisson
+% distribution with parameter $\lambda = 4$ is appropriate to model the number of errors per page (say, $X$), what is the probability that in a book containing 300 pages (produced by the printer) at least 7 will have no errors?
+%
+% \vspace{0.3cm}
+% Let $X$ denote the number of errors per page, so that
+% $$
+% p(x) = \exp^{-4}\frac{4^x}{x!}, \quad \text{for} \quad x = 0,1,2,....
+% $$
+% The probability of any page to be error free is then
+% $$p(0) = \exp^{-4}\frac{4^0}{0!} = \exp^{-4} \approx 0.018.$$
+%
+% \end{example}
+% \end{frame}%
+%
+% \begin{frame}{\subsecname}%
+% %EndExpansion
+%
+% %\frametitle{Poisson Distribution: example}
+% \begin{example}[cont'd]
+%
+% Having no errors on a page is a success, and there are 300 independent pages. Hence, let us define
+% $$
+% Y = \text{the number of pages without any errors}.
+% $$
+%
+% $Y$ is binomially distributed with parameters $n = 300$
+% and $p = 0.018$, namely
+% $$Y\sim B(n,p).$$
+%
+% %\vspace{0.3cm}
+% But here we have
+% \begin{center}
+% $n$ large, $p$ small, and $n p = 5.4$
+% \end{center}
+% thus, we can compute $P(\{Y \geq 7\})$  using either the exact Binomial or its Poisson approximation. So
+% \begin{itemize}
+% \item using $B(300,0.018)$, we get: $P(\{Y \geq 7\}) \approx  0.297$ \\ \vspace{0.1cm}
+%
+% \item using Poisson(5.4), we get $P(\{Y \geq 7\})  \approx  0.298.$
+% \end{itemize}
+%
+% %The two outcomes differ at the 3rd digits after the comma.
+%
+%
+% \end{example}
+% \end{frame}%
+%
+%
+% \begin{frame}{\subsecname}
+% %\frametitle{The Hypergeometric Distribution}
+%
+% \begin{definition}
+% Let us consider a random experiment consisting of a series of $n$ trials,
+% having the following properties
+%
+% \begin{stepenumerate}
+% \item Only two mutually exclusive outcomes are possible in each trials:
+% success (S) and failure (F)
+%
+% \item The population has $N$ elements in which $k$ are looked upon as
+% S and the other $N-k$ are looked upon as F
+%
+% \item Sampling from the population is done \textbf{without} replacement (so
+% that the trials are not independent).
+% \end{stepenumerate}
+% The random variable
+% $$
+% X= \text{number of successes in $n$ such
+% trials}
+% $$
+% has an hypergeometric distribution and ....
+% \end{definition}
+%
+% %TCIMACRO{\TeXButton{EndFrame}{\end{frame}}}%
+% %BeginExpansion
+% \end{frame}%
+% %EndExpansion
+%
+% %TCIMACRO{\TeXButton{BeginFrame}{\begin{frame}{\subsecname}}}%
+% %BeginExpansion
+% \begin{frame}{\subsecname}%
+% %EndExpansion
+%
+% %\frametitle{The Hypergeometric Distribution}
+%
+% \begin{definition}[cont'd]
+% ... the probability that $X=x$ is
+% \begin{equation*}
+% \Pr (\left\{ X=x\right\}) =\frac{\left(
+% \begin{array}{c}
+% k \\
+% x%
+% \end{array}%
+% \right) \left(
+% \begin{array}{c}
+% N-k \\
+% n-x%
+% \end{array}%
+% \right) }{\left(
+% \begin{array}{c}
+% N \\
+% n%
+% \end{array}%
+% \right) }.
+% \end{equation*}
+% \end{definition}
+%
+% Moreover,
+% \begin{eqnarray*}
+% E\left[ X\right] &=&\frac{nk}{N} \\
+% Var\left( X\right) &=&\frac{nk\left( N-k\right) \left( N-n\right) }{%
+% N^{2}\left( N-1\right) }
+% \end{eqnarray*}
+%
+% %TCIMACRO{\TeXButton{EndFrame}{\end{frame}}}%
+% %BeginExpansion
+% \end{frame}%
+% %EndExpansion
+%
+% %TCIMACRO{\TeXButton{BeginFrame}{\begin{frame}{\subsecname}}}%
+% %BeginExpansion
+% \begin{frame}{\subsecname}%
+% %EndExpansion
+%
+% %\frametitle{Hypergeometric Distribution Example}
+%
+% \begin{example}[Psychological experiment]
+% A group of 8 students includes 5 women and 3 men: 3 students are randomly chosen to participate in a psychological
+% experiment. What is the probability that \emph{exactly} 2 women will be included
+% in the sample?%
+% %TCIMACRO{%
+% %\FRAME{ftbpF}{2.1966in}{2.207in}{0pt}{}{}{urnpic.gif}{%
+% %\special{language "Scientific Word";type "GRAPHIC";maintain-aspect-ratio TRUE;display "USEDEF";valid_file "F";width 2.1966in;height 2.207in;depth 0pt;original-width 6.9168in;original-height 6.9479in;cropleft "0";croptop "1";cropright "1";cropbottom "0";filename '../URNpic.GIF';file-properties "XNPEU";}}}%
+% %BeginExpansion
+% \begin{figure}[ptb]\centering
+% %\includegraphics[natheight=6.9479in, natwidth=6.9168in, height=2.207in, width=2.1966in]
+% %{//ad.monash.edu/home/User063/scipione/Documents/CF2015/teaching/ETC2520/NEW_ETC25250/lecture6_2015/graphics/img/URNpic__2.pdf}%
+% \includegraphics[width=0.4\textwidth]{img/URNpic_2.pdf}
+% \end{figure}%
+% %EndExpansion
+% \end{example}
+%
+% %TCIMACRO{\TeXButton{EndFrame}{\end{frame}}}%
+% %BeginExpansion
+% \end{frame}%
+% %EndExpansion
+%
+% %TCIMACRO{\TeXButton{BeginFrame}{\begin{frame}{\subsecname}}}%
+% %BeginExpansion
+% \begin{frame}{\subsecname}%
+% %EndExpansion
+%
+% %\frametitle{Hypergeometric Distribution Example}
+%
+% \begin{example}[cont'd]
+% Consider each of the three participants being selected as a separate
+% trial $\Rightarrow $ there are $n=3$ trials. Consider a woman being selected in a trial as a `success'
+% \\
+% Then here $N=8$, $k=5$, $n=3$, and $x=2$, so that%
+% \begin{eqnarray*}
+% \Pr (\left\{ X=2\right\})  &=&\frac{\left(
+% \begin{array}{c}
+% 5 \\
+% 2%
+% \end{array}%
+% \right) \left(
+% \begin{array}{c}
+% 8-5 \\
+% 3-2%
+% \end{array}%
+% \right) }{\left(
+% \begin{array}{c}
+% 8 \\
+% 3%
+% \end{array}%
+% \right) } \\
+% && \\
+% &=&\frac{\frac{5!}{2!3!}\frac{3!}{1!2!}}{\frac{8!}{5!3!}} \\
+% && \\
+% &=&0.53571
+% \end{eqnarray*}
+% \end{example}
+%
+% %TCIMACRO{\TeXButton{EndFrame}{\end{frame}}}%
+% %BeginExpansion
+% \end{frame}%
+% %EndExpansion
+%
+% %TCIMACRO{\TeXButton{BeginFrame}{\begin{frame}{\subsecname}}}%
+% %BeginExpansion
+% \begin{frame}{\subsecname}%
+% %EndExpansion
+%
+% %\frametitle{The Negative Binomial Distribution}
+%
+% Let us consider a random experiment consisting of a series of trials, having
+% the following properties \vspace{0.5cm}
+%
+% \begin{stepenumerate}
+% \item Only two mutually exclusive outcomes are possible in each trial:
+% `success' (S) and `failure' (F)
+% \vspace{0.25cm}
+% \item The outcomes in the series of trials constitute \emph{independent
+% events}
+% \vspace{0.25cm}
+% \item The probability of success $p$ in each trial is \emph{constant }from
+% trial to trial
+% \end{stepenumerate}
+% \vspace{0.5cm}
+% What is the probability of having exactly $y$ F's before the $r^{th}$
+% S? \\ \vspace{0.25cm}
+%
+% Equivalently: What is the probability that in a sequence of $y+r$ (Bernoulli) trials the last trial yields the
+% $r^{th}$ S?
+%
+%
+% %TCIMACRO{\TeXButton{EndFrame}{\end{frame}}}%
+% %BeginExpansion
+% \end{frame}%
+% %EndExpansion
+%
+% %TCIMACRO{\TeXButton{BeginFrame}{\begin{frame}{\subsecname}}}%
+% %BeginExpansion
+% \begin{frame}{\subsecname}%
+% %EndExpansion
+%
+% %\frametitle{The Negative Binomial Distribution}
+%
+% \begin{definition}
+% Let
+% $$X= \text{the total number of trials required until a total of $r$ successes is accumulated}.$$
+% Then $X$ is said to be a Negative Binomial random variable and its probability mass function
+% $\Pr (\left\{ X=n\right\})$ equals the probability of $r-1$ `successes' in the first $n-1$ trials, times the probability of a `success' on
+% the last trial. These probabilities are given by%
+% \begin{equation*}
+% \Pr (\left\{ X=n\right\}) =\left(
+% \begin{array}{c}
+% n-1 \\
+% r-1%
+% \end{array}%
+% \right) p^{r}\left( 1-p\right) ^{n-r}\quad \text{ for }n=r,r+1,...
+% \end{equation*}
+% \end{definition}
+%
+% The mean and variance for $X$ are, respectively,%
+% \begin{eqnarray*}
+% E\left[ X\right] &=&\frac{r}{p} \\
+% Var\left( X\right) &=&\frac{r\left( 1-p\right) }{p^{2}}
+% \end{eqnarray*}
+%
+% %TCIMACRO{\TeXButton{EndFrame}{\end{frame}}}%
+% %BeginExpansion
+% \end{frame}%
+% %EndExpansion
+%
+% %TCIMACRO{\TeXButton{BeginFrame}{\begin{frame}{\subsecname}}}%
+% %BeginExpansion
+% \begin{frame}{\subsecname}%
+% %EndExpansion
+%
+% %\frametitle{Negative Binomial Distribution Example}
+%
+% \begin{example}[marketing research]
+% \begin{stepitemize}
+%
+% \item A marketing researcher wants to find 5 people to join her focus group
+%
+% \item Let $p$ denote the probability that a randomly selected individual
+% agrees to participate in the focus group
+%
+% \item If $p=0.2$, what is the probability that the researcher must ask 15
+% individuals before 5 are found who agree to participate?
+%
+% %\item That is, what is the probability that 10 people will decline the
+% %request to participate before a 5$^{th}$ person agrees?
+%
+% \item In this case, $p=0.2$, $r=5$, $n=15$:  we are looking for $\Pr (\left\{
+% X=15\right\}).$ By the negative binomial formula we have
+%
+% \begin{eqnarray*}
+% \Pr (\left\{ X=15\right\}) &=&\left(
+% \begin{array}{c}
+% 14 \\
+% 4%
+% \end{array}%
+% \right) \left( 0.2\right) ^{5}\left( 0.8\right) ^{10} \\
+% &=&0.034
+% \end{eqnarray*}
+% \end{stepitemize}
+% \end{example}
+% %TCIMACRO{\TeXButton{EndFrame}{\end{frame}}}%
+% %BeginExpansion
+% \end{frame}%
+% %EndExpansion
+%
+% %TCIMACRO{\TeXButton{BeginFrame}{\begin{frame}{\subsecname}}}%
+% %BeginExpansion
+% \begin{frame}{\subsecname}%
+% %EndExpansion
+%
+% %\frametitle{The Geometric Distribution}
+%
+% \begin{definition}[a special case]
+%
+% When $r=1$, the negative binomial distribution is equivalent to the
+% \textbf{Geometric distribution} --- see Example in slide 13. \\
+% \vspace{0.5cm}
+% In this case, probabilities are given by%
+% \begin{equation*}
+% \Pr (\left\{ X=n\right\}) =p\left( 1-p\right) ^{n-1}\text{, for }n=1,2,...
+% \end{equation*}
+% \end{definition}
+%
+% The corresponding mean and variance for $X$ are, respectively,%
+% \begin{eqnarray*}
+% E\left[ X\right] &=&\frac{ 1 }{p} \\
+% Var\left( X\right) &=&\frac{\left( 1-p\right) }{p^{2}}
+% \end{eqnarray*}
+%
+%
+% \end{frame}
+%
+% \begin{frame}{\subsecname}
+%
+% %\frametitle{The Geometric Distribution}
+% \begin{small}
+%
+% \begin{example}[failure of a machine]
+% Items are produced by a machine having a 3\% defective rate.
+% \begin{itemize}
+% \item What is the probability that the first defective occurs in the fifth item inspected? \\
+% \bea
+% P(\{X	=	5\})	&=&	P (\text{first	4	non-defective}) P (\text{5th defective}) \nn \\
+% &=& (0.97)^4(0.03) \approx 0.026 \nn
+% \eea
+% \item What is the probability that the first defective occurs in the first five inspections?
+% \bea
+% P(\{X	\leq 5	\}) = P(\{X	< 6	\})	&=&	 P (\{X=1\})+ ... + P(\{X=5\}) \nn \\
+% &=& 1- P(\text{first 5 non-defective}) = 0.1412.  \nn %\\
+% %&=& 1- (0.97)^5 \approx 0.1412 \nn
+% \eea
+% \end{itemize}
+% \end{example}
+%
+% More generally, for a geometric random variable we have:
+% $$
+% P(\{X \geq k \}) = (1-p)^{k-1}.
+% $$
+% Thus, in the example we have $P( \{X	\geq 6	\}) = (1-0.03)^{6-1}\approx 0.8587$
+% \bea
+% P(\{X	\leq 5	\}) = 1-P( \{X	\geq 6	\}) \approx 1- 0.8587 \approx 0.1412. \nn
+% \eea
+%
+% \end{small}
+%
+%
+%
+% \end{frame}
+
+\begin{frame}
+  \begin{center}
+  \Large{Thank You for your Attention!}
+
+
+  \pause
+
+  \Large{``See you'' Next Week}
+  \end{center}
 \end{frame}
 
 \end{document}

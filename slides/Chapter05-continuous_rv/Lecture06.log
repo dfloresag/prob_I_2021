@@ -1,9 +1,9 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020) (preloaded format=pdflatex 2020.8.26)  26 FEB 2021 20:36
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020) (preloaded format=pdflatex 2020.8.26)  30 MAR 2021 00:19
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
-**Chapter05.tex
-(./Chapter05.tex
+**Lecture06.tex
+(./Lecture06.tex
 LaTeX2e <2020-02-02> patch level 5
 L3 programming layer <2020-03-06>
 (/usr/local/texlive/2020/texmf-dist/tex/latex/beamer/beamer.cls
@@ -796,25 +796,25 @@ File: l3backend-pdfmode.def 2020-03-12 L3 backend support: PDF mode
 \l__kernel_color_stack_int=\count327
 \l__pdf_internal_box=\box78
 )
-(./Chapter05.aux)
-\openout1 = `Chapter05.aux'.
+(./Lecture06.aux)
+\openout1 = `Lecture06.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 138.
-LaTeX Font Info:    ... okay on input line 138.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 138.
-LaTeX Font Info:    ... okay on input line 138.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 138.
-LaTeX Font Info:    ... okay on input line 138.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 138.
-LaTeX Font Info:    ... okay on input line 138.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 138.
-LaTeX Font Info:    ... okay on input line 138.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 138.
-LaTeX Font Info:    ... okay on input line 138.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 138.
-LaTeX Font Info:    ... okay on input line 138.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 138.
-LaTeX Font Info:    ... okay on input line 138.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 155.
+LaTeX Font Info:    ... okay on input line 155.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 155.
+LaTeX Font Info:    ... okay on input line 155.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 155.
+LaTeX Font Info:    ... okay on input line 155.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 155.
+LaTeX Font Info:    ... okay on input line 155.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 155.
+LaTeX Font Info:    ... okay on input line 155.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 155.
+LaTeX Font Info:    ... okay on input line 155.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 155.
+LaTeX Font Info:    ... okay on input line 155.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 155.
+LaTeX Font Info:    ... okay on input line 155.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -865,7 +865,7 @@ LaTeX Font Info:    ... okay on input line 138.
 \everyMPtoPDFconversion=\toks47
 ) ABD: EveryShipout initializing macros
 \AtBeginShipoutBox=\box80
-Package hyperref Info: Link coloring OFF on input line 138.
+Package hyperref Info: Link coloring OFF on input line 155.
 
 (/usr/local/texlive/2020/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2019/09/16 v2.46 Cross-referencing by name of section
@@ -879,65 +879,65 @@ Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 )
 \c@section@level=\count334
 )
-LaTeX Info: Redefining \ref on input line 138.
-LaTeX Info: Redefining \pageref on input line 138.
-LaTeX Info: Redefining \nameref on input line 138.
- (./Chapter05.out) (./Chapter05.out)
+LaTeX Info: Redefining \ref on input line 155.
+LaTeX Info: Redefining \pageref on input line 155.
+LaTeX Info: Redefining \nameref on input line 155.
+ (./Lecture06.out) (./Lecture06.out)
 \@outlinefile=\write5
-\openout5 = `Chapter05.out'.
+\openout5 = `Lecture06.out'.
 
 LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
-(Font)                  OT1/cmr/m/n --> OT1/cmss/m/n on input line 138.
+(Font)                  OT1/cmr/m/n --> OT1/cmss/m/n on input line 155.
 LaTeX Font Info:    Overwriting symbol font `operators' in version `bold'
-(Font)                  OT1/cmr/bx/n --> OT1/cmss/b/n on input line 138.
+(Font)                  OT1/cmr/bx/n --> OT1/cmss/b/n on input line 155.
 \symnumbers=\mathgroup6
 \sympureletters=\mathgroup7
 LaTeX Font Info:    Overwriting math alphabet `\mathrm' in version `normal'
-(Font)                  OT1/cmss/m/n --> OT1/cmr/m/n on input line 138.
-LaTeX Font Info:    Redeclaring math alphabet \mathbf on input line 138.
+(Font)                  OT1/cmss/m/n --> OT1/cmr/m/n on input line 155.
+LaTeX Font Info:    Redeclaring math alphabet \mathbf on input line 155.
 LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `normal'
-(Font)                  OT1/cmr/bx/n --> OT1/cmss/b/n on input line 138.
+(Font)                  OT1/cmr/bx/n --> OT1/cmss/b/n on input line 155.
 LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `bold'
-(Font)                  OT1/cmr/bx/n --> OT1/cmss/b/n on input line 138.
-LaTeX Font Info:    Redeclaring math alphabet \mathsf on input line 138.
+(Font)                  OT1/cmr/bx/n --> OT1/cmss/b/n on input line 155.
+LaTeX Font Info:    Redeclaring math alphabet \mathsf on input line 155.
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `normal'
-(Font)                  OT1/cmss/m/n --> OT1/cmss/m/n on input line 138.
+(Font)                  OT1/cmss/m/n --> OT1/cmss/m/n on input line 155.
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `bold'
-(Font)                  OT1/cmss/bx/n --> OT1/cmss/m/n on input line 138.
-LaTeX Font Info:    Redeclaring math alphabet \mathit on input line 138.
+(Font)                  OT1/cmss/bx/n --> OT1/cmss/m/n on input line 155.
+LaTeX Font Info:    Redeclaring math alphabet \mathit on input line 155.
 LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `normal'
-(Font)                  OT1/cmr/m/it --> OT1/cmss/m/it on input line 138.
+(Font)                  OT1/cmr/m/it --> OT1/cmss/m/it on input line 155.
 LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `bold'
-(Font)                  OT1/cmr/bx/it --> OT1/cmss/m/it on input line 138.
-LaTeX Font Info:    Redeclaring math alphabet \mathtt on input line 138.
+(Font)                  OT1/cmr/bx/it --> OT1/cmss/m/it on input line 155.
+LaTeX Font Info:    Redeclaring math alphabet \mathtt on input line 155.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `normal'
-(Font)                  OT1/cmtt/m/n --> OT1/cmtt/m/n on input line 138.
+(Font)                  OT1/cmtt/m/n --> OT1/cmtt/m/n on input line 155.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
-(Font)                  OT1/cmtt/m/n --> OT1/cmtt/m/n on input line 138.
+(Font)                  OT1/cmtt/m/n --> OT1/cmtt/m/n on input line 155.
 LaTeX Font Info:    Overwriting symbol font `numbers' in version `bold'
-(Font)                  OT1/cmss/m/n --> OT1/cmss/b/n on input line 138.
+(Font)                  OT1/cmss/m/n --> OT1/cmss/b/n on input line 155.
 LaTeX Font Info:    Overwriting symbol font `pureletters' in version `bold'
-(Font)                  OT1/cmss/m/it --> OT1/cmss/b/it on input line 138.
+(Font)                  OT1/cmss/m/it --> OT1/cmss/b/it on input line 155.
 LaTeX Font Info:    Overwriting math alphabet `\mathrm' in version `bold'
-(Font)                  OT1/cmss/b/n --> OT1/cmr/b/n on input line 138.
+(Font)                  OT1/cmss/b/n --> OT1/cmr/b/n on input line 155.
 LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `bold'
-(Font)                  OT1/cmss/b/n --> OT1/cmss/b/n on input line 138.
+(Font)                  OT1/cmss/b/n --> OT1/cmss/b/n on input line 155.
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `bold'
-(Font)                  OT1/cmss/m/n --> OT1/cmss/b/n on input line 138.
+(Font)                  OT1/cmss/m/n --> OT1/cmss/b/n on input line 155.
 LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `bold'
-(Font)                  OT1/cmss/m/it --> OT1/cmss/b/it on input line 138.
+(Font)                  OT1/cmss/m/it --> OT1/cmss/b/it on input line 155.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
-(Font)                  OT1/cmtt/m/n --> OT1/cmtt/b/n on input line 138.
-LaTeX Font Info:    Redeclaring symbol font `pureletters' on input line 138.
+(Font)                  OT1/cmtt/m/n --> OT1/cmtt/b/n on input line 155.
+LaTeX Font Info:    Redeclaring symbol font `pureletters' on input line 155.
 LaTeX Font Info:    Overwriting symbol font `pureletters' in version `normal'
 (Font)                  OT1/cmss/m/it --> OT1/mathkerncmss/m/sl on input line 1
-38.
+55.
 LaTeX Font Info:    Overwriting symbol font `pureletters' in version `bold'
 (Font)                  OT1/cmss/b/it --> OT1/mathkerncmss/m/sl on input line 1
-38.
+55.
 LaTeX Font Info:    Overwriting symbol font `pureletters' in version `bold'
 (Font)                  OT1/mathkerncmss/m/sl --> OT1/mathkerncmss/bx/sl on inp
-ut line 138.
+ut line 155.
 
 (/usr/local/texlive/2020/texmf-dist/tex/latex/translator/translator-basic-dicti
 onary-English.dict
@@ -962,472 +962,539 @@ Dictionary: translator-numbers-dictionary, Language: English
 (/usr/local/texlive/2020/texmf-dist/tex/latex/translator/translator-theorem-dic
 tionary-English.dict
 Dictionary: translator-theorem-dictionary, Language: English 
-) (./Chapter05.nav)
+) (./Lecture06.nav)
 
 Package hyperref Warning: Option `pdfauthor' has already been used,
-(hyperref)                setting the option has no effect on input line 142.
+(hyperref)                setting the option has no effect on input line 159.
 
 [1
 
 {/usr/local/texlive/2020/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
-LaTeX Font Info:    Trying to load font information for U+msa on input line 163
-.
+[2
 
-(/usr/local/texlive/2020/texmf-dist/tex/latex/amsfonts/umsa.fd
+] (./Lecture06.toc) [3
+
+] (./Lecture06.toc) [4
+
+]
+<figure/unnamed-chunk-2-1.pdf, id=143, 433.62pt x 325.215pt>
+File: figure/unnamed-chunk-2-1.pdf Graphic file (type pdf)
+<use figure/unnamed-chunk-2-1.pdf>
+Package pdftex.def Info: figure/unnamed-chunk-2-1.pdf  used on input line 197.
+(pdftex.def)             Requested size: 172.09766pt x 129.07137pt.
+ [5
+
+ <./figure/unnamed-chunk-2-1.pdf>]
+<figure/unnamed-chunk-3-1.pdf, id=155, 433.62pt x 325.215pt>
+File: figure/unnamed-chunk-3-1.pdf Graphic file (type pdf)
+<use figure/unnamed-chunk-3-1.pdf>
+Package pdftex.def Info: figure/unnamed-chunk-3-1.pdf  used on input line 221.
+(pdftex.def)             Requested size: 172.09766pt x 129.07137pt.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 221
+.
+ (/usr/local/texlive/2020/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 163
+LaTeX Font Info:    Trying to load font information for U+msb on input line 221
 .
 
 (/usr/local/texlive/2020/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
 LaTeX Font Info:    Trying to load font information for OT1+mathkerncmss on inp
-ut line 163.
+ut line 221.
 
 (/usr/local/texlive/2020/texmf-dist/tex/latex/sansmathaccent/ot1mathkerncmss.fd
 File: ot1mathkerncmss.fd 2020/01/31 Fontinst v1.933 font definitions for OT1/ma
 thkerncmss.
-)
-<R1.pdf, id=34, 505.89pt x 505.89pt>
-File: R1.pdf Graphic file (type pdf)
-<use R1.pdf>
-Package pdftex.def Info: R1.pdf  used on input line 163.
-(pdftex.def)             Requested size: 172.10066pt x 130.96478pt.
- [2
+) [6
 
- <./R1.pdf>]
-<sp_hist1.pdf, id=120, 505.89pt x 505.89pt>
-File: sp_hist1.pdf Graphic file (type pdf)
-<use sp_hist1.pdf>
-Package pdftex.def Info: sp_hist1.pdf  used on input line 177.
-(pdftex.def)             Requested size: 223.727pt x 144.05663pt.
- [3
-
- <./sp_hist1.pdf>]
-<sp_hist2.pdf, id=207, 505.89pt x 505.89pt>
-File: sp_hist2.pdf Graphic file (type pdf)
-<use sp_hist2.pdf>
-Package pdftex.def Info: sp_hist2.pdf  used on input line 192.
-(pdftex.def)             Requested size: 223.727pt x 144.05663pt.
- [4
-
- <./sp_hist2.pdf>]
-<R3_ks.pdf, id=299, 505.89pt x 505.89pt>
-File: R3_ks.pdf Graphic file (type pdf)
-<use R3_ks.pdf>
-Package pdftex.def Info: R3_ks.pdf  used on input line 204.
-(pdftex.def)             Requested size: 223.727pt x 144.05663pt.
- [5
-
- <./R3_ks.pdf>]
-[6
-
-]
-<hist1.pdf, id=416, 398.288pt x 308.49535pt>
-File: hist1.pdf Graphic file (type pdf)
-<use hist1.pdf>
-Package pdftex.def Info: hist1.pdf  used on input line 233.
-(pdftex.def)             Requested size: 258.14876pt x 196.44781pt.
+ <./figure/unnamed-chunk-3-1.pdf>]
+<figure/unnamed-chunk-4-1.pdf, id=169, 433.62pt x 325.215pt>
+File: figure/unnamed-chunk-4-1.pdf Graphic file (type pdf)
+<use figure/unnamed-chunk-4-1.pdf>
+Package pdftex.def Info: figure/unnamed-chunk-4-1.pdf  used on input line 242.
+(pdftex.def)             Requested size: 172.09766pt x 129.07137pt.
  [7
 
- <./hist1.pdf>]
-<hist2.pdf, id=449, 382.28542pt x 282.71341pt>
-File: hist2.pdf Graphic file (type pdf)
-<use hist2.pdf>
-Package pdftex.def Info: hist2.pdf  used on input line 244.
-(pdftex.def)             Requested size: 258.14818pt x 196.44856pt.
- [8
+ <./figure/unnamed-chunk-4-1.pdf>]
+<figure/unnamed-chunk-5-1.pdf, id=184, 433.62pt x 325.215pt>
+File: figure/unnamed-chunk-5-1.pdf Graphic file (type pdf)
+<use figure/unnamed-chunk-5-1.pdf>
+Package pdftex.def Info: figure/unnamed-chunk-5-1.pdf  used on input line 260.
+(pdftex.def)             Requested size: 172.09766pt x 129.07137pt.
 
- <./hist2.pdf>]
-<hist3.pdf, id=477, 360.05948pt x 301.38316pt>
-File: hist3.pdf Graphic file (type pdf)
-<use hist3.pdf>
-Package pdftex.def Info: hist3.pdf  used on input line 255.
-(pdftex.def)             Requested size: 258.16579pt x 196.44398pt.
+[8
+
+ <./figure/unnamed-chunk-5-1.pdf>]
+<figure/unnamed-chunk-6-1.pdf, id=196, 433.62pt x 325.215pt>
+File: figure/unnamed-chunk-6-1.pdf Graphic file (type pdf)
+<use figure/unnamed-chunk-6-1.pdf>
+Package pdftex.def Info: figure/unnamed-chunk-6-1.pdf  used on input line 280.
+(pdftex.def)             Requested size: 172.09766pt x 129.07137pt.
  [9
 
- <./hist3.pdf>] [10
+ <./figure/unnamed-chunk-6-1.pdf>]
+[10
 
 ]
-<discr_vs_cont.pdf, id=512, 711.22856pt x 327.16519pt>
-File: discr_vs_cont.pdf Graphic file (type pdf)
-<use discr_vs_cont.pdf>
-Package pdftex.def Info: discr_vs_cont.pdf  used on input line 298.
-(pdftex.def)             Requested size: 258.14746pt x 130.9636pt.
+<img/hist1.pdf, id=222, 398.288pt x 308.49535pt>
+File: img/hist1.pdf Graphic file (type pdf)
+<use img/hist1.pdf>
+Package pdftex.def Info: img/hist1.pdf  used on input line 304.
+(pdftex.def)             Requested size: 258.14876pt x 196.44781pt.
  [11
 
- <./discr_vs_cont.pdf>] [12
+ <./img/hist1.pdf>]
+<img/hist2.pdf, id=254, 382.28542pt x 282.71341pt>
+File: img/hist2.pdf Graphic file (type pdf)
+<use img/hist2.pdf>
+Package pdftex.def Info: img/hist2.pdf  used on input line 312.
+(pdftex.def)             Requested size: 258.14818pt x 196.44856pt.
+ [12
 
-] [13
+ <./img/hist2.pdf>]
+<img/hist3.pdf, id=282, 360.05948pt x 301.38316pt>
+File: img/hist3.pdf Graphic file (type pdf)
+<use img/hist3.pdf>
+Package pdftex.def Info: img/hist3.pdf  used on input line 320.
+(pdftex.def)             Requested size: 258.16579pt x 196.44398pt.
+ [13
+
+ <./img/hist3.pdf>]
+[14
 
 ]
-<generic_CDF2.pdf, id=585, 346.29375pt x 189.70876pt>
-File: generic_CDF2.pdf Graphic file (type pdf)
-<use generic_CDF2.pdf>
-Package pdftex.def Info: generic_CDF2.pdf  used on input line 400.
-(pdftex.def)             Requested size: 326.9904pt x 196.44717pt.
- [14
-
- <./generic_CDF2.pdf>]
-<Diego_F.pdf, id=596, 668.97585pt x 510.91663pt>
-File: Diego_F.pdf Graphic file (type pdf)
-<use Diego_F.pdf>
-Package pdftex.def Info: Diego_F.pdf  used on input line 414.
-(pdftex.def)             Requested size: 240.93318pt x 170.24794pt.
+<img/discr_vs_cont.pdf, id=320, 711.22856pt x 327.16519pt>
+File: img/discr_vs_cont.pdf Graphic file (type pdf)
+<use img/discr_vs_cont.pdf>
+Package pdftex.def Info: img/discr_vs_cont.pdf  used on input line 356.
+(pdftex.def)             Requested size: 258.14746pt x 130.9636pt.
  [15
 
- <./Diego_F.pdf>]
+ <./img/discr_vs_cont.pdf>] (./Lecture06.toc) [16
+
+] [17
+
+]
+<figure/unnamed-chunk-7-1.pdf, id=401, 433.62pt x 325.215pt>
+File: figure/unnamed-chunk-7-1.pdf Graphic file (type pdf)
+<use figure/unnamed-chunk-7-1.pdf>
+Package pdftex.def Info: figure/unnamed-chunk-7-1.pdf  used on input line 391.
+(pdftex.def)             Requested size: 275.3573pt x 206.52907pt.
+ [18
+
+ <./figure/unnamed-chunk-7-1.pdf>] [19
+
+]
+<img/generic_CDF2.pdf, id=421, 346.29375pt x 189.70876pt>
+File: img/generic_CDF2.pdf Graphic file (type pdf)
+<use img/generic_CDF2.pdf>
+Package pdftex.def Info: img/generic_CDF2.pdf  used on input line 426.
+(pdftex.def)             Requested size: 326.9904pt x 196.44717pt.
+ [20
+
+ <./img/generic_CDF2.pdf>]
+<img/Diego_F.pdf, id=432, 668.97585pt x 510.91663pt>
+File: img/Diego_F.pdf Graphic file (type pdf)
+<use img/Diego_F.pdf>
+Package pdftex.def Info: img/Diego_F.pdf  used on input line 433.
+(pdftex.def)             Requested size: 267.58559pt x 204.36302pt.
+ [21
+
+ <./img/Diego_F.pdf>]
 
 LaTeX Font Warning: Font shape `OT1/cmss/bx/it' undefined
-(Font)              using `OT1/cmss/bx/n' instead on input line 467.
+(Font)              using `OT1/cmss/bx/n' instead on input line 469.
 
-[16
+[22
 
 ]
-<R_bell_pdf.pdf, id=626, 505.89pt x 505.89pt>
-File: R_bell_pdf.pdf Graphic file (type pdf)
-<use R_bell_pdf.pdf>
-Package pdftex.def Info: R_bell_pdf.pdf  used on input line 484.
+<img/R_bell_pdf.pdf, id=463, 505.89pt x 505.89pt>
+File: img/R_bell_pdf.pdf Graphic file (type pdf)
+<use img/R_bell_pdf.pdf>
+Package pdftex.def Info: img/R_bell_pdf.pdf  used on input line 481.
 (pdftex.def)             Requested size: 142.26576pt x 142.26576pt.
-<R_bell_CDF.pdf, id=627, 505.89pt x 505.89pt>
-File: R_bell_CDF.pdf Graphic file (type pdf)
-<use R_bell_CDF.pdf>
-Package pdftex.def Info: R_bell_CDF.pdf  used on input line 484.
+<img/R_bell_CDF.pdf, id=464, 505.89pt x 505.89pt>
+File: img/R_bell_CDF.pdf Graphic file (type pdf)
+<use img/R_bell_CDF.pdf>
+Package pdftex.def Info: img/R_bell_CDF.pdf  used on input line 481.
 (pdftex.def)             Requested size: 142.26576pt x 142.26576pt.
- [17
+ [23
 
- <./R_bell_pdf.pdf> <./R_bell_CDF.pdf>] [18
+ <./img/R_bell_pdf.pdf> <./img/R_bell_CDF.pdf>] (./Lecture06.toc)
+[24
 
-] [19
-
-] [20
-
-] [21
-
-] [22
-
-]
-[23
-
-]
-<uniform_pdf3.pdf, id=822, 265.99374pt x 145.54375pt>
-File: uniform_pdf3.pdf Graphic file (type pdf)
-<use uniform_pdf3.pdf>
-Package pdftex.def Info: uniform_pdf3.pdf  used on input line 745.
-(pdftex.def)             Requested size: 327.01207pt x 196.4578pt.
- [24
-
- <./uniform_pdf3.pdf>] [25
+] [25
 
 ] [26
 
 ] [27
 
+] [28
+
+] [29
+
 ]
-<Unif_Diego.pdf, id=852, 597.50786pt x 845.04686pt>
-File: Unif_Diego.pdf Graphic file (type pdf)
-<use Unif_Diego.pdf>
-Package pdftex.def Info: Unif_Diego.pdf  used on input line 837.
-(pdftex.def)             Requested size: 154.88339pt x 170.24423pt.
-
-Overfull \vbox (1.63277pt too high) detected at line 837
- []
-
-[28
-
- <./Unif_Diego.pdf>]
-<Unif_Diego_Calc.pdf, id=923, 597.50786pt x 845.04686pt>
-File: Unif_Diego_Calc.pdf Graphic file (type pdf)
-<use Unif_Diego_Calc.pdf>
-Package pdftex.def Info: Unif_Diego_Calc.pdf  used on input line 855.
-(pdftex.def)             Requested size: 172.09671pt x 235.72179pt.
- [29
-
- <./Unif_Diego_Calc.pdf>]
-<CDF_Diego.pdf, id=965, 420.15741pt x 419.51996pt>
-File: CDF_Diego.pdf Graphic file (type pdf)
-<use CDF_Diego.pdf>
-Package pdftex.def Info: CDF_Diego.pdf  used on input line 870.
-(pdftex.def)             Requested size: 154.88521pt x 144.05598pt.
+<figure/unnamed-chunk-8-1.pdf, id=669, 433.62pt x 325.215pt>
+File: figure/unnamed-chunk-8-1.pdf Graphic file (type pdf)
+<use figure/unnamed-chunk-8-1.pdf>
+Package pdftex.def Info: figure/unnamed-chunk-8-1.pdf  used on input line 635.
+(pdftex.def)             Requested size: 172.09766pt x 129.07137pt.
  [30
 
- <./CDF_Diego.pdf>]
-[31
+ <./figure/unnamed-chunk-8-1.pdf>]
+(./Lecture06.toc) [31
 
 ] [32
 
+] (./Lecture06.toc) [33
+
+] [34
+
 ]
-<normals4.pdf, id=1023, 331.2375pt x 181.67876pt>
-File: normals4.pdf Graphic file (type pdf)
-<use normals4.pdf>
-Package pdftex.def Info: normals4.pdf  used on input line 953.
-(pdftex.def)             Requested size: 327.00119pt x 196.44852pt.
+<img/uniform_pdf3.pdf, id=730, 265.99374pt x 145.54375pt>
+File: img/uniform_pdf3.pdf Graphic file (type pdf)
+<use img/uniform_pdf3.pdf>
+Package pdftex.def Info: img/uniform_pdf3.pdf  used on input line 745.
+(pdftex.def)             Requested size: 327.01207pt x 196.4578pt.
+ [35
 
-Overfull \vbox (36.64043pt too high) detected at line 953
- []
-
-[33
-
- <./normals4.pdf>]
-<Cow.pdf, id=1034, 693.44783pt x 411.62352pt>
-File: Cow.pdf Graphic file (type pdf)
-<use Cow.pdf>
-Package pdftex.def Info: Cow.pdf  used on input line 964.
-(pdftex.def)             Requested size: 326.97864pt x 196.44649pt.
- [34
-
- <./Cow.pdf>] [35
-
-] [36
+ <./img/uniform_pdf3.pdf>] [36
 
 ] [37
 
-]
-<Std_Diego.pdf, id=1085, 661.97374pt x 399.57349pt>
-File: Std_Diego.pdf Graphic file (type pdf)
-<use Std_Diego.pdf>
-Package pdftex.def Info: Std_Diego.pdf  used on input line 1066.
-(pdftex.def)             Requested size: 275.35034pt x 170.25241pt.
- [38
+] [38
 
- <./Std_Diego.pdf>]
+]
+<img/Unif_Diego.pdf, id=760, 597.50786pt x 845.04686pt>
+File: img/Unif_Diego.pdf Graphic file (type pdf)
+<use img/Unif_Diego.pdf>
+Package pdftex.def Info: img/Unif_Diego.pdf  used on input line 812.
+(pdftex.def)             Requested size: 154.88339pt x 170.24423pt.
+
+Overfull \vbox (12.13275pt too high) detected at line 812
+ []
+
 [39
 
-] [40
+ <./img/Unif_Diego.pdf>]
+<img/Unif_Diego_Calc.pdf, id=831, 597.50786pt x 845.04686pt>
+File: img/Unif_Diego_Calc.pdf Graphic file (type pdf)
+<use img/Unif_Diego_Calc.pdf>
+Package pdftex.def Info: img/Unif_Diego_Calc.pdf  used on input line 824.
+(pdftex.def)             Requested size: 172.09671pt x 235.72179pt.
+ [40
+
+ <./img/Unif_Diego_Calc.pdf>]
+<img/CDF_Diego.pdf, id=873, 420.15741pt x 419.51996pt>
+File: img/CDF_Diego.pdf Graphic file (type pdf)
+<use img/CDF_Diego.pdf>
+Package pdftex.def Info: img/CDF_Diego.pdf  used on input line 836.
+(pdftex.def)             Requested size: 154.88521pt x 144.05598pt.
+ [41
+
+ <./img/CDF_Diego.pdf>] (./Lecture06.toc) [42
+
+] [43
+
+] [44
 
 ]
-<bell_curve__5.pdf, id=1123, 344.28625pt x 192.72pt>
-File: bell_curve__5.pdf Graphic file (type pdf)
-<use bell_curve__5.pdf>
-Package pdftex.def Info: bell_curve__5.pdf  used on input line 1145.
-(pdftex.def)             Requested size: 326.98602pt x 196.44238pt.
+<img/normals4.pdf, id=948, 331.2375pt x 181.67876pt>
+File: img/normals4.pdf Graphic file (type pdf)
+<use img/normals4.pdf>
+Package pdftex.def Info: img/normals4.pdf  used on input line 897.
+(pdftex.def)             Requested size: 327.00119pt x 196.44852pt.
 
-Overfull \vbox (0.6343pt too high) detected at line 1145
+Overfull \vbox (36.64043pt too high) detected at line 897
  []
 
-[41
+[45
 
- <./bell_curve__5.pdf>]
-<myTableGauss.pdf, id=1133, 584.09648pt x 544.97885pt>
-File: myTableGauss.pdf Graphic file (type pdf)
-<use myTableGauss.pdf>
-Package pdftex.def Info: myTableGauss.pdf  used on input line 1152.
-(pdftex.def)             Requested size: 309.76573pt x 248.8306pt.
- [42
-
- <./myTableGauss.pdf>]
-<CDF_pr.pdf, id=1379, 681.00137pt x 312.94054pt>
-File: CDF_pr.pdf Graphic file (type pdf)
-<use CDF_pr.pdf>
-Package pdftex.def Info: CDF_pr.pdf  used on input line 1160.
-(pdftex.def)             Requested size: 289.08403pt x 144.53694pt.
- [43
-
- <./CDF_pr.pdf>]
-Overfull \hbox (3.94261pt too wide) in paragraph at lines 1178--1178
-[]  
- []
-
-[44
-
-] [45
-
-]
-<Areas_Normal.pdf, id=1463, 743.23387pt x 203.5892pt>
-File: Areas_Normal.pdf Graphic file (type pdf)
-<use Areas_Normal.pdf>
-Package pdftex.def Info: Areas_Normal.pdf  used on input line 1213.
-(pdftex.def)             Requested size: 325.22072pt x 108.40501pt.
+ <./img/normals4.pdf>]
+<img/Cow.pdf, id=960, 693.44783pt x 411.62352pt>
+File: img/Cow.pdf Graphic file (type pdf)
+<use img/Cow.pdf>
+Package pdftex.def Info: img/Cow.pdf  used on input line 904.
+(pdftex.def)             Requested size: 326.97864pt x 196.44649pt.
  [46
 
- <./Areas_Normal.pdf>] [47
+ <./img/Cow.pdf>] [47
 
 ] [48
 
-]
-<sum_of_two_independent_normals_with_rug__1.pdf, id=1562, 342.27875pt x 187.701
-25pt>
-File: sum_of_two_independent_normals_with_rug__1.pdf Graphic file (type pdf)
-<use sum_of_two_independent_normals_with_rug__1.pdf>
-Package pdftex.def Info: sum_of_two_independent_normals_with_rug__1.pdf  used o
-n input line 1300.
-(pdftex.def)             Requested size: 327.00658pt x 183.35883pt.
- [49
-
- <./sum_of_two_independent_normals_with_rug__1.pdf>] [50
+] [49
 
 ]
-Overfull \hbox (0.89664pt too wide) in alignment at lines 1347--1347
- [][][] []
- []
+<img/Std_Diego.pdf, id=1010, 661.97374pt x 399.57349pt>
+File: img/Std_Diego.pdf Graphic file (type pdf)
+<use img/Std_Diego.pdf>
+Package pdftex.def Info: img/Std_Diego.pdf  used on input line 974.
+(pdftex.def)             Requested size: 275.35034pt x 170.25241pt.
+ [50
 
-[51
+ <./img/Std_Diego.pdf>] [51
 
 ] [52
 
 ]
-<chisquared_pdfs__2.pdf, id=1592, 344.28625pt x 188.705pt>
-File: chisquared_pdfs__2.pdf Graphic file (type pdf)
-<use chisquared_pdfs__2.pdf>
-Package pdftex.def Info: chisquared_pdfs__2.pdf  used on input line 1400.
-(pdftex.def)             Requested size: 337.08827pt x 188.93488pt.
- [53
+<img/bell_curve__5.pdf, id=1048, 344.28625pt x 192.72pt>
+File: img/bell_curve__5.pdf Graphic file (type pdf)
+<use img/bell_curve__5.pdf>
+Package pdftex.def Info: img/bell_curve__5.pdf  used on input line 1053.
+(pdftex.def)             Requested size: 326.98602pt x 196.44238pt.
 
- <./chisquared_pdfs__2.pdf>]
-<chisq_table__3.pdf, id=1603, 359.09157pt x 163.3603pt>
-File: chisq_table__3.pdf Graphic file (type pdf)
-<use chisq_table__3.pdf>
-Package pdftex.def Info: chisq_table__3.pdf  used on input line 1411.
-(pdftex.def)             Requested size: 358.90437pt x 163.68393pt.
+Overfull \vbox (0.6343pt too high) detected at line 1053
+ []
 
-Overfull \hbox (14.70905pt too wide) in paragraph at lines 1411--1411
- [] 
+[53
+
+ <./img/bell_curve__5.pdf>]
+<img/myTableGauss.pdf, id=1058, 584.09648pt x 544.97885pt>
+File: img/myTableGauss.pdf Graphic file (type pdf)
+<use img/myTableGauss.pdf>
+Package pdftex.def Info: img/myTableGauss.pdf  used on input line 1060.
+(pdftex.def)             Requested size: 309.76573pt x 248.8306pt.
+
+Overfull \vbox (26.07806pt too high) detected at line 1060
  []
 
 [54
 
- <./chisq_table__3.pdf>] [55
+ <./img/myTableGauss.pdf>]
+<img/CDF_pr.pdf, id=1304, 681.00137pt x 312.94054pt>
+File: img/CDF_pr.pdf Graphic file (type pdf)
+<use img/CDF_pr.pdf>
+Package pdftex.def Info: img/CDF_pr.pdf  used on input line 1068.
+(pdftex.def)             Requested size: 289.08403pt x 144.53694pt.
+ [55
 
-] [56
-
-]
-<student_t__4.pdf, id=1626, 254.9525pt x 140.525pt>
-File: student_t__4.pdf Graphic file (type pdf)
-<use student_t__4.pdf>
-Package pdftex.def Info: student_t__4.pdf  used on input line 1477.
-(pdftex.def)             Requested size: 255.4498pt x 140.19656pt.
- [57
-
- <./student_t__4.pdf>]
-<Student_t_table__5.pdf, id=1638, 253.69781pt x 274.77657pt>
-File: Student_t_table__5.pdf Graphic file (type pdf)
-<use Student_t_table__5.pdf>
-Package pdftex.def Info: Student_t_table__5.pdf  used on input line 1487.
-(pdftex.def)             Requested size: 253.3875pt x 274.65009pt.
-
-Overfull \vbox (51.89755pt too high) detected at line 1487
+ <./img/CDF_pr.pdf>]
+Overfull \hbox (3.94261pt too wide) in paragraph at lines 1086--1086
+[]  
  []
 
-[58
+[56
 
- <./Student_t_table__5.pdf>] [59
+] [57
 
 ]
-<F-dist_pds__6.pdf, id=1654, 307.1475pt x 168.63pt>
-File: F-dist_pds__6.pdf Graphic file (type pdf)
-<use F-dist_pds__6.pdf>
-Package pdftex.def Info: F-dist_pds__6.pdf  used on input line 1518.
-(pdftex.def)             Requested size: 306.89366pt x 168.56525pt.
- [60
+<img/Areas_Normal.pdf, id=1389, 743.23387pt x 203.5892pt>
+File: img/Areas_Normal.pdf Graphic file (type pdf)
+<use img/Areas_Normal.pdf>
+Package pdftex.def Info: img/Areas_Normal.pdf  used on input line 1121.
+(pdftex.def)             Requested size: 325.22072pt x 108.40501pt.
+ [58
 
- <./F-dist_pds__6.pdf>]
-<Fdist_table__7.pdf, id=1665, 305.64188pt x 164.11313pt>
-File: Fdist_table__7.pdf Graphic file (type pdf)
-<use Fdist_table__7.pdf>
-Package pdftex.def Info: Fdist_table__7.pdf  used on input line 1531.
-(pdftex.def)             Requested size: 305.44989pt x 164.43825pt.
+ <./img/Areas_Normal.pdf>] [59
+
+] [60
+
+]
+<img/sum_of_two_independent_normals_with_rug__1.pdf, id=1487, 342.27875pt x 187
+.70125pt>
+File: img/sum_of_two_independent_normals_with_rug__1.pdf Graphic file (type pdf
+)
+<use img/sum_of_two_independent_normals_with_rug__1.pdf>
+Package pdftex.def Info: img/sum_of_two_independent_normals_with_rug__1.pdf  us
+ed on input line 1208.
+(pdftex.def)             Requested size: 327.00658pt x 183.35883pt.
  [61
 
- <./Fdist_table__7.pdf>] [62
+ <./img/sum_of_two_independent_normals_with_rug__1.pdf>] [62
 
 ]
-<lognormal_with_rug__8.pdf, id=1682, 366.36874pt x 201.75375pt>
-File: lognormal_with_rug__8.pdf Graphic file (type pdf)
-<use lognormal_with_rug__8.pdf>
-Package pdftex.def Info: lognormal_with_rug__8.pdf  used on input line 1577.
-(pdftex.def)             Requested size: 325.23419pt x 179.63414pt.
- [63
-
- <./lognormal_with_rug__8.pdf>] [64
-
-]
-Overfull \vbox (0.82323pt too high) detected at line 1639
+Overfull \hbox (0.89664pt too wide) in alignment at lines 1255--1255
+ [][][] []
  []
 
-[65
+[63
+
+] (./Lecture06.toc) [64
+
+] [65
 
 ]
-<Exp_Diego.pdf, id=1707, 735.32921pt x 391.0116pt>
-File: Exp_Diego.pdf Graphic file (type pdf)
-<use Exp_Diego.pdf>
-Package pdftex.def Info: Exp_Diego.pdf  used on input line 1656.
-(pdftex.def)             Requested size: 325.21765pt x 179.63483pt.
+<img/chisquared_pdfs__2.pdf, id=1535, 344.28625pt x 188.705pt>
+File: img/chisquared_pdfs__2.pdf Graphic file (type pdf)
+<use img/chisquared_pdfs__2.pdf>
+Package pdftex.def Info: img/chisquared_pdfs__2.pdf  used on input line 1304.
+(pdftex.def)             Requested size: 337.08827pt x 188.93488pt.
  [66
 
- <./Exp_Diego.pdf>] [67
+ <./img/chisquared_pdfs__2.pdf>]
+<img/chisq_table__3.pdf, id=1546, 359.09157pt x 163.3603pt>
+File: img/chisq_table__3.pdf Graphic file (type pdf)
+<use img/chisq_table__3.pdf>
+Package pdftex.def Info: img/chisq_table__3.pdf  used on input line 1315.
+(pdftex.def)             Requested size: 358.90437pt x 163.68393pt.
 
-] [68
+Overfull \hbox (14.70905pt too wide) in paragraph at lines 1315--1315
+ [] 
+ []
+
+[67
+
+ <./img/chisq_table__3.pdf>] [68
+
+] (./Lecture06.toc) [69
+
+] [70
 
 ]
-<Shreve_Bin.pdf, id=1765, 313.99701pt x 62.70848pt>
-File: Shreve_Bin.pdf Graphic file (type pdf)
-<use Shreve_Bin.pdf>
-Package pdftex.def Info: Shreve_Bin.pdf  used on input line 1773.
-(pdftex.def)             Requested size: 289.10114pt x 54.20284pt.
- [69
+<img/student_t__4.pdf, id=1586, 254.9525pt x 140.525pt>
+File: img/student_t__4.pdf Graphic file (type pdf)
+<use img/student_t__4.pdf>
+Package pdftex.def Info: img/student_t__4.pdf  used on input line 1364.
+(pdftex.def)             Requested size: 255.4498pt x 140.19656pt.
+ [71
 
- <./Shreve_Bin.pdf>] [70
+ <./img/student_t__4.pdf>]
+<img/Student_t_table__5.pdf, id=1597, 253.69781pt x 274.77657pt>
+File: img/Student_t_table__5.pdf Graphic file (type pdf)
+<use img/Student_t_table__5.pdf>
+Package pdftex.def Info: img/Student_t_table__5.pdf  used on input line 1373.
+(pdftex.def)             Requested size: 253.3875pt x 274.65009pt.
 
-] [71
+Overfull \vbox (51.89755pt too high) detected at line 1373
+ []
 
-]
 [72
 
-] [73
+ <./img/Student_t_table__5.pdf>] (./Lecture06.toc) [73
 
 ] [74
 
-] [75
+]
+<img/F-dist_pds__6.pdf, id=1632, 307.1475pt x 168.63pt>
+File: img/F-dist_pds__6.pdf Graphic file (type pdf)
+<use img/F-dist_pds__6.pdf>
+Package pdftex.def Info: img/F-dist_pds__6.pdf  used on input line 1404.
+(pdftex.def)             Requested size: 306.89366pt x 168.56525pt.
+ [75
 
-] [76
+ <./img/F-dist_pds__6.pdf>]
+<img/Fdist_table__7.pdf, id=1643, 305.64188pt x 164.11313pt>
+File: img/Fdist_table__7.pdf Graphic file (type pdf)
+<use img/Fdist_table__7.pdf>
+Package pdftex.def Info: img/Fdist_table__7.pdf  used on input line 1411.
+(pdftex.def)             Requested size: 305.44989pt x 164.43825pt.
+ [76
 
-] [77
+ <./img/Fdist_table__7.pdf>] (./Lecture06.toc) [77
 
 ] [78
 
-] [79
+]
+<img/lognormal_with_rug__8.pdf, id=1676, 366.36874pt x 201.75375pt>
+File: img/lognormal_with_rug__8.pdf Graphic file (type pdf)
+<use img/lognormal_with_rug__8.pdf>
+Package pdftex.def Info: img/lognormal_with_rug__8.pdf  used on input line 1439
+.
+(pdftex.def)             Requested size: 325.23419pt x 179.63414pt.
+
+[79
+
+ <./img/lognormal_with_rug__8.pdf>] (./Lecture06.toc) [80
+
+] [81
 
 ]
-<RelRVs_Diego.pdf, id=2304, 761.8479pt x 424.65508pt>
-File: RelRVs_Diego.pdf Graphic file (type pdf)
-<use RelRVs_Diego.pdf>
-Package pdftex.def Info: RelRVs_Diego.pdf  used on input line 2120.
-(pdftex.def)             Requested size: 325.20511pt x 166.2239pt.
- [80
+Overfull \vbox (3.97778pt too high) detected at line 1500
+ []
 
- <./RelRVs_Diego.pdf>]
+[82
+
+]
+<img/Exp_Diego.pdf, id=1719, 735.32921pt x 391.0116pt>
+File: img/Exp_Diego.pdf Graphic file (type pdf)
+<use img/Exp_Diego.pdf>
+Package pdftex.def Info: img/Exp_Diego.pdf  used on input line 1512.
+(pdftex.def)             Requested size: 325.21765pt x 179.63483pt.
+ [83
+
+ <./img/Exp_Diego.pdf>] (./Lecture06.toc) [84
+
+] [85
+
+]
+Overfull \vbox (4.18082pt too high) detected at line 1583
+ []
+
+[86
+
+]
+<img/Shreve_Bin.pdf, id=1795, 313.99701pt x 62.70848pt>
+File: img/Shreve_Bin.pdf Graphic file (type pdf)
+<use img/Shreve_Bin.pdf>
+Package pdftex.def Info: img/Shreve_Bin.pdf  used on input line 1618.
+(pdftex.def)             Requested size: 289.10114pt x 54.20284pt.
+ [87
+
+ <./img/Shreve_Bin.pdf>]
+Overfull \vbox (9.93806pt too high) detected at line 1649
+ []
+
+[88
+
+] [89
+
+] [90
+
+] [91
+
+] [92
+
+] [93
+
+] [94
+
+] [95
+
+] [96
+
+] [97
+
+]
+<img/RelRVs_Diego.pdf, id=2334, 761.8479pt x 424.65508pt>
+File: img/RelRVs_Diego.pdf Graphic file (type pdf)
+<use img/RelRVs_Diego.pdf>
+Package pdftex.def Info: img/RelRVs_Diego.pdf  used on input line 1922.
+(pdftex.def)             Requested size: 325.20511pt x 166.2239pt.
+ [98
+
+ <./img/RelRVs_Diego.pdf>]
 \tf@nav=\write6
-\openout6 = `Chapter05.nav'.
+\openout6 = `Lecture06.nav'.
 
 \tf@toc=\write7
-\openout7 = `Chapter05.toc'.
+\openout7 = `Lecture06.toc'.
 
 \tf@snm=\write8
-\openout8 = `Chapter05.snm'.
+\openout8 = `Lecture06.snm'.
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 2125.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 2125.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 1924.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 1924.
+(./Lecture06.aux)
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 1924.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 1924.
 
-(./Chapter05.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 2125.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 2125.
-
-Package rerunfilecheck Info: File `Chapter05.out' has not changed.
-(rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
+Package rerunfilecheck Info: File `Lecture06.out' has not changed.
+(rerunfilecheck)             Checksum: AE14FB7422CEBC789B430D1105F745DE;870.
 
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
  ) 
 Here is how much of TeX's memory you used:
- 21982 strings out of 480608
- 434557 string characters out of 5903630
- 679912 words of memory out of 5000000
- 37154 multiletter control sequences out of 15000+600000
- 545483 words of font info for 71 fonts, out of 8000000 for 9000
+ 22266 strings out of 480608
+ 441070 string characters out of 5903630
+ 684037 words of memory out of 5000000
+ 37357 multiletter control sequences out of 15000+600000
+ 546536 words of font info for 74 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 58i,15n,67p,869b,1085s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 58i,15n,67p,869b,1094s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb
 ></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmex7.
 pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cmextra/cme
@@ -1451,13 +1518,14 @@ al/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/loca
 l/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy5.pfb></usr/local/
 texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/local/te
 xlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/local/texl
-ive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy9.pfb></usr/local/texliv
-e/2020/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/local/te
-xlive/2020/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on Chapter05.pdf (80 pages, 3008904 bytes).
+ive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texliv
+e/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy9.pfb></usr/local/texlive/
+2020/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/local/texl
+ive/2020/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
+Output written on Lecture06.pdf (98 pages, 2716376 bytes).
 PDF statistics:
- 2439 PDF objects out of 2487 (max. 8388607)
- 1754 compressed objects within 18 object streams
- 161 named destinations out of 1000 (max. 500000)
- 271 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 2483 PDF objects out of 2487 (max. 8388607)
+ 1828 compressed objects within 19 object streams
+ 209 named destinations out of 1000 (max. 500000)
+ 406 words of extra memory for PDF output out of 10000 (max. 10000000)
 

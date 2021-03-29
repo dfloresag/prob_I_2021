@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020) (preloaded format=pdflatex 2020.8.26)  16 MAR 2021 22:43
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020) (preloaded format=pdflatex 2020.8.26)  25 MAR 2021 10:37
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -101,10 +101,6 @@ Package: ifvtex 2019/10/25 v1.7 ifvtex legacy package. Use iftex instead.
 \Gm@layoutvoffset=\dimen157
 \Gm@dimlist=\toks16
 )
-
-Class beamer Warning: This option is obsolete. Use beamer option ``show notes''
- instead. on input line 336.
-
 (/usr/local/texlive/2020/texmf-dist/tex/latex/base/size10.clo
 File: size10.clo 2019/12/20 v1.4l Standard LaTeX file (size option)
 )
@@ -722,22 +718,22 @@ File: l3backend-pdfmode.def 2020-03-12 L3 backend support: PDF mode
 (./Lecture05.aux)
 \openout1 = `Lecture05.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 134.
-LaTeX Font Info:    ... okay on input line 134.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 134.
-LaTeX Font Info:    ... okay on input line 134.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 134.
-LaTeX Font Info:    ... okay on input line 134.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 134.
-LaTeX Font Info:    ... okay on input line 134.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 134.
-LaTeX Font Info:    ... okay on input line 134.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 134.
-LaTeX Font Info:    ... okay on input line 134.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 134.
-LaTeX Font Info:    ... okay on input line 134.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 134.
-LaTeX Font Info:    ... okay on input line 134.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 136.
+LaTeX Font Info:    ... okay on input line 136.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 136.
+LaTeX Font Info:    ... okay on input line 136.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 136.
+LaTeX Font Info:    ... okay on input line 136.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 136.
+LaTeX Font Info:    ... okay on input line 136.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 136.
+LaTeX Font Info:    ... okay on input line 136.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 136.
+LaTeX Font Info:    ... okay on input line 136.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 136.
+LaTeX Font Info:    ... okay on input line 136.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 136.
+LaTeX Font Info:    ... okay on input line 136.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -788,7 +784,7 @@ LaTeX Font Info:    ... okay on input line 134.
 \everyMPtoPDFconversion=\toks45
 ) ABD: EveryShipout initializing macros
 \AtBeginShipoutBox=\box75
-Package hyperref Info: Link coloring OFF on input line 134.
+Package hyperref Info: Link coloring OFF on input line 136.
 
 (/usr/local/texlive/2020/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2019/09/16 v2.46 Cross-referencing by name of section
@@ -802,65 +798,65 @@ Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 )
 \c@section@level=\count325
 )
-LaTeX Info: Redefining \ref on input line 134.
-LaTeX Info: Redefining \pageref on input line 134.
-LaTeX Info: Redefining \nameref on input line 134.
+LaTeX Info: Redefining \ref on input line 136.
+LaTeX Info: Redefining \pageref on input line 136.
+LaTeX Info: Redefining \nameref on input line 136.
  (./Lecture05.out) (./Lecture05.out)
 \@outlinefile=\write5
 \openout5 = `Lecture05.out'.
 
 LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
-(Font)                  OT1/cmr/m/n --> OT1/cmss/m/n on input line 134.
+(Font)                  OT1/cmr/m/n --> OT1/cmss/m/n on input line 136.
 LaTeX Font Info:    Overwriting symbol font `operators' in version `bold'
-(Font)                  OT1/cmr/bx/n --> OT1/cmss/b/n on input line 134.
+(Font)                  OT1/cmr/bx/n --> OT1/cmss/b/n on input line 136.
 \symnumbers=\mathgroup6
 \sympureletters=\mathgroup7
 LaTeX Font Info:    Overwriting math alphabet `\mathrm' in version `normal'
-(Font)                  OT1/cmss/m/n --> OT1/cmr/m/n on input line 134.
-LaTeX Font Info:    Redeclaring math alphabet \mathbf on input line 134.
+(Font)                  OT1/cmss/m/n --> OT1/cmr/m/n on input line 136.
+LaTeX Font Info:    Redeclaring math alphabet \mathbf on input line 136.
 LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `normal'
-(Font)                  OT1/cmr/bx/n --> OT1/cmss/b/n on input line 134.
+(Font)                  OT1/cmr/bx/n --> OT1/cmss/b/n on input line 136.
 LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `bold'
-(Font)                  OT1/cmr/bx/n --> OT1/cmss/b/n on input line 134.
-LaTeX Font Info:    Redeclaring math alphabet \mathsf on input line 134.
+(Font)                  OT1/cmr/bx/n --> OT1/cmss/b/n on input line 136.
+LaTeX Font Info:    Redeclaring math alphabet \mathsf on input line 136.
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `normal'
-(Font)                  OT1/cmss/m/n --> OT1/cmss/m/n on input line 134.
+(Font)                  OT1/cmss/m/n --> OT1/cmss/m/n on input line 136.
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `bold'
-(Font)                  OT1/cmss/bx/n --> OT1/cmss/m/n on input line 134.
-LaTeX Font Info:    Redeclaring math alphabet \mathit on input line 134.
+(Font)                  OT1/cmss/bx/n --> OT1/cmss/m/n on input line 136.
+LaTeX Font Info:    Redeclaring math alphabet \mathit on input line 136.
 LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `normal'
-(Font)                  OT1/cmr/m/it --> OT1/cmss/m/it on input line 134.
+(Font)                  OT1/cmr/m/it --> OT1/cmss/m/it on input line 136.
 LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `bold'
-(Font)                  OT1/cmr/bx/it --> OT1/cmss/m/it on input line 134.
-LaTeX Font Info:    Redeclaring math alphabet \mathtt on input line 134.
+(Font)                  OT1/cmr/bx/it --> OT1/cmss/m/it on input line 136.
+LaTeX Font Info:    Redeclaring math alphabet \mathtt on input line 136.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `normal'
-(Font)                  OT1/cmtt/m/n --> OT1/cmtt/m/n on input line 134.
+(Font)                  OT1/cmtt/m/n --> OT1/cmtt/m/n on input line 136.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
-(Font)                  OT1/cmtt/m/n --> OT1/cmtt/m/n on input line 134.
+(Font)                  OT1/cmtt/m/n --> OT1/cmtt/m/n on input line 136.
 LaTeX Font Info:    Overwriting symbol font `numbers' in version `bold'
-(Font)                  OT1/cmss/m/n --> OT1/cmss/b/n on input line 134.
+(Font)                  OT1/cmss/m/n --> OT1/cmss/b/n on input line 136.
 LaTeX Font Info:    Overwriting symbol font `pureletters' in version `bold'
-(Font)                  OT1/cmss/m/it --> OT1/cmss/b/it on input line 134.
+(Font)                  OT1/cmss/m/it --> OT1/cmss/b/it on input line 136.
 LaTeX Font Info:    Overwriting math alphabet `\mathrm' in version `bold'
-(Font)                  OT1/cmss/b/n --> OT1/cmr/b/n on input line 134.
+(Font)                  OT1/cmss/b/n --> OT1/cmr/b/n on input line 136.
 LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `bold'
-(Font)                  OT1/cmss/b/n --> OT1/cmss/b/n on input line 134.
+(Font)                  OT1/cmss/b/n --> OT1/cmss/b/n on input line 136.
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `bold'
-(Font)                  OT1/cmss/m/n --> OT1/cmss/b/n on input line 134.
+(Font)                  OT1/cmss/m/n --> OT1/cmss/b/n on input line 136.
 LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `bold'
-(Font)                  OT1/cmss/m/it --> OT1/cmss/b/it on input line 134.
+(Font)                  OT1/cmss/m/it --> OT1/cmss/b/it on input line 136.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
-(Font)                  OT1/cmtt/m/n --> OT1/cmtt/b/n on input line 134.
-LaTeX Font Info:    Redeclaring symbol font `pureletters' on input line 134.
+(Font)                  OT1/cmtt/m/n --> OT1/cmtt/b/n on input line 136.
+LaTeX Font Info:    Redeclaring symbol font `pureletters' on input line 136.
 LaTeX Font Info:    Overwriting symbol font `pureletters' in version `normal'
 (Font)                  OT1/cmss/m/it --> OT1/mathkerncmss/m/sl on input line 1
-34.
+36.
 LaTeX Font Info:    Overwriting symbol font `pureletters' in version `bold'
 (Font)                  OT1/cmss/b/it --> OT1/mathkerncmss/m/sl on input line 1
-34.
+36.
 LaTeX Font Info:    Overwriting symbol font `pureletters' in version `bold'
 (Font)                  OT1/mathkerncmss/m/sl --> OT1/mathkerncmss/bx/sl on inp
-ut line 134.
+ut line 136.
 
 (/usr/local/texlive/2020/texmf-dist/tex/latex/translator/translator-basic-dicti
 onary-English.dict
@@ -888,37 +884,36 @@ Dictionary: translator-theorem-dictionary, Language: English
 ) (./Lecture05.nav)
 
 Package hyperref Warning: Option `pdfauthor' has already been used,
-(hyperref)                setting the option has no effect on input line 138.
+(hyperref)                setting the option has no effect on input line 140.
 
 [1
 
 {/usr/local/texlive/2020/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
-(./Lecture05.toc) [2
-
-]
-LaTeX Font Info:    Trying to load font information for U+msa on input line 183
+LaTeX Font Info:    Trying to load font information for U+msa on input line 157
 .
 
 (/usr/local/texlive/2020/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 183
+LaTeX Font Info:    Trying to load font information for U+msb on input line 157
 .
 
 (/usr/local/texlive/2020/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
 LaTeX Font Info:    Trying to load font information for OT1+mathkerncmss on inp
-ut line 183.
+ut line 157.
 
 (/usr/local/texlive/2020/texmf-dist/tex/latex/sansmathaccent/ot1mathkerncmss.fd
 File: ot1mathkerncmss.fd 2020/01/31 Fontinst v1.933 font definitions for OT1/ma
 thkerncmss.
-) [3
+) [2
+
+] (./Lecture05.toc) [3
 
 ] [4
 
-] [5
+] (./Lecture05.toc) [5
 
 ] [6
 
@@ -930,74 +925,83 @@ thkerncmss.
 
 ] [10
 
-] [11
+]
+[11
 
-] [12
+]
+<img/discrete_uniforms__1.pdf, id=388, 181.67876pt x 223.83624pt>
+File: img/discrete_uniforms__1.pdf Graphic file (type pdf)
+<use img/discrete_uniforms__1.pdf>
+Package pdftex.def Info: img/discrete_uniforms__1.pdf  used on input line 264.
+(pdftex.def)             Requested size: 189.31291pt x 209.5454pt.
+ [12
 
-] [13
+ <./img/discrete_uniforms__1.pdf>] [13
 
-] [14
+] (./Lecture05.toc) [14
 
 ] [15
 
-] [16
+]
+[16
 
 ] [17
 
 ] [18
 
-]
-[19
+] [19
 
-] [20
+] (./Lecture05.toc) [20
 
 ] [21
 
-] [22
+]
+
+Package amsmath Warning: Foreign command \atopwithdelims;
+(amsmath)                \frac or \genfrac should be used instead
+(amsmath)                 on input line 413.
+
+
+LaTeX Font Warning: Font shape `OT1/cmss/bx/it' undefined
+(Font)              using `OT1/cmss/b/it' instead on input line 413.
+
+
+LaTeX Font Warning: Font shape `OT1/cmss/b/it' undefined
+(Font)              using `OT1/cmss/m/n' instead on input line 413.
+
+
+LaTeX Font Warning: Font shape `OT1/cmss/bx/it' undefined
+(Font)              using `OT1/cmss/b/it' instead on input line 413.
+
+[22
+
+] [23
+
+] [24
+
+] [25
+
+] [26
 
 ]
-<img/scan2.pdf, id=634, 549.1263pt x 255.8041pt>
-File: img/scan2.pdf Graphic file (type pdf)
-<use img/scan2.pdf>
-Package pdftex.def Info: img/scan2.pdf  used on input line 295.
-(pdftex.def)             Requested size: 292.57729pt x 170.25198pt.
- [23
-
- <./img/scan2.pdf>]
-File: img/scan2.pdf Graphic file (type pdf)
-<use img/scan2.pdf>
-Package pdftex.def Info: img/scan2.pdf  used on input line 295.
-(pdftex.def)             Requested size: 292.57729pt x 170.25198pt.
- [24
-
-]
-File: img/scan2.pdf Graphic file (type pdf)
-<use img/scan2.pdf>
-Package pdftex.def Info: img/scan2.pdf  used on input line 295.
-(pdftex.def)             Requested size: 292.57729pt x 170.25198pt.
- [25
-
-]
-File: img/scan2.pdf Graphic file (type pdf)
-<use img/scan2.pdf>
-Package pdftex.def Info: img/scan2.pdf  used on input line 295.
-(pdftex.def)             Requested size: 292.57729pt x 170.25198pt.
- [26
-
-]
-<img/C.pdf, id=759, 400.38232pt x 102.0903pt>
-File: img/C.pdf Graphic file (type pdf)
-<use img/C.pdf>
-Package pdftex.def Info: img/C.pdf  used on input line 317.
-(pdftex.def)             Requested size: 275.35992pt x 78.58015pt.
+<img/distbin.pdf, id=807, 593.21625pt x 418.56375pt>
+File: img/distbin.pdf Graphic file (type pdf)
+<use img/distbin.pdf>
+Package pdftex.def Info: img/distbin.pdf  used on input line 507.
+(pdftex.def)             Requested size: 258.15561pt x 157.15262pt.
  [27
 
- <./img/C.pdf>]
-[28
+ <./img/distbin.pdf>] [28
 
-] [29
+]
+<img/BINOMIALpic__1.pdf, id=866, 309.02953pt x 140.47481pt>
+File: img/BINOMIALpic__1.pdf Graphic file (type pdf)
+<use img/BINOMIALpic__1.pdf>
+Package pdftex.def Info: img/BINOMIALpic__1.pdf  used on input line 551.
+(pdftex.def)             Requested size: 309.02876pt x 140.47446pt.
+ [29
 
-] [30
+ <./img/BINOMIALpic__1.pdf>] [30
 
 ] [31
 
@@ -1011,20 +1015,29 @@ Package pdftex.def Info: img/C.pdf  used on input line 317.
 
 ] [36
 
-] [37
+] (./Lecture05.toc) [37
 
-] [38
+]
+Overfull \vbox (8.34355pt too high) detected at line 846
+ []
+
+[38
 
 ] [39
 
-] [40
+]
+<img/distpois.pdf, id=1171, 593.21625pt x 418.56375pt>
+File: img/distpois.pdf Graphic file (type pdf)
+<use img/distpois.pdf>
+Package pdftex.def Info: img/distpois.pdf  used on input line 871.
+(pdftex.def)             Requested size: 258.14648pt x 182.15039pt.
+ [40
 
-] [41
+ <./img/distpois.pdf>] [41
 
 ] [42
 
-]
-[43
+] [43
 
 ] [44
 
@@ -1036,42 +1049,29 @@ Package pdftex.def Info: img/C.pdf  used on input line 317.
 
 ] [48
 
-] [49
+]
+(./Lecture05.toc) [49
 
 ] [50
 
 ] [51
 
-]
-<img/repartbis.pdf, id=1435, 449.68pt x 324.21124pt>
-File: img/repartbis.pdf Graphic file (type pdf)
-<use img/repartbis.pdf>
-Package pdftex.def Info: img/repartbis.pdf  used on input line 759.
-(pdftex.def)             Requested size: 172.09467pt x 130.96349pt.
- [52
+] [52
 
- <./img/repartbis.pdf>]
-
-LaTeX Font Warning: Font shape `OT1/cmss/bx/it' undefined
-(Font)              using `OT1/cmss/b/it' instead on input line 783.
-
-
-LaTeX Font Warning: Font shape `OT1/cmss/b/it' undefined
-(Font)              using `OT1/cmss/m/n' instead on input line 783.
-
-[53
-
-] [54
+] [53
 
 ]
-<img/Quantiles_Discr.pdf, id=1523, 597.50786pt x 845.04686pt>
-File: img/Quantiles_Discr.pdf Graphic file (type pdf)
-<use img/Quantiles_Discr.pdf>
-Package pdftex.def Info: img/Quantiles_Discr.pdf  used on input line 826.
-(pdftex.def)             Requested size: 172.09671pt x 248.82246pt.
- [55
+<img/URNpic_2.pdf, id=1561, 158.76816pt x 159.52097pt>
+File: img/URNpic_2.pdf Graphic file (type pdf)
+<use img/URNpic_2.pdf>
+Package pdftex.def Info: img/URNpic_2.pdf  used on input line 1098.
+(pdftex.def)             Requested size: 137.67603pt x 138.32936pt.
+ [54
 
- <./img/Quantiles_Discr.pdf>] [56
+ <./img/URNpic_2.pdf>] [55
+
+]
+(./Lecture05.toc) [56
 
 ] [57
 
@@ -1079,18 +1079,22 @@ Package pdftex.def Info: img/Quantiles_Discr.pdf  used on input line 826.
 
 ] [59
 
-] [60
+]
+Overfull \hbox (1.97562pt too wide) detected at line 1187
+\OT1/mathkerncmss/m/sl/10 X \OT1/cmss/b/it/10 = []\OML/cmm/m/it/10 :
+ []
+
+[60
 
 ] [61
 
-]
-[62
+] [62
 
 ] [63
 
 ] [64
 
-] [65
+] (./Lecture05.toc) [65
 
 ] [66
 
@@ -1102,163 +1106,6 @@ Package pdftex.def Info: img/Quantiles_Discr.pdf  used on input line 826.
 
 ] [70
 
-] [71
-
-] [72
-
-] [73
-
-] [74
-
-] [75
-
-] [76
-
-]
-[77
-
-] [78
-
-]
-<img/discrete_uniforms__1.pdf, id=2237, 181.67876pt x 223.83624pt>
-File: img/discrete_uniforms__1.pdf Graphic file (type pdf)
-<use img/discrete_uniforms__1.pdf>
-Package pdftex.def Info: img/discrete_uniforms__1.pdf  used on input line 1116.
-
-(pdftex.def)             Requested size: 189.31291pt x 209.5454pt.
- [79
-
- <./img/discrete_uniforms__1.pdf>] [80
-
-] [81
-
-] [82
-
-] [83
-
-] [84
-
-]
-[85
-
-] [86
-
-] [87
-
-] [88
-
-] [89
-
-] [90
-
-] [91
-
-] [92
-
-] [93
-
-]
-<img/distbin.pdf, id=2642, 593.21625pt x 418.56375pt>
-File: img/distbin.pdf Graphic file (type pdf)
-<use img/distbin.pdf>
-Package pdftex.def Info: img/distbin.pdf  used on input line 1401.
-(pdftex.def)             Requested size: 258.15561pt x 157.15262pt.
- [94
-
- <./img/distbin.pdf>] [95
-
-]
-<img/BINOMIALpic__1.pdf, id=2701, 309.02953pt x 140.47481pt>
-File: img/BINOMIALpic__1.pdf Graphic file (type pdf)
-<use img/BINOMIALpic__1.pdf>
-Package pdftex.def Info: img/BINOMIALpic__1.pdf  used on input line 1447.
-(pdftex.def)             Requested size: 309.02876pt x 140.47446pt.
-
-[96
-
- <./img/BINOMIALpic__1.pdf>] [97
-
-] [98
-
-] [99
-
-] [100
-
-] [101
-
-] [102
-
-] [103
-
-] [104
-
-]
-[105
-
-]
-<img/distpois.pdf, id=2973, 593.21625pt x 418.56375pt>
-File: img/distpois.pdf Graphic file (type pdf)
-<use img/distpois.pdf>
-Package pdftex.def Info: img/distpois.pdf  used on input line 1779.
-(pdftex.def)             Requested size: 258.14648pt x 182.15039pt.
- [106
-
- <./img/distpois.pdf>] [107
-
-] [108
-
-] [109
-
-] [110
-
-] [111
-
-] [112
-
-] [113
-
-]
-[114
-
-] [115
-
-] [116
-
-]
-<img/URNpic_2.pdf, id=3276, 158.76816pt x 159.52097pt>
-File: img/URNpic_2.pdf Graphic file (type pdf)
-<use img/URNpic_2.pdf>
-Package pdftex.def Info: img/URNpic_2.pdf  used on input line 2023.
-(pdftex.def)             Requested size: 137.67603pt x 138.32936pt.
- [117
-
- <./img/URNpic_2.pdf>] [118
-
-] [119
-
-] [120
-
-] [121
-
-]
-Overfull \hbox (1.97562pt too wide) detected at line 2131
-\OT1/mathkerncmss/m/sl/10 X \OT1/cmss/m/n/10 = []\OML/cmm/m/it/10 :
- []
-
-[122
-
-] [123
-
-] [124
-
-] [125
-
-] [126
-
-] [127
-
-] [128
-
 ]
 \tf@nav=\write6
 \openout6 = `Lecture05.nav'.
@@ -1269,52 +1116,53 @@ Overfull \hbox (1.97562pt too wide) detected at line 2131
 \tf@snm=\write8
 \openout8 = `Lecture05.snm'.
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 2240.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 2240.
- (./Lecture05.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 2240.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 2240.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 1304.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 1304.
+
+(./Lecture05.aux)
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 1304.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 1304.
 
 Package rerunfilecheck Info: File `Lecture05.out' has not changed.
-(rerunfilecheck)             Checksum: 814F8D270284AA36863ADA8D331FBDF2;126.
+(rerunfilecheck)             Checksum: A32741DABAFF4F967CB424475709F207;332.
 
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
  ) 
 Here is how much of TeX's memory you used:
- 18934 strings out of 480608
- 363109 string characters out of 5903630
- 614921 words of memory out of 5000000
- 34078 multiletter control sequences out of 15000+600000
- 546536 words of font info for 74 fonts, out of 8000000 for 9000
+ 18793 strings out of 480608
+ 361373 string characters out of 5903630
+ 610731 words of memory out of 5000000
+ 34041 multiletter control sequences out of 15000+600000
+ 544829 words of font info for 68 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 58i,17n,67p,861b,864s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 58i,17n,67p,850b,789s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb
-></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb>
-</usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></
-usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi9.pfb></us
-r/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/
-local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/loc
-al/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmss10.pfb></usr/loca
-l/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmss12.pfb></usr/local
-/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmss8.pfb></usr/local/t
-exlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmss9.pfb></usr/local/tex
-live/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmssbx10.pfb></usr/local/te
-xlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmssi10.pfb></usr/local/te
-xlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmssi12.pfb></usr/local/te
-xlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmssi8.pfb></usr/local/tex
-live/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmssi9.pfb></usr/local/texl
-ive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texli
-ve/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy5.pfb></usr/local/texlive
-/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/local/texlive/2
-020/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/local/texlive/202
-0/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy9.pfb></usr/local/texlive/2020/
-texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on Lecture05.pdf (128 pages, 897150 bytes).
+></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmex8.
+pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.p
+fb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb
+></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb><
+/usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></u
+sr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi9.pfb></usr
+/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmss10.pfb></usr/
+local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmss12.pfb></usr/l
+ocal/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmss8.pfb></usr/loc
+al/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmss9.pfb></usr/local
+/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmssbx10.pfb></usr/loca
+l/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmssi10.pfb></usr/loca
+l/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmssi8.pfb></usr/local
+/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmssi9.pfb></usr/local/
+texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/t
+exlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/local/tex
+live/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/local/texli
+ve/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive
+/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy9.pfb></usr/local/texlive/2
+020/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
+Output written on Lecture05.pdf (70 pages, 444211 bytes).
 PDF statistics:
- 3713 PDF objects out of 4296 (max. 8388607)
- 3470 compressed objects within 35 object streams
- 262 named destinations out of 1000 (max. 500000)
- 150 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 2128 PDF objects out of 2487 (max. 8388607)
+ 1981 compressed objects within 20 object streams
+ 150 named destinations out of 1000 (max. 500000)
+ 170 words of extra memory for PDF output out of 10000 (max. 10000000)
 

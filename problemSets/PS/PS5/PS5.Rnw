@@ -149,7 +149,7 @@ P(X=k)=e^{-\lambda} \frac{\lambda^{k}}{k!} \quad \text{for} \quad k=0,1,...
   \item Check that $P(X=k)$ is a probability function.
   \item Prove that its expectation is equal to $\lambda$.
   \item Find the variance of $X$.
-  \item Compare the expectation and the variance of $X$ with the expectation and the variance of $S$, for a very large $n$. Here $S \sim Binomial(n,p)$.
+  \item Compare the expectation and the variance of $X$ with the expectation and the variance of $S$, for a very large $n$. Here $S \sim \mathcal{B}(n,p)$.
 \end{enumerate}
 
 
