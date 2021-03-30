@@ -1,119 +1,196 @@
 # 🔧 Continuous Random Variable {#continuousrv}
+```{r, include = FALSE, message = FALSE, warning = FALSE}
+library(tidyverse)
+```
+
+
 
 ```{r ,echo = FALSE, fig.cap="'Statistical Cow' by Enrico Chavez", fig.align='center', out.width = "80%"}
   knitr::include_graphics("img/fun/EC_Stat_Cow.png")
 ```
 
-## Continuous Distributions
+## Two Motivating Examples
 
-```{example}
-[Standard \& Poors 500 returns]
-Let us consider the returns of the S\&P 500 index for all the trading days in 1990, 1991,...,1999. Here below, the plot of the returns (in $\%$ on the y-axis)
+```{example, name = "Standard & Poors 500 returns"}
+
+Let us consider the returns of the S\&P 500 index for all the trading days in 1990, 1991,...,1999.
+
+Here below, the plot of the returns (in $\%$ on the y-axis)
 series over time:
-\begin{figure}[ptb]\centering
-\includegraphics[width=0.5\textwidth,height=0.5\textheight]{R1.pdf}
-\end{figure}
-
-Then, we analyze their distribution (e.g., some returns are more likely than some others?) via the histogram 
-\begin{figure}[ptb]\centering
-\includegraphics[width=0.65\textwidth,height=0.55\textheight]{sp_hist1.pdf}
-\end{figure}
-... with 30 bins ...
-
-Then, we analyze their distribution via the histogram
-
-\begin{figure}[ptb]\centering
-\includegraphics[width=0.65\textwidth,height=0.55\textheight]{sp_hist2.pdf}
-\end{figure}
-... with 300 bins ...
-
-\begin{figure}[ptb]\centering
-\includegraphics[width=0.65\textwidth,height=0.55\textheight]{R3_ks.pdf}
-\end{figure}
-... with an infinite number of bins (in fact, we are estimating a curve) 
 ```
 
+```{r ,echo = FALSE, fig.cap='', fig.align='center', out.width = "80%"}
+sp_data <- MASS::SP500 %>%
+  as_tibble() %>%
+  mutate(day = row_number())
 
-```{example}
-[Cafeteria]
+sp_data %>%
+  ggplot() +
+  geom_line(aes(x = day ,y =  value), color = "deeppink3", alpha = 0.75) +
+  theme_minimal() +
+  labs(title = "Daily Returns of the S&P 500 index between 1990 - 1999",
+       y = "Returns", x = "Day")
+
+```
+
+Let's try to count the relative frequency of each of these returns, in an   attempt to  estimate the probability of each value of the return.
+
+```{r ,echo = FALSE, fig.cap='', fig.align='center', out.width = "80%"}
+sp_data %>%
+  count(value) %>%
+  mutate(relative_frequency = n/sum(n)) %>%
+  ggplot() +
+  geom_col(aes(x =  value, y =relative_frequency), color = "deeppink3", alpha = 0.75) +
+  theme_minimal() +
+  labs(title = "Relative frequency of returns of the S&P 500 index", 
+       y = "Relative frequency", x = "Returns")
+```
+
+We notice that there are too many different values for the returns. This yields 
+a low value and "uniform" relative frequency which does not help us gain any insight on the probability distribution of the values. Moreover, we could be almost sure that a future return would not have any of the values already obtained. 
+
+However, we notice that there's some _concentration_, i.e. there are more returns in the 
+neighborhood of zero, as there are in the extreme corners of the possible values. To quantify this concentration, we can create a _histogram_ by splitting the space of possible values into a given number of intervals, or ``bins'', and counting the number of observations within a bin. 
+
+If we consider 30 bins, we obtain the following plot: 
+
+```{r ,echo = FALSE, fig.cap='', fig.align='center', out.width = "80%"}
+
+sp_data %>%
+  ggplot() +
+  geom_histogram(aes(x =  value), bins = 30, fill = "deeppink3", alpha = 0.75) +
+  theme_minimal() +
+  labs(title = "Histogram returns of the S&P 500 index",
+       subtitle="30 bins",
+       y = "Frequency", x = "Returns")
+
+```
+
+If we consider separating the space of returns into 300 `bins`, we obtain the 
+following plot: 
+
+```{r ,echo = FALSE, fig.cap='', fig.align='center', out.width = "80%"}
+  sp_data %>%
+  ggplot() +
+  geom_histogram(aes(x =  value), bins = 300, fill = "deeppink3", alpha = 0.75) +
+  theme_minimal() +
+  labs(title = "Histogram returns of the S&P 500 index",
+       subtitle="300 bins",
+       y = "Frequency", x = "Returns")
+```
+
+We could go further and affine the number of bins and the method of counting. 
+One of the options is to estimate a so-called _Density Curve_, which among other
+considerations, chooses to split the space into an infinite amount of bins.
+
+
+```{r ,echo = FALSE, fig.cap='', fig.align='center', out.width = "80%"}
+sp_data %>%
+  ggplot() +
+  geom_density(aes(x =  value), fill = "deeppink3", alpha = 0.75) +
+  theme_minimal() +
+  labs(title = "Density Plot: returns of the S&P 500 index",
+       y = "Frequency", x = "Returns")
+```
+
+This plot is much more interesting, as it clearly shows that the returns are 
+quite concentrated around 0. 
+
+```{example, name = "Arrivals to the Cafeteria"}
 Let us consider a serious/significant issue: the arrivals to the cafeteria UniMail, from 10AM to 2PM
 \begin{eqnarray*}
 \mbox{relative freq}&=& \frac{\mbox{# customers incoming }}{\mbox{# total of customers}}
 \end{eqnarray*}
 
-\begin{aes}
-We want to study the distribution of this object over the considered time interval. E.g. we would like to know when the relative frequency has a pick...
-\end{aes}
 
+We want to study the distribution of this object over the considered time interval. 
+E.g. we would like to know when the relative frequency has a peak and when that peak happens.
 
-\begin{figure}[ptb]\centering
-\includegraphics[width=0.75\textwidth,height=0.75\textheight]{hist1.pdf}
-\end{figure}
+Once again, we can display this phenomenon as a histogram: 
 
-\begin{figure}[ptb]\centering
-\includegraphics[width=0.75\textwidth,height=0.75\textheight]{hist2.pdf}
-\end{figure}
-
-
-\begin{figure}
-\includegraphics[width=0.75\textwidth,height=0.75\textheight]{hist3.pdf}
-\end{figure}
+```
+```{r ,echo = FALSE, fig.cap='', fig.align='center', out.width = "80%"}
+  knitr::include_graphics("img/05_continuous_rv/hist1.png")
 ```
 
+And we can affine our analysis by increasing the number of bins.  
 
-The mentioned random variables provide two examples of a class of random variables which are different from what we have seen so far. 
-Specifically, the examples emphasize that,
-unlike discrete random variables, the considered variables are **continuous random variables**:
-they can take any value in an interval.
+```{r ,echo = FALSE, fig.cap='', fig.align='center', out.width = "80%"}
+  knitr::include_graphics("img/05_continuous_rv/hist2.png")
+```
 
-This means we cannot simply _list_ all possible values of the
-random variable, because there are (infinitely many) an uncountable number of possible outcomes that might occur. 
+In the last one, we see that there is clearly a peak around 12h. If we would like 
+to allocate ressources (e.g. hire more service workers to adapt to the demand),
+we'd like to call the workers to provide service around those hours. 
 
-We construct a probability distribution by assigning a positive probability to each and every possible interval of values that can occur. This is done by defining what is called a \textbf{probability distribution function}. 
+```{r ,echo = FALSE, fig.cap='', fig.align='center', out.width = "80%"}
+  knitr::include_graphics("img/05_continuous_rv/hist3.png")
+```
 
-So, graphically, we have
+These examples are illustrations of a class of random variables which are 
+different from what we have seen so far. Specifically, the examples emphasise that,
+unlike discrete random variables, the considered variables are 
+**continuous random variables** i.e. they can take any value in an interval.
 
-\begin{figure}
-\hspace{1cm} Discrete \hspace{3cm} Continuous\\
-\includegraphics[width=0.75\textwidth,height=0.5\textheight]{discr_vs_cont.pdf}
-\end{figure}
+This means we cannot simply _list_ all possible values of the random variable, 
+because there are (infinitely many) an uncountable number of possible outcomes 
+that might occur. 
+
+However, what we can do is to construct a probability distribution by assigning 
+a positive **probability to each and every possible interval** of values that 
+can occur. This is done by defining the **Cumulative Distribution Function (CDF)**, which is sometimes called  **Probability Distribution Function**. 
+
+So, graphically, we have that the **Discrete Random Variables** have a distribution that allocates the **probability** to the **values**, represented by *bars*, whereas **Continuous Random Variables** have a distribution that allocates probability to **intervals**, represented by the **area below the density curve** enclosed by the interval. 
+
+```{r ,echo = FALSE, fig.cap='', fig.align='center', out.width = "80%"}
+  knitr::include_graphics("img/05_continuous_rv/discr_vs_cont-1.png")
+```
 
 ## Cumulative Distribution Function (CDF)
 
-```{definition}
- Let $X$ be a continuous random variable and let $x\in \mathbb{R}$, here $x$ denotes any number somewhere on the real line $\mathbb{R}=(-\infty,\infty)$. The Probability Distribution Function (synonymously, the Cumulative Distribution Function
-{\color{red} CDF}) of $X$ at the point $x$ is a continuous function
-$\color{red}{F_{X}\left( x\right)}$
-
-defined such that
+```{definition, label="CDF"}
+ Let $X$ be a continuous random variable and let $x\in \mathbb{R}$, here $x$ denotes any number somewhere on the real line $\mathbb{R}=(-\infty,\infty)$. The "Probability Distribution Function" synonymously, the **Cumulative Distribution Function (CDF) of $X$ at the point $x$** is a continuous function $\color{red}{F_{X}\left( x\right)}$ defined such that:
  
--  $\color{red}F_{X}\left( -\infty\right)=0$ and $\color{red}F_{X}\left(\infty\right)=1$,
--  $0\leq \color{red}F_{X}\left( x\right) \leq 1$ for all $x\in \mathbb{R}$ and
--  the function is monotonically non-decreasing in $x$ and the value $\color{red}F_{X}\left( x\right) $ yields the probability that $X$ lies in the interval $(-\infty,x]$, i.e.%
-$$ \color{red} F_{X}\left( x\right)\geq \color{red}F_{X}\left( x'\right)\quad\mbox{for all}\quad x>x'$$
-and
-$$\Pr\left( X\leq x\right)=\color{red}F_{X}\left( x\right) .,$$
-
+-  $\lim_{x\rightarrow -\infty}\color{red}{F_{X}\left( x\right)}=0$ and $\lim_{x\rightarrow +\infty}\color{red}{F_{X}\left( x\right)}=1$,
+-  $0\leq \color{red}{F_{X}\left( x\right)} \leq 1$ for all $x\in \mathbb{R}$ and
+- the function is monotonically non-decreasing in $x$, i.e. 
+  $$\color{red}{F_{X}\left( x\right)}\geq \color{red}{F_{X}\left( x'\right)}\quad\mbox{for all}\quad x>x'$$
+  and the value $\color{red}{F_{X}\left( x\right)}$ yields the probability that $X$ lies in the interval $(-\infty,x]$, i.e
+$$\color{red}{F_{X}\left( x\right)}=P\left( X\leq x\right)$$
 ```
 
+```{r ,echo = FALSE, fig.cap='', fig.align='center', out.width = "80%"}
+seq(-5, 5, by=0.05) %>%
+  as_tibble() %>%
+  rename(x = value) %>%
+  mutate(p_x = pnorm(x)) %>%
+  ggplot(aes(x = x, y = p_x)) +
+  geom_line(color = "red", lwd = 1.5) +
+  theme_minimal() +
+  labs(title= "Cumulative Distribution Function (CDF)",
+       x = "x",
+       y = expression(F[X](x)==P(X<=x))) +
+  theme_minimal()
+```
+
+```{definition, label="PDF"}
 Let $X$ be a random variable taking values in the interval $(a,b]$ since:
 
 -  $\color{red}{F_{X}\left( x\right)}$ is zero for all $x<a$ 
 -  $0<\color{red}{F_{X}\left( x\right)}<1$ for all $x$ in $(a,b)$ and 
 -  $\color{red}{F_{X}\left( x\right)}=1$ for all $x\geq b$.
 
-Then, the Probability Density Function (\color{blue}pdf) of $X$ at the point $x$ is defined as
+Then, the Probability Density Function (pdf) of $X$ at the point $x$ is defined as
 
-$$f_{X}\left( x\right) =\frac{d\color{red}{F_{X}(x)}}{dx}.$$
+$$\color{blue}{f_{X}\left( x\right)} =\frac{d\color{red}{F_{X}(x)}}{dx}.$$
+```
 
-\frametitle{Probability Density Function (pdf)}
+Graphically, if we represent the values of the pdf with a curve, the CDF will be the area beneath it in the interval considered. 
+
+```{r ,echo = FALSE, fig.cap='', fig.align='center', out.width = "80%"}
+ knitr::include_graphics("img/05_continuous_rv/generic_CDF2-1.png")
+```
  
- ... an illustration ...
- 
-\begin{figure}[ptb]\centering
-\includegraphics[width=0.95\textwidth,height=0.75\textheight]{generic_CDF2.pdf}
-\end{figure}
-
 <!-- % -->
 <!-- %-  Let $X$ be a continuous random variable with continuous CDF $F_{X}\left( x\right)$. -->
 <!-- % -->
@@ -142,123 +219,90 @@ $$f_{X}\left( x\right) =\frac{d\color{red}{F_{X}(x)}}{dx}.$$
 <!-- %\includegraphics[width=0.95\textwidth]{generic_pdf__1.pdf}% -->
 <!-- %\end{figure}% -->
 
+Another way of seeing this relationship is with the following plot, where the value of the area undereneath the density is mapped into a new curve that will represent the CDF.
 
-\frametitle{Probability Density Function (pdf)}
- 
- ... \textit{repetita juvant} ...
- 
-\begin{figure}[ptb]\centering
-\includegraphics[width=0.7\textwidth,height=0.65\textheight]{Diego_F.pdf}%
-\end{figure}%
+```{r ,echo = FALSE, fig.cap='', fig.align='center', out.width = "80%"}
+knitr::include_graphics("img/05_continuous_rv/Diego_F-1.png")
+```
 
-<!-- %\frametitle{Probability Density Function (pdf)} -->
-<!-- %  -->
-<!-- % ... and a cartoon ... -->
-<!-- %  -->
-<!-- %\begin{figure}[ptb]\centering -->
-<!-- %\includegraphics[natheight=7.6in, natwidth=13.4859in, height=2.4in, width=4.67in]{aaa.pdf}% -->
-<!-- %\end{figure}% -->
-<!-- % -->
-<!-- % -->
+From a formal mathematical standpoint, the relationship between PDF and CDF is given by the **_fundamental theorem of integral calculus_**. In the illustration $X$ is a random variable taking values in the interval $(a,b]$, and the pdf $f_{X}\left(x\right)$ is non-zero only in $(a,b)$. More generally we have, for a variable taking values on the whole real line ($\mathbb{R}$): 
 
-In the illustration $X$ is a random variable taking values in the interval $(a,b]$, and the pdf $f_{X}\left( x\right) $ is non-zero only in $(a,b)$. More generally we have, for a variable taking values on the whole real line ($\mathbb{R}$) 
+-  the **_fundamental theorem of integral calculus_** yields
 
-<!-- %by the \textbf{\emph{fundamental theorem of integral calculus}}:% -->
-<!-- %\begin{equation*} -->
-<!-- %F_{X}(x)=\int_{-\infty}^{x}f_{X}\left( t\right) dt -->
-<!-- %\end{equation*} -->
-<!-- %for any value of $x\in \mathbb{R}$. Thus we  deduce that the PDF $f_{X}\left( x\right) $ is such that -->
-<!-- % -->
-<!-- %-  $f_{X}\left( x\right) \geq 0$ for all $x\in \mathbb{R}$ -->
-<!-- %-  The total area under the curve $f_{X}\left( x\right) $ is 1, i.e. $ -->
-<!-- %\int_{-\infty }^{\infty }f_{X}\left( x\right) dx=1.$ -->
-<!-- %-  Note that for some intervals of the real line, we can have $f_{X}\left( x\right) =0$. -->
-<!-- % -->
-<!-- %Moreover (see the previous graphical illustration), recall that: -->
-
-
--  the \textbf{\emph{fundamental theorem of integral calculus}} yields
-\color{red}
-$$F_{X}\left( x\right) =\Pr \left( X\leq x\right) =\int_{-\infty}^{x}\color{blue}f_{X}\left(
-t\right)\color{red} dt,$$%
-
+$$\color{red}{F_{X}\left( x\right)} =P\left( X\leq x\right) =\int_{-\infty}^{x}\color{blue}{f_{X}\left(
+t\right)}dt,$$
 the area under the CDF between $-\infty$ and $x$ 
 
 -  or in terms of derivative
 $$\color{blue}{f_{X}\left( x\right)} = \frac{d\color{red}{F_{X}(x)}}{dx}$$ 
 
-for all $x$, the derivative of the CDF\footnote{From now on, no more red and blue color}.
+Most of the PDF's that we are going to consider are bell-shaped. So, typically, we will have 
 
-\frametitle{Probability Density Function (pdf)}
+```{r ,echo = FALSE, fig.cap='', fig.align='center', out.width = "80%"}
+knitr::include_graphics("img/05_continuous_rv/R_bell_pdf-1.png")
+```
 
-Most of the pdfs that we are going to consider are bell-shaped. So, typically, we will have 
+```{r ,echo = FALSE, fig.cap='', fig.align='center', out.width = "80%"}
+knitr::include_graphics("img/05_continuous_rv/R_bell_CDF-1.png")
+```
 
-\begin{figure}[h]
-\begin{center}
-\begin{tabular}{cc}
-\includegraphics[width=5cm, height=5.cm]{R_bell_pdf} & \includegraphics[width=5cm, height=5cm]{R_bell_CDF.pdf} \\
-\end{tabular}
-\end{center}
-\par
-\end{figure}
+## Distributional Summaries
 
-\frametitle{The mean (or expected) value}
 
-For **discrete** random variables, we use summation:
+### The Expectation
+
+Recall that for **Discrete** random variables, the Expectation results from **summing the product of $x_{i}$ and $p_{i}=P(X=x_{i})$**, for all **possible values $x_{i}$**
 
 \begin{equation*}
-E\left[ X\right] =\sum_{i}x_{i}p_{i}
+  E\left[ X\right] =\sum_{i}x_{i}p_{i}
 \end{equation*}
 
--  the mean (or expected) value of a discrete random variable $X$
--  is found by summing the product of $x_{i}$ and $p_{i}=\Pr (X=x_{i})$,
--  for each possible value $x_{i}$
-
-For **continuous** random variables, we use itegration:
-
+```{definition, name = "Expectation of a Continuous Random Variable"}
+The Expectation of $X$ results from **integrating the product of $x$ and its pdf $f_{X}\left(x\right)$** over the **range of possible values of $x$**. In other words, we obtain the Expectation via integration:
 \begin{equation*}
-E\left[ X\right] =\int_{a}^{b}x\,f_{X}\left( x\right) dx
+  E\left[ X\right] =\int_{a}^{b}x\,f_{X}\left( x\right)dx
 \end{equation*}
+```
 
--  the mean (or expected) value of the continuous random variable $X$
--  is found by integrating the product of $x$ and its \textbf{pdf } $f_{X}\left( x\right) $
--  over the range of possible values of $x$
+### The Variance
 
-\frametitle{The Variance}
-
-Recall that, for \textbf{discrete} random variables, we defined the variance as: 
+Recall that, for **discrete** random variables, we defined the variance as: 
 
 \begin{equation*}
-Var\left( X\right) =\sum_{i}\left( x_{i}-E\left[ X\right] \right) ^{2}\Pr
+Var\left( X\right) =\sum_{i}\left( x_{i}-E\left[ X\right] \right) ^{2}P
 \left( X=x_{i}\right)
 \end{equation*}
 
-Similarly, for \textbf{continuous} random variables, we use integration\footnote{Intuitively, we replace the sum ($\sum$) by its continuous counterpart, namely the integral ($\int$). }:
-
+```{definition, name="Variance of a Continuous Random Variable"}
+Similarly, for **continuous** random variables, we use integration
 
 \begin{equation*}
 Var\left( X\right) =\int_{a}^{b}\left( x-E\left[ X\right] \right)^{2}\,f_{X}\left( x\right) dx
 \end{equation*}
+
+```
+
+Very roughly speaking, we could say that we are replacing the sum ($\sum$) by its continuous counterpart, namely the integral ($\int$).
 
 <!-- %\frametitle{The expected value of a function of a random variable} -->
 <!-- % -->
 <!-- %Building on this intuition, we generalise to finding the expected value of $h(X)$.  -->
 <!-- % -->
 <!-- % -->
-<!-- %For \textbf{discrete} random variables:% -->
+<!-- %For **discrete** random variables:% -->
 <!-- %\begin{equation*} -->
-<!-- %E\left[ h\left( X\right) \right] =\sum_{i}h\left( x_{i}\right) \Pr \left( -->
+<!-- %E\left[ h\left( X\right) \right] =\sum_{i}h\left( x_{i}\right) P \left( -->
 <!-- %X=x_{i}\right) -->
 <!-- %\end{equation*} -->
 <!-- % -->
 <!-- %  -->
 <!-- % -->
-<!-- %For \textbf{continuous} random variables:% -->
+<!-- %For **continuous** random variables:% -->
 <!-- %\begin{equation*} -->
 <!-- %Var\left( X\right) =\int_{a}^{b}h\left( x\right) \,f_{X}\left( x\right) dx -->
 <!-- %\end{equation*} -->
 
-\frametitle{Important properties of expectations}
+### Important properties of expectations
 
 As with discrete random variables, the following properties hold when $X$ is a continuous random variable and $c$ is any real number (namely, $c \in \mathbb{R}$):
 
@@ -267,9 +311,7 @@ As with discrete random variables, the following properties hold when $X$ is a c
 - $Var\left( cX\right) =c^{2}Var\left( X\right)$
 - $Var\left( c+X\right) =Var\left( X\right)$
 
-\frametitle{Important properties of expectations}
-
-Let us consider, for instance, the following proofs for first two properties%
+Let us consider, for instance, the following proofs for first two properties
 
 \begin{eqnarray*}
 E\left[ cX\right] &=&\int \left( cx\right) f_{X}\left( x\right) dx \\
@@ -284,20 +326,71 @@ E\left[ c+X\right] &=&\int \left( c+x\right) f_{X}\left( x\right) dx \\
 &=&c+E\left[ X\right].
 \end{eqnarray*}
 
-\frametitle{Some continuous distributions of interest}
+
+### Mode and Median
+
+There are two other important distributional summaries that also characterise a sort of center for the distribution: the Mode and the Median.
+
+The **Mode** of a continuous random variable having density $f_{X}(x)$ is the value of $x$ for which the PDF $f_X(x)$ attains its maximum, i.e.$$\text{Mode}(X) = \text{argmax}_{x}\{f_X(x)\}.$$ Very roughly speaking, it is the point with the highest _concentration_ of probability.
+
+
+On the other hand, the **Median** of a continuous random variable having CDF $F_{X}(x)$ is the value $m$ such that $F(m) = 1/2$
+  $$\text{Median}(X) = \text{arg}_{m}\left\{P(X\leq m) = F_X(m) = \frac{1}{2}\right\}.$$
+Very roughly speaking, the median is the value that splits the sample space in two intervals with equal cumulative probability. 
+
+Let's illustrate these two location values in the pdf. We have purposefully chosen an assymetric (right)_skewed_ distribution to display the differences between these two values. 
+
+```{r ,echo = FALSE, fig.cap='', fig.align='center', out.width = "80%"}
+library(patchwork)
+k <- 7
+med <- k*(1-2/(9*k))^3
+mod <- k-2
+
+sim_data <- seq(0, 30, by=0.05) %>%
+  as_tibble() %>%
+  rename(x = value) %>%
+  mutate(p_x = dchisq(x,df = k)) 
+
+chisq_density <- 
+  sim_data %>%
+  ggplot(aes(x = x, y = p_x)) +
+  geom_line(color = "blue", lwd = 1.5)+
+  theme_minimal()
+
+
+mode_illustration <- 
+  chisq_density + 
+  geom_vline(aes(xintercept = mod), linetype =2)+
+  labs(title = "Mode",
+       x = "x",
+       y = expression(f[X](x)))
+  
+median_illustration <- 
+  chisq_density + 
+  geom_vline(aes(xintercept = med), linetype =2, color = "red")+
+  geom_area(data = sim_data %>% filter(x<=med), aes(x = x, y = p_x), fill="red", alpha =0.5)+
+  labs(title = "Median",
+       x = "x",
+       y = expression(f[X](x)))
+
+mode_illustration / median_illustration
+```
+
+## Some Important Continuous Distributions 
+
+There is a wide variety of Probability Distributions. In this section, we will explore the properties of the following: 
 
 -  Continuous Uniform
--  Normal
+-  Gaussian a.k.a. "Normal"
 -  Chi-squared
 -  Student's $t$
--  $F$
--  Lognormal
+-  Fisher's $F$
+-  Log-Normal
 -  Exponential
--  ...and more
 
-\frametitle{Continuous uniform distribution}
+### Continuous Uniform Distribution
 
-```{definition}
+```{definition, label = "unif", name = "Continuous Uniform Distribution"}
 We say $X$ has a continuous **uniform** distribution over the
 interval $[a,b]$, denoted as $X\sim Unif(a,b)$, when the CDF and pdf are given by
 $$
@@ -310,8 +403,8 @@ $$
                          \right.\mbox{and}~{f_{X}\left( x\right)} =\left\{
 \begin{array}{l}
 \frac{1}{b-a}\text{, for }a<x<b \\
-0\text{, otherwise}%
-\end{array}%
+0\text{, otherwise}
+\end{array}
 \right. ,
 $$
 respectively.
@@ -335,7 +428,7 @@ respectively.
 <!-- %\frametitle{Continuous uniform distribution} -->
 <!-- % -->
 <!-- %```{definition} -->
-<!-- %We say $X$ has a continuous **uniform} distribution over the -->
+<!-- %We say $X$ has a continuous **uniform** distribution over the -->
 <!-- %interval $(a,b]$, denoted as $X\sim Unif(a,b)$, when the CDF and pdf are given by -->
 <!-- %$$ -->
 <!-- %\color{red}{F_X\left( x\right)}=\left\{ -->
@@ -365,17 +458,15 @@ respectively.
 <!-- %% -->
 
 
-\frametitle{Continuous uniform distribution}
+As a graphical illustration, let us consider the case when $a=0$ and $b=1$. So, we have that the density is 1 on the interval $(0,1)$ and 0 everywhere else:
 
-As a graphical illustration, let us consider the case when $a=0$ and $b=1$. So, we have:
+```{r ,echo = FALSE, fig.cap='', fig.align='center', out.width = "80%"}
+  knitr::include_graphics("img/05_continuous_rv/uniform_pdf3-1.png")
+```
 
-\begin{figure}[ptb]\centering
-\includegraphics[width=0.95\textwidth,height=0.75\textheight]{uniform_pdf3.pdf}%
-\end{figure}
+#### Expectation
 
-\frametitle{Continuous uniform mean}
-
-The expected value of $X$ is%
+The expected value of $X$ is
 \begin{eqnarray*}
 E\left[ X\right] &=&\int_{a}^{b}\frac{x}{\left( b-a\right) }dx \\
 &=&\left. \frac{x^{2}}{2\left( b-a\right) }\right\vert _{a}^{b} \\
@@ -384,35 +475,30 @@ E\left[ X\right] &=&\int_{a}^{b}\frac{x}{\left( b-a\right) }dx \\
 \end{eqnarray*}
 
 ```{example} 
-
 When $a=0$ and $b=1$, then $E\left[ X\right] =\frac{1}{2}$.
-
 ``` 
 
-\frametitle{Continuous uniform variance}
+#### Variance
 
-The variance of $X$ is%
+By definition, the variance of $X$ is given by: 
 \begin{eqnarray*}
 Var\left( X\right) &=&\int_{a}^{b}\left( x-\left( \frac{a+b}{2}\right)
 \right) ^{2}\frac{1}{b-a}dx \\
 &=&E\left[ X^{2}\right] -E\left[ X\right] ^{2}
 \end{eqnarray*}
 
-We know the second term
+Since we know the values of the second term:
 \begin{equation*}
 E\left[ X\right] ^{2}=\left( \frac{a+b}{2}\right) ^{2},
 \end{equation*}
-
-so we've just to work out%
+we only need to work out the first term, i.e. 
 \begin{eqnarray*}
 E\left[ X^{2}\right] &=&\int_{a}^{b}\frac{x^{2}}{b-a}dx =\left. \frac{x^{3}}{3\left( b-a\right) }\right\vert _{a}^{b} \\
 &=&\frac{b^{3}-a^{3}}{3\left( b-a\right) } = \frac{(b-a)\left( ab+a^{2}+b^{2}\right)}{3\left( b-a\right) } \\
 &=&\frac{\left( ab+a^{2}+b^{2}\right) }{3}.
 \end{eqnarray*}
 
-\frametitle{Continuous uniform variance}
-
-Putting together, we get that the variance of $X$:%
+Putting both terms together, we get that the variance of $X$ is given by:
 \begin{eqnarray*}
 Var\left( X\right) &=&\frac{\left( ab+a^{2}+b^{2}\right) }{3}-\left( \frac{%
 a+b}{2}\right) ^{2} \\
@@ -420,33 +506,32 @@ a+b}{2}\right) ^{2} \\
 \end{eqnarray*}
 
 ```{example} 
-
-[contd] 
-
-When $a=0$ and $b=1$, then $Var\left( X\right) =\frac{1}{12}$.
+For instance, when $a=0$ and $b=1$, then $Var\left( X\right) =\frac{1}{12}$.
 ``` 
-
-\frametitle{Continuous uniform variance}
 
 ```{example} 
 Let $X \sim U(0,10)$. Then its pdf is $f_X(x) = 1/10=0.1$ for $x\in[0,10]$ and zero otherwise. The pdf plot is:
+```
 
-\begin{figure}[ptb]\centering
-\includegraphics[width=0.45\textwidth,height=0.65\textheight]{Unif_Diego.pdf}%
-\end{figure}
+```{r ,echo = FALSE, fig.cap='', fig.align='center', out.width = "80%"}
+  knitr::include_graphics("img/05_continuous_rv/Unif_Diego-1.png")
+```
+We can compute the probabilities of different intervals:
+\begin{align}
+P(0\leq x \leq 1) &= \int_{0}^{1} 0.1x dx &= &0.1 x \left.\right\vert_{x=0}^{x=1}  \\
+                  &= 0.1\cdot(1-0)        &= &0.1  \\
+P(0\leq x \leq 2) &=  0.1\cdot (2-0)      &= &0.2  \\ 
+P(2\leq x \leq 4) &=  P(2\leq x \leq 4)   &= &0.2  \\ 
+P(x \geq 2)       &=  P(2 < x \leq 10)    &= &0.1(10-2) = 0.8
+\end{align}
 
-\begin{figure}[ptb]\centering
-\includegraphics[width=0.5\textwidth,height=0.9\textheight, angle= 90]{Unif_Diego_Calc.pdf}%
-\end{figure}
+Let's represent graphically the $P(X\geq 2)$. Indeed, we see that it is represented by the pink rectangle. If we compute the area, it is apparent that its value is $0.8$, as we have obtained with the formula
 
-...and for $P(X\geq 2)$, 
-\begin{figure}[ptb]\centering
-\includegraphics[width=0.45\textwidth,height=0.55\textheight, angle= 0]{CDF_Diego.pdf}%
-\end{figure}
-``` 
+```{r ,echo = FALSE, fig.cap='', fig.align='center', out.width = "80%"}
+  knitr::include_graphics("img/05_continuous_rv/CDF_Diego-1.png")
+```
 
-
-\frametitle{Normal (Gaussian) distribution [A brief history]}
+### Normal (Gaussian) distribution
 
 The Normal distribution was "discovered" in the eighteenth
 century when scientists observed an astonishing degree of
@@ -459,54 +544,41 @@ The mathematical properties of these curves were first studied by
 
 -  Abraham de Moivre (1667-1745),
 -  Pierre Laplace (1749-1827), and then
--  Karl Gauss (1777-1855), who also lent his name to the
-distribution.
+-  Karl Gauss (1777-1855), who also lent his name to the distribution.
 
 
-\frametitle{The Normal distribution}
-
-```{definition}
-
-A variable $X$ is said to have a **Gaussian** or **normal**
-distribution, with mean $\mu $ and variance $\sigma ^{2}$, if its pdf is given by
+```{definition, label = "gaussian", name = "The Gaussian Distribution"}
+A variable $X$ is said to have a **Gaussian** or **Normal**
+distribution, with mean $\mu$ and variance $\sigma ^{2}$, if its pdf is given by
 \begin{equation*}
 \phi_{(\mu,\sigma)}(x) =\frac{1}{\sqrt{2\pi \sigma ^{2}}}\exp^{ \left\{ -\frac{1%
 }{2\sigma ^{2}}\left( x-\mu \right) ^{2}\right\}}~~-\infty<x<\infty\,.
 \end{equation*}
-For simplicity we denote this by writing $X\sim \N\left( \mu ,\sigma ^{2}\right) $. 
+The short-hand notation is $X\sim \mathcal{N}\left( \mu ,\sigma ^{2}\right)$. 
 ```
 
 ```{remark}
+A couple of important properties: 
 
-- A normal distribution is completely characterised by its mean $\mu $ and its variance $\sigma ^{2}$. Infinitely many different normal distributions are obtained by varying the parameters $\mu $ and $\sigma ^{2}$.
--  A normal random variable $X$ can take any value $x\in\mathbb{R}$.
-
+- A Normal distribution is completely defined by its mean $\mu$ and its variance $\sigma ^{2}$. Infinitely many different normal distributions are obtained by varying the _parameters_ $\mu$ and $\sigma ^{2}$.
+- A Normal random variable $X$ can take any value $x\in\mathbb{R}$.
 ```
 
-\frametitle{Normal distributions}
 
 The pdf of the normal distribution is
 
--  `bell-shaped'
--  symmetric
--  unimodal
--  the mean, median and mode are all equal.
+- "Bell-shaped": looks a little bit like a bell,
+- Symmetric : it is not skewed either to the right or to the left,
+- Unimodal : it has only one mode,
+- The mean, median and mode are all equal,
 
-\begin{figure}[ptb]\centering
-\includegraphics[width=0.95\textwidth,height=0.75\textheight]{normals4.pdf}%
-\end{figure}
+Here we see a bunch of normal distributions, that we obtain by varying the parameters $\mu$ and $\sigma$:
 
-\frametitle{Normal distributions}
+```{r ,echo = FALSE, fig.cap='', fig.align='center', out.width = "80%"}
+  knitr::include_graphics("img/05_continuous_rv/normals4-1.png")
+```
 
-\begin{figure}[ptb]\centering
-\includegraphics[width=0.95\textwidth,height=0.75\textheight]{Cow.pdf}%
-\end{figure}%
-
-%
-
-%
-
-\frametitle{Normal distributions}
+#### The standard Normal distribution
 
 First let us establish that $\phi_{(\mu,\sigma)}(x)$ can serve as a
 genuine density function. Integrating with respect to $x$ using
@@ -524,63 +596,51 @@ $$
 $$
 which is **a known standard integral**.
 
-\frametitle{The standard Normal distribution}
+The function $\phi_{(\mu,\sigma)}(x)$ does indeed define the pdf of a random variable with a mean of $\mu$ and a variance of $\sigma^2$. This was established by transforming from $X$ to $Z$ via the substitution $Z=(X-\mu)/\sigma$. Such a variable is said to be standardised. 
 
-Thus:
-
-  -  The function $\phi_{(\mu,\sigma)}(x)$ does indeed define the pdf of a random variable with a mean of $\mu$ and a variance of $\sigma^2$.
--  This was established by transforming from $X$ to $Z$ via the substitution $Z=(X-\mu)/\sigma$. Such a variable
-is said to be standardised. Note also that the resulting integrand
+Note also that the resulting integrand:
 $$
 \frac{1}{\sqrt{2\pi}}\exp^{\{-\frac{z^2}{2}\}}=\phi_{(0,1)}(z)\,,
 $$
-is the pdf of a random variable $Z\sim \N(0,1)$.
--  If $Z\sim \N(0,1)$ then $Z$ is called a \color{blue}Êstandard normal random variate  because
-$
-\textsf{E}[Z]=0$ and $\textsf{Var}(Z)=1$
+is the pdf of a random variable $Z\sim \mathcal{N}(0,1)$. If $Z\sim \mathcal{N}(0,1)$ then $Z$ is called a **standard normal** random variable because: $\textsf{E}[Z]=0$ and $\textsf{Var}(Z)=1$
 
--  Because of the special role that the standard normal distribution has in
+Because of the special role that the standard normal distribution has in
 calculations involving the normal distribution its pdf is given the special notation 
 $$\phi(z)=\phi_{(0,1)}(z).$$
 
-
-\frametitle{The standard Normal distribution}
-
 The basic feature that underlies calculations involving the Normal distribution:
 
--  $$X\sim \N\left( \mu ,\sigma ^{2}\right)\Leftrightarrow Z=\frac{\left( X-\mu \right) }{\sigma }\sim \N\left( 0,1\right)$$
+-  $$X\sim \mathcal{N}\left( \mu ,\sigma ^{2}\right)\Leftrightarrow Z=\frac{\left( X-\mu \right) }{\sigma }\sim \mathcal{N}\left( 0,1\right)$$
 
--  We can always transform from $X$ to $Z$  by  `shifting' and `re-scaling':%
+We can always transform from $X$ to $Z$  by  "shifting" and "re-scaling":
 \begin{equation*}
 Z=\frac{X-\mu }{\sigma } \ (\text{for the random variable}) \quad\mbox{and}\quad z=\frac{x-\mu }{\sigma }\,  \ (\text{for its values}) ,
 \end{equation*}
--  and return back to $X$ by a `re-scaling' and `shifting':%
+and return back to $X$ by a "re-scaling" and "shifting":
 \begin{equation*}
 X=\sigma Z+\mu  \ (\text{for the random variable}) \quad\mbox{and}\quad x=\sigma z+\mu\, \ (\text{for its values}) .
 \end{equation*}
 
--  Thus statements about a Normal random variable can always be translated into equivalent statements about a standard Normal random variable, and vice versa.
+Thus statements about a Normal random variable can always be translated into equivalent statements about a standard Normal random variable, and vice versa.
 
-\frametitle{The Normal CDF}
+#### The Normal CDF
+
 In pictures:
 Start from $X \sim \mathcal{N}(5,3)$; then define $Y=X-5$, which is a recentered/shifted $X$ (it's centered at 0 and has the same variance as $X$); finally define $Z$, which is a recentered/shifted and rescaled $X$ (it's centered at 0 and has unit variance). 
 
-\begin{figure}[ptb]\centering
-\includegraphics[width=0.8\textwidth,height=0.65\textheight]{Std_Diego.pdf}%
-\end{figure}
+```{r ,echo = FALSE, fig.cap='', fig.align='center', out.width = "80%"}
+  knitr::include_graphics("img/05_continuous_rv/Std_Diego-1.png")
+```
 
 
-
-
-\frametitle{The Normal CDF}
 In formulae:
 
--  For $X\sim \N\left( \mu ,\sigma ^{2}\right) $, the CDF is given by%
+-  For $X\sim \mathcal{N}\left( \mu ,\sigma ^{2}\right)$, the CDF is given by%
 $$\Phi_{(\mu,\sigma)}\left( x\right) =\int_{-\infty }^{x}\frac{1}{\sqrt{2\pi \sigma ^{2}}}\exp^{ \left\{ -\frac{1}{2\sigma ^{2}}\left( t-\mu \right) ^{2}\right\}} dt$$
--  To calculate $\Phi_{(\mu,\sigma)}\left( x\right)=\Pr(\{X\leq x\})$ we use integration by substitution, once again, to give
+-  To calculate $\Phi_{(\mu,\sigma)}\left( x\right)=P(\{X\leq x\})$ we use integration by substitution, once again, to give
 
 \begin{eqnarray*}
-\Pr(\{ X\leq x\} )&=&\int_{-\infty}^x\frac{1}{\sqrt{2\pi\sigma^2}}\exp^{\left\{-\frac{(t-\mu)^2}{2\sigma^2}\right\}}dt\\
+P(\{ X\leq x\} )&=&\int_{-\infty}^x\frac{1}{\sqrt{2\pi\sigma^2}}\exp^{\left\{-\frac{(t-\mu)^2}{2\sigma^2}\right\}}dt\\
  &=&\int_{-\infty}^z\phi(s)ds\\
   &=&P(\{Z\leq z\})
 \end{eqnarray*}
@@ -588,11 +648,11 @@ $$\Phi_{(\mu,\sigma)}\left( x\right) =\int_{-\infty }^{x}\frac{1}{\sqrt{2\pi \si
 where $z=(x-\mu)/\sigma$, $s=(t-\mu)/\sigma$ and $ds=dt/\sigma$.
 -  The required probability has been mapped into a corresponding probability for a standard Normal random variable.
 
-\frametitle{The Normal CDF}
+
 
 - We can evaluate the probabilities
 
-$$\Pr(\{Z\leq z\})=\Phi(z)=\int_{-\infty}^z\phi(s)ds$$
+$$P(\{Z\leq z\})=\Phi(z)=\int_{-\infty}^z\phi(s)ds$$
 
 either directly using a computer or indirectly via Standard Normal
 Tables.
@@ -600,37 +660,32 @@ Tables.
 calculated using a computer, of course.)
 -  For negative values of $z$ the symmetry property of $\phi(z)$ (\textit{i.e.} $\phi(z)=\phi(-z)$) tells us that
 $$\Phi(-z)=1-\Phi(z)\,$$
-- Similarly, if $X\sim \N\left( \mu ,\sigma ^{2}\right)$ then
+- Similarly, if $X\sim \mathcal{N}\left( \mu ,\sigma ^{2}\right)$ then
 
 \begin{eqnarray*}
-\Pr(\{x_1<X\leq x_2\})&=&\Pr(\{z_1<Z\leq z_2\})\\
+P(\{x_1<X\leq x_2\})&=&P(\{z_1<Z\leq z_2\})\\
 &=&\Phi(z_2)-\Phi(z_1)
 \end{eqnarray*}
 where $z_1=(x_1-\mu)/\sigma$ and $z_2=(x_2-\mu)/\sigma$.
 
-\frametitle{Standard Normal Tables}
+#### Standard Normal Tables
 
 - Standard Normal Tables give values of the standard normal integral $\Phi(z)$ for various values of $z\geq 0$.  Values for negative $z$ are obtained via symmetry.
 <!-- %-  Other Normal tables give either $1-\Phi(z)$ (tail area) or $\Phi(z)-0.5$! -->
 
+```{r ,echo = FALSE, fig.cap='', fig.align='center', out.width = "80%"}
+  knitr::include_graphics("img/05_continuous_rv/bell_curve__5-1.png")
+```
 
+```{r ,echo = FALSE, fig.cap='', fig.align='center', out.width = "80%"}
+  knitr::include_graphics("img/05_continuous_rv/myTableGauss-1.png")
+```
 
-\begin{figure}[ptb]\centering
-\includegraphics[width=0.95\textwidth,height=0.75\textheight]{bell_curve__5.pdf}
-\end{figure}
-
-\begin{figure}[ptb]\centering
-\includegraphics[width=0.9\textwidth,height=0.95\textheight]{myTableGauss.pdf}
-\end{figure}
-
-\frametitle{Standard Normal Tables}
 .... and you can use these tables to compute integrals/probabilities of the type: 
-\begin{figure}[ptb]\centering
-\includegraphics[height=2in, width=4in]{CDF_pr.pdf}
-\end{figure}
 
-
-\frametitle{Standard Normal Tables}
+```{r ,echo = FALSE, fig.cap='', fig.align='center', out.width = "80%"}
+  knitr::include_graphics("img/05_continuous_rv/CDF_pr-1.png")
+```
 
 ```{example}
 
@@ -638,21 +693,21 @@ where $z_1=(x_1-\mu)/\sigma$ and $z_2=(x_2-\mu)/\sigma$.
 
 \noindent
 \begin{tabular}{ll}
-$P(\{Z\leq 1\})$ & $\approx0.8413\bigskip $ \\
-$P(\{Z\leq 1.96\})$ & $\approx0.9750\bigskip $ \\
+$P(\{Z\leq 1\})$ & $\approx0.8413\bigskip$ \\
+$P(\{Z\leq 1.96\})$ & $\approx0.9750\bigskip$ \\
 $P(\{Z\geq 1.96\})$ & $=1-P(\{Z\leq 1.96\})$ $\approx1-0.9750=0.0250\bigskip $\\
-$P(\{Z\geq -1\})$ & $=P(\{Z\leq 1\})\approx0.8413\bigskip $ \\ 
+$P(\{Z\geq -1\})$ & $=P(\{Z\leq 1\})\approx0.8413\bigskip$ \\ 
 $P(\{Z\leq -1.5\})$ & $=P(\{Z\geq 1.5\}) =1-P(\{Z\leq 1.5\})$ $\approx1-0.9332=0.0668$%
 \end{tabular}
 
 \begin{tabular}{ll}
 & $P(\{0.64\leq Z\leq 1.96\})=$ \\ 
 & $P(\{Z\leq 1.96\})-P(\{Z\leq 0.64\})$ \\ 
-& $\approx 0.9750-0.7389=0.2361\bigskip $ \\ 
+& $\approx 0.9750-0.7389=0.2361\bigskip$ \\ 
 & $P(\{-0.64\leq Z\leq 1.96\})$ \\ 
 & $=P(\{Z\leq 1.96\})-P(\{Z\leq -0.64\})$ \\
 & $=P(\{Z\leq 1.96\})-(1-P(\{Z\leq 0.64\}))$ \\ 
-& $\approx0.9750-(1-0.7389)=0.7139\bigskip $ \\ 
+& $\approx0.9750-(1-0.7389)=0.7139\bigskip$ \\ 
 & $P(\{-1.96\leq Z\leq -0.64\})$ \\ 
 & $=P(\{0.64\leq Z\leq 1.96\})$ \\ 
 & $\approx0.2361$%
@@ -660,23 +715,20 @@ $P(\{Z\leq -1.5\})$ & $=P(\{Z\geq 1.5\}) =1-P(\{Z\leq 1.5\})$ $\approx1-0.9332=0
 ```
 
 
-### Some properties of the Normal distribution
+#### Some properties of the Normal distribution
 
 
-\begin{figure}[ptb]\centering
-\ \hspace{0.6cm} One $\sigma$ \hspace{2.4cm} Two $\sigma$s \hspace{2.5cm} Three $\sigma$s \hspace{3cm}
-\includegraphics[height=1.5in, width=4.5in]{Areas_Normal.pdf}%
-\end{figure}%
+```{r ,echo = FALSE, fig.cap='', fig.align='center', out.width = "80%"}
+  knitr::include_graphics("img/05_continuous_rv/Areas_Normal-1.png")
+```
 
 The shaded areas under the pdfs are (approximately) equivalent to $0.683$, $0.954$ and $0.997$, 
 respectively. So we state  the following ....
 
-
-
 **... rule `68 -- 95 -- 99.7'**: 
 
 
-If $X$ is a Normal random variable, $X \sim \N(\mu, \sigma^2)$, its realization has approximately a probability of \\ 
+If $X$ is a Normal random variable, $X \sim \mathcal{N}(\mu, \sigma^2)$, its realization has approximately a probability of \\ 
 
 \begin{tabular}{llll}
 $\bullet$
@@ -701,44 +753,33 @@ $99.7 \, \%$
 $\lbrack \mu - 3 \, \sigma, \, \mu + 3 \, \sigma \rbrack$.\\[0.2cm]
 \end{tabular}
 
-
-
-
-
-
-
--  For $X\sim \N\left( \mu ,\sigma ^{2}\right) $ 
+-  For $X\sim \mathcal{N}\left( \mu ,\sigma ^{2}\right)$ 
 \begin{equation*}
 E\left[ X\right] =\mu \text{ and }Var\left( X\right) =\sigma ^{2}.
 \end{equation*}
 
 -  If $a$ is a number, then 
 \begin{eqnarray*}
-X+a &\sim &\N\left( \mu +a,\sigma ^{2}\right) \\
-aX &\sim &\N\left( a\mu ,a^{2}\sigma ^{2}\right).
+X+a &\sim &\mathcal{N}\left( \mu +a,\sigma ^{2}\right) \\
+aX &\sim &\mathcal{N}\left( a\mu ,a^{2}\sigma ^{2}\right).
 \end{eqnarray*}
 
--  If $X\sim \N\left( \mu ,\sigma ^{2}\right) $ and $Y\sim \N\left( \alpha
-,\delta ^{2}\right) $, and $X$ and $Y$ are \textbf{independent} then%
+-  If $X\sim \mathcal{N}\left( \mu ,\sigma ^{2}\right)$ and $Y\sim \mathcal{N}\left( \alpha,\delta ^{2}\right)$, and $X$ and $Y$ are **independent** then
 \begin{equation*}
-X+Y\sim \N\left( \mu +\alpha ,\sigma ^{2}+\delta ^{2}\right).
+X+Y\sim \mathcal{N}\left( \mu +\alpha ,\sigma ^{2}+\delta ^{2}\right).
 \end{equation*}
 
 
 
-\frametitle{The sum of two independent Normals}
+#### The sum of two independent Normals
 
-
-\begin{figure}[ptb]\centering
-\includegraphics[width=0.95\textwidth,height=0.7\textheight]{sum_of_two_independent_normals_with_rug__1.pdf}%
-\end{figure}
-
+```{r ,echo = FALSE, fig.cap='', fig.align='center', out.width = "80%"}
+  knitr::include_graphics("img/05_continuous_rv/sum_of_two_independent_normals_with_rug__1-1.png")
+```
 
 Locations of $n=30$ sampled values of $X,$ $Y$, and $X+Y$ shown as tick marks under each respective density.
 
-
-
-### Normal: an example
+#### Normal: an example
 
 ```{example}
 
@@ -778,7 +819,7 @@ where $Z \sim \mathcal{N}(0,1)$.
 <!-- %% -->
 <!-- % -->
 
-## The Chi-squared distribution
+### The Chi-squared distribution
 
 ```{definition}
 If $Z_{1},Z_{2},\ldots ,Z_{n}$ are independent standard Normal random
@@ -789,31 +830,32 @@ X=Z_{1}^{2}+Z_{2}^{2}+\cdots +Z_{n}^{2}
 has a chi-squared distribution with $n$ degrees of freedom. Write as $X\sim \chi ^{2}(n)$.
 ```
 
-$X\sim \chi ^{2}(n)$ can take only \textbf{positive }values. Moreover, expected value and variance, for $X\sim \chi ^{2}(n)$, are:
+$X\sim \chi ^{2}(n)$ can take only **positive** values. Moreover, expected value and variance, for $X\sim \chi ^{2}(n)$, are:
 
 \begin{eqnarray*}
 E\left[ X\right] &=&n \\
 Var\left( X\right) &=&2n
 \end{eqnarray*}
 
-If $X\sim \chi ^{2}(n)$ and $Y\sim \chi ^{2}(m)$ are \textbf{independent} then $X+Y\sim \chi ^{2}(n+m)$.
+If $X\sim \chi ^{2}(n)$ and $Y\sim \chi ^{2}(m)$ are **independent** then $X+Y\sim \chi ^{2}(n+m)$.
 
 
-### Some plots for the Chi-squared
+#### Some plots for the Chi-squared
 
-\begin{figure}[ptb]\centering
-\includegraphics[height=2.6143in, width=4.6643in]{chisquared_pdfs__2.pdf}%
-\end{figure}
+
+```{r ,echo = FALSE, fig.cap='', fig.align='center', out.width = "80%"}
+  knitr::include_graphics("img/05_continuous_rv/chisquared_pdfs__2-1.png")
+```
 
 Probabilities for Chi-squared distributions may be obtained from a table
 
-### Chi-squared table
+#### Chi-squared table
 
-\begin{figure}[ptb]\centering
-\includegraphics[height=2.2649in, width=4.9658in]{chisq_table__3.pdf}%
-\end{figure}
+```{r ,echo = FALSE, fig.cap='', fig.align='center', out.width = "80%"}
+  knitr::include_graphics("img/05_continuous_rv/chisq_table__3-1.png")
+```
 
-### Chi-squared table (illustration of its use)
+#### Chi-squared table (illustration of its use)
 
 ```{example}
 Let $X$ be a chi-squared random variable with 10 degrees-of-freedom. What is the value of its \underline{upper fifth percentile}? 
@@ -824,19 +866,19 @@ By definition, the upper fifth percentile is the chi-squared value $x$ (lower ca
 -  finding the column headed by $P(X \geq x) = 0.05$. \vspace{0.1cm}
  
 
-Now, all we need to do is read the corresponding cell. What do we get? Well, the table tells us that the upper fifth percentile of a chi-squared random variable with 10 degrees of freedom is \textbf{18.30703}. 
+Now, all we need to do is read the corresponding cell. What do we get? Well, the table tells us that the upper fifth percentile of a chi-squared random variable with 10 degrees of freedom is **18.30703**. 
 ```
 
 
-## The Student-t distribution
+### The Student-t distribution
 
 ```{definition}
-If $Z\sim \N(0,1)$ and $Y\sim \chi ^{2}(v)$ are \textbf{independent}
+If $Z\sim \mathcal{N}(0,1)$ and $Y\sim \chi ^{2}(v)$ are **independent**
 then%
 \begin{equation*}
 T=\frac{Z}{\sqrt{Y/v}}
 \end{equation*}
-has a \textbf{Student-t} distribution with $v$ degrees of freedom. Write as $T\sim t_{v}$.
+has a **Student-t** distribution with $v$ degrees of freedom. Write as $T\sim t_{v}$.
 ```
 
 $T\sim t_{v}\,$\ can take any value in $\mathbb{R}$. Expected value and variance for $T\sim t_{v}$ are 
@@ -846,35 +888,37 @@ E\left[ T\right] &=&0\text{, for }v>1 \\
 Var\left( T\right) &=&\frac{v}{v-2}\text{, for }v>2.
 \end{eqnarray*}
 
-### Some Student-t distributions
+#### Some Student-t distributions
 
 ```{remark}
-The pdf of $T\sim t_{v}$ is similar to a Normal (with mean zero) but with fatter tails. When $v$ is large (typically, $v \geq 120$) $t_{v}$ approaches $\N(0,1)$.
+The pdf of $T\sim t_{v}$ is similar to a Normal (with mean zero) but with fatter tails. When $v$ is large (typically, $v \geq 120$) $t_{v}$ approaches $\mathcal{N}(0,1)$.
 ```
 
-\begin{figure}[ptb]\centering
-\includegraphics[height=1.9398in, width=3.5345in]{student_t__4.pdf}
-\end{figure}
+```{r ,echo = FALSE, fig.cap='', fig.align='center', out.width = "80%"}
+  knitr::include_graphics("img/05_continuous_rv/student_t__4-1.png")
+```
 
-### Student-t table
+#### Student-t table
 
-\begin{figure}[ptb]\centering
-\includegraphics[height=3.8in, width=3.506in]{Student_t_table__5.pdf}%
-\end{figure}
-\frametitle{The F distribution}
+
+```{r ,echo = FALSE, fig.cap='', fig.align='center', out.width = "80%"}
+  knitr::include_graphics("img/05_continuous_rv/Student_t_table__5-1.png")
+```
+
+### The F distribution
 
 ```{definition}
 
-If $X\sim \chi ^{2}(v_{1})$ and $Y\sim \chi ^{2}(v_{2})$ are \textbf{%
-independent}, then%
+If $X\sim \chi ^{2}(v_{1})$ and $Y\sim \chi ^{2}(v_{2})$ are **
+independent**, then
 \begin{equation*}
 F=\frac{\frac{X}{v_{1}}}{\frac{Y}{v_{2}}},
 \end{equation*}%
-has an \textbf{F} distribution with $v_{1}$ `numerator' and $v_{2}$
+has an **F** distribution with $v_{1}$ `numerator' and $v_{2}$
 `denominator' degrees of freedom. Write as $F\sim F_{v_{1},v_{2}}$.
 ```
 
-$F\sim F_{v_{1},v_{2}}\,$\ can take only \textbf{positive }values. Expected value and variance for $F\sim F_{v_{1},v_{2}}$ (note that the order of the degrees of freedom is important!).
+$F\sim F_{v_{1},v_{2}}\,$\ can take only **positive** values. Expected value and variance for $F\sim F_{v_{1},v_{2}}$ (note that the order of the degrees of freedom is important!).
 
 \begin{eqnarray*}
 E\left[ F\right] &=&\frac{v_{2}}{v_{2}-2}\text{, for }v_{2}>2 \\
@@ -882,49 +926,46 @@ Var\left( F\right) &=&\frac{2v_{2}^{2}\left( v_{1}+v_{2}-2\right) }{%
 v_{1}\left( v_{2}-2\right) ^{2}\left( v_{2}-4\right) }\text{, for }v_{2}>4.
 \end{eqnarray*}
 
-## Some F distributions
+#### Some F distributions
 
-\begin{figure}[ptb]\centering
-\includegraphics[height=2.3324in, width=4.2462in]{F-dist_pds__6.pdf}
-\end{figure}
-
-
-
-### F distribution table (5\% upper tail)
-
-
-\begin{figure}[ptb]\centering
-\includegraphics[height=2.2753in, width=4.2263in]{Fdist_table__7.pdf}%
-\end{figure}%
-
-## The lognormal distribution
-
-```{definition}
- $Y$ has a \textbf{lognormal distribution} when 
- $$\ln \left( Y\right) =X$$
-has a Normal distribution. We write $Y\sim $ \emph{lognormal}$\left( \mu ,\sigma ^{2}\right) $. 
+```{r ,echo = FALSE, fig.cap='', fig.align='center', out.width = "80%"}
+  knitr::include_graphics("img/05_continuous_rv/F-dist_pds__6-1.png")
 ```
 
-If $Y\sim $ \emph{lognormal}$\left( \mu ,\sigma ^{2}\right) $ then%
+#### F distribution table (5\% upper tail)
+
+
+```{r ,echo = FALSE, fig.cap='', fig.align='center', out.width = "80%"}
+  knitr::include_graphics("img/05_continuous_rv/Fdist_table__7-1.png")
+```
+
+### The lognormal distribution
+
+```{definition}
+ $Y$ has a **lognormal distribution** when 
+ $$\ln \left( Y\right) =X$$
+has a Normal distribution. We write $Y\sim$ \emph{lognormal}$\left( \mu ,\sigma ^{2}\right) $. 
+```
+
+If $Y\sim$ \emph{lognormal}$\left( \mu ,\sigma ^{2}\right)$ then%
 \begin{eqnarray*}
 E\left[ Y\right] &=&\exp^{ \left( \mu +\frac{1}{2}\sigma ^{2}\right)} \\
 Var(Y) &=&\exp^{ \left( 2\mu +\sigma ^{2}\right)} \left( \exp^{ \left( \sigma
 ^{2}\right)} -1\right).
 \end{eqnarray*}
 
-
-
 Let us just see some plots... more to come later...
-\begin{figure}[ptb]\centering
-\includegraphics[height=2.4856in, width=4.5in]{lognormal_with_rug__8.pdf}%
-\end{figure}%
 
-## Exponential distribution
+```{r ,echo = FALSE, fig.cap='', fig.align='center', out.width = "80%"}
+  knitr::include_graphics("img/05_continuous_rv/lognormal_with_rug__8-1.png")
+```
+
+### Exponential distribution
 
 ```{definition}
 Let $X$ be a  continuous random variable, having the following  characteristics:
 
-- [--]       $X$ is defined on the positive real numbers $\left( 0;\infty \right) $ --- namely $\mathbb{R}^+$;  
+- [--]       $X$ is defined on the positive real numbers $\left( 0;\infty \right)$ --- namely $\mathbb{R}^+$;  
 - [--]       the pdf and CDF are 
 \begin{eqnarray}
 f_X(x)=\lambda \exp^{ -\lambda x},\lambda
@@ -972,22 +1013,21 @@ $$F_X(x) = \left\{ \begin{array}{ll}
 \end{array} \right.$$
 
 ...and a graphical illustration, with varying $\lambda$
-
-\begin{figure}[ptb]\centering
-\includegraphics[height=2.4856in, width=4.5in]{Exp_Diego.pdf}%
-\end{figure}%
-
 ```
+
+```{r ,echo = FALSE, fig.cap='', fig.align='center', out.width = "80%"}
+  knitr::include_graphics("img/05_continuous_rv/Exp_Diego-1.png")
+```
+
 
 ## Transformation of variables
 
 
 - Consider a random variable $X$
-- Suppose we are interested in $Y=\psi(X)$, where $\psi $ is a \textbf{%
-one to one function}
-- A \textbf{function }$\psi \left( x\right) $\textbf{\ is one to one} (1-to-1) if there are no two numbers, $x_{1},x_{2}$ in the domain of $\psi $ such that $\psi \left( x_{1}\right) =\psi \left( x_{2}\right) $ but $x_{1}\neq x_{2}$.
--  A sufficient condition for $\psi \left( x\right) $ to be 1-to-1 is that it be monotonically increasing (or decreasing) in $x$.
--  Note that the \textbf{inverse} of a 1-to-1 function $y=\psi \left(x\right) $ is a 1-to-1 function $\psi^{-1}\left( y\right) $ such that 
+- Suppose we are interested in $Y=\psi(X)$, where $\psi$ is a **one to one function**
+- A **function** $\psi \left( x\right)$ **is one to one** (1-to-1) if there are no two numbers, $x_{1},x_{2}$ in the domain of $\psi$ such that $\psi \left( x_{1}\right) =\psi \left( x_{2}\right)$ but $x_{1}\neq x_{2}$.
+-  A sufficient condition for $\psi \left( x\right)$ to be 1-to-1 is that it be monotonically increasing (or decreasing) in $x$.
+-  Note that the **inverse} of a 1-to-1 function $y=\psi \left(x\right)$ is a 1-to-1 function $\psi^{-1}\left( y\right)$ such that 
 
 \begin{equation*}
 \psi ^{-1}\left( \psi \left( x\right) \right) =x\text{ and }\psi \left( \psi
@@ -995,26 +1035,26 @@ one to one function}
 \end{equation*}
 
 - To transform $X$ to $Y$, we need to consider all the values $x$ that $%
-X $ can take
+X$ can take
 - We first transform $x$ into values $y=\psi (x)$
 
 ### Transformation of discrete random variables
 
 
-- To transform a discrete random variable $X$, into the random variable $Y=\psi (X)$, we transfer the probabilities for\textbf{\ each} $x$ to the values $y=\psi \left( x\right) $: 
+- To transform a discrete random variable $X$, into the random variable $Y=\psi (X)$, we transfer the probabilities for **each** $x$ to the values $y=\psi \left( x\right) $: 
 
 \begin{equation*}
 \begin{tabular}{l|cll|c}
-\multicolumn{2}{l}{\emph{Probability function for }$X$} &  & 
-\multicolumn{2}{l}{\emph{Probability function for }$X$} \\ 
+\multicolumn{2}{l}{_Probability function for_$X$} &  & 
+\multicolumn{2}{l}{_Probability function for_$X$} \\ 
 &  &  &  &  \\ 
-$X$ & $\Pr \left(\{ X=x_{i} \}\right) =p_{i}$ &  & $Y$ & $\Pr \left(\{
+$X$ & $P \left(\{ X=x_{i} \}\right) =p_{i}$ &  & $Y$ & $P \left(\{
 X=x_{i}  \}\right) =p_{i}$ \\ \cline{1-2}\cline{4-5}
-$x_{1}$ & $p_{1}$ & $\qquad \Rightarrow \qquad $ & $\psi (x_{1})$ & $p_{1}$
+$x_{1}$ & $p_{1}$ & $\qquad \Rightarrow \qquad$ & $\psi (x_{1})$ & $p_{1}$
 \\ 
 $x_{2}$ & $p_{2}$ &  & $\psi (x_{2})$ & $p_{2}$ \\ 
 $x_{3}$ & $p_{3}$ &  & $\psi (x_{3})$ & $p_{3}$ \\ 
-$\vdots $ & $\vdots $ &  & $\vdots $ & $\vdots $ \\ 
+$\vdots$ & $\vdots$ &  & $\vdots$ & $\vdots$ \\ 
 $x_{n}$ & $p_{n}$ &  & $\psi (x_{n})$ & $p_{n}$%
 \end{tabular}%
 \end{equation*}
@@ -1022,51 +1062,49 @@ $x_{n}$ & $p_{n}$ &  & $\psi (x_{n})$ & $p_{n}$%
 - Note that this is equivalent to applying the function $\psi \left(\cdot \right)$ inside the probability statements:
 
 \begin{eqnarray*}
-\Pr \left( \{ X=x_{i}  \}\right) &=&\Pr \left(  \{\psi \left( X\right) =\psi \left(
+P \left( \{ X=x_{i}  \}\right) &=&P \left(  \{\psi \left( X\right) =\psi \left(
 x_{i}\right)  \} \right) \\
-&=&\Pr \left( \{ Y=y_{i} \} \right) \\
+&=&P \left( \{ Y=y_{i} \} \right) \\
 &=&p_{i}
 \end{eqnarray*}
-
-
 
 ```{example} 
 [option pricing]
 
-Let us imagine that we are tossing a balanced coin ($p=1/2$), and when we get a ``Head'' ($H$) the stock price moves up of a factor $u$, but when we get a ``Tail'' ($T$) the price moves down of a factor $d$. We denote the price at time $t_1$  by $S_1(H)=u S_0 $ if the toss results in head ($H$), and by $S_1(T)=d S_0 $  if it results in tail ($T$). After the second toss, the price will be one of:
-\begin{figure}[ptb]\centering
-\includegraphics[height=0.75in, width=4in]{Shreve_Bin.pdf}%
-\end{figure}%
+Let us imagine that we are tossing a balanced coin ($p=1/2$), and when we get a ``Head'' ($H$) the stock price moves up of a factor $u$, but when we get a ``Tail'' ($T$) the price moves down of a factor $d$. We denote the price at time $t_1$  by $S_1(H)=u S_0$ if the toss results in head ($H$), and by $S_1(T)=d S_0$  if it results in tail ($T$). After the second toss, the price will be one of:
+```
+
+```{r ,echo = FALSE, fig.cap='', fig.align='center', out.width = "80%"}
+  knitr::include_graphics("img/05_continuous_rv/Shreve_Bin-1.png")
+```
 Indeed, after two tosses, there are four possible coin sequences, 
 $$
 \{HH,HT,TH,TT\}
 $$
 although not all of them result in different stock prices at time  $t_2$.
-%
-%% Define styles for bags and leafs
-%\tikzstyle{bag} = [text width=2em, text centered]
-%\tikzstyle{end} = []
-%\begin{tikzpicture}[sloped]
-%   \node (a) at ( 0,0) [bag] {$\$ A$};
-%   \node (b) at ( 4,-1.5) [bag] {B};
-%   \node (c) at ( 4,1.5) [bag] {C};
-%   \node (d) at ( 8,-3) [bag] {D};
-%   \node (e) at ( 8,0) [bag] {E};
-%   \node (f) at ( 8,3) [bag] {F};
-%   \draw [->] (a) to node [below] {$(1-p)$} (b);
-%   \draw [->] (a) to node [above] {$P$} (c);
-%   \draw [->] (c) to node [below] {$P^2$} (f);
-%   \draw [->] (c) to node [above] {$(1-p)p$} (e);
-%   \draw [->] (b) to node [below] {$(1-p)p$} (e);
-%   \draw [->] (b) to node [above] {$(1-p)^2$} (d);
-%\end{tikzpicture}
+<!-- % -->
+<!-- %% Define styles for bags and leafs -->
+<!-- %\tikzstyle{bag} = [text width=2em, text centered] -->
+<!-- %\tikzstyle{end} = [] -->
+<!-- %\begin{tikzpicture}[sloped] -->
+<!-- %   \node (a) at ( 0,0) [bag] {$\$ A$}; -->
+<!-- %   \node (b) at ( 4,-1.5) [bag] {B}; -->
+<!-- %   \node (c) at ( 4,1.5) [bag] {C}; -->
+<!-- %   \node (d) at ( 8,-3) [bag] {D}; -->
+<!-- %   \node (e) at ( 8,0) [bag] {E}; -->
+<!-- %   \node (f) at ( 8,3) [bag] {F}; -->
+<!-- %   \draw [->] (a) to node [below] {$(1-p)$} (b); -->
+<!-- %   \draw [->] (a) to node [above] {$P$} (c); -->
+<!-- %   \draw [->] (c) to node [below] {$P^2$} (f); -->
+<!-- %   \draw [->] (c) to node [above] {$(1-p)p$} (e); -->
+<!-- %   \draw [->] (b) to node [below] {$(1-p)p$} (e); -->
+<!-- %   \draw [->] (b) to node [above] {$(1-p)^2$} (d); -->
+<!-- %\end{tikzpicture} -->
 
 
 Let us set $S_0=1$, $u=2$ and $d=1/2$: we represent the price evolution by a tree:
-```
 
-
-```{r, engine = 'tikz'} 
+```{r, engine = 'tikz',echo = FALSE, fig.cap='', fig.align='center', out.width = "80%"} 
 %% Define styles for bags and leafs
 \tikzstyle{bag} = [text width=8em, text centered]
 \tikzstyle{end} = []
@@ -1095,12 +1133,12 @@ C(TH)=\max(0;1-0.5)=\$ 0.5 & C(TT)=\max(0;0.25-0.5)=\$ 0.
 Thus at maturity $t_2$ we have
 \begin{equation*}
 \begin{tabular}{l|cll|c}
-\multicolumn{2}{l}{\emph{Probability function for }$S_2$} &  & 
-\multicolumn{2}{l}{\emph{Probability function for }$C$} \\ 
+\multicolumn{2}{l}{_Probability function for_ $S_2$} &  & 
+\multicolumn{2}{l}{_Probability function for_ $C$} \\ 
 &  &  &  &  \\ 
-$S_2$ & $\Pr \left(\{ X=x_{i} \}\right) =p_{i}$ &  & $C$ & $\Pr \left(\{
+$S_2$ & $P \left(\{ X=x_{i} \}\right) =p_{i}$ &  & $C$ & $P \left(\{
 C=c_{i}  \}\right) =p_{i}$ \\ \cline{1-2}\cline{4-5}
-$\$ u^2$ & $p^2$ & $\qquad \Rightarrow \qquad $ & $\$ 3.5$ & $p^2$
+$\$ u^2$ & $p^2$ & $\qquad \Rightarrow \qquad$ & $\$ 3.5$ & $p^2$
 \\ 
 $\$ ud$ & $2p(1-p)$ &  & $\$ 0.5$ & $2p(1-p)$ \\ 
 %$\$ du$ & $(1-p)p$ &  & $\$ 0.5$ & $(1-p)p$ \\ 
@@ -1113,21 +1151,21 @@ $\$ d^2$ & $(1-p)^2$  &  & $\$ 0$ & $(1-p)^2$%
 ### Transformation of variables using the CDF
 
 
-- We can use the same logic for CDF probabilities, whether the random variables are\textbf{\ discrete or continuous}
-- Let $Y=\psi \left( X\right) $ with $\psi \left( x\right) $ 1-to-1 and monotone increasing. Then 
+- We can use the same logic for CDF probabilities, whether the random variables are **discrete or continuous**
+- Let $Y=\psi \left( X\right)$ with $\psi \left( x\right)$ 1-to-1 and monotone increasing. Then 
 
 \begin{eqnarray*}
-F_{Y}\left( y\right) &=&\Pr \left( \{ Y\leq y \}\right) \\
-&=&\Pr \left( \{ \psi \left( X\right) \leq y \} \right) =\Pr \left( \{ X\leq \psi
+F_{Y}\left( y\right) &=&P \left( \{ Y\leq y \}\right) \\
+&=&P \left( \{ \psi \left( X\right) \leq y \} \right) =P \left( \{ X\leq \psi
 ^{-1}\left( y\right) \} \right) \\
 &=&F_{X}\left( \psi ^{-1}\left( y\right) \right)
 \end{eqnarray*}
 
 ```{example}
-Let $Y=\psi \left( X\right) =\exp^{ X} $ where $ X\sim F_X$ on all values $x\in\mathbb{R}$
+Let $Y=\psi \left( X\right) =\exp^{ X}$ where$ X\sim F_X$ on all values $x\in\mathbb{R}$
 \begin{eqnarray*}
-F_{Y}\left( y\right) &=&\Pr \left( \{ Y\leq y \} \right) \\
-&=&\Pr \left( \{ \exp^{  X} \leq y \} \right) =\Pr \left( \{ X\leq \ln
+F_{Y}\left( y\right) &=&P \left( \{ Y\leq y \} \right) \\
+&=&P \left( \{ \exp^{  X} \leq y \} \right) =P \left( \{ X\leq \ln
 \left( y\right) \} \right) \\
 &=&F_{X}\left( \ln \left( y\right) \right) \text{ only for }y>0\text{.}
 \end{eqnarray*}
@@ -1141,18 +1179,18 @@ F_{Y}\left( y\right) &=&\Pr \left( \{ Y\leq y \} \right) \\
 - Monotone decreasing functions work in a similar way, but require
 changing of the inequality sign
 
--  Let $Y=\psi \left( X\right) $ with $\psi \left( x\right) $ 1-to-1 and 
-\textbf{monotone decreasing}. Then 
+-  Let $Y=\psi \left( X\right)$ with $\psi \left( x\right)$ 1-to-1 and 
+**monotone decreasing**. Then 
 \begin{eqnarray*}
-F_{Y}\left( y\right) &=&\Pr \left( \{ Y\leq y \} \right) \\
-&=&\Pr \left( \{ \psi \left( X\right) \leq y \} \right) =\Pr \left( \{ X\geq \psi
+F_{Y}\left( y\right) &=&P \left( \{ Y\leq y \} \right) \\
+&=&P \left( \{ \psi \left( X\right) \leq y \} \right) =P \left( \{ X\geq \psi
 ^{-1}\left( y\right) \} \right) \\
 &=&1-F_{X}\left( \psi ^{-1}\left( y\right) \right)
 \end{eqnarray*}
 
 
 ```{example}
-Example: let $Y=\psi \left( X\right) =-\exp^ X $ where $%
+Example: let $Y=\psi \left( X\right) =-\exp^ X$ where $%
 X\sim F_X$ on all values $x\in 
 %TCIMACRO{\U{211d} }%
 
@@ -1160,9 +1198,9 @@ X\sim F_X$ on all values $x\in
 
 $%
 \begin{eqnarray*}
-F_{Y}\left( y\right) &=&\Pr \left( \{ Y\leq y \}\right) =\Pr \left( \{ -\exp ^
+F_{Y}\left( y\right) &=&P \left( \{ Y\leq y \}\right) =P \left( \{ -\exp ^
 X \leq y \} \right) \\
-&=&\Pr \left( \{ \exp^ X \geq -y \} \right) =\Pr \left( \{ X\geq \ln
+&=&P \left( \{ \exp^ X \geq -y \} \right) =P \left( \{ X\geq \ln
 \left( -y\right) \} \right) \\
 &=&1-F_{X}\left( \ln \left( -y\right) \right) \text{ only for }y<0\text{.}
 \end{eqnarray*}
@@ -1172,13 +1210,13 @@ X \leq y \} \right) \\
 ### Transformation of continuous RV through pdf
 
 
--  For continuous random variables, if $\psi \left( x\right) $ 1-to-1 and
-monotone \textbf{increasing}, we have%
+-  For continuous random variables, if $\psi \left( x\right)$ 1-to-1 and
+monotone **increasing**, we have
 \begin{equation*}
 F_{Y}\left( y\right) =F_{X}\left( \psi ^{-1}\left( y\right) \right)
 \end{equation*}
 
--  Notice this implies that the pdf of $Y=\psi \left( X\right) $ must
+-  Notice this implies that the pdf of $Y=\psi \left( X\right)$ must
 satisfy%
 \begin{eqnarray*}
 f_{Y}\left( y\right) &=&\frac{dF_{Y}\left( y\right) }{dy}=\frac{dF_{X}\left(
@@ -1193,13 +1231,13 @@ f_{Y}\left( y\right) &=&\frac{dF_{Y}\left( y\right) }{dy}=\frac{dF_{X}\left(
 \end{eqnarray*}
 
 
--  What happens when $\psi \left( x\right) $ 1-to-1 and monotone \textbf{%
+-  What happens when $\psi \left( x\right)$ 1-to-1 and monotone **%
 decreasing}? We have%
 \begin{equation*}
 F_{Y}\left( y\right) =1-F_{X}\left( \psi ^{-1}\left( y\right) \right)
 \end{equation*}
 
--  So now the pdf of $Y=\phi \left( X\right) $ must satisfy 
+-  So now the pdf of $Y=\phi \left( X\right)$ must satisfy 
 \begin{eqnarray*}
 f_{Y}\left( y\right) &=&\frac{dF_{Y}\left( y\right) }{dy}=-\frac{%
 dF_{X}\left( \psi ^{-1}\left( y\right) \right) }{dy} \\
@@ -1208,13 +1246,13 @@ dF_{X}\left( \psi ^{-1}\left( y\right) \right) }{dy} \\
 \end{eqnarray*}
 
 -  but $\frac{d\psi ^{-1}\left( y\right) }{dy}<0$ since here $\psi \left(
-\cdot \right) $ is monotone decreasing, hence we can write%
+\cdot \right)$ is monotone decreasing, hence we can write%
 \begin{equation*}
 f_{Y}\left( y\right) =f_{X}\left( \psi ^{-1}\left( y\right) \right) \times
 \left\vert \frac{d\psi ^{-1}\left( y\right) }{dy}\right\vert
 \end{equation*}
 
--  This expression (called Jacobian-formula) is valid for $\psi \left( x\right) $ 1-to-1 and
+-  This expression (called Jacobian-formula) is valid for $\psi \left( x\right)$ 1-to-1 and
 monotone (whether increasing or decreasing)
 
 ### Example of transformation using pdf
@@ -1223,18 +1261,16 @@ monotone (whether increasing or decreasing)
 
 -  So what is the pdf for the lognormal distribution?
 
--  Recall that $Y$ has a \textbf{lognormal distribution} when $\ln \left(
+-  Recall that $Y$ has a **lognormal distribution** when $\ln \left(
 Y\right) =X$ has a Normal distribution
 
--  $\Rightarrow $ if $X\sim \N\left( \mu ,\sigma ^{2}\right) ,$ then $%
-Y=\exp^X\sim $ \emph{lognormal}$\left( \mu ,\sigma ^{2}\right) $
-
+-  $\Rightarrow$ if $X\sim \mathcal{N}\left( \mu ,\sigma ^{2}\right) ,$ then $
+Y=\exp^X\sim$ lognormal_ $\left( \mu ,\sigma ^{2}\right) $
 
 -  Corresponding to $\psi \left( x\right) =\exp^x$ and $\psi
 ^{-1}\left( y\right) =\ln (y)$
 
-
--  The \emph{pdf} of $X$ is 
+-  The _pdf_ of $X$ is 
 \begin{equation*}
 f_{X}\left( x\right) =\frac{1}{\sqrt{2\pi \sigma ^{2}}}\exp^{ \left\{ -\frac{1%
 }{2\sigma ^{2}}\left( x-\mu \right) ^{2}\right\}}
@@ -1256,7 +1292,7 @@ f_{Y}\left( y\right) =f_{X}\left( \psi ^{-1}\left( y\right) \right) \times
 \frac{1}{y}\right\vert
 \end{equation*}
 
--  $\Rightarrow $ the \emph{pdf} of $Y$ is 
+-  $\Rightarrow$ the \emph{pdf} of $Y$ is 
 \begin{equation*}
 f_{Y}\left( y\right) =\frac{1}{y\sqrt{2\pi \sigma ^{2}}}\exp^{ \left\{ -\frac{1%
 }{2\sigma ^{2}}\left( \ln (y)-\mu \right) ^{2}\right\}}
@@ -1264,17 +1300,18 @@ f_{Y}\left( y\right) =\frac{1}{y\sqrt{2\pi \sigma ^{2}}}\exp^{ \left\{ -\frac{1%
 
 -  Both the Normal and the lognormal are characterized by
 only two parameters ($\mu$ and $\sigma$). The \emph{median} of the lognormal distribution is $\exp^{
-\mu } $, since $$
-\Pr \left( \{ X\leq \mu \} \right) = 0.5, 
+\mu }$, since 
 $$
-and hence%
+P \left( \{ X\leq \mu \} \right) = 0.5, 
+$$
+and hence
 \begin{eqnarray*}
-0.5 &=&\Pr \left(\{ X\leq \mu \}\right) \\
-&=&\Pr \left( \{\exp^{X} \leq \exp^{ \mu }\} \right) \\
-&=&\Pr \left( \{Y\leq \exp^{ \mu }\} \right).
+0.5 &=&P \left(\{ X\leq \mu \}\right) \\
+&=&P \left( \{\exp^{X} \leq \exp^{ \mu }\} \right) \\
+&=&P \left( \{Y\leq \exp^{ \mu }\} \right).
 \end{eqnarray*}
-
 ```
+
 More generally, for $\alpha\in[0,1]$, the $\alpha$-th quantile of a r.v. $X$ is the value $x_\alpha$ such that $P(\{X \leq x_\alpha\})\geq\alpha$. If $X$ si a continuous r.v.  we can set $P(\{X \leq x_\alpha\})=\alpha$ (as we did, e.g., for the lognormal).
 
 
@@ -1306,9 +1343,9 @@ $$\color{red} E[W] = E\left[\frac{X}{Y}\right] \neq \frac{E[X]}{E[Y]}.$$
 
 Despite exotic names, the common distributions relate to each other in intuitive and interesting ways. Several follow naturally from the Bernoulli distribution, for example. 
 
-\begin{figure}[ptb]\centering
-\includegraphics[height=2.3in, width=4.5in]{RelRVs_Diego.pdf}%
-\end{figure}
+```{r ,echo = FALSE, fig.cap='', fig.align='center', out.width = "80%"}
+  knitr::include_graphics("img/05_continuous_rv/RelRVs_Diego-1.png")
+```
 
 
 

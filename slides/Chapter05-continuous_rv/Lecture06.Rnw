@@ -522,46 +522,38 @@ seq(-5, 5, by=0.05) %>%
 
 
 \begin{frame}{\secname}
-As with discrete random variables, the following properties hold when $X$ is a
-continuous random variable and $c$ is any real number (namely, $c \in \mathbb{R}$):
-\bigskip
-
-\begin{stepenumerate}
-\item $E\left[ cX\right] =cE\left[ X\right] $ \\ \medskip
-
-\item $E\left[ c+X\right] =c+E\left[ X\right] $ \\ \medskip
-
-\item $Var\left( cX\right) =c^{2}Var\left( X\right) $ \\ \medskip
-
-\item $Var\left( c+X\right) =Var\left( X\right) $
-\end{stepenumerate}
-
-%TCIMACRO{\TeXButton{EndFrame}{\end{frame}}}%
-%BeginExpansion
-\end{frame}%
-%EndExpansion
-
-%TCIMACRO{\TeXButton{BeginFrame}{\begin{frame}}}%
-%BeginExpansion
+  As with discrete random variables, the following properties hold when $X$ is a
+  continuous random variable and $c$ is any real number (namely, $c \in \mathbb{R}$):
+  \bigskip
+  
+  \begin{stepenumerate}
+  \item $E\left[ cX\right] =cE\left[ X\right] $ \\ \medskip
+  
+  \item $E\left[ c+X\right] =c+E\left[ X\right] $ \\ \medskip
+  
+  \item $Var\left( cX\right) =c^{2}Var\left( X\right) $ \\ \medskip
+  
+  \item $Var\left( c+X\right) =Var\left( X\right) $
+  \end{stepenumerate}
+\end{frame}
+  
 \begin{frame}{\secname}
-%EndExpansion
-
-%\frametitle{Important properties of expectations}
-
-Let us consider, for instance, the following proofs for first two properties%
-\begin{eqnarray*}
-E\left[ cX\right] &=&\int \left( cx\right) f_{X}\left( x\right) dx \\
-&=&c\int xf_{X}\left( x\right) dx \\
-&=&cE\left[ X\right].
-\end{eqnarray*}%
-\begin{eqnarray*}
-E\left[ c+X\right] &=&\int \left( c+x\right) f_{X}\left( x\right) dx \\
-&=&\int cf_{X}\left( x\right) dx+\int xf_{X}\left( x\right) dx \\
-&=&c\times 1+E\left[ X\right] \\
-&=&c+E\left[ X\right].
-\end{eqnarray*}
-
-
+ 
+  
+  %\frametitle{Important properties of expectations}
+  
+  Let us consider, for instance, the following proofs for first two properties%
+  \begin{eqnarray*}
+  E\left[ cX\right] &=&\int \left( cx\right) f_{X}\left( x\right) dx \\
+  &=&c\int xf_{X}\left( x\right) dx \\
+  &=&cE\left[ X\right].
+  \end{eqnarray*}%
+  \begin{eqnarray*}
+  E\left[ c+X\right] &=&\int \left( c+x\right) f_{X}\left( x\right) dx \\
+  &=&\int cf_{X}\left( x\right) dx+\int xf_{X}\left( x\right) dx \\
+  &=&c\times 1+E\left[ X\right] \\
+  &=&c+E\left[ X\right].
+  \end{eqnarray*}
 \end{frame}
 
 
@@ -575,7 +567,7 @@ E\left[ c+X\right] &=&\int \left( c+x\right) f_{X}\left( x\right) dx \\
 
   \begin{definition}[Median]
   The median of a continuous random variable having
-  distribution function $F_{X}(x)$ is the value $m$ such that $F(m) = 12$
+  distribution function $F_{X}(x)$ is the value $m$ such that $F(m) = 1/2$
   $$\text{Median}(X) = \text{arg}_{m}\{P(X\leq m) = F_X(m) = \frac{1}{2}\}$$
   \end{definition}
 \end{frame}

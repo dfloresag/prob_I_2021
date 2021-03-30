@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020) (preloaded format=pdflatex 2020.8.26)  30 MAR 2021 00:19
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020) (preloaded format=pdflatex 2020.8.26)  31 MAR 2021 00:22
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1139,7 +1139,7 @@ Package pdftex.def Info: img/R_bell_CDF.pdf  used on input line 481.
 <figure/unnamed-chunk-8-1.pdf, id=669, 433.62pt x 325.215pt>
 File: figure/unnamed-chunk-8-1.pdf Graphic file (type pdf)
 <use figure/unnamed-chunk-8-1.pdf>
-Package pdftex.def Info: figure/unnamed-chunk-8-1.pdf  used on input line 635.
+Package pdftex.def Info: figure/unnamed-chunk-8-1.pdf  used on input line 627.
 (pdftex.def)             Requested size: 172.09766pt x 129.07137pt.
  [30
 
@@ -1156,7 +1156,7 @@ Package pdftex.def Info: figure/unnamed-chunk-8-1.pdf  used on input line 635.
 <img/uniform_pdf3.pdf, id=730, 265.99374pt x 145.54375pt>
 File: img/uniform_pdf3.pdf Graphic file (type pdf)
 <use img/uniform_pdf3.pdf>
-Package pdftex.def Info: img/uniform_pdf3.pdf  used on input line 745.
+Package pdftex.def Info: img/uniform_pdf3.pdf  used on input line 737.
 (pdftex.def)             Requested size: 327.01207pt x 196.4578pt.
  [35
 
@@ -1170,10 +1170,10 @@ Package pdftex.def Info: img/uniform_pdf3.pdf  used on input line 745.
 <img/Unif_Diego.pdf, id=760, 597.50786pt x 845.04686pt>
 File: img/Unif_Diego.pdf Graphic file (type pdf)
 <use img/Unif_Diego.pdf>
-Package pdftex.def Info: img/Unif_Diego.pdf  used on input line 812.
+Package pdftex.def Info: img/Unif_Diego.pdf  used on input line 804.
 (pdftex.def)             Requested size: 154.88339pt x 170.24423pt.
 
-Overfull \vbox (12.13275pt too high) detected at line 812
+Overfull \vbox (12.13275pt too high) detected at line 804
  []
 
 [39
@@ -1182,7 +1182,7 @@ Overfull \vbox (12.13275pt too high) detected at line 812
 <img/Unif_Diego_Calc.pdf, id=831, 597.50786pt x 845.04686pt>
 File: img/Unif_Diego_Calc.pdf Graphic file (type pdf)
 <use img/Unif_Diego_Calc.pdf>
-Package pdftex.def Info: img/Unif_Diego_Calc.pdf  used on input line 824.
+Package pdftex.def Info: img/Unif_Diego_Calc.pdf  used on input line 816.
 (pdftex.def)             Requested size: 172.09671pt x 235.72179pt.
  [40
 
@@ -1190,7 +1190,7 @@ Package pdftex.def Info: img/Unif_Diego_Calc.pdf  used on input line 824.
 <img/CDF_Diego.pdf, id=873, 420.15741pt x 419.51996pt>
 File: img/CDF_Diego.pdf Graphic file (type pdf)
 <use img/CDF_Diego.pdf>
-Package pdftex.def Info: img/CDF_Diego.pdf  used on input line 836.
+Package pdftex.def Info: img/CDF_Diego.pdf  used on input line 828.
 (pdftex.def)             Requested size: 154.88521pt x 144.05598pt.
  [41
 
@@ -1204,10 +1204,10 @@ Package pdftex.def Info: img/CDF_Diego.pdf  used on input line 836.
 <img/normals4.pdf, id=948, 331.2375pt x 181.67876pt>
 File: img/normals4.pdf Graphic file (type pdf)
 <use img/normals4.pdf>
-Package pdftex.def Info: img/normals4.pdf  used on input line 897.
+Package pdftex.def Info: img/normals4.pdf  used on input line 889.
 (pdftex.def)             Requested size: 327.00119pt x 196.44852pt.
 
-Overfull \vbox (36.64043pt too high) detected at line 897
+Overfull \vbox (36.64043pt too high) detected at line 889
  []
 
 [45
@@ -1216,7 +1216,7 @@ Overfull \vbox (36.64043pt too high) detected at line 897
 <img/Cow.pdf, id=960, 693.44783pt x 411.62352pt>
 File: img/Cow.pdf Graphic file (type pdf)
 <use img/Cow.pdf>
-Package pdftex.def Info: img/Cow.pdf  used on input line 904.
+Package pdftex.def Info: img/Cow.pdf  used on input line 896.
 (pdftex.def)             Requested size: 326.97864pt x 196.44649pt.
  [46
 
@@ -1230,7 +1230,7 @@ Package pdftex.def Info: img/Cow.pdf  used on input line 904.
 <img/Std_Diego.pdf, id=1010, 661.97374pt x 399.57349pt>
 File: img/Std_Diego.pdf Graphic file (type pdf)
 <use img/Std_Diego.pdf>
-Package pdftex.def Info: img/Std_Diego.pdf  used on input line 974.
+Package pdftex.def Info: img/Std_Diego.pdf  used on input line 966.
 (pdftex.def)             Requested size: 275.35034pt x 170.25241pt.
  [50
 
@@ -1242,10 +1242,10 @@ Package pdftex.def Info: img/Std_Diego.pdf  used on input line 974.
 <img/bell_curve__5.pdf, id=1048, 344.28625pt x 192.72pt>
 File: img/bell_curve__5.pdf Graphic file (type pdf)
 <use img/bell_curve__5.pdf>
-Package pdftex.def Info: img/bell_curve__5.pdf  used on input line 1053.
+Package pdftex.def Info: img/bell_curve__5.pdf  used on input line 1045.
 (pdftex.def)             Requested size: 326.98602pt x 196.44238pt.
 
-Overfull \vbox (0.6343pt too high) detected at line 1053
+Overfull \vbox (0.6343pt too high) detected at line 1045
  []
 
 [53
@@ -1254,10 +1254,10 @@ Overfull \vbox (0.6343pt too high) detected at line 1053
 <img/myTableGauss.pdf, id=1058, 584.09648pt x 544.97885pt>
 File: img/myTableGauss.pdf Graphic file (type pdf)
 <use img/myTableGauss.pdf>
-Package pdftex.def Info: img/myTableGauss.pdf  used on input line 1060.
+Package pdftex.def Info: img/myTableGauss.pdf  used on input line 1052.
 (pdftex.def)             Requested size: 309.76573pt x 248.8306pt.
 
-Overfull \vbox (26.07806pt too high) detected at line 1060
+Overfull \vbox (26.07806pt too high) detected at line 1052
  []
 
 [54
@@ -1266,12 +1266,12 @@ Overfull \vbox (26.07806pt too high) detected at line 1060
 <img/CDF_pr.pdf, id=1304, 681.00137pt x 312.94054pt>
 File: img/CDF_pr.pdf Graphic file (type pdf)
 <use img/CDF_pr.pdf>
-Package pdftex.def Info: img/CDF_pr.pdf  used on input line 1068.
+Package pdftex.def Info: img/CDF_pr.pdf  used on input line 1060.
 (pdftex.def)             Requested size: 289.08403pt x 144.53694pt.
  [55
 
  <./img/CDF_pr.pdf>]
-Overfull \hbox (3.94261pt too wide) in paragraph at lines 1086--1086
+Overfull \hbox (3.94261pt too wide) in paragraph at lines 1078--1078
 []  
  []
 
@@ -1283,7 +1283,7 @@ Overfull \hbox (3.94261pt too wide) in paragraph at lines 1086--1086
 <img/Areas_Normal.pdf, id=1389, 743.23387pt x 203.5892pt>
 File: img/Areas_Normal.pdf Graphic file (type pdf)
 <use img/Areas_Normal.pdf>
-Package pdftex.def Info: img/Areas_Normal.pdf  used on input line 1121.
+Package pdftex.def Info: img/Areas_Normal.pdf  used on input line 1113.
 (pdftex.def)             Requested size: 325.22072pt x 108.40501pt.
  [58
 
@@ -1298,14 +1298,14 @@ File: img/sum_of_two_independent_normals_with_rug__1.pdf Graphic file (type pdf
 )
 <use img/sum_of_two_independent_normals_with_rug__1.pdf>
 Package pdftex.def Info: img/sum_of_two_independent_normals_with_rug__1.pdf  us
-ed on input line 1208.
+ed on input line 1200.
 (pdftex.def)             Requested size: 327.00658pt x 183.35883pt.
  [61
 
  <./img/sum_of_two_independent_normals_with_rug__1.pdf>] [62
 
 ]
-Overfull \hbox (0.89664pt too wide) in alignment at lines 1255--1255
+Overfull \hbox (0.89664pt too wide) in alignment at lines 1247--1247
  [][][] []
  []
 
@@ -1319,7 +1319,7 @@ Overfull \hbox (0.89664pt too wide) in alignment at lines 1255--1255
 <img/chisquared_pdfs__2.pdf, id=1535, 344.28625pt x 188.705pt>
 File: img/chisquared_pdfs__2.pdf Graphic file (type pdf)
 <use img/chisquared_pdfs__2.pdf>
-Package pdftex.def Info: img/chisquared_pdfs__2.pdf  used on input line 1304.
+Package pdftex.def Info: img/chisquared_pdfs__2.pdf  used on input line 1296.
 (pdftex.def)             Requested size: 337.08827pt x 188.93488pt.
  [66
 
@@ -1327,10 +1327,10 @@ Package pdftex.def Info: img/chisquared_pdfs__2.pdf  used on input line 1304.
 <img/chisq_table__3.pdf, id=1546, 359.09157pt x 163.3603pt>
 File: img/chisq_table__3.pdf Graphic file (type pdf)
 <use img/chisq_table__3.pdf>
-Package pdftex.def Info: img/chisq_table__3.pdf  used on input line 1315.
+Package pdftex.def Info: img/chisq_table__3.pdf  used on input line 1307.
 (pdftex.def)             Requested size: 358.90437pt x 163.68393pt.
 
-Overfull \hbox (14.70905pt too wide) in paragraph at lines 1315--1315
+Overfull \hbox (14.70905pt too wide) in paragraph at lines 1307--1307
  [] 
  []
 
@@ -1346,7 +1346,7 @@ Overfull \hbox (14.70905pt too wide) in paragraph at lines 1315--1315
 <img/student_t__4.pdf, id=1586, 254.9525pt x 140.525pt>
 File: img/student_t__4.pdf Graphic file (type pdf)
 <use img/student_t__4.pdf>
-Package pdftex.def Info: img/student_t__4.pdf  used on input line 1364.
+Package pdftex.def Info: img/student_t__4.pdf  used on input line 1356.
 (pdftex.def)             Requested size: 255.4498pt x 140.19656pt.
  [71
 
@@ -1354,10 +1354,10 @@ Package pdftex.def Info: img/student_t__4.pdf  used on input line 1364.
 <img/Student_t_table__5.pdf, id=1597, 253.69781pt x 274.77657pt>
 File: img/Student_t_table__5.pdf Graphic file (type pdf)
 <use img/Student_t_table__5.pdf>
-Package pdftex.def Info: img/Student_t_table__5.pdf  used on input line 1373.
+Package pdftex.def Info: img/Student_t_table__5.pdf  used on input line 1365.
 (pdftex.def)             Requested size: 253.3875pt x 274.65009pt.
 
-Overfull \vbox (51.89755pt too high) detected at line 1373
+Overfull \vbox (51.89755pt too high) detected at line 1365
  []
 
 [72
@@ -1370,7 +1370,7 @@ Overfull \vbox (51.89755pt too high) detected at line 1373
 <img/F-dist_pds__6.pdf, id=1632, 307.1475pt x 168.63pt>
 File: img/F-dist_pds__6.pdf Graphic file (type pdf)
 <use img/F-dist_pds__6.pdf>
-Package pdftex.def Info: img/F-dist_pds__6.pdf  used on input line 1404.
+Package pdftex.def Info: img/F-dist_pds__6.pdf  used on input line 1396.
 (pdftex.def)             Requested size: 306.89366pt x 168.56525pt.
  [75
 
@@ -1378,7 +1378,7 @@ Package pdftex.def Info: img/F-dist_pds__6.pdf  used on input line 1404.
 <img/Fdist_table__7.pdf, id=1643, 305.64188pt x 164.11313pt>
 File: img/Fdist_table__7.pdf Graphic file (type pdf)
 <use img/Fdist_table__7.pdf>
-Package pdftex.def Info: img/Fdist_table__7.pdf  used on input line 1411.
+Package pdftex.def Info: img/Fdist_table__7.pdf  used on input line 1403.
 (pdftex.def)             Requested size: 305.44989pt x 164.43825pt.
  [76
 
@@ -1390,7 +1390,7 @@ Package pdftex.def Info: img/Fdist_table__7.pdf  used on input line 1411.
 <img/lognormal_with_rug__8.pdf, id=1676, 366.36874pt x 201.75375pt>
 File: img/lognormal_with_rug__8.pdf Graphic file (type pdf)
 <use img/lognormal_with_rug__8.pdf>
-Package pdftex.def Info: img/lognormal_with_rug__8.pdf  used on input line 1439
+Package pdftex.def Info: img/lognormal_with_rug__8.pdf  used on input line 1431
 .
 (pdftex.def)             Requested size: 325.23419pt x 179.63414pt.
 
@@ -1401,7 +1401,7 @@ Package pdftex.def Info: img/lognormal_with_rug__8.pdf  used on input line 1439
 ] [81
 
 ]
-Overfull \vbox (3.97778pt too high) detected at line 1500
+Overfull \vbox (3.97778pt too high) detected at line 1492
  []
 
 [82
@@ -1410,7 +1410,7 @@ Overfull \vbox (3.97778pt too high) detected at line 1500
 <img/Exp_Diego.pdf, id=1719, 735.32921pt x 391.0116pt>
 File: img/Exp_Diego.pdf Graphic file (type pdf)
 <use img/Exp_Diego.pdf>
-Package pdftex.def Info: img/Exp_Diego.pdf  used on input line 1512.
+Package pdftex.def Info: img/Exp_Diego.pdf  used on input line 1504.
 (pdftex.def)             Requested size: 325.21765pt x 179.63483pt.
  [83
 
@@ -1419,7 +1419,7 @@ Package pdftex.def Info: img/Exp_Diego.pdf  used on input line 1512.
 ] [85
 
 ]
-Overfull \vbox (4.18082pt too high) detected at line 1583
+Overfull \vbox (4.18082pt too high) detected at line 1575
  []
 
 [86
@@ -1428,12 +1428,12 @@ Overfull \vbox (4.18082pt too high) detected at line 1583
 <img/Shreve_Bin.pdf, id=1795, 313.99701pt x 62.70848pt>
 File: img/Shreve_Bin.pdf Graphic file (type pdf)
 <use img/Shreve_Bin.pdf>
-Package pdftex.def Info: img/Shreve_Bin.pdf  used on input line 1618.
+Package pdftex.def Info: img/Shreve_Bin.pdf  used on input line 1610.
 (pdftex.def)             Requested size: 289.10114pt x 54.20284pt.
  [87
 
  <./img/Shreve_Bin.pdf>]
-Overfull \vbox (9.93806pt too high) detected at line 1649
+Overfull \vbox (9.93806pt too high) detected at line 1641
  []
 
 [88
@@ -1460,7 +1460,7 @@ Overfull \vbox (9.93806pt too high) detected at line 1649
 <img/RelRVs_Diego.pdf, id=2334, 761.8479pt x 424.65508pt>
 File: img/RelRVs_Diego.pdf Graphic file (type pdf)
 <use img/RelRVs_Diego.pdf>
-Package pdftex.def Info: img/RelRVs_Diego.pdf  used on input line 1922.
+Package pdftex.def Info: img/RelRVs_Diego.pdf  used on input line 1913.
 (pdftex.def)             Requested size: 325.20511pt x 166.2239pt.
  [98
 
@@ -1474,11 +1474,11 @@ Package pdftex.def Info: img/RelRVs_Diego.pdf  used on input line 1922.
 \tf@snm=\write8
 \openout8 = `Lecture06.snm'.
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 1924.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 1924.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 1915.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 1915.
 (./Lecture06.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 1924.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 1924.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 1915.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 1915.
 
 Package rerunfilecheck Info: File `Lecture06.out' has not changed.
 (rerunfilecheck)             Checksum: AE14FB7422CEBC789B430D1105F745DE;870.
@@ -1522,7 +1522,7 @@ ive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texliv
 e/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy9.pfb></usr/local/texlive/
 2020/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/local/texl
 ive/2020/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on Lecture06.pdf (98 pages, 2716376 bytes).
+Output written on Lecture06.pdf (98 pages, 2716548 bytes).
 PDF statistics:
  2483 PDF objects out of 2487 (max. 8388607)
  1828 compressed objects within 19 object streams
