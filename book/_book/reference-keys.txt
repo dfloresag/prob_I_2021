@@ -419,3 +419,5 @@ def:unnamed-chunk-54
 expectation-3
 variance-3
 def:gaussian
+fig:unnamed-chunk-27
+exm:unnamed-chunk-52
