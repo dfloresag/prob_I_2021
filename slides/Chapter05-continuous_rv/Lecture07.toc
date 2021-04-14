@@ -1,12 +1,7 @@
-\beamer@sectionintoc {1}{Two Motivating Examples}{4}{0}{1}
-\beamer@sectionintoc {2}{Characterisations of Continuous Distributions}{16}{0}{2}
-\beamer@sectionintoc {3}{Distributional Summaries}{24}{0}{3}
-\beamer@sectionintoc {4}{Some Important Continuous Distributions}{31}{0}{4}
-\beamer@subsectionintoc {4}{1}{Continuous Uniform Distribution}{33}{0}{4}
-\beamer@subsectionintoc {4}{2}{Gaussian or ``Normal'' Distribution}{42}{0}{4}
-\beamer@subsectionintoc {4}{3}{The Chi-squared distribution}{64}{0}{4}
-\beamer@subsectionintoc {4}{4}{The Student-t distribution}{69}{0}{4}
-\beamer@subsectionintoc {4}{5}{The F distribution}{73}{0}{4}
-\beamer@subsectionintoc {4}{6}{The lognormal distribution}{77}{0}{4}
-\beamer@subsectionintoc {4}{7}{Exponential distribution}{80}{0}{4}
-\beamer@sectionintoc {5}{Variable Transformation}{84}{0}{5}
+\beamer@subsectionintoc {0}{1}{Gaussian or ``Normal'' Distribution}{4}{0}{0}
+\beamer@subsectionintoc {0}{2}{The Chi-squared distribution}{31}{0}{0}
+\beamer@subsectionintoc {0}{3}{The Student-t distribution}{36}{0}{0}
+\beamer@subsectionintoc {0}{4}{The F distribution}{40}{0}{0}
+\beamer@subsectionintoc {0}{5}{The lognormal distribution}{44}{0}{0}
+\beamer@subsectionintoc {0}{6}{Exponential distribution}{47}{0}{0}
+\beamer@sectionintoc {1}{Variable Transformation}{51}{0}{1}

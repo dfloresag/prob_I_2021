@@ -724,7 +724,12 @@ Figure 5.6: Densities for <span class="math inline">\(\color{blue}{X_{1}\sim\mat
 <li>The <strong>Mean</strong>, <strong>Median</strong> and <strong>Mode</strong> are all <strong>equal</strong>, owing to the <strong>symmetry</strong> of the distribution.</li>
 </ul></li>
 </ul>
-<p><img src="Prob1-GSEM-UNIGE_files/figure-html/unnamed-chunk-29-1.png" width="80%" style="display: block; margin: auto;" /></p>
+<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-29"></span>
+<img src="Prob1-GSEM-UNIGE_files/figure-html/unnamed-chunk-29-1.png" alt="The symmetry of the Gaussian Distribution" width="80%" />
+<p class="caption">
+Figure 5.7: The symmetry of the Gaussian Distribution
+</p>
+</div>
 <div id="the-standard-normal-distribution" class="section level4" number="5.4.2.1">
 <h4><span class="header-section-number">5.4.2.1</span> The Standard Normal distribution</h4>
 <p>First let us establish that <span class="math inline">\(\phi_{(\mu,\sigma)}(x)\)</span> can serve as a
@@ -736,7 +741,7 @@ Figure 5.6: Densities for <span class="math inline">\(\color{blue}{X_{1}\sim\mat
 \\
  &amp;=&amp;\int_{-\infty}^{\infty}\frac{1}{\sqrt{2\pi}}\exp{\left\{-\frac{z^2}{2}\right\}}dz \quad \text{where: } z=\frac{x-\mu}{\sigma} \Leftrightarrow dz = \frac{dx}{\sigma}.
 \end{eqnarray*}\]</span>
-But the second integral on the right hand side equals:
+But the second integral on the right hand side equals to:
 <span class="math display">\[
 \int_{-\infty}^{\infty}\exp{\left\{-\frac{z^2}{2}\right\}}dz =  2\underbrace{\int_0^{\infty}\exp{\left\{-\frac{z^2}{2}\right\}}dz}_{={\sqrt{2\pi}} \big/ {2}} =
 \sqrt{2\pi}
@@ -745,19 +750,20 @@ which is <strong>a known result</strong>, known as the <strong>Gaussian Integral
 indeed define the PDF of a random variable with a mean <span class="math inline">\(\mu\)</span> and a variance of <span class="math inline">\(\sigma^2\)</span></p>
 
 <div class="remark">
-<p> <span class="remark"><em>Remark. </em></span> Notice that to prove that <span class="math inline">\(\phi_{(\mu,\sigma)}(x)\)</span>, we had to <strong>transform</strong> <span class="math inline">\(X\)</span> to <span class="math inline">\(Z\)</span> via the substitution <span class="math inline">\(Z=(X-\mu)/\sigma\)</span>. The variable <span class="math inline">\(Z\)</span> is said to be <strong>standardised</strong>.</p>
-Notice also that the resulting integrand:
-<span class="math display">\[
-\frac{1}{\sqrt{2\pi}}\exp{\left\{-\frac{z^2}{2}\right\}}=\phi_{(0,1)}(z),
-\]</span>
-is the pdf of a random variable <span class="math inline">\(Z\sim \mathcal{N}(0,1)\)</span>. If <span class="math inline">\(Z\sim \mathcal{N}(0,1)\)</span> then <span class="math inline">\(Z\)</span> is called a <strong>standard normal random variable</strong> because: <span class="math inline">\(E[Z]=0\)</span> and <span class="math inline">\(Var(Z)=1\)</span>
+<p> <span class="remark"><em>Remark. </em></span> Notice that to prove that <span class="math inline">\(\phi_{(\mu,\sigma)}(x)\)</span>, we had to <strong>transform</strong> <span class="math inline">\(X\)</span> to <span class="math inline">\(Z\)</span> via the substitution <span class="math inline">\(Z=(X-\mu)/\sigma\)</span>. The new variable <span class="math inline">\(Z\)</span> is said to be <strong>standardised</strong>.</p>
+<p>Notice also that the integrand that results from this substitution:
+<span class="math display">\[\frac{1}{\sqrt{2\pi}}\exp{\left\{-\frac{z^2}{2}\right\}}=\phi_{(0,1)}(z),\]</span>
+is the PDF of a random variable <span class="math inline">\(Z\sim \mathcal{N}(0,1)\)</span>, which is called a
+<strong>standard normal random variable</strong> since <span class="math inline">\(E[Z]=0\)</span> and <span class="math inline">\(Var(Z)=1\)</span>.</p>
+Because of the special role that the standard normal distribution has in
+calculations involving the normal distribution its PDF is given the special
+notation:
+<span class="math display">\[\phi(z)=\phi_{(0,1)}(z).\]</span>
 </div>
-<p>Because of the special role that the standard normal distribution has in
-calculations involving the normal distribution its pdf is given the special notation
-<span class="math display">\[\phi(z)=\phi_{(0,1)}(z).\]</span></p>
-<p>The basic feature that underlies calculations involving the Normal distribution:</p>
-<p><span class="math display">\[X\sim \mathcal{N}\left( \mu ,\sigma ^{2}\right)\Leftrightarrow Z=\frac{\left( X-\mu \right) }{\sigma }\sim \mathcal{N}\left( 0,1\right)\]</span></p>
-<p>We can always transform from <span class="math inline">\(X\)</span> to <span class="math inline">\(Z\)</span> by “shifting” and “re-scaling”:
+<p>In shorthand notation, we can characterise this transformation in the following way.
+<span class="math display">\[X\sim \mathcal{N}\left( \mu ,\sigma ^{2}\right)\Leftrightarrow Z=\frac{\left( X-\mu \right) }{\sigma }\sim \mathcal{N}\left( 0,1\right)\]</span>
+This process of <em>standardisation</em> has very important implications when dealing with the Normal Distribution, one of them being the that one can <strong>compute all quantities related with a random variable <span class="math inline">\(X\)</span> by evaluating the related quantities over <span class="math inline">\(Z\)</span></strong>. This is an example of what is called called a <strong>variable transformation</strong></p>
+<p>In particular, we can transform from <span class="math inline">\(X\)</span> to <span class="math inline">\(Z\)</span> by “shifting” and “re-scaling”:
 <span class="math display">\[\begin{equation*}
 Z=\frac{X-\mu }{\sigma } \ (\text{for the random variable}) \quad\mbox{and}\quad z=\frac{x-\mu }{\sigma }\,  \ (\text{for its values}) ,
 \end{equation*}\]</span>
@@ -765,67 +771,108 @@ and return back to <span class="math inline">\(X\)</span> by a “re-scaling” 
 <span class="math display">\[\begin{equation*}
 X=\sigma Z+\mu  \ (\text{for the random variable}) \quad\mbox{and}\quad x=\sigma z+\mu\, \ (\text{for its values}) .
 \end{equation*}\]</span></p>
-<p>Thus statements about a Normal random variable can always be translated into equivalent statements about a standard Normal random variable, and vice versa.</p>
+<p>Thus, <strong>statements about any Normal random variable</strong> can always be translated into <strong>equivalent statements about a standard Normal random variable</strong>, and viceversa.</p>
 </div>
 <div id="the-normal-cdf" class="section level4" number="5.4.2.2">
 <h4><span class="header-section-number">5.4.2.2</span> The Normal CDF</h4>
-<p>In pictures:
-Start from <span class="math inline">\(X \sim \mathcal{N}(5,3)\)</span>; then define <span class="math inline">\(Y=X-5\)</span>, which is a recentered/shifted <span class="math inline">\(X\)</span> (it’s centered at 0 and has the same variance as <span class="math inline">\(X\)</span>); finally define <span class="math inline">\(Z\)</span>, which is a recentered/shifted and rescaled <span class="math inline">\(X\)</span> (it’s centered at 0 and has unit variance).</p>
-<p><img src="img/05_continuous_rv/Std_Diego-1.png" width="80%" style="display: block; margin: auto;" /></p>
-<p>In formulae:</p>
-<ul>
-<li>For <span class="math inline">\(X\sim \mathcal{N}\left( \mu ,\sigma ^{2}\right)\)</span>, the CDF is given by%
-<span class="math display">\[\Phi_{(\mu,\sigma)}\left( x\right) =\int_{-\infty }^{x}\frac{1}{\sqrt{2\pi \sigma ^{2}}}\exp{ \left\{ -\frac{1}{2\sigma ^{2}}\left( t-\mu \right) ^{2}\right\}} dt\]</span></li>
-<li>To calculate <span class="math inline">\(\Phi_{(\mu,\sigma)}\left( x\right)=P(\{X\leq x\})\)</span> we use integration by substitution, once again, to give</li>
-</ul>
-<p><span class="math display">\[\begin{eqnarray*}
+<p>For instance, we can concentrate on the consequences of this property on the computation of the CDF.</p>
+<p>Analytically the CDF of a Normal Random Variable <span class="math inline">\(X\sim \mathcal{N}\left( \mu ,\sigma ^{2}\right)\)</span> is given by:<br />
+<span class="math display">\[\Phi_{(\mu,\sigma)}\left( x\right) =\int_{-\infty }^{x}\frac{1}{\sqrt{2\pi \sigma ^{2}}}\exp{ \left\{ -\frac{1}{2\sigma ^{2}}\left( t-\mu \right) ^{2}\right\}} dt\]</span>
+To calculate <span class="math inline">\(\Phi_{(\mu,\sigma)}\left( x\right)=P(\{X\leq x\})\)</span> we use integration with the substitution
+<span class="math inline">\(s=(t-\mu)/\sigma\)</span>, which implies: <span class="math inline">\(z=(x-\mu)/\sigma\)</span> (for the domain of integration) and <span class="math inline">\(ds=dt/\sigma\)</span> (for the “differential”), yielding:
+<span class="math display">\[\begin{eqnarray*}
 P(\{ X\leq x\} )&amp;=&amp;\int_{-\infty}^x\frac{1}{\sqrt{2\pi\sigma^2}}\exp{\left\{-\frac{(t-\mu)^2}{2\sigma^2}\right\}}dt\\
  &amp;=&amp;\int_{-\infty}^z\phi(s)ds\\
-  &amp;=&amp;P(\{Z\leq z\})
+P(\{ X\leq x\} )  &amp;=&amp;P(\{Z\leq z\})
 \end{eqnarray*}\]</span></p>
-<p>where <span class="math inline">\(z=(x-\mu)/\sigma\)</span>, <span class="math inline">\(s=(t-\mu)/\sigma\)</span> and <span class="math inline">\(ds=dt/\sigma\)</span>.
-- The required probability has been mapped into a corresponding probability for a standard Normal random variable.</p>
-<ul>
-<li>We can evaluate the probabilities</li>
-</ul>
-<p><span class="math display">\[P(\{Z\leq z\})=\Phi(z)=\int_{-\infty}^z\phi(s)ds\]</span></p>
-<p>either directly using a computer or indirectly via Standard Normal
-Tables.
-- Standard Normal Tables give values of the integral <span class="math inline">\(\Phi(z)\)</span> for various values of <span class="math inline">\(z\geq 0\)</span>. (The tables are themselves
-calculated using a computer, of course.)
-- For negative values of <span class="math inline">\(z\)</span> the symmetry property of <span class="math inline">\(\phi(z)\)</span> ( <span class="math inline">\(\phi(z)=\phi(-z)\)</span>) tells us that
-<span class="math display">\[\Phi(-z)=1-\Phi(z)\,\]</span>
-- Similarly, if <span class="math inline">\(X\sim \mathcal{N}\left( \mu ,\sigma ^{2}\right)\)</span> then</p>
-<p><span class="math display">\[\begin{eqnarray*}
+<p>Hence, the <strong>probability of the interval <span class="math inline">\(X\leq x\)</span></strong> has been <strong>mapped into a corresponding probability</strong> for a <strong>standard Normal random variable</strong>. In other words:</p>
+<p><span class="math display">\[P(\{ X\leq x\}) = P\left(\left\{\underbrace{\frac{X-\mu}{\sigma}}_Z\leq \underbrace{\frac{x-\mu}{\sigma}}_{z}\right\}\right) = P(\{ Z\leq z\})\]</span></p>
+<p>The integral that defines the CDF of a Standard Normal random variable:
+<span class="math display">\[P(\{Z\leq z\})=\Phi(z)=\int_{-\infty}^z\phi(s)ds\]</span>
+<strong>does not have a closed-form expression</strong>. Yet, it is possible to provide very precise
+<strong>numerical approximations</strong> using computers. Some of these values can be found in so-called <strong>Standard Normal Tables</strong>, which contain values of the integral <span class="math inline">\(\Phi(z)\)</span> for various values of <span class="math inline">\(z\geq 0\)</span>.</p>
+<p>To compute the cumulative probability for <span class="math inline">\(z\leq 0\)</span> we take advantage of the symmetry property of <span class="math inline">\(\phi(z)\)</span> i.e. <span class="math inline">\(\phi(z)=\phi(-z)\)</span>, which also implies that:
+<span class="math display">\[\Phi(-z)=1-\Phi(z)\,\]</span></p>
+We can see this in the following plot.
+<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-31"></span>
+<img src="Prob1-GSEM-UNIGE_files/figure-html/unnamed-chunk-31-1.png" alt="The Symmetry of the Standard Normal PDF and its consequences for the CDF" width="80%" />
+<p class="caption">
+Figure 5.8: The Symmetry of the Standard Normal PDF and its consequences for the CDF
+</p>
+</div>
+<p>To compute the probability in a closed interval, if <span class="math inline">\(X\sim \mathcal{N}\left( \mu ,\sigma ^{2}\right)\)</span> we can proceed by substraction:
+<span class="math display">\[\begin{eqnarray*}
 P(\{x_1&lt;X\leq x_2\})&amp;=&amp;P(\{z_1&lt;Z\leq z_2\})\\
+&amp;=&amp;P(\{Z\leq z_2\}) - P(\{Z\leq z_1\})\\ 
 &amp;=&amp;\Phi(z_2)-\Phi(z_1)
 \end{eqnarray*}\]</span>
-where <span class="math inline">\(z_1=(x_1-\mu)/\sigma\)</span> and <span class="math inline">\(z_2=(x_2-\mu)/\sigma\)</span>.</p>
+where, again, the values <span class="math inline">\(z_1\)</span> and <span class="math inline">\(z_2\)</span> result from <em>standardisation</em>
+<span class="math inline">\(z_1=(x_1-\mu)/\sigma\)</span> and <span class="math inline">\(z_2=(x_2-\mu)/\sigma\)</span>. As we can see from the plot below, there’s a clear
+geometric interpretation to this relation.</p>
+<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-32"></span>
+<img src="Prob1-GSEM-UNIGE_files/figure-html/unnamed-chunk-32-1.png" alt="Computing the Probability of an interval" width="80%" />
+<p class="caption">
+Figure 5.9: Computing the Probability of an interval
+</p>
+</div>
+<!-- Graphical Explanation that I find a bit underwhelming -->
+<!-- We can proceed graphically. Let's start with a variable $X \sim \mathcal{N}(5,3)$. The procedure of shifting and rescaling consists in defining a new variable $Y=X-5$, which is a recentered/shifted $X$ (it's centered at 0 and has the same variance as $X$) and finally defining $Z= Y/\sqrt{3}$, which is a recentered/shifted and rescaled $X$ (it's centered at 0 and has unit variance).  -->
 </div>
 <div id="standard-normal-tables" class="section level4" number="5.4.2.3">
 <h4><span class="header-section-number">5.4.2.3</span> Standard Normal Tables</h4>
-<ul>
-<li>Standard Normal Tables give values of the standard normal integral <span class="math inline">\(\Phi(z)\)</span> for various values of <span class="math inline">\(z\geq 0\)</span>. Values for negative <span class="math inline">\(z\)</span> are obtained via symmetry.
-<!-- %-  Other Normal tables give either $1-\Phi(z)$ (tail area) or $\Phi(z)-0.5$! --></li>
-</ul>
-<p><img src="img/05_continuous_rv/bell_curve__5-1.png" width="80%" style="display: block; margin: auto;" /></p>
-<p><img src="img/05_continuous_rv/myTableGauss-1.png" width="80%" style="display: block; margin: auto;" /></p>
-<p>…. and you can use these tables to compute integrals/probabilities of the type:</p>
-<p><img src="img/05_continuous_rv/CDF_pr-1.png" width="80%" style="display: block; margin: auto;" /></p>
+<p>Standard Normal Tables give values of the standard normal integral <span class="math inline">\(\Phi(z)\)</span> for <span class="math inline">\(z\geq 0\)</span>. This is done to , to save space, since values for negative <span class="math inline">\(z\)</span> are obtained via symmetry, as we mentioned in the previous section.
+<!-- %-  Other Normal tables give either $1-\Phi(z)$ (tail area) or $\Phi(z)-0.5$! --></p>
+Most of the tables are explicit in this choice and graphically show that they
+contain the probabilities of the interval <span class="math inline">\(0\leq Z \leq z\)</span>, e.g. 
+<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-35"></span>
+<img src="img/05_continuous_rv/bell_curve__5-1.png" alt="Description of the contents of a Standard Normal Table" width="80%" />
+<p class="caption">
+Figure 5.10: Description of the contents of a Standard Normal Table
+</p>
+</div>
+<p>Typically, the dimension of the rows is nearest tenth to <span class="math inline">\(z\)</span>, while
+the columns indicate the nearest hundreth.</p>
+Say we would like to find the value of <span class="math inline">\(\Phi(0.46)\)</span>. We’d have to find the
+row for <span class="math inline">\(0.4\)</span> and the column for <code>0.06</code>.<br />
+
+<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-36"></span>
+<img src="img/05_continuous_rv/myTableGauss-1.png" alt="Probabilities for some values in the Standard Normal Table" width="80%" />
+<p class="caption">
+Figure 5.11: Probabilities for some values in the Standard Normal Table
+</p>
+</div>
+<p>You can use these tables to compute integrals/probabilities of intervals <span class="math inline">\(Z&lt;=z\)</span> or
+<span class="math inline">\(Z \in [z_1, z_2]\)</span> using the rules mentioned above.
+<img src="img/05_continuous_rv/CDF_pr-1.png" width="100%" style="display: block; margin: auto;" /></p>
 
 <div class="example">
-<p><span id="exm:unnamed-chunk-35" class="example"><strong>Example 5.6  </strong></span>
-[Prob of <span class="math inline">\(Z\)</span>]</p>
-
+<p><span id="exm:unnamed-chunk-38" class="example"><strong>Example 5.6  (Probability of several intervals)  </strong></span>
+Let us use the table Compute the probabilities for some open intervals:</p>
+<p><span class="math display">\[\begin{align*}
+P(\{Z\leq 1\})    &amp;\approx 0.8413 \\
+P(\{Z\leq 1.96\}) &amp;\approx 0.9750 \\
+P(\{Z\geq 1.96\}) &amp;=       1-P(\{Z\leq 1.96\}) \approx 1-0.9750=0.0250 \\
+P(\{Z\geq -1\})   &amp;=       P(\{Z\leq 1\})\approx 0.8413 \\
+P(\{Z\leq -1.5\}) &amp;=      P(\{Z\geq 1.5\}) =1-P(\{Z\leq 1.5\}) \approx 1-0.9332=0.0668
+\end{align*}\]</span></p>
+<p>And some closed intervals:
+<span class="math display">\[\begin{align*}
+P(\{0.64\leq Z\leq 1.96\}) &amp;=P(\{Z\leq 1.96\})-P(\{Z\leq 0.64\}) \approx 0.9750-0.7389=0.2361 \\
+P(\{-0.64\leq Z\leq 1.96\}) &amp;= P(\{Z\leq 1.96\})-P(\{Z\leq -0.64\}) =P(\{Z\leq 1.96\})-(1-P(\{Z\leq 0.64\})) \approx0.9750-(1-0.7389)=0.7139 \\
+P(\{-1.96\leq Z\leq -0.64\}) &amp;=P(\{0.64\leq Z\leq 1.96\}) \approx 0.2361
+\end{align*}\]</span></p>
 </div>
 </div>
-<div id="some-properties-of-the-normal-distribution" class="section level4" number="5.4.2.4">
-<h4><span class="header-section-number">5.4.2.4</span> Some properties of the Normal distribution</h4>
-<p><img src="img/05_continuous_rv/Areas_Normal-1.png" width="80%" style="display: block; margin: auto;" /></p>
-<p>The shaded areas under the pdfs are (approximately) equivalent to <span class="math inline">\(0.683\)</span>, <span class="math inline">\(0.954\)</span> and <span class="math inline">\(0.997\)</span>,
-respectively. So we state the following ….</p>
-<p><strong>… rule `68 – 95 – 99.7’</strong>:</p>
-<p>If <span class="math inline">\(X\)</span> is a Normal random variable, <span class="math inline">\(X \sim \mathcal{N}(\mu, \sigma^2)\)</span>, its realization has approximately a probability of \</p>
+<div id="further-properties-of-the-normal-distribution" class="section level4" number="5.4.2.4">
+<h4><span class="header-section-number">5.4.2.4</span> Further properties of the Normal distribution</h4>
+<p>In the following plot, the shaded areas under the pdfs are (approximately)
+equivalent to <span class="math inline">\(0.683\)</span>, <span class="math inline">\(0.954\)</span> and <span class="math inline">\(0.997\)</span>,
+respectively.
+<img src="img/05_continuous_rv/Areas_Normal-1.png" width="100%" style="display: block; margin: auto;" /></p>
+<p>This leads to the rule: <strong>… rule `68 – 95 – 99.7’</strong> i.e. that if <span class="math inline">\(X\)</span> is a Normal random variable, <span class="math inline">\(X \sim \mathcal{N}(\mu, \sigma^2)\)</span>, its realization has approximately a probability of:</p>
+<p><span class="math inline">\(\bullet\)</span> | <span class="math inline">\(68 \, \%\)</span> |  | <span class="math inline">\(\lbrack \mu - \sigma, \, \mu + \sigma \rbrack\)</span>;|
+<span class="math inline">\(\bullet\)</span> | <span class="math inline">\(95 \, \%\)</span> | |<span class="math inline">\(\lbrack \mu - 2 \, \sigma, \, \mu + 2 \, \sigma \rbrack\)</span>; |
+<span class="math inline">\(\bullet\)</span> | <span class="math inline">\(99.7 \, \%\)</span> | | <span class="math inline">\(\lbrack \mu - 3 \, \sigma, \, \mu + 3 \, \sigma\rbrack\)</span>.|</p>
 <ul>
 <li><p>For <span class="math inline">\(X\sim \mathcal{N}\left( \mu ,\sigma ^{2}\right)\)</span>
 <span class="math display">\[\begin{equation*}
@@ -851,7 +898,7 @@ X+Y\sim \mathcal{N}\left( \mu +\alpha ,\sigma ^{2}+\delta ^{2}\right).
 <h4><span class="header-section-number">5.4.2.6</span> Normal: an example</h4>
 
 <div class="example">
-<p><span id="exm:unnamed-chunk-38" class="example"><strong>Example 5.7  </strong></span>
+<p><span id="exm:unnamed-chunk-41" class="example"><strong>Example 5.7  </strong></span>
 On the highway A2 (in the Luzern area), the speed is limited to <span class="math inline">\(80\)</span> <span class="math inline">\(km/h\)</span>. A radar measures the speeds of all the cars.
 Assuming that the registered speeds are distributed according to a Normal law with mean <span class="math inline">\(72\)</span> <span class="math inline">\(km/h\)</span> and standard error <span class="math inline">\(8\)</span> <span class="math inline">\(km/h\)</span>: </p>
 <ul>
@@ -888,7 +935,7 @@ where <span class="math inline">\(Z \sim \mathcal{N}(0,1)\)</span>.</li>
 <h3><span class="header-section-number">5.4.3</span> The Chi-squared distribution</h3>
 
 <div class="definition">
-<span id="def:unnamed-chunk-39" class="definition"><strong>Definition 5.7  </strong></span>If <span class="math inline">\(Z_{1},Z_{2},\ldots ,Z_{n}\)</span> are independent standard Normal random
+<span id="def:unnamed-chunk-42" class="definition"><strong>Definition 5.7  </strong></span>If <span class="math inline">\(Z_{1},Z_{2},\ldots ,Z_{n}\)</span> are independent standard Normal random
 variables, then%
 <span class="math display">\[\begin{equation*}
 X=Z_{1}^{2}+Z_{2}^{2}+\cdots +Z_{n}^{2}
@@ -914,7 +961,7 @@ Var\left( X\right) &amp;=&amp;2n
 <h4><span class="header-section-number">5.4.3.3</span> Chi-squared table (illustration of its use)</h4>
 
 <div class="example">
-<p><span id="exm:unnamed-chunk-42" class="example"><strong>Example 5.8  </strong></span>Let <span class="math inline">\(X\)</span> be a chi-squared random variable with 10 degrees-of-freedom. What is the value of its ?</p>
+<p><span id="exm:unnamed-chunk-45" class="example"><strong>Example 5.8  </strong></span>Let <span class="math inline">\(X\)</span> be a chi-squared random variable with 10 degrees-of-freedom. What is the value of its ?</p>
 <p>By definition, the upper fifth percentile is the chi-squared value <span class="math inline">\(x\)</span> (lower case!!!) such that the probability to the right of <span class="math inline">\(x\)</span> is <span class="math inline">\(0.05\)</span> (so the upper tail area is <span class="math inline">\(5\%\)</span>). To find such an <span class="math inline">\(x\)</span> we use the chi-squared table: </p>
 <ul>
 <li>setting <span class="math inline">\(\mathcal{V} = 10\)</span> in the first column on the left and getting the corresponding row </li>
@@ -928,7 +975,7 @@ Now, all we need to do is read the corresponding cell. What do we get? Well, the
 <h3><span class="header-section-number">5.4.4</span> The Student-t distribution</h3>
 
 <div class="definition">
-<span id="def:unnamed-chunk-43" class="definition"><strong>Definition 5.8  </strong></span>If <span class="math inline">\(Z\sim \mathcal{N}(0,1)\)</span> and <span class="math inline">\(Y\sim \chi ^{2}(v)\)</span> are <strong>independent</strong>
+<span id="def:unnamed-chunk-46" class="definition"><strong>Definition 5.8  </strong></span>If <span class="math inline">\(Z\sim \mathcal{N}(0,1)\)</span> and <span class="math inline">\(Y\sim \chi ^{2}(v)\)</span> are <strong>independent</strong>
 then%
 <span class="math display">\[\begin{equation*}
 T=\frac{Z}{\sqrt{Y/v}}
@@ -957,7 +1004,7 @@ Var\left( T\right) &amp;=&amp;\frac{v}{v-2}\text{, for }v&gt;2.
 <h3><span class="header-section-number">5.4.5</span> The F distribution</h3>
 
 <div class="definition">
-<span id="def:unnamed-chunk-47" class="definition"><strong>Definition 5.9  </strong></span>
+<span id="def:unnamed-chunk-50" class="definition"><strong>Definition 5.9  </strong></span>
 If <span class="math inline">\(X\sim \chi ^{2}(v_{1})\)</span> and <span class="math inline">\(Y\sim \chi ^{2}(v_{2})\)</span> are <strong>
 independent</strong>, then
 <span class="math display">\[\begin{equation*}
@@ -984,7 +1031,7 @@ v_{1}\left( v_{2}-2\right) ^{2}\left( v_{2}-4\right) }\text{, for }v_{2}&gt;4.
 <h3><span class="header-section-number">5.4.6</span> The lognormal distribution</h3>
 
 <div class="definition">
-<span id="def:unnamed-chunk-50" class="definition"><strong>Definition 5.10  </strong></span> <span class="math inline">\(Y\)</span> has a <strong>lognormal distribution</strong> when
+<span id="def:unnamed-chunk-53" class="definition"><strong>Definition 5.10  </strong></span> <span class="math inline">\(Y\)</span> has a <strong>lognormal distribution</strong> when
 <span class="math display">\[\ln \left( Y\right) =X\]</span>
 has a Normal distribution. We write <span class="math inline">\(Y\sim\)</span> $( ,^{2}) $.
 </div>
@@ -1001,7 +1048,7 @@ Var(Y) &amp;=&amp;\exp^{ \left( 2\mu +\sigma ^{2}\right)} \left( \exp^{ \left( \
 <h3><span class="header-section-number">5.4.7</span> Exponential distribution</h3>
 
 <div class="definition">
-<p><span id="def:unnamed-chunk-52" class="definition"><strong>Definition 5.11  </strong></span>Let <span class="math inline">\(X\)</span> be a continuous random variable, having the following characteristics:</p>
+<p><span id="def:unnamed-chunk-55" class="definition"><strong>Definition 5.11  </strong></span>Let <span class="math inline">\(X\)</span> be a continuous random variable, having the following characteristics:</p>
 <ul>
 <li>[–] <span class="math inline">\(X\)</span> is defined on the positive real numbers <span class="math inline">\(\left( 0;\infty \right)\)</span> — namely <span class="math inline">\(\mathbb{R}^+\)</span>;<br />
 </li>
@@ -1024,7 +1071,7 @@ E[X]=\int_{0}^{\infty }xf_X(x )dx= 1/\lambda &amp; \text{and} &amp;   Var(X)=\in
 </div>
 
 <div class="example">
-<p><span id="exm:unnamed-chunk-54" class="example"><strong>Example 5.9  </strong></span>Let <span class="math inline">\(X\sim\)</span> <span class="math inline">\((\lambda)\)</span>, with <span class="math inline">\(\lambda =0.5\)</span>. Thus
+<p><span id="exm:unnamed-chunk-57" class="example"><strong>Example 5.9  </strong></span>Let <span class="math inline">\(X\sim\)</span> <span class="math inline">\((\lambda)\)</span>, with <span class="math inline">\(\lambda =0.5\)</span>. Thus
 <span class="math display">\[f_X(x) = \left\{ \begin{array}{ll}
 0.5 \exp (-0.5x) &amp; x&gt;0\\
 0 &amp; \text{otherwise}
@@ -1097,7 +1144,7 @@ x_{i}\right)  \} \right) \\
 \end{eqnarray*}\]</span></p>
 
 <div class="example">
-<p><span id="exm:unnamed-chunk-56" class="example"><strong>Example 5.10  </strong></span>[option pricing]</p>
+<p><span id="exm:unnamed-chunk-59" class="example"><strong>Example 5.10  </strong></span>[option pricing]</p>
 Let us imagine that we are tossing a balanced coin (<span class="math inline">\(p=1/2\)</span>), and when we get a <code>Head'' ($H$) the stock price moves up of a factor $u$, but when we get a</code>Tail’’ (<span class="math inline">\(T\)</span>) the price moves down of a factor <span class="math inline">\(d\)</span>. We denote the price at time <span class="math inline">\(t_1\)</span> by <span class="math inline">\(S_1(H)=u S_0\)</span> if the toss results in head (<span class="math inline">\(H\)</span>), and by <span class="math inline">\(S_1(T)=d S_0\)</span> if it results in tail (<span class="math inline">\(T\)</span>). After the second toss, the price will be one of:
 </div>
 <p><img src="img/05_continuous_rv/Shreve_Bin-1.png" width="80%" style="display: block; margin: auto;" />
@@ -1125,7 +1172,7 @@ although not all of them result in different stock prices at time <span class="m
 <!-- %   \draw [->] (b) to node [above] {$(1-p)^2$} (d); -->
 <!-- %\end{tikzpicture} --></p>
 <p>Let us set <span class="math inline">\(S_0=1\)</span>, <span class="math inline">\(u=2\)</span> and <span class="math inline">\(d=1/2\)</span>: we represent the price evolution by a tree:</p>
-<p><img src="Prob1-GSEM-UNIGE_files/figure-html/unnamed-chunk-58-1.png" width="80%" style="display: block; margin: auto;" /></p>
+<p><img src="Prob1-GSEM-UNIGE_files/figure-html/unnamed-chunk-61-1.png" width="80%" style="display: block; margin: auto;" /></p>
 <p>Now consider an European option call with maturity <span class="math inline">\(t_2\)</span> and strike price <span class="math inline">\(K=0.5\)</span>, whose random pay-off at <span class="math inline">\(t_2\)</span> is <span class="math inline">\(C=\max(0;S_2-0.5)\)</span>. Thus,
 <span class="math display">\[\begin{eqnarray*}
 C(HH)=\max(0;4-0.5)=\$ 3.5 &amp; C(HT)=\max(0;1-0.5)=\$ 0.5 \\
@@ -1162,7 +1209,7 @@ F_{Y}\left( y\right) &amp;=&amp;P \left( \{ Y\leq y \}\right) \\
 \end{eqnarray*}\]</span></p>
 
 <div class="example">
-<span id="exm:unnamed-chunk-59" class="example"><strong>Example 5.11  </strong></span>Let <span class="math inline">\(Y=\psi \left( X\right) =\exp^{ X}\)</span> where$ XF_X$ on all values <span class="math inline">\(x\in\mathbb{R}\)</span>
+<span id="exm:unnamed-chunk-62" class="example"><strong>Example 5.11  </strong></span>Let <span class="math inline">\(Y=\psi \left( X\right) =\exp^{ X}\)</span> where$ XF_X$ on all values <span class="math inline">\(x\in\mathbb{R}\)</span>
 <span class="math display">\[\begin{eqnarray*}
 F_{Y}\left( y\right) &amp;=&amp;P \left( \{ Y\leq y \} \right) \\
 &amp;=&amp;P \left( \{ \exp^{  X} \leq y \} \right) =P \left( \{ X\leq \ln
@@ -1189,7 +1236,7 @@ F_{Y}\left( y\right) &amp;=&amp;P \left( \{ Y\leq y \} \right) \\
 </ul>
 
 <div class="example">
-<p><span id="exm:unnamed-chunk-60" class="example"><strong>Example 5.12  </strong></span>Example: let <span class="math inline">\(Y=\psi \left( X\right) =-\exp^ X\)</span> where <span class="math inline">\(% X\sim F_X\)</span> on all values $x
+<p><span id="exm:unnamed-chunk-63" class="example"><strong>Example 5.12  </strong></span>Example: let <span class="math inline">\(Y=\psi \left( X\right) =-\exp^ X\)</span> where <span class="math inline">\(% X\sim F_X\)</span> on all values $x
 %TCIMACRO{ }%</p>
 $%
 <span class="math display">\[\begin{eqnarray*}
@@ -1247,7 +1294,7 @@ monotone (whether increasing or decreasing)</p></li>
 <h3><span class="header-section-number">5.5.5</span> Example of transformation using pdf</h3>
 
 <div class="example">
-<p><span id="exm:unnamed-chunk-61" class="example"><strong>Example 5.13  </strong></span>
+<p><span id="exm:unnamed-chunk-64" class="example"><strong>Example 5.13  </strong></span>
 - So what is the pdf for the lognormal distribution?</p>
 <ul>
 <li><p>Recall that <span class="math inline">\(Y\)</span> has a <strong>lognormal distribution</strong> when <span class="math inline">\(\ln \left( Y\right) =X\)</span> has a Normal distribution</p></li>

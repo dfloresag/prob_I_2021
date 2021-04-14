@@ -480,7 +480,8 @@ sim_data %>%
   theme_minimal() +
    labs(title = "Density of U(0,1)",
        x = "x",
-       y = expression(f[X](x))) + ylim(c(0,1.5))+
+       y = expression(f[X](x))) + 
+  ylim(c(0,1.5))+
   geom_point(data=as_tibble(data.frame(x = c(0,1), f_x= c(0,0))), aes(x=x, y = f_x),
              color = "blue", lwd = 3) + 
   geom_point(data=as_tibble(data.frame(x = c(0,1), f_x= c(1,1))), aes(x=x, y = f_x),
@@ -645,29 +646,41 @@ There are couple of important **properties** worth mentioning:
   - **Unimodal**, meaning that it has only one mode and 
   - The **Mean**, **Median** and **Mode** are all **equal**, owing to the **symmetry** of the distribution.
 
-```{r ,echo = FALSE, fig.cap='', fig.align='center', out.width = "80%"}
+```{r ,echo = FALSE, fig.cap='The symmetry of the Gaussian Distribution', fig.align='center', out.width = "80%"}
 sim_data <- seq(-5, 5, by=0.005) %>%
   as_tibble() %>%
   rename(x = value) %>%
   mutate(f_x = dnorm(x,mean = 0, sd = 1.5))
 
+sim_data_redux <- 
+  sim_data %>% 
+  filter(x %in% c(1.5, -1.5))
+
 sim_data %>%
   ggplot(aes(x = x, y = f_x)) +
   geom_line(color = "red", lwd = 1)+
   theme_minimal() +
-   labs(title = "Density of N(0,2.25)",
-       x = "x",
-       y = expression(f[X](x))) +
   geom_segment(
-    data = sim_data %>% filter(x %in% c(1.5, -1.5)),
+    data =sim_data_redux ,
     mapping = aes(x = x,  y=0 , xend = x, yend = f_x), 
     linetype = 2
   ) + 
   geom_segment(
-    data = sim_data %>% filter(x %in% c(1.5, -1.5)),
+    data = sim_data_redux,
     mapping = aes(x = x[1],y = f_x , xend = x[2], yend = f_x), 
     linetype = 2
-  )
+  ) + 
+  geom_text(
+    data = sim_data_redux,
+    aes(x = x, y =0-0.01 , label = c("-x", "x"))
+  ) + 
+  geom_text(
+    data = sim_data_redux,
+    aes(x = 0, y =f_x[1]+0.01 , label="phi(x)"), parse = TRUE
+    )+ 
+   labs(title = "Density of N(0,2.25)",
+       x = "x",
+       y = expression(f[X](x)))
 ```
 
 
@@ -683,7 +696,7 @@ Integrating with respect to $x$ using _integration by substitution_ we obtain
 \\
  &=&\int_{-\infty}^{\infty}\frac{1}{\sqrt{2\pi}}\exp{\left\{-\frac{z^2}{2}\right\}}dz \quad \text{where: } z=\frac{x-\mu}{\sigma} \Leftrightarrow dz = \frac{dx}{\sigma}.
 \end{eqnarray*}
-But the second integral on the right hand side equals:
+But the second integral on the right hand side equals to:
 $$
 \int_{-\infty}^{\infty}\exp{\left\{-\frac{z^2}{2}\right\}}dz =  2\underbrace{\int_0^{\infty}\exp{\left\{-\frac{z^2}{2}\right\}}dz}_{={\sqrt{2\pi}} \big/ {2}} =
 \sqrt{2\pi}
@@ -692,23 +705,24 @@ which is **a known result**, known as the **Gaussian Integral** that cancels out
 indeed define the PDF of a  random variable with a mean $\mu$ and a variance of $\sigma^2$
 
 ```{remark}
-Notice that to prove that $\phi_{(\mu,\sigma)}(x)$, we had to **transform** $X$ to $Z$ via the substitution $Z=(X-\mu)/\sigma$. The variable $Z$ is said to be **standardised**.
+Notice that to prove that $\phi_{(\mu,\sigma)}(x)$, we had to **transform** $X$ to $Z$ via the substitution $Z=(X-\mu)/\sigma$. The new variable $Z$ is said to be **standardised**.
 
-Notice also that the resulting integrand:
-$$
-\frac{1}{\sqrt{2\pi}}\exp{\left\{-\frac{z^2}{2}\right\}}=\phi_{(0,1)}(z),
-$$
-is the PDF of a random variable $Z\sim \mathcal{N}(0,1)$, which is called a **standard normal random variable** because: $E[Z]=0$ and $Var(Z)=1$. Because of the special role that the standard normal distribution has in calculations involving the normal distribution its PDF is given the special 
+Notice also that the integrand that results from this substitution:
+$$\frac{1}{\sqrt{2\pi}}\exp{\left\{-\frac{z^2}{2}\right\}}=\phi_{(0,1)}(z),$$
+is the PDF of a random variable $Z\sim \mathcal{N}(0,1)$, which is called a 
+**standard normal random variable** since $E[Z]=0$ and $Var(Z)=1$. 
+
+Because of the special role that the standard normal distribution has in 
+calculations involving the normal distribution its PDF is given the special 
 notation:
 $$\phi(z)=\phi_{(0,1)}(z).$$
 ```
 
-
-The basic feature that underlies calculations involving the Normal distribution:
-
+In shorthand notation, we can characterise this transformation in the following way. 
 $$X\sim \mathcal{N}\left( \mu ,\sigma ^{2}\right)\Leftrightarrow Z=\frac{\left( X-\mu \right) }{\sigma }\sim \mathcal{N}\left( 0,1\right)$$
+This process of _standardisation_ has very important implications when dealing with the Normal Distribution, one of them being the that one can **compute all quantities related with a random variable $X$ by evaluating the related quantities over $Z$**. This is an example of what is called called a **variable transformation**
 
-We can always transform from $X$ to $Z$  by  "shifting" and "re-scaling":
+In particular, we can transform from $X$ to $Z$ by "shifting" and "re-scaling":
 \begin{equation*}
 Z=\frac{X-\mu }{\sigma } \ (\text{for the random variable}) \quad\mbox{and}\quad z=\frac{x-\mu }{\sigma }\,  \ (\text{for its values}) ,
 \end{equation*}
@@ -717,137 +731,237 @@ and return back to $X$ by a "re-scaling" and "shifting":
 X=\sigma Z+\mu  \ (\text{for the random variable}) \quad\mbox{and}\quad x=\sigma z+\mu\, \ (\text{for its values}) .
 \end{equation*}
 
-Thus, statements about a Normal random variable can always be translated into equivalent statements about a standard Normal random variable, and viceversa.
+Thus, **statements about any Normal random variable** can always be translated into **equivalent statements about a standard Normal random variable**, and viceversa.
 
 #### The Normal CDF
 
-In pictures:
-Start from $X \sim \mathcal{N}(5,3)$; then define $Y=X-5$, which is a recentered/shifted $X$ (it's centered at 0 and has the same variance as $X$); finally define $Z$, which is a recentered/shifted and rescaled $X$ (it's centered at 0 and has unit variance). 
+For instance, we can concentrate on the consequences of this property on the computation of the CDF. 
 
-```{r ,echo = FALSE, fig.cap='', fig.align='center', out.width = "80%"}
+Analytically the CDF of a Normal Random Variable $X\sim \mathcal{N}\left( \mu ,\sigma ^{2}\right)$ is given by:  
+$$\Phi_{(\mu,\sigma)}\left( x\right) =\int_{-\infty }^{x}\frac{1}{\sqrt{2\pi \sigma ^{2}}}\exp{ \left\{ -\frac{1}{2\sigma ^{2}}\left( t-\mu \right) ^{2}\right\}} dt$$
+To calculate $\Phi_{(\mu,\sigma)}\left( x\right)=P(\{X\leq x\})$ we use integration with the substitution
+$s=(t-\mu)/\sigma$, which implies: $z=(x-\mu)/\sigma$ (for the domain of integration) and $ds=dt/\sigma$ (for the "differential"), yielding: 
+\begin{eqnarray*}
+P(\{ X\leq x\} )&=&\int_{-\infty}^x\frac{1}{\sqrt{2\pi\sigma^2}}\exp{\left\{-\frac{(t-\mu)^2}{2\sigma^2}\right\}}dt\\
+ &=&\int_{-\infty}^z\phi(s)ds\\
+P(\{ X\leq x\} )  &=&P(\{Z\leq z\})
+\end{eqnarray*}
+
+Hence, the **probability of the interval $X\leq x$** has been **mapped into a corresponding probability** for a **standard Normal random variable**. In other words:
+
+$$P(\{ X\leq x\}) = P\left(\left\{\underbrace{\frac{X-\mu}{\sigma}}_Z\leq \underbrace{\frac{x-\mu}{\sigma}}_{z}\right\}\right) = P(\{ Z\leq z\})$$ 
+
+The integral that defines the CDF of a Standard Normal random variable: 
+$$P(\{Z\leq z\})=\Phi(z)=\int_{-\infty}^z\phi(s)ds$$
+**does not have a closed-form expression**. Yet, it is possible to provide very precise 
+**numerical approximations** using computers. Some of these values can be found in so-called **Standard Normal Tables**, which contain values of the integral $\Phi(z)$ for various values of $z\geq 0$.
+
+To compute the cumulative probability for $z\leq 0$ we take advantage of the symmetry property of $\phi(z)$ i.e. $\phi(z)=\phi(-z)$, which also implies that: 
+$$\Phi(-z)=1-\Phi(z)\,$$
+
+We can see this in the following plot.
+```{r ,echo = FALSE, fig.cap='The Symmetry of the Standard Normal PDF and its consequences for the CDF', fig.align='center', out.width = "80%", fig.height = 8,fig.width=8}
+sim_data <- seq(-3, 3, by=0.005) %>%
+  as_tibble() %>%
+  rename(x = value) %>%
+  mutate(f_x = dnorm(x,mean = 0, sd = 1))
+
+sim_data_redux <- 
+  sim_data %>% 
+  filter(x %in% c(1, -1))
+
+standard_normal <- 
+  sim_data %>%
+  ggplot(aes(x = x, y = f_x)) +
+  geom_line(color = "red", lwd = 1)+
+  theme_minimal() +
+  labs(title = "",
+       x = "Z",
+       y = expression(f[Z](z))) 
+
+standard_normal_symmetric <- 
+  standard_normal +
+  geom_segment(
+    data =sim_data_redux ,
+    mapping = aes(x = x,  y=0 , xend = x, yend = f_x), 
+    linetype = 2
+  ) + 
+  geom_segment(
+    data = sim_data_redux,
+    mapping = aes(x = x[1],y = f_x , xend = x[2], yend = f_x), 
+    linetype = 2
+  ) + 
+  geom_text(
+    data = sim_data_redux,
+    aes(x = x, y =0-0.05 , label = c("-z", "z"))
+  ) + 
+  geom_text(
+    data = sim_data_redux,
+    aes(x = 0, y =f_x[1]+0.05 , label="phi(z)"), parse = TRUE
+    )
+  
+
+phi_min_z <- standard_normal_symmetric +
+  geom_area(data = sim_data %>% filter(x<= -1),
+    aes(x = x, y =f_x), fill= "red", alpha =0.5) + 
+  annotate("text", x = -2.5, y = 0.05, label = "Phi(-z)", parse =TRUE, color = "red")
+  
+phi_z_one_min_z <- standard_normal_symmetric +
+  geom_area(data = sim_data %>% filter(x<= 1),
+    aes(x = x, y =f_x), fill= "blue", alpha =0.5) +
+  geom_area(data = sim_data %>% filter(x>= 1),
+    aes(x = x, y =f_x), fill= "red", alpha =0.5)+
+  annotate("text", x = 2.5, y = 0.05, label = "1-Phi(z)", parse =TRUE, color = "red")+
+  annotate("text", x = -1.5, y = 0.2, label = "Phi(z)", parse =TRUE, color = "blue")
+
+phi_min_z_z <- standard_normal_symmetric +
+  geom_area(data = sim_data %>% filter(x<= -1),
+    aes(x = x, y =f_x), fill= "red", alpha =0.5)+ 
+  geom_area(data = sim_data %>% filter(x>= 1),
+    aes(x = x, y =f_x), fill= "red", alpha =0.5) +
+  annotate("text", x = -2.5, y = 0.05, label = "Phi(-z)", parse =TRUE, color = "red")+
+  annotate("text", x = 2.5, y = 0.05, label = "1-Phi(z)", parse =TRUE, color = "red")
+
+phi_min_z / phi_z_one_min_z / phi_min_z_z
+```
+
+To compute the probability in a closed interval, if $X\sim \mathcal{N}\left( \mu ,\sigma ^{2}\right)$ we can proceed by substraction: 
+\begin{eqnarray*}
+P(\{x_1<X\leq x_2\})&=&P(\{z_1<Z\leq z_2\})\\
+&=&P(\{Z\leq z_2\}) - P(\{Z\leq z_1\})\\ 
+&=&\Phi(z_2)-\Phi(z_1)
+\end{eqnarray*}
+where, again, the values $z_1$ and $z_2$ result from _standardisation_ 
+$z_1=(x_1-\mu)/\sigma$ and $z_2=(x_2-\mu)/\sigma$. As we can see from the plot below, there's a clear
+geometric interpretation to this relation. 
+
+```{r ,echo = FALSE, fig.cap='Computing the Probability of an interval', fig.align='center', out.width = "80%", fig.height = 8,fig.width=8}
+x_low <- -1.5
+x_high <- 0.75
+
+sim_data_assym <- 
+  sim_data %>% 
+  filter(x %in% c(x_low, x_high))
+
+phi_x_low <- 
+  standard_normal+
+  geom_area(data = sim_data %>% filter(x<= x_low),
+    aes(x = x, y =f_x), fill= "red", alpha =0.25)+
+  annotate("text", x = -2, y = 0.025, label = "Phi(z[1])", parse =TRUE, color = "red") + 
+  annotate("text", x = x_low, y = -.05, label = "z[1]", parse =TRUE)  
+
+
+phi_x_high <- 
+  standard_normal+
+  geom_area(data = sim_data %>% filter(x<= x_high),
+    aes(x = x, y =f_x), fill= "red", alpha =0.25) +
+  annotate("text", x = 0, y = 0.2, label = "Phi(z[2])", parse =TRUE, color = "red")+
+  annotate("text", x = x_high, y = -.05, label = "z[2]", parse =TRUE)  
+
+phi_x_low_high <- standard_normal +
+  geom_area(data = sim_data %>% filter(x>= x_low, x<=x_high),
+    aes(x = x, y =f_x), fill= "red", alpha =0.25) + 
+  annotate("text", x = 0, y = 0.2, label = "Phi(z[2]) - Phi(z[1])", parse =TRUE, color = "red")+
+  annotate("text", x = x_low, y = -.05, label = "z[1]", parse =TRUE)  +
+  annotate("text", x = x_high, y = -.05, label = "z[2]", parse =TRUE)  
+
+
+phi_x_low  / phi_x_high / phi_x_low_high
+```
+
+<!-- Graphical Explanation that I find a bit underwhelming -->
+
+<!-- We can proceed graphically. Let's start with a variable $X \sim \mathcal{N}(5,3)$. The procedure of shifting and rescaling consists in defining a new variable $Y=X-5$, which is a recentered/shifted $X$ (it's centered at 0 and has the same variance as $X$) and finally defining $Z= Y/\sqrt{3}$, which is a recentered/shifted and rescaled $X$ (it's centered at 0 and has unit variance).  -->
+
+
+```{r ,echo = FALSE, fig.cap='', fig.align='center', out.width = "80%", eval = FALSE}
+  mu <- 5
+sigma <- sqrt(3)
+sim_data <- seq(-5, 10, by=0.005) %>%
+  as_tibble() %>%
+  rename(t = value) %>%
+  mutate(f_X = dnorm(t,mean = mu, sd = sigma)) %>% 
+  mutate(f_Y = dnorm(t-mu, sd = sigma)) %>% 
+  mutate(f_Z = dnorm((t-mu)/sigma))
+
+
+sim_data %>% 
+  ggplot(aes(x = t, y=f_X))+
+  geom_line() +
+  geom_line(aes(x = t-mu, y=f_Y))+
+  geom_line(aes(x = (t-mu)/sigma, y=f_Z))+
+  theme_minimal()
+
+```
+
+
+```{r ,echo = FALSE, fig.cap='', fig.align='center', out.width = "80%", eval = FALSE}
   knitr::include_graphics("img/05_continuous_rv/Std_Diego-1.png")
 ```
 
 
-In formulae:
-
--  For $X\sim \mathcal{N}\left( \mu ,\sigma ^{2}\right)$, the CDF is given by%
-$$\Phi_{(\mu,\sigma)}\left( x\right) =\int_{-\infty }^{x}\frac{1}{\sqrt{2\pi \sigma ^{2}}}\exp{ \left\{ -\frac{1}{2\sigma ^{2}}\left( t-\mu \right) ^{2}\right\}} dt$$
--  To calculate $\Phi_{(\mu,\sigma)}\left( x\right)=P(\{X\leq x\})$ we use integration by substitution, once again, to give
-
-\begin{eqnarray*}
-P(\{ X\leq x\} )&=&\int_{-\infty}^x\frac{1}{\sqrt{2\pi\sigma^2}}\exp{\left\{-\frac{(t-\mu)^2}{2\sigma^2}\right\}}dt\\
- &=&\int_{-\infty}^z\phi(s)ds\\
-  &=&P(\{Z\leq z\})
-\end{eqnarray*}
-
-where $z=(x-\mu)/\sigma$, $s=(t-\mu)/\sigma$ and $ds=dt/\sigma$.
--  The required probability has been mapped into a corresponding probability for a standard Normal random variable.
-
-
-
-- We can evaluate the probabilities
-
-$$P(\{Z\leq z\})=\Phi(z)=\int_{-\infty}^z\phi(s)ds$$
-
-either directly using a computer or indirectly via Standard Normal
-Tables.
--  Standard Normal Tables give values of the integral $\Phi(z)$ for various values of $z\geq 0$. (The tables are themselves
-calculated using a computer, of course.)
--  For negative values of $z$ the symmetry property of $\phi(z)$ (\textit{i.e.} $\phi(z)=\phi(-z)$) tells us that
-$$\Phi(-z)=1-\Phi(z)\,$$
-- Similarly, if $X\sim \mathcal{N}\left( \mu ,\sigma ^{2}\right)$ then
-
-\begin{eqnarray*}
-P(\{x_1<X\leq x_2\})&=&P(\{z_1<Z\leq z_2\})\\
-&=&\Phi(z_2)-\Phi(z_1)
-\end{eqnarray*}
-where $z_1=(x_1-\mu)/\sigma$ and $z_2=(x_2-\mu)/\sigma$.
-
 #### Standard Normal Tables
 
-- Standard Normal Tables give values of the standard normal integral $\Phi(z)$ for various values of $z\geq 0$.  Values for negative $z$ are obtained via symmetry.
+Standard Normal Tables give values of the standard normal integral $\Phi(z)$ for  $z\geq 0$. This is done to , to save space, since values for negative $z$ are obtained via symmetry, as we mentioned in the previous section.
 <!-- %-  Other Normal tables give either $1-\Phi(z)$ (tail area) or $\Phi(z)-0.5$! -->
 
-```{r ,echo = FALSE, fig.cap='', fig.align='center', out.width = "80%"}
+Most of the tables are explicit in this choice and graphically show that they 
+contain the probabilities of the interval $0\leq Z \leq z$, e.g. 
+```{r ,echo = FALSE, fig.cap='Description of the contents of a Standard Normal Table', fig.align='center', out.width = "80%"}
   knitr::include_graphics("img/05_continuous_rv/bell_curve__5-1.png")
 ```
 
-```{r ,echo = FALSE, fig.cap='', fig.align='center', out.width = "80%"}
+Typically, the dimension of the rows is nearest tenth to $z$, while
+the columns indicate the nearest hundreth. 
+
+Say we would like to find the value of $\Phi(0.46)$. We'd have to find the
+row for $0.4$ and the column for `0.06`.  
+```{r ,echo = FALSE, fig.cap='Probabilities for some values in the Standard Normal Table', fig.align='center', out.width = "80%"}
   knitr::include_graphics("img/05_continuous_rv/myTableGauss-1.png")
 ```
 
-.... and you can use these tables to compute integrals/probabilities of the type: 
-
-```{r ,echo = FALSE, fig.cap='', fig.align='center', out.width = "80%"}
+You can use these tables to compute integrals/probabilities of intervals $Z<=z$ or 
+$Z \in [z_1, z_2]$ using the rules mentioned above. 
+```{r ,echo = FALSE, fig.cap='', fig.align='center', out.width = "100%"}
   knitr::include_graphics("img/05_continuous_rv/CDF_pr-1.png")
 ```
 
-```{example}
+```{example, name = 'Probability of several intervals'}
 
-[Prob of $Z$]
+Let us use the table Compute the probabilities for some open intervals:
 
-\noindent
-\begin{tabular}{ll}
-$P(\{Z\leq 1\})$ & $\approx0.8413\bigskip$ \\
-$P(\{Z\leq 1.96\})$ & $\approx0.9750\bigskip$ \\
-$P(\{Z\geq 1.96\})$ & $=1-P(\{Z\leq 1.96\})$ $\approx1-0.9750=0.0250\bigskip $\\
-$P(\{Z\geq -1\})$ & $=P(\{Z\leq 1\})\approx0.8413\bigskip$ \\ 
-$P(\{Z\leq -1.5\})$ & $=P(\{Z\geq 1.5\}) =1-P(\{Z\leq 1.5\})$ $\approx1-0.9332=0.0668$%
-\end{tabular}
+\begin{align*}
+P(\{Z\leq 1\})    &\approx 0.8413 \\
+P(\{Z\leq 1.96\}) &\approx 0.9750 \\
+P(\{Z\geq 1.96\}) &=       1-P(\{Z\leq 1.96\}) \approx 1-0.9750=0.0250 \\
+P(\{Z\geq -1\})   &=       P(\{Z\leq 1\})\approx 0.8413 \\
+P(\{Z\leq -1.5\}) &=      P(\{Z\geq 1.5\}) =1-P(\{Z\leq 1.5\}) \approx 1-0.9332=0.0668
+\end{align*}
 
-\begin{tabular}{ll}
-& $P(\{0.64\leq Z\leq 1.96\})=$ \\ 
-& $P(\{Z\leq 1.96\})-P(\{Z\leq 0.64\})$ \\ 
-& $\approx 0.9750-0.7389=0.2361\bigskip$ \\ 
-& $P(\{-0.64\leq Z\leq 1.96\})$ \\ 
-& $=P(\{Z\leq 1.96\})-P(\{Z\leq -0.64\})$ \\
-& $=P(\{Z\leq 1.96\})-(1-P(\{Z\leq 0.64\}))$ \\ 
-& $\approx0.9750-(1-0.7389)=0.7139\bigskip$ \\ 
-& $P(\{-1.96\leq Z\leq -0.64\})$ \\ 
-& $=P(\{0.64\leq Z\leq 1.96\})$ \\ 
-& $\approx0.2361$%
-\end{tabular}
+And some closed intervals: 
+\begin{align*}
+P(\{0.64\leq Z\leq 1.96\}) &=P(\{Z\leq 1.96\})-P(\{Z\leq 0.64\}) \approx 0.9750-0.7389=0.2361 \\
+P(\{-0.64\leq Z\leq 1.96\}) &= P(\{Z\leq 1.96\})-P(\{Z\leq -0.64\}) =P(\{Z\leq 1.96\})-(1-P(\{Z\leq 0.64\})) \approx0.9750-(1-0.7389)=0.7139 \\
+P(\{-1.96\leq Z\leq -0.64\}) &=P(\{0.64\leq Z\leq 1.96\}) \approx 0.2361
+\end{align*}
+
 ```
 
+#### Further properties of the Normal distribution
 
-#### Some properties of the Normal distribution
-
-
-```{r ,echo = FALSE, fig.cap='', fig.align='center', out.width = "80%"}
+In the following plot, the shaded areas under the pdfs are (approximately) 
+equivalent to $0.683$, $0.954$ and $0.997$, 
+respectively.
+```{r ,echo = FALSE, fig.cap='', fig.align='center', out.width = "100%"}
   knitr::include_graphics("img/05_continuous_rv/Areas_Normal-1.png")
 ```
 
-The shaded areas under the pdfs are (approximately) equivalent to $0.683$, $0.954$ and $0.997$, 
-respectively. So we state  the following ....
+This leads to the rule: **... rule `68 -- 95 -- 99.7'** i.e. that if $X$ is a Normal random variable, $X \sim \mathcal{N}(\mu, \sigma^2)$, its realization has approximately a probability of:
 
-**... rule `68 -- 95 -- 99.7'**: 
+| $\bullet$ | $68 \, \%$ | \mbox{of being in the interval} | $\lbrack \mu - \sigma, \, \mu + \sigma \rbrack$;|
+| $\bullet$ | $95 \, \%$   |\mbox{of being in the interval} |$\lbrack \mu - 2 \, \sigma, \, \mu + 2 \, \sigma \rbrack$; |
+| $\bullet$ | $99.7 \, \%$ | \mbox{of being in the interval}| $\lbrack \mu - 3 \, \sigma, \, \mu + 3 \, \sigma\rbrack$.|
 
-
-If $X$ is a Normal random variable, $X \sim \mathcal{N}(\mu, \sigma^2)$, its realization has approximately a probability of \\ 
-
-\begin{tabular}{llll}
-$\bullet$
-&
-$68 \, \%$ 
-&
-\mbox{of being in the interval}
-&
-$\lbrack \mu - \sigma, \, \mu + \sigma \rbrack$;\\[0.2cm]
-$\bullet$
-&
-$95 \, \%$  
-&
-\mbox{of being in the interval}
-&
-$\lbrack \mu - 2 \, \sigma, \, \mu + 2 \, \sigma \rbrack$;\\[0.2cm]
-$\bullet$
-&
-$99.7 \, \%$  
-&
-\mbox{of being in the interval}&
-$\lbrack \mu - 3 \, \sigma, \, \mu + 3 \, \sigma \rbrack$.\\[0.2cm]
-\end{tabular}
 
 -  For $X\sim \mathcal{N}\left( \mu ,\sigma ^{2}\right)$ 
 \begin{equation*}
