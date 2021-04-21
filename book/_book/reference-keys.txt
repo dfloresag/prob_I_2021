@@ -426,3 +426,4 @@ fig:unnamed-chunk-32
 fig:unnamed-chunk-35
 fig:unnamed-chunk-36
 further-properties-of-the-normal-distribution
+fig:unnamed-chunk-58

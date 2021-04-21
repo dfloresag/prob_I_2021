@@ -1,0 +1,5 @@
+\beamer@sectionintoc {1}{Exponential distribution}{4}{0}{1}
+\beamer@sectionintoc {2}{Variable Transformation}{13}{0}{2}
+\beamer@subsectionintoc {2}{1}{Transformation of Discrete Random Variables}{18}{0}{2}
+\beamer@subsectionintoc {2}{2}{Transformation through the CDF}{24}{0}{2}
+\beamer@subsectionintoc {2}{3}{Transformation of Continuous Random Variables through the PDF}{30}{0}{2}

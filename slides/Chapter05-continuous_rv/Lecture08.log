@@ -1,9 +1,9 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020) (preloaded format=pdflatex 2020.7.8)  15 APR 2021 11:24
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020) (preloaded format=pdflatex 2020.8.26)  21 APR 2021 23:19
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
-**Lecture07.tex
-(./Lecture07.tex
+**Lecture08.tex
+(./Lecture08.tex
 LaTeX2e <2020-02-02> patch level 5
 L3 programming layer <2020-03-06>
 (/usr/local/texlive/2020/texmf-dist/tex/latex/beamer/beamer.cls
@@ -792,8 +792,8 @@ File: l3backend-pdfmode.def 2020-03-12 L3 backend support: PDF mode
 \l__kernel_color_stack_int=\count327
 \l__pdf_internal_box=\box78
 )
-(./Lecture07.aux)
-\openout1 = `Lecture07.aux'.
+(./Lecture08.aux)
+\openout1 = `Lecture08.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 155.
 LaTeX Font Info:    ... okay on input line 155.
@@ -878,9 +878,9 @@ Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 LaTeX Info: Redefining \ref on input line 155.
 LaTeX Info: Redefining \pageref on input line 155.
 LaTeX Info: Redefining \nameref on input line 155.
- (./Lecture07.out) (./Lecture07.out)
+ (./Lecture08.out) (./Lecture08.out)
 \@outlinefile=\write5
-\openout5 = `Lecture07.out'.
+\openout5 = `Lecture08.out'.
 
 LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
 (Font)                  OT1/cmr/m/n --> OT1/cmss/m/n on input line 155.
@@ -958,7 +958,7 @@ Dictionary: translator-numbers-dictionary, Language: English
 (/usr/local/texlive/2020/texmf-dist/tex/latex/translator/translator-theorem-dic
 tionary-English.dict
 Dictionary: translator-theorem-dictionary, Language: English 
-) (./Lecture07.nav)
+) (./Lecture08.nav)
 
 Package hyperref Warning: Option `pdfauthor' has already been used,
 (hyperref)                setting the option has no effect on input line 159.
@@ -986,184 +986,207 @@ File: ot1mathkerncmss.fd 2020/01/31 Fontinst v1.933 font definitions for OT1/ma
 thkerncmss.
 ) [2
 
-] (./Lecture07.toc) [3
+] (./Lecture08.toc) [3
 
-] (./Lecture07.toc) [4
+] (./Lecture08.toc) [4
 
 ] [5
 
-] [6
-
-] [7
-
 ]
-<figure/unnamed-chunk-2-1.pdf, id=268, 433.62pt x 325.215pt>
-File: figure/unnamed-chunk-2-1.pdf Graphic file (type pdf)
-<use figure/unnamed-chunk-2-1.pdf>
-Package pdftex.def Info: figure/unnamed-chunk-2-1.pdf  used on input line 245.
-(pdftex.def)             Requested size: 172.09766pt x 129.07137pt.
- [8
-
- <./figure/unnamed-chunk-2-1.pdf>]
-<figure/unnamed-chunk-3-1.pdf, id=301, 433.62pt x 325.215pt>
-File: figure/unnamed-chunk-3-1.pdf Graphic file (type pdf)
-<use figure/unnamed-chunk-3-1.pdf>
-Package pdftex.def Info: figure/unnamed-chunk-3-1.pdf  used on input line 263.
-(pdftex.def)             Requested size: 172.09766pt x 129.07137pt.
- [9
-
- <./figure/unnamed-chunk-3-1.pdf>]
-<figure/unnamed-chunk-5-1.pdf, id=334, 433.62pt x 325.215pt>
-File: figure/unnamed-chunk-5-1.pdf Graphic file (type pdf)
-<use figure/unnamed-chunk-5-1.pdf>
-Package pdftex.def Info: figure/unnamed-chunk-5-1.pdf  used on input line 308.
-(pdftex.def)             Requested size: 172.09766pt x 129.07137pt.
- [10
-
- <./figure/unnamed-chunk-5-1.pdf>]
-<figure/unnamed-chunk-6-1.pdf, id=371, 433.62pt x 325.215pt>
-File: figure/unnamed-chunk-6-1.pdf Graphic file (type pdf)
-<use figure/unnamed-chunk-6-1.pdf>
-Package pdftex.def Info: figure/unnamed-chunk-6-1.pdf  used on input line 308.
-(pdftex.def)             Requested size: 172.09766pt x 129.07137pt.
- [11
-
- <./figure/unnamed-chunk-6-1.pdf>]
-<figure/unnamed-chunk-7-1.pdf, id=406, 433.62pt x 325.215pt>
-File: figure/unnamed-chunk-7-1.pdf Graphic file (type pdf)
-<use figure/unnamed-chunk-7-1.pdf>
-Package pdftex.def Info: figure/unnamed-chunk-7-1.pdf  used on input line 308.
-(pdftex.def)             Requested size: 172.09766pt x 129.07137pt.
- [12
-
- <./figure/unnamed-chunk-7-1.pdf>] [13
-
-] [14
-
-] [15
-
-] [16
-
-] [17
-
-] [18
-
-]
-<figure/unnamed-chunk-9-1.pdf, id=604, 433.62pt x 325.215pt>
-File: figure/unnamed-chunk-9-1.pdf Graphic file (type pdf)
-<use figure/unnamed-chunk-9-1.pdf>
-Package pdftex.def Info: figure/unnamed-chunk-9-1.pdf  used on input line 401.
-(pdftex.def)             Requested size: 172.09766pt x 129.07137pt.
- [19
-
- <./figure/unnamed-chunk-9-1.pdf>]
-<figure/unnamed-chunk-10-1.pdf, id=640, 433.62pt x 325.215pt>
-File: figure/unnamed-chunk-10-1.pdf Graphic file (type pdf)
-<use figure/unnamed-chunk-10-1.pdf>
-Package pdftex.def Info: figure/unnamed-chunk-10-1.pdf  used on input line 401.
-
-(pdftex.def)             Requested size: 172.09766pt x 129.07137pt.
- [20
-
- <./figure/unnamed-chunk-10-1.pdf>]
-<figure/unnamed-chunk-11-1.pdf, id=674, 433.62pt x 325.215pt>
-File: figure/unnamed-chunk-11-1.pdf Graphic file (type pdf)
-<use figure/unnamed-chunk-11-1.pdf>
-Package pdftex.def Info: figure/unnamed-chunk-11-1.pdf  used on input line 401.
-
-(pdftex.def)             Requested size: 172.09766pt x 129.07137pt.
- [21
-
- <./figure/unnamed-chunk-11-1.pdf>]
 
 LaTeX Font Warning: Font shape `OT1/cmss/bx/it' undefined
-(Font)              using `OT1/cmss/b/it' instead on input line 429.
+(Font)              using `OT1/cmss/b/it' instead on input line 226.
 
 
 LaTeX Font Warning: Font shape `OT1/cmss/b/it' undefined
-(Font)              using `OT1/cmss/m/n' instead on input line 429.
+(Font)              using `OT1/cmss/m/n' instead on input line 226.
 
-LaTeX Font Info:    Font shape `OT1/cmtt/bx/n' in size <10> not available
-(Font)              Font shape `OT1/cmtt/m/n' tried instead on input line 429.
-[22
+
+LaTeX Font Warning: Font shape `OT1/cmss/bx/it' undefined
+(Font)              using `OT1/cmss/b/it' instead on input line 226.
+
+
+LaTeX Font Warning: Font shape `OT1/cmss/bx/it' undefined
+(Font)              using `OT1/cmss/b/it' instead on input line 226.
+
+[6
 
 ]
 
 LaTeX Font Warning: Font shape `OT1/cmss/bx/it' undefined
-(Font)              using `OT1/cmss/b/it' instead on input line 429.
+(Font)              using `OT1/cmss/b/it' instead on input line 226.
 
-[23
+
+LaTeX Font Warning: Font shape `OT1/cmss/bx/it' undefined
+(Font)              using `OT1/cmss/b/it' instead on input line 226.
+
+
+LaTeX Font Warning: Font shape `OT1/cmss/bx/it' undefined
+(Font)              using `OT1/cmss/b/it' instead on input line 226.
+
+[7
 
 ]
-<img/bell_curve__5.pdf, id=762, 344.28625pt x 192.72pt>
-File: img/bell_curve__5.pdf Graphic file (type pdf)
-<use img/bell_curve__5.pdf>
-Package pdftex.def Info: img/bell_curve__5.pdf  used on input line 436.
-(pdftex.def)             Requested size: 326.98602pt x 196.44238pt.
- [24
+<figure/unnamed-chunk-2-1.pdf, id=270, 433.62pt x 325.215pt>
+File: figure/unnamed-chunk-2-1.pdf Graphic file (type pdf)
+<use figure/unnamed-chunk-2-1.pdf>
+Package pdftex.def Info: figure/unnamed-chunk-2-1.pdf  used on input line 242.
+(pdftex.def)             Requested size: 172.09766pt x 129.07137pt.
+ [8
 
- <./img/bell_curve__5.pdf>]
-<img/myTableGauss.pdf, id=792, 584.09648pt x 544.97885pt>
-File: img/myTableGauss.pdf Graphic file (type pdf)
-<use img/myTableGauss.pdf>
-Package pdftex.def Info: img/myTableGauss.pdf  used on input line 444.
-(pdftex.def)             Requested size: 309.76573pt x 248.8306pt.
+ <./figure/unnamed-chunk-2-1.pdf>] [9
 
-Overfull \vbox (38.07806pt too high) detected at line 444
+] [10
+
+] [11
+
+] [12
+
+] (./Lecture08.toc)
+[13
+
+]
+
+LaTeX Font Warning: Font shape `OT1/cmss/bx/it' undefined
+(Font)              using `OT1/cmss/b/it' instead on input line 334.
+
+
+LaTeX Font Warning: Font shape `OT1/cmss/bx/it' undefined
+(Font)              using `OT1/cmss/b/it' instead on input line 334.
+
+
+LaTeX Font Warning: Font shape `OT1/cmss/bx/it' undefined
+(Font)              using `OT1/cmss/b/it' instead on input line 334.
+
+
+LaTeX Font Warning: Font shape `OT1/cmss/bx/it' undefined
+(Font)              using `OT1/cmss/b/it' instead on input line 334.
+
+
+Overfull \vbox (4.9486pt too high) detected at line 334
  []
 
-[25
+[14
 
- <./img/myTableGauss.pdf>]
-<img/CDF_pr.pdf, id=1059, 681.00137pt x 312.94054pt>
-File: img/CDF_pr.pdf Graphic file (type pdf)
-<use img/CDF_pr.pdf>
-Package pdftex.def Info: img/CDF_pr.pdf  used on input line 451.
-(pdftex.def)             Requested size: 289.08403pt x 144.53694pt.
- [26
+]
 
- <./img/CDF_pr.pdf>] [27
+LaTeX Font Warning: Font shape `OT1/cmss/bx/it' undefined
+(Font)              using `OT1/cmss/b/it' instead on input line 334.
+
+
+LaTeX Font Warning: Font shape `OT1/cmss/bx/it' undefined
+(Font)              using `OT1/cmss/b/it' instead on input line 334.
+
+
+LaTeX Font Warning: Font shape `OT1/cmss/bx/it' undefined
+(Font)              using `OT1/cmss/b/it' instead on input line 334.
+
+
+LaTeX Font Warning: Font shape `OT1/cmss/bx/it' undefined
+(Font)              using `OT1/cmss/b/it' instead on input line 334.
+
+
+Overfull \vbox (4.9486pt too high) detected at line 334
+ []
+
+[15
+
+]
+
+LaTeX Font Warning: Font shape `OT1/cmss/bx/it' undefined
+(Font)              using `OT1/cmss/b/it' instead on input line 334.
+
+
+LaTeX Font Warning: Font shape `OT1/cmss/bx/it' undefined
+(Font)              using `OT1/cmss/b/it' instead on input line 334.
+
+
+LaTeX Font Warning: Font shape `OT1/cmss/bx/it' undefined
+(Font)              using `OT1/cmss/b/it' instead on input line 334.
+
+
+LaTeX Font Warning: Font shape `OT1/cmss/bx/it' undefined
+(Font)              using `OT1/cmss/b/it' instead on input line 334.
+
+
+Overfull \vbox (4.9486pt too high) detected at line 334
+ []
+
+[16
+
+]
+
+LaTeX Font Warning: Font shape `OT1/cmss/bx/it' undefined
+(Font)              using `OT1/cmss/b/it' instead on input line 334.
+
+
+LaTeX Font Warning: Font shape `OT1/cmss/bx/it' undefined
+(Font)              using `OT1/cmss/b/it' instead on input line 334.
+
+
+LaTeX Font Warning: Font shape `OT1/cmss/bx/it' undefined
+(Font)              using `OT1/cmss/b/it' instead on input line 334.
+
+
+LaTeX Font Warning: Font shape `OT1/cmss/bx/it' undefined
+(Font)              using `OT1/cmss/b/it' instead on input line 334.
+
+
+Overfull \vbox (4.9486pt too high) detected at line 334
+ []
+
+[17
+
+] (./Lecture08.toc) [18
+
+]
+Overfull \vbox (4.18082pt too high) detected at line 372
+ []
+
+[19
+
+]
+Overfull \vbox (4.18082pt too high) detected at line 372
+ []
+
+[20
+
+]
+<img/Shreve_Bin.pdf, id=635, 313.99701pt x 62.70848pt>
+File: img/Shreve_Bin.pdf Graphic file (type pdf)
+<use img/Shreve_Bin.pdf>
+Package pdftex.def Info: img/Shreve_Bin.pdf  used on input line 408.
+(pdftex.def)             Requested size: 289.10114pt x 54.20284pt.
+ [21
+
+ <./img/Shreve_Bin.pdf>]
+Overfull \vbox (5.36531pt too high) detected at line 437
+ []
+
+[22
+
+] [23
+
+] (./Lecture08.toc) [24
+
+] [25
+
+] [26
+
+] [27
 
 ] [28
 
 ] [29
 
-]
-
-LaTeX Font Warning: Font shape `OT1/cmss/bx/it' undefined
-(Font)              using `OT1/cmss/b/it' instead on input line 512.
-
-
-LaTeX Font Warning: Font shape `OT1/cmss/bx/it' undefined
-(Font)              using `OT1/cmss/b/it' instead on input line 512.
-
+] (./Lecture08.toc)
 [30
 
-]
+] [31
 
-LaTeX Font Warning: Font shape `OT1/cmss/bx/it' undefined
-(Font)              using `OT1/cmss/b/it' instead on input line 512.
+] [32
 
-
-LaTeX Font Warning: Font shape `OT1/cmss/bx/it' undefined
-(Font)              using `OT1/cmss/b/it' instead on input line 512.
-
-[31
-
-]
-<img/Areas_Normal.pdf, id=1295, 743.23387pt x 203.5892pt>
-File: img/Areas_Normal.pdf Graphic file (type pdf)
-<use img/Areas_Normal.pdf>
-Package pdftex.def Info: img/Areas_Normal.pdf  used on input line 526.
-(pdftex.def)             Requested size: 325.22072pt x 108.40501pt.
-
-
-LaTeX Font Warning: Font shape `OT1/cmss/b/n' undefined
-(Font)              using `OT1/cmss/m/n' instead on input line 526.
-
-[32
-
- <./img/Areas_Normal.pdf>] [33
+] [33
 
 ] [34
 
@@ -1171,230 +1194,102 @@ LaTeX Font Warning: Font shape `OT1/cmss/b/n' undefined
 
 ] [36
 
-]
-<img/sum_of_two_independent_normals_with_rug__1.pdf, id=1513, 342.27875pt x 187
-.70125pt>
-File: img/sum_of_two_independent_normals_with_rug__1.pdf Graphic file (type pdf
-)
-<use img/sum_of_two_independent_normals_with_rug__1.pdf>
-Package pdftex.def Info: img/sum_of_two_independent_normals_with_rug__1.pdf  us
-ed on input line 596.
-(pdftex.def)             Requested size: 327.00658pt x 183.35883pt.
- [37
+] [37
 
- <./img/sum_of_two_independent_normals_with_rug__1.pdf>] [38
+] [38
 
 ] [39
 
-] (./Lecture07.toc) [40
+] [40
+
+] [41
+
+] [42
+
+] [43
+
+] [44
 
 ]
+[45
 
-LaTeX Font Warning: Font shape `OT1/cmss/bx/it' undefined
-(Font)              using `OT1/cmss/b/it' instead on input line 646.
-
-
-LaTeX Font Warning: Font shape `OT1/cmss/bx/it' undefined
-(Font)              using `OT1/cmss/b/it' instead on input line 646.
-
-[41
-
-]
-
-LaTeX Font Warning: Font shape `OT1/cmss/bx/it' undefined
-(Font)              using `OT1/cmss/b/it' instead on input line 646.
-
-
-LaTeX Font Warning: Font shape `OT1/cmss/bx/it' undefined
-(Font)              using `OT1/cmss/b/it' instead on input line 646.
-
-[42
-
-]
-<img/chisquared_pdfs__2.pdf, id=1682, 344.28625pt x 188.705pt>
-File: img/chisquared_pdfs__2.pdf Graphic file (type pdf)
-<use img/chisquared_pdfs__2.pdf>
-Package pdftex.def Info: img/chisquared_pdfs__2.pdf  used on input line 656.
-(pdftex.def)             Requested size: 337.08827pt x 188.93488pt.
- [43
-
- <./img/chisquared_pdfs__2.pdf>]
-<img/chisq_table__3.pdf, id=1714, 359.09157pt x 163.3603pt>
-File: img/chisq_table__3.pdf Graphic file (type pdf)
-<use img/chisq_table__3.pdf>
-Package pdftex.def Info: img/chisq_table__3.pdf  used on input line 667.
-(pdftex.def)             Requested size: 358.90437pt x 163.68393pt.
-
-Overfull \hbox (14.70905pt too wide) in paragraph at lines 667--667
- [] 
- []
-
-[44
-
- <./img/chisq_table__3.pdf>] [45
-
-] (./Lecture07.toc) [46
+] [46
 
 ] [47
 
+] [48
+
 ]
-<img/student_t__4.pdf, id=1829, 254.9525pt x 140.525pt>
-File: img/student_t__4.pdf Graphic file (type pdf)
-<use img/student_t__4.pdf>
-Package pdftex.def Info: img/student_t__4.pdf  used on input line 716.
-(pdftex.def)             Requested size: 255.4498pt x 140.19656pt.
- [48
+<img/RelRVs_Diego.pdf, id=1855, 761.8479pt x 424.65508pt>
+File: img/RelRVs_Diego.pdf Graphic file (type pdf)
+<use img/RelRVs_Diego.pdf>
+Package pdftex.def Info: img/RelRVs_Diego.pdf  used on input line 732.
+(pdftex.def)             Requested size: 342.82838pt x 191.09302pt.
+ [49
 
- <./img/student_t__4.pdf>]
-<img/Student_t_table__5.pdf, id=1859, 253.69781pt x 274.77657pt>
-File: img/Student_t_table__5.pdf Graphic file (type pdf)
-<use img/Student_t_table__5.pdf>
-Package pdftex.def Info: img/Student_t_table__5.pdf  used on input line 725.
-(pdftex.def)             Requested size: 253.3875pt x 274.65009pt.
-
-Overfull \vbox (51.89755pt too high) detected at line 725
- []
-
-[49
-
- <./img/Student_t_table__5.pdf>] (./Lecture07.toc) [50
+ <./img/RelRVs_Diego.pdf>] [50
 
 ] [51
 
-]
-<img/F-dist_pds__6.pdf, id=1949, 307.1475pt x 168.63pt>
-File: img/F-dist_pds__6.pdf Graphic file (type pdf)
-<use img/F-dist_pds__6.pdf>
-Package pdftex.def Info: img/F-dist_pds__6.pdf  used on input line 756.
-(pdftex.def)             Requested size: 306.89366pt x 168.56525pt.
- [52
-
- <./img/F-dist_pds__6.pdf>]
-<img/Fdist_table__7.pdf, id=1979, 305.64188pt x 164.11313pt>
-File: img/Fdist_table__7.pdf Graphic file (type pdf)
-<use img/Fdist_table__7.pdf>
-Package pdftex.def Info: img/Fdist_table__7.pdf  used on input line 763.
-(pdftex.def)             Requested size: 305.44989pt x 164.43825pt.
- [53
-
- <./img/Fdist_table__7.pdf>] (./Lecture07.toc) [54
-
-] [55
-
-]
-<img/lognormal_with_rug__8.pdf, id=2068, 366.36874pt x 201.75375pt>
-File: img/lognormal_with_rug__8.pdf Graphic file (type pdf)
-<use img/lognormal_with_rug__8.pdf>
-Package pdftex.def Info: img/lognormal_with_rug__8.pdf  used on input line 791.
-
-(pdftex.def)             Requested size: 325.23419pt x 179.63414pt.
-
-[56
-
- <./img/lognormal_with_rug__8.pdf>] (./Lecture07.toc) [57
-
-] [58
-
-] [59
-
-]
-[60
-
-]
-Overfull \vbox (3.97778pt too high) detected at line 852
- []
-
-[61
-
-]
-Overfull \vbox (3.97778pt too high) detected at line 852
- []
-
-[62
-
-]
-Overfull \vbox (3.97778pt too high) detected at line 852
- []
-
-[63
-
-]
-<figure/unnamed-chunk-13-1.pdf, id=2295, 433.62pt x 325.215pt>
-File: figure/unnamed-chunk-13-1.pdf Graphic file (type pdf)
-<use figure/unnamed-chunk-13-1.pdf>
-Package pdftex.def Info: figure/unnamed-chunk-13-1.pdf  used on input line 874.
-
-(pdftex.def)             Requested size: 172.09766pt x 129.07137pt.
- [64
-
- <./figure/unnamed-chunk-13-1.pdf>] [65
-
-] [66
-
-] [67
+] [52
 
 ]
 \tf@nav=\write6
-\openout6 = `Lecture07.nav'.
+\openout6 = `Lecture08.nav'.
 
 \tf@toc=\write7
-\openout7 = `Lecture07.toc'.
+\openout7 = `Lecture08.toc'.
 
 \tf@snm=\write8
-\openout8 = `Lecture07.snm'.
+\openout8 = `Lecture08.snm'.
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 900.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 900.
- (./Lecture07.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 900.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 900.
-Package rerunfilecheck Info: File `Lecture07.out' has not changed.
-(rerunfilecheck)             Checksum: B7E938B9DD5974D5E027C4C9ED1CCB5A;367.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 765.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 765.
+
+(./Lecture08.aux)
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 765.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 765.
+Package rerunfilecheck Info: File `Lecture08.out' has not changed.
+(rerunfilecheck)             Checksum: 5FA7A7BC779939B1F1E18E1FAB804343;401.
 
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
  ) 
 Here is how much of TeX's memory you used:
- 21798 strings out of 480608
- 432698 string characters out of 5903631
- 681532 words of memory out of 5000000
- 36984 multiletter control sequences out of 15000+600000
- 546002 words of font info for 73 fonts, out of 8000000 for 9000
+ 21754 strings out of 480608
+ 431880 string characters out of 5903630
+ 684171 words of memory out of 5000000
+ 36993 multiletter control sequences out of 15000+600000
+ 545594 words of font info for 70 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 58i,18n,67p,850b,642s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 58i,15n,67p,850b,1136s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb
 ></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmex8.
-pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cmextra/cme
-x9.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi1
-0.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.
-pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pf
-b></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb>
-</usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi9.pfb></
-usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></us
-r/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/l
-ocal/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmss10.pfb></usr/lo
-cal/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmss12.pfb></usr/loc
-al/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmss8.pfb></usr/local
-/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmss9.pfb></usr/local/t
-exlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmssbx10.pfb></usr/local/
-texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmssi10.pfb></usr/local/
-texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmssi12.pfb></usr/local/
-texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmssi8.pfb></usr/local/t
-exlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmssi9.pfb></usr/local/te
-xlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/tex
-live/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy5.pfb></usr/local/texli
-ve/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/local/texlive
-/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/local/texlive/2
-020/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/202
-0/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy9.pfb></usr/local/texlive/2020/
-texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr/local/texlive/2020/t
-exmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/local/texlive/20
-20/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on Lecture07.pdf (67 pages, 1732580 bytes).
+pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.p
+fb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb
+></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb><
+/usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></u
+sr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi9.pfb></usr
+/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmss10.pfb></usr/
+local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmss12.pfb></usr/l
+ocal/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmss8.pfb></usr/loc
+al/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmss9.pfb></usr/local
+/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmssbx10.pfb></usr/loca
+l/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmssi10.pfb></usr/loca
+l/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmssi8.pfb></usr/local
+/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmssi9.pfb></usr/local/
+texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/t
+exlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy5.pfb></usr/local/tex
+live/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/local/texli
+ve/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/local/texlive
+/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/2
+020/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy9.pfb></usr/local/texlive/202
+0/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
+Output written on Lecture08.pdf (52 pages, 652285 bytes).
 PDF statistics:
- 2519 PDF objects out of 2984 (max. 8388607)
- 2236 compressed objects within 23 object streams
- 141 named destinations out of 1000 (max. 500000)
- 242 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 2092 PDF objects out of 2487 (max. 8388607)
+ 1745 compressed objects within 18 object streams
+ 110 named destinations out of 1000 (max. 500000)
+ 156 words of extra memory for PDF output out of 10000 (max. 10000000)
 

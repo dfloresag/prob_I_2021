@@ -199,10 +199,8 @@
 <ul>
 <li class="chapter" data-level="5.5.1" data-path="continuousrv.html"><a href="continuousrv.html#transformation-of-discrete-random-variables"><i class="fa fa-check"></i><b>5.5.1</b> Transformation of discrete random variables</a></li>
 <li class="chapter" data-level="5.5.2" data-path="continuousrv.html"><a href="continuousrv.html#transformation-of-variables-using-the-cdf"><i class="fa fa-check"></i><b>5.5.2</b> Transformation of variables using the CDF</a></li>
-<li class="chapter" data-level="5.5.3" data-path="continuousrv.html"><a href="continuousrv.html#function-1-to-1-and-monotone-decreasing"><i class="fa fa-check"></i><b>5.5.3</b> Function 1-to-1 and monotone decreasing</a></li>
-<li class="chapter" data-level="5.5.4" data-path="continuousrv.html"><a href="continuousrv.html#transformation-of-continuous-rv-through-pdf"><i class="fa fa-check"></i><b>5.5.4</b> Transformation of continuous RV through pdf</a></li>
-<li class="chapter" data-level="5.5.5" data-path="continuousrv.html"><a href="continuousrv.html#example-of-transformation-using-pdf"><i class="fa fa-check"></i><b>5.5.5</b> Example of transformation using pdf</a></li>
-<li class="chapter" data-level="5.5.6" data-path="continuousrv.html"><a href="continuousrv.html#a-caveat"><i class="fa fa-check"></i><b>5.5.6</b> A caveat</a></li>
+<li class="chapter" data-level="5.5.3" data-path="continuousrv.html"><a href="continuousrv.html#transformation-of-continuous-rv-through-pdf"><i class="fa fa-check"></i><b>5.5.3</b> Transformation of continuous RV through PDF</a></li>
+<li class="chapter" data-level="5.5.4" data-path="continuousrv.html"><a href="continuousrv.html#a-caveat"><i class="fa fa-check"></i><b>5.5.4</b> A caveat</a></li>
 </ul></li>
 <li class="chapter" data-level="5.6" data-path="continuousrv.html"><a href="continuousrv.html#the-big-picture"><i class="fa fa-check"></i><b>5.6</b> The big picture</a></li>
 </ul></li>
@@ -870,9 +868,9 @@ equivalent to <span class="math inline">\(0.683\)</span>, <span class="math inli
 respectively.
 <img src="img/05_continuous_rv/Areas_Normal-1.png" width="100%" style="display: block; margin: auto;" /></p>
 <p>This leads to the rule: <strong>… rule `68 – 95 – 99.7’</strong> i.e. that if <span class="math inline">\(X\)</span> is a Normal random variable, <span class="math inline">\(X \sim \mathcal{N}(\mu, \sigma^2)\)</span>, its realization has approximately a probability of:</p>
-<p><span class="math inline">\(\bullet\)</span> | <span class="math inline">\(68 \, \%\)</span> |  | <span class="math inline">\(\lbrack \mu - \sigma, \, \mu + \sigma \rbrack\)</span>;|
-<span class="math inline">\(\bullet\)</span> | <span class="math inline">\(95 \, \%\)</span> | |<span class="math inline">\(\lbrack \mu - 2 \, \sigma, \, \mu + 2 \, \sigma \rbrack\)</span>; |
-<span class="math inline">\(\bullet\)</span> | <span class="math inline">\(99.7 \, \%\)</span> | | <span class="math inline">\(\lbrack \mu - 3 \, \sigma, \, \mu + 3 \, \sigma\rbrack\)</span>.|</p>
+<div class="line-block"><span class="math inline">\(\bullet\)</span> | <span class="math inline">\(68 \, \%\)</span> |  | <span class="math inline">\(\lbrack \mu - \sigma, \, \mu + \sigma \rbrack\)</span>;|<br />
+<span class="math inline">\(\bullet\)</span> | <span class="math inline">\(95 \, \%\)</span> | |<span class="math inline">\(\lbrack \mu - 2 \, \sigma, \, \mu + 2 \, \sigma \rbrack\)</span>; |<br />
+<span class="math inline">\(\bullet\)</span> | <span class="math inline">\(99.7 \, \%\)</span> | | <span class="math inline">\(\lbrack \mu - 3 \, \sigma, \, \mu + 3 \, \sigma\rbrack\)</span>.|</div>
 <ul>
 <li><p>For <span class="math inline">\(X\sim \mathcal{N}\left( \mu ,\sigma ^{2}\right)\)</span>
 <span class="math display">\[\begin{equation*}
@@ -1050,24 +1048,24 @@ Var(Y) &amp;=&amp;\exp^{ \left( 2\mu +\sigma ^{2}\right)} \left( \exp^{ \left( \
 <div class="definition">
 <p><span id="def:unnamed-chunk-55" class="definition"><strong>Definition 5.11  </strong></span>Let <span class="math inline">\(X\)</span> be a continuous random variable, having the following characteristics:</p>
 <ul>
-<li>[–] <span class="math inline">\(X\)</span> is defined on the positive real numbers <span class="math inline">\(\left( 0;\infty \right)\)</span> — namely <span class="math inline">\(\mathbb{R}^+\)</span>;<br />
+<li><span class="math inline">\(X\)</span> is defined on the positive real numbers <span class="math inline">\(\left( 0;\infty \right)\)</span> — namely <span class="math inline">\(\mathbb{R}^+\)</span>;<br />
 </li>
-<li>[–] the pdf and CDF are
-<span class="math display">\[\begin{eqnarray}
-f_X(x)=\lambda \exp^{ -\lambda x},\lambda
-&gt;0; &amp;
+<li>The pdf and CDF are given by:
+<span class="math display">\[\begin{eqnarray*}
+f_X(x)&amp;=\lambda \exp\{-\lambda x\},\lambda &gt;0; \\
 F_X(x)=1-\exp (-\lambda x); \nn 
-\end{eqnarray}\]</span></li>
+\end{eqnarray*}\]</span>
+then we say that <span class="math inline">\(X\)</span> has an <strong>exponential distribution</strong> and we write <span class="math inline">\(X\sim \text{Exp}(\lambda)\)</span>.
+</div></li>
 </ul>
-then we say that <span class="math inline">\(X\)</span> has an exponential distribution. We write <span class="math inline">\(X\sim\)</span> .
-</div>
-<p>For <span class="math inline">\(X\sim\)</span>  we have that:</p>
-<p><span class="math display">\[\begin{eqnarray}
+<p>The Expectation and Variance of <span class="math inline">\(X\sim \text{Exp}(\lambda)\)</span> are as follows:</p>
+<p><span class="math display">\[\begin{eqnarray*}
 E[X]=\int_{0}^{\infty }xf_X(x )dx= 1/\lambda &amp; \text{and} &amp;   Var(X)=\int_{0}^{\infty }x^{2}f_X(x )dx-E^{2}(X)=1/\lambda ^{2}. \nn
-\end{eqnarray}\]</span></p>
+\end{eqnarray*}\]</span></p>
 
 <div class="remark">
- <span class="remark"><em>Remark. </em></span> <span class="math inline">\(X\)</span> is typically applied to model the waiting time until an event occurs, when events are always occurring at a random rate <span class="math inline">\(\lambda &gt;0\)</span>. Moreover, the sum of independent exponential random variables has a Gamma distribution (see tutorial).
+<p> <span class="remark"><em>Remark. </em></span> <span class="math inline">\(X\)</span> is typically applied to model the <strong>waiting time until an event occurs</strong>, when events are always occurring at a rate <span class="math inline">\(\lambda &gt;0\)</span>.</p>
+Moreover, the sum of independent exponential random variables has a Gamma distribution (see tutorial).
 </div>
 
 <div class="example">
@@ -1076,9 +1074,7 @@ E[X]=\int_{0}^{\infty }xf_X(x )dx= 1/\lambda &amp; \text{and} &amp;   Var(X)=\in
 0.5 \exp (-0.5x) &amp; x&gt;0\\
 0 &amp; \text{otherwise}
 \end{array} \right.\]</span>
-Then, find the CDF.
-%
-</p>
+Then, find the CDF.</p>
 <p>For <span class="math inline">\(x&gt;0\)</span>, we have
 <span class="math display">\[\begin{eqnarray*}
 F_{X}(x) &amp; = &amp; \int_{0}^{x}f_{X}(u)du\\
@@ -1087,13 +1083,17 @@ F_{X}(x) &amp; = &amp; \int_{0}^{x}f_{X}(u)du\\
 &amp; = &amp; 1-\exp (-0.5x)
 \end{eqnarray*}\]</span></p>
 <p>so, finally,</p>
-<p><span class="math display">\[F_X(x) = \left\{ \begin{array}{ll}
+<span class="math display">\[F_X(x) = \left\{ \begin{array}{ll}
 0 &amp; x \leq 0 \\
 1-\exp (-0.5x)&amp; x&gt;0
-\end{array} \right.\]</span></p>
-…and a graphical illustration, with varying <span class="math inline">\(\lambda\)</span>
+\end{array} \right.\]</span>
 </div>
-<p><img src="img/05_continuous_rv/Exp_Diego-1.png" width="80%" style="display: block; margin: auto;" /></p>
+<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-58"></span>
+<img src="Prob1-GSEM-UNIGE_files/figure-html/unnamed-chunk-58-1.png" alt="Graphical Illustration of Exponential distributions with varying $\lambda$" width="80%" />
+<p class="caption">
+Figure 5.12: Graphical Illustration of Exponential distributions with varying <span class="math inline">\(\lambda\)</span>
+</p>
+</div>
 </div>
 </div>
 <div id="transformation-of-variables" class="section level2" number="5.5">
@@ -1103,7 +1103,7 @@ F_{X}(x) &amp; = &amp; \int_{0}^{x}f_{X}(u)du\\
 <li>Suppose we are interested in <span class="math inline">\(Y=\psi(X)\)</span>, where <span class="math inline">\(\psi\)</span> is a <strong>one to one function</strong></li>
 <li>A <strong>function</strong> <span class="math inline">\(\psi \left( x\right)\)</span> <strong>is one to one</strong> (1-to-1) if there are no two numbers, <span class="math inline">\(x_{1},x_{2}\)</span> in the domain of <span class="math inline">\(\psi\)</span> such that <span class="math inline">\(\psi \left( x_{1}\right) =\psi \left( x_{2}\right)\)</span> but <span class="math inline">\(x_{1}\neq x_{2}\)</span>.</li>
 <li>A sufficient condition for <span class="math inline">\(\psi \left( x\right)\)</span> to be 1-to-1 is that it be monotonically increasing (or decreasing) in <span class="math inline">\(x\)</span>.</li>
-<li>Note that the **inverse} of a 1-to-1 function <span class="math inline">\(y=\psi \left(x\right)\)</span> is a 1-to-1 function <span class="math inline">\(\psi^{-1}\left( y\right)\)</span> such that</li>
+<li>Note that the <strong>inverse</strong> of a 1-to-1 function <span class="math inline">\(y=\psi \left(x\right)\)</span> is a 1-to-1 function <span class="math inline">\(\psi^{-1}\left( y\right)\)</span> such that:</li>
 </ul>
 <p><span class="math display">\[\begin{equation*}
 \psi ^{-1}\left( \psi \left( x\right) \right) =x\text{ and }\psi \left( \psi
@@ -1118,24 +1118,57 @@ F_{X}(x) &amp; = &amp; \int_{0}^{x}f_{X}(u)du\\
 <ul>
 <li>To transform a discrete random variable <span class="math inline">\(X\)</span>, into the random variable <span class="math inline">\(Y=\psi (X)\)</span>, we transfer the probabilities for <strong>each</strong> <span class="math inline">\(x\)</span> to the values $y=( x) $:</li>
 </ul>
-<p><span class="math display">\[\begin{equation*}
-\begin{tabular}{l|cll|c}
-\multicolumn{2}{l}{_Probability function for_$X$} &amp;  &amp; 
-\multicolumn{2}{l}{_Probability function for_$X$} \\ 
-&amp;  &amp;  &amp;  &amp;  \\ 
-$X$ &amp; $P \left(\{ X=x_{i} \}\right) =p_{i}$ &amp;  &amp; $Y$ &amp; $P \left(\{
-X=x_{i}  \}\right) =p_{i}$ \\ \cline{1-2}\cline{4-5}
-$x_{1}$ &amp; $p_{1}$ &amp; $\qquad \Rightarrow \qquad$ &amp; $\psi (x_{1})$ &amp; $p_{1}$
-\\ 
-$x_{2}$ &amp; $p_{2}$ &amp;  &amp; $\psi (x_{2})$ &amp; $p_{2}$ \\ 
-$x_{3}$ &amp; $p_{3}$ &amp;  &amp; $\psi (x_{3})$ &amp; $p_{3}$ \\ 
-$\vdots$ &amp; $\vdots$ &amp;  &amp; $\vdots$ &amp; $\vdots$ \\ 
-$x_{n}$ &amp; $p_{n}$ &amp;  &amp; $\psi (x_{n})$ &amp; $p_{n}$%
-\end{tabular}%
-\end{equation*}\]</span></p>
-<ul>
-<li>Note that this is equivalent to applying the function <span class="math inline">\(\psi \left(\cdot \right)\)</span> inside the probability statements:</li>
-</ul>
+<!-- \multicolumn{2}{l}{_Probability function for_$X$} |  |  -->
+<!-- \multicolumn{2}{l}{_Probability function for_$X$} \\  -->
+<table>
+<thead>
+<tr class="header">
+<th align="center"><span class="math inline">\(X\)</span></th>
+<th align="center"><span class="math inline">\(P \left(\{ X=x_{i} \}\right) =p_{i}\)</span></th>
+<th align="center"></th>
+<th align="center"><span class="math inline">\(Y\)</span></th>
+<th align="center"><span class="math inline">\(P \left(\{X=x_{i} \}\right) =p_{i}\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="center"><span class="math inline">\(x_{1}\)</span></td>
+<td align="center"><span class="math inline">\(p_{1}\)</span></td>
+<td align="center"><span class="math inline">\(\qquad \Rightarrow \qquad\)</span></td>
+<td align="center"><span class="math inline">\(\psi (x_{1})\)</span></td>
+<td align="center"><span class="math inline">\(p_{1}\)</span></td>
+</tr>
+<tr class="even">
+<td align="center"><span class="math inline">\(x_{2}\)</span></td>
+<td align="center"><span class="math inline">\(p_{2}\)</span></td>
+<td align="center"></td>
+<td align="center"><span class="math inline">\(\psi (x_{2})\)</span></td>
+<td align="center"><span class="math inline">\(p_{2}\)</span></td>
+</tr>
+<tr class="odd">
+<td align="center"><span class="math inline">\(x_{3}\)</span></td>
+<td align="center"><span class="math inline">\(p_{3}\)</span></td>
+<td align="center"></td>
+<td align="center"><span class="math inline">\(\psi (x_{3})\)</span></td>
+<td align="center"><span class="math inline">\(p_{3}\)</span></td>
+</tr>
+<tr class="even">
+<td align="center"><span class="math inline">\(\vdots\)</span></td>
+<td align="center"><span class="math inline">\(\vdots\)</span></td>
+<td align="center"></td>
+<td align="center"><span class="math inline">\(\vdots\)</span></td>
+<td align="center"><span class="math inline">\(\vdots\)</span></td>
+</tr>
+<tr class="odd">
+<td align="center"><span class="math inline">\(x_{n}\)</span></td>
+<td align="center"><span class="math inline">\(p_{n}\)</span></td>
+<td align="center"></td>
+<td align="center"><span class="math inline">\(\psi (x_{n})\)</span></td>
+<td align="center"><span class="math inline">\(p_{n}\)</span></td>
+</tr>
+</tbody>
+</table>
+<p>Notice that this is equivalent to applying the function <span class="math inline">\(\psi \left(\cdot \right)\)</span> inside the probability statements:</p>
 <p><span class="math display">\[\begin{eqnarray*}
 P \left( \{ X=x_{i}  \}\right) &amp;=&amp;P \left(  \{\psi \left( X\right) =\psi \left(
 x_{i}\right)  \} \right) \\
@@ -1145,7 +1178,7 @@ x_{i}\right)  \} \right) \\
 
 <div class="example">
 <p><span id="exm:unnamed-chunk-59" class="example"><strong>Example 5.10  </strong></span>[option pricing]</p>
-Let us imagine that we are tossing a balanced coin (<span class="math inline">\(p=1/2\)</span>), and when we get a <code>Head'' ($H$) the stock price moves up of a factor $u$, but when we get a</code>Tail’’ (<span class="math inline">\(T\)</span>) the price moves down of a factor <span class="math inline">\(d\)</span>. We denote the price at time <span class="math inline">\(t_1\)</span> by <span class="math inline">\(S_1(H)=u S_0\)</span> if the toss results in head (<span class="math inline">\(H\)</span>), and by <span class="math inline">\(S_1(T)=d S_0\)</span> if it results in tail (<span class="math inline">\(T\)</span>). After the second toss, the price will be one of:
+Let us imagine that we are tossing a balanced coin (<span class="math inline">\(p=1/2\)</span>), and when we get a “Head” (<span class="math inline">\(H\)</span>) the stock price moves up of a factor <span class="math inline">\(u\)</span>, but when we get a “Tail” (<span class="math inline">\(T\)</span>) the price moves down of a factor <span class="math inline">\(d\)</span>. We denote the price at time <span class="math inline">\(t_1\)</span> by <span class="math inline">\(S_1(H)=u S_0\)</span> if the toss results in head (<span class="math inline">\(H\)</span>), and by <span class="math inline">\(S_1(T)=d S_0\)</span> if it results in tail (<span class="math inline">\(T\)</span>). After the second toss, the price will be one of:
 </div>
 <p><img src="img/05_continuous_rv/Shreve_Bin-1.png" width="80%" style="display: block; margin: auto;" />
 Indeed, after two tosses, there are four possible coin sequences,
@@ -1178,29 +1211,54 @@ although not all of them result in different stock prices at time <span class="m
 C(HH)=\max(0;4-0.5)=\$ 3.5 &amp; C(HT)=\max(0;1-0.5)=\$ 0.5 \\
 C(TH)=\max(0;1-0.5)=\$ 0.5 &amp; C(TT)=\max(0;0.25-0.5)=\$ 0.
 \end{eqnarray*}\]</span>
-Thus at maturity <span class="math inline">\(t_2\)</span> we have
-<span class="math display">\[\begin{equation*}
-\begin{tabular}{l|cll|c}
-\multicolumn{2}{l}{_Probability function for_ $S_2$} &amp;  &amp; 
-\multicolumn{2}{l}{_Probability function for_ $C$} \\ 
-&amp;  &amp;  &amp;  &amp;  \\ 
-$S_2$ &amp; $P \left(\{ X=x_{i} \}\right) =p_{i}$ &amp;  &amp; $C$ &amp; $P \left(\{
-C=c_{i}  \}\right) =p_{i}$ \\ \cline{1-2}\cline{4-5}
-$\$ u^2$ &amp; $p^2$ &amp; $\qquad \Rightarrow \qquad$ &amp; $\$ 3.5$ &amp; $p^2$
-\\ 
-$\$ ud$ &amp; $2p(1-p)$ &amp;  &amp; $\$ 0.5$ &amp; $2p(1-p)$ \\ 
-%$\$ du$ &amp; $(1-p)p$ &amp;  &amp; $\$ 0.5$ &amp; $(1-p)p$ \\ 
-$\$ d^2$ &amp; $(1-p)^2$  &amp;  &amp; $\$ 0$ &amp; $(1-p)^2$%
-\end{tabular}
-\end{equation*}\]</span>
-{Since <span class="math inline">\(ud=du\)</span> the corresponding values of <span class="math inline">\(S_2\)</span> and <span class="math inline">\(C\)</span> can be aggregated, without loss of info.}</p>
+Thus at maturity <span class="math inline">\(t_2\)</span> we have</p>
+<table style="width:100%;">
+<colgroup>
+<col width="11%" />
+<col width="54%" />
+<col width="11%" />
+<col width="11%" />
+<col width="11%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="center"><span class="math inline">\(S_2\)</span></th>
+<th align="center"><span class="math inline">\(P \left(\{ X=x_{i} \}\right) =p_{i}\)</span></th>
+<th align="center"></th>
+<th align="center"><span class="math inline">\(C\)</span></th>
+<th align="center"><span class="math inline">\(P \left(\{C=c_{i} \}\right) =p_{i}\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="center"><span class="math inline">\(\$ u^2\)</span></td>
+<td align="center"><span class="math inline">\(p^2\)</span></td>
+<td align="center"><span class="math inline">\(\qquad \Rightarrow \qquad\)</span></td>
+<td align="center"><span class="math inline">\(\$ 3.5\)</span></td>
+<td align="center"><span class="math inline">\(p^2\)</span></td>
+</tr>
+<tr class="even">
+<td align="center"><span class="math inline">\(\$ ud\)</span></td>
+<td align="center"><span class="math inline">\(2p(1-p)\)</span></td>
+<td align="center"></td>
+<td align="center"><span class="math inline">\(\$ 0.5\)</span></td>
+<td align="center"><span class="math inline">\(2p(1-p)\)</span></td>
+</tr>
+<tr class="odd">
+<td align="center"><span class="math inline">\(\$ d^2\)</span></td>
+<td align="center"><span class="math inline">\((1-p)^2\)</span></td>
+<td align="center"></td>
+<td align="center"><span class="math inline">\(\$ 0\)</span></td>
+<td align="center"><span class="math inline">\((1-p)^2\)</span></td>
+</tr>
+</tbody>
+</table>
+<p>Since <span class="math inline">\(ud=du\)</span> the corresponding values of <span class="math inline">\(S_2\)</span> and <span class="math inline">\(C\)</span> can be aggregated, without loss of info.</p>
 </div>
 <div id="transformation-of-variables-using-the-cdf" class="section level3" number="5.5.2">
 <h3><span class="header-section-number">5.5.2</span> Transformation of variables using the CDF</h3>
-<ul>
-<li>We can use the same logic for CDF probabilities, whether the random variables are <strong>discrete or continuous</strong></li>
-<li>Let <span class="math inline">\(Y=\psi \left( X\right)\)</span> with <span class="math inline">\(\psi \left( x\right)\)</span> 1-to-1 and monotone increasing. Then</li>
-</ul>
+<p>We can use the same logic for CDF probabilities, whether the random variables are <strong>discrete or continuous</strong>.</p>
+<p>For instance, Let <span class="math inline">\(Y=\psi \left( X\right)\)</span> with <span class="math inline">\(\psi \left( x\right)\)</span> 1-to-1 and <strong>monotone increasing</strong>. Then:</p>
 <p><span class="math display">\[\begin{eqnarray*}
 F_{Y}\left( y\right) &amp;=&amp;P \left( \{ Y\leq y \}\right) \\
 &amp;=&amp;P \left( \{ \psi \left( X\right) \leq y \} \right) =P \left( \{ X\leq \psi
@@ -1209,7 +1267,7 @@ F_{Y}\left( y\right) &amp;=&amp;P \left( \{ Y\leq y \}\right) \\
 \end{eqnarray*}\]</span></p>
 
 <div class="example">
-<span id="exm:unnamed-chunk-62" class="example"><strong>Example 5.11  </strong></span>Let <span class="math inline">\(Y=\psi \left( X\right) =\exp^{ X}\)</span> where$ XF_X$ on all values <span class="math inline">\(x\in\mathbb{R}\)</span>
+<span id="exm:unnamed-chunk-62" class="example"><strong>Example 5.11  </strong></span>Let <span class="math inline">\(Y=\psi \left( X\right) =\exp^{ X}\)</span> where <span class="math inline">\(X\sim F_X\)</span> on all values <span class="math inline">\(x\in\mathbb{R}\)</span>
 <span class="math display">\[\begin{eqnarray*}
 F_{Y}\left( y\right) &amp;=&amp;P \left( \{ Y\leq y \} \right) \\
 &amp;=&amp;P \left( \{ \exp^{  X} \leq y \} \right) =P \left( \{ X\leq \ln
@@ -1217,46 +1275,33 @@ F_{Y}\left( y\right) &amp;=&amp;P \left( \{ Y\leq y \} \right) \\
 &amp;=&amp;F_{X}\left( \ln \left( y\right) \right) \text{ only for }y&gt;0\text{.}
 \end{eqnarray*}\]</span>
 </div>
-<!-- %-  True whether $X$ (and hence $Y$) are continuous or discrete random -->
-<!-- %variables. -->
-</div>
-<div id="function-1-to-1-and-monotone-decreasing" class="section level3" number="5.5.3">
-<h3><span class="header-section-number">5.5.3</span> Function 1-to-1 and monotone decreasing</h3>
-<ul>
-<li><p>Monotone decreasing functions work in a similar way, but require
-changing of the inequality sign</p></li>
-<li><p>Let <span class="math inline">\(Y=\psi \left( X\right)\)</span> with <span class="math inline">\(\psi \left( x\right)\)</span> 1-to-1 and
-<strong>monotone decreasing</strong>. Then
-<span class="math display">\[\begin{eqnarray*}
+<p>You can notice that Monotone decreasing functions work in a similar way, but require
+changing of the sense of the inequality, e.g. let <span class="math inline">\(Y=\psi \left( X\right)\)</span> with <span class="math inline">\(\psi \left( x\right)\)</span> 1-to-1 and
+<strong>monotone decreasing</strong>. Then:</p>
+<p><span class="math display">\[\begin{eqnarray*}
 F_{Y}\left( y\right) &amp;=&amp;P \left( \{ Y\leq y \} \right) \\
 &amp;=&amp;P \left( \{ \psi \left( X\right) \leq y \} \right) =P \left( \{ X\geq \psi
 ^{-1}\left( y\right) \} \right) \\
 &amp;=&amp;1-F_{X}\left( \psi ^{-1}\left( y\right) \right)
-\end{eqnarray*}\]</span></p></li>
-</ul>
+\end{eqnarray*}\]</span></p>
 
 <div class="example">
-<p><span id="exm:unnamed-chunk-63" class="example"><strong>Example 5.12  </strong></span>Example: let <span class="math inline">\(Y=\psi \left( X\right) =-\exp^ X\)</span> where <span class="math inline">\(% X\sim F_X\)</span> on all values $x
-%TCIMACRO{ }%</p>
-$%
+<span id="exm:unnamed-chunk-63" class="example"><strong>Example 5.12  </strong></span>Example: let <span class="math inline">\(Y=\psi \left( X\right) =-\exp(X)\)</span> where <span class="math inline">\(X\sim F_X\)</span> on all values <span class="math inline">\(x\in\mathbb{R}\)</span>
 <span class="math display">\[\begin{eqnarray*}
-F_{Y}\left( y\right) &amp;=&amp;P \left( \{ Y\leq y \}\right) =P \left( \{ -\exp ^
-X \leq y \} \right) \\
-&amp;=&amp;P \left( \{ \exp^ X \geq -y \} \right) =P \left( \{ X\geq \ln
-\left( -y\right) \} \right) \\
-&amp;=&amp;1-F_{X}\left( \ln \left( -y\right) \right) \text{ only for }y&lt;0\text{.}
+F_{Y}\left( y\right) &amp;=&amp;P \left( \{ Y\leq y \}\right) =P \left( \{ -\exp(X) \leq y \} \right) \\
+&amp;=&amp;P \left( \{ \exp(X) \geq -y \} \right) =P \left( \{ X\geq \ln \left( -y\right) \} \right) \\
+&amp;=&amp;1-F_{X}\left( \ln \left( -y\right) \right) \text{ only for }y&lt;0.
 \end{eqnarray*}\]</span>
 </div>
 </div>
-<div id="transformation-of-continuous-rv-through-pdf" class="section level3" number="5.5.4">
-<h3><span class="header-section-number">5.5.4</span> Transformation of continuous RV through pdf</h3>
-<ul>
-<li><p>For continuous random variables, if <span class="math inline">\(\psi \left( x\right)\)</span> 1-to-1 and
-monotone <strong>increasing</strong>, we have
+<div id="transformation-of-continuous-rv-through-pdf" class="section level3" number="5.5.3">
+<h3><span class="header-section-number">5.5.3</span> Transformation of continuous RV through PDF</h3>
+<p>For continuous random variables, if <span class="math inline">\(\psi \left( x\right)\)</span> 1-to-1 and
+monotone <strong>increasing</strong>, we have:
 <span class="math display">\[\begin{equation*}
 F_{Y}\left( y\right) =F_{X}\left( \psi ^{-1}\left( y\right) \right)
-\end{equation*}\]</span></p></li>
-<li><p>Notice this implies that the pdf of <span class="math inline">\(Y=\psi \left( X\right)\)</span> must
+\end{equation*}\]</span>
+Notice this implies that the pdf of <span class="math inline">\(Y=\psi \left( X\right)\)</span> must
 satisfy%
 <span class="math display">\[\begin{eqnarray*}
 f_{Y}\left( y\right) &amp;=&amp;\frac{dF_{Y}\left( y\right) }{dy}=\frac{dF_{X}\left(
@@ -1268,48 +1313,42 @@ f_{Y}\left( y\right) &amp;=&amp;\frac{dF_{Y}\left( y\right) }{dy}=\frac{dF_{X}\l
 &amp;=&amp;f_{X}\left( \psi ^{-1}\left( y\right) \right) \times \frac{d\psi
 ^{-1}\left( y\right) }{dy}\qquad \text{{\small (substitute }}x=\psi
 ^{-1}\left( y\right) \text{{\small )}}
-\end{eqnarray*}\]</span></p></li>
-<li><p>What happens when <span class="math inline">\(\psi \left( x\right)\)</span> 1-to-1 and monotone **%
-decreasing}? We have%
+\end{eqnarray*}\]</span></p>
+<p>What happens when <span class="math inline">\(\psi \left( x\right)\)</span> 1-to-1 and monotone <strong>decreasing</strong>? We have:
 <span class="math display">\[\begin{equation*}
 F_{Y}\left( y\right) =1-F_{X}\left( \psi ^{-1}\left( y\right) \right)
-\end{equation*}\]</span></p></li>
-<li><p>So now the pdf of <span class="math inline">\(Y=\phi \left( X\right)\)</span> must satisfy
+\end{equation*}\]</span>
+So now the pdf of <span class="math inline">\(Y=\phi \left( X\right)\)</span> must satisfy:
 <span class="math display">\[\begin{eqnarray*}
 f_{Y}\left( y\right) &amp;=&amp;\frac{dF_{Y}\left( y\right) }{dy}=-\frac{%
 dF_{X}\left( \psi ^{-1}\left( y\right) \right) }{dy} \\
 &amp;=&amp;-f_{X}\left( \psi ^{-1}\left( y\right) \right) \times \frac{d\psi
 ^{-1}\left( y\right) }{dy}\qquad \text{{\small (same reasons as before)}}
-\end{eqnarray*}\]</span></p></li>
-<li><p>but <span class="math inline">\(\frac{d\psi ^{-1}\left( y\right) }{dy}&lt;0\)</span> since here <span class="math inline">\(\psi \left( \cdot \right)\)</span> is monotone decreasing, hence we can write%
+\end{eqnarray*}\]</span></p>
+<p>but <span class="math inline">\(\frac{d\psi ^{-1}\left( y\right) }{dy}&lt;0\)</span> since here <span class="math inline">\(\psi \left(\cdot \right)\)</span> is monotone decreasing, hence we can write:
 <span class="math display">\[\begin{equation*}
 f_{Y}\left( y\right) =f_{X}\left( \psi ^{-1}\left( y\right) \right) \times
 \left\vert \frac{d\psi ^{-1}\left( y\right) }{dy}\right\vert
-\end{equation*}\]</span></p></li>
-<li><p>This expression (called Jacobian-formula) is valid for <span class="math inline">\(\psi \left( x\right)\)</span> 1-to-1 and
-monotone (whether increasing or decreasing)</p></li>
-</ul>
-</div>
-<div id="example-of-transformation-using-pdf" class="section level3" number="5.5.5">
-<h3><span class="header-section-number">5.5.5</span> Example of transformation using pdf</h3>
+\end{equation*}\]</span></p>
+<p>This expression (called <strong>Jacobian-formula</strong>) is valid for <span class="math inline">\(\psi \left( x\right)\)</span> 1-to-1 and
+monotone (whether increasing or decreasing)</p>
 
 <div class="example">
 <p><span id="exm:unnamed-chunk-64" class="example"><strong>Example 5.13  </strong></span>
-- So what is the pdf for the lognormal distribution?</p>
+What is the pdf for the lognormal distribution?</p>
 <ul>
-<li><p>Recall that <span class="math inline">\(Y\)</span> has a <strong>lognormal distribution</strong> when <span class="math inline">\(\ln \left( Y\right) =X\)</span> has a Normal distribution</p></li>
-<li><p><span class="math inline">\(\Rightarrow\)</span> if <span class="math inline">\(X\sim \mathcal{N}\left( \mu ,\sigma ^{2}\right) ,\)</span> then $
-Y=^X$ lognormal_ $( ,^{2}) $</p></li>
-<li><p>Corresponding to <span class="math inline">\(\psi \left( x\right) =\exp^x\)</span> and <span class="math inline">\(\psi ^{-1}\left( y\right) =\ln (y)\)</span></p></li>
+<li><p>Recall that <span class="math inline">\(Y\)</span> has a <strong>lognormal distribution</strong> when <span class="math inline">\(\ln \left(Y\right) =X\)</span> has a Normal distribution</p></li>
+<li><p><span class="math inline">\(\Rightarrow\)</span> if <span class="math inline">\(X\sim \mathcal{N}\left( \mu ,\sigma ^{2}\right) ,\)</span> then <span class="math inline">\(Y=\exp(X)\sim\text{lognormal}\left(\mu ,\sigma ^{2}\right)\)</span></p></li>
+<li><p>Corresponding to <span class="math inline">\(\psi \left( x\right) =\exp(x)\)</span> and <span class="math inline">\(\psi^{-1}\left( y\right) =\ln (y)\)</span></p></li>
 <li><p>The <em>pdf</em> of <span class="math inline">\(X\)</span> is
 <span class="math display">\[\begin{equation*}
 f_{X}\left( x\right) =\frac{1}{\sqrt{2\pi \sigma ^{2}}}\exp^{ \left\{ -\frac{1%
 }{2\sigma ^{2}}\left( x-\mu \right) ^{2}\right\}}
-\end{equation*}\]</span>%
+\end{equation*}\]</span>
 for any $-&lt;x&lt;$</p></li>
-<li><p>Using <span class="math inline">\(\psi \left( x\right) =\exp^x\)</span> we know we will ll have possible
-values for <span class="math inline">\(Y\)</span> only on $0&lt;y&lt;$</p></li>
-<li><p>We know that
+<li><p>Using <span class="math inline">\(\psi \left( x\right) =\exp^x\)</span> we know we will ll have possible values
+for <span class="math inline">\(Y\)</span> only on $0&lt;y&lt;$</p></li>
+<li><p>We know that:
 <span class="math display">\[\begin{equation*}
 f_{Y}\left( y\right) =f_{X}\left( \psi ^{-1}\left( y\right) \right) \times
 \left\vert \frac{d\psi ^{-1}\left( y\right) }{dy}\right\vert
@@ -1326,9 +1365,7 @@ f_{Y}\left( y\right) =\frac{1}{y\sqrt{2\pi \sigma ^{2}}}\exp^{ \left\{ -\frac{1%
 \end{equation*}\]</span> for any $0&lt;y&lt;$</p></li>
 <li><p>Both the Normal and the lognormal are characterized by
 only two parameters (<span class="math inline">\(\mu\)</span> and <span class="math inline">\(\sigma\)</span>). The  of the lognormal distribution is <span class="math inline">\(\exp^{ \mu }\)</span>, since
-<span class="math display">\[
-P \left( \{ X\leq \mu \} \right) = 0.5, 
-\]</span>
+<span class="math display">\[P \left( \{ X\leq \mu \} \right) = 0.5,\]</span>
 and hence
 <span class="math display">\[\begin{eqnarray*}
 0.5 &amp;=&amp;P \left(\{ X\leq \mu \}\right) \\
@@ -1339,8 +1376,8 @@ and hence
 </ul>
 <p>More generally, for <span class="math inline">\(\alpha\in[0,1]\)</span>, the <span class="math inline">\(\alpha\)</span>-th quantile of a r.v. <span class="math inline">\(X\)</span> is the value <span class="math inline">\(x_\alpha\)</span> such that <span class="math inline">\(P(\{X \leq x_\alpha\})\geq\alpha\)</span>. If <span class="math inline">\(X\)</span> si a continuous r.v. we can set <span class="math inline">\(P(\{X \leq x_\alpha\})=\alpha\)</span> (as we did, e.g., for the lognormal).</p>
 </div>
-<div id="a-caveat" class="section level3" number="5.5.6">
-<h3><span class="header-section-number">5.5.6</span> A caveat</h3>
+<div id="a-caveat" class="section level3" number="5.5.4">
+<h3><span class="header-section-number">5.5.4</span> A caveat</h3>
 <p>When <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span> are two random variables, we should pay attention to their transformations. For instance, let us consider
 <span class="math display">\[
 X\sim \mathcal{N}(\mu,\sigma^2) \quad \text{and}  \quad Y\sim Exp(\lambda).

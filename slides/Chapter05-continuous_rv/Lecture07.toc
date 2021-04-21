@@ -1,7 +1,6 @@
-\beamer@subsectionintoc {0}{1}{Gaussian or ``Normal'' Distribution}{4}{0}{0}
-\beamer@subsectionintoc {0}{2}{The Chi-squared distribution}{31}{0}{0}
-\beamer@subsectionintoc {0}{3}{The Student-t distribution}{36}{0}{0}
-\beamer@subsectionintoc {0}{4}{The F distribution}{40}{0}{0}
-\beamer@subsectionintoc {0}{5}{The lognormal distribution}{44}{0}{0}
-\beamer@subsectionintoc {0}{6}{Exponential distribution}{47}{0}{0}
-\beamer@sectionintoc {1}{Variable Transformation}{51}{0}{1}
+\beamer@sectionintoc {1}{Gaussian Distribution (continued)}{4}{0}{1}
+\beamer@sectionintoc {2}{The Chi-squared distribution}{40}{0}{2}
+\beamer@sectionintoc {3}{The Student-t distribution}{46}{0}{3}
+\beamer@sectionintoc {4}{The F distribution}{50}{0}{4}
+\beamer@sectionintoc {5}{The lognormal distribution}{54}{0}{5}
+\beamer@sectionintoc {6}{Exponential distribution}{57}{0}{6}

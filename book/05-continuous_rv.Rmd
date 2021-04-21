@@ -1175,26 +1175,26 @@ Let us just see some plots... more to come later...
 ```{definition}
 Let $X$ be a  continuous random variable, having the following  characteristics:
 
-- [--]       $X$ is defined on the positive real numbers $\left( 0;\infty \right)$ --- namely $\mathbb{R}^+$;  
-- [--]       the pdf and CDF are 
-\begin{eqnarray}
-f_X(x)=\lambda \exp^{ -\lambda x},\lambda
->0; &
+- $X$ is defined on the positive real numbers $\left( 0;\infty \right)$ --- namely $\mathbb{R}^+$;  
+- The pdf and CDF are given by:
+\begin{eqnarray*}
+f_X(x)&=\lambda \exp\{-\lambda x\},\lambda >0; \\
 F_X(x)=1-\exp (-\lambda x); \nn 
-\end{eqnarray} 
-
-then we say that $X$ has an exponential distribution. We write $X\sim$ \text{Exp$(\lambda)$}.
+\end{eqnarray*} 
+then we say that $X$ has an **exponential distribution** and we write $X\sim \text{Exp}(\lambda)$.
 ```
 
-For $X\sim$ \text{Exp$(\lambda)$} we have that:  
+The Expectation and Variance of $X\sim \text{Exp}(\lambda)$ are as follows:
 
-\begin{eqnarray}
+\begin{eqnarray*}
 E[X]=\int_{0}^{\infty }xf_X(x )dx= 1/\lambda & \text{and} &   Var(X)=\int_{0}^{\infty }x^{2}f_X(x )dx-E^{2}(X)=1/\lambda ^{2}. \nn
-\end{eqnarray}
+\end{eqnarray*}
 
 
 ```{remark}
-$X$ is typically applied to model the waiting time until an event occurs, when events are always occurring at a random rate $\lambda >0$. Moreover, the sum of independent exponential random variables has a Gamma distribution (see tutorial).
+$X$ is typically applied to model the **waiting time until an event occurs**, when events are always occurring at a rate $\lambda >0$. 
+
+Moreover, the sum of independent exponential random variables has a Gamma distribution (see tutorial).
 ```
 
 ```{example}
@@ -1204,8 +1204,6 @@ $$f_X(x) = \left\{ \begin{array}{ll}
 0 & \text{otherwise}
 \end{array} \right.$$
 Then, find the CDF.
-%
-\vspace{0.1cm}
 
 For $x>0$, we have
 \begin{eqnarray*}
@@ -1221,12 +1219,28 @@ $$F_X(x) = \left\{ \begin{array}{ll}
 0 & x \leq 0 \\
 1-\exp (-0.5x)& x>0
 \end{array} \right.$$
-
-...and a graphical illustration, with varying $\lambda$
 ```
 
-```{r ,echo = FALSE, fig.cap='', fig.align='center', out.width = "80%"}
-  knitr::include_graphics("img/05_continuous_rv/Exp_Diego-1.png")
+```{r ,echo = FALSE, fig.cap='Graphical Illustration of Exponential distributions with varying $\\lambda$', fig.align='center', out.width = "80%"}
+  exp_data <- seq(0, 18, by=0.05) %>%
+  as_tibble() %>%
+  rename(x = value) %>%
+  mutate(f_x_1 = dexp(x,rate = 0.5),
+         f_x_2 = dexp(x,rate = 2)) %>%
+  pivot_longer(cols = -c(x),
+               names_to = "distribution",
+               values_to = "f_x"
+               ) %>%
+  mutate(distribution =
+           if_else(distribution=="f_x_1", "Exp(0.5)", "Exp(2)"))
+
+exp_data %>%
+  ggplot(aes(x = x, f_x, color = distribution)) +
+  geom_line(lwd = 1) +
+  theme_minimal()+
+  labs(title = "Exponential densities",
+       x = "x",
+       y = expression(f[X](x)))
 ```
 
 
@@ -1236,8 +1250,8 @@ $$F_X(x) = \left\{ \begin{array}{ll}
 - Consider a random variable $X$
 - Suppose we are interested in $Y=\psi(X)$, where $\psi$ is a **one to one function**
 - A **function** $\psi \left( x\right)$ **is one to one** (1-to-1) if there are no two numbers, $x_{1},x_{2}$ in the domain of $\psi$ such that $\psi \left( x_{1}\right) =\psi \left( x_{2}\right)$ but $x_{1}\neq x_{2}$.
--  A sufficient condition for $\psi \left( x\right)$ to be 1-to-1 is that it be monotonically increasing (or decreasing) in $x$.
--  Note that the **inverse} of a 1-to-1 function $y=\psi \left(x\right)$ is a 1-to-1 function $\psi^{-1}\left( y\right)$ such that 
+-  A sufficient condition for $\psi \left( x\right)$ to be 1-to-1 is that it be monotonically increasing (or decreasing) in $x$. 
+-  Note that the **inverse** of a 1-to-1 function $y=\psi \left(x\right)$ is a 1-to-1 function $\psi^{-1}\left( y\right)$ such that:
 
 \begin{equation*}
 \psi ^{-1}\left( \psi \left( x\right) \right) =x\text{ and }\psi \left( \psi
@@ -1253,23 +1267,18 @@ X$ can take
 
 - To transform a discrete random variable $X$, into the random variable $Y=\psi (X)$, we transfer the probabilities for **each** $x$ to the values $y=\psi \left( x\right) $: 
 
-\begin{equation*}
-\begin{tabular}{l|cll|c}
-\multicolumn{2}{l}{_Probability function for_$X$} &  & 
-\multicolumn{2}{l}{_Probability function for_$X$} \\ 
-&  &  &  &  \\ 
-$X$ & $P \left(\{ X=x_{i} \}\right) =p_{i}$ &  & $Y$ & $P \left(\{
-X=x_{i}  \}\right) =p_{i}$ \\ \cline{1-2}\cline{4-5}
-$x_{1}$ & $p_{1}$ & $\qquad \Rightarrow \qquad$ & $\psi (x_{1})$ & $p_{1}$
-\\ 
-$x_{2}$ & $p_{2}$ &  & $\psi (x_{2})$ & $p_{2}$ \\ 
-$x_{3}$ & $p_{3}$ &  & $\psi (x_{3})$ & $p_{3}$ \\ 
-$\vdots$ & $\vdots$ &  & $\vdots$ & $\vdots$ \\ 
-$x_{n}$ & $p_{n}$ &  & $\psi (x_{n})$ & $p_{n}$%
-\end{tabular}%
-\end{equation*}
 
-- Note that this is equivalent to applying the function $\psi \left(\cdot \right)$ inside the probability statements:
+<!-- \multicolumn{2}{l}{_Probability function for_$X$} |  |  -->
+<!-- \multicolumn{2}{l}{_Probability function for_$X$} \\  -->
+| $X$ | $P \left(\{ X=x_{i} \}\right) =p_{i}$ |       | $Y$   | $P \left(\{X=x_{i}  \}\right) =p_{i}$   |  
+|:---:|:-------------------------------------:|:-----:|:-----:|:---------------------------------------:|
+| $x_{1}$ | $p_{1}$ | $\qquad \Rightarrow \qquad$ | $\psi (x_{1})$ | $p_{1}$ | 
+| $x_{2}$ | $p_{2}$ |  | $\psi (x_{2})$ | $p_{2}$ | 
+| $x_{3}$ | $p_{3}$ |  | $\psi (x_{3})$ | $p_{3}$ | 
+| $\vdots$ | $\vdots$ |  | $\vdots$ | $\vdots$  | 
+| $x_{n}$ | $p_{n}$ |  | $\psi (x_{n})$ | $p_{n}$| 
+
+Notice that this is equivalent to applying the function $\psi \left(\cdot \right)$ inside the probability statements:
 
 \begin{eqnarray*}
 P \left( \{ X=x_{i}  \}\right) &=&P \left(  \{\psi \left( X\right) =\psi \left(
@@ -1281,7 +1290,7 @@ x_{i}\right)  \} \right) \\
 ```{example} 
 [option pricing]
 
-Let us imagine that we are tossing a balanced coin ($p=1/2$), and when we get a ``Head'' ($H$) the stock price moves up of a factor $u$, but when we get a ``Tail'' ($T$) the price moves down of a factor $d$. We denote the price at time $t_1$  by $S_1(H)=u S_0$ if the toss results in head ($H$), and by $S_1(T)=d S_0$  if it results in tail ($T$). After the second toss, the price will be one of:
+Let us imagine that we are tossing a balanced coin ($p=1/2$), and when we get a "Head" ($H$) the stock price moves up of a factor $u$, but when we get a "Tail" ($T$) the price moves down of a factor $d$. We denote the price at time $t_1$  by $S_1(H)=u S_0$ if the toss results in head ($H$), and by $S_1(T)=d S_0$  if it results in tail ($T$). After the second toss, the price will be one of:
 ```
 
 ```{r ,echo = FALSE, fig.cap='', fig.align='center', out.width = "80%"}
@@ -1341,28 +1350,20 @@ C(HH)=\max(0;4-0.5)=\$ 3.5 & C(HT)=\max(0;1-0.5)=\$ 0.5 \\
 C(TH)=\max(0;1-0.5)=\$ 0.5 & C(TT)=\max(0;0.25-0.5)=\$ 0.
 \end{eqnarray*}
 Thus at maturity $t_2$ we have
-\begin{equation*}
-\begin{tabular}{l|cll|c}
-\multicolumn{2}{l}{_Probability function for_ $S_2$} &  & 
-\multicolumn{2}{l}{_Probability function for_ $C$} \\ 
-&  &  &  &  \\ 
-$S_2$ & $P \left(\{ X=x_{i} \}\right) =p_{i}$ &  & $C$ & $P \left(\{
-C=c_{i}  \}\right) =p_{i}$ \\ \cline{1-2}\cline{4-5}
-$\$ u^2$ & $p^2$ & $\qquad \Rightarrow \qquad$ & $\$ 3.5$ & $p^2$
-\\ 
-$\$ ud$ & $2p(1-p)$ &  & $\$ 0.5$ & $2p(1-p)$ \\ 
-%$\$ du$ & $(1-p)p$ &  & $\$ 0.5$ & $(1-p)p$ \\ 
-$\$ d^2$ & $(1-p)^2$  &  & $\$ 0$ & $(1-p)^2$%
-\end{tabular}
-\end{equation*}
-\tiny{Since $ud=du$ the corresponding values of $S_2$ and $C$ can be aggregated, without loss of info.}
 
+| $S_2$  | $P \left(\{ X=x_{i} \}\right) =p_{i}$ |        | $C$    | $P \left(\{C=c_{i}  \}\right) =p_{i}$ | 
+|:------:|:-------------------------------------:|:------:|:------:|:------:| 
+| $\$ u^2$ | $p^2$ | $\qquad \Rightarrow \qquad$ | $\$ 3.5$ | $p^2$|
+| $\$ ud$ | $2p(1-p)$ |  | $\$ 0.5$ | $2p(1-p)$ | 
+| $\$ d^2$ | $(1-p)^2$  |  | $\$ 0$ | $(1-p)^2$|
+
+Since $ud=du$ the corresponding values of $S_2$ and $C$ can be aggregated, without loss of info.
 
 ### Transformation of variables using the CDF
 
+We can use the same logic for CDF probabilities, whether the random variables are **discrete or continuous**.
 
-- We can use the same logic for CDF probabilities, whether the random variables are **discrete or continuous**
-- Let $Y=\psi \left( X\right)$ with $\psi \left( x\right)$ 1-to-1 and monotone increasing. Then 
+For instance, Let $Y=\psi \left( X\right)$ with $\psi \left( x\right)$ 1-to-1 and **monotone increasing**. Then: 
 
 \begin{eqnarray*}
 F_{Y}\left( y\right) &=&P \left( \{ Y\leq y \}\right) \\
@@ -1372,7 +1373,7 @@ F_{Y}\left( y\right) &=&P \left( \{ Y\leq y \}\right) \\
 \end{eqnarray*}
 
 ```{example}
-Let $Y=\psi \left( X\right) =\exp^{ X}$ where$ X\sim F_X$ on all values $x\in\mathbb{R}$
+Let $Y=\psi \left( X\right) =\exp^{ X}$ where $X\sim F_X$ on all values $x\in\mathbb{R}$
 \begin{eqnarray*}
 F_{Y}\left( y\right) &=&P \left( \{ Y\leq y \} \right) \\
 &=&P \left( \{ \exp^{  X} \leq y \} \right) =P \left( \{ X\leq \ln
@@ -1381,16 +1382,11 @@ F_{Y}\left( y\right) &=&P \left( \{ Y\leq y \} \right) \\
 \end{eqnarray*}
 ```
 
-<!-- %-  True whether $X$ (and hence $Y$) are continuous or discrete random -->
-<!-- %variables. -->
 
-### Function 1-to-1 and monotone decreasing
+You can notice that Monotone decreasing functions work in a similar way, but require
+changing of the sense of the inequality, e.g. let $Y=\psi \left( X\right)$ with $\psi \left( x\right)$ 1-to-1 and 
+**monotone decreasing**. Then:
 
-- Monotone decreasing functions work in a similar way, but require
-changing of the inequality sign
-
--  Let $Y=\psi \left( X\right)$ with $\psi \left( x\right)$ 1-to-1 and 
-**monotone decreasing**. Then 
 \begin{eqnarray*}
 F_{Y}\left( y\right) &=&P \left( \{ Y\leq y \} \right) \\
 &=&P \left( \{ \psi \left( X\right) \leq y \} \right) =P \left( \{ X\geq \psi
@@ -1398,35 +1394,23 @@ F_{Y}\left( y\right) &=&P \left( \{ Y\leq y \} \right) \\
 &=&1-F_{X}\left( \psi ^{-1}\left( y\right) \right)
 \end{eqnarray*}
 
-
 ```{example}
-Example: let $Y=\psi \left( X\right) =-\exp^ X$ where $%
-X\sim F_X$ on all values $x\in 
-%TCIMACRO{\U{211d} }%
-
-\mathbb{R}
-
-$%
+Example: let $Y=\psi \left( X\right) =-\exp(X)$ where $X\sim F_X$ on all values $x\in\mathbb{R}$
 \begin{eqnarray*}
-F_{Y}\left( y\right) &=&P \left( \{ Y\leq y \}\right) =P \left( \{ -\exp ^
-X \leq y \} \right) \\
-&=&P \left( \{ \exp^ X \geq -y \} \right) =P \left( \{ X\geq \ln
-\left( -y\right) \} \right) \\
-&=&1-F_{X}\left( \ln \left( -y\right) \right) \text{ only for }y<0\text{.}
+F_{Y}\left( y\right) &=&P \left( \{ Y\leq y \}\right) =P \left( \{ -\exp(X) \leq y \} \right) \\
+&=&P \left( \{ \exp(X) \geq -y \} \right) =P \left( \{ X\geq \ln \left( -y\right) \} \right) \\
+&=&1-F_{X}\left( \ln \left( -y\right) \right) \text{ only for }y<0.
 \end{eqnarray*}
 ```
 
+### Transformation of continuous RV through PDF
 
-### Transformation of continuous RV through pdf
-
-
--  For continuous random variables, if $\psi \left( x\right)$ 1-to-1 and
-monotone **increasing**, we have
+For continuous random variables, if $\psi \left( x\right)$ 1-to-1 and
+monotone **increasing**, we have:
 \begin{equation*}
 F_{Y}\left( y\right) =F_{X}\left( \psi ^{-1}\left( y\right) \right)
 \end{equation*}
-
--  Notice this implies that the pdf of $Y=\psi \left( X\right)$ must
+Notice this implies that the pdf of $Y=\psi \left( X\right)$ must
 satisfy%
 \begin{eqnarray*}
 f_{Y}\left( y\right) &=&\frac{dF_{Y}\left( y\right) }{dy}=\frac{dF_{X}\left(
@@ -1441,13 +1425,11 @@ f_{Y}\left( y\right) &=&\frac{dF_{Y}\left( y\right) }{dy}=\frac{dF_{X}\left(
 \end{eqnarray*}
 
 
--  What happens when $\psi \left( x\right)$ 1-to-1 and monotone **%
-decreasing}? We have%
+What happens when $\psi \left( x\right)$ 1-to-1 and monotone **decreasing**? We have:
 \begin{equation*}
 F_{Y}\left( y\right) =1-F_{X}\left( \psi ^{-1}\left( y\right) \right)
 \end{equation*}
-
--  So now the pdf of $Y=\phi \left( X\right)$ must satisfy 
+So now the pdf of $Y=\phi \left( X\right)$ must satisfy:
 \begin{eqnarray*}
 f_{Y}\left( y\right) &=&\frac{dF_{Y}\left( y\right) }{dy}=-\frac{%
 dF_{X}\left( \psi ^{-1}\left( y\right) \right) }{dy} \\
@@ -1455,65 +1437,57 @@ dF_{X}\left( \psi ^{-1}\left( y\right) \right) }{dy} \\
 ^{-1}\left( y\right) }{dy}\qquad \text{{\small (same reasons as before)}}
 \end{eqnarray*}
 
--  but $\frac{d\psi ^{-1}\left( y\right) }{dy}<0$ since here $\psi \left(
-\cdot \right)$ is monotone decreasing, hence we can write%
+but $\frac{d\psi ^{-1}\left( y\right) }{dy}<0$ since here $\psi \left(\cdot \right)$ is monotone decreasing, hence we can write:
 \begin{equation*}
 f_{Y}\left( y\right) =f_{X}\left( \psi ^{-1}\left( y\right) \right) \times
 \left\vert \frac{d\psi ^{-1}\left( y\right) }{dy}\right\vert
 \end{equation*}
 
--  This expression (called Jacobian-formula) is valid for $\psi \left( x\right)$ 1-to-1 and
+This expression (called **Jacobian-formula**) is valid for $\psi \left( x\right)$ 1-to-1 and
 monotone (whether increasing or decreasing)
-
-### Example of transformation using pdf
 
 ```{example}
 
--  So what is the pdf for the lognormal distribution?
+What is the pdf for the lognormal distribution?
 
--  Recall that $Y$ has a **lognormal distribution** when $\ln \left(
-Y\right) =X$ has a Normal distribution
+-  Recall that $Y$ has a **lognormal distribution** when $\ln \left(Y\right) =X$ has a Normal distribution
 
--  $\Rightarrow$ if $X\sim \mathcal{N}\left( \mu ,\sigma ^{2}\right) ,$ then $
-Y=\exp^X\sim$ lognormal_ $\left( \mu ,\sigma ^{2}\right) $
+-  $\Rightarrow$ if $X\sim \mathcal{N}\left( \mu ,\sigma ^{2}\right) ,$ then $Y=\exp(X)\sim\text{lognormal}\left(\mu ,\sigma ^{2}\right)$
 
--  Corresponding to $\psi \left( x\right) =\exp^x$ and $\psi
-^{-1}\left( y\right) =\ln (y)$
+-  Corresponding to $\psi \left( x\right) =\exp(x)$ and $\psi^{-1}\left( y\right) =\ln (y)$
 
 -  The _pdf_ of $X$ is 
 \begin{equation*}
 f_{X}\left( x\right) =\frac{1}{\sqrt{2\pi \sigma ^{2}}}\exp^{ \left\{ -\frac{1%
 }{2\sigma ^{2}}\left( x-\mu \right) ^{2}\right\}}
-\end{equation*}%
+\end{equation*}
 for any $-\infty <x<\infty $
 
--  Using $\psi \left( x\right) =\exp^x$ we know we will ll have possible
-values for $Y$ only on $0<y<\infty $
+-  Using $\psi \left( x\right) =\exp^x$ we know we will ll have possible values 
+for $Y$ only on $0<y<\infty $
 
--  We know that 
+-  We know that:
 \begin{equation*}
 f_{Y}\left( y\right) =f_{X}\left( \psi ^{-1}\left( y\right) \right) \times
 \left\vert \frac{d\psi ^{-1}\left( y\right) }{dy}\right\vert
 \end{equation*}
 
--  And since $\psi ^{-1}\left( y\right) =\ln (y)$ then 
+- And since $\psi ^{-1}\left( y\right) =\ln (y)$ then 
 \begin{equation*}
 \left\vert \frac{d\psi ^{-1}\left( y\right) }{dy}\right\vert =\left\vert 
 \frac{1}{y}\right\vert
 \end{equation*}
 
--  $\Rightarrow$ the \emph{pdf} of $Y$ is 
+- $\Rightarrow$ the \emph{pdf} of $Y$ is 
 \begin{equation*}
 f_{Y}\left( y\right) =\frac{1}{y\sqrt{2\pi \sigma ^{2}}}\exp^{ \left\{ -\frac{1%
 }{2\sigma ^{2}}\left( \ln (y)-\mu \right) ^{2}\right\}}
 \end{equation*} for any $0<y<\infty $
 
--  Both the Normal and the lognormal are characterized by
+- Both the Normal and the lognormal are characterized by
 only two parameters ($\mu$ and $\sigma$). The \emph{median} of the lognormal distribution is $\exp^{
 \mu }$, since 
-$$
-P \left( \{ X\leq \mu \} \right) = 0.5, 
-$$
+$$P \left( \{ X\leq \mu \} \right) = 0.5,$$
 and hence
 \begin{eqnarray*}
 0.5 &=&P \left(\{ X\leq \mu \}\right) \\
@@ -1523,7 +1497,6 @@ and hence
 ```
 
 More generally, for $\alpha\in[0,1]$, the $\alpha$-th quantile of a r.v. $X$ is the value $x_\alpha$ such that $P(\{X \leq x_\alpha\})\geq\alpha$. If $X$ si a continuous r.v.  we can set $P(\{X \leq x_\alpha\})=\alpha$ (as we did, e.g., for the lognormal).
-
 
 
 ### A caveat
