@@ -61,38 +61,38 @@ particule(nb.depl=8, nb.chem=100, histo=TRUE, theo=TRUE, interval=0.1)
 
 ani.options(interval = 0.25, nmax = 100)
 
-#flip.coin(faces = c("Face", "Pile"), 
-#          type = "n", 
-#		  prob = c(0.5, 0.5), 
+#flip.coin(faces = c("Face", "Pile"),
+#          type = "n",
+#		  prob = c(0.5, 0.5),
 #		  col = c("blue", "orange")
 #		  )
 
-flip.coin.DK(faces = c("Face", "Pile"), type = "n", 
+flip.coin.DK(faces = c("Face", "Pile"), type = "n",
 		         prob = c(0.5, 0.5), col = c("blue", "orange"))
 
-flip.coin.DK(faces = c("Face", "Pile"), type = "n", 
+flip.coin.DK(faces = c("Face", "Pile"), type = "n",
 		         prob = c(0.5, 0.5), col = c("blue", "orange"))
 
 ani.options(interval = 0, nmax = 1000)
-flip.coin.DK(faces = c("Face", "Pile"), type = "n", 
+flip.coin.DK(faces = c("Face", "Pile"), type = "n",
 		         prob = c(0.5, 0.5), col = c("blue", "orange"))
 
 #--------------------
 
 ani.options(interval = 0.25, nmax = 200)
-flip.coin.DK(faces = c("Face", "Pile"), type = "n", 
+flip.coin.DK(faces = c("Face", "Pile"), type = "n",
 		         prob = c(0.2, 0.8), col = c("blue", "orange"))
 
 #--------------------
-		
-flip.coin.DK(faces = c("Face", "Debout", "Pile"), type = "n", 
+
+flip.coin.DK(faces = c("Face", "Debout", "Pile"), type = "n",
 		         prob = c(0.45, 0.1, 0.45), col = c("black", "blue", "orange"))
 
 #---------------------------------------------------------------------
 
 ani.options(interval = 0.001, nmax=2000)
 lln.ani.DK(FUN = function(n, mu) rbinom(n, 1, mu), mu = 0.5, np = 1, cex = 1.2,
-           ylab = "Proportion de pile", 
+           ylab = "Proportion de pile",
            col.pts="blue", col.mu="orange")
 
 #---------------------------------------------------------------------

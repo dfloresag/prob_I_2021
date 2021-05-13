@@ -2,16 +2,17 @@
 x<-NULL
 
 n.size=10000
+
 for (i in 1:n.size) {
   set.seed(123)
   x[i]<-mean(rbinom(i,1,0.5))
 }
 
-
-
-plot(x,col="blue",xlab="sample size", ylab="Pn", ylim=c(0,1), 
-     typ="l", lwd=2)
+plot(x,col="blue",xlab="sample size", ylab="Pn", ylim=c(0,1),
+     type="l", lwd=2)
 abline(h=0.5, col="red", lwd=2)
+
+
 
 y<-NULL
 set.seed(123)
@@ -19,7 +20,7 @@ for (i in 1:n.size) {
   y[i]<-mean(rbinom(i,1,0.5))
 }
 
-plot(y,col="blue",xlab="sample size", ylab="Pn", ylim=c(0.3,0.7))
+plot(y,col="blue",xlab="sample size", ylab="Pn", ylim=c(0.3,0.7), type = "l")
 abline(h=0.5, col="red", lwd=2)
 
 
@@ -117,15 +118,15 @@ hist(z1/sqrt(var(z1)),col="blue",breaks = 8, xlim=c(-3,3),
      main="Hist z1/sd")
 abline(v=0, lwd=2, col="red")
 
-hist(z2/sqrt(var(z2)),col="blue",breaks = 8, xlim=c(-3,3), 
+hist(z2/sqrt(var(z2)),col="blue",breaks = 8, xlim=c(-3,3),
      main="Hist z2/sd")
 abline(v=0, lwd=2, col="red")
 
-hist(z3/sqrt(var(z3)),col="blue",breaks = 8, xlim=c(-3,3), 
+hist(z3/sqrt(var(z3)),col="blue",breaks = 8, xlim=c(-3,3),
      main="Hist z3/sd")
 abline(v=0, lwd=2, col="red")
 
-hist(z4/sqrt(var(z4)),col="blue",breaks = 8, xlim=c(-3,3), 
+hist(z4/sqrt(var(z4)),col="blue",breaks = 8, xlim=c(-3,3),
      main="Hist z4/sd")
 abline(v=0, lwd=2, col="red")
 

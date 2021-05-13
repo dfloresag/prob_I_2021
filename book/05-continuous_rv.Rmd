@@ -181,12 +181,12 @@ Let $X$ be a random variable taking values in the interval $(a,b]$ since:
 -  $0<\color{red}{F_{X}\left( x\right)}<1$ for all $x$ in $(a,b)$ and 
 -  $\color{red}{F_{X}\left( x\right)}=1$ for all $x\geq b$.
 
-Then, the Probability Density Function (pdf) of $X$ at the point $x$ is defined as
+Then, the Probability Density Function (PDF) of $X$ at the point $x$ is defined as
 
 $$\color{blue}{f_{X}\left( x\right)} =\frac{d\color{red}{F_{X}(x)}}{dx}.$$
 ```
 
-Graphically, if we represent the values of the pdf with a curve, the CDF will be the area beneath it in the interval considered. 
+Graphically, if we represent the values of the PDF with a curve, the CDF will be the area beneath it in the interval considered. 
 
 ```{r ,echo = FALSE, fig.cap='', fig.align='center', out.width = "80%"}
  knitr::include_graphics("img/05_continuous_rv/generic_CDF2-1.png")
@@ -226,10 +226,9 @@ Another way of seeing this relationship is with the following plot, where the va
 knitr::include_graphics("img/05_continuous_rv/Diego_F-1.png")
 ```
 
-From a formal mathematical standpoint, the relationship between PDF and CDF is given by the **_fundamental theorem of integral calculus_**. In the illustration, $X$ is a random variable taking values in the interval $(a,b]$, and the pdf $f_{X}\left(x\right)$ is non-zero only in $(a,b)$. More generally we have, for a variable taking values on the whole real line ($\mathbb{R}$): 
+From a formal mathematical standpoint, the relationship between PDF and CDF is given by the **_fundamental theorem of integral calculus_**. In the illustration, $X$ is a random variable taking values in the interval $(a,b]$, and the PDF $f_{X}\left(x\right)$ is non-zero only in $(a,b)$. More generally we have, for a variable taking values on the whole real line ($\mathbb{R}$): 
 
 -  the **_fundamental theorem of integral calculus_** yields
-
 $$\color{red}{F_{X}\left( x\right)} =P\left( X\leq x\right) =\int_{-\infty}^{x}\color{blue}{f_{X}\left(
 t\right)}dt,$$
 the area under the CDF between $-\infty$ and $x$ 
@@ -238,11 +237,11 @@ the area under the CDF between $-\infty$ and $x$
 $$\color{blue}{f_{X}\left( x\right)} = \frac{d\color{red}{F_{X}(x)}}{dx}$$ 
 
 Most of the PDF's that we are going to consider are bell-shaped. So, typically, we will have a density that looks like a bell:
-```{r ,echo = FALSE, fig.cap='', fig.align='center', out.width = "80%"}
+```{r ,echo = FALSE, fig.cap='A typical bell-shaped Density Function', fig.align='center', out.width = "50%"}
 knitr::include_graphics("img/05_continuous_rv/R_bell_pdf-1.png")
 ```
 and a CDF that has the shape of an S.
-```{r ,echo = FALSE, fig.cap='', fig.align='center', out.width = "80%"}
+```{r ,echo = FALSE, fig.cap='A typical S-shaped Cumulative Distribution Function', fig.align='center', out.width = "50%"}
 knitr::include_graphics("img/05_continuous_rv/R_bell_CDF-1.png")
 ```
 
@@ -258,7 +257,7 @@ Recall that for **Discrete** random variables, the Expectation results from **su
 \end{equation*}
 
 ```{definition, name = "Expectation of a Continuous Random Variable"}
-The Expectation of $X$ results from **integrating the product of $x$ and its pdf $f_{X}\left(x\right)$** over the **range of possible values of $x$**. In other words, we obtain the Expectation via integration:
+The Expectation of $X$ results from **integrating the product of $x$ and its PDF $f_{X}\left(x\right)$** over the **range of possible values of $x$**. In other words, we obtain the Expectation via integration:
 \begin{equation*}
   E\left[ X\right] =\int_{a}^{b}x\,f_{X}\left( x\right)dx
 \end{equation*}
@@ -334,13 +333,13 @@ E\left[ c+X\right] &=&\int \left( c+x\right) f_{X}\left( x\right) dx \\
 
 There are two other important distributional summaries that also characterise a sort of center for the distribution: the Mode and the Median.
 
-The **Mode** of a continuous random variable having density $f_{X}(x)$ is the value of $x$ for which the PDF $f_X(x)$ attains its maximum, i.e.$$\text{Mode}(X) = \text{argmax}_{x}\{f_X(x)\}.$$ Very roughly speaking, it is the point with the highest _concentration_ of probability.
+The **Mode** of a continuous random variable having density $f_{X}(x)$ is the **value of $x$ for which the PDF $f_X(x)$ attains its maximum**, i.e.$$\text{Mode}(X) = \text{argmax}_{x}\{f_X(x)\}.$$ Very roughly speaking, it is the **point with the highest _concentration_ of probability**.
 
-On the other hand, the **Median** of a continuous random variable having CDF $F_{X}(x)$ is the value $m$ such that $F(m) = 1/2$
+On the other hand, the **Median** of a continuous random variable having CDF $F_{X}(x)$ is the **value $m$ such that $F(m) = 1/2$**
   $$\text{Median}(X) = \text{arg}_{m}\left\{P(X\leq m) = F_X(m) = \frac{1}{2}\right\}.$$
-Again, very roughly speaking, the median is the value that splits the sample space in two intervals with equal cumulative probability. 
+Again, very roughly speaking, the median is the value that **splits the sample space in two intervals with equal cumulative probability**. 
 
-Let's illustrate these two location values in the pdf. We have purposefully chosen an asymmetric (right)_skewed_ distribution to display the differences between these two values. 
+Let's illustrate these two location values in the PDF. We have purposefully chosen an asymmetric (right)_skewed_ distribution to display the differences between these two values. 
 
 ```{r ,echo = FALSE, fig.cap='Mode and Median of an asymmetric distribution', fig.align='center', out.width = "80%"}
 library(patchwork)
@@ -380,7 +379,7 @@ mode_illustration / median_illustration
 
 ## Some Important Continuous Distributions 
 
-There is a wide variety of Probability Distributions. In this section, we will explore the properties of some of them: 
+There is a wide variety of Probability Distributions. In this section, we will explore the properties of some of them, namely: 
 
 -  Continuous Uniform
 -  Gaussian a.k.a. "Normal"
@@ -394,7 +393,7 @@ There is a wide variety of Probability Distributions. In this section, we will e
 
 ```{definition, label = "unif", name = "Continuous Uniform Distribution"}
 We say $X$ has a continuous **uniform** distribution over the
-interval $[a,b]$, denoted as $X\sim \mathcal{U}(a,b)$, when the CDF and pdf are given by
+interval $[a,b]$, denoted as $X\sim \mathcal{U}(a,b)$, when the CDF and PDF are respectively given by:
 $$
 {F_X\left( x\right)}=\left\{
                            \begin{array}{ll}
@@ -409,7 +408,7 @@ $$
 \end{array}
 \right. ,
 $$
-respectively.
+
 ```
 <!-- %-  The PDF is given by% -->
 <!-- %\begin{equation*} -->
@@ -431,7 +430,7 @@ respectively.
 <!-- % -->
 <!-- %```{definition} -->
 <!-- %We say $X$ has a continuous **uniform** distribution over the -->
-<!-- %interval $(a,b]$, denoted as $X\sim Unif(a,b)$, when the CDF and pdf are given by -->
+<!-- %interval $(a,b]$, denoted as $X\sim Unif(a,b)$, when the CDF and PDF are given by -->
 <!-- %$$ -->
 <!-- %\color{red}{F_X\left( x\right)}=\left\{ -->
 <!-- %                           \begin{array}{ll} -->
@@ -461,7 +460,6 @@ respectively.
 
 
 As a graphical illustration, let us consider the case when $a=0$ and $b=1$. So, we have that the density is 1 on the interval $(0,1)$ and 0 everywhere else:
-
 ```{r ,echo = FALSE, fig.cap='Density of a Continuous Uniform Random Variable', fig.align='center', out.width = "80%"}
   sim_data <- seq(-1, 2, by=0.0005) %>%
   as_tibble() %>%
@@ -538,10 +536,9 @@ For instance, when $a=0$ and $b=1$, then $Var\left( X\right) =\frac{1}{12}$.
 ``` 
 
 ```{example} 
-Let $X \sim \mathcal{U}(0,10)$. Then its pdf is $f_X(x) = 1/10=0.1$ for $x\in(0,10)$ and zero otherwise. The PDF plot is:
+Let $X \sim \mathcal{U}(0,10)$. Then its PDF is $f_X(x) = 1/10=0.1$ for $x\in(0,10)$ and zero otherwise. The PDF plot is:
 ```
-
-```{r ,echo = FALSE, fig.cap='Density of a Continuous Uniform Random Variable', fig.align='center', out.width = "80%"}
+```{r ,echo = FALSE, fig.cap='Density of $X \\sim \\mathcal{U}(0,10)$', fig.align='center', out.width = "80%"}
   sim_data <- seq(-1, 11, by=0.0005) %>%
   as_tibble() %>%
   rename(x = value) %>%
@@ -611,12 +608,13 @@ sim_data %>%
 
 The Normal distribution was "discovered" in the eighteenth
 century when scientists observed an astonishing degree of
-regularity in the behavior of measurement errors. They found that
-the patterns (distributions) that they observed, and which they
-attributed to chance, could be closely approximated by continuous
-curves which they christened the "normal curve of errors".
+regularity in the behavior of measurement errors. 
+
+They found that the patterns (distributions) that they observed, and which they
+attributed to chance, could be **closely approximated by continuous
+curves** which they christened the "normal curve of errors".
  
-The mathematical properties of these curves were first studied by
+The mathematical properties of these curves were first studied by:
 
 -  Abraham de Moivre (1667-1745),
 -  Pierre Laplace (1749-1827), and then
@@ -624,7 +622,7 @@ The mathematical properties of these curves were first studied by
 
 ```{definition, label = "gaussian", name = "The Gaussian Distribution"}
 A variable $X$ is said to have a **Gaussian** or **Normal**
-distribution, with mean $\mu$ and variance $\sigma ^{2}$, if its pdf is given by
+distribution, with mean $\mu$ and variance $\sigma ^{2}$, if its PDF is given by
 \begin{equation*}
 \phi_{(\mu,\sigma)}(x) =\frac{1}{\sqrt{2\pi \sigma ^{2}}}\exp{ \left\{ -\frac{1%
 }{2\sigma ^{2}}\left( x-\mu \right) ^{2}\right\}}~~-\infty<x<\infty\,.
@@ -635,13 +633,15 @@ The short-hand notation is $X\sim \mathcal{N}\left( \mu ,\sigma ^{2}\right)$.
 There are couple of important **properties** worth mentioning:  
 
 - A Normal random variable **$X$ can take any value $x\in\mathbb{R}$**.
-- A Normal distribution is **completely defined by its mean $\mu$ and its variance $\sigma ^{2}$**. This means that infinitely many different normal distributions are obtained by varying the _parameters_ $\mu$ and $\sigma ^{2}$. To illustrate this property, we plot a series of densities that result from replacing different values of $\mu$ and $\sigma^2$ in the following figure. 
+- A Normal distribution is **completely defined by its mean $\mu$ and its variance $\sigma ^{2}$**. This means that infinitely many different normal distributions are obtained by varying the _parameters_ $\mu$ and $\sigma ^{2}$. 
 
-```{r ,echo = FALSE, fig.cap='Densities for $\\color{blue}{X_{1}\\sim\\mathcal{N}(0,1)}$, $\\color{red}{X_{2}\\sim\\mathcal{N}(0,1.5^2)}$, $\\color{forestgreen}{X_{3}\\sim\\mathcal{N}(1,2.5^2)}$', fig.align='center', out.width = "80%"}
+To illustrate this last property, we plot a series of densities that result from replacing different values of $\mu$ and $\sigma^2$ in the following figure: 
+
+```{r normalDensities,echo = FALSE, fig.cap='Densities for $\\color{blue}{X_{1}\\sim\\mathcal{N}(0,1)}$, $\\color{red}{X_{2}\\sim\\mathcal{N}(0,1.5^2)}$, $\\color{forestgreen}{X_{3}\\sim\\mathcal{N}(1,2.5^2)}$', fig.align='center', out.width = "80%"}
   knitr::include_graphics("img/05_continuous_rv/normals4-1.png")
 ```
 
-- As we can assess in the previous plot, the PDF of the Normal Distribution is "Bell-shaped", meaning that looks a little bit like a bell. Moreover, it is:
+- As we can assess in the previous Figure \@ref(normalDensities), the PDF of the Normal Distribution is "Bell-shaped", meaning that looks a little bit like a bell. Moreover, it is:
   - **Symmetric**, i.e. it is not skewed either to the right or to the left. This also implies that the values of the density are the same for $x$ and $-x$, i.e  $\phi_{(\mu,\sigma)}(x) = \phi_{(\mu,\sigma)}(-x)$
   - **Unimodal**, meaning that it has only one mode and 
   - The **Mean**, **Median** and **Mode** are all **equal**, owing to the **symmetry** of the distribution.
@@ -949,19 +949,23 @@ P(\{-1.96\leq Z\leq -0.64\}) &=P(\{0.64\leq Z\leq 1.96\}) \approx 0.2361
 
 #### Further properties of the Normal distribution
 
-In the following plot, the shaded areas under the pdfs are (approximately) 
-equivalent to $0.683$, $0.954$ and $0.997$, 
-respectively.
+##### The Rule '68 -- 95 -- 99.7' {-}
+
+In the following plot, the shaded areas under the PDFs are (approximately)
+equivalent to $0.683$, $0.954$ and $0.997$, respectively.
 ```{r ,echo = FALSE, fig.cap='', fig.align='center', out.width = "100%"}
   knitr::include_graphics("img/05_continuous_rv/Areas_Normal-1.png")
 ```
 
-This leads to the rule: **... rule `68 -- 95 -- 99.7'** i.e. that if $X$ is a Normal random variable, $X \sim \mathcal{N}(\mu, \sigma^2)$, its realization has approximately a probability of:
+This leads to the rule: **.'68 -- 95 -- 99.7'** i.e. that if $X$ is a 
+Normal random variable, $X \sim \mathcal{N}(\mu, \sigma^2)$, its realization 
+has approximately a probability of:
 
-| $\bullet$ | $68 \, \%$ | \mbox{of being in the interval} | $\lbrack \mu - \sigma, \, \mu + \sigma \rbrack$;|
-| $\bullet$ | $95 \, \%$   |\mbox{of being in the interval} |$\lbrack \mu - 2 \, \sigma, \, \mu + 2 \, \sigma \rbrack$; |
-| $\bullet$ | $99.7 \, \%$ | \mbox{of being in the interval}| $\lbrack \mu - 3 \, \sigma, \, \mu + 3 \, \sigma\rbrack$.|
-
+| Probability    | Interval |
+|:--------------:|:----------------------------------------------------------:|
+| $68 \, \%$     | $\lbrack \mu - \sigma, \, \mu + \sigma \rbrack$            |
+| $95 \, \%$     | $\lbrack \mu - 2 \, \sigma, \, \mu + 2 \, \sigma \rbrack$  |
+| $99.7 \, \%$   | $\lbrack \mu - 3 \, \sigma, \, \mu + 3 \, \sigma\rbrack$   |
 
 -  For $X\sim \mathcal{N}\left( \mu ,\sigma ^{2}\right)$ 
 \begin{equation*}
@@ -979,26 +983,31 @@ aX &\sim &\mathcal{N}\left( a\mu ,a^{2}\sigma ^{2}\right).
 X+Y\sim \mathcal{N}\left( \mu +\alpha ,\sigma ^{2}+\delta ^{2}\right).
 \end{equation*}
 
+To illustrate the last point, let's use simulated
+values for two independent normally-distributed random variables 
+$X\sim \mathcal{N}(5,1)$ and $Y\sim \mathcal{N}(7,1)$, alongside their sum. 
 
-
-#### The sum of two independent Normals
-
-```{r ,echo = FALSE, fig.cap='', fig.align='center', out.width = "80%"}
+We can see that if we plot the densities of these RV's independently, we have the
+expected normal density (two bell-shaped curves centered around 5 and 7 that are
+similar in shape since they sport the same variance). Moreover the density of the 
+sum of the simulated values is also bell-shaped and appears to be centered around
+12 and sports a wider variance, confirming visually what we expected, i.e. that 
+$X + Y \sim \mathcal{N}(5+7,1+1)$, $X+Y \sim \mathcal{N}(12,2)$.
+```{r ,echo = FALSE, fig.cap='Locations of $n=30$ sampled values of $X,$ $Y$, and $X+Y$ shown as tick marks under each respective density', fig.align='center', out.width = "80%"}
   knitr::include_graphics("img/05_continuous_rv/sum_of_two_independent_normals_with_rug__1-1.png")
 ```
 
-Locations of $n=30$ sampled values of $X,$ $Y$, and $X+Y$ shown as tick marks under each respective density.
-
-#### Normal: an example
+#### An example
 
 ```{example}
 
-On the highway A2 (in the Luzern area), the speed is limited to $80$ $km/h$. A radar measures the speeds of all the cars. 
-Assuming that the registered speeds are distributed according to a Normal law with mean $72$ $km/h$ and standard error $8$ $km/h$: \vspace{0.2cm}
+_On the highway A2 (in the Luzern area), the speed is limited to $80$ $km/h$. A radar measures the speeds of all the cars. 
+Assuming that the registered speeds are distributed according to a Normal law with mean $72$ $km/h$ and standard error $8$ $km/h$: 
 
-  -  what is the proportion of the drivers who will have to pay a penalty for high speed? \vspace{0.2cm}
-  -  knowing that in addition to the penalty, a speed higher than $30$ $km/h$ (over the max allowed speed) implies a withdrawal of the driving license, what is the proportion of the drivers who  will lose their driving license among those who will have a to pay a fine?
+  -  _what is the proportion of the drivers who will have to pay a penalty for high speed?_ 
+  -  _knowing that in addition to the penalty, a speed higher than $30$ $km/h$ (over the max allowed speed) implies a withdrawal of the driving license, what is the proportion of the drivers who  will lose their driving license among those who will have a to pay a fine?_
 
+**Response**
 
 Let $X$ be the random variable expressing the registered speed: $X \sim \mathcal{N}(72,64)$.
 
@@ -1022,7 +1031,7 @@ where $Z \sim \mathcal{N}(0,1)$.
 <!-- % -->
 <!-- % -->
 <!-- %\begin{figure}[ptb]\centering -->
-<!-- %\includegraphics[natheight=7.389in, natwidth=13.4859in, height=2.4031in, width=4.7426in]{RU_Normal.pdf}% -->
+<!-- %\includegraphics[natheight=7.389in, natwidth=13.4859in, height=2.4031in, width=4.7426in]{RU_Normal.PDF}% -->
 <!-- %\end{figure} -->
 <!-- % -->
 <!-- % -->
@@ -1033,50 +1042,52 @@ where $Z \sim \mathcal{N}(0,1)$.
 
 ```{definition}
 If $Z_{1},Z_{2},\ldots ,Z_{n}$ are independent standard Normal random
-variables, then%
+variables, then:
 \begin{equation*}
 X=Z_{1}^{2}+Z_{2}^{2}+\cdots +Z_{n}^{2}
 \end{equation*}%
-has a chi-squared distribution with $n$ degrees of freedom. Write as $X\sim \chi ^{2}(n)$.
+has a **Chi-squared distribution with $n$ degrees of freedom**. Write as $X\sim \chi ^{2}(n)$.
 ```
 
-$X\sim \chi ^{2}(n)$ can take only **positive** values. Moreover, expected value and variance, for $X\sim \chi ^{2}(n)$, are:
+A Chi-Squared-distributed Random Variable has the following properties:
 
+- $X\sim \chi ^{2}(n)$ can take only **positive** values. 
+- The expectation and variance for $X\sim \chi ^{2}(n)$, are given by:
 \begin{eqnarray*}
 E\left[ X\right] &=&n \\
 Var\left( X\right) &=&2n
 \end{eqnarray*}
+- Finally, if $X\sim \chi ^{2}(n)$ and $Y\sim \chi ^{2}(m)$ are **independent** then $X+Y\sim \chi ^{2}(n+m)$.
 
-If $X\sim \chi ^{2}(n)$ and $Y\sim \chi ^{2}(m)$ are **independent** then $X+Y\sim \chi ^{2}(n+m)$.
+The Chi-Squared distribution has a parameter that defines its shape, namely the 
+$n$ degrees of freedom. To illustrate their effect, let's plot some densities 
+in the following plot.
 
-
-#### Some plots for the Chi-squared
-
-
-```{r ,echo = FALSE, fig.cap='', fig.align='center', out.width = "80%"}
+```{r ,echo = FALSE, fig.cap='Chi-Squared densities for various values of $n$', fig.align='center', out.width = "80%"}
   knitr::include_graphics("img/05_continuous_rv/chisquared_pdfs__2-1.png")
 ```
 
-Probabilities for Chi-squared distributions may be obtained from a table
+#### Chi-squared tables 
 
-#### Chi-squared table
+As you can imagine, cumulated probabilities for Chi-squared distributions are not straightforward to compute. To do it, we require computational methods. 
 
-```{r ,echo = FALSE, fig.cap='', fig.align='center', out.width = "80%"}
+Given that the shape depends on the parameter $n$ there would be an infinite number of tables (as many as $n$) should we want to carry along the values of the CDF. Instead, tables contain the values for the Upper-tail or Lower-tail _Quantiles_ for some given probabilities. For instance, in the following plot, we have a typical table, containing the values of the quantiles for different upper-tail probabilities displayed according to the degrees of freedom (denoted as $V$). 
+
+```{r ,echo = FALSE, fig.cap='A typical Chi-square Table', fig.align='center', out.width = "80%"}
   knitr::include_graphics("img/05_continuous_rv/chisq_table__3-1.png")
 ```
 
-#### Chi-squared table (illustration of its use)
+<!-- To be included in the future: definition of upper-tail and lower-tail quantiles -->
 
 ```{example}
-Let $X$ be a chi-squared random variable with 10 degrees-of-freedom. What is the value of its \underline{upper fifth percentile}? 
+Let $X$ be a chi-squared random variable with 10 degrees-of-freedom. What is the value of its **upper fifth percentile**? 
 
-By definition, the upper fifth percentile is the chi-squared value $x$ (lower case!!!) such that the probability to the right of $x$ is $0.05$ (so the upper tail area is $5\%$).  To find such an $x$ we use the chi-squared table: \vspace{0.1cm}
+By definition, the upper fifth percentile is the chi-squared value $x$ (lower case!!!) such that the probability to the right of $x$ is $0.05$ (so the upper tail area is $5\%$).  To find such an $x$ we use the chi-squared table: 
+  
+-  setting $\mathcal{V} = 10$ in the first column on the left and getting the corresponding row 
+-  finding the column headed by $P(X \geq x) = 0.05$. 
  
--  setting $\mathcal{V} = 10$ in the first column on the left and getting the corresponding row \vspace{0.1cm}
--  finding the column headed by $P(X \geq x) = 0.05$. \vspace{0.1cm}
- 
-
-Now, all we need to do is read the corresponding cell. What do we get? Well, the table tells us that the upper fifth percentile of a chi-squared random variable with 10 degrees of freedom is **18.30703**. 
+Now, all we need to do is read the corresponding cell. What do we get? Well, the table tells us that the upper fifth percentile of a chi-squared random variable with 10 degrees of freedom is **18.30703**.
 ```
 
 
@@ -1091,27 +1102,25 @@ T=\frac{Z}{\sqrt{Y/v}}
 has a **Student-t** distribution with $v$ degrees of freedom. Write as $T\sim t_{v}$.
 ```
 
-$T\sim t_{v}\,$\ can take any value in $\mathbb{R}$. Expected value and variance for $T\sim t_{v}$ are 
-
+- $T\sim t_{v}\,$\ can take any value in $\mathbb{R}$. 
+- Expected value and variance for $T\sim t_{v}$ are 
 \begin{eqnarray*}
 E\left[ T\right] &=&0\text{, for }v>1 \\
 Var\left( T\right) &=&\frac{v}{v-2}\text{, for }v>2.
 \end{eqnarray*}
 
-#### Some Student-t distributions
-
 ```{remark}
-The pdf of $T\sim t_{v}$ is similar to a Normal (with mean zero) but with fatter tails. When $v$ is large (typically, $v \geq 120$) $t_{v}$ approaches $\mathcal{N}(0,1)$.
+The PDF of $T\sim t_{v}$ is similar to a Normal (with mean zero) but with fatter tails. When $v$ is large (typically, $v \geq 120$) $t_{v}$ approaches $\mathcal{N}(0,1)$.
 ```
-
-```{r ,echo = FALSE, fig.cap='', fig.align='center', out.width = "80%"}
+```{r ,echo = FALSE, fig.cap='Densities for various Student-t densities alongside the Normal Density', fig.align='center', out.width = "80%"}
   knitr::include_graphics("img/05_continuous_rv/student_t__4-1.png")
 ```
 
-#### Student-t table
 
+Again, since the distribution depends on the degrees of freedom $v$, in the absence of 
+computers, we rely on tables for some values of upper-tail probabilities. 
 
-```{r ,echo = FALSE, fig.cap='', fig.align='center', out.width = "80%"}
+```{r ,echo = FALSE, fig.cap="A typical Student's-t Table", fig.align='center', out.width = "80%"}
   knitr::include_graphics("img/05_continuous_rv/Student_t_table__5-1.png")
 ```
 
@@ -1128,24 +1137,25 @@ has an **F** distribution with $v_{1}$ `numerator' and $v_{2}$
 `denominator' degrees of freedom. Write as $F\sim F_{v_{1},v_{2}}$.
 ```
 
-$F\sim F_{v_{1},v_{2}}\,$\ can take only **positive** values. Expected value and variance for $F\sim F_{v_{1},v_{2}}$ (note that the order of the degrees of freedom is important!).
-
+- $F\sim F_{v_{1},v_{2}}\,$\ can take only **positive** values. 
+- Expected value and variance for $F\sim F_{v_{1},v_{2}}$ (note that **the order of the degrees of freedom is important!**) is given by: 
 \begin{eqnarray*}
 E\left[ F\right] &=&\frac{v_{2}}{v_{2}-2}\text{, for }v_{2}>2 \\
 Var\left( F\right) &=&\frac{2v_{2}^{2}\left( v_{1}+v_{2}-2\right) }{%
 v_{1}\left( v_{2}-2\right) ^{2}\left( v_{2}-4\right) }\text{, for }v_{2}>4.
 \end{eqnarray*}
 
-#### Some F distributions
-
+As we can assess from the following plot, there is no uniform way in which the densities change
+according to the degrees of freedom. However all of them seem to be concentrated towards the lower side of the $\mathbb{R}^{+}$ line. 
 ```{r ,echo = FALSE, fig.cap='', fig.align='center', out.width = "80%"}
   knitr::include_graphics("img/05_continuous_rv/F-dist_pds__6-1.png")
 ```
 
-#### F distribution table (5\% upper tail)
-
-
-```{r ,echo = FALSE, fig.cap='', fig.align='center', out.width = "80%"}
+Again, when distributed in tables, we can only obtain information on the quantiles
+for some upper-tail probabilites. However, since the distributions are defined by 
+two sets of degrees of freedom, a table can only pertain one value of the upper tail 
+probability. 
+```{r ,echo = FALSE, fig.cap='Critical Values for $F$ distribution and $\\alpha = 0.05$', fig.align='center', out.width = "80%"}
   knitr::include_graphics("img/05_continuous_rv/Fdist_table__7-1.png")
 ```
 
@@ -1157,15 +1167,14 @@ v_{1}\left( v_{2}-2\right) ^{2}\left( v_{2}-4\right) }\text{, for }v_{2}>4.
 has a Normal distribution. We write $Y\sim$ \emph{lognormal}$\left( \mu ,\sigma ^{2}\right) $. 
 ```
 
-If $Y\sim$ \emph{lognormal}$\left( \mu ,\sigma ^{2}\right)$ then%
+- If $Y\sim$ \emph{lognormal}$\left( \mu ,\sigma ^{2}\right)$ then
 \begin{eqnarray*}
 E\left[ Y\right] &=&\exp^{ \left( \mu +\frac{1}{2}\sigma ^{2}\right)} \\
 Var(Y) &=&\exp^{ \left( 2\mu +\sigma ^{2}\right)} \left( \exp^{ \left( \sigma
 ^{2}\right)} -1\right).
 \end{eqnarray*}
 
-Let us just see some plots... more to come later...
-
+In the next plot, we display an estimation of the density of the realization of a Normal Random Variable, as well as the density of $y = exp(x)$. Notice how the distribution is assymetric, positive and right-skewed. 
 ```{r ,echo = FALSE, fig.cap='', fig.align='center', out.width = "80%"}
   knitr::include_graphics("img/05_continuous_rv/lognormal_with_rug__8-1.png")
 ```
@@ -1176,7 +1185,7 @@ Let us just see some plots... more to come later...
 Let $X$ be a  continuous random variable, having the following  characteristics:
 
 - $X$ is defined on the positive real numbers $\left( 0;\infty \right)$ --- namely $\mathbb{R}^+$;  
-- The pdf and CDF are given by:
+- The PDF and CDF are given by:
 \begin{eqnarray*}
 f_X(x)&=\lambda \exp\{-\lambda x\},\lambda >0; \\
 F_X(x)=1-\exp (-\lambda x); \nn 
@@ -1184,7 +1193,7 @@ F_X(x)=1-\exp (-\lambda x); \nn
 then we say that $X$ has an **exponential distribution** and we write $X\sim \text{Exp}(\lambda)$.
 ```
 
-The Expectation and Variance of $X\sim \text{Exp}(\lambda)$ are as follows:
+- The Expectation and Variance of $X\sim \text{Exp}(\lambda)$ are as follows:
 
 \begin{eqnarray*}
 E[X]=\int_{0}^{\infty }xf_X(x )dx= 1/\lambda & \text{and} &   Var(X)=\int_{0}^{\infty }x^{2}f_X(x )dx-E^{2}(X)=1/\lambda ^{2}. \nn
@@ -1194,7 +1203,7 @@ E[X]=\int_{0}^{\infty }xf_X(x )dx= 1/\lambda & \text{and} &   Var(X)=\int_{0}^{\
 ```{remark}
 $X$ is typically applied to model the **waiting time until an event occurs**, when events are always occurring at a rate $\lambda >0$. 
 
-Moreover, the sum of independent exponential random variables has a Gamma distribution (see tutorial).
+Moreover, the sum of independent exponential random variables has a Gamma distribution (see the exercises).
 ```
 
 ```{example}
@@ -1410,7 +1419,7 @@ monotone **increasing**, we have:
 \begin{equation*}
 F_{Y}\left( y\right) =F_{X}\left( \psi ^{-1}\left( y\right) \right)
 \end{equation*}
-Notice this implies that the pdf of $Y=\psi \left( X\right)$ must
+Notice this implies that the PDF of $Y=\psi \left( X\right)$ must
 satisfy%
 \begin{eqnarray*}
 f_{Y}\left( y\right) &=&\frac{dF_{Y}\left( y\right) }{dy}=\frac{dF_{X}\left(
@@ -1418,7 +1427,7 @@ f_{Y}\left( y\right) &=&\frac{dF_{Y}\left( y\right) }{dy}=\frac{dF_{X}\left(
 &=&\frac{dF_{X}\left( x\right) }{dx}\times \frac{d\psi ^{-1}\left( y\right) 
 }{dy}\qquad \text{{\small (chain rule)}} \\
 &=&f_{X}\left( x\right) \times \frac{d\psi ^{-1}\left( y\right) }{dy}\qquad 
-\text{{\small (derivative of CDF (of }}X\text{){\small \ is pdf)}} \\
+\text{{\small (derivative of CDF (of }}X\text{){\small \ is PDF)}} \\
 &=&f_{X}\left( \psi ^{-1}\left( y\right) \right) \times \frac{d\psi
 ^{-1}\left( y\right) }{dy}\qquad \text{{\small (substitute }}x=\psi
 ^{-1}\left( y\right) \text{{\small )}}
@@ -1429,7 +1438,7 @@ What happens when $\psi \left( x\right)$ 1-to-1 and monotone **decreasing**? We 
 \begin{equation*}
 F_{Y}\left( y\right) =1-F_{X}\left( \psi ^{-1}\left( y\right) \right)
 \end{equation*}
-So now the pdf of $Y=\phi \left( X\right)$ must satisfy:
+So now the PDF of $Y=\phi \left( X\right)$ must satisfy:
 \begin{eqnarray*}
 f_{Y}\left( y\right) &=&\frac{dF_{Y}\left( y\right) }{dy}=-\frac{%
 dF_{X}\left( \psi ^{-1}\left( y\right) \right) }{dy} \\
@@ -1448,7 +1457,7 @@ monotone (whether increasing or decreasing)
 
 ```{example}
 
-What is the pdf for the lognormal distribution?
+What is the PDF for the lognormal distribution?
 
 -  Recall that $Y$ has a **lognormal distribution** when $\ln \left(Y\right) =X$ has a Normal distribution
 
@@ -1456,7 +1465,7 @@ What is the pdf for the lognormal distribution?
 
 -  Corresponding to $\psi \left( x\right) =\exp(x)$ and $\psi^{-1}\left( y\right) =\ln (y)$
 
--  The _pdf_ of $X$ is 
+-  The _PDF_ of $X$ is 
 \begin{equation*}
 f_{X}\left( x\right) =\frac{1}{\sqrt{2\pi \sigma ^{2}}}\exp^{ \left\{ -\frac{1%
 }{2\sigma ^{2}}\left( x-\mu \right) ^{2}\right\}}
@@ -1478,14 +1487,14 @@ f_{Y}\left( y\right) =f_{X}\left( \psi ^{-1}\left( y\right) \right) \times
 \frac{1}{y}\right\vert
 \end{equation*}
 
-- $\Rightarrow$ the \emph{pdf} of $Y$ is 
+- $\Rightarrow$ the _PDF_ of $Y$ is 
 \begin{equation*}
 f_{Y}\left( y\right) =\frac{1}{y\sqrt{2\pi \sigma ^{2}}}\exp^{ \left\{ -\frac{1%
 }{2\sigma ^{2}}\left( \ln (y)-\mu \right) ^{2}\right\}}
 \end{equation*} for any $0<y<\infty $
 
 - Both the Normal and the lognormal are characterized by
-only two parameters ($\mu$ and $\sigma$). The \emph{median} of the lognormal distribution is $\exp^{
+only two parameters ($\mu$ and $\sigma$). The _median_ of the lognormal distribution is $\exp^{
 \mu }$, since 
 $$P \left( \{ X\leq \mu \} \right) = 0.5,$$
 and hence

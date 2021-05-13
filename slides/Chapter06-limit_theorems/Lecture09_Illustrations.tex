@@ -1,0 +1,252 @@
+\documentclass[notes=show,smaller]{beamer}\usepackage[]{graphicx}\usepackage[]{color}
+% maxwidth is the original width if it is less than linewidth
+% otherwise use linewidth (to make sure the graphics do not exceed the margin)
+\makeatletter
+\def\maxwidth{ %
+  \ifdim\Gin@nat@width>\linewidth
+    \linewidth
+  \else
+    \Gin@nat@width
+  \fi
+}
+\makeatother
+
+\definecolor{fgcolor}{rgb}{0.345, 0.345, 0.345}
+\newcommand{\hlnum}[1]{\textcolor[rgb]{0.686,0.059,0.569}{#1}}%
+\newcommand{\hlstr}[1]{\textcolor[rgb]{0.192,0.494,0.8}{#1}}%
+\newcommand{\hlcom}[1]{\textcolor[rgb]{0.678,0.584,0.686}{\textit{#1}}}%
+\newcommand{\hlopt}[1]{\textcolor[rgb]{0,0,0}{#1}}%
+\newcommand{\hlstd}[1]{\textcolor[rgb]{0.345,0.345,0.345}{#1}}%
+\newcommand{\hlkwa}[1]{\textcolor[rgb]{0.161,0.373,0.58}{\textbf{#1}}}%
+\newcommand{\hlkwb}[1]{\textcolor[rgb]{0.69,0.353,0.396}{#1}}%
+\newcommand{\hlkwc}[1]{\textcolor[rgb]{0.333,0.667,0.333}{#1}}%
+\newcommand{\hlkwd}[1]{\textcolor[rgb]{0.737,0.353,0.396}{\textbf{#1}}}%
+\let\hlipl\hlkwb
+
+\usepackage{framed}
+\makeatletter
+\newenvironment{kframe}{%
+ \def\at@end@of@kframe{}%
+ \ifinner\ifhmode%
+  \def\at@end@of@kframe{\end{minipage}}%
+  \begin{minipage}{\columnwidth}%
+ \fi\fi%
+ \def\FrameCommand##1{\hskip\@totalleftmargin \hskip-\fboxsep
+ \colorbox{shadecolor}{##1}\hskip-\fboxsep
+     % There is no \\@totalrightmargin, so:
+     \hskip-\linewidth \hskip-\@totalleftmargin \hskip\columnwidth}%
+ \MakeFramed {\advance\hsize-\width
+   \@totalleftmargin\z@ \linewidth\hsize
+   \@setminipage}}%
+ {\par\unskip\endMakeFramed%
+ \at@end@of@kframe}
+\makeatother
+
+\definecolor{shadecolor}{rgb}{.97, .97, .97}
+\definecolor{messagecolor}{rgb}{0, 0, 0}
+\definecolor{warningcolor}{rgb}{1, 0, 1}
+\definecolor{errorcolor}{rgb}{1, 0, 0}
+\newenvironment{knitrout}{}{} % an empty environment to be redefined in TeX
+
+\usepackage{alltt}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{multimedia}
+\usepackage{epstopdf}
+\usepackage{color}
+
+\setcounter{MaxMatrixCols}{10}
+\newtheorem{remark}{Remark}[section]
+\newtheorem{proposition}{Proposition}[section]
+\newtheorem{interpretation}{Interpretation}[section]
+\newtheorem{goal}{Goal}[section]
+\newtheorem{statement}{Statement}[section]
+\newtheorem{aes}{Aim \& Scope}[section]
+\newtheorem{exercise}{Exercise}[section]
+\renewcommand{\Pr}{P}
+
+\newcommand{\mbf}[1]{\mathbf{#1}}
+\newcommand{\beq}{\begin{equation}}
+\newcommand{\eeq}{\end{equation}}
+\newcommand{\bea}{\begin{eqnarray}}
+\newcommand{\eea}{\end{eqnarray}}
+\newcommand{\ba}{\begin{array}}
+\newcommand{\ea}{\end{array}}
+\newcommand{\bi}{\begin{itemize}}
+\newcommand{\ei}{\end{itemize}}
+\newcommand{\ben}{\begin{enumerate}}
+\newcommand{\een}{\end{enumerate}}
+\newcommand{\nn}{\nonumber}
+
+\newenvironment{stepenumerate}{\begin{enumerate}[<+->]}{\end{enumerate}}
+\newenvironment{stepitemize}{\begin{itemize}[<+->]}{\end{itemize} }
+\newenvironment{stepenumeratewithalert}{\begin{enumerate}[<+-| alert@+>]}{\end{enumerate}}
+\newenvironment{stepitemizewithalert}{\begin{itemize}[<+-| alert@+>]}{\end{itemize} }
+\usetheme{Madrid}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% GSEM COLORS
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\definecolor{darkGSEM}{RGB}{70,95,127}
+\definecolor{darkGSEM2}{RGB}{40,80,150}
+\definecolor{GSEM}{RGB}{96,121,153} % GSEM 10% lighter
+
+%%% Global colors
+\setbeamercolor*{palette primary}{use=structure,fg=white,bg=darkGSEM}
+\setbeamercolor*{palette quaternary}{use=structure,fg=white,bg=darkGSEM!90}
+\setbeamercolor{frametitle}{fg=white,bg=GSEM!80}
+
+%%% TOC colors
+\setbeamercolor{section in toc}{fg=darkGSEM}
+
+%%% itemize colors
+\setbeamertemplate{itemize items}[circle]
+\setbeamercolor{itemize item}{fg=darkGSEM2}
+\setbeamercolor{itemize subitem}{fg=darkGSEM2}
+\setbeamercolor{itemize subsubitem}{fg=darkGSEM2}
+
+
+%%% enumerate colors
+\setbeamercolor{item projected}{fg=white,bg=GSEM}
+\setbeamertemplate{enumerate item}{\insertenumlabel.}
+\setbeamercolor{enumerate item}{fg=darkGSEM2}
+\setbeamercolor{enumerate subitem}{fg=darkGSEM2}
+\setbeamercolor{enumerate subsubitem}{fg=darkGSEM2}
+
+
+\AtBeginSection[]
+{
+  \begin{frame}{\secname}{\secname}
+    \frametitle{Outline}
+    \tableofcontents[currentsection]
+  \end{frame}
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% R Chunk Options and Packages
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\title[S110015]{Probability 1}
+\subtitle{Lecture 09 : Illustration of the Central Limit Theorem}
+\author[Flores-Agreda, La Vecchia]{Dr. Daniel Flores-Agreda, \\[0.5em] \tiny{(based on the notes of Prof. Davide La Vecchia)}}
+\date{Spring Semester 2021}
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\begin{document}
+
+\begin{frame}
+  \titlepage
+\end{frame}
+
+
+% \begin{frame}{Objectives}
+%   \begin{itemize}
+%   \item . \bigskip
+%   \item .
+%   \end{itemize}
+% \end{frame}
+
+% \begin{frame}{Outline}
+%   \tableofcontents
+% \end{frame}
+
+%
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% \section{Weak Law of Large Numbers}
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+% \begin{frame}{\secname}
+% \framesubtitle{Reminder}
+%   \begin{proposition}[Simplified WLLN]
+%    Let $X_{1},X_{2},\dots,X_{n},\dots$ be a sequence of \textit{i.i.d.} random variables with common probability distribution $F_X(x)$, and let $Y=h(X)$ be such that
+%   \begin{eqnarray*}
+%   E[Y]=E\left[ h(X)\right]  &=&\mu_Y  \\
+%   Var(Y)=Var\left( h(X)\right)  &=&\sigma_Y ^{2}<\infty\,.
+%   \end{eqnarray*}%
+%   Set
+%   $$
+%   \overline{Y}_n=\frac{1}{n}\sum_{s=1}^nY_s\quad\text{where}\quad Y_s=h(X_s)\,,\quad s=1,\ldots,n\,.
+%   $$
+%   Then, for any two numbers $\varepsilon$ and $\delta$ satisfying $\varepsilon>0$ and $0<\delta<1$
+%   $$
+%   \Pr \left( \left\vert \overline{Y}_{n}-\mu_Y \right\vert<\varepsilon \right)\geq 1-\delta
+%   $$
+%   for all $n>\sigma_Y^2/(\varepsilon^2\delta)$.
+%
+%   Choosing both $\varepsilon$ and $\delta$ to be arbitrarily small implies that $p\lim_{n\rightarrow\infty}(\overline{Y}_{n}-\mu_Y)=0$, or equivalently
+%   $\overline{Y}_{n}\overset{p}{\rightarrow }\mu_Y$.
+%   \end{proposition}
+% \end{frame}
+%
+% \begin{frame}{\secname}
+%
+% \end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Central Limit Theorem}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}{\secname}
+  \framesubtitle{Simplified Version}
+\begin{theorem} Let $X_{1},X_{2},...,X_{n},...$ be a sequence of \textit{i.i.d.} random variables and let $Y=h(X)$ be such that
+  \begin{eqnarray*}
+  E[Y]=E\left[ h(X)\right]  &=&\mu_Y  \\
+  Var(Y)=Var\left( h(X)\right)  &=&\sigma_Y ^{2}<\infty\,.
+  \end{eqnarray*}%
+  Set
+  $$
+  \overline{Y}_n=\frac{1}{n}\sum_{s=1}^nY_s\quad\text{where}\quad Y_s=h(X_s)\,,\quad s=1,\ldots,n\,.
+  $$
+  Then (under quite general regularity conditions)%
+  \begin{equation*}
+  \frac{\sqrt{n}\left( \overline{Y}_{n}-\mu_Y \right) }{\sigma_Y }\overset{D}{%
+  \rightarrow }N\left( 0,1\right)
+  {\color{red}
+  \Leftrightarrow
+  P\left(\frac{\sqrt{n}\left( \overline{Y}_{n}-\mu_Y \right) }{\sigma_Y} \leq x \right)
+  \underset{n\rightarrow \infty}{\longrightarrow} \Phi(x)}
+  \end{equation*}
+  \end{theorem}
+\end{frame}
+
+
+
+\begin{frame}{\secname}
+\framesubtitle{Implications}
+\end{frame}
+
+\begin{frame}{\secname}
+  \begin{example}[Ross, Example 3e]
+  \begin{footnotesize}
+  An instructor has 50 exams that will be graded in sequence.
+
+  \medskip
+
+  The times required to grade the 50 exams are independent, with a common distribution that has mean 20 minutes and standard deviation of 4 minutes.
+
+  \medskip
+
+  \emph{Approximate the probability that the instructor will grade at least 25 of the exams in the first 450 minutes of work.}
+  \end{footnotesize}
+  \end{example}
+\end{frame}
+
+\begin{frame}{\secname}
+  \begin{example}[Ross, Example 3e]
+  \begin{footnotesize}
+
+\vspace{7cm}
+
+  \end{footnotesize}
+  \end{example}
+\end{frame}
+
+
+
+
+\end{document}

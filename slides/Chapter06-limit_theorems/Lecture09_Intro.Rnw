@@ -1,0 +1,232 @@
+\documentclass[notes=show,smaller,handout]{beamer}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{multimedia}
+\usepackage{epstopdf}
+\usepackage{color}
+
+\setcounter{MaxMatrixCols}{10}
+\newtheorem{remark}{Remark}[section]
+\newtheorem{proposition}{Proposition}[section]
+\newtheorem{interpretation}{Interpretation}[section]
+\newtheorem{goal}{Goal}[section]
+\newtheorem{statement}{Statement}[section]
+\newtheorem{aes}{Aim \& Scope}[section]
+\newtheorem{exercise}{Exercise}[section]
+\renewcommand{\Pr}{P}
+
+\newcommand{\mbf}[1]{\mathbf{#1}}
+\newcommand{\beq}{\begin{equation}}
+\newcommand{\eeq}{\end{equation}}
+\newcommand{\bea}{\begin{eqnarray}}
+\newcommand{\eea}{\end{eqnarray}}
+\newcommand{\ba}{\begin{array}}
+\newcommand{\ea}{\end{array}}
+\newcommand{\bi}{\begin{itemize}}
+\newcommand{\ei}{\end{itemize}}
+\newcommand{\ben}{\begin{enumerate}}
+\newcommand{\een}{\end{enumerate}}
+\newcommand{\nn}{\nonumber}
+
+\newenvironment{stepenumerate}{\begin{enumerate}[<+->]}{\end{enumerate}}
+\newenvironment{stepitemize}{\begin{itemize}[<+->]}{\end{itemize} }
+\newenvironment{stepenumeratewithalert}{\begin{enumerate}[<+-| alert@+>]}{\end{enumerate}}
+\newenvironment{stepitemizewithalert}{\begin{itemize}[<+-| alert@+>]}{\end{itemize} }
+\usetheme{Madrid}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% GSEM COLORS
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\definecolor{darkGSEM}{RGB}{70,95,127}
+\definecolor{darkGSEM2}{RGB}{40,80,150}
+\definecolor{GSEM}{RGB}{96,121,153} % GSEM 10% lighter
+
+%%% Global colors
+\setbeamercolor*{palette primary}{use=structure,fg=white,bg=darkGSEM}
+\setbeamercolor*{palette quaternary}{use=structure,fg=white,bg=darkGSEM!90}
+\setbeamercolor{frametitle}{fg=white,bg=GSEM!80}
+
+%%% TOC colors
+\setbeamercolor{section in toc}{fg=darkGSEM}
+
+%%% itemize colors
+\setbeamertemplate{itemize items}[circle]
+\setbeamercolor{itemize item}{fg=darkGSEM2}
+\setbeamercolor{itemize subitem}{fg=darkGSEM2}
+\setbeamercolor{itemize subsubitem}{fg=darkGSEM2}
+
+
+%%% enumerate colors
+\setbeamercolor{item projected}{fg=white,bg=GSEM}
+\setbeamertemplate{enumerate item}{\insertenumlabel.}
+\setbeamercolor{enumerate item}{fg=darkGSEM2}
+\setbeamercolor{enumerate subitem}{fg=darkGSEM2}
+\setbeamercolor{enumerate subsubitem}{fg=darkGSEM2}
+
+
+\AtBeginSection[]
+{
+  \begin{frame}{\secname}{\secname}
+    \frametitle{Outline}
+    \tableofcontents[currentsection]
+  \end{frame}
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% R Chunk Options and Packages
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+<<setup , include = FALSE>>=
+knitr::opts_chunk$set(echo=FALSE,
+                      out.width  = '0.5\\linewidth',
+                      fig.align  = 'center',
+                      fig.width = 4*1.5,
+                      fig.height = 3*1.5,
+                      message = FALSE,
+                      warning = FALSE)
+@
+
+<<>>=
+library(tidyverse)
+@
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\title[S110015]{Probability 1}
+\subtitle{Chapter 09 : Reminder - Sequences and Series}
+\author[Flores-Agreda, La Vecchia]{Dr. Daniel Flores-Agreda, \\[0.5em] \tiny{(based on the notes of Prof. Davide La Vecchia)}}
+\date{Spring Semester 2021}
+
+
+\begin{document}
+
+\begin{frame}
+  \titlepage
+\end{frame}
+
+
+% \begin{frame}{Objectives}
+%   \begin{itemize}
+%   \item . \bigskip
+%   \item .
+%   \end{itemize}
+% \end{frame}
+
+\begin{frame}{Outline}
+  \tableofcontents
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Sequences of real numbers }
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}{\secname}
+
+\frametitle{Sequences of real numbers }
+
+\begin{definition}
+ A sequence is an ordered list of real numbers
+of the form%
+\begin{equation*}
+a_{1},a\,_{2},...,a_{n},...
+\end{equation*}
+where each natural number $n \in \mathbb{N}$ corresponds exactly to a real number $a_n \in \mathbb{R}$. A sequence is denoted
+by $\{a_n \}_{n \in \mathbb{N}}$, where $n$ is called the index of the sequence and $a_n$ is its n-th term.
+\end{definition}
+
+\vspace{0.4cm}
+
+Remark: the sequence can contain infinite terms...
+
+\begin{example}
+The list of numbers
+$$
+\Big\{1,\frac{1}{2},\frac{1}{3},\frac{1}{4},... \Big \}
+$$
+is a sequence, where each natural number corresponds the real number $a_n = \frac{1}{n}$.
+\end{example}
+
+
+
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Limit of a sequences of real numbers }
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\begin{frame}{\secname}
+
+
+
+\begin{definition}
+A real number  $a\in \mathbb{R}$ (a is a finite number) is called the limit of a sequence $\{a_n \}_{n \in \mathbb{N}}$ if, for any $\epsilon >0$, a natural number $n(\epsilon) \in \mathbb{N}$ exists such that
+\begin{equation} \label{Eq. lim}
+\vert a_{n}-a \vert < \epsilon \quad  \text{for all \ \ } n\geq n(\epsilon).
+\end{equation}
+If for a given sequence $\{a_n \}_{n \in \mathbb{N}}$ the real number $a$ satisfies (\ref{Eq. lim}), then we write
+$$
+a = \lim_{n\to \infty} a_n.
+$$
+\end{definition}
+
+\begin{example}
+The sequence $\{ a_n \}_{n \in \mathbb{N}}$
+with $a_n = \frac{1}{n}$, converges to zero.
+\end{example}
+
+Remark: loosely speaking,  Eq. (\ref{Eq. lim}) states that, for $n \geq n(\epsilon)$, $a_n$ is \textbf{always} close to $a$ (or equivalently, the difference in absolute value between $a_n$ and $a$ is \textbf{never} large).
+
+\end{frame}%
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Series}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}{\secname}
+
+\begin{definition}
+Let $\{ a_k \}_{k \in \mathbb{N}}$ be a  sequence. The sum of the first $n$ terms of  $\{ a_k \}_{k \in \mathbb{N}}$:
+$$
+s_n = \sum_{k=1}^{n} a_k = a_1 + a_2 +...+a_n
+$$
+is called the $n$-th partial sum of $\{ a_k \}_{k \in \mathbb{N}}$. The sequence $\{s_n\}_{n \in \mathbb{N}}$ of partial sums
+is called a series.
+
+\end{definition}
+
+\vspace{0.4cm}
+
+Remark: $s_n = s_{n-1} + a_n$.
+
+
+\end{frame}%
+
+
+\begin{frame}{\secname}
+
+\frametitle{Series }
+
+
+\begin{example}
+Let us consider again the sequence $\{ a_k \}_{k \in \mathbb{N}}$ with $a_k = \frac{1}{k}$. Its partial sums are
+$$
+s_n =  \sum_{k=1}^{n} a_k.
+$$
+For instance, when $n=1,2,3$ we have:
+\begin{eqnarray*}
+s_1 &=& 1 \\
+s_2 &=& 1 + \frac{1}{2} = \frac{3}{2}  \\
+s_3 &=& 1 + \frac{1}{2} + \frac{1}{3} = s_2 + \frac{1}{3} = \frac{11}{6}.
+\end{eqnarray*}
+
+
+\end{example}
+
+\end{frame}%
+
+
+\end{document}

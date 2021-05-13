@@ -1,0 +1,6 @@
+\beamer@sectionintoc {1}{Chebyshev's and Markov's Inequalities}{4}{0}{1}
+\beamer@sectionintoc {2}{Sequences of Random Variables}{11}{0}{2}
+\beamer@sectionintoc {3}{Convergence in Probability}{18}{0}{3}
+\beamer@sectionintoc {4}{The Weak Law of Large Numbers (WLLN)}{24}{0}{4}
+\beamer@sectionintoc {5}{Convergence in Distribution}{27}{0}{5}
+\beamer@sectionintoc {6}{The Central Limit Theorem (CLT)}{33}{0}{6}

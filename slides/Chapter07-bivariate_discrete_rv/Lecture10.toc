@@ -1,0 +1,4 @@
+\beamer@sectionintoc {1}{Joint Probability Functions}{3}{0}{1}
+\beamer@sectionintoc {2}{Conditional Probability}{14}{0}{2}
+\beamer@sectionintoc {3}{Expectations}{19}{0}{3}
+\beamer@sectionintoc {4}{Covariance and Correlation}{25}{0}{4}

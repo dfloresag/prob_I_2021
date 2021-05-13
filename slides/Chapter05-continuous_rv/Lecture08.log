@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020) (preloaded format=pdflatex 2020.8.26)  21 APR 2021 23:19
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020) (preloaded format=pdflatex 2020.7.8)  22 APR 2021 11:31
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1204,34 +1204,19 @@ Overfull \vbox (5.36531pt too high) detected at line 437
 
 ] [41
 
-] [42
-
-] [43
-
-] [44
-
 ]
-[45
-
-] [46
-
-] [47
-
-] [48
-
-]
-<img/RelRVs_Diego.pdf, id=1855, 761.8479pt x 424.65508pt>
+<img/RelRVs_Diego.pdf, id=1671, 761.8479pt x 424.65508pt>
 File: img/RelRVs_Diego.pdf Graphic file (type pdf)
 <use img/RelRVs_Diego.pdf>
 Package pdftex.def Info: img/RelRVs_Diego.pdf  used on input line 732.
 (pdftex.def)             Requested size: 342.82838pt x 191.09302pt.
- [49
+ [42
 
- <./img/RelRVs_Diego.pdf>] [50
+ <./img/RelRVs_Diego.pdf>] [43
 
-] [51
+] [44
 
-] [52
+] [45
 
 ]
 \tf@nav=\write6
@@ -1245,8 +1230,7 @@ Package pdftex.def Info: img/RelRVs_Diego.pdf  used on input line 732.
 
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 765.
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 765.
-
-(./Lecture08.aux)
+ (./Lecture08.aux)
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 765.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 765.
 Package rerunfilecheck Info: File `Lecture08.out' has not changed.
@@ -1257,9 +1241,9 @@ LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
  ) 
 Here is how much of TeX's memory you used:
- 21754 strings out of 480608
- 431880 string characters out of 5903630
- 684171 words of memory out of 5000000
+ 21740 strings out of 480608
+ 431747 string characters out of 5903631
+ 684176 words of memory out of 5000000
  36993 multiletter control sequences out of 15000+600000
  545594 words of font info for 70 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
@@ -1286,10 +1270,10 @@ ve/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/local/texlive
 /2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/2
 020/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy9.pfb></usr/local/texlive/202
 0/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on Lecture08.pdf (52 pages, 652285 bytes).
+Output written on Lecture08.pdf (45 pages, 628573 bytes).
 PDF statistics:
- 2092 PDF objects out of 2487 (max. 8388607)
- 1745 compressed objects within 18 object streams
- 110 named destinations out of 1000 (max. 500000)
+ 1903 PDF objects out of 2073 (max. 8388607)
+ 1565 compressed objects within 16 object streams
+ 96 named destinations out of 1000 (max. 500000)
  156 words of extra memory for PDF output out of 10000 (max. 10000000)
 

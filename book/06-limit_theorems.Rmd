@@ -4,6 +4,115 @@
   knitr::include_graphics("img/fun/areUnormal.png")
 ```
 
+## Markov's and Chebyshev's Inequalities
+
+We will start by overviewing two inequalities that allow the computation of upper bounds for probability statements and play an important role in stablishing the convergence results we'll see further in this chapter. 
+
+### Markov's inequality
+
+```{proposition, name = "Markov's Inequality"}
+Let $Z$ be random variable and $h(z)$ a non-negative valued function for all $z\in \mathbb{R}$. Then:
+\begin{equation}
+\Pr(h(Z)\geq \zeta)\leq \frac{E[h(Z)]}{\zeta}\quad\text{for all}\,\zeta>0. \label{Eq. M1}
+\end{equation}
+```
+
+```{proof}
+To verify Markov's inequality, observe that 
+\begin{eqnarray*}
+E[h( Z)]&=&\int_{-\infty }^{\infty }h(z) f_{Z}\left(z\right)dz\\
+&=&\int_{\{z:h(z)\geq\zeta\}}h(z) f_{Z}\left(z\right) dz+
+\int_{\{z:h(z)<\zeta\}}h(z) f_{Z}\left(z\right) dz \\
+&\geq&\int_{\{z:h(z)\geq\zeta\}}h(z) f_{Z}\left(z\right) dz\\
+&\geq&\int_{\{z:h(z)\geq\zeta\}}\zeta f_{Z}\left(z\right)dz=\zeta\Pr(h(Z)\geq\zeta)\,,
+\end{eqnarray*}
+giving the desired result on division by $\zeta$.
+```
+
+
+
+```{example, name = "Markov's Inequality"}
+
+**Q.** On the A2 highway (in the Luzern Canton), the speed limit is $80$ Km/h. Most drivers are not driving so fast and the average speed on the high way is $70$ Km/h. 
+If $Z$ denotes a randomly chosen driver's speed, what is the probability that such a person is driving faster than the speed limit? \\
+
+**A.** Since we do not have the whole distribution of $Z$, but we have only limited info (i.e. we know $E[Z]=70$ Km/h), we have to resort on Markov's inequality. So using (\ref{Eq. M1}) we obtain an upper bound to the probability:
+
+  $$ P(Z \geq 80) \leq \frac{70}{80} = 0.875. $$
+```
+
+
+```{proposition, name = "Chebychev's Inequality"}
+For any random variable $Z$ with mean $\mu_Z$ and variance $\sigma_Z^2<\infty$
+\begin{equation*}
+\Pr \left( \left\vert Z-\mu_Z\right\vert <r\sigma_Z\right) \geq 1-\frac{1 }{r^{2}}
+\end{equation*}
+for all $r>0$.
+```
+
+
+```{remark}
+Note that an equivalent expression is given by
+\begin{equation}
+\Pr \left( \left\vert Z-\mu_Z\right\vert \geq r\sigma_Z\right) \leq \frac{1 }{r^{2}} \label{Eq. C2}
+\end{equation}
+
+
+Put in words, this inequality says that the probability that a random variable **lies more than $r$ standard deviations away** from its mean value is **bounded above by $1/r^2$**.
+```
+
+```{proof}
+Chebyshev's inequality is, in turn, a special case of Markov's inequality.
+
+- Chebyshev's inequality now follows as a direct corollary of Markov's inequality on taking $h(z)=(z-\mu_Z)^2$ and $\zeta=r^2\sigma_Z^2$.
+```
+Chebychev's inequality can be used to construct crude bounds on the probabilities associated with deviations of a random variable from its mean. 
+
+```{example, name = "Chebyshev's Inequality" }
+
+**Q.** On the A2 highway (in the Luzern Canton), the speed limit is $80$ Km/h. Most drivers are not driving so fast and the average speed on the high way is $70$ Km/h, \textbf{with variance $9$ $(Km/h)^2$}.
+If $Z$ denotes a randomly chosen driver's speed, what is the probability that such a person is driving faster than the speed limit? 
+
+**A.** Since we do not have the whole distribution of $Z$, but we have only limited info (i.e. we know $E[Z]=70$ Km/h **AND** $V(Z)=9$ $(Km/h)^2$), we have to resort on Chebyshev's inequality and give an upper bound to the probability. Thus,
+
+\begin{eqnarray*}
+P( Z \geq 80) &=& P( Z - E[Z]\geq 80 - 70) \\ &\leq& P(\vert Z-E[Z] \vert \geq 10) \leq  P\left( \frac{\vert Z-E[Z] \vert }{\sqrt{V(Z)}}\geq \frac{10}{\sqrt{9}}\right) 
+\end{eqnarray*}
+
+Using (\ref{Eq. C2}), with $r=\frac{10}{3}$ and $\sigma_Z= 3$, we finally get
+
+\begin{eqnarray*}
+P( Z \geq 80) \leq P\left(\Big\vert Z-E[Z] \Big\vert \geq \left(\frac{10}{3}\right) {3}\right) \leq \frac{1}{\frac{10^2}{3^2}} \leq \frac{9}{100} \leq 0.09 
+\end{eqnarray*}
+```
+
+
+
+
+
+
+
+
+```{remark}
+Chebychev's inequality can be rewirtten in a different way. 
+
+Indeed, for any random variable $Z$ with mean $\mu_Z$ and variance $\sigma_Z^2<\infty$
+\begin{equation}
+\Pr \left( \left\vert Z-\mu_Z\right\vert \geq \varepsilon \right) \leq \frac{E[Z-\mu_Z]^2}{\varepsilon^{2}} = \frac{\sigma_Z^2}{\varepsilon^{2}}. \label{Eq. C3}
+\end{equation}
+ 
+ It's easy to check  that Eq. (\ref{Eq. C3}) coincides with Eq. (\ref{Eq. C2}), setting in Eq. (\ref{Eq. C3}) 
+
+ $$
+ \varepsilon = r \sigma_Z.
+ $$
+
+ Do the check as an exercise!!
+```
+
+
+
+
 ## Sequences of Random Variables
 
 ```{definition}
@@ -23,7 +132,7 @@ The study of such limiting behaviour is commonly called a study of \color{blue}`
 
 ### Example: Bernoulli Trials and their sum
 
-Let $\tilde Z$ denote a dichotomous random variable with $\tilde Z\sim Bernoulli(p)$. A sequence of Bernoulli trials provides us with a sequence of values $\tilde Z_{1},\tilde Z_{2},...,\tilde Z_{n},...$ %where each $\tilde {Z}_{i}$ is such that
+Let $\tilde Z$ denote a dichotomous random variable with $\tilde Z\sim \mathcal{B}(p)$. A sequence of Bernoulli trials provides us with a sequence of values $\tilde Z_{1},\tilde Z_{2},...,\tilde Z_{n},...$ %where each $\tilde {Z}_{i}$ is such that
 
 \begin{eqnarray*}
 \Pr("Success")=\Pr \left( \tilde{Z}_{i}=1\right) = p & \text{and} & \Pr("Failure")=\Pr \left( \tilde Z_{i}=0\right)  = 1-p
@@ -147,7 +256,7 @@ For each fixed sample size $n$, the $r$th sample moment is (using an obvious not
 M_{(r,n)}=\frac{1}{n}\left( X_{1}^r+X_{2}^r+\cdots +X_{n}^r\right)=\frac{1}{n}\sum_{s=1}^nX_s^r\,,
 \end{equation*}
 and we know that 
-$$E[M_{(r,n)}]=\mu_r\quad\text{and}\quad Var(M_{(r,n)})=\frac{1}{n}(\mu_{2}-\mu_1^2)\,.$$
+$$E[M_{(r,n)}]=\mu_r\quad\text{and}\quad Var(M_{(r,n)})=\frac{1}{n}(\mu_{2r}-\mu_r^2)\,.$$
 
 
 Now consider the sequence of sample moments $M_{(r,1)},M_{(r,2)},...,M_{(r,n)},...$ or, equivalently, $\{M_{(r,i)}\}_{i=1}^{n}$.
@@ -253,115 +362,6 @@ for all $n>\sigma_Y^2/(\varepsilon^2\delta)$.
 \end{equation*}
 again implying that $\left( \overline{Y}_{n}-\mu_Y \right) \overset{p}{\rightarrow }0$.
 
-
-### Chebyshev's (and Markov's) Inequality
-
-
-- **Chebychev's Inequality**: For any random variable $Z$ with mean $\mu_Z$ and variance $\sigma_Z^2<\infty$
-\begin{equation*}
-\Pr \left( \left\vert Z-\mu_Z\right\vert <r\sigma_Z\right) \geq 1-\frac{1 }{r^{2}}
-\end{equation*}
-for all $r>0$.
-
-- Note that an equivalent expression is given by
-\begin{equation}
-\Pr \left( \left\vert Z-\mu_Z\right\vert \geq r\sigma_Z\right) \leq \frac{1 }{r^{2}} \label{Eq. C2}
-\end{equation}
-- This inequality says that the probability that a random variable lies more than $r$ standard deviations away from its mean value is bounded above by $1/r^2$.
-
-- Chebychev's inequality is, in turn, a special case of Markov's inequality.
-- \textbf{Markov's inequality}: Let $Z$ be random variable and $h(z)$ a non-negative valued function for all $z\in \mathbb{R}$. Then
-\begin{equation}
-\Pr(h(Z)\geq \zeta)\leq \frac{E[h(Z)]}{\zeta}\quad\text{for all}\,\zeta>0. \label{Eq. M1}
-\end{equation}
-
-
-
-
-
-
-- To verify Markov's inequality, observe that 
-\begin{eqnarray*}
-E[h( Z)]&=&\int_{-\infty }^{\infty }h(z) f_{Z}\left(z\right)dz\\
-&=&\int_{\{z:h(z)\geq\zeta\}}h(z) f_{Z}\left(z\right) dz+
-\int_{\{z:h(z)<\zeta\}}h(z) f_{Z}\left(z\right) dz \\
-&\geq&\int_{\{z:h(z)\geq\zeta\}}h(z) f_{Z}\left(z\right) dz\\
-&\geq&\int_{\{z:h(z)\geq\zeta\}}\zeta f_{Z}\left(z\right)dz=\zeta\Pr(h(Z)\geq\zeta)\,,
-\end{eqnarray*}
-giving the desired result on division by $\zeta$.
-
-- Chebyshev's inequality now follows as a direct corollary of Markov's inequality on taking $h(z)=(z-\mu_Z)^2$ and $\zeta=r^2\sigma_Z^2$.
-%- Chebychev's inequality
-It can be used to construct crude bounds on the probabilities associated with deviations of a random variable from its mean. 
-%But we are more often interested in more precise evaluations.
-
-
-
-### Example: Markov's Inequality
-
-```{example}
-
-**Q.** On the A2 highway (in the Luzern Canton), the speed limit is $80$ Km/h. Most drivers are not driving so fast and the average speed on the high way is $70$ Km/h. 
-If $Z$ denotes a randomly chosen driver's speed, what is the probability that such a person is driving faster than the speed limit? \\
-
-**A.** Since we do not have the whole distribution of $Z$, but we have only limited info (i.e. we know $E[Z]=70$ Km/h), we have to resort on Markov's inequality. So using (\ref{Eq. M1}) we obtain an upper bound to the probability:
-
-  $$ P(Z \geq 80) \leq \frac{70}{80} = 0.875. $$
-```
-
-
-
-
-
-
-
-
-\frametitle{Example: Chebyshev's Inequality}
-
-```{example}
-
-**Q.** On the A2 highway (in the Luzern Canton), the speed limit is $80$ Km/h. Most drivers are not driving so fast and the average speed on the high way is $70$ Km/h, \textbf{with variance $9$ $(Km/h)^2$}.
-If $Z$ denotes a randomly chosen driver's speed, what is the probability that such a person is driving faster than the speed limit? \\
-
-**A.** Since we do not have the whole distribution of $Z$, but we have only limited info (i.e. we know $E[Z]=70$ Km/h **AND** $V(Z)=9$ $(Km/h)^2$), we have to resort on Chebyshev's inequality and give an upper bound to the probability. Thus,
-
-\begin{eqnarray*}
-P( Z \geq 80) &=& P( Z - E[Z]\geq 80 - 70) \\ &\leq& P(\vert Z-E[Z] \vert \geq 10) \leq  P\left( \frac{\vert Z-E[Z] \vert }{\sqrt{V(Z)}}\geq \frac{10}{\sqrt{9}}\right) 
-\end{eqnarray*}
-
-
-Using (\ref{Eq. C2}), with $r=\frac{10}{3}$ and $\sigma_Z= 3$, we finally get
-
-\begin{eqnarray*}
-P( Z \geq 80) \leq P\left(\Big\vert Z-E[Z] \Big\vert \geq \left(\frac{10}{3}\right) {3}\right) \leq \frac{1}{\frac{10^2}{3^2}} \leq \frac{9}{100} \leq 0.09 
-\end{eqnarray*}
-
-
-```
-
-
-
-
-
-
-\frametitle{A remark about Chebyshev's Inequality}
-
-```{remark}
-Chebichev's inequality can be rewirtten in a different way. \\
-
-Indeed, for any random variable $Z$ with mean $\mu_Z$ and variance $\sigma_Z^2<\infty$
-\begin{equation}
-\Pr \left( \left\vert Z-\mu_Z\right\vert \geq \varepsilon \right) \leq \frac{E[Z-\mu_Z]^2}{\varepsilon^{2}} = \frac{\sigma_Z^2}{\varepsilon^{2}}. \label{Eq. C3}
-\end{equation}
- 
- It's easy to check  that Eq. (\ref{Eq. C3}) coincides with Eq. (\ref{Eq. C2}), setting in Eq. (\ref{Eq. C3}) 
-
- $$
- \varepsilon = r \sigma_Z.
- $$
-
- Do the check as an exercise!!
-```
 
 
 
