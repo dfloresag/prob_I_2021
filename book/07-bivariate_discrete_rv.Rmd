@@ -65,199 +65,98 @@
 ## Joint Probability Functions
 
 
-- Let $X$ and $Y$ be a pair of discrete random variables
+```{definition}
+Let $X$ and $Y$ be a pair of discrete random variables
 
-- Their  \textbf{joint probability mass function} (joint
-PMF) expresses the probability that simultaneously $X$ takes on the specific
+Their  **joint probability mass function** (joint PMF) expresses the 
+probability that simultaneously $X$ takes on the specific
 value $x$ and $Y$ takes on the specific value $y$.
 
-- It is denoted by 
+It is denoted by 
 \begin{equation*}
 p_{X,Y}\left( x,y\right) =\Pr (\left\{ X=x\cap Y=y\right\})
 \end{equation*}
 thought of as a function of $x$ and $y$.
+```
 
-- The joint PMF has two essential properties:
 
 
-- $p_{X,Y}\left( x,y\right) \geq 0$ for all possible pairs $\left(
-x,y\right) $ (its value is always non-negative)
+The joint PMF has two essential properties:
 
-- $\sum_{x}\sum_{y}\Pr ( \left\{ X=x\cap Y=y\right\}) =1$ (its sum over all
-combinations of $x$ and $y$ values is equal to one)
 
-## Marginal probability (mass) functions
+1. The value of the Joint PMF is always non-negative
+$$p_{X,Y}\left( x,y\right) \geq 0  \text{ for all possible pairs }\left(x,y\right)$$ 
 
-```{definition}
-The probability (mass) function of the \emph{discrete} random variable 
-$X$ is called its marginal probability (mass) function. It is obtained by summing the joint probabilities relating to pairs $%
-(X,Y)$ over all possible values of $Y$:%
+2. The sum over all combinations of $x$ and $y$ values is equal to one
+$$\sum_{x}\sum_{y}\Pr ( \left\{ X=x\cap Y=y\right\}) =1$$
+
+
+```{definition, name = "Marginal probability Mass functions"}
+The probability (mass) function of the _discrete_ random variable 
+$X$ is called its marginal probability (mass) function. It is obtained by summing the joint probabilities relating to pairs $(X,Y)$ over all possible values of $Y$:
 \begin{equation*}
 p_{X}(x)=\sum_{y}p_{X,Y}(x,y).
 \end{equation*}
+```
 
-Similarly, the probability (mass) function of the \emph{discrete}
-random variable $Y$ is called its marginal probability (mass) function. It is obtained by summing the joint probabilities relating to pairs $%
-(X,Y)$ over\emph{\ }all possible values of $X$:%
+Similarly, the probability (mass) function of the discrete
+random variable $Y$ is called its marginal probability (mass) function. It is obtained by summing the joint probabilities relating to pairs $(X,Y)$ over all possible values of $X$:
 \begin{equation*}
 p_{Y}(y)=\sum_{x}p_{X,Y}(x,y).
 \end{equation*}
-```
 
-### First Example
 
-```{example}
+```{example, name = "caplets"}
+Two caplets are selected at random from a bottle containing three
+aspirins, two sedatives and two placebo caplets. We are assuming that the caplets are well mixed and that each has an equal chance of being selected.
 
-[caplets: this probability course is giving me headache]
-
-- Two caplets are selected at random from a bottle containing three
-aspirins, two sedatives and two placebo caplets. We are assuming that the caplets are well mixed and that each has an
-equal chance of being selected.
-
-- Let $X$ and $Y$ denote, respectively, the numbers of aspirin caplets,
+Let $X$ and $Y$ denote, respectively, the numbers of aspirin caplets,
 and the number of sedative caplets, included among the two caplets drawn
 from the bottle.
-%
-%- We want to find the probabilities associated with all possible values
-%of $X$ and $Y$.
-%
-%- All the possible pairs of $(X,Y)$ are $(0,0)$,$(1,0)$, $(0,1)$, $(1,1)$%
-%, $(2,0)$, and $(0,2)$.
 
-```
+Number of sets of 2 caplets out of 7:
 
+  $${7 \choose 2} = \frac{7!}{2!\times (7-2)!} = \frac{7!}{2! \times 5!} = \frac{6\times 7}{2} = 3\times 7 = 21$$
 
-<!-- % -->
-<!--  -->
-<!-- % -->
-<!-- %## {First Example} -->
-<!-- % -->
-<!-- %%```{example}[cont'd] -->
-<!-- % -->
-<!-- %- To work out each of these probabilties, we use combinations. -->
-<!-- % -->
-<!-- % -->
-<!-- %- e.g., the outcome $(1,1)$ corresponds to choosing only one asprin -->
-<!-- %caplet and only one sedative caplet. -->
-<!-- % -->
-<!-- % -->
-<!-- %- But that one asprin caplet could be any one of the three available in -->
-<!-- %the jar, -->
-<!-- % -->
-<!-- %- and that one sedative caplet could be either one of the two available -->
-<!-- %in the jar. -->
-<!-- % -->
-<!-- %- So the number of possible combinations that satisfy $\left( x,y\right) -->
-<!-- %=(1,1)$ are% -->
-<!-- %\begin{eqnarray*} -->
-<!-- %\underset{\text{\# asprin}}{\underbrace{\left(  -->
-<!-- %\begin{array}{c} -->
-<!-- %3 \\  -->
-<!-- %1% -->
-<!-- %\end{array}% -->
-<!-- %\right) }}\times \underset{\text{\# sedative}}{\underbrace{\left(  -->
-<!-- %\begin{array}{c} -->
-<!-- %2 \\  -->
-<!-- %1% -->
-<!-- %\end{array}% -->
-<!-- %\right) }}\times \underset{\text{\# placebo}}{\underbrace{\left(  -->
-<!-- %\begin{array}{c} -->
-<!-- %2 \\  -->
-<!-- %0% -->
-<!-- %\end{array}% -->
-<!-- %\right) }} &=&\frac{3!}{1!2!}\times \frac{2!}{1!1!}\times \frac{2!}{2!0!} \\ -->
-<!-- %&=&3\times 2\times 1=6 -->
-<!-- %\end{eqnarray*} -->
-<!-- % -->
-<!-- % -->
-<!-- %- We can work out the number of possible combinations for the remaining $% -->
-<!-- %\left( x,y\right) $ pairs similarly. -->
-<!-- % -->
-<!-- % -->
-<!-- %%``` -->
-<!-- % -->
-<!-- % -->
-<!-- %% -->
-<!--  -->
-<!-- %% -->
-<!-- %% -->
-<!-- %% -->
-<!-- %% -->
-<!--  -->
-<!-- % -->
-<!-- %## {First Example (Discrete)} -->
-<!-- % -->
-<!-- %The \emph{probability} can be tabulated as -->
-<!-- % -->
-<!-- %\begin{center} -->
-<!-- %\begin{tabular}{|c||c||c||c|} -->
-<!-- %\hline -->
-<!-- %${\small (x,y)}$ & {\small event drawn} & {\small combinations} & $\Pr -->
-<!-- %\left\{ \left( X,Y\right) =\left( x,y\right) \right\} $ \\ \hline\hline -->
-<!-- %${\small (0,0)}$ & {\small 2 placebos} & ${\small 1}$ & ${\small 1/21}$ \\  -->
-<!-- %\hline -->
-<!-- %${\small (1,0)}$ & {\small 1 asprin,1 placebo} & ${\small 6}$ & ${\small 6/21% -->
-<!-- %}$ \\ \hline -->
-<!-- %${\small (0,1)}$ & {\small 1 sedative, 1 placebo} & ${\small 4}$ & ${\small % -->
-<!-- %4/21}$ \\ \hline -->
-<!-- %${\small (1,1)}$ & {\small 1 asprin, 1 placebo} & ${\small 6}$ & ${\small % -->
-<!-- %6/21}$ \\ \hline -->
-<!-- %${\small (2,0)}$ & {\small 2 asprin} & ${\small 3}$ & ${\small 3/21}$ \\  -->
-<!-- %\hline -->
-<!-- %${\small (0,2)}$ & {\small 2 sedatives} & ${\small 1}$ & ${\small 1/21}$ \\  -->
-<!-- %\hline\hline -->
-<!-- %{\small Total} &  & ${\small 21}$ & ${\small 1}$ \\ \hline -->
-<!-- %\end{tabular} -->
-<!-- %\end{center} -->
-<!-- % -->
+The Joint Probabilities can be found with Combinatorial Formulae:
 
+-  $p_{X,Y}(0, 0) = {3 \choose 0}{2 \choose 0}{2 \choose 2} \left/ 21 \right. = 1/21$
+-  $p_{X,Y}(1, 0) = {3 \choose 1}{2 \choose 0}{2 \choose 1} \left/ 21 \right. = 6/21$
+-  $p_{X,Y}(2, 0) = {3 \choose 2}{2 \choose 0}{2 \choose 0} \left/ 21 \right. = 3/21$
+-  $p_{X,Y}(0, 1) = {3 \choose 0}{2 \choose 1}{2 \choose 1} \left/ 21 \right. = 4/21$
+-  $p_{X,Y}(1, 1) = {3 \choose 1}{2 \choose 1}{2 \choose 0} \left/ 21 \right. = 6/21$
+-  $p_{X,Y}(2, 1) = 0$ since $2+1 = 3 > 2$
+-  $p_{X,Y}(0, 2) = {3 \choose 0}{2 \choose 2}{2 \choose 0} \left/ 21 \right. = 1/21$
+-  $p_{X,Y}(1, 2) = 0$ since $1+2 = 3 > 2$
+-  $p_{X,Y}(2, 2) = 0$ since $2+2 = 4 > 2$
 
-```{example}
+Notice that we can deduce the following Joint PMF:
+  $$P(X=x \cap Y=y) = p(x, y) = \left\{ \begin{array}{ll}
+  {3 \choose x}{2 \choose y}{2 \choose 2-x-y} \left/{7 \choose 2}\right. & x+y\leq 2\\
+  0 &otherwise\end{array}\right.$$
 
-[contd]
-
-Tabulating the \underline{\emph{joint}} probabilities as follows, 
-we can easily work out the \underline{\emph{marginal}}
+Tabulating the _joint_ probabilities as follows, 
+we can easily work out the marginal
 probabilities
 
-\begin{center}
-$%
-\begin{tabular}{|cc||c|c|c||c|}
-\hline
-& $x$ & $0$ & $1$ & $2$ & $\Pr \left\{ Y=y\right\} $ \\ 
-$y$ &  &  &  &  &  \\ \hline\hline
-$0$ &  & $1/21$ & $6/21$ & $3/21$ & $10/21$ \\ \hline
-$1$ &  & $4/21$ & $6/21$ & $0$ & $10/21$ \\ \hline
-$2$ &  & $1/21$ & $0$ & $0$ & $1/21$ \\ \hline\hline
-$\Pr \left\{ X=x\right\} $ &  & $6/21$ & $12/21$ & $3/21$ & $1$ \\ \hline
-\end{tabular}%
-$
-\end{center}
+
+|      | $x$ | $0$ | $1$ | $2$ | $\Pr \left\{ Y=y\right\}$ |
+|:----:|:-----:|:-----:|:-----:|:-----:|:---------------------:|
+|$y$   |       |     |     |        |                 |
+|$0$   |       | $1/21$ | $6/21$ | $3/21$ | $10/21$ | 
+|$1$   |       | $4/21$ | $6/21$ | $0$ | $10/21$ | 
+|$2$   |       | $1/21$ | $0$ | $0$ | $1/21$ | 
+| $\Pr\left\{X=x\right\}$ |          | $6/21$ | $12/21$ | $3/21$ | $1$ |
+  
+  
 ```
 
-<!-- % -->
-<!-- %- Note that the expected value for $X$ and $Y$ are, respectively, -->
-<!-- % -->
-<!-- % -->
-<!-- %- $E\left( X\right) =0\times 6/21+1\times 12/21+2\times 3/21=18/21=6/7$ -->
-<!-- % -->
-<!-- %- $E\left( Y\right) =0\times 10/21+1\times 10/21+2\times 1/21=12/21=4/7$ -->
-<!-- % -->
-<!-- % -->
+```{example, name = "Empirical Example"} 
+Two production lines manufacture a certain type of item.
+Suppose that the capacity (on any given day) is 5 items for _Line I_ and 3 
+items for _Line II_.
 
-
-
-### Empirical Example
-
-```{example}
-
-
-- Two production lines manufacture a certain type of item.
-
-- Suppose that the capacity (on any given day) is 5 items for \emph{Line
-I }and 3 items for \emph{Line II}.
-
-- Assume that the number of items actually produced by either production
+Assume that the number of items actually produced by either production
 line varies from one day to the next.
 
 - Let $(X,Y)$ represent the 2-dimensional random variable yielding the
@@ -266,100 +165,58 @@ on any one day.
 
 - In practical applications of this type the joint probability (mass)
 function $\Pr(\{X=x\cap Y=y\})$ is unknown more often than not!
-
-```
-
-
-
-```{example}
+  
 
 - The joint probability (mass) function $\Pr(\{X=x\cap Y=y\})$ for all possible values of $x$ and $y$ can be approximated however.
 
 - By the observing the long-run relative frequency with which different numbers of items are actually produced by either production line.
 
 
-\begin{tabular}{|cc||c|c|c|c|c|c||c|}
-\hline
-& $x$ & $0$ & $1$ & $2$ & $3$ & $4$ & $5$ & $\Pr \left\{ Y=y\right\} $ \\ 
-$y$ &  &  &  &  &  &  &  &  \\ \hline\hline
-$0$ &  & $0$ & $0.01$ & $0.03$ & $0.05$ & $0.07$ & $0.09$ & $0.25$ \\ \hline
-$1$ &  & $0.01$ & $0.02$ & $0.04$ & $0.05$ & $0.06$ & $0.08$ & $0.26$ \\ 
-\hline
-$2$ &  & $0.01$ & $0.03$ & $0.05$ & $0.05$ & $0.05$ & $0.06$ & $0.25$ \\ 
-\hline
-$3$ &  & $0.01$ & $0.02$ & $0.04$ & $0.06$ & $0.06$ & $0.05$ & $0.24$ \\ 
-\hline\hline
-$\Pr \left\{ X=x\right\} $ &  & $0.03$ & $0.08$ & $0.16$ & $0.21$ & $0.24$ & 
-$0.28$ & $1$ \\ \hline
-\end{tabular}
 
-- e.g. $\Pr(\{X=5\cap Y=0\})\approx 0.09=\frac{#\{X=5\cap Y=0\}\text{days}}{#\text{days}}$ 
+
+|    | $x$ | $0$ | $1$ | $2$ | $3$ | $4$ | $5$ | $\Pr \left\{ Y=y\right\}$| 
+|:-----:|:-----:|:-----:|:-----:|:-----:|:-----:|:-----:|:-----:|:-----:| 
+|$y$ |     |  |  |  |  |  |  |  | 
+|$0$ |     | $0$ | $0.01$ | $0.03$ | $0.05$ | $0.07$ | $0.09$ | $0.25$ |
+|$1$ |     | $0.01$ | $0.02$ | $0.04$ | $0.05$ | $0.06$ | $0.08$ | $0.26$ | 
+|$2$ |     | $0.01$ | $0.03$ | $0.05$ | $0.05$ | $0.05$ | $0.06$ | $0.25$ | 
+|$3$ |     | $0.01$ | $0.02$ | $0.04$ | $0.06$ | $0.06$ | $0.05$ | $0.24$ | 
+|$\Pr \left\{ X=x\right\} $ |  | $0.03$ | $0.08$ | $0.16$ | $0.21$ | $0.24$ | $0.28$ | $1$ |
+
+
+For instance: $$\Pr(\{X=5\cap Y=0\})\approx 0.09=\frac{\#\{X=5\cap Y=0\}\text{days}}{\#\text{days}}$$
 ```
 
 
-## Conditional probability mass function
+## Conditional Probability
 
-Recall that the \emph{conditional} probability mass function of the \emph{discrete 
-}random variable $Y$, \emph{given} that the random variable $X$ takes the
-value $x$, is given by%
+Recall that the _conditional_ probability mass function of the discrete  
+random variable $Y$, **given** that the random variable $X$ takes the
+value $x$, is given by:
 \begin{equation*}
 p_{Y|X}\left( y|x\right) =\frac{\Pr \left\{ X=x\cap Y=y\right\} }{%
 P_{X}\left( X=x\right) }
 \end{equation*}
 
 Note this is a probability mass function for $y,$ with $x$ viewed as
-fixed. Similarly, 
+fixed. Similarly:
 
 ```{definition}
-The \emph{conditional} probability mass function of the 
-\emph{discrete }random variable $X$, \emph{given} that the random variable $%
-Y $ takes the value $y$, is given by%
+The _conditional_ probability mass function of the 
+_discrete_ random variable $X$, **given** that the random variable $Y$ takes 
+the value $y$, is given by:
 \begin{equation*}
-p_{X|Y}\left( x|y\right) =\frac{\Pr \left\{ X=x\cap Y=y\right\} }{%
-P_{Y}\left( Y=y\right) }
+p_{X|Y}\left( x|y\right) =\frac{\Pr \left\{ X=x\cap Y=y\right\}}{
+P_{Y}\left( Y=y\right)}
 \end{equation*}
 ```
 
 Note this is a probability mass function for $x,$ with $y$ viewed as
 fixed.
 
-<!-- % -->
-<!-- %## {Conditional density functions} -->
-<!-- % -->
-<!-- % -->
-<!-- %- The \emph{conditional} (probability) density function of the random -->
-<!-- %variable $Y$, given that the \emph{continuous }random variable $X$ takes the -->
-<!-- %value $x$, is given by% -->
-<!-- %\begin{equation*} -->
-<!-- %f_{Y|X}\left( y|x\right) =\frac{f_{X,Y}\left( x,y\right) }{f_{X}\left( -->
-<!-- %x\right) } -->
-<!-- %\end{equation*} -->
-<!-- % -->
-<!-- % -->
-<!-- %- for every value of $y.$ Note this is a pdf for $y$, with $x$ viewed as -->
-<!-- %fixed.\  -->
-<!-- % -->
-<!-- % -->
-<!-- %- Similarly, the \emph{conditional} (probability) density function of -->
-<!-- %the random variable $X$, given that the \emph{continuous }random variable $Y$ -->
-<!-- %takes the value $y$, is given by% -->
-<!-- %\begin{equation*} -->
-<!-- %f_{X|Y}\left( x|y\right) =\frac{f_{X,Y}\left( x,y\right) }{f_{Y}\left( -->
-<!-- %y\right) } -->
-<!-- %\end{equation*} -->
-<!-- % -->
-<!-- % -->
-<!-- %- for every value of $x$ \ Note this is a pdf for $x$, with $y$ viewed -->
-<!-- %as fixed. -->
-<!-- % -->
-<!-- % -->
-<!-- % -->
-<!-- % -->
-<!-- % -->
+### Independence
 
-## Independence
-
-- Two random variables $X$ and $Y$ are \textbf{independent} if 
+- Two discrete random variables $X$ and $Y$ are **independent** if 
 \begin{eqnarray*}
 p_{X,Y}(x,y) &=&p_{X}(x)p_{Y}(y)\qquad \qquad \text{(discrete)} \\
 %f_{X,Y}(x,y) &=&f_{X}(x)f_{Y}(y)\qquad \qquad \text{(continuous)}
@@ -368,130 +225,92 @@ for \emph{all} values of $x$ and $y.$
 
 - Note that independence also implies that 
 \begin{eqnarray*}
-p_{X|Y}(x|y) &=&p_{X}(x)\text{ and }p_{Y|X}(y|x)=p_{Y}(y)\qquad \text{%
+p_{X|Y}(x|y) &=&p_{X}(x)\text{ and }p_{Y|X}(y|x)=p_{Y}(y)\qquad \text{
 (discrete)} \\
-%f_{X|Y}(x|y) &=&f_{X}(x)\text{ and }f_{Y|X}(y|x)=f_{Y}(y)\qquad \text{%
+%f_{X|Y}(x|y) &=&f_{X}(x)\text{ and }f_{Y|X}(y|x)=f_{Y}(y)\qquad \text{
 %(continuous)}
 \end{eqnarray*}
+for \emph{all} values of $x$ and $y$.
 
-for \emph{all} values of $x$ and $y.$
-
-## Expectations for Jointly Distributed Discrete RVs
 ```{example}
-\begin{figure}[ptb]\centering
-\includegraphics[width=0.95\textwidth,height=0.75\textheight]{ex_audrins.pdf}
-\end{figure}
+```
+
+```{r ,echo = FALSE, fig.cap='', fig.align='center', out.width = "80%"}
+  knitr::include_graphics("img/07_bivariate_discrete_rv/ex_audrins.png")
+```
+
+```{r ,echo = FALSE, fig.cap='', fig.align='center', out.width = "80%"}
+  knitr::include_graphics("img/07_bivariate_discrete_rv/ex_audrins_2.png")
 ```
 
 
-```{example}
-\begin{figure}[ptb]\centering
-\includegraphics[width=0.9\textwidth,height=0.45\textheight]{ex_audrins_2.pdf}
-\end{figure}
-```
-
-
+## Expectations
 
 ```{definition}
 Let $h(x,y)$ be a function of $x$ and $y$. 
-We define the \textbf{expected value} of $h\left( X,Y\right) $ as%
+We define the **expected value** of $h\left( X,Y\right)$ as
 \begin{equation*}
 E\left[ h\left( X,Y\right) \right] =\sum_{y}\sum_{x}h\left( x,y\right)
 p_{X,Y}\left( x,y\right)
 \end{equation*}
 ```
 
-
 ```{example}
-\begin{figure}[ptb]\centering
-\includegraphics[width=0.85\textwidth,height=0.78\textheight]{ex_tot.pdf}
-\end{figure}
+```
+```{r ,echo = FALSE, fig.cap='', fig.align='center', out.width = "80%"}
+  knitr::include_graphics("img/07_bivariate_discrete_rv/ex_tot.png")
 ```
 
 
-
 ```{definition}
-The \textbf{conditional expectation }of $h\left( X,Y\right) $ 
-\emph{given} $Y=y$ is defined as%
+The **conditional expectation** of $h\left( X,Y\right)$ 
+\emph{given} $Y=y$ is defined as:
 \begin{equation*}
 E\left[ h\left( X,Y\right) |y\right] =\sum_{x}h\left( x,y\right)
 p_{X|Y}\left( x|y\right).
 \end{equation*}
+```
 
-The \textbf{conditional expectation }of $h\left( X,Y\right) $ 
-\emph{given} $X=x$ is defined as%
+Equivalently, the **conditional expectation }of $h\left( X,Y\right)$ 
+\emph{given} $X=x$ is defined as:
 \begin{equation*}
 E\left[ h\left( X,Y\right) |x\right] =\sum_{y}h\left( x,y\right)
 p_{Y|X}\left( y|x\right).
 \end{equation*}
-```
-
 
 ```{example}
-
-[continuing the example at page 10]
-\begin{figure}[ptb]\centering
-\includegraphics[width=0.9\textwidth,height=0.4\textheight]{ex_cond_audrins.pdf}
-\end{figure}
-
 ```
 
-<!-- % -->
-<!-- %## {Expectations for Jointly Distributed Continuous RVs} -->
-<!-- % -->
-<!-- % -->
-<!-- %- Let $h(x,y)$ be a function of $x$ and $y$ -->
-<!-- % -->
-<!-- %- We define the \textbf{expected value} of $h\left( X,Y\right) $ as% -->
-<!-- %\begin{equation*} -->
-<!-- %E\left[ h\left( X,Y\right) \right] =\int_{y}\int_{x}h\left( x,y\right) -->
-<!-- %f_{X,Y}\left( x,y\right) dxdy -->
-<!-- %\end{equation*} -->
-<!-- % -->
-<!-- %- Further, the \textbf{conditional expectation }of $h\left( X,Y\right) $  -->
-<!-- %\emph{given} $Y=y$ is defined as% -->
-<!-- %\begin{equation*} -->
-<!-- %E\left[ h\left( X,Y\right) |Y=y\right] =\int_{x}h\left( x,y\right) -->
-<!-- %f_{X|Y}\left( x|y\right) dx -->
-<!-- %\end{equation*} -->
-<!-- % -->
-<!-- %- And, the \textbf{conditional expectation }of $h\left( X,Y\right) $  -->
-<!-- %\emph{given} $X=x$ is defined as% -->
-<!-- %\begin{equation*} -->
-<!-- %E\left[ h\left( X,Y\right) |X=x\right] =\int_{y}h\left( x,y\right) -->
-<!-- %f_{Y|X}\left( y|x\right) dy -->
-<!-- %\end{equation*} -->
-<!-- % -->
-<!-- % -->
-<!-- % -->
-<!-- % -->
-<!-- %% -->
+```{r ,echo = FALSE, fig.cap='', fig.align='center', out.width = "80%"}
+  knitr::include_graphics("img/07_bivariate_discrete_rv/ex_cond_audrins.png")
+```
 
-## Iterated Expectations
 
-```{definition}
-The \textit{law of the iterated expectation} is often stated in the
-form 
+### Iterated Expectations
+
+```{definition, name = "law of the iterated expectation"}
+The _law of the iterated expectation_ is often stated in the form:
 \begin{equation*}
-E[h(X,Y)]=E[E[h(X,Y)|Y]]=E[E[h(X,Y)|X]]\,. 
+E[h(X,Y)]=E[E[h(X,Y)|Y]]=E[E[h(X,Y)|X]]
 \end{equation*}
 ```
 
-- This notation emphasises that whenever we write down $E[\cdot]$ for an expectation we are taking that expectation with respect to the distribution implicit in the formulation of the argument. 
+This notation emphasises that whenever we write down $E[\cdot]$ for an expectation we are taking that expectation with respect to the distribution implicit in the formulation of the argument. 
 
-- The above formula is perhaps more easily understood using the more
-explicit notation  
-\begin{equation*}
-E_{(X,Y)}[h(X,Y)]=E_{(Y)}[E_{(X|Y)}[h(X,Y)]]=E_{(X)}[E_{(Y|X)}[h(X,Y)]]\,. 
-\end{equation*}
+The above formula is perhaps more easily understood using the more explicit notation:
+\begin{align*}
+E_{(X,Y)}[h(X,Y)]&=E_{(Y)}[E_{(X|Y)}[h(X,Y)]]\\
+&=E_{(X)}[E_{(Y|X)}[h(X,Y)]]
+\end{align*}
 
-- The latter notation makes it clear what distribution is being used to evaluate the expectation, the joint, the marginal or the conditional.
+This notation makes it clear what distribution is being used to evaluate the 
+expectation, the joint, the marginal or the conditional.
 
-## Expectations for Jointly Distributed Discrete RVs
+## Covariance and Correlation
 
 ```{definition}
 Let $X$ and $Y$ be two discrete random variables. 
-The \textbf{covariance} between $X$ and\textbf{\ }$Y$ is given by$
+The **covariance} between $X$ and**\ }$Y$ is given by$
 E\left[ h\left(X,Y\right) \right]$ when
 \begin{equation*}
 h\left(X,Y\right) =
@@ -501,8 +320,8 @@ i.e. $Cov\left(X,Y\right) =E\left[ \left(X-E\left[ X\right] \right)
 \left(Y-E\left[ Y\right] \right) \right]$
 ```
 
-Alternative formula\footnote{To get it, expand 
-$$\left(X-E\left[ X\right] \right) \left( Y-E\left[ Y\right] \right)=XY-E\left[ X\right]Y -XE\left[ Y\right] +E\left[ X\right]E\left[ Y\right]$$ and make use of the properties of expectation.} for $Cov(X,Y)$ is
+Alternative formula^[To get it, expand 
+$$\left(X-E\left[ X\right] \right) \left( Y-E\left[ Y\right] \right)=XY-E\left[ X\right]Y -XE\left[ Y\right] +E\left[ X\right]E\left[ Y\right]$$ and make use of the properties of expectation.] for $Cov(X,Y)$ is
 \begin{equation}
 \boxed{Cov\left( X,Y\right) =E\left[ XY\right] -E\left[ X\right] E\left[ Y\right]\ .} \label{Cov}
 \end{equation}
@@ -510,16 +329,13 @@ $$\left(X-E\left[ X\right] \right) \left( Y-E\left[ Y\right] \right)=XY-E\left[ 
 
 So, to compute the covariance from a table describing the joint behaviour of $X$ and $Y$, you have to:
 
-\begin{itemize}
 - compute the joint expectation $E[XY]$---you get it making use of the joint probability; \vspace{0.2cm}
 - compute $E[X]$ and $E[Y]$---you get using the marginal probability for $X$ and $Y$; \vspace{0.2cm}
 - combine these expected values as in formula (\ref{Cov}). 
 
-\end{itemize}
-
 See example on page 13 for an illustrative computation.
 
-## Some Properties of Covariances
+### Some Properties of Covariances
 
 - The Cauchy-Schwartz Inequality states 
 $$(E\left[ XY\right])^2\leq E\left[ X^2\right]E\left[ Y^2\right],$$ 
@@ -533,10 +349,10 @@ This is a quadratic in $a$, and
 -  if $h(a)=0$ for some $a=c$ then $E[(Y-cX)^2]=0$, which implies that $\Pr(Y-cX=0)=1$.
 
 ```{remark}
- If two random variables are independent, their covariance is equal to
+If two random variables are independent, their covariance is equal to
 zero. Note that the converse is not necessarily true: a zero covariance
 between two random variables does not imply that the variables are 
-independent. This asymmetry\footnote{Independence $\Rightarrow Cov(X,Y)=0$ but $Cov(X,Y)=0\nRightarrow$ independence.} follows because \textbf{the covariance is  a `measure' of linear dependence.}
+independent. This asymmetry^[Independence $\Rightarrow Cov(X,Y)=0$ but $Cov(X,Y)=0\nRightarrow$ independence.] follows because **the covariance is  a `measure' of linear dependence.}
 ```
 
 ```{example}
@@ -562,9 +378,6 @@ values of $Y$
 - When $Cov(X,Y)=0$, $X$ and $Y$ are said to be uncorrelated.
 
 
-%\textbf{GIACOMO DIMOSTRA PROP 4.2 del Ross a tutorial}
-
-
 -  If $X$ and $Y$ are two random variables (either discrete or continuous) with $Cov(X,Y) \neq 0$, then:
 \begin{equation}
 Var(X + Y) =  Var(X) + Var(Y) + 2 Cov(X,Y) \label{FullVar}
@@ -572,14 +385,10 @@ Var(X + Y) =  Var(X) + Var(Y) + 2 Cov(X,Y) \label{FullVar}
 
 \underline{Compare this expression with the formula on page 25, Lecture 3-4}, where we read that in the case of independent random variables $X$ and $Y$
 we have
-$$
-Var(X + Y) =  Var(X) + Var(Y),
-$$
+$$Var(X + Y) =  Var(X) + Var(Y),$$
 which trivially follows from (\ref{FullVar})---indeed, for independent random variables, $Cov(X,Y)\equiv 0$.
 
 - The covariance depends upon the unit of measurement.
-
-
 
 ### A remark
 
@@ -589,7 +398,7 @@ which trivially follows from (\ref{FullVar})---indeed, for independent random va
 Cov\left( aX,bY\right) =abCov\left( X,Y\right)
 \end{equation*}
 
-Thus, we introduce the\textbf{\ correlation} between $X$ and $Y$ is
+Thus, we introduce the  **correlation** between $X$ and $Y$ is
 \begin{equation*}
 corr\left( X,Y\right) =\frac{Cov\left( X,Y\right) }{\sqrt{Var\left( X\right)
 Var\left( Y\right) }}

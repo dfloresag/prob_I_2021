@@ -1,394 +1,87 @@
 <!DOCTYPE html>
-<html lang="" xml:lang="">
+<html lang="en">
 <head>
-
-  <meta charset="utf-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Chapter 3 Probability Axioms | 🃏 Probability I</title>
-  <meta name="description" content="Course Materials" />
-  <meta name="generator" content="bookdown 0.21 and GitBook 2.6.7" />
-
-  <meta property="og:title" content="Chapter 3 Probability Axioms | 🃏 Probability I" />
-  <meta property="og:type" content="book" />
-  
-  
-  <meta property="og:description" content="Course Materials" />
-  <meta name="github-repo" content="rstudio/bookdown-demo" />
-
-  <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Chapter 3 Probability Axioms | 🃏 Probability I" />
-  
-  <meta name="twitter:description" content="Course Materials" />
-  
-
-<meta name="author" content="Dr. Daniel Flores Agreda (based on the Lecture by Prof. Davide La Vecchia)" />
-
-
-
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="apple-mobile-web-app-capable" content="yes" />
-  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
-  
-  
-<link rel="prev" href="settheory.html"/>
-<link rel="next" href="discreterv.html"/>
-<script src="libs/header-attrs-2.7/header-attrs.js"></script>
-<script src="libs/jquery-2.2.3/jquery.min.js"></script>
-<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
-<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
-<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
-<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
-<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
-<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
-<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
-
-
-
-
-
-
-
-
-
-
-
-
-<link rel="stylesheet" href="style.css" type="text/css" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<title>Chapter 3 Probability Axioms | 🃏 Probability I</title>
+<meta name="author" content="Dr. Daniel Flores Agreda (based on the Lecture by Prof. Davide La Vecchia)">
+<meta name="description" content="Figure 3.1: ‘Is it clear to Everyone?’ by Enrico Chavez  In order to formalise probability as a branch of mathematics, Andrey Kolmogorov formulated a series of postulates. These axioms are crucial...">
+<meta name="generator" content="bookdown 0.24 with bs4_book()">
+<meta property="og:title" content="Chapter 3 Probability Axioms | 🃏 Probability I">
+<meta property="og:type" content="book">
+<meta property="og:description" content="Figure 3.1: ‘Is it clear to Everyone?’ by Enrico Chavez  In order to formalise probability as a branch of mathematics, Andrey Kolmogorov formulated a series of postulates. These axioms are crucial...">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Chapter 3 Probability Axioms | 🃏 Probability I">
+<meta name="twitter:description" content="Figure 3.1: ‘Is it clear to Everyone?’ by Enrico Chavez  In order to formalise probability as a branch of mathematics, Andrey Kolmogorov formulated a series of postulates. These axioms are crucial...">
+<!-- JS --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://kit.fontawesome.com/6ecbd6c532.js" crossorigin="anonymous"></script><script src="libs/header-attrs-2.11/header-attrs.js"></script><script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<link href="libs/bootstrap-4.6.0/bootstrap.min.css" rel="stylesheet">
+<script src="libs/bootstrap-4.6.0/bootstrap.bundle.min.js"></script><script src="libs/bs3compat-0.3.1/transition.js"></script><script src="libs/bs3compat-0.3.1/tabs.js"></script><script src="libs/bs3compat-0.3.1/bs3compat.js"></script><link href="libs/bs4_book-1.0.0/bs4_book.css" rel="stylesheet">
+<script src="libs/bs4_book-1.0.0/bs4_book.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/autocomplete.js/0.38.0/autocomplete.jquery.min.js" integrity="sha512-GU9ayf+66Xx2TmpxqJpliWbT5PiGYxpaG8rfnBEk1LL8l1KGkRShhngwdXK1UgqhAzWpZHSiYPc09/NwDQIGyg==" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/mark.min.js" integrity="sha512-5CYOlHXGh6QpOFA/TeTylKLWfB3ftPsde7AnmhuitiTX4K5SqCLBeKro6sPS8ilsz1Q4NRx3v8Ko2IBiszzdww==" crossorigin="anonymous"></script><!-- CSS -->
 </head>
+<body data-spy="scroll" data-target="#toc">
 
-<body>
+<div class="container-fluid">
+<div class="row">
+  <header class="col-sm-12 col-lg-3 sidebar sidebar-book"><a class="sr-only sr-only-focusable" href="#content">Skip to main content</a>
 
-
-
-  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
-
-    <div class="book-summary">
-      <nav role="navigation">
-
-<ul class="summary">
-<li><a href="https://www.unige.ch/gsem/fr/"><img src="img/gsem_en.png" alt="UNIGE Logo" width="200" class ="center"></a></li>
-<li><a href="https://moodle.unige.ch/course/view.php?id=7133"><strong>Probability I (Spring 2021)</strong></a></li>
-
-<li class="divider"></li>
-<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>About this lecture</a>
-<ul>
-<li class="chapter" data-level="" data-path="index.html"><a href="index.html#contents"><i class="fa fa-check"></i>Contents</a></li>
-<li class="chapter" data-level="" data-path="index.html"><a href="index.html#practical-information"><i class="fa fa-check"></i>Practical information</a>
-<ul>
-<li class="chapter" data-level="" data-path="index.html"><a href="index.html#who-we-are"><i class="fa fa-check"></i>Who we are</a></li>
-<li class="chapter" data-level="" data-path="index.html"><a href="index.html#lectures"><i class="fa fa-check"></i>Lectures</a></li>
-<li class="chapter" data-level="" data-path="index.html"><a href="index.html#exercises"><i class="fa fa-check"></i>Exercises</a></li>
-<li class="chapter" data-level="" data-path="index.html"><a href="index.html#tools"><i class="fa fa-check"></i>Tools</a></li>
-</ul></li>
-</ul></li>
-<li class="chapter" data-level="1" data-path="introduction.html"><a href="introduction.html"><i class="fa fa-check"></i><b>1</b> Introduction</a>
-<ul>
-<li class="chapter" data-level="1.1" data-path="introduction.html"><a href="introduction.html#a-world-of-data"><i class="fa fa-check"></i><b>1.1</b> A World of Data</a></li>
-<li class="chapter" data-level="1.2" data-path="introduction.html"><a href="introduction.html#what-to-expect-from-this-lecture"><i class="fa fa-check"></i><b>1.2</b> What to expect from this Lecture?</a>
-<ul>
-<li class="chapter" data-level="1.2.1" data-path="introduction.html"><a href="introduction.html#one-intuitive-illustration"><i class="fa fa-check"></i><b>1.2.1</b> One intuitive illustration</a></li>
-</ul></li>
-<li class="chapter" data-level="1.3" data-path="introduction.html"><a href="introduction.html#a-quick-reminder-of-mathematics"><i class="fa fa-check"></i><b>1.3</b> A quick reminder of Mathematics</a>
-<ul>
-<li class="chapter" data-level="1.3.1" data-path="introduction.html"><a href="introduction.html#powers-and-logarithms"><i class="fa fa-check"></i><b>1.3.1</b> Powers and Logarithms</a></li>
-<li class="chapter" data-level="1.3.2" data-path="introduction.html"><a href="introduction.html#differentiation"><i class="fa fa-check"></i><b>1.3.2</b> Differentiation</a></li>
-<li class="chapter" data-level="1.3.3" data-path="introduction.html"><a href="introduction.html#integration"><i class="fa fa-check"></i><b>1.3.3</b> Integration</a></li>
-<li class="chapter" data-level="1.3.4" data-path="introduction.html"><a href="introduction.html#sums"><i class="fa fa-check"></i><b>1.3.4</b> Sums</a></li>
-<li class="chapter" data-level="1.3.5" data-path="introduction.html"><a href="introduction.html#combinatorics"><i class="fa fa-check"></i><b>1.3.5</b> Combinatorics</a></li>
-<li class="chapter" data-level="1.3.6" data-path="introduction.html"><a href="introduction.html#limits"><i class="fa fa-check"></i><b>1.3.6</b> Limits</a></li>
-</ul></li>
-</ul></li>
-<li class="chapter" data-level="2" data-path="settheory.html"><a href="settheory.html"><i class="fa fa-check"></i><b>2</b> Elements of Set Theory for Probability</a>
-<ul>
-<li class="chapter" data-level="2.1" data-path="settheory.html"><a href="settheory.html#random-experiments-events-and-sample-spaces"><i class="fa fa-check"></i><b>2.1</b> Random Experiments, Events and Sample Spaces</a></li>
-<li class="chapter" data-level="2.2" data-path="settheory.html"><a href="settheory.html#some-definitions-from-set-theory"><i class="fa fa-check"></i><b>2.2</b> Some definitions from set theory</a></li>
-<li class="chapter" data-level="2.3" data-path="settheory.html"><a href="settheory.html#the-venn-diagram"><i class="fa fa-check"></i><b>2.3</b> The Venn diagram</a>
-<ul>
-<li class="chapter" data-level="2.3.1" data-path="settheory.html"><a href="settheory.html#sample-space-and-events"><i class="fa fa-check"></i><b>2.3.1</b> Sample Space and Events</a></li>
-<li class="chapter" data-level="2.3.2" data-path="settheory.html"><a href="settheory.html#exclusive-and-non-exclusive-events"><i class="fa fa-check"></i><b>2.3.2</b> Exclusive and Non-Exclusive Events</a></li>
-<li class="chapter" data-level="2.3.3" data-path="settheory.html"><a href="settheory.html#union-and-intersection-of-events"><i class="fa fa-check"></i><b>2.3.3</b> Union and Intersection of Events</a></li>
-<li class="chapter" data-level="2.3.4" data-path="settheory.html"><a href="settheory.html#complement"><i class="fa fa-check"></i><b>2.3.4</b> Complement</a></li>
-<li class="chapter" data-level="2.3.5" data-path="settheory.html"><a href="settheory.html#some-properties-of-union-and-intersection"><i class="fa fa-check"></i><b>2.3.5</b> Some Properties of union and intersection</a></li>
-</ul></li>
-<li class="chapter" data-level="2.4" data-path="settheory.html"><a href="settheory.html#countable-and-uncountable-sets"><i class="fa fa-check"></i><b>2.4</b> Countable and Uncountable sets</a></li>
-<li class="chapter" data-level="2.5" data-path="settheory.html"><a href="settheory.html#de-morgans-laws"><i class="fa fa-check"></i><b>2.5</b> De Morgan’s Laws</a>
-<ul>
-<li class="chapter" data-level="2.5.1" data-path="settheory.html"><a href="settheory.html#first-law"><i class="fa fa-check"></i><b>2.5.1</b> First Law</a></li>
-<li class="chapter" data-level="2.5.2" data-path="settheory.html"><a href="settheory.html#second-law"><i class="fa fa-check"></i><b>2.5.2</b> Second Law</a></li>
-<li class="chapter" data-level="2.5.3" data-path="settheory.html"><a href="settheory.html#de-morgans-theorem"><i class="fa fa-check"></i><b>2.5.3</b> De Morgan’s Theorem</a></li>
-</ul></li>
-<li class="chapter" data-level="2.6" data-path="settheory.html"><a href="settheory.html#probability-as-frequency"><i class="fa fa-check"></i><b>2.6</b> Probability as Frequency</a></li>
-<li class="chapter" data-level="2.7" data-path="settheory.html"><a href="settheory.html#some-references"><i class="fa fa-check"></i><b>2.7</b> Some references</a></li>
-</ul></li>
-<li class="chapter" data-level="3" data-path="axioms.html"><a href="axioms.html"><i class="fa fa-check"></i><b>3</b> Probability Axioms</a>
-<ul>
-<li class="chapter" data-level="3.1" data-path="axioms.html"><a href="axioms.html#an-axiomatic-definition-of-probability"><i class="fa fa-check"></i><b>3.1</b> An Axiomatic Definition of Probability</a></li>
-<li class="chapter" data-level="3.2" data-path="axioms.html"><a href="axioms.html#properties-of-pcdot"><i class="fa fa-check"></i><b>3.2</b> Properties of <span class="math inline">\(P(\cdot)\)</span></a></li>
-<li class="chapter" data-level="3.3" data-path="axioms.html"><a href="axioms.html#examples-and-illustrations"><i class="fa fa-check"></i><b>3.3</b> Examples and Illustrations</a>
-<ul>
-<li class="chapter" data-level="3.3.1" data-path="axioms.html"><a href="axioms.html#flipping-coins"><i class="fa fa-check"></i><b>3.3.1</b> Flipping coins</a></li>
-<li class="chapter" data-level="3.3.2" data-path="axioms.html"><a href="axioms.html#detecting-shoppers"><i class="fa fa-check"></i><b>3.3.2</b> Detecting shoppers</a></li>
-<li class="chapter" data-level="3.3.3" data-path="axioms.html"><a href="axioms.html#de-morgans-law"><i class="fa fa-check"></i><b>3.3.3</b> De Morgan’s Law</a></li>
-<li class="chapter" data-level="3.3.4" data-path="axioms.html"><a href="axioms.html#probability-union-and-complement"><i class="fa fa-check"></i><b>3.3.4</b> Probability, union, and complement</a></li>
-</ul></li>
-<li class="chapter" data-level="3.4" data-path="axioms.html"><a href="axioms.html#conditional-probability"><i class="fa fa-check"></i><b>3.4</b> Conditional probability</a></li>
-<li class="chapter" data-level="3.5" data-path="axioms.html"><a href="axioms.html#independence"><i class="fa fa-check"></i><b>3.5</b> Independence</a>
-<ul>
-<li class="chapter" data-level="3.5.1" data-path="axioms.html"><a href="axioms.html#another-characterisation"><i class="fa fa-check"></i><b>3.5.1</b> Another characterisation</a></li>
-</ul></li>
-<li class="chapter" data-level="3.6" data-path="axioms.html"><a href="axioms.html#theorem-i-the-theorem-of-total-probabilities"><i class="fa fa-check"></i><b>3.6</b> Theorem I: The Theorem of Total Probabilities</a></li>
-<li class="chapter" data-level="3.7" data-path="axioms.html"><a href="axioms.html#theorem-ii-bayes-theorem"><i class="fa fa-check"></i><b>3.7</b> Theorem II: Bayes’ Theorem</a>
-<ul>
-<li class="chapter" data-level="3.7.1" data-path="axioms.html"><a href="axioms.html#guessing-in-a-multiple-choice-exam"><i class="fa fa-check"></i><b>3.7.1</b> Guessing in a multiple choice exam</a></li>
-<li class="chapter" data-level="3.7.2" data-path="axioms.html"><a href="axioms.html#rent-car-maintenance"><i class="fa fa-check"></i><b>3.7.2</b> Rent car maintenance</a></li>
-</ul></li>
-</ul></li>
-<li class="chapter" data-level="4" data-path="discreterv.html"><a href="discreterv.html"><i class="fa fa-check"></i><b>4</b> 🔧 Discrete Random Variables</a>
-<ul>
-<li class="chapter" data-level="4.1" data-path="discreterv.html"><a href="discreterv.html#what-is-a-random-variable"><i class="fa fa-check"></i><b>4.1</b> What is a Random Variable?</a>
-<ul>
-<li class="chapter" data-level="4.1.1" data-path="discreterv.html"><a href="discreterv.html#formal-definition-of-a-random-variable"><i class="fa fa-check"></i><b>4.1.1</b> Formal definition of a random variable</a></li>
-<li class="chapter" data-level="4.1.2" data-path="discreterv.html"><a href="discreterv.html#example-from-s-to-d-via-xcdot"><i class="fa fa-check"></i><b>4.1.2</b> Example: from <span class="math inline">\(S\)</span> to <span class="math inline">\(D\)</span>, via <span class="math inline">\(X(\cdot)\)</span></a></li>
-<li class="chapter" data-level="4.1.3" data-path="discreterv.html"><a href="discreterv.html#an-example-from-gambling"><i class="fa fa-check"></i><b>4.1.3</b> An Example from gambling</a></li>
-</ul></li>
-<li class="chapter" data-level="4.2" data-path="discreterv.html"><a href="discreterv.html#discrete-random-variables"><i class="fa fa-check"></i><b>4.2</b> Discrete random variables</a></li>
-<li class="chapter" data-level="4.3" data-path="discreterv.html"><a href="discreterv.html#cumulative-distribution-function"><i class="fa fa-check"></i><b>4.3</b> Cumulative Distribution Function</a></li>
-<li class="chapter" data-level="4.4" data-path="discreterv.html"><a href="discreterv.html#distributional-summaries-for-discrete-random-variables"><i class="fa fa-check"></i><b>4.4</b> Distributional summaries for discrete random variables</a>
-<ul>
-<li class="chapter" data-level="4.4.1" data-path="discreterv.html"><a href="discreterv.html#properties"><i class="fa fa-check"></i><b>4.4.1</b> Properties</a></li>
-</ul></li>
-<li class="chapter" data-level="4.5" data-path="discreterv.html"><a href="discreterv.html#dependenceindependence"><i class="fa fa-check"></i><b>4.5</b> Dependence/Independence</a>
-<ul>
-<li class="chapter" data-level="4.5.1" data-path="discreterv.html"><a href="discreterv.html#more-important-properties"><i class="fa fa-check"></i><b>4.5.1</b> More important properties</a></li>
-<li class="chapter" data-level="4.5.2" data-path="discreterv.html"><a href="discreterv.html#more-on-expectations"><i class="fa fa-check"></i><b>4.5.2</b> More on expectations</a></li>
-</ul></li>
-<li class="chapter" data-level="4.6" data-path="discreterv.html"><a href="discreterv.html#some-discrete-distributions-of-interest"><i class="fa fa-check"></i><b>4.6</b> Some discrete distributions of interest</a>
-<ul>
-<li class="chapter" data-level="4.6.1" data-path="discreterv.html"><a href="discreterv.html#discrete-uniform-distribution"><i class="fa fa-check"></i><b>4.6.1</b> Discrete uniform distribution</a></li>
-<li class="chapter" data-level="4.6.2" data-path="discreterv.html"><a href="discreterv.html#bernoulli-trials"><i class="fa fa-check"></i><b>4.6.2</b> Bernoulli Trials</a></li>
-<li class="chapter" data-level="4.6.3" data-path="discreterv.html"><a href="discreterv.html#the-binomial-distribution"><i class="fa fa-check"></i><b>4.6.3</b> The Binomial Distribution</a></li>
-<li class="chapter" data-level="4.6.4" data-path="discreterv.html"><a href="discreterv.html#poisson-distribution"><i class="fa fa-check"></i><b>4.6.4</b> Poisson Distribution</a></li>
-<li class="chapter" data-level="4.6.5" data-path="discreterv.html"><a href="discreterv.html#the-hypergeometric-distribution"><i class="fa fa-check"></i><b>4.6.5</b> The Hypergeometric Distribution</a></li>
-<li class="chapter" data-level="4.6.6" data-path="discreterv.html"><a href="discreterv.html#the-negative-binomial-distribution"><i class="fa fa-check"></i><b>4.6.6</b> The Negative Binomial Distribution</a></li>
-<li class="chapter" data-level="4.6.7" data-path="discreterv.html"><a href="discreterv.html#illustrations-4"><i class="fa fa-check"></i><b>4.6.7</b> Illustrations</a></li>
-<li class="chapter" data-level="4.6.8" data-path="discreterv.html"><a href="discreterv.html#the-geometric-distribution"><i class="fa fa-check"></i><b>4.6.8</b> The Geometric Distribution</a></li>
-</ul></li>
-</ul></li>
-<li class="chapter" data-level="5" data-path="continuousrv.html"><a href="continuousrv.html"><i class="fa fa-check"></i><b>5</b> 🔧 Continuous Random Variable</a>
-<ul>
-<li class="chapter" data-level="5.1" data-path="continuousrv.html"><a href="continuousrv.html#two-motivating-examples"><i class="fa fa-check"></i><b>5.1</b> Two Motivating Examples</a></li>
-<li class="chapter" data-level="5.2" data-path="continuousrv.html"><a href="continuousrv.html#cumulative-distribution-function-cdf"><i class="fa fa-check"></i><b>5.2</b> Cumulative Distribution Function (CDF)</a></li>
-<li class="chapter" data-level="5.3" data-path="continuousrv.html"><a href="continuousrv.html#distributional-summaries"><i class="fa fa-check"></i><b>5.3</b> Distributional Summaries</a>
-<ul>
-<li class="chapter" data-level="5.3.1" data-path="continuousrv.html"><a href="continuousrv.html#the-expectation"><i class="fa fa-check"></i><b>5.3.1</b> The Expectation</a></li>
-<li class="chapter" data-level="5.3.2" data-path="continuousrv.html"><a href="continuousrv.html#the-variance"><i class="fa fa-check"></i><b>5.3.2</b> The Variance</a></li>
-<li class="chapter" data-level="5.3.3" data-path="continuousrv.html"><a href="continuousrv.html#important-properties-of-expectations"><i class="fa fa-check"></i><b>5.3.3</b> Important properties of expectations</a></li>
-<li class="chapter" data-level="5.3.4" data-path="continuousrv.html"><a href="continuousrv.html#mode-and-median"><i class="fa fa-check"></i><b>5.3.4</b> Mode and Median</a></li>
-</ul></li>
-<li class="chapter" data-level="5.4" data-path="continuousrv.html"><a href="continuousrv.html#some-important-continuous-distributions"><i class="fa fa-check"></i><b>5.4</b> Some Important Continuous Distributions</a>
-<ul>
-<li class="chapter" data-level="5.4.1" data-path="continuousrv.html"><a href="continuousrv.html#continuous-uniform-distribution"><i class="fa fa-check"></i><b>5.4.1</b> Continuous Uniform Distribution</a></li>
-<li class="chapter" data-level="5.4.2" data-path="continuousrv.html"><a href="continuousrv.html#normal-gaussian-distribution"><i class="fa fa-check"></i><b>5.4.2</b> Normal (Gaussian) distribution</a></li>
-<li class="chapter" data-level="5.4.3" data-path="continuousrv.html"><a href="continuousrv.html#the-chi-squared-distribution"><i class="fa fa-check"></i><b>5.4.3</b> The Chi-squared distribution</a></li>
-<li class="chapter" data-level="5.4.4" data-path="continuousrv.html"><a href="continuousrv.html#the-student-t-distribution"><i class="fa fa-check"></i><b>5.4.4</b> The Student-t distribution</a></li>
-<li class="chapter" data-level="5.4.5" data-path="continuousrv.html"><a href="continuousrv.html#the-f-distribution"><i class="fa fa-check"></i><b>5.4.5</b> The F distribution</a></li>
-<li class="chapter" data-level="5.4.6" data-path="continuousrv.html"><a href="continuousrv.html#the-lognormal-distribution"><i class="fa fa-check"></i><b>5.4.6</b> The lognormal distribution</a></li>
-<li class="chapter" data-level="5.4.7" data-path="continuousrv.html"><a href="continuousrv.html#exponential-distribution"><i class="fa fa-check"></i><b>5.4.7</b> Exponential distribution</a></li>
-</ul></li>
-<li class="chapter" data-level="5.5" data-path="continuousrv.html"><a href="continuousrv.html#transformation-of-variables"><i class="fa fa-check"></i><b>5.5</b> Transformation of variables</a>
-<ul>
-<li class="chapter" data-level="5.5.1" data-path="continuousrv.html"><a href="continuousrv.html#transformation-of-discrete-random-variables"><i class="fa fa-check"></i><b>5.5.1</b> Transformation of discrete random variables</a></li>
-<li class="chapter" data-level="5.5.2" data-path="continuousrv.html"><a href="continuousrv.html#transformation-of-variables-using-the-cdf"><i class="fa fa-check"></i><b>5.5.2</b> Transformation of variables using the CDF</a></li>
-<li class="chapter" data-level="5.5.3" data-path="continuousrv.html"><a href="continuousrv.html#function-1-to-1-and-monotone-decreasing"><i class="fa fa-check"></i><b>5.5.3</b> Function 1-to-1 and monotone decreasing</a></li>
-<li class="chapter" data-level="5.5.4" data-path="continuousrv.html"><a href="continuousrv.html#transformation-of-continuous-rv-through-pdf"><i class="fa fa-check"></i><b>5.5.4</b> Transformation of continuous RV through pdf</a></li>
-<li class="chapter" data-level="5.5.5" data-path="continuousrv.html"><a href="continuousrv.html#example-of-transformation-using-pdf"><i class="fa fa-check"></i><b>5.5.5</b> Example of transformation using pdf</a></li>
-<li class="chapter" data-level="5.5.6" data-path="continuousrv.html"><a href="continuousrv.html#a-caveat"><i class="fa fa-check"></i><b>5.5.6</b> A caveat</a></li>
-</ul></li>
-<li class="chapter" data-level="5.6" data-path="continuousrv.html"><a href="continuousrv.html#the-big-picture"><i class="fa fa-check"></i><b>5.6</b> The big picture</a></li>
-</ul></li>
-<li class="chapter" data-level="6" data-path="limittheorems.html"><a href="limittheorems.html"><i class="fa fa-check"></i><b>6</b> 📝 Limit Theorems</a>
-<ul>
-<li class="chapter" data-level="6.1" data-path="limittheorems.html"><a href="limittheorems.html#sequences-of-random-variables"><i class="fa fa-check"></i><b>6.1</b> Sequences of Random Variables</a>
-<ul>
-<li class="chapter" data-level="6.1.1" data-path="limittheorems.html"><a href="limittheorems.html#example-bernoulli-trials-and-their-sum"><i class="fa fa-check"></i><b>6.1.1</b> Example: Bernoulli Trials and their sum</a></li>
-<li class="chapter" data-level="6.1.2" data-path="limittheorems.html"><a href="limittheorems.html#example-bernoulli-trials-and-limit-behaviour"><i class="fa fa-check"></i><b>6.1.2</b> Example: Bernoulli Trials and limit behaviour</a></li>
-</ul></li>
-<li class="chapter" data-level="6.2" data-path="limittheorems.html"><a href="limittheorems.html#convergence-in-probability-oversetprightarrow"><i class="fa fa-check"></i><b>6.2</b> Convergence in Probability (<span class="math inline">\(\overset{p}{\rightarrow }\)</span>)</a>
-<ul>
-<li class="chapter" data-level="6.2.1" data-path="limittheorems.html"><a href="limittheorems.html#operational-rules-for-oversetprightarrow"><i class="fa fa-check"></i><b>6.2.1</b> Operational Rules for <span class="math inline">\(\overset{p}{\rightarrow }\)</span></a></li>
-<li class="chapter" data-level="6.2.2" data-path="limittheorems.html"><a href="limittheorems.html#convergence-of-sample-moments-as-a-motivation"><i class="fa fa-check"></i><b>6.2.2</b> Convergence of Sample Moments as a motivation…</a></li>
-<li class="chapter" data-level="6.2.3" data-path="limittheorems.html"><a href="limittheorems.html#the-weak-law-of-large-numbers-wlln"><i class="fa fa-check"></i><b>6.2.3</b> The Weak Law of Large Numbers (WLLN)</a></li>
-<li class="chapter" data-level="6.2.4" data-path="limittheorems.html"><a href="limittheorems.html#the-wlln-and-chebyshevs-inequality"><i class="fa fa-check"></i><b>6.2.4</b> The WLLN and Chebyshev’s Inequality</a></li>
-<li class="chapter" data-level="6.2.5" data-path="limittheorems.html"><a href="limittheorems.html#chebyshevs-and-markovs-inequality"><i class="fa fa-check"></i><b>6.2.5</b> Chebyshev’s (and Markov’s) Inequality</a></li>
-<li class="chapter" data-level="6.2.6" data-path="limittheorems.html"><a href="limittheorems.html#example-markovs-inequality"><i class="fa fa-check"></i><b>6.2.6</b> Example: Markov’s Inequality</a></li>
-</ul></li>
-</ul></li>
-<li class="chapter" data-level="7" data-path="bivariatediscreterv.html"><a href="bivariatediscreterv.html"><i class="fa fa-check"></i><b>7</b> 📝 Bivariate Discrete Random Variables</a>
-<ul>
-<li class="chapter" data-level="7.1" data-path="bivariatediscreterv.html"><a href="bivariatediscreterv.html#joint-probability-functions"><i class="fa fa-check"></i><b>7.1</b> Joint Probability Functions</a></li>
-<li class="chapter" data-level="7.2" data-path="bivariatediscreterv.html"><a href="bivariatediscreterv.html#marginal-probability-mass-functions"><i class="fa fa-check"></i><b>7.2</b> Marginal probability (mass) functions</a>
-<ul>
-<li class="chapter" data-level="7.2.1" data-path="bivariatediscreterv.html"><a href="bivariatediscreterv.html#first-example"><i class="fa fa-check"></i><b>7.2.1</b> First Example</a></li>
-<li class="chapter" data-level="7.2.2" data-path="bivariatediscreterv.html"><a href="bivariatediscreterv.html#empirical-example"><i class="fa fa-check"></i><b>7.2.2</b> Empirical Example</a></li>
-</ul></li>
-<li class="chapter" data-level="7.3" data-path="bivariatediscreterv.html"><a href="bivariatediscreterv.html#conditional-probability-mass-function"><i class="fa fa-check"></i><b>7.3</b> Conditional probability mass function</a></li>
-<li class="chapter" data-level="7.4" data-path="bivariatediscreterv.html"><a href="bivariatediscreterv.html#independence-1"><i class="fa fa-check"></i><b>7.4</b> Independence</a></li>
-<li class="chapter" data-level="7.5" data-path="bivariatediscreterv.html"><a href="bivariatediscreterv.html#expectations-for-jointly-distributed-discrete-rvs"><i class="fa fa-check"></i><b>7.5</b> Expectations for Jointly Distributed Discrete RVs</a></li>
-<li class="chapter" data-level="7.6" data-path="bivariatediscreterv.html"><a href="bivariatediscreterv.html#iterated-expectations"><i class="fa fa-check"></i><b>7.6</b> Iterated Expectations</a></li>
-<li class="chapter" data-level="7.7" data-path="bivariatediscreterv.html"><a href="bivariatediscreterv.html#expectations-for-jointly-distributed-discrete-rvs-1"><i class="fa fa-check"></i><b>7.7</b> Expectations for Jointly Distributed Discrete RVs</a></li>
-<li class="chapter" data-level="7.8" data-path="bivariatediscreterv.html"><a href="bivariatediscreterv.html#some-properties-of-covariances"><i class="fa fa-check"></i><b>7.8</b> Some Properties of Covariances</a>
-<ul>
-<li class="chapter" data-level="7.8.1" data-path="bivariatediscreterv.html"><a href="bivariatediscreterv.html#a-remark"><i class="fa fa-check"></i><b>7.8.1</b> A remark</a></li>
-<li class="chapter" data-level="7.8.2" data-path="bivariatediscreterv.html"><a href="bivariatediscreterv.html#an-important-property-of-correlation"><i class="fa fa-check"></i><b>7.8.2</b> An important property of correlation</a></li>
-</ul></li>
-</ul></li>
-<li class="chapter" data-level="8" data-path="numericalmethods.html"><a href="numericalmethods.html"><i class="fa fa-check"></i><b>8</b> 📝 Numerical Methods</a>
-<ul>
-<li class="chapter" data-level="8.1" data-path="numericalmethods.html"><a href="numericalmethods.html#introduction-to-simulation"><i class="fa fa-check"></i><b>8.1</b> Introduction to simulation</a></li>
-<li class="chapter" data-level="8.2" data-path="numericalmethods.html"><a href="numericalmethods.html#simulation-procedure"><i class="fa fa-check"></i><b>8.2</b> Simulation procedure</a></li>
-<li class="chapter" data-level="8.3" data-path="numericalmethods.html"><a href="numericalmethods.html#simulation-in-r"><i class="fa fa-check"></i><b>8.3</b> Simulation in R</a></li>
-<li class="chapter" data-level="8.4" data-path="numericalmethods.html"><a href="numericalmethods.html#coin-tossing"><i class="fa fa-check"></i><b>8.4</b> Coin tossing</a></li>
-<li class="chapter" data-level="8.5" data-path="numericalmethods.html"><a href="numericalmethods.html#summarizing"><i class="fa fa-check"></i><b>8.5</b> Summarizing</a></li>
-</ul></li>
-<li class="chapter" data-level="9" data-path="exercise-solutions.html"><a href="exercise-solutions.html"><i class="fa fa-check"></i><b>9</b> 📝 Exercise Solutions</a>
-<ul>
-<li class="chapter" data-level="9.1" data-path="exercise-solutions.html"><a href="exercise-solutions.html#chapter-1"><i class="fa fa-check"></i><b>9.1</b> Chapter 1</a></li>
-<li class="chapter" data-level="9.2" data-path="exercise-solutions.html"><a href="exercise-solutions.html#chapter-2"><i class="fa fa-check"></i><b>9.2</b> Chapter 2</a>
-<ul>
-<li class="chapter" data-level="9.2.1" data-path="exercise-solutions.html"><a href="exercise-solutions.html#exercise-2.1"><i class="fa fa-check"></i><b>9.2.1</b> Exercise 2.1</a></li>
-<li class="chapter" data-level="9.2.2" data-path="exercise-solutions.html"><a href="exercise-solutions.html#exercise-2.2"><i class="fa fa-check"></i><b>9.2.2</b> Exercise 2.2</a></li>
-<li class="chapter" data-level="9.2.3" data-path="exercise-solutions.html"><a href="exercise-solutions.html#exercise-2.3"><i class="fa fa-check"></i><b>9.2.3</b> Exercise 2.3</a></li>
-<li class="chapter" data-level="9.2.4" data-path="exercise-solutions.html"><a href="exercise-solutions.html#exercise-2.4"><i class="fa fa-check"></i><b>9.2.4</b> Exercise 2.4</a></li>
-<li class="chapter" data-level="9.2.5" data-path="exercise-solutions.html"><a href="exercise-solutions.html#exercise-2.5"><i class="fa fa-check"></i><b>9.2.5</b> Exercise 2.5</a></li>
-<li class="chapter" data-level="9.2.6" data-path="exercise-solutions.html"><a href="exercise-solutions.html#exercise-2.6"><i class="fa fa-check"></i><b>9.2.6</b> Exercise 2.6</a></li>
-<li class="chapter" data-level="9.2.7" data-path="exercise-solutions.html"><a href="exercise-solutions.html#exercise-2.7"><i class="fa fa-check"></i><b>9.2.7</b> Exercise 2.7</a></li>
-<li class="chapter" data-level="9.2.8" data-path="exercise-solutions.html"><a href="exercise-solutions.html#exercise-2.8"><i class="fa fa-check"></i><b>9.2.8</b> Exercise 2.8</a></li>
-<li class="chapter" data-level="9.2.9" data-path="exercise-solutions.html"><a href="exercise-solutions.html#exercise-2.8-1"><i class="fa fa-check"></i><b>9.2.9</b> Exercise 2.8</a></li>
-</ul></li>
-<li class="chapter" data-level="9.3" data-path="exercise-solutions.html"><a href="exercise-solutions.html#chapter-3"><i class="fa fa-check"></i><b>9.3</b> Chapter 3</a></li>
-<li class="chapter" data-level="9.4" data-path="exercise-solutions.html"><a href="exercise-solutions.html#chapter-4"><i class="fa fa-check"></i><b>9.4</b> Chapter 4</a></li>
-<li class="chapter" data-level="9.5" data-path="exercise-solutions.html"><a href="exercise-solutions.html#chapter-5"><i class="fa fa-check"></i><b>9.5</b> Chapter 5</a></li>
-<li class="chapter" data-level="9.6" data-path="exercise-solutions.html"><a href="exercise-solutions.html#chapter-6"><i class="fa fa-check"></i><b>9.6</b> Chapter 6</a></li>
-<li class="chapter" data-level="9.7" data-path="exercise-solutions.html"><a href="exercise-solutions.html#chapter-7"><i class="fa fa-check"></i><b>9.7</b> Chapter 7</a></li>
-<li class="chapter" data-level="9.8" data-path="exercise-solutions.html"><a href="exercise-solutions.html#chapter-8"><i class="fa fa-check"></i><b>9.8</b> Chapter 8</a></li>
-</ul></li>
-<li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
-<li class="divider"></li>
-<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
-
-</ul>
-
-      </nav>
+    <div class="d-flex align-items-start justify-content-between">
+      <h1>
+        <a href="index.html" title="Course Notes">🃏 Probability I</a>:
+        <small class="text-muted">Course Notes</small>
+      </h1>
+      <button class="btn btn-outline-primary d-lg-none ml-2 mt-1" type="button" data-toggle="collapse" data-target="#main-nav" aria-expanded="true" aria-controls="main-nav"><i class="fas fa-bars"></i><span class="sr-only">Show table of contents</span></button>
     </div>
 
-    <div class="book-body">
-      <div class="body-inner">
-        <div class="book-header" role="navigation">
-          <h1>
-            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">🃏 Probability I</a>
-          </h1>
+    <div id="main-nav" class="collapse-lg">
+      <form role="search">
+        <input id="search" class="form-control" type="search" placeholder="Search" aria-label="Search">
+</form>
+
+      <nav aria-label="Table of contents"><h2>Table of contents</h2>
+        <ul class="book-toc list-unstyled">
+<li><a class="" href="index.html">About this lecture</a></li>
+<li><a class="" href="introduction.html"><span class="header-section-number">1</span> Introduction</a></li>
+<li><a class="" href="settheory.html"><span class="header-section-number">2</span> Elements of Set Theory for Probability</a></li>
+<li><a class="active" href="axioms.html"><span class="header-section-number">3</span> Probability Axioms</a></li>
+<li><a class="" href="discreterv.html"><span class="header-section-number">4</span> 🔧 Discrete Random Variables</a></li>
+<li><a class="" href="continuousrv.html"><span class="header-section-number">5</span> 🔧 Continuous Random Variable</a></li>
+<li><a class="" href="limittheorems.html"><span class="header-section-number">6</span> 📝 Limit Theorems</a></li>
+<li><a class="" href="bivariatediscreterv.html"><span class="header-section-number">7</span> 📝 Bivariate Discrete Random Variables</a></li>
+<li><a class="" href="numericalmethods.html"><span class="header-section-number">8</span> 📝 Numerical Methods</a></li>
+<li><a class="" href="exercise-solutions.html"><span class="header-section-number">9</span> 📝 Exercise Solutions</a></li>
+<li><a class="" href="references.html">References</a></li>
+</ul>
+
+        <div class="book-extra">
+          
         </div>
-
-        <div class="page-wrapper" tabindex="-1" role="main">
-          <div class="page-inner">
-
-            <section class="normal" id="section-">
-<div id="axioms" class="section level1" number="3">
-<h1><span class="header-section-number">Chapter 3</span> Probability Axioms</h1>
-<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-1"></span>
-<img src="img/fun/EC_clear2everyone.png" alt="'Is it clear to Everyone?' by Enrico Chavez" width="80%" />
-<p class="caption">
+      </nav>
+</div>
+  </header><main class="col-sm-12 col-md-9 col-lg-7" id="content"><div id="axioms" class="section level1" number="3">
+<h1>
+<span class="header-section-number">3</span> Probability Axioms<a class="anchor" aria-label="anchor" href="#axioms"><i class="fas fa-link"></i></a>
+</h1>
+<div class="figure" style="text-align: center">
+<span style="display:block;" id="fig:unnamed-chunk-41"></span>
+<img src="img/fun/EC_clear2everyone.png" alt="'Is it clear to Everyone?' by Enrico Chavez" width="80%"><p class="caption">
 Figure 3.1: ‘Is it clear to Everyone?’ by Enrico Chavez
 </p>
 </div>
 <p>In order to formalise probability as a branch of mathematics, Andrey Kolmogorov formulated a series of postulates. These <em>axioms</em> are crucial elements of the foundations on which all the mathematical theory of probability is built.</p>
 <div id="an-axiomatic-definition-of-probability" class="section level2" number="3.1">
-<h2><span class="header-section-number">3.1</span> An Axiomatic Definition of Probability</h2>
+<h2>
+<span class="header-section-number">3.1</span> An Axiomatic Definition of Probability<a class="anchor" aria-label="anchor" href="#an-axiomatic-definition-of-probability"><i class="fas fa-link"></i></a>
+</h2>
 <!-- %Let $\mathcal{B}$ be the $\sigma$-algebra of subsets of a set $S$ representing the sample space. \\ -->
 <!-- %\vspace{0.1cm} -->
-
-<div class="definition">
-<p><span id="def:probability" class="definition"><strong>Definition 3.1  (Probability Axioms)  </strong></span>We define <em>probability</em> as a <strong>set function</strong> with values in <span class="math inline">\([0,1]\)</span>, which satisfies the following axioms:</p>
-<ol style="list-style-type: lower-roman">
-<li><em>The probability of an event <span class="math inline">\(A\)</span> in the Sample Space <span class="math inline">\(S\)</span> is a non-negative real number</em>
-<span class="math display" id="eq:nonnegative">\[\begin{equation}
-P(A) \geq 0, \text{ for every event } A \subset S 
-\tag{3.1}
-\end{equation}\]</span></li>
-<li><em>The probability of the Sample Space is 1</em>
-<span class="math display" id="eq:probss">\[\begin{equation}
-P(S)=1
-\tag{3.2}
-\end{equation}\]</span></li>
-<li>If <span class="math inline">\(A_1,A_2,...\)</span> is</li>
-</ol>
-<ul>
-<li>a sequence of <strong>mutually exclusive events</strong>, i.e.<br />
-<span class="math display">\[A_{i}\cap A_{j}=\varnothing, \ \text{for} \ i\neq j,\ \text{and} \ i,j=1,2,...,\]</span></li>
-<li>such that <span class="math inline">\(A = \bigcup_{i=1}^{\infty} A_i\)</span>, then:</li>
-</ul>
-<span class="math display" id="eq:additivity">\[\begin{equation} 
-P(A)=P\left(\bigcup_{i=1}^{\infty}A_{i}\right)=\sum_{i=1}^{\infty}P(A_i).
-\tag{3.3}
-\end{equation}\]</span>
-</div>
 </div>
 <div id="properties-of-pcdot" class="section level2" number="3.2">
-<h2><span class="header-section-number">3.2</span> Properties of <span class="math inline">\(P(\cdot)\)</span></h2>
+<h2>
+<span class="header-section-number">3.2</span> Properties of <span class="math inline">\(P(\cdot)\)</span><a class="anchor" aria-label="anchor" href="#properties-of-pcdot"><i class="fas fa-link"></i></a>
+</h2>
 <p>These three axioms are the building block of other, more sophisticated statements. For instance:</p>
-
-<div class="theorem">
-<span id="thm:probabilityEmptySet" class="theorem"><strong>Theorem 3.1  (The Probability of the Empty Set)  </strong></span><em>The probability of the empty set is 0</em>
-<span class="math display">\[P(\varnothing)=0.\]</span>
-</div>
-
-<div class="proof">
-<p> <span class="proof"><em>Proof. </em></span> Consider the sequence of mutually exclusive empty sets. <span class="math inline">\(A_1=A_2=A_3=....=\varnothing\)</span>. Then, by <a href="axioms.html#eq:additivity">(3.3)</a> in Axiom (ii) we have</p>
-<span class="math display">\[P(\varnothing)= P\left(  \bigcup_{i=1}^{\infty} A_i \right) = \sum_{i=1}^{\infty} P(A_i) =\sum_{i=1}^{\infty} P(\varnothing)\]</span>
-which is true <strong>only if</strong> the right hand side is an infinite sum of zeros. Thus:
-<span class="math display">\[P(\varnothing) =  0.\]</span>
-</div>
-
-<div class="theorem">
-<span id="thm:additionLaw" class="theorem"><strong>Theorem 3.2  (The Addition Law of Probability)  </strong></span>If <span class="math inline">\(A_1, A_2,...\)</span> are mutually exclusive events, then the probability of their union is the sum of their probabilities, i.e.
-<span class="math display" id="eq:probuniondisj">\[\begin{equation}
-P\left(  \bigcup_{i=1}^{n} A_i \right) = \sum_{i=1}^{n} P(A_i).  
-\tag{3.4}
-\end{equation}\]</span>
-</div>
-
-<div class="proof">
-<p> <span class="proof"><em>Proof. </em></span> Let <span class="math inline">\(A_{n+1}=A_{n+2}=....=\varnothing\)</span>, then
-<span class="math inline">\(\bigcup_{i=1}^{n} A_i = \bigcup_{i=1}^{\infty} A_i,\)</span>
-and, from <a href="axioms.html#eq:additivity">(3.3)</a> (see Axiom (iii)) it follows that:</p>
-<span class="math display">\[\begin{eqnarray}
-P\left(  \bigcup_{i=1}^{n} A_i \right) &amp;=&amp; P\left(  \bigcup_{i=1}^{\infty} A_i \right)
-= \sum_{i=1}^{\infty} P(A_i) = \sum_{i=1}^{n} P(A_i) + \underbrace{\sum_{i=n+1}^{\infty} P(A_i)}_{\equiv 0}.
-\end{eqnarray}\]</span>
-</div>
-
-<div class="theorem">
-<span id="thm:complementRule" class="theorem"><strong>Theorem 3.3  (The Complement Rule)  </strong></span>If <span class="math inline">\(A\)</span> is an event, then <span class="math inline">\(P(A^c) = 1- P(A).\)</span>
-</div>
-
-<div class="proof">
-<p> <span class="proof"><em>Proof. </em></span> By definition, <span class="math inline">\(A\)</span> and its complement <span class="math inline">\(A^c\)</span> are such that:</p>
-<ul>
-<li><span class="math inline">\(A \cup A^c = S\)</span> and</li>
-<li><span class="math inline">\(A \cap A^c = \varnothing\)</span></li>
-</ul>
-<p>Hence, from the addition law <a href="axioms.html#thm:additionLaw">3.2</a>:
-<span class="math display">\[P( S ) = P\left(A \cup A^c \right) =P(A) + P\left(A^c \right).\]</span></p>
-Finally, by Axiom (ii), <span class="math inline">\(P(S)=1\)</span>, and.
-<span class="math display">\[1 = P(A) + P\left(A^c \right).\]</span>
-The result follows.
-</div>
 <!-- <!-- %that $B \subset A$. -->
-
-<div class="theorem">
-<p><span id="thm:monotonicityRule" class="theorem"><strong>Theorem 3.4  (The Monotonicity Rule)  </strong></span>For any two events <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span>, such that <span class="math inline">\(B \subset A\)</span>, we have:</p>
-<span class="math display">\[P(A) \geq P(B).\]</span>
-</div>
 <!-- <mark> -->
 <!--   Illustrate with an example.  -->
 <!-- </mark> -->
@@ -413,51 +106,11 @@ The result follows.
 <!-- %\end{tikzpicture} -->
 <!-- % -->
 <!-- % -->
-
-<div class="proof">
- <span class="proof"><em>Proof. </em></span> Let us write
-<span class="math display">\[A = B \cup (B^c \cap A) \]</span>
-and notice that <span class="math inline">\(B \cap (B^c \cap A) = \phi\)</span>, so that
-<span class="math display">\[\begin{eqnarray}
-P(A) &amp;=&amp; P\left\{ B \cup (B^c \cap A)   \right\}  \\
-&amp;=&amp; P(B) + P(B^c \cap A) 
-\end{eqnarray}\]</span>
-which implies, since <span class="math inline">\(P(B^c \cap A) \geq 0\)</span>, that
-<span class="math display">\[
-P(A) \geq   P(B).
-\]</span>
-</div>
-
-<div class="remark">
- <span class="remark"><em>Remark. </em></span> If we draw a Venn diagram, we can notice that this rule also implies that you can view probability behaving in a similar way as the area. For illustration, take a look at figure <a href="axioms.html#fig:inclusion">3.2</a>, where the area of set <span class="math inline">\(B\)</span> is smaller than that of <span class="math inline">\(A\)</span>, a fact that also extends to their probability measure.
-</div>
-<div class="figure" style="text-align: center"><span id="fig:inclusion"></span>
-<img src="Prob1-GSEM-UNIGE_files/figure-html/inclusion-1.png" alt="The areas of $B\subset A$" width="672" />
-<p class="caption">
+<div class="figure" style="text-align: center">
+<span style="display:block;" id="fig:inclusion"></span>
+<img src="Prob1-GSEM-UNIGE_files/figure-html/inclusion-1.png" alt="The areas of $B\subset A$" width="672"><p class="caption">
 Figure 3.2: The areas of <span class="math inline">\(B\subset A\)</span>
 </p>
-</div>
-
-<div class="theorem">
-<span id="thm:unnamed-chunk-7" class="theorem"><strong>Theorem 3.5  (The Probability of the Union)  </strong></span>For any two events <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span> then
-<span class="math display">\[
-P(A \cup B) = P(A) + P(B) - P(A \cap B).
-\]</span>
-</div>
-
-<div class="proof">
-<p> <span class="proof"><em>Proof. </em></span> Consider that <span class="math inline">\(A\cup B = A \cup (A^c \cap B)\)</span>, and <span class="math inline">\(A\cap(A^c \cap B) = \phi\)</span>. Now remember that <span class="math inline">\(A^c \cap B = B -(A \cap B)\)</span>, so,
-<span class="math display">\[\begin{eqnarray}
-P(A\cup B) &amp;=&amp; P(A) + P(A^c \cap B)  \\
-&amp;=&amp; P(A) + P(B) - P(A\cap B). 
-\end{eqnarray}\]</span></p>
-</div>
-
-<div class="theorem">
-<span id="thm:boolsinequality" class="theorem"><strong>Theorem 3.6  (Boole’s inequality)  </strong></span>For the events <span class="math inline">\(A_1,A_2,... A_n\)</span>,
-<span class="math display">\[
-P(A_1 \cup A_2 \cup....\cup A_n) \leq \sum_{i=1}^{n}P(A_i).
-\]</span>
 </div>
 <!-- %```{proof} -->
 <p>To illustrate this property, consider for instance <span class="math inline">\(n=2\)</span>. Then we have:
@@ -466,99 +119,36 @@ P(A_1 \cup A_2 ) = P(A_1) + P(A_2) - P(A_1 \cap A_2) \leq P(A_1) + P(A_2)
 \]</span>
 since <span class="math inline">\(P(A_1 \cap A_2) \geq 0\)</span> by definition.
 <!-- %``` --></p>
-
-<div class="remark">
- <span class="remark"><em>Remark. </em></span> It is worth noticing that if <span class="math inline">\(A_j \cap A_i = \varnothing\)</span>, for every <span class="math inline">\(i\)</span> and <span class="math inline">\(j\)</span>, with <span class="math inline">\(i\neq j\)</span>, then
-<span class="math inline">\(P(A_1 \cup A_2 \cup....\cup A_n) = \sum_{i=1}^{n}P(A_i),\)</span>
-as stated in <a href="axioms.html#eq:probuniondisj">(3.4)</a>.
-</div>
 </div>
 <div id="examples-and-illustrations" class="section level2" number="3.3">
-<h2><span class="header-section-number">3.3</span> Examples and Illustrations</h2>
+<h2>
+<span class="header-section-number">3.3</span> Examples and Illustrations<a class="anchor" aria-label="anchor" href="#examples-and-illustrations"><i class="fas fa-link"></i></a>
+</h2>
 <div id="flipping-coins" class="section level3" number="3.3.1">
-<h3><span class="header-section-number">3.3.1</span> Flipping coins</h3>
-
-<div class="example">
-<p><span id="exm:unnamed-chunk-10" class="example"><strong>Example 3.1  (Flipping Coins)  </strong></span><em>If we flip a balanced coin twice, <strong>what is the probability of getting at least one head?</strong></em></p>
-<p>The sample space is: <span class="math inline">\(S = \{HH, HT, TH, TT\}\)</span></p>
-<p>Since the coin is balanced, these outcomes are equally likely and we assign to each sample point probability <span class="math inline">\(= 1/4\)</span></p>
-<p>Let <span class="math inline">\(A\)</span> denote the event <strong>obtaining at least one Head</strong>, i.e. <span class="math inline">\(H = \{HH, HT, TH\}\)</span></p>
-<span class="math display">\[\begin{align}
-Pr(A) &amp;= Pr( \{HH \cup HT \cup TH\}) = Pr(\{HH\}) +   Pr(\{HT\}) + Pr(\{TH\})\\
-  &amp;= \frac{1}{4} +\frac{1}{4}+\frac{1}{4} = \frac{3}{4}
-\end{align}\]</span>
-</div>
+<h3>
+<span class="header-section-number">3.3.1</span> Flipping coins<a class="anchor" aria-label="anchor" href="#flipping-coins"><i class="fas fa-link"></i></a>
+</h3>
 </div>
 <div id="detecting-shoppers" class="section level3" number="3.3.2">
-<h3><span class="header-section-number">3.3.2</span> Detecting shoppers</h3>
-
-<div class="example">
-<p><span id="exm:unnamed-chunk-11" class="example"><strong>Example 3.2  (Detecting Shoppers)  </strong></span>
-<em>Shopper TRK is an electronic device designed to count the number of shoppers entering a shopping centre. When two shoppers enter the shopping centre together, one walking in front of the other, the following probabilities apply:</em></p>
-<ol style="list-style-type: decimal">
-<li><em>There is a 0.98 probability that the first shopper is detected</em>.</li>
-<li><em>There is a 0.94 probability that the second shopper is detected</em>.</li>
-<li><em>There is a 0.93 probability that both shoppers are detected</em>.</li>
-</ol>
-<p><strong><em>What is the probability that the device will detect at least one of the two shoppers entering?</em></strong>
-Let us define the events <span class="math inline">\(D\)</span> (shopper is detected) and <span class="math inline">\(U\)</span> (shopper is undetected). Then, the Sample Space is <span class="math inline">\(S=\{ DD, DU, UD, UU\}\)</span></p>
-<p>We can futher proceed to interpret the probabilities that were previously mentioned:</p>
-<ol style="list-style-type: decimal">
-<li><span class="math inline">\(Pr(DD \cup DU) = 0.98\)</span></li>
-<li><span class="math inline">\(Pr(DD \cup UD) = 0.94\)</span></li>
-<li><span class="math inline">\(Pr(DD) = 0.93\)</span></li>
-</ol>
-<p><span class="math display">\[\begin{align} 
-Pr(DD \cup UD \cup DU) &amp;= Pr(\{DD \cup UD\} \cup \{DD \cup DU\})\\
-&amp;= Pr(\{DD \cup UD\}) + Pr(\{DD \cup DU\}) - Pr(\{DD \cup UD\} \cap \{DD \cup DU\})
-\end{align}\]</span></p>
-<p>Let’s study the event <span class="math inline">\(\{DD \cup UD\} \cap \{DD \cup DU\}\)</span> to compute its probability.</p>
-<p>As we have seen in Chapter 2, the union is distributive with respect to the intersection operations, hence:</p>
-<p><span class="math display">\[(DD \cup UD) \cap (DD \cup DU) = DD \cup (UD \cap DU) =DD \cup \varnothing = DD\]</span></p>
-<p>This can also be assessed graphically, as illustrated on figure <a href="axioms.html#fig:dduddu">3.3</a>, where the intersection between events <span class="math inline">\((DD \cup UD)\)</span> and <span class="math inline">\((DD \cup DU)\)</span> is clearly given by <span class="math inline">\(DD\)</span>.</p>
-So, the desired probability is:
-<span class="math display">\[\begin{align}
-Pr(DD \cup UD \cup DU) &amp;= Pr(\{DD \cup UD\}) + Pr(\{DD \cup DU\}) - Pr(DD) \\
-&amp;= 0.98 + 0.94-0.93 \\
-&amp;= 0.99
-\end{align}\]</span>
-</div>
-<div class="figure" style="text-align: center"><span id="fig:dduddu"></span>
-<img src="img/03_axioms/Example2_3_v2.png" alt="Schematic illustration of the sets in Exercise 3.2" width="50%" />
-<p class="caption">
+<h3>
+<span class="header-section-number">3.3.2</span> Detecting shoppers<a class="anchor" aria-label="anchor" href="#detecting-shoppers"><i class="fas fa-link"></i></a>
+</h3>
+<div class="figure" style="text-align: center">
+<span style="display:block;" id="fig:dduddu"></span>
+<img src="img/03_axioms/Example2_3_v2.png" alt="Schematic illustration of the sets in Exercise 3.2" width="50%"><p class="caption">
 Figure 3.3: Schematic illustration of the sets in Exercise 3.2
 </p>
 </div>
 </div>
 <div id="de-morgans-law" class="section level3" number="3.3.3">
-<h3><span class="header-section-number">3.3.3</span> De Morgan’s Law</h3>
-
-<div class="example">
-<p><span id="exm:demorganEx" class="example"><strong>Example 3.3  (Application of De Morgan’s laws)  </strong></span><em>Given <span class="math inline">\(P(A\cup B)=0.7\)</span> and <span class="math inline">\(P(A\cup {B}^c) = 0.9\)</span>, <strong>find <span class="math inline">\(P(A)\)</span></strong></em></p>
-<p>By De Morgan’s law,</p>
-<p><span class="math display">\[P(A^c \cap B^c) = P((A\cup B )^c) = 1 - P(A\cup B) = 1 - 0.7 = 0.3\]</span></p>
-<p>and similarly:</p>
-<p><span class="math display">\[P(A^c \cap B) = 1 - P(A \cup B^c) = 1- 0.9 = 0.1.\]</span></p>
-Thus,
-<span class="math display">\[P(A^c)=P(A^c \cap B^c )+P(A^c \cap B)= 0.3+ 0.1= 0.4,\]</span>
-so:
-<span class="math display">\[P(A)=1 - 0.4= 0.6.\]</span>
-</div>
+<h3>
+<span class="header-section-number">3.3.3</span> De Morgan’s Law<a class="anchor" aria-label="anchor" href="#de-morgans-law"><i class="fas fa-link"></i></a>
+</h3>
 </div>
 <div id="probability-union-and-complement" class="section level3" number="3.3.4">
-<h3><span class="header-section-number">3.3.4</span> Probability, union, and complement</h3>
-
-<div class="example">
-<p><span id="exm:unnamed-chunk-12" class="example"><strong>Example 3.4  </strong></span><em>John is taking two books along on his holiday vacation. With probability 0.5, he will like the first book; with probability 0.4, he will like the second book; and with probability 0.3, he will like both books.</em></p>
-<p><strong><em>What is the probability that he likes neither book?</em></strong></p>
-Let <span class="math inline">\(A_i\)</span> be the event that John likes book <span class="math inline">\(i\)</span>, for <span class="math inline">\(i=1,2\)</span>. Then the probability that he likes at least one book is:
-<span class="math display">\[\begin{eqnarray}
-P\left(\bigcup_{i=1}^2 A_i\right) &amp;=&amp; P(A_1 \cup A_2) = P(A_1) + P(A_2) - P(A_1 \cap A_2)\\
-&amp;=&amp; 0.5 + 0.4 -0.3 =0.6. 
-\end{eqnarray}\]</span>
-Because the event the John likes neither books is the complement of the event that he likes at least one of them (namely <span class="math inline">\(A_1 \cup A_2\)</span>), we have
-<span class="math display">\[P(A^{c}_1 \cap A^{c}_2 ) = P((A_1 \cup A_2)^c) = 1- P (A_1 \cup A_2) = 0.4.\]</span>
-</div>
+<h3>
+<span class="header-section-number">3.3.4</span> Probability, union, and complement<a class="anchor" aria-label="anchor" href="#probability-union-and-complement"><i class="fas fa-link"></i></a>
+</h3>
 <!-- ```{example} -->
 <!-- _Let $A$ denote the event that the midtown temperature in Los Angeles (LA) is 70F, and let $B$ denote the event that the midtown temperature in New York (NY) is 70F. Also, let $C$ denote the event that the maximum of midtown temperatures in NY and LA is 70F._  -->
 <!-- _If $P(A)=0.3$, $P(B)=0.4$ and $P(C)=0.2$, find the **probability that the minimum of the two midtown temperatures is 70F**._ -->
@@ -578,22 +168,20 @@ Because the event the John likes neither books is the complement of the event th
 </div>
 </div>
 <div id="conditional-probability" class="section level2" number="3.4">
-<h2><span class="header-section-number">3.4</span> Conditional probability</h2>
-<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-13"></span>
-<img src="img/fun/probconditionnelle2.png" alt="'Probability of a walk' from the [Cartoon Guide to Statistics](http://www.larrygonick.com/titles/science/the-cartoon-guide-to-statistics/)" width="80%" />
-<p class="caption">
+<h2>
+<span class="header-section-number">3.4</span> Conditional probability<a class="anchor" aria-label="anchor" href="#conditional-probability"><i class="fas fa-link"></i></a>
+</h2>
+<div class="figure" style="text-align: center">
+<span style="display:block;" id="fig:unnamed-chunk-53"></span>
+<img src="img/fun/probconditionnelle2.png" alt="'Probability of a walk' from the [Cartoon Guide to Statistics](http://www.larrygonick.com/titles/science/the-cartoon-guide-to-statistics/)" width="80%"><p class="caption">
 Figure 3.4: ‘Probability of a walk’ from the <a href="http://www.larrygonick.com/titles/science/the-cartoon-guide-to-statistics/">Cartoon Guide to Statistics</a>
 </p>
 </div>
 <p>As a measure of uncertainty, the probability depends on the information available. The notion of Conditional Probability captures the fact that in some scenarios, the <strong>probability of an event will change</strong> according to the <strong>realisation of another event</strong>.</p>
 <p>Let us illustrate this with an example:</p>
-
-<div class="example">
-<span id="exm:unnamed-chunk-14" class="example"><strong>Example 3.5  (Throwing two dice)  </strong></span>Suppose you have two dice and throw them. The possible outcomes can be listed in the shape of the table below:
-</div>
-<p><img src="img/03_axioms/c1.png" width="643" style="display: block; margin: auto;" /></p>
+<div class="inline-figure"><img src="img/03_axioms/c1.png" width="643" style="display: block; margin: auto;"></div>
 <p>Now let us define the event <em><span class="math inline">\(A\)</span> = getting <span class="math inline">\(5\)</span></em>, or equivalently <span class="math inline">\(A=\{ 5\}\)</span>. <strong>What is <span class="math inline">\(P(A)\)</span>, i.e. the probability of getting <span class="math inline">\(5\)</span>?</strong>. In the table above, we can identify and highlight the scenarios where the sum of both dice is 5:</p>
-<p><img src="img/03_axioms/c2.png" width="644" style="display: block; margin: auto;" /></p>
+<div class="inline-figure"><img src="img/03_axioms/c2.png" width="644" style="display: block; margin: auto;"></div>
 <p>Since both dice are fair, we get 36 mutually exclusive scenarios with equal probability <span class="math inline">\({1}/{36}\)</span>, i.e.
 <span class="math display">\[Pr(i,j) = \frac{1}{36}, \quad \text{for} \quad i,j=1,..,6\]</span>
 Hence, to compute the probability of <span class="math inline">\(A\)</span>, we can sum their probability of the highlighted events:
@@ -607,49 +195,35 @@ P(5) &amp;=&amp; Pr\left\{ (1,4) \cup (2,3) \cup (3,2) \cup  (4,1) \right\}  \\
 <p>Now, suppose that, instead of throwing both dice simultaneously, <strong>we throw them one at a time</strong>. In this scenario, imagine that <strong>our first die yields a 2</strong>.</p>
 <p><em>What is the probability of <strong>getting 5 given that we have gotten 2</strong> in the first throw?</em></p>
 <p>To answer this question, let us highlight the outcomes where the first die yields a 2 in the table of events.</p>
-<p><img src="img/03_axioms/c4.png" width="644" style="display: block; margin: auto;" /></p>
+<div class="inline-figure"><img src="img/03_axioms/c4.png" width="644" style="display: block; margin: auto;"></div>
 <p>As we see in the table, the only scenario where we have <span class="math inline">\(A\)</span> is when we obtain <span class="math inline">\(3\)</span> in the second throw. Since the event “obtaining a 3” for one of the dice, has a probability<span class="math inline">\(=1/6\)</span>:</p>
 <p><span class="math inline">\(\text{Pr}\{\text{getting 5 given 2 in the first throw}\}= \text{Pr}\{\text{getting 3 in the second throw}\}=1/6.\)</span></p>
-
-<div class="remark">
- <span class="remark"><em>Remark. </em></span> It is important to notice that the information changes the probability, i.e. by knowing that we got 2 in the first throw, we have changed the sample space:
-</div>
-<p><img src="img/03_axioms/c3.png" width="646" style="display: block; margin: auto;" /></p>
+<div class="inline-figure"><img src="img/03_axioms/c3.png" width="646" style="display: block; margin: auto;"></div>
 <p>Also, sometimes the probability can change drastically. For example, suppose that in our example we have 6 in the first throw. Then, the probability of observing 5 in two draws is zero(!)</p>
-
-<div class="definition">
-<span id="def:condProba" class="definition"><strong>Definition 3.2  (Conditional Probability)  </strong></span>Let <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span> be two events. The <em>Conditional Probability of event <span class="math inline">\(A\)</span>
-given event <span class="math inline">\(B\)</span></em>, denoted by <span class="math inline">\(P\left(A\vert B\right)\)</span>, is defined by:
-<span class="math display">\[P\left(A\vert B\right) = \frac{P(A \cap B)}{P(B)}, \quad \text{if} \quad P(B) &gt;0,\]</span>
-and it is left undefined if <span class="math inline">\(P(B)=0\)</span>.
-</div>
 <p>Let us come back to the example of the two dice and assess whether the formula applies. Let us define the event <span class="math inline">\(B\)</span> as “<em>obtaining a 2 on the first throw</em>,” i.e. </p>
-<p><img src="img/03_axioms/c3.png" width="646" style="display: block; margin: auto;" /></p>
+<div class="inline-figure"><img src="img/03_axioms/c3.png" width="646" style="display: block; margin: auto;"></div>
 <p>The probability of this event can be computed as follows:</p>
 <p><span class="math display">\[\begin{eqnarray}
 P(B) &amp;=&amp; Pr\left\{ (2,1) \cup (2,2) \cup (2,3) \cup (2,4) \cup (2,5) \cup (2,6)     \right\}  \\
  &amp;=&amp;  Pr(2,1) + Pr(2,2) + Pr(2,3) + Pr(2,4) + Pr(2,5) + Pr(2,6)  \\
  &amp;=&amp; 6/36 =1/6 
 \end{eqnarray}\]</span></p>
-<p>Let us now focus on the event <span class="math inline">\(A \cap B\)</span>, i.e. “<em>sum of both dice = 5</em>” <strong>and</strong> "<em>getting a 2 on the first throw</em>**. As we have seen in the previous tables, this event arises only when the second die yields a 3, i.e.</p>
-<p><img src="img/03_axioms/c4.png" width="644" style="display: block; margin: auto;" /></p>
+<p>Let us now focus on the event <span class="math inline">\(A \cap B\)</span>, i.e. “<em>sum of both dice = 5</em>” <strong>and</strong> “<em>getting a 2 on the first throw</em>**. As we have seen in the previous tables, this event arises only when the second die yields a 3, i.e.</p>
+<div class="inline-figure"><img src="img/03_axioms/c4.png" width="644" style="display: block; margin: auto;"></div>
 <p>Hence, <span class="math inline">\(P(A \cap B) = Pr (2,3) = 1/36\)</span> and thus:
 <span class="math display">\[
 P(A\vert B) = \frac{P(A \cap B)}{P(B)}  =  \frac{1/36}{1/6} = \frac{1}{6}. 
 \]</span></p>
 </div>
 <div id="independence" class="section level2" number="3.5">
-<h2><span class="header-section-number">3.5</span> Independence</h2>
-
-<div class="definition">
-<span id="def:unnamed-chunk-22" class="definition"><strong>Definition 3.3  </strong></span>Two events <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span> are independent if the occurrence of one event has no effect on the probability of occurrence of the other event. Thus,
-<span class="math display">\[P(A\vert B) = P(A)\]</span>
-or equivalently
-<span class="math display">\[P(B\vert A) = P(B)\]</span>
-</div>
+<h2>
+<span class="header-section-number">3.5</span> Independence<a class="anchor" aria-label="anchor" href="#independence"><i class="fas fa-link"></i></a>
+</h2>
 <p>Clearly, if <span class="math inline">\(P(A\vert B) \neq P(A)\)</span>, then <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span> are .</p>
 <div id="another-characterisation" class="section level3" number="3.5.1">
-<h3><span class="header-section-number">3.5.1</span> Another characterisation</h3>
+<h3>
+<span class="header-section-number">3.5.1</span> Another characterisation<a class="anchor" aria-label="anchor" href="#another-characterisation"><i class="fas fa-link"></i></a>
+</h3>
 <p>Two events <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span> are independent if
 <span class="math display">\[P(A \vert B) = {P(A)},\]</span>
 now by definition of conditional probability we know that
@@ -658,230 +232,84 @@ so we have
 <span class="math display">\[P(A) = \frac{P(A \cap B)}{P(B)},\]</span>
 and rearranging the terms, we find that two events are independent iif
 <span class="math display">\[P(A\cap B) = P(A) P(B).\]</span></p>
-
-<div class="example">
-<p><span id="exm:unnamed-chunk-23" class="example"><strong>Example 3.6  </strong></span>A coin is tossed three times and the eight possible outcomes
-<span class="math display">\[S = \{HHH, HHT, HTH, THH, HTT, THT, TTH, TTT\}\]</span>
-are assumed to be equally likely owith probability <span class="math inline">\(1/8\)</span>.</p>
-<p>Define:</p>
-<ul>
-<li><span class="math inline">\(A\)</span>: an <span class="math inline">\(H\)</span> occurs on each of the first two tosses</li>
-<li><span class="math inline">\(B\)</span>: <span class="math inline">\(T\)</span> occurs on the third toss</li>
-<li><span class="math inline">\(D\)</span>: Two <span class="math inline">\(T\)</span>s occur in three tosses</li>
-</ul>
-<ol style="list-style-type: decimal">
-<li><strong>Q1</strong>: Are <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span> independent?</li>
-<li><strong>Q2</strong>: Are <span class="math inline">\(B\)</span> and <span class="math inline">\(D\)</span> independent?</li>
-</ol>
-<p>We have:</p>
-<table>
-<thead>
-<tr class="header">
-<th>Event</th>
-<th>Probability</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><span class="math inline">\(A = \{ HHH, HHT\}\)</span></td>
-<td><span class="math inline">\(Pr(A)=\frac{2}{8}=\frac{1}{4}\)</span></td>
-</tr>
-<tr class="even">
-<td><span class="math inline">\(B = \{HHT, HTT, THT, TTT\}\)</span></td>
-<td><span class="math inline">\(Pr(B)=\frac{4}{8}=\frac{1}{2}\)</span></td>
-</tr>
-<tr class="odd">
-<td><span class="math inline">\(D = \{HHT, THT, TTH\}\)</span></td>
-<td><span class="math inline">\(Pr(D)=\frac{3}{8}\)</span></td>
-</tr>
-<tr class="even">
-<td><span class="math inline">\(A\cap B = \{ HHT\}\)</span></td>
-<td><span class="math inline">\(Pr(A\cap B)=\frac{1}{8}\)</span></td>
-</tr>
-<tr class="odd">
-<td><span class="math inline">\(B\cap D = \{ HTT, THT\}\)</span></td>
-<td><span class="math inline">\(Pr(B\cap D)=\frac{2}{8}=\frac{1}{4}\)</span></td>
-</tr>
-</tbody>
-</table>
-<p>Now, if we compute the probabilities of the products and compare with the definition of independence:</p>
-<ul>
-<li><span class="math inline">\(Pr(A) \times Pr(B) = \frac{1}{4}\times \frac{1}{2}= \frac{1}{8} = Pr(A\cap B)\)</span>, hence <span class="math inline">\(A\)</span> and <span class="math inline">\(C\)</span> are independent.</li>
-<li><span class="math inline">\(Pr(B) \times Pr(D) = \frac{1}{2}\times \frac{3}{8}= \frac{3}{16} \neq \frac{1}{4} = Pr(B\cap D)\)</span>, hence <span class="math inline">\(B\)</span> and <span class="math inline">\(D\)</span> are dependent.
-</div></li>
-</ul>
 </div>
 </div>
 <div id="theorem-i-the-theorem-of-total-probabilities" class="section level2" number="3.6">
-<h2><span class="header-section-number">3.6</span> Theorem I: The Theorem of Total Probabilities</h2>
-
-<div class="theorem">
-<span id="thm:totalprob" class="theorem"><strong>Theorem 3.7  (Theorem of total probabilities)  </strong></span>Let <span class="math inline">\(B_1,B_2,...,B_k,...,B_n\)</span> be mutually disjoint events, satisfying
-<span class="math inline">\(S=\cup_{i=1}^{n} B_i,\)</span> and <span class="math inline">\(P(B_i)&gt;0\)</span>, for every <span class="math inline">\(i=1,2,...,n\)</span> then for every <span class="math inline">\(A\)</span> we have that:
-<span class="math display" id="eq:TP">\[\begin{equation}
-P(A)=\sum_{i=1}^n P(A\vert B_i) P(B_i).
-\tag{3.5}
-\end{equation}\]</span>
-</div>
-
-<div class="proof">
- <span class="proof"><em>Proof. </em></span> Write <span class="math inline">\(A=A\cap S = A\cap (\cup_{i=1}^{n} B_i) = \cup_{i=1}^{n} (A\cap B_i)\)</span>. Since the <span class="math inline">\(\{B_i \cap A \}\)</span> are mutually disjoint, we have
-<span class="math display">\[\begin{equation*}
-P(A)=P\left(  \cup_{i=1}^{n} (A\cap B_i)  \right)=\sum_{i=1}^n P\left( A\cap B_i  \right ) =\sum_{i=1}^n P(A\vert B_i) P(B_i).
-\end{equation*}\]</span>
-</div>
-
-<div class="remark">
- <span class="remark"><em>Remark. </em></span> The theorem remains valid even if <span class="math inline">\(n=\infty\)</span> in Eq. <a href="axioms.html#eq:TP">(3.5)</a>. (Double check, and re-do the proof using <span class="math inline">\(n=\infty\)</span>.)
-</div>
-
-<div class="corollary">
-<p><span id="cor:unnamed-chunk-26" class="corollary"><strong>Corollary 3.1  </strong></span>Let <span class="math inline">\(B\)</span> satisfy <span class="math inline">\(0&lt;P(B)&lt;1\)</span>; then for every event <span class="math inline">\(A\)</span>:</p>
-<span class="math display">\[\begin{equation*}
-P(A)=P(A\vert B)P(B)+P(A\vert B^c) P(B^c)
-\end{equation*}\]</span>
-</div>
-
-<div class="proof">
- <span class="proof"><em>Proof. </em></span> Exercise [Hint: <span class="math inline">\(S=B \cup B^c\)</span>].
-</div>
+<h2>
+<span class="header-section-number">3.6</span> Theorem I: The Theorem of Total Probabilities<a class="anchor" aria-label="anchor" href="#theorem-i-the-theorem-of-total-probabilities"><i class="fas fa-link"></i></a>
+</h2>
 </div>
 <div id="theorem-ii-bayes-theorem" class="section level2" number="3.7">
-<h2><span class="header-section-number">3.7</span> Theorem II: Bayes’ Theorem</h2>
+<h2>
+<span class="header-section-number">3.7</span> Theorem II: Bayes’ Theorem<a class="anchor" aria-label="anchor" href="#theorem-ii-bayes-theorem"><i class="fas fa-link"></i></a>
+</h2>
 <p>Theorem I can be applied to derive the well-celebrated Bayes’ Theorem.</p>
-
-<div class="theorem">
-<span id="thm:bayes" class="theorem"><strong>Theorem 3.8  (Bayes’ Theorem)  </strong></span>Let <span class="math inline">\(B_1,B_2,...,B_k,...,B_n\)</span> be mutually disjoint events, satisfying
-<span class="math display">\[S=\cup_{i=1}^{n} B_i,\]</span> and <span class="math inline">\(P(B_i)&gt;0,\)</span>
-for every <span class="math inline">\(i=1,2,...,n\)</span>. Then for every event <span class="math inline">\(A\)</span> for which <span class="math inline">\(P(A)&gt;0\)</span>, we have that
-<span class="math display" id="eq:Bayes">\[\begin{equation}
-P(B_k\vert A)=\frac{P(A\vert B_k)P(B_k)}{\sum_{i=1}^n P(A\vert B_i) P(B_i)}.
-\tag{3.6}
-\end{equation}\]</span>
-</div>
-
-<div class="proof">
- <span class="proof"><em>Proof. </em></span> Let us write
-<span class="math display">\[\begin{eqnarray}
-P(B_k\vert A)&amp;=&amp;\frac{P(A\cap B_k)}{P(A)}  \\
-&amp;=&amp;\frac{P(A\cap B_k)}{\sum_{i=1}^n P(A\vert B_i) P(B_i)} \\
-&amp;=&amp;\frac{P(A\vert B_k)P(B_k)}{\sum_{i=1}^n P(A\vert B_i) P(B_i)} 
-\end{eqnarray}\]</span>
-That concludes the proof.
-</div>
-
-<div class="example">
-<p><span id="exm:unnamed-chunk-29" class="example"><strong>Example 3.7  </strong></span>Let us consider a special case, where we have only two events <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span>.</p>
-<p>From the definition of conditional probability:
-<span class="math display">\[P(A|B) = \frac{P(A\cap B)}{P(B)} \qquad P(B|A) = \frac{P(A\cap B)}{P(A)}.\]</span>
-This can be written as:
-<span class="math display">\[P(A\cap B) = P(A|B) \times P(B) \qquad P(B\cap A) = P(B|A) \times P(A),\]</span>
-which entails:
-<span class="math display">\[P(A|B) \times P(B) = P(B|A) \times P(A),\]</span>
-which is the expression of Bayes’ Theorem.</p>
-… so thanks to Bayes’ Theorem we can reverse the role of <span class="math inline">\(A\vert B\)</span> and <span class="math inline">\(B \vert A\)</span>.
-</div>
 <div id="guessing-in-a-multiple-choice-exam" class="section level3" number="3.7.1">
-<h3><span class="header-section-number">3.7.1</span> Guessing in a multiple choice exam</h3>
-
-<div class="example">
-<p><span id="exm:unnamed-chunk-30" class="example"><strong>Example 3.8  (Example 3c in <span class="citation"><a href="references.html#ref-ross2014first" role="doc-biblioref">Ross</a> (<a href="references.html#ref-ross2014first" role="doc-biblioref">2014</a>)</span>)  </strong></span>
-<em>In answering a question on a multiple-choice test, a student either knows the answer
-or guesses. Let p be the probability that the student knows the answer and 1 − p
-be the probability that the student guesses. Assume that a student who guesses at
-the answer will be correct with probability 1/m, where m is the number of multiple choice alternatives.</em></p>
-<p><em>What is the conditional probability that a student knew the
-answer to a question given that he or she answered it correctly?</em></p>
-<p><strong>Solution</strong> Let C and K denote, respectively, the events that the student answers the
-question correctly and the event that he or she actually knows the answer. Now,</p>
-<p><span class="math display">\[\begin{align*}
-P(K|C ) &amp; = \frac{P(KC)}{P(C)} \\ 
-&amp;= \frac{P(C|K)P(K)}{P(C|K )P(K) + P(C|Kc)P(Kc)} \\
-&amp;= \frac{p}{p + (1/m)(1 − p)} \\ 
-&amp;= \frac{mp}{1 + (m − 1)p}
-\end{align*}\]</span></p>
-For example, if <span class="math inline">\(m = 5\)</span>, <span class="math inline">\(p = 12\)</span> , then the probability that the student knew the answer to a question he or she answered correctly is 5/6
-.
-</div>
+<h3>
+<span class="header-section-number">3.7.1</span> Guessing in a multiple choice exam<a class="anchor" aria-label="anchor" href="#guessing-in-a-multiple-choice-exam"><i class="fas fa-link"></i></a>
+</h3>
 </div>
 <div id="rent-car-maintenance" class="section level3" number="3.7.2">
-<h3><span class="header-section-number">3.7.2</span> Rent car maintenance</h3>
+<h3>
+<span class="header-section-number">3.7.2</span> Rent car maintenance<a class="anchor" aria-label="anchor" href="#rent-car-maintenance"><i class="fas fa-link"></i></a>
+</h3>
 
-<div class="example">
-<p><span id="exm:unnamed-chunk-31" class="example"><strong>Example 3.9  </strong></span>
-- 60% from AVIS
-- 40% from Mobility</p>
-<p>Now consider that</p>
-<ul>
-<li>9% of the cars from AVIS need a tune-up</li>
-<li>20% of the cars from Mobility need a tune-up</li>
+</div>
+</div>
+</div>
+  <div class="chapter-nav">
+<div class="prev"><a href="settheory.html"><span class="header-section-number">2</span> Elements of Set Theory for Probability</a></div>
+<div class="next"><a href="discreterv.html"><span class="header-section-number">4</span> 🔧 Discrete Random Variables</a></div>
+</div></main><div class="col-md-3 col-lg-2 d-none d-md-block sidebar sidebar-chapter">
+    <nav id="toc" data-toggle="toc" aria-label="On this page"><h2>On this page</h2>
+      <ul class="nav navbar-nav">
+<li><a class="nav-link" href="#axioms"><span class="header-section-number">3</span> Probability Axioms</a></li>
+<li><a class="nav-link" href="#an-axiomatic-definition-of-probability"><span class="header-section-number">3.1</span> An Axiomatic Definition of Probability</a></li>
+<li><a class="nav-link" href="#properties-of-pcdot"><span class="header-section-number">3.2</span> Properties of \(P(\cdot)\)</a></li>
+<li>
+<a class="nav-link" href="#examples-and-illustrations"><span class="header-section-number">3.3</span> Examples and Illustrations</a><ul class="nav navbar-nav">
+<li><a class="nav-link" href="#flipping-coins"><span class="header-section-number">3.3.1</span> Flipping coins</a></li>
+<li><a class="nav-link" href="#detecting-shoppers"><span class="header-section-number">3.3.2</span> Detecting shoppers</a></li>
+<li><a class="nav-link" href="#de-morgans-law"><span class="header-section-number">3.3.3</span> De Morgan’s Law</a></li>
+<li><a class="nav-link" href="#probability-union-and-complement"><span class="header-section-number">3.3.4</span> Probability, union, and complement</a></li>
 </ul>
-<p>If a car delivered to the consulting firm needs a tune-up, what is the probability that the care came
-from AVIS?</p>
-<p>Let us set: <span class="math inline">\(A:=\{\text{car rented from AVIS}\}\)</span> and <span class="math inline">\(B:=\{\text{car needs a tune-up}\}\)</span>. We know <span class="math inline">\(P(B\vert A)\)</span> and we look for <span class="math inline">\(P(A\vert B)\)</span> <span class="math inline">\(\Rightarrow\)</span> Bayes’ theorem!!</p>
-<p><span class="math display">\[P(A) =0.6 \qquad P(B|A) =0.09 \qquad P(B|A^c) =0.2\]</span></p>
-<p><span class="math display">\[\begin{align}
-P(B)&amp;=P((B\cap A) \cup (B\cap A^c))\\
-&amp;=P(B\cap A)+P(B\cap A^c)\\
-&amp;=P(B|A)\times P(A)+P(B|A^c)P(A^c)\\
-&amp;=0.09\times 0.6 + 0.2 \times 0.4 \\
-&amp;=0.134
-\end{align}\]</span></p>
-<span class="math display">\[P(A|B) = \frac{P(A)}{P(B)}\times P(B|A) = \frac{0.6}{0.134}0.09 = 0.402985\]</span>
+</li>
+<li><a class="nav-link" href="#conditional-probability"><span class="header-section-number">3.4</span> Conditional probability</a></li>
+<li>
+<a class="nav-link" href="#independence"><span class="header-section-number">3.5</span> Independence</a><ul class="nav navbar-nav"><li><a class="nav-link" href="#another-characterisation"><span class="header-section-number">3.5.1</span> Another characterisation</a></li></ul>
+</li>
+<li><a class="nav-link" href="#theorem-i-the-theorem-of-total-probabilities"><span class="header-section-number">3.6</span> Theorem I: The Theorem of Total Probabilities</a></li>
+<li>
+<a class="nav-link" href="#theorem-ii-bayes-theorem"><span class="header-section-number">3.7</span> Theorem II: Bayes’ Theorem</a><ul class="nav navbar-nav">
+<li><a class="nav-link" href="#guessing-in-a-multiple-choice-exam"><span class="header-section-number">3.7.1</span> Guessing in a multiple choice exam</a></li>
+<li><a class="nav-link" href="#rent-car-maintenance"><span class="header-section-number">3.7.2</span> Rent car maintenance</a></li>
+</ul>
+</li>
+</ul>
+
+      <div class="book-extra">
+        <ul class="list-unstyled">
+          
+        </ul>
+</div>
+    </nav>
 </div>
 
 </div>
-</div>
-</div>
-            </section>
+</div> <!-- .container -->
 
-          </div>
-        </div>
-      </div>
-<a href="settheory.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="discreterv.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
-    </div>
+<footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
+
+  <div class="col-12 col-md-6 mt-3">
+    <p>"<strong>🃏 Probability I</strong>: Course Notes" was written by Dr. Daniel Flores Agreda (based on the Lecture by Prof. Davide La Vecchia). </p>
   </div>
-<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
-<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
-<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
-<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
-<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
-<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
-<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
-<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
-<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
-<script>
-gitbook.require(["gitbook"], function(gitbook) {
-gitbook.start({
-"sharing": null,
-"fontsettings": {
-"theme": "white",
-"family": "sans",
-"size": 2
-},
-"edit": {
-"link": "https://github.com/rstudio/bookdown-demo/edit/master/03-axioms.Rmd",
-"text": "Edit"
-},
-"history": {
-"link": null,
-"text": null
-},
-"view": {
-"link": null,
-"text": null
-},
-"download": null,
-"toc": {
-"collapse": "subsection"
-}
-});
-});
-</script>
 
-<!-- dynamically load mathjax for compatibility with self-contained -->
-<script>
+  <div class="col-12 col-md-6 mt-3">
+    <p>This book was built by the <a class="text-light" href="https://bookdown.org">bookdown</a> R package.</p>
+  </div>
+
+</div></div>
+</footer><!-- dynamically load mathjax for compatibility with self-contained --><script>
   (function () {
     var script = document.createElement("script");
     script.type = "text/javascript";
@@ -893,7 +321,22 @@ gitbook.start({
     script.src = src;
     document.getElementsByTagName("head")[0].appendChild(script);
   })();
+</script><script type="text/x-mathjax-config">const popovers = document.querySelectorAll('a.footnote-ref[data-toggle="popover"]');
+for (let popover of popovers) {
+  const div = document.createElement('div');
+  div.setAttribute('style', 'position: absolute; top: 0, left:0; width:0, height:0, overflow: hidden; visibility: hidden;');
+  div.innerHTML = popover.getAttribute('data-content');
+
+  var has_math = div.querySelector("span.math");
+  if (has_math) {
+    document.body.appendChild(div);
+    MathJax.Hub.Queue(["Typeset", MathJax.Hub, div]);
+    MathJax.Hub.Queue(function() {
+      popover.setAttribute('data-content', div.innerHTML);
+      document.body.removeChild(div);
+    })
+  }
+}
 </script>
 </body>
-
 </html>

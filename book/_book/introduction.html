@@ -1,300 +1,67 @@
 <!DOCTYPE html>
-<html lang="" xml:lang="">
+<html lang="en">
 <head>
-
-  <meta charset="utf-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Chapter 1 Introduction | 🃏 Probability I</title>
-  <meta name="description" content="Course Materials" />
-  <meta name="generator" content="bookdown 0.21 and GitBook 2.6.7" />
-
-  <meta property="og:title" content="Chapter 1 Introduction | 🃏 Probability I" />
-  <meta property="og:type" content="book" />
-  
-  
-  <meta property="og:description" content="Course Materials" />
-  <meta name="github-repo" content="rstudio/bookdown-demo" />
-
-  <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Chapter 1 Introduction | 🃏 Probability I" />
-  
-  <meta name="twitter:description" content="Course Materials" />
-  
-
-<meta name="author" content="Dr. Daniel Flores Agreda (based on the Lecture by Prof. Davide La Vecchia)" />
-
-
-
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="apple-mobile-web-app-capable" content="yes" />
-  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
-  
-  
-<link rel="prev" href="index.html"/>
-<link rel="next" href="settheory.html"/>
-<script src="libs/header-attrs-2.7/header-attrs.js"></script>
-<script src="libs/jquery-2.2.3/jquery.min.js"></script>
-<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
-<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
-<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
-<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
-<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
-<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
-<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
-
-
-
-
-
-
-
-
-
-
-
-
-<link rel="stylesheet" href="style.css" type="text/css" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<title>Chapter 1 Introduction | 🃏 Probability I</title>
+<meta name="author" content="Dr. Daniel Flores Agreda (based on the Lecture by Prof. Davide La Vecchia)">
+<meta name="description" content="Figure 1.1: Taking statistics to schools by Enrico Chavez   1.1 A World of Data Data is the most important commodity in our connected world of today. Generated at a breakneck pace and related to...">
+<meta name="generator" content="bookdown 0.24 with bs4_book()">
+<meta property="og:title" content="Chapter 1 Introduction | 🃏 Probability I">
+<meta property="og:type" content="book">
+<meta property="og:description" content="Figure 1.1: Taking statistics to schools by Enrico Chavez   1.1 A World of Data Data is the most important commodity in our connected world of today. Generated at a breakneck pace and related to...">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Chapter 1 Introduction | 🃏 Probability I">
+<meta name="twitter:description" content="Figure 1.1: Taking statistics to schools by Enrico Chavez   1.1 A World of Data Data is the most important commodity in our connected world of today. Generated at a breakneck pace and related to...">
+<!-- JS --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://kit.fontawesome.com/6ecbd6c532.js" crossorigin="anonymous"></script><script src="libs/header-attrs-2.11/header-attrs.js"></script><script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<link href="libs/bootstrap-4.6.0/bootstrap.min.css" rel="stylesheet">
+<script src="libs/bootstrap-4.6.0/bootstrap.bundle.min.js"></script><script src="libs/bs3compat-0.3.1/transition.js"></script><script src="libs/bs3compat-0.3.1/tabs.js"></script><script src="libs/bs3compat-0.3.1/bs3compat.js"></script><link href="libs/bs4_book-1.0.0/bs4_book.css" rel="stylesheet">
+<script src="libs/bs4_book-1.0.0/bs4_book.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/autocomplete.js/0.38.0/autocomplete.jquery.min.js" integrity="sha512-GU9ayf+66Xx2TmpxqJpliWbT5PiGYxpaG8rfnBEk1LL8l1KGkRShhngwdXK1UgqhAzWpZHSiYPc09/NwDQIGyg==" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/mark.min.js" integrity="sha512-5CYOlHXGh6QpOFA/TeTylKLWfB3ftPsde7AnmhuitiTX4K5SqCLBeKro6sPS8ilsz1Q4NRx3v8Ko2IBiszzdww==" crossorigin="anonymous"></script><!-- CSS -->
 </head>
+<body data-spy="scroll" data-target="#toc">
 
-<body>
+<div class="container-fluid">
+<div class="row">
+  <header class="col-sm-12 col-lg-3 sidebar sidebar-book"><a class="sr-only sr-only-focusable" href="#content">Skip to main content</a>
 
-
-
-  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
-
-    <div class="book-summary">
-      <nav role="navigation">
-
-<ul class="summary">
-<li><a href="https://www.unige.ch/gsem/fr/"><img src="img/gsem_en.png" alt="UNIGE Logo" width="200" class ="center"></a></li>
-<li><a href="https://moodle.unige.ch/course/view.php?id=7133"><strong>Probability I (Spring 2021)</strong></a></li>
-
-<li class="divider"></li>
-<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>About this lecture</a>
-<ul>
-<li class="chapter" data-level="" data-path="index.html"><a href="index.html#contents"><i class="fa fa-check"></i>Contents</a></li>
-<li class="chapter" data-level="" data-path="index.html"><a href="index.html#practical-information"><i class="fa fa-check"></i>Practical information</a>
-<ul>
-<li class="chapter" data-level="" data-path="index.html"><a href="index.html#who-we-are"><i class="fa fa-check"></i>Who we are</a></li>
-<li class="chapter" data-level="" data-path="index.html"><a href="index.html#lectures"><i class="fa fa-check"></i>Lectures</a></li>
-<li class="chapter" data-level="" data-path="index.html"><a href="index.html#exercises"><i class="fa fa-check"></i>Exercises</a></li>
-<li class="chapter" data-level="" data-path="index.html"><a href="index.html#tools"><i class="fa fa-check"></i>Tools</a></li>
-</ul></li>
-</ul></li>
-<li class="chapter" data-level="1" data-path="introduction.html"><a href="introduction.html"><i class="fa fa-check"></i><b>1</b> Introduction</a>
-<ul>
-<li class="chapter" data-level="1.1" data-path="introduction.html"><a href="introduction.html#a-world-of-data"><i class="fa fa-check"></i><b>1.1</b> A World of Data</a></li>
-<li class="chapter" data-level="1.2" data-path="introduction.html"><a href="introduction.html#what-to-expect-from-this-lecture"><i class="fa fa-check"></i><b>1.2</b> What to expect from this Lecture?</a>
-<ul>
-<li class="chapter" data-level="1.2.1" data-path="introduction.html"><a href="introduction.html#one-intuitive-illustration"><i class="fa fa-check"></i><b>1.2.1</b> One intuitive illustration</a></li>
-</ul></li>
-<li class="chapter" data-level="1.3" data-path="introduction.html"><a href="introduction.html#a-quick-reminder-of-mathematics"><i class="fa fa-check"></i><b>1.3</b> A quick reminder of Mathematics</a>
-<ul>
-<li class="chapter" data-level="1.3.1" data-path="introduction.html"><a href="introduction.html#powers-and-logarithms"><i class="fa fa-check"></i><b>1.3.1</b> Powers and Logarithms</a></li>
-<li class="chapter" data-level="1.3.2" data-path="introduction.html"><a href="introduction.html#differentiation"><i class="fa fa-check"></i><b>1.3.2</b> Differentiation</a></li>
-<li class="chapter" data-level="1.3.3" data-path="introduction.html"><a href="introduction.html#integration"><i class="fa fa-check"></i><b>1.3.3</b> Integration</a></li>
-<li class="chapter" data-level="1.3.4" data-path="introduction.html"><a href="introduction.html#sums"><i class="fa fa-check"></i><b>1.3.4</b> Sums</a></li>
-<li class="chapter" data-level="1.3.5" data-path="introduction.html"><a href="introduction.html#combinatorics"><i class="fa fa-check"></i><b>1.3.5</b> Combinatorics</a></li>
-<li class="chapter" data-level="1.3.6" data-path="introduction.html"><a href="introduction.html#limits"><i class="fa fa-check"></i><b>1.3.6</b> Limits</a></li>
-</ul></li>
-</ul></li>
-<li class="chapter" data-level="2" data-path="settheory.html"><a href="settheory.html"><i class="fa fa-check"></i><b>2</b> Elements of Set Theory for Probability</a>
-<ul>
-<li class="chapter" data-level="2.1" data-path="settheory.html"><a href="settheory.html#random-experiments-events-and-sample-spaces"><i class="fa fa-check"></i><b>2.1</b> Random Experiments, Events and Sample Spaces</a></li>
-<li class="chapter" data-level="2.2" data-path="settheory.html"><a href="settheory.html#some-definitions-from-set-theory"><i class="fa fa-check"></i><b>2.2</b> Some definitions from set theory</a></li>
-<li class="chapter" data-level="2.3" data-path="settheory.html"><a href="settheory.html#the-venn-diagram"><i class="fa fa-check"></i><b>2.3</b> The Venn diagram</a>
-<ul>
-<li class="chapter" data-level="2.3.1" data-path="settheory.html"><a href="settheory.html#sample-space-and-events"><i class="fa fa-check"></i><b>2.3.1</b> Sample Space and Events</a></li>
-<li class="chapter" data-level="2.3.2" data-path="settheory.html"><a href="settheory.html#exclusive-and-non-exclusive-events"><i class="fa fa-check"></i><b>2.3.2</b> Exclusive and Non-Exclusive Events</a></li>
-<li class="chapter" data-level="2.3.3" data-path="settheory.html"><a href="settheory.html#union-and-intersection-of-events"><i class="fa fa-check"></i><b>2.3.3</b> Union and Intersection of Events</a></li>
-<li class="chapter" data-level="2.3.4" data-path="settheory.html"><a href="settheory.html#complement"><i class="fa fa-check"></i><b>2.3.4</b> Complement</a></li>
-<li class="chapter" data-level="2.3.5" data-path="settheory.html"><a href="settheory.html#some-properties-of-union-and-intersection"><i class="fa fa-check"></i><b>2.3.5</b> Some Properties of union and intersection</a></li>
-</ul></li>
-<li class="chapter" data-level="2.4" data-path="settheory.html"><a href="settheory.html#countable-and-uncountable-sets"><i class="fa fa-check"></i><b>2.4</b> Countable and Uncountable sets</a></li>
-<li class="chapter" data-level="2.5" data-path="settheory.html"><a href="settheory.html#de-morgans-laws"><i class="fa fa-check"></i><b>2.5</b> De Morgan’s Laws</a>
-<ul>
-<li class="chapter" data-level="2.5.1" data-path="settheory.html"><a href="settheory.html#first-law"><i class="fa fa-check"></i><b>2.5.1</b> First Law</a></li>
-<li class="chapter" data-level="2.5.2" data-path="settheory.html"><a href="settheory.html#second-law"><i class="fa fa-check"></i><b>2.5.2</b> Second Law</a></li>
-<li class="chapter" data-level="2.5.3" data-path="settheory.html"><a href="settheory.html#de-morgans-theorem"><i class="fa fa-check"></i><b>2.5.3</b> De Morgan’s Theorem</a></li>
-</ul></li>
-<li class="chapter" data-level="2.6" data-path="settheory.html"><a href="settheory.html#probability-as-frequency"><i class="fa fa-check"></i><b>2.6</b> Probability as Frequency</a></li>
-<li class="chapter" data-level="2.7" data-path="settheory.html"><a href="settheory.html#some-references"><i class="fa fa-check"></i><b>2.7</b> Some references</a></li>
-</ul></li>
-<li class="chapter" data-level="3" data-path="axioms.html"><a href="axioms.html"><i class="fa fa-check"></i><b>3</b> Probability Axioms</a>
-<ul>
-<li class="chapter" data-level="3.1" data-path="axioms.html"><a href="axioms.html#an-axiomatic-definition-of-probability"><i class="fa fa-check"></i><b>3.1</b> An Axiomatic Definition of Probability</a></li>
-<li class="chapter" data-level="3.2" data-path="axioms.html"><a href="axioms.html#properties-of-pcdot"><i class="fa fa-check"></i><b>3.2</b> Properties of <span class="math inline">\(P(\cdot)\)</span></a></li>
-<li class="chapter" data-level="3.3" data-path="axioms.html"><a href="axioms.html#examples-and-illustrations"><i class="fa fa-check"></i><b>3.3</b> Examples and Illustrations</a>
-<ul>
-<li class="chapter" data-level="3.3.1" data-path="axioms.html"><a href="axioms.html#flipping-coins"><i class="fa fa-check"></i><b>3.3.1</b> Flipping coins</a></li>
-<li class="chapter" data-level="3.3.2" data-path="axioms.html"><a href="axioms.html#detecting-shoppers"><i class="fa fa-check"></i><b>3.3.2</b> Detecting shoppers</a></li>
-<li class="chapter" data-level="3.3.3" data-path="axioms.html"><a href="axioms.html#de-morgans-law"><i class="fa fa-check"></i><b>3.3.3</b> De Morgan’s Law</a></li>
-<li class="chapter" data-level="3.3.4" data-path="axioms.html"><a href="axioms.html#probability-union-and-complement"><i class="fa fa-check"></i><b>3.3.4</b> Probability, union, and complement</a></li>
-</ul></li>
-<li class="chapter" data-level="3.4" data-path="axioms.html"><a href="axioms.html#conditional-probability"><i class="fa fa-check"></i><b>3.4</b> Conditional probability</a></li>
-<li class="chapter" data-level="3.5" data-path="axioms.html"><a href="axioms.html#independence"><i class="fa fa-check"></i><b>3.5</b> Independence</a>
-<ul>
-<li class="chapter" data-level="3.5.1" data-path="axioms.html"><a href="axioms.html#another-characterisation"><i class="fa fa-check"></i><b>3.5.1</b> Another characterisation</a></li>
-</ul></li>
-<li class="chapter" data-level="3.6" data-path="axioms.html"><a href="axioms.html#theorem-i-the-theorem-of-total-probabilities"><i class="fa fa-check"></i><b>3.6</b> Theorem I: The Theorem of Total Probabilities</a></li>
-<li class="chapter" data-level="3.7" data-path="axioms.html"><a href="axioms.html#theorem-ii-bayes-theorem"><i class="fa fa-check"></i><b>3.7</b> Theorem II: Bayes’ Theorem</a>
-<ul>
-<li class="chapter" data-level="3.7.1" data-path="axioms.html"><a href="axioms.html#guessing-in-a-multiple-choice-exam"><i class="fa fa-check"></i><b>3.7.1</b> Guessing in a multiple choice exam</a></li>
-<li class="chapter" data-level="3.7.2" data-path="axioms.html"><a href="axioms.html#rent-car-maintenance"><i class="fa fa-check"></i><b>3.7.2</b> Rent car maintenance</a></li>
-</ul></li>
-</ul></li>
-<li class="chapter" data-level="4" data-path="discreterv.html"><a href="discreterv.html"><i class="fa fa-check"></i><b>4</b> 🔧 Discrete Random Variables</a>
-<ul>
-<li class="chapter" data-level="4.1" data-path="discreterv.html"><a href="discreterv.html#what-is-a-random-variable"><i class="fa fa-check"></i><b>4.1</b> What is a Random Variable?</a>
-<ul>
-<li class="chapter" data-level="4.1.1" data-path="discreterv.html"><a href="discreterv.html#formal-definition-of-a-random-variable"><i class="fa fa-check"></i><b>4.1.1</b> Formal definition of a random variable</a></li>
-<li class="chapter" data-level="4.1.2" data-path="discreterv.html"><a href="discreterv.html#example-from-s-to-d-via-xcdot"><i class="fa fa-check"></i><b>4.1.2</b> Example: from <span class="math inline">\(S\)</span> to <span class="math inline">\(D\)</span>, via <span class="math inline">\(X(\cdot)\)</span></a></li>
-<li class="chapter" data-level="4.1.3" data-path="discreterv.html"><a href="discreterv.html#an-example-from-gambling"><i class="fa fa-check"></i><b>4.1.3</b> An Example from gambling</a></li>
-</ul></li>
-<li class="chapter" data-level="4.2" data-path="discreterv.html"><a href="discreterv.html#discrete-random-variables"><i class="fa fa-check"></i><b>4.2</b> Discrete random variables</a></li>
-<li class="chapter" data-level="4.3" data-path="discreterv.html"><a href="discreterv.html#cumulative-distribution-function"><i class="fa fa-check"></i><b>4.3</b> Cumulative Distribution Function</a></li>
-<li class="chapter" data-level="4.4" data-path="discreterv.html"><a href="discreterv.html#distributional-summaries-for-discrete-random-variables"><i class="fa fa-check"></i><b>4.4</b> Distributional summaries for discrete random variables</a>
-<ul>
-<li class="chapter" data-level="4.4.1" data-path="discreterv.html"><a href="discreterv.html#properties"><i class="fa fa-check"></i><b>4.4.1</b> Properties</a></li>
-</ul></li>
-<li class="chapter" data-level="4.5" data-path="discreterv.html"><a href="discreterv.html#dependenceindependence"><i class="fa fa-check"></i><b>4.5</b> Dependence/Independence</a>
-<ul>
-<li class="chapter" data-level="4.5.1" data-path="discreterv.html"><a href="discreterv.html#more-important-properties"><i class="fa fa-check"></i><b>4.5.1</b> More important properties</a></li>
-<li class="chapter" data-level="4.5.2" data-path="discreterv.html"><a href="discreterv.html#more-on-expectations"><i class="fa fa-check"></i><b>4.5.2</b> More on expectations</a></li>
-</ul></li>
-<li class="chapter" data-level="4.6" data-path="discreterv.html"><a href="discreterv.html#some-discrete-distributions-of-interest"><i class="fa fa-check"></i><b>4.6</b> Some discrete distributions of interest</a>
-<ul>
-<li class="chapter" data-level="4.6.1" data-path="discreterv.html"><a href="discreterv.html#discrete-uniform-distribution"><i class="fa fa-check"></i><b>4.6.1</b> Discrete uniform distribution</a></li>
-<li class="chapter" data-level="4.6.2" data-path="discreterv.html"><a href="discreterv.html#bernoulli-trials"><i class="fa fa-check"></i><b>4.6.2</b> Bernoulli Trials</a></li>
-<li class="chapter" data-level="4.6.3" data-path="discreterv.html"><a href="discreterv.html#the-binomial-distribution"><i class="fa fa-check"></i><b>4.6.3</b> The Binomial Distribution</a></li>
-<li class="chapter" data-level="4.6.4" data-path="discreterv.html"><a href="discreterv.html#poisson-distribution"><i class="fa fa-check"></i><b>4.6.4</b> Poisson Distribution</a></li>
-<li class="chapter" data-level="4.6.5" data-path="discreterv.html"><a href="discreterv.html#the-hypergeometric-distribution"><i class="fa fa-check"></i><b>4.6.5</b> The Hypergeometric Distribution</a></li>
-<li class="chapter" data-level="4.6.6" data-path="discreterv.html"><a href="discreterv.html#the-negative-binomial-distribution"><i class="fa fa-check"></i><b>4.6.6</b> The Negative Binomial Distribution</a></li>
-<li class="chapter" data-level="4.6.7" data-path="discreterv.html"><a href="discreterv.html#illustrations-4"><i class="fa fa-check"></i><b>4.6.7</b> Illustrations</a></li>
-<li class="chapter" data-level="4.6.8" data-path="discreterv.html"><a href="discreterv.html#the-geometric-distribution"><i class="fa fa-check"></i><b>4.6.8</b> The Geometric Distribution</a></li>
-</ul></li>
-</ul></li>
-<li class="chapter" data-level="5" data-path="continuousrv.html"><a href="continuousrv.html"><i class="fa fa-check"></i><b>5</b> 🔧 Continuous Random Variable</a>
-<ul>
-<li class="chapter" data-level="5.1" data-path="continuousrv.html"><a href="continuousrv.html#two-motivating-examples"><i class="fa fa-check"></i><b>5.1</b> Two Motivating Examples</a></li>
-<li class="chapter" data-level="5.2" data-path="continuousrv.html"><a href="continuousrv.html#cumulative-distribution-function-cdf"><i class="fa fa-check"></i><b>5.2</b> Cumulative Distribution Function (CDF)</a></li>
-<li class="chapter" data-level="5.3" data-path="continuousrv.html"><a href="continuousrv.html#distributional-summaries"><i class="fa fa-check"></i><b>5.3</b> Distributional Summaries</a>
-<ul>
-<li class="chapter" data-level="5.3.1" data-path="continuousrv.html"><a href="continuousrv.html#the-expectation"><i class="fa fa-check"></i><b>5.3.1</b> The Expectation</a></li>
-<li class="chapter" data-level="5.3.2" data-path="continuousrv.html"><a href="continuousrv.html#the-variance"><i class="fa fa-check"></i><b>5.3.2</b> The Variance</a></li>
-<li class="chapter" data-level="5.3.3" data-path="continuousrv.html"><a href="continuousrv.html#important-properties-of-expectations"><i class="fa fa-check"></i><b>5.3.3</b> Important properties of expectations</a></li>
-<li class="chapter" data-level="5.3.4" data-path="continuousrv.html"><a href="continuousrv.html#mode-and-median"><i class="fa fa-check"></i><b>5.3.4</b> Mode and Median</a></li>
-</ul></li>
-<li class="chapter" data-level="5.4" data-path="continuousrv.html"><a href="continuousrv.html#some-important-continuous-distributions"><i class="fa fa-check"></i><b>5.4</b> Some Important Continuous Distributions</a>
-<ul>
-<li class="chapter" data-level="5.4.1" data-path="continuousrv.html"><a href="continuousrv.html#continuous-uniform-distribution"><i class="fa fa-check"></i><b>5.4.1</b> Continuous Uniform Distribution</a></li>
-<li class="chapter" data-level="5.4.2" data-path="continuousrv.html"><a href="continuousrv.html#normal-gaussian-distribution"><i class="fa fa-check"></i><b>5.4.2</b> Normal (Gaussian) distribution</a></li>
-<li class="chapter" data-level="5.4.3" data-path="continuousrv.html"><a href="continuousrv.html#the-chi-squared-distribution"><i class="fa fa-check"></i><b>5.4.3</b> The Chi-squared distribution</a></li>
-<li class="chapter" data-level="5.4.4" data-path="continuousrv.html"><a href="continuousrv.html#the-student-t-distribution"><i class="fa fa-check"></i><b>5.4.4</b> The Student-t distribution</a></li>
-<li class="chapter" data-level="5.4.5" data-path="continuousrv.html"><a href="continuousrv.html#the-f-distribution"><i class="fa fa-check"></i><b>5.4.5</b> The F distribution</a></li>
-<li class="chapter" data-level="5.4.6" data-path="continuousrv.html"><a href="continuousrv.html#the-lognormal-distribution"><i class="fa fa-check"></i><b>5.4.6</b> The lognormal distribution</a></li>
-<li class="chapter" data-level="5.4.7" data-path="continuousrv.html"><a href="continuousrv.html#exponential-distribution"><i class="fa fa-check"></i><b>5.4.7</b> Exponential distribution</a></li>
-</ul></li>
-<li class="chapter" data-level="5.5" data-path="continuousrv.html"><a href="continuousrv.html#transformation-of-variables"><i class="fa fa-check"></i><b>5.5</b> Transformation of variables</a>
-<ul>
-<li class="chapter" data-level="5.5.1" data-path="continuousrv.html"><a href="continuousrv.html#transformation-of-discrete-random-variables"><i class="fa fa-check"></i><b>5.5.1</b> Transformation of discrete random variables</a></li>
-<li class="chapter" data-level="5.5.2" data-path="continuousrv.html"><a href="continuousrv.html#transformation-of-variables-using-the-cdf"><i class="fa fa-check"></i><b>5.5.2</b> Transformation of variables using the CDF</a></li>
-<li class="chapter" data-level="5.5.3" data-path="continuousrv.html"><a href="continuousrv.html#function-1-to-1-and-monotone-decreasing"><i class="fa fa-check"></i><b>5.5.3</b> Function 1-to-1 and monotone decreasing</a></li>
-<li class="chapter" data-level="5.5.4" data-path="continuousrv.html"><a href="continuousrv.html#transformation-of-continuous-rv-through-pdf"><i class="fa fa-check"></i><b>5.5.4</b> Transformation of continuous RV through pdf</a></li>
-<li class="chapter" data-level="5.5.5" data-path="continuousrv.html"><a href="continuousrv.html#example-of-transformation-using-pdf"><i class="fa fa-check"></i><b>5.5.5</b> Example of transformation using pdf</a></li>
-<li class="chapter" data-level="5.5.6" data-path="continuousrv.html"><a href="continuousrv.html#a-caveat"><i class="fa fa-check"></i><b>5.5.6</b> A caveat</a></li>
-</ul></li>
-<li class="chapter" data-level="5.6" data-path="continuousrv.html"><a href="continuousrv.html#the-big-picture"><i class="fa fa-check"></i><b>5.6</b> The big picture</a></li>
-</ul></li>
-<li class="chapter" data-level="6" data-path="limittheorems.html"><a href="limittheorems.html"><i class="fa fa-check"></i><b>6</b> 📝 Limit Theorems</a>
-<ul>
-<li class="chapter" data-level="6.1" data-path="limittheorems.html"><a href="limittheorems.html#sequences-of-random-variables"><i class="fa fa-check"></i><b>6.1</b> Sequences of Random Variables</a>
-<ul>
-<li class="chapter" data-level="6.1.1" data-path="limittheorems.html"><a href="limittheorems.html#example-bernoulli-trials-and-their-sum"><i class="fa fa-check"></i><b>6.1.1</b> Example: Bernoulli Trials and their sum</a></li>
-<li class="chapter" data-level="6.1.2" data-path="limittheorems.html"><a href="limittheorems.html#example-bernoulli-trials-and-limit-behaviour"><i class="fa fa-check"></i><b>6.1.2</b> Example: Bernoulli Trials and limit behaviour</a></li>
-</ul></li>
-<li class="chapter" data-level="6.2" data-path="limittheorems.html"><a href="limittheorems.html#convergence-in-probability-oversetprightarrow"><i class="fa fa-check"></i><b>6.2</b> Convergence in Probability (<span class="math inline">\(\overset{p}{\rightarrow }\)</span>)</a>
-<ul>
-<li class="chapter" data-level="6.2.1" data-path="limittheorems.html"><a href="limittheorems.html#operational-rules-for-oversetprightarrow"><i class="fa fa-check"></i><b>6.2.1</b> Operational Rules for <span class="math inline">\(\overset{p}{\rightarrow }\)</span></a></li>
-<li class="chapter" data-level="6.2.2" data-path="limittheorems.html"><a href="limittheorems.html#convergence-of-sample-moments-as-a-motivation"><i class="fa fa-check"></i><b>6.2.2</b> Convergence of Sample Moments as a motivation…</a></li>
-<li class="chapter" data-level="6.2.3" data-path="limittheorems.html"><a href="limittheorems.html#the-weak-law-of-large-numbers-wlln"><i class="fa fa-check"></i><b>6.2.3</b> The Weak Law of Large Numbers (WLLN)</a></li>
-<li class="chapter" data-level="6.2.4" data-path="limittheorems.html"><a href="limittheorems.html#the-wlln-and-chebyshevs-inequality"><i class="fa fa-check"></i><b>6.2.4</b> The WLLN and Chebyshev’s Inequality</a></li>
-<li class="chapter" data-level="6.2.5" data-path="limittheorems.html"><a href="limittheorems.html#chebyshevs-and-markovs-inequality"><i class="fa fa-check"></i><b>6.2.5</b> Chebyshev’s (and Markov’s) Inequality</a></li>
-<li class="chapter" data-level="6.2.6" data-path="limittheorems.html"><a href="limittheorems.html#example-markovs-inequality"><i class="fa fa-check"></i><b>6.2.6</b> Example: Markov’s Inequality</a></li>
-</ul></li>
-</ul></li>
-<li class="chapter" data-level="7" data-path="bivariatediscreterv.html"><a href="bivariatediscreterv.html"><i class="fa fa-check"></i><b>7</b> 📝 Bivariate Discrete Random Variables</a>
-<ul>
-<li class="chapter" data-level="7.1" data-path="bivariatediscreterv.html"><a href="bivariatediscreterv.html#joint-probability-functions"><i class="fa fa-check"></i><b>7.1</b> Joint Probability Functions</a></li>
-<li class="chapter" data-level="7.2" data-path="bivariatediscreterv.html"><a href="bivariatediscreterv.html#marginal-probability-mass-functions"><i class="fa fa-check"></i><b>7.2</b> Marginal probability (mass) functions</a>
-<ul>
-<li class="chapter" data-level="7.2.1" data-path="bivariatediscreterv.html"><a href="bivariatediscreterv.html#first-example"><i class="fa fa-check"></i><b>7.2.1</b> First Example</a></li>
-<li class="chapter" data-level="7.2.2" data-path="bivariatediscreterv.html"><a href="bivariatediscreterv.html#empirical-example"><i class="fa fa-check"></i><b>7.2.2</b> Empirical Example</a></li>
-</ul></li>
-<li class="chapter" data-level="7.3" data-path="bivariatediscreterv.html"><a href="bivariatediscreterv.html#conditional-probability-mass-function"><i class="fa fa-check"></i><b>7.3</b> Conditional probability mass function</a></li>
-<li class="chapter" data-level="7.4" data-path="bivariatediscreterv.html"><a href="bivariatediscreterv.html#independence-1"><i class="fa fa-check"></i><b>7.4</b> Independence</a></li>
-<li class="chapter" data-level="7.5" data-path="bivariatediscreterv.html"><a href="bivariatediscreterv.html#expectations-for-jointly-distributed-discrete-rvs"><i class="fa fa-check"></i><b>7.5</b> Expectations for Jointly Distributed Discrete RVs</a></li>
-<li class="chapter" data-level="7.6" data-path="bivariatediscreterv.html"><a href="bivariatediscreterv.html#iterated-expectations"><i class="fa fa-check"></i><b>7.6</b> Iterated Expectations</a></li>
-<li class="chapter" data-level="7.7" data-path="bivariatediscreterv.html"><a href="bivariatediscreterv.html#expectations-for-jointly-distributed-discrete-rvs-1"><i class="fa fa-check"></i><b>7.7</b> Expectations for Jointly Distributed Discrete RVs</a></li>
-<li class="chapter" data-level="7.8" data-path="bivariatediscreterv.html"><a href="bivariatediscreterv.html#some-properties-of-covariances"><i class="fa fa-check"></i><b>7.8</b> Some Properties of Covariances</a>
-<ul>
-<li class="chapter" data-level="7.8.1" data-path="bivariatediscreterv.html"><a href="bivariatediscreterv.html#a-remark"><i class="fa fa-check"></i><b>7.8.1</b> A remark</a></li>
-<li class="chapter" data-level="7.8.2" data-path="bivariatediscreterv.html"><a href="bivariatediscreterv.html#an-important-property-of-correlation"><i class="fa fa-check"></i><b>7.8.2</b> An important property of correlation</a></li>
-</ul></li>
-</ul></li>
-<li class="chapter" data-level="8" data-path="numericalmethods.html"><a href="numericalmethods.html"><i class="fa fa-check"></i><b>8</b> 📝 Numerical Methods</a>
-<ul>
-<li class="chapter" data-level="8.1" data-path="numericalmethods.html"><a href="numericalmethods.html#introduction-to-simulation"><i class="fa fa-check"></i><b>8.1</b> Introduction to simulation</a></li>
-<li class="chapter" data-level="8.2" data-path="numericalmethods.html"><a href="numericalmethods.html#simulation-procedure"><i class="fa fa-check"></i><b>8.2</b> Simulation procedure</a></li>
-<li class="chapter" data-level="8.3" data-path="numericalmethods.html"><a href="numericalmethods.html#simulation-in-r"><i class="fa fa-check"></i><b>8.3</b> Simulation in R</a></li>
-<li class="chapter" data-level="8.4" data-path="numericalmethods.html"><a href="numericalmethods.html#coin-tossing"><i class="fa fa-check"></i><b>8.4</b> Coin tossing</a></li>
-<li class="chapter" data-level="8.5" data-path="numericalmethods.html"><a href="numericalmethods.html#summarizing"><i class="fa fa-check"></i><b>8.5</b> Summarizing</a></li>
-</ul></li>
-<li class="chapter" data-level="9" data-path="exercise-solutions.html"><a href="exercise-solutions.html"><i class="fa fa-check"></i><b>9</b> 📝 Exercise Solutions</a>
-<ul>
-<li class="chapter" data-level="9.1" data-path="exercise-solutions.html"><a href="exercise-solutions.html#chapter-1"><i class="fa fa-check"></i><b>9.1</b> Chapter 1</a></li>
-<li class="chapter" data-level="9.2" data-path="exercise-solutions.html"><a href="exercise-solutions.html#chapter-2"><i class="fa fa-check"></i><b>9.2</b> Chapter 2</a>
-<ul>
-<li class="chapter" data-level="9.2.1" data-path="exercise-solutions.html"><a href="exercise-solutions.html#exercise-2.1"><i class="fa fa-check"></i><b>9.2.1</b> Exercise 2.1</a></li>
-<li class="chapter" data-level="9.2.2" data-path="exercise-solutions.html"><a href="exercise-solutions.html#exercise-2.2"><i class="fa fa-check"></i><b>9.2.2</b> Exercise 2.2</a></li>
-<li class="chapter" data-level="9.2.3" data-path="exercise-solutions.html"><a href="exercise-solutions.html#exercise-2.3"><i class="fa fa-check"></i><b>9.2.3</b> Exercise 2.3</a></li>
-<li class="chapter" data-level="9.2.4" data-path="exercise-solutions.html"><a href="exercise-solutions.html#exercise-2.4"><i class="fa fa-check"></i><b>9.2.4</b> Exercise 2.4</a></li>
-<li class="chapter" data-level="9.2.5" data-path="exercise-solutions.html"><a href="exercise-solutions.html#exercise-2.5"><i class="fa fa-check"></i><b>9.2.5</b> Exercise 2.5</a></li>
-<li class="chapter" data-level="9.2.6" data-path="exercise-solutions.html"><a href="exercise-solutions.html#exercise-2.6"><i class="fa fa-check"></i><b>9.2.6</b> Exercise 2.6</a></li>
-<li class="chapter" data-level="9.2.7" data-path="exercise-solutions.html"><a href="exercise-solutions.html#exercise-2.7"><i class="fa fa-check"></i><b>9.2.7</b> Exercise 2.7</a></li>
-<li class="chapter" data-level="9.2.8" data-path="exercise-solutions.html"><a href="exercise-solutions.html#exercise-2.8"><i class="fa fa-check"></i><b>9.2.8</b> Exercise 2.8</a></li>
-<li class="chapter" data-level="9.2.9" data-path="exercise-solutions.html"><a href="exercise-solutions.html#exercise-2.8-1"><i class="fa fa-check"></i><b>9.2.9</b> Exercise 2.8</a></li>
-</ul></li>
-<li class="chapter" data-level="9.3" data-path="exercise-solutions.html"><a href="exercise-solutions.html#chapter-3"><i class="fa fa-check"></i><b>9.3</b> Chapter 3</a></li>
-<li class="chapter" data-level="9.4" data-path="exercise-solutions.html"><a href="exercise-solutions.html#chapter-4"><i class="fa fa-check"></i><b>9.4</b> Chapter 4</a></li>
-<li class="chapter" data-level="9.5" data-path="exercise-solutions.html"><a href="exercise-solutions.html#chapter-5"><i class="fa fa-check"></i><b>9.5</b> Chapter 5</a></li>
-<li class="chapter" data-level="9.6" data-path="exercise-solutions.html"><a href="exercise-solutions.html#chapter-6"><i class="fa fa-check"></i><b>9.6</b> Chapter 6</a></li>
-<li class="chapter" data-level="9.7" data-path="exercise-solutions.html"><a href="exercise-solutions.html#chapter-7"><i class="fa fa-check"></i><b>9.7</b> Chapter 7</a></li>
-<li class="chapter" data-level="9.8" data-path="exercise-solutions.html"><a href="exercise-solutions.html#chapter-8"><i class="fa fa-check"></i><b>9.8</b> Chapter 8</a></li>
-</ul></li>
-<li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
-<li class="divider"></li>
-<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
-
-</ul>
-
-      </nav>
+    <div class="d-flex align-items-start justify-content-between">
+      <h1>
+        <a href="index.html" title="Course Notes">🃏 Probability I</a>:
+        <small class="text-muted">Course Notes</small>
+      </h1>
+      <button class="btn btn-outline-primary d-lg-none ml-2 mt-1" type="button" data-toggle="collapse" data-target="#main-nav" aria-expanded="true" aria-controls="main-nav"><i class="fas fa-bars"></i><span class="sr-only">Show table of contents</span></button>
     </div>
 
-    <div class="book-body">
-      <div class="body-inner">
-        <div class="book-header" role="navigation">
-          <h1>
-            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">🃏 Probability I</a>
-          </h1>
+    <div id="main-nav" class="collapse-lg">
+      <form role="search">
+        <input id="search" class="form-control" type="search" placeholder="Search" aria-label="Search">
+</form>
+
+      <nav aria-label="Table of contents"><h2>Table of contents</h2>
+        <ul class="book-toc list-unstyled">
+<li><a class="" href="index.html">About this lecture</a></li>
+<li><a class="active" href="introduction.html"><span class="header-section-number">1</span> Introduction</a></li>
+<li><a class="" href="settheory.html"><span class="header-section-number">2</span> Elements of Set Theory for Probability</a></li>
+<li><a class="" href="axioms.html"><span class="header-section-number">3</span> Probability Axioms</a></li>
+<li><a class="" href="discreterv.html"><span class="header-section-number">4</span> 🔧 Discrete Random Variables</a></li>
+<li><a class="" href="continuousrv.html"><span class="header-section-number">5</span> 🔧 Continuous Random Variable</a></li>
+<li><a class="" href="limittheorems.html"><span class="header-section-number">6</span> 📝 Limit Theorems</a></li>
+<li><a class="" href="bivariatediscreterv.html"><span class="header-section-number">7</span> 📝 Bivariate Discrete Random Variables</a></li>
+<li><a class="" href="numericalmethods.html"><span class="header-section-number">8</span> 📝 Numerical Methods</a></li>
+<li><a class="" href="exercise-solutions.html"><span class="header-section-number">9</span> 📝 Exercise Solutions</a></li>
+<li><a class="" href="references.html">References</a></li>
+</ul>
+
+        <div class="book-extra">
+          
         </div>
-
-        <div class="page-wrapper" tabindex="-1" role="main">
-          <div class="page-inner">
-
-            <section class="normal" id="section-">
-<div id="introduction" class="section level1" number="1">
-<h1><span class="header-section-number">Chapter 1</span> Introduction</h1>
+      </nav>
+</div>
+  </header><main class="col-sm-12 col-md-9 col-lg-7" id="content"><div id="introduction" class="section level1" number="1">
+<h1>
+<span class="header-section-number">1</span> Introduction<a class="anchor" aria-label="anchor" href="#introduction"><i class="fas fa-link"></i></a>
+</h1>
 <!-- You can label chapter and section titles using `{#label}` after them, e.g., we can reference Chapter \@ref(intro). If you do not manually label them, there will be automatic labels anyway, e.g., Chapter \@ref(methods). -->
 <!-- Figures and tables with captions will be placed in `figure` and `table` environments, respectively. -->
 <!-- # ```{r nice-fig, fig.cap='Here is a nice figure!', out.width='80%', fig.asp=.75, fig.align='center'} -->
@@ -308,19 +75,22 @@
 <!-- #   booktabs = TRUE -->
 <!-- # ) -->
 <!-- ``` -->
-<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-1"></span>
-<img src="img/fun/EC_Talking_statistics_to_schools.png" alt="_Taking statistics to schools_ by Enrico Chavez" width="80%" />
-<p class="caption">
+<div class="figure" style="text-align: center">
+<span style="display:block;" id="fig:unnamed-chunk-7"></span>
+<img src="img/fun/EC_Talking_statistics_to_schools.png" alt="_Taking statistics to schools_ by Enrico Chavez" width="80%"><p class="caption">
 Figure 1.1: <em>Taking statistics to schools</em> by Enrico Chavez
 </p>
 </div>
 <div id="a-world-of-data" class="section level2" number="1.1">
-<h2><span class="header-section-number">1.1</span> A World of Data</h2>
+<h2>
+<span class="header-section-number">1.1</span> A World of Data<a class="anchor" aria-label="anchor" href="#a-world-of-data"><i class="fas fa-link"></i></a>
+</h2>
 <p><strong>Data is the most important commodity in our connected world of today</strong>. Generated at a breakneck pace and related to practically all of the aspects of human life, Data has become a valuable resource for the creation of products and services designed to improve people’s lives. Gathering this data can potentially help companies design better policies and companies design better products.</p>
 <p>To illustrate this point, take a look at the following interactive map of the internal migration in Switzerland in 2016. Seizing historical data like this could help decision makers, such as politicians or managers in housing firms, identify migration trends and inform their decisions in what pertains, say housing projects or other infrastructure investments.</p>
 <!-- Insert a better explanation of this -->
-<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-2"></span>
-<iframe src="https://flowmap.blue/15kwLB4baXZ7jpip8q0JjgR6zDoS5Gt3gMLCTUAboQxk?v=46.760927,8.215964,6.51,0,0&amp;a=0&amp;as=1&amp;b=1&amp;bo=75&amp;c=0&amp;ca=1&amp;d=0&amp;fe=1&amp;lt=1&amp;lfm=ALL&amp;col=Default&amp;f=45" width="672" height="400px">
+<div class="figure" style="text-align: center">
+<span style="display:block;" id="fig:unnamed-chunk-8"></span>
+<iframe src="https://flowmap.blue/15kwLB4baXZ7jpip8q0JjgR6zDoS5Gt3gMLCTUAboQxk?v=46.760927,8.215964,6.51,0,0&amp;a=0&amp;as=1&amp;b=1&amp;bo=75&amp;c=0&amp;ca=1&amp;d=0&amp;fe=1&amp;lt=1&amp;lfm=ALL&amp;col=Default&amp;f=45" width="672" height="400px" data-external="1">
 </iframe>
 <p class="caption">
 Figure 1.2: Inter-cantonal migration in Switzerland in 2016, an interactive map by Ilya Bobadin with data from the Swiss Federal Statistical Office. <a href="https://flowmap.blue/">https://flowmap.blue/</a>.
@@ -330,7 +100,9 @@ Figure 1.2: Inter-cantonal migration in Switzerland in 2016, an interactive map 
 <p>The field of Mathematics that provides a formal framework of the data generation process the field of <strong>Probability</strong>, and it is the building block for <strong>Statistics</strong>, the domain of knowledge that deals with the creation of mathematical tools to analyse data.</p>
 </div>
 <div id="what-to-expect-from-this-lecture" class="section level2" number="1.2">
-<h2><span class="header-section-number">1.2</span> What to expect from this Lecture?</h2>
+<h2>
+<span class="header-section-number">1.2</span> What to expect from this Lecture?<a class="anchor" aria-label="anchor" href="#what-to-expect-from-this-lecture"><i class="fas fa-link"></i></a>
+</h2>
 <p>In this course, <strong>we study Probability as a way to introduce Statistics</strong>.</p>
 <p>Thus we do not study Probability as a subject of interest in itself. This means that we do not develop deep probability theory using all the formal theoretical arguments, but rather <strong>we set up a few principles and methods</strong> which will be <strong>helpful to study Statistics</strong>.</p>
 <!-- \includegraphics[width=0.6\textwidth,height=0.7\textheight]{y.pdf} -->
@@ -339,14 +111,16 @@ Figure 1.2: Inter-cantonal migration in Switzerland in 2016, an interactive map 
 <li><p><strong>Statistics</strong>: as the discipline that deals with the <strong>collection</strong>, <strong>presentation</strong>, <strong>analysis</strong> and <strong>interpretation</strong> of data. In future Classes, you will learn classical Statistical methods as well as their modern reincarnation (or “rebranding”): algorithmic tools known as Machine Learning, Deep Learning, etc.</p></li>
 <li><p><strong>Probability</strong> as the mathematical formalisation of randomness and uncertainty the main building block of Statistical methods.</p></li>
 </ul>
-<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-3"></span>
-<img src="https://i.redd.it/8r2fd78pgna51.png" alt="_Thinking of learning ML this weekend, is there math?_ (2020). Retrieved from [r/DataScienceMemes](https://www.reddit.com/r/DataScienceMemes/comments/hqi8sv/thinking_of_learning_ml_this_weekend_is_there_math/?utm_source=share&amp;utm_medium=web2x&amp;context=3)" width="75%" />
-<p class="caption">
+<div class="figure" style="text-align: center">
+<span style="display:block;" id="fig:unnamed-chunk-9"></span>
+<img src="https://i.redd.it/8r2fd78pgna51.png" alt="_Thinking of learning ML this weekend, is there math?_ (2020). Retrieved from [r/DataScienceMemes](https://www.reddit.com/r/DataScienceMemes/comments/hqi8sv/thinking_of_learning_ml_this_weekend_is_there_math/?utm_source=share&amp;utm_medium=web2x&amp;context=3)" width="75%"><p class="caption">
 Figure 1.3: <em>Thinking of learning ML this weekend, is there math?</em> (2020). Retrieved from <a href="https://www.reddit.com/r/DataScienceMemes/comments/hqi8sv/thinking_of_learning_ml_this_weekend_is_there_math/?utm_source=share&amp;utm_medium=web2x&amp;context=3">r/DataScienceMemes</a>
 </p>
 </div>
 <div id="one-intuitive-illustration" class="section level3" number="1.2.1">
-<h3><span class="header-section-number">1.2.1</span> One intuitive illustration</h3>
+<h3>
+<span class="header-section-number">1.2.1</span> One intuitive illustration<a class="anchor" aria-label="anchor" href="#one-intuitive-illustration"><i class="fas fa-link"></i></a>
+</h3>
 <p>Before jumping into the core of the subject, I would like to make a little detour that helps illustrate how prevalent probabilities are in practically every aspect of daily life. Oftentimes, in Movies and TV shows, we hear characters facing uncertain outcomes. When our protagonists are about to make life altering decisions they often ask themselves:</p>
 <blockquote>
 <p>What are my <strong>chances</strong> of winning?</p>
@@ -374,7 +148,9 @@ In a bit of an abuse of language, this value, constitutes the <strong>probabilit
 <!-- \includegraphics[width=0.4\textwidth,height=0.5\textheight]{profit.pdf} -->
 <!-- \includegraphics[width=0.3\textwidth,height=0.3\textheight]{tipoS.pdf} -->
 <div id="another-illustration-stock-price-evolution" class="section level4" number="1.2.1.1">
-<h4><span class="header-section-number">1.2.1.1</span> Another illustration: Stock price evolution</h4>
+<h4>
+<span class="header-section-number">1.2.1.1</span> Another illustration: Stock price evolution<a class="anchor" aria-label="anchor" href="#another-illustration-stock-price-evolution"><i class="fas fa-link"></i></a>
+</h4>
 <p>Let us see how to characterise the uncertainty of the price of a financial asset, such as a Stock, with a simple probabilistic model. To account for the fluctuations in the price, we can make the following simple assumptions:</p>
 <p>Let <span class="math inline">\(S_0\)</span> denote the price of the Stock at time <span class="math inline">\(t_0\)</span>, and consider that:</p>
 <ul>
@@ -384,9 +160,9 @@ In a bit of an abuse of language, this value, constitutes the <strong>probabilit
 <p>We can therefore infer the price at time <span class="math inline">\(t_1\)</span> by <span class="math inline">\(S_1 = uS_0\)</span> if the price goes up, and by <span class="math inline">\(S_1=dS_0\)</span> if the price goes down.</p>
 <p>Let us set <span class="math inline">\(S_0=1\)</span> (US Dollar) and the factors <span class="math inline">\(u=2\)</span> (i.e. doubling the price) and <span class="math inline">\(d=1/2\)</span> (i.e. halving the price). <strong>What can we say about the price at time <span class="math inline">\(t_2\)</span>?</strong></p>
 <p>To answer this last question we could represent the evolution of the price using a <strong>Probability Tree Diagram</strong>. In such charts, we organise the different <strong>outcomes in branches</strong>. At the end of each branch (in the <em>nodes</em>) , we place the outcomes while, hovering over each branch (on the <em>edges</em>) we place the probability associated with the outcome.</p>
-<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-4"></span>
-<img src="Prob1-GSEM-UNIGE_files/figure-html/unnamed-chunk-4-1.png" alt="Stock Price Evolution as a Probability Tree Diagram" width="672" />
-<p class="caption">
+<div class="figure" style="text-align: center">
+<span style="display:block;" id="fig:unnamed-chunk-10"></span>
+<img src="Prob1-GSEM-UNIGE_files/figure-html/unnamed-chunk-10-1.png" alt="Stock Price Evolution as a Probability Tree Diagram" width="672"><p class="caption">
 Figure 1.4: Stock Price Evolution as a Probability Tree Diagram
 </p>
 </div>
@@ -396,38 +172,45 @@ Figure 1.4: Stock Price Evolution as a Probability Tree Diagram
 </ul>
 <p>Hence:</p>
 <ul>
-<li>The probability of <span class="math inline">\(S_2 = u^2 = 4\)</span> is <span class="math inline">\(p^2\)</span></li>
-<li>The probability of <span class="math inline">\(S_2 = d^2 = 4\)</span> is <span class="math inline">\((1-p)^2\)</span></li>
-<li>The probability of <span class="math inline">\(S_2 = d^2 = 1\)</span> is <span class="math inline">\((1-p)p+p(1-p)\)</span></li>
+<li>The probability of <span class="math inline">\(S_2 = u^2 = 4\)</span> is <span class="math inline">\(p^2\)</span>
+</li>
+<li>The probability of <span class="math inline">\(S_2 = d^2 = 4\)</span> is <span class="math inline">\((1-p)^2\)</span>
+</li>
+<li>The probability of <span class="math inline">\(S_2 = d^2 = 1\)</span> is <span class="math inline">\((1-p)p+p(1-p)\)</span>
+</li>
 </ul>
-<!-- #### Example: Quanta -->
-<!-- \includegraphics[width=0.3\textwidth,height=0.2\textheight]{Quantum.pdf} -->
-<!-- \includegraphics[width=0.4\textwidth,height=0.9\textheight, angle = -90]{cern.pdf} -->
-<!-- Probability models are the basis for quantum physics: they characterize the **uncertainty** of properties of single energy ``quanta'' emitted by a ``perfect radiator" with a given temperature ($T$). Specifically, recall the famous Einstein's equation $$\boxed{\mathcal{E} = m c^2}$$ which expresses the energy $\mathcal{E}$  in terms of the mass \underline{$m$, a random quantity,} and $c$, the speed of light. Moreover, consider the geometric energy mean defined by ${\mathcal{E}_G} = c_0 k_B T$, where $c_0 \approx 2.134$ and $k_B$ is Boltzmann's constant. Thus, one can define the random quantity -->
-<!-- $$W = \frac{\mathcal{E}}{{\mathcal{E}_G}},$$ -->
-<!-- which is called _quantum mass ratio_. -->
-<!-- The random behaviour of $W$ can be described by a probability density function: -->
-<!-- > Insert Illustration or animation of the quantum mass ratio.  -->
-<!-- \includegraphics[width=0.4\textwidth,height=0.6\textheight, angle = 0]{W.pdf} -->
+<!-- #### Example: Quanta --><!-- \includegraphics[width=0.3\textwidth,height=0.2\textheight]{Quantum.pdf} --><!-- \includegraphics[width=0.4\textwidth,height=0.9\textheight, angle = -90]{cern.pdf} --><!-- Probability models are the basis for quantum physics: they characterize the **uncertainty** of properties of single energy ``quanta'' emitted by a ``perfect radiator" with a given temperature ($T$). Specifically, recall the famous Einstein's equation $$\boxed{\mathcal{E} = m c^2}$$ which expresses the energy $\mathcal{E}$  in terms of the mass \underline{$m$, a random quantity,} and $c$, the speed of light. Moreover, consider the geometric energy mean defined by ${\mathcal{E}_G} = c_0 k_B T$, where $c_0 \approx 2.134$ and $k_B$ is Boltzmann's constant. Thus, one can define the random quantity --><!-- $$W = \frac{\mathcal{E}}{{\mathcal{E}_G}},$$ --><!-- which is called _quantum mass ratio_. --><!-- The random behaviour of $W$ can be described by a probability density function: --><!-- > Insert Illustration or animation of the quantum mass ratio.  --><!-- \includegraphics[width=0.4\textwidth,height=0.6\textheight, angle = 0]{W.pdf} -->
 </div>
 </div>
 </div>
 <div id="a-quick-reminder-of-mathematics" class="section level2" number="1.3">
-<h2><span class="header-section-number">1.3</span> A quick reminder of Mathematics</h2>
+<h2>
+<span class="header-section-number">1.3</span> A quick reminder of Mathematics<a class="anchor" aria-label="anchor" href="#a-quick-reminder-of-mathematics"><i class="fas fa-link"></i></a>
+</h2>
 <p>Probability theory is a mathematical tool. Hence, it is important to review some elemental concepts. Here are some of the formulae that we will use throughout the course.</p>
 <div id="powers-and-logarithms" class="section level3" number="1.3.1">
-<h3><span class="header-section-number">1.3.1</span> Powers and Logarithms</h3>
+<h3>
+<span class="header-section-number">1.3.1</span> Powers and Logarithms<a class="anchor" aria-label="anchor" href="#powers-and-logarithms"><i class="fas fa-link"></i></a>
+</h3>
 <ul>
-<li><span class="math inline">\(a^m \times a^n = a^{m+n}\)</span>;</li>
-<li><span class="math inline">\((a^n)^m = a^{m \times n}\)</span>;</li>
-<li><span class="math inline">\(\ln(\exp^{a}) = a\)</span>;</li>
-<li><span class="math inline">\(a=\ln(\exp^{a}) = \ln(e^a)\)</span>;</li>
-<li><span class="math inline">\(\ln(a^n) = n \times \ln a\)</span>;</li>
-<li><span class="math inline">\(\ln (a \times b) = \ln (a) + \ln (b)\)</span>;</li>
+<li>
+<span class="math inline">\(a^m \times a^n = a^{m+n}\)</span>;</li>
+<li>
+<span class="math inline">\((a^n)^m = a^{m \times n}\)</span>;</li>
+<li>
+<span class="math inline">\(\ln(\exp^{a}) = a\)</span>;</li>
+<li>
+<span class="math inline">\(a=\ln(\exp^{a}) = \ln(e^a)\)</span>;</li>
+<li>
+<span class="math inline">\(\ln(a^n) = n \times \ln a\)</span>;</li>
+<li>
+<span class="math inline">\(\ln (a \times b) = \ln (a) + \ln (b)\)</span>;</li>
 </ul>
 </div>
 <div id="differentiation" class="section level3" number="1.3.2">
-<h3><span class="header-section-number">1.3.2</span> Differentiation</h3>
+<h3>
+<span class="header-section-number">1.3.2</span> Differentiation<a class="anchor" aria-label="anchor" href="#differentiation"><i class="fas fa-link"></i></a>
+</h3>
 <p><strong>Derivatives</strong> will also play a pivotal role. Start by remembering some of the basic derivation operations:</p>
 <ul>
 <li><p>Derivative of <em><span class="math inline">\(x\)</span> to the power <span class="math inline">\(n\)</span></em>, <span class="math inline">\(f(x)= x^n\)</span>
@@ -439,21 +222,27 @@ Figure 1.4: Stock Price Evolution as a Probability Tree Diagram
 </ul>
 <p>Moreover, we will make use of some fundamental derivation rules, such as:</p>
 <div id="product-rule" class="section level4" number="1.3.2.1">
-<h4><span class="header-section-number">1.3.2.1</span> Product rule</h4>
+<h4>
+<span class="header-section-number">1.3.2.1</span> Product rule<a class="anchor" aria-label="anchor" href="#product-rule"><i class="fas fa-link"></i></a>
+</h4>
 <p>The derivative of the product between two functions is given as follows:</p>
 <p><span class="math display">\[\begin{align} 
 \frac{d [f(x)\cdot g(x)]}{dx} &amp;= \frac{df(x)}{dx} g(x) + \frac{dg(x)}{dx} f(x) \\ 
-&amp;= f&#39;(x) g(x)+ f(x) g&#39;(x)
+&amp;= f'(x) g(x)+ f(x) g'(x)
 \end{align}\]</span></p>
 </div>
 <div id="chain-rule" class="section level4" number="1.3.2.2">
-<h4><span class="header-section-number">1.3.2.2</span> Chain rule</h4>
+<h4>
+<span class="header-section-number">1.3.2.2</span> Chain rule<a class="anchor" aria-label="anchor" href="#chain-rule"><i class="fas fa-link"></i></a>
+</h4>
 <p>Let <span class="math inline">\(f(u)\)</span> and <span class="math inline">\(g(x)\)</span> two functions. Let <span class="math inline">\(f\circ g(x) = f[g(x)]\)</span> be the <strong>composite function</strong>. The derivative of the composite is given by the product:</p>
-<p><span class="math display">\[\frac{d f[g(x)]}{dx} =  (f\circ g)&#39;(x) = f&#39;[g(x)] \cdot g&#39;(x)\]</span></p>
+<p><span class="math display">\[\frac{d f[g(x)]}{dx} =  (f\circ g)'(x) = f'[g(x)] \cdot g'(x)\]</span></p>
 </div>
 </div>
 <div id="integration" class="section level3" number="1.3.3">
-<h3><span class="header-section-number">1.3.3</span> Integration</h3>
+<h3>
+<span class="header-section-number">1.3.3</span> Integration<a class="anchor" aria-label="anchor" href="#integration"><i class="fas fa-link"></i></a>
+</h3>
 <p>Integrals will be crucial in many tasks. For instance, recall that integration is <em>linear</em> over the sum, i.e. <span class="math inline">\(\forall c, d \in \mathbb{R}\)</span></p>
 <p><span class="math display">\[\int_{a}^{b} \left[c \times f(x) + d \times g(x) \right]dx = c  \times \int_{a}^{b}   f(x) dx + d \times \int_{a}^{b}   g(x) dx; \]</span></p>
 <!-- %-  A special case of Leibnitz's rule: $$ \frac{d}{dx} \int_{-\infty}^{x} f(s) ds = f(x);$$   -->
@@ -473,18 +262,19 @@ Figure 1.4: Stock Price Evolution as a Probability Tree Diagram
 <li>while the <strong>definite integral</strong> is</li>
 </ul>
 <p><span class="math display">\[F(b)-F(a)= \int_{a}^{b} f(x) dx, \quad b \geq a.\]</span>
-And in both cases: <span class="math inline">\(f(x) = F&#39;(x)\)</span></p>
+And in both cases: <span class="math inline">\(f(x) = F'(x)\)</span></p>
 </div>
 <div id="sums" class="section level3" number="1.3.4">
-<h3><span class="header-section-number">1.3.4</span> Sums</h3>
+<h3>
+<span class="header-section-number">1.3.4</span> Sums<a class="anchor" aria-label="anchor" href="#sums"><i class="fas fa-link"></i></a>
+</h3>
 <p>Besides integrals we are also going to use <strong>sums</strong>:</p>
 <ul>
 <li>Sums are denoted with a <span class="math inline">\(\Sigma\)</span> operator and an <em>index</em> <span class="math inline">\(i\)</span>, as in:</li>
 </ul>
 <p><span class="math display">\[\sum_{i=1}^{n} X_{i} = X_1 + X_2 +....+ X_n,\]</span></p>
 <ul>
-<li><p>Moreover, for every <span class="math inline">\(\alpha_i \in \mathbb{R}\)</span>,<br />
-<span class="math display">\[\sum_{i=1}^{n} \alpha_i X_{i} = \alpha_1 X_1 + \alpha_2 X_2 +....+ \alpha_n X_n;\]</span>
+<li><p>Moreover, for every <span class="math inline">\(\alpha_i \in \mathbb{R}\)</span>,<br><span class="math display">\[\sum_{i=1}^{n} \alpha_i X_{i} = \alpha_1 X_1 + \alpha_2 X_2 +....+ \alpha_n X_n;\]</span>
 <!-- %whose special case is -->
 <!-- %$ -->
 <!-- %\sum_{i=1}^{n} \alpha X_{i} = \alpha X_{i} = \alpha X_1 + \alpha X_2 +....+ \alpha X_n = \alpha \sum_{i=1}^{n} X_{i} -->
@@ -502,10 +292,14 @@ And in both cases: <span class="math inline">\(f(x) = F&#39;(x)\)</span></p>
 \end{align}\]</span></p>
 </div>
 <div id="combinatorics" class="section level3" number="1.3.5">
-<h3><span class="header-section-number">1.3.5</span> Combinatorics</h3>
+<h3>
+<span class="header-section-number">1.3.5</span> Combinatorics<a class="anchor" aria-label="anchor" href="#combinatorics"><i class="fas fa-link"></i></a>
+</h3>
 <p>Finally, we will also rely on some <strong>combinatorial formulas</strong>. Specifically,</p>
 <div id="factorial" class="section level4" number="1.3.5.1">
-<h4><span class="header-section-number">1.3.5.1</span> Factorial</h4>
+<h4>
+<span class="header-section-number">1.3.5.1</span> Factorial<a class="anchor" aria-label="anchor" href="#factorial"><i class="fas fa-link"></i></a>
+</h4>
 <p><span class="math display" id="eq:factorial">\[\begin{equation} 
 n! = n \times (n-1) \times (n-2) \times \dots \times 1;
 \tag{1.1}
@@ -513,7 +307,9 @@ n! = n \times (n-1) \times (n-2) \times \dots \times 1;
 <p>where <span class="math inline">\(0! =1\)</span>, by convention.</p>
 </div>
 <div id="the-binomial-coefficient" class="section level4" number="1.3.5.2">
-<h4><span class="header-section-number">1.3.5.2</span> The Binomial Coefficient</h4>
+<h4>
+<span class="header-section-number">1.3.5.2</span> The Binomial Coefficient<a class="anchor" aria-label="anchor" href="#the-binomial-coefficient"><i class="fas fa-link"></i></a>
+</h4>
 <p>The <strong>Binomial coefficient</strong>, for <span class="math inline">\(n \geq k\)</span> is defined by the following ratio:
 <span class="math display" id="eq:binomialcoef">\[\begin{equation}
 \binom n k =\frac{n!}{k!(n-k)!}{\color{blue}{=C^{k}_n}}.
@@ -522,24 +318,22 @@ n! = n \times (n-1) \times (n-2) \times \dots \times 1;
 <p>In English, the symbol <span class="math inline">\(\binom n k\)</span> is read as “<span class="math inline">\(n\)</span> choose <span class="math inline">\(k\)</span>.” We will see why in a few paragraphs.</p>
 <p>Combinatorial formulas are very useful when studying <strong>permutations</strong> and <strong>combinations</strong> both very recurrent concepts.</p>
 <div id="permutations" class="section level5 unnumbered">
-<h5>Permutations</h5>
+<h5>Permutations<a class="anchor" aria-label="anchor" href="#permutations"><i class="fas fa-link"></i></a>
+</h5>
 <p>A permutation is an <strong>ordered rearrangement</strong> of the elements of a set.</p>
-
-<div class="example">
-<p><span id="exm:unnamed-chunk-5" class="example"><strong>Example 1.1  (Three friends and three chairs)  </strong></span>Suppose we have three friends Aline (<span class="math inline">\(A\)</span>), Bridget (<span class="math inline">\(B\)</span>) and Carmen (<span class="math inline">\(C\)</span>) that want to sit on three chairs during lunchtime.</p>
-<ul>
-<li>One day, you see Aline on the left, Bridget in the center and Carmen on the right, i.e. <span class="math inline">\((A, B, C)\)</span></li>
-<li>The next day, Bridget sits first, Aline second and Carmen right, i.e. <span class="math inline">\((B, A, C)\)</span>
-</div></li>
-</ul>
 <p>These rearrangements constitute two <strong>Permutations</strong> of the set of three friends <span class="math inline">\(\{A, B, C\}\)</span>.</p>
 <p>You then start wondering in how many ways these three friends can sit. With such a small set, it is easy to take a pen and some paper to write down all the possible permutations:</p>
 <p><span class="math display">\[(A, B, C), (A, C, B), (B, A, C), (B, C, A), (C, A, B), (C, B, A)\]</span></p>
 <p>As you can see, the total number of permutations is : <span class="math inline">\(N = 6.\)</span> But also <span class="math inline">\(6= 3 \times 2 \times 1 = 3!\)</span>. This is by no means a coincidence. To see in detail why let us consider each chair as an “experiment” and its occupant an “outcome.”</p>
 <ul>
-<li><strong>Chair (Experiment) 1</strong> : has 3 possible occupants (outcomes): {<span class="math inline">\(A\)</span>, <span class="math inline">\(B\)</span>, <span class="math inline">\(C\)</span>}.</li>
-<li><strong>Chair (Experiment) 2</strong> : has 2 possible occupants (outcomes): either <span class="math inline">\(\{B,C\}\)</span>, <span class="math inline">\(\{A,C\}\)</span> or <span class="math inline">\(\{A,B\}\)</span></li>
-<li><strong>Chair (Experiment) 3</strong> : has 1 possible occupant (outcomes) : <span class="math inline">\(\{A\}\)</span>, <span class="math inline">\(\{B\}\)</span> or <span class="math inline">\(\{C\}\)</span></li>
+<li>
+<strong>Chair (Experiment) 1</strong> : has 3 possible occupants (outcomes): {<span class="math inline">\(A\)</span>, <span class="math inline">\(B\)</span>, <span class="math inline">\(C\)</span>}.</li>
+<li>
+<strong>Chair (Experiment) 2</strong> : has 2 possible occupants (outcomes): either <span class="math inline">\(\{B,C\}\)</span>, <span class="math inline">\(\{A,C\}\)</span> or <span class="math inline">\(\{A,B\}\)</span>
+</li>
+<li>
+<strong>Chair (Experiment) 3</strong> : has 1 possible occupant (outcomes) : <span class="math inline">\(\{A\}\)</span>, <span class="math inline">\(\{B\}\)</span> or <span class="math inline">\(\{C\}\)</span>
+</li>
 </ul>
 <p>Here, we can apply the Fundamental Counting Principle, i.e. from <span class="citation"><a href="references.html#ref-ross2014first" role="doc-biblioref">Ross</a> (<a href="references.html#ref-ross2014first" role="doc-biblioref">2014</a>)</span>:</p>
 <blockquote>
@@ -551,21 +345,6 @@ of the third experiment; and so on, then there is a total of <span class="math i
 outcomes of the <span class="math inline">\(r\)</span> experiments.</p>
 </blockquote>
 <p>Hence: <span class="math inline">\(3 \times 2 \times 1 = 3! = 6\)</span></p>
-
-<div class="definition">
-<p><span id="def:unnamed-chunk-6" class="definition"><strong>Definition 1.1  </strong></span><strong>Permutations</strong> help you answer the question: <em>How many different ways can we arrange <span class="math inline">\(n\)</span> objects?</em></p>
-<ul>
-<li>In the 1st place: <span class="math inline">\(n\)</span> possibilities</li>
-<li>In the 2nd place: <span class="math inline">\((n-1)\)</span> possibilities</li>
-<li>…</li>
-<li>Finally, <span class="math inline">\(1\)</span> possibility</li>
-</ul>
-Thus, in total we have <span class="math inline">\(n\times(n-1)\times(n-2)\times...\times1 = n!\)</span>
-</div>
-
-<div class="exercise">
-<span id="exr:unnamed-chunk-7" class="exercise"><strong>Exercise 1.1  (Gifts on the Shelf)  </strong></span>Imagine that you own a gift store and you have a shelf where you want to display 5 products:
-</div>
 <ul>
 <li>A gorgeous sunflower 🌻</li>
 <li>An old-timey Radio 📻</li>
@@ -586,7 +365,8 @@ This formula can be interpreted as follows:</p>
 <p>As you can see, we are slowly but surely arriving to the definition of <span class="math inline">\(\binom n k\)</span> in <a href="introduction.html#eq:binomialcoef">(1.2)</a>. However, there is still one more element…</p>
 </div>
 <div id="combinations" class="section level5 unnumbered">
-<h5>Combinations</h5>
+<h5>Combinations<a class="anchor" aria-label="anchor" href="#combinations"><i class="fas fa-link"></i></a>
+</h5>
 <p>Implicit in this example, is the notion that <strong>the order</strong> in which these elements are displayed is <strong>important</strong>. This means, that the set (🌻, 📖, 🐢) is different from the set ( 📖, 🐢, 🌻) which, as you can assess, is a <strong>permutation</strong> of the original draw.</p>
 <p>Let us suppose that the <strong>order is not important</strong>. This implies that once the 3 gifts are chosen <strong>all the permutations of this subset are deemed equivalent</strong>. Hence, the subset (🌻, 📖, 🐢), is deemed equivalent as all its <span class="math inline">\(3! = 6\)</span> permutations and we have to <em>factor out</em> this amount from the previous result, by dividing the <span class="math inline">\(3!\)</span> different ways you can order the selected presents.
 <!-- Think of how Aline, Bridget and Carmen were sitting from your perspective. -->
@@ -595,10 +375,6 @@ This formula can be interpreted as follows:</p>
 <p>If we put this in a formula, we have <span class="math display">\[\frac{5!/(5-3)!}{3!}\]</span> ways to select the <span class="math inline">\(3\)</span> presents:</p>
 <p><span class="math display">\[\frac{5!/(5-3)!}{3!}= \frac{5!}{3!2!} = \binom 5 3 = C_5^3.\]</span>
 This gives you the total number of possible ways to select the <span class="math inline">\(3\)</span> presents when the order does not matter. There are thus <em>“<span class="math inline">\(5\)</span> choose <span class="math inline">\(k\)</span>” ways of choosing 3 elements among 5</em>.</p>
-
-<div class="exercise">
-<span id="exr:unnamed-chunk-8" class="exercise"><strong>Exercise 1.2  </strong></span>What if you have only room for 2 products in your shelf?
-</div>
 <p>In general, <span class="math inline">\(n \choose k\)</span> results from the following computations.</p>
 <ul>
 <li><p>In the 1st place: <span class="math inline">\(n\)</span></p></li>
@@ -617,109 +393,79 @@ P(E)=\dfrac{\text{number of cases in E}}{\text{number of possible cases}}.
 \end{equation}\]</span></p>
 <p>This is a first intuitive definition of probability, which we will justify in the next chapter. For the time being, let us say that the combinatorial calculus will be needed to express both the quantities (numerator and denominator) in <a href="introduction.html#eq:pe">(1.3)</a>.</p>
 <p>The name “Binomial Coefficient” is closely associated with the <strong>Binomial Theorem</strong>, which provides the expression for the power <span class="math inline">\(n\)</span> of the sum of two variables <span class="math inline">\((x+y)\)</span> as a sum:</p>
-
-<div class="theorem">
-<p><span id="thm:unnamed-chunk-9" class="theorem"><strong>Theorem 1.1  (Binomial Theorem - Pascal 1654)  </strong></span>
-For <span class="math inline">\(n=0,1, 2,\dots\)</span>, we have:</p>
-<p><span class="math display">\[(x+y)^n = {n \choose 0}x^n y^0 + {n \choose 1}x^{n-1}y^1 + \cdots + {n \choose n-1}x^1 y^{n-1} + {n \choose n}x^0 y^n;\]</span></p>
-The sum is finite and stops after n+1 terms.
-</div>
 <p>Equivalently, making use of the sum notation,</p>
 <p><span class="math display">\[(x+y)^n = \sum_{k=0}^n {n \choose k}x^{n-k}y^k = \sum_{k=0}^n {n \choose k}x^{k}y^{n-k}.\]</span></p>
-
-<div class="example">
-<p><span id="exm:unnamed-chunk-10" class="example"><strong>Example 1.2  </strong></span>Let us compute the binomial coefficients for polynomials of different degrees <span class="math inline">\(n\)</span>:</p>
-<ul>
-<li>for <span class="math inline">\(n=1\)</span></li>
-</ul>
-<p><span class="math display">\[\begin{align}
-(x+y)^1 &amp;= {1 \choose 0}x^1 y^0 +  {1 \choose 1}x^0 y^{1}\\  
-&amp;=  x +  y 
-\end{align}\]</span></p>
-<ul>
-<li>for <span class="math inline">\(n=2\)</span> we have</li>
-</ul>
-<p><span class="math display">\[\begin{align}
-(x+y)^2 &amp;= {2 \choose 0}x^2 y^0 + {2 \choose 1}x^{1}y^1 +  {2 \choose 2}x^0 y^{2}  \\  
-&amp;=  x^2 +  2 x y +  y^{2} 
-\end{align}\]</span></p>
-<ul>
-<li>for <span class="math inline">\(n=3\)</span> we have
-<span class="math display">\[\begin{align}
-(x+y)^3 &amp;= {3 \choose 0}x^3 y^0 + {3 \choose 1}x^{2}y^1 + \cdots + {3 \choose 2}x^1 y^{2} + {3 \choose 3}x^0 y^3 \\
-&amp;= y^3 + 3xy^2 + 3x^2y+x^3 
-\end{align}\]</span>
-</div></li>
-</ul>
 </div>
 </div>
 </div>
 <div id="limits" class="section level3" number="1.3.6">
-<h3><span class="header-section-number">1.3.6</span> Limits</h3>
+<h3>
+<span class="header-section-number">1.3.6</span> Limits<a class="anchor" aria-label="anchor" href="#limits"><i class="fas fa-link"></i></a>
+</h3>
 <p>The study of <strong>limits</strong> will be crucial in many tasks:</p>
 <ul>
 <li>The limit of a finite sum is an infinite series:
-<span class="math display">\[\lim_{n \to \infty} \sum_{i=1}^n x_i = \sum_{i=1 }^\infty x_i \nonumber\]</span></li>
+<span class="math display">\[\lim_{n \to \infty} \sum_{i=1}^n x_i = \sum_{i=1 }^\infty x_i \nonumber\]</span>
+</li>
 <li>The Exponential function, characterised as a limit:
-<span class="math display">\[ e^x = \lim_{n \rightarrow \infty} \left(1 + \frac{x}{n}\right)^n \nonumber\]</span></li>
+<span class="math display">\[ e^x = \lim_{n \rightarrow \infty} \left(1 + \frac{x}{n}\right)^n \nonumber\]</span>
+</li>
 <li>The Limit of a Negative Exponential function: Let <span class="math inline">\(\alpha &gt;0\)</span>
-<span class="math display">\[\lim_{x \to \infty} {\alpha e^{-\alpha x}} = 0 \nonumber\]</span></li>
+<span class="math display">\[\lim_{x \to \infty} {\alpha e^{-\alpha x}} = 0 \nonumber\]</span>
+</li>
 <li>The Exponential function, characterised as an infinite series:
-<span class="math display">\[e^x = \sum_{i = 0}^{\infty} {x^i \over i!} = 1 + x + {x^2 \over 2!} + {x^3 \over 3!} + {x^4 \over 4!} + \dots\]</span></li>
+<span class="math display">\[e^x = \sum_{i = 0}^{\infty} {x^i \over i!} = 1 + x + {x^2 \over 2!} + {x^3 \over 3!} + {x^4 \over 4!} + \dots\]</span>
+</li>
+</ul>
+</div>
+</div>
+</div>
+  <div class="chapter-nav">
+<div class="prev"><a href="index.html">About this lecture</a></div>
+<div class="next"><a href="settheory.html"><span class="header-section-number">2</span> Elements of Set Theory for Probability</a></div>
+</div></main><div class="col-md-3 col-lg-2 d-none d-md-block sidebar sidebar-chapter">
+    <nav id="toc" data-toggle="toc" aria-label="On this page"><h2>On this page</h2>
+      <ul class="nav navbar-nav">
+<li><a class="nav-link" href="#introduction"><span class="header-section-number">1</span> Introduction</a></li>
+<li><a class="nav-link" href="#a-world-of-data"><span class="header-section-number">1.1</span> A World of Data</a></li>
+<li>
+<a class="nav-link" href="#what-to-expect-from-this-lecture"><span class="header-section-number">1.2</span> What to expect from this Lecture?</a><ul class="nav navbar-nav"><li><a class="nav-link" href="#one-intuitive-illustration"><span class="header-section-number">1.2.1</span> One intuitive illustration</a></li></ul>
+</li>
+<li>
+<a class="nav-link" href="#a-quick-reminder-of-mathematics"><span class="header-section-number">1.3</span> A quick reminder of Mathematics</a><ul class="nav navbar-nav">
+<li><a class="nav-link" href="#powers-and-logarithms"><span class="header-section-number">1.3.1</span> Powers and Logarithms</a></li>
+<li><a class="nav-link" href="#differentiation"><span class="header-section-number">1.3.2</span> Differentiation</a></li>
+<li><a class="nav-link" href="#integration"><span class="header-section-number">1.3.3</span> Integration</a></li>
+<li><a class="nav-link" href="#sums"><span class="header-section-number">1.3.4</span> Sums</a></li>
+<li><a class="nav-link" href="#combinatorics"><span class="header-section-number">1.3.5</span> Combinatorics</a></li>
+<li><a class="nav-link" href="#limits"><span class="header-section-number">1.3.6</span> Limits</a></li>
+</ul>
+</li>
 </ul>
 
+      <div class="book-extra">
+        <ul class="list-unstyled">
+          
+        </ul>
 </div>
+    </nav>
 </div>
-</div>
-            </section>
 
-          </div>
-        </div>
-      </div>
-<a href="index.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="settheory.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
-    </div>
+</div>
+</div> <!-- .container -->
+
+<footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
+
+  <div class="col-12 col-md-6 mt-3">
+    <p>"<strong>🃏 Probability I</strong>: Course Notes" was written by Dr. Daniel Flores Agreda (based on the Lecture by Prof. Davide La Vecchia). </p>
   </div>
-<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
-<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
-<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
-<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
-<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
-<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
-<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
-<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
-<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
-<script>
-gitbook.require(["gitbook"], function(gitbook) {
-gitbook.start({
-"sharing": null,
-"fontsettings": {
-"theme": "white",
-"family": "sans",
-"size": 2
-},
-"edit": {
-"link": "https://github.com/rstudio/bookdown-demo/edit/master/01-intro.Rmd",
-"text": "Edit"
-},
-"history": {
-"link": null,
-"text": null
-},
-"view": {
-"link": null,
-"text": null
-},
-"download": null,
-"toc": {
-"collapse": "subsection"
-}
-});
-});
-</script>
 
-<!-- dynamically load mathjax for compatibility with self-contained -->
-<script>
+  <div class="col-12 col-md-6 mt-3">
+    <p>This book was built by the <a class="text-light" href="https://bookdown.org">bookdown</a> R package.</p>
+  </div>
+
+</div></div>
+</footer><!-- dynamically load mathjax for compatibility with self-contained --><script>
   (function () {
     var script = document.createElement("script");
     script.type = "text/javascript";
@@ -731,7 +477,22 @@ gitbook.start({
     script.src = src;
     document.getElementsByTagName("head")[0].appendChild(script);
   })();
+</script><script type="text/x-mathjax-config">const popovers = document.querySelectorAll('a.footnote-ref[data-toggle="popover"]');
+for (let popover of popovers) {
+  const div = document.createElement('div');
+  div.setAttribute('style', 'position: absolute; top: 0, left:0; width:0, height:0, overflow: hidden; visibility: hidden;');
+  div.innerHTML = popover.getAttribute('data-content');
+
+  var has_math = div.querySelector("span.math");
+  if (has_math) {
+    document.body.appendChild(div);
+    MathJax.Hub.Queue(["Typeset", MathJax.Hub, div]);
+    MathJax.Hub.Queue(function() {
+      popover.setAttribute('data-content', div.innerHTML);
+      document.body.removeChild(div);
+    })
+  }
+}
 </script>
 </body>
-
 </html>

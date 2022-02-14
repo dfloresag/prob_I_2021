@@ -3,10 +3,7 @@ title: "`r emo::ji('joker')` Probability I"
 subtitle: "Course Notes"
 author: "Dr. Daniel Flores Agreda (based on the Lecture by Prof. Davide La Vecchia)"
 site: bookdown::bookdown_site
-output: 
-  bookdown::gitbook:
-    config:
-      sharing: null
+output: bookdown::bs4_book
 documentclass: book
 bibliography: [book.bib, packages.bib]
 biblio-style: apalike

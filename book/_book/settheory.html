@@ -1,478 +1,175 @@
 <!DOCTYPE html>
-<html lang="" xml:lang="">
+<html lang="en">
 <head>
-
-  <meta charset="utf-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Chapter 2 Elements of Set Theory for Probability | 🃏 Probability I</title>
-  <meta name="description" content="Course Materials" />
-  <meta name="generator" content="bookdown 0.21 and GitBook 2.6.7" />
-
-  <meta property="og:title" content="Chapter 2 Elements of Set Theory for Probability | 🃏 Probability I" />
-  <meta property="og:type" content="book" />
-  
-  
-  <meta property="og:description" content="Course Materials" />
-  <meta name="github-repo" content="rstudio/bookdown-demo" />
-
-  <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Chapter 2 Elements of Set Theory for Probability | 🃏 Probability I" />
-  
-  <meta name="twitter:description" content="Course Materials" />
-  
-
-<meta name="author" content="Dr. Daniel Flores Agreda (based on the Lecture by Prof. Davide La Vecchia)" />
-
-
-
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="apple-mobile-web-app-capable" content="yes" />
-  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
-  
-  
-<link rel="prev" href="introduction.html"/>
-<link rel="next" href="axioms.html"/>
-<script src="libs/header-attrs-2.7/header-attrs.js"></script>
-<script src="libs/jquery-2.2.3/jquery.min.js"></script>
-<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
-<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
-<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
-<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
-<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
-<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
-<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
-
-
-
-
-
-
-
-
-
-
-
-
-<link rel="stylesheet" href="style.css" type="text/css" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<title>Chapter 2 Elements of Set Theory for Probability | 🃏 Probability I</title>
+<meta name="author" content="Dr. Daniel Flores Agreda (based on the Lecture by Prof. Davide La Vecchia)">
+<meta name="description" content="Figure 2.1: The beaverduck from Tenso Graphics  In order to formalise the theory of probability, our first step consists in formulating events with uncertain outcomes as mathematical objects. To...">
+<meta name="generator" content="bookdown 0.24 with bs4_book()">
+<meta property="og:title" content="Chapter 2 Elements of Set Theory for Probability | 🃏 Probability I">
+<meta property="og:type" content="book">
+<meta property="og:description" content="Figure 2.1: The beaverduck from Tenso Graphics  In order to formalise the theory of probability, our first step consists in formulating events with uncertain outcomes as mathematical objects. To...">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Chapter 2 Elements of Set Theory for Probability | 🃏 Probability I">
+<meta name="twitter:description" content="Figure 2.1: The beaverduck from Tenso Graphics  In order to formalise the theory of probability, our first step consists in formulating events with uncertain outcomes as mathematical objects. To...">
+<!-- JS --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://kit.fontawesome.com/6ecbd6c532.js" crossorigin="anonymous"></script><script src="libs/header-attrs-2.11/header-attrs.js"></script><script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<link href="libs/bootstrap-4.6.0/bootstrap.min.css" rel="stylesheet">
+<script src="libs/bootstrap-4.6.0/bootstrap.bundle.min.js"></script><script src="libs/bs3compat-0.3.1/transition.js"></script><script src="libs/bs3compat-0.3.1/tabs.js"></script><script src="libs/bs3compat-0.3.1/bs3compat.js"></script><link href="libs/bs4_book-1.0.0/bs4_book.css" rel="stylesheet">
+<script src="libs/bs4_book-1.0.0/bs4_book.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/autocomplete.js/0.38.0/autocomplete.jquery.min.js" integrity="sha512-GU9ayf+66Xx2TmpxqJpliWbT5PiGYxpaG8rfnBEk1LL8l1KGkRShhngwdXK1UgqhAzWpZHSiYPc09/NwDQIGyg==" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/mark.min.js" integrity="sha512-5CYOlHXGh6QpOFA/TeTylKLWfB3ftPsde7AnmhuitiTX4K5SqCLBeKro6sPS8ilsz1Q4NRx3v8Ko2IBiszzdww==" crossorigin="anonymous"></script><!-- CSS -->
 </head>
+<body data-spy="scroll" data-target="#toc">
 
-<body>
+<div class="container-fluid">
+<div class="row">
+  <header class="col-sm-12 col-lg-3 sidebar sidebar-book"><a class="sr-only sr-only-focusable" href="#content">Skip to main content</a>
 
-
-
-  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
-
-    <div class="book-summary">
-      <nav role="navigation">
-
-<ul class="summary">
-<li><a href="https://www.unige.ch/gsem/fr/"><img src="img/gsem_en.png" alt="UNIGE Logo" width="200" class ="center"></a></li>
-<li><a href="https://moodle.unige.ch/course/view.php?id=7133"><strong>Probability I (Spring 2021)</strong></a></li>
-
-<li class="divider"></li>
-<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>About this lecture</a>
-<ul>
-<li class="chapter" data-level="" data-path="index.html"><a href="index.html#contents"><i class="fa fa-check"></i>Contents</a></li>
-<li class="chapter" data-level="" data-path="index.html"><a href="index.html#practical-information"><i class="fa fa-check"></i>Practical information</a>
-<ul>
-<li class="chapter" data-level="" data-path="index.html"><a href="index.html#who-we-are"><i class="fa fa-check"></i>Who we are</a></li>
-<li class="chapter" data-level="" data-path="index.html"><a href="index.html#lectures"><i class="fa fa-check"></i>Lectures</a></li>
-<li class="chapter" data-level="" data-path="index.html"><a href="index.html#exercises"><i class="fa fa-check"></i>Exercises</a></li>
-<li class="chapter" data-level="" data-path="index.html"><a href="index.html#tools"><i class="fa fa-check"></i>Tools</a></li>
-</ul></li>
-</ul></li>
-<li class="chapter" data-level="1" data-path="introduction.html"><a href="introduction.html"><i class="fa fa-check"></i><b>1</b> Introduction</a>
-<ul>
-<li class="chapter" data-level="1.1" data-path="introduction.html"><a href="introduction.html#a-world-of-data"><i class="fa fa-check"></i><b>1.1</b> A World of Data</a></li>
-<li class="chapter" data-level="1.2" data-path="introduction.html"><a href="introduction.html#what-to-expect-from-this-lecture"><i class="fa fa-check"></i><b>1.2</b> What to expect from this Lecture?</a>
-<ul>
-<li class="chapter" data-level="1.2.1" data-path="introduction.html"><a href="introduction.html#one-intuitive-illustration"><i class="fa fa-check"></i><b>1.2.1</b> One intuitive illustration</a></li>
-</ul></li>
-<li class="chapter" data-level="1.3" data-path="introduction.html"><a href="introduction.html#a-quick-reminder-of-mathematics"><i class="fa fa-check"></i><b>1.3</b> A quick reminder of Mathematics</a>
-<ul>
-<li class="chapter" data-level="1.3.1" data-path="introduction.html"><a href="introduction.html#powers-and-logarithms"><i class="fa fa-check"></i><b>1.3.1</b> Powers and Logarithms</a></li>
-<li class="chapter" data-level="1.3.2" data-path="introduction.html"><a href="introduction.html#differentiation"><i class="fa fa-check"></i><b>1.3.2</b> Differentiation</a></li>
-<li class="chapter" data-level="1.3.3" data-path="introduction.html"><a href="introduction.html#integration"><i class="fa fa-check"></i><b>1.3.3</b> Integration</a></li>
-<li class="chapter" data-level="1.3.4" data-path="introduction.html"><a href="introduction.html#sums"><i class="fa fa-check"></i><b>1.3.4</b> Sums</a></li>
-<li class="chapter" data-level="1.3.5" data-path="introduction.html"><a href="introduction.html#combinatorics"><i class="fa fa-check"></i><b>1.3.5</b> Combinatorics</a></li>
-<li class="chapter" data-level="1.3.6" data-path="introduction.html"><a href="introduction.html#limits"><i class="fa fa-check"></i><b>1.3.6</b> Limits</a></li>
-</ul></li>
-</ul></li>
-<li class="chapter" data-level="2" data-path="settheory.html"><a href="settheory.html"><i class="fa fa-check"></i><b>2</b> Elements of Set Theory for Probability</a>
-<ul>
-<li class="chapter" data-level="2.1" data-path="settheory.html"><a href="settheory.html#random-experiments-events-and-sample-spaces"><i class="fa fa-check"></i><b>2.1</b> Random Experiments, Events and Sample Spaces</a></li>
-<li class="chapter" data-level="2.2" data-path="settheory.html"><a href="settheory.html#some-definitions-from-set-theory"><i class="fa fa-check"></i><b>2.2</b> Some definitions from set theory</a></li>
-<li class="chapter" data-level="2.3" data-path="settheory.html"><a href="settheory.html#the-venn-diagram"><i class="fa fa-check"></i><b>2.3</b> The Venn diagram</a>
-<ul>
-<li class="chapter" data-level="2.3.1" data-path="settheory.html"><a href="settheory.html#sample-space-and-events"><i class="fa fa-check"></i><b>2.3.1</b> Sample Space and Events</a></li>
-<li class="chapter" data-level="2.3.2" data-path="settheory.html"><a href="settheory.html#exclusive-and-non-exclusive-events"><i class="fa fa-check"></i><b>2.3.2</b> Exclusive and Non-Exclusive Events</a></li>
-<li class="chapter" data-level="2.3.3" data-path="settheory.html"><a href="settheory.html#union-and-intersection-of-events"><i class="fa fa-check"></i><b>2.3.3</b> Union and Intersection of Events</a></li>
-<li class="chapter" data-level="2.3.4" data-path="settheory.html"><a href="settheory.html#complement"><i class="fa fa-check"></i><b>2.3.4</b> Complement</a></li>
-<li class="chapter" data-level="2.3.5" data-path="settheory.html"><a href="settheory.html#some-properties-of-union-and-intersection"><i class="fa fa-check"></i><b>2.3.5</b> Some Properties of union and intersection</a></li>
-</ul></li>
-<li class="chapter" data-level="2.4" data-path="settheory.html"><a href="settheory.html#countable-and-uncountable-sets"><i class="fa fa-check"></i><b>2.4</b> Countable and Uncountable sets</a></li>
-<li class="chapter" data-level="2.5" data-path="settheory.html"><a href="settheory.html#de-morgans-laws"><i class="fa fa-check"></i><b>2.5</b> De Morgan’s Laws</a>
-<ul>
-<li class="chapter" data-level="2.5.1" data-path="settheory.html"><a href="settheory.html#first-law"><i class="fa fa-check"></i><b>2.5.1</b> First Law</a></li>
-<li class="chapter" data-level="2.5.2" data-path="settheory.html"><a href="settheory.html#second-law"><i class="fa fa-check"></i><b>2.5.2</b> Second Law</a></li>
-<li class="chapter" data-level="2.5.3" data-path="settheory.html"><a href="settheory.html#de-morgans-theorem"><i class="fa fa-check"></i><b>2.5.3</b> De Morgan’s Theorem</a></li>
-</ul></li>
-<li class="chapter" data-level="2.6" data-path="settheory.html"><a href="settheory.html#probability-as-frequency"><i class="fa fa-check"></i><b>2.6</b> Probability as Frequency</a></li>
-<li class="chapter" data-level="2.7" data-path="settheory.html"><a href="settheory.html#some-references"><i class="fa fa-check"></i><b>2.7</b> Some references</a></li>
-</ul></li>
-<li class="chapter" data-level="3" data-path="axioms.html"><a href="axioms.html"><i class="fa fa-check"></i><b>3</b> Probability Axioms</a>
-<ul>
-<li class="chapter" data-level="3.1" data-path="axioms.html"><a href="axioms.html#an-axiomatic-definition-of-probability"><i class="fa fa-check"></i><b>3.1</b> An Axiomatic Definition of Probability</a></li>
-<li class="chapter" data-level="3.2" data-path="axioms.html"><a href="axioms.html#properties-of-pcdot"><i class="fa fa-check"></i><b>3.2</b> Properties of <span class="math inline">\(P(\cdot)\)</span></a></li>
-<li class="chapter" data-level="3.3" data-path="axioms.html"><a href="axioms.html#examples-and-illustrations"><i class="fa fa-check"></i><b>3.3</b> Examples and Illustrations</a>
-<ul>
-<li class="chapter" data-level="3.3.1" data-path="axioms.html"><a href="axioms.html#flipping-coins"><i class="fa fa-check"></i><b>3.3.1</b> Flipping coins</a></li>
-<li class="chapter" data-level="3.3.2" data-path="axioms.html"><a href="axioms.html#detecting-shoppers"><i class="fa fa-check"></i><b>3.3.2</b> Detecting shoppers</a></li>
-<li class="chapter" data-level="3.3.3" data-path="axioms.html"><a href="axioms.html#de-morgans-law"><i class="fa fa-check"></i><b>3.3.3</b> De Morgan’s Law</a></li>
-<li class="chapter" data-level="3.3.4" data-path="axioms.html"><a href="axioms.html#probability-union-and-complement"><i class="fa fa-check"></i><b>3.3.4</b> Probability, union, and complement</a></li>
-</ul></li>
-<li class="chapter" data-level="3.4" data-path="axioms.html"><a href="axioms.html#conditional-probability"><i class="fa fa-check"></i><b>3.4</b> Conditional probability</a></li>
-<li class="chapter" data-level="3.5" data-path="axioms.html"><a href="axioms.html#independence"><i class="fa fa-check"></i><b>3.5</b> Independence</a>
-<ul>
-<li class="chapter" data-level="3.5.1" data-path="axioms.html"><a href="axioms.html#another-characterisation"><i class="fa fa-check"></i><b>3.5.1</b> Another characterisation</a></li>
-</ul></li>
-<li class="chapter" data-level="3.6" data-path="axioms.html"><a href="axioms.html#theorem-i-the-theorem-of-total-probabilities"><i class="fa fa-check"></i><b>3.6</b> Theorem I: The Theorem of Total Probabilities</a></li>
-<li class="chapter" data-level="3.7" data-path="axioms.html"><a href="axioms.html#theorem-ii-bayes-theorem"><i class="fa fa-check"></i><b>3.7</b> Theorem II: Bayes’ Theorem</a>
-<ul>
-<li class="chapter" data-level="3.7.1" data-path="axioms.html"><a href="axioms.html#guessing-in-a-multiple-choice-exam"><i class="fa fa-check"></i><b>3.7.1</b> Guessing in a multiple choice exam</a></li>
-<li class="chapter" data-level="3.7.2" data-path="axioms.html"><a href="axioms.html#rent-car-maintenance"><i class="fa fa-check"></i><b>3.7.2</b> Rent car maintenance</a></li>
-</ul></li>
-</ul></li>
-<li class="chapter" data-level="4" data-path="discreterv.html"><a href="discreterv.html"><i class="fa fa-check"></i><b>4</b> 🔧 Discrete Random Variables</a>
-<ul>
-<li class="chapter" data-level="4.1" data-path="discreterv.html"><a href="discreterv.html#what-is-a-random-variable"><i class="fa fa-check"></i><b>4.1</b> What is a Random Variable?</a>
-<ul>
-<li class="chapter" data-level="4.1.1" data-path="discreterv.html"><a href="discreterv.html#formal-definition-of-a-random-variable"><i class="fa fa-check"></i><b>4.1.1</b> Formal definition of a random variable</a></li>
-<li class="chapter" data-level="4.1.2" data-path="discreterv.html"><a href="discreterv.html#example-from-s-to-d-via-xcdot"><i class="fa fa-check"></i><b>4.1.2</b> Example: from <span class="math inline">\(S\)</span> to <span class="math inline">\(D\)</span>, via <span class="math inline">\(X(\cdot)\)</span></a></li>
-<li class="chapter" data-level="4.1.3" data-path="discreterv.html"><a href="discreterv.html#an-example-from-gambling"><i class="fa fa-check"></i><b>4.1.3</b> An Example from gambling</a></li>
-</ul></li>
-<li class="chapter" data-level="4.2" data-path="discreterv.html"><a href="discreterv.html#discrete-random-variables"><i class="fa fa-check"></i><b>4.2</b> Discrete random variables</a></li>
-<li class="chapter" data-level="4.3" data-path="discreterv.html"><a href="discreterv.html#cumulative-distribution-function"><i class="fa fa-check"></i><b>4.3</b> Cumulative Distribution Function</a></li>
-<li class="chapter" data-level="4.4" data-path="discreterv.html"><a href="discreterv.html#distributional-summaries-for-discrete-random-variables"><i class="fa fa-check"></i><b>4.4</b> Distributional summaries for discrete random variables</a>
-<ul>
-<li class="chapter" data-level="4.4.1" data-path="discreterv.html"><a href="discreterv.html#properties"><i class="fa fa-check"></i><b>4.4.1</b> Properties</a></li>
-</ul></li>
-<li class="chapter" data-level="4.5" data-path="discreterv.html"><a href="discreterv.html#dependenceindependence"><i class="fa fa-check"></i><b>4.5</b> Dependence/Independence</a>
-<ul>
-<li class="chapter" data-level="4.5.1" data-path="discreterv.html"><a href="discreterv.html#more-important-properties"><i class="fa fa-check"></i><b>4.5.1</b> More important properties</a></li>
-<li class="chapter" data-level="4.5.2" data-path="discreterv.html"><a href="discreterv.html#more-on-expectations"><i class="fa fa-check"></i><b>4.5.2</b> More on expectations</a></li>
-</ul></li>
-<li class="chapter" data-level="4.6" data-path="discreterv.html"><a href="discreterv.html#some-discrete-distributions-of-interest"><i class="fa fa-check"></i><b>4.6</b> Some discrete distributions of interest</a>
-<ul>
-<li class="chapter" data-level="4.6.1" data-path="discreterv.html"><a href="discreterv.html#discrete-uniform-distribution"><i class="fa fa-check"></i><b>4.6.1</b> Discrete uniform distribution</a></li>
-<li class="chapter" data-level="4.6.2" data-path="discreterv.html"><a href="discreterv.html#bernoulli-trials"><i class="fa fa-check"></i><b>4.6.2</b> Bernoulli Trials</a></li>
-<li class="chapter" data-level="4.6.3" data-path="discreterv.html"><a href="discreterv.html#the-binomial-distribution"><i class="fa fa-check"></i><b>4.6.3</b> The Binomial Distribution</a></li>
-<li class="chapter" data-level="4.6.4" data-path="discreterv.html"><a href="discreterv.html#poisson-distribution"><i class="fa fa-check"></i><b>4.6.4</b> Poisson Distribution</a></li>
-<li class="chapter" data-level="4.6.5" data-path="discreterv.html"><a href="discreterv.html#the-hypergeometric-distribution"><i class="fa fa-check"></i><b>4.6.5</b> The Hypergeometric Distribution</a></li>
-<li class="chapter" data-level="4.6.6" data-path="discreterv.html"><a href="discreterv.html#the-negative-binomial-distribution"><i class="fa fa-check"></i><b>4.6.6</b> The Negative Binomial Distribution</a></li>
-<li class="chapter" data-level="4.6.7" data-path="discreterv.html"><a href="discreterv.html#illustrations-4"><i class="fa fa-check"></i><b>4.6.7</b> Illustrations</a></li>
-<li class="chapter" data-level="4.6.8" data-path="discreterv.html"><a href="discreterv.html#the-geometric-distribution"><i class="fa fa-check"></i><b>4.6.8</b> The Geometric Distribution</a></li>
-</ul></li>
-</ul></li>
-<li class="chapter" data-level="5" data-path="continuousrv.html"><a href="continuousrv.html"><i class="fa fa-check"></i><b>5</b> 🔧 Continuous Random Variable</a>
-<ul>
-<li class="chapter" data-level="5.1" data-path="continuousrv.html"><a href="continuousrv.html#two-motivating-examples"><i class="fa fa-check"></i><b>5.1</b> Two Motivating Examples</a></li>
-<li class="chapter" data-level="5.2" data-path="continuousrv.html"><a href="continuousrv.html#cumulative-distribution-function-cdf"><i class="fa fa-check"></i><b>5.2</b> Cumulative Distribution Function (CDF)</a></li>
-<li class="chapter" data-level="5.3" data-path="continuousrv.html"><a href="continuousrv.html#distributional-summaries"><i class="fa fa-check"></i><b>5.3</b> Distributional Summaries</a>
-<ul>
-<li class="chapter" data-level="5.3.1" data-path="continuousrv.html"><a href="continuousrv.html#the-expectation"><i class="fa fa-check"></i><b>5.3.1</b> The Expectation</a></li>
-<li class="chapter" data-level="5.3.2" data-path="continuousrv.html"><a href="continuousrv.html#the-variance"><i class="fa fa-check"></i><b>5.3.2</b> The Variance</a></li>
-<li class="chapter" data-level="5.3.3" data-path="continuousrv.html"><a href="continuousrv.html#important-properties-of-expectations"><i class="fa fa-check"></i><b>5.3.3</b> Important properties of expectations</a></li>
-<li class="chapter" data-level="5.3.4" data-path="continuousrv.html"><a href="continuousrv.html#mode-and-median"><i class="fa fa-check"></i><b>5.3.4</b> Mode and Median</a></li>
-</ul></li>
-<li class="chapter" data-level="5.4" data-path="continuousrv.html"><a href="continuousrv.html#some-important-continuous-distributions"><i class="fa fa-check"></i><b>5.4</b> Some Important Continuous Distributions</a>
-<ul>
-<li class="chapter" data-level="5.4.1" data-path="continuousrv.html"><a href="continuousrv.html#continuous-uniform-distribution"><i class="fa fa-check"></i><b>5.4.1</b> Continuous Uniform Distribution</a></li>
-<li class="chapter" data-level="5.4.2" data-path="continuousrv.html"><a href="continuousrv.html#normal-gaussian-distribution"><i class="fa fa-check"></i><b>5.4.2</b> Normal (Gaussian) distribution</a></li>
-<li class="chapter" data-level="5.4.3" data-path="continuousrv.html"><a href="continuousrv.html#the-chi-squared-distribution"><i class="fa fa-check"></i><b>5.4.3</b> The Chi-squared distribution</a></li>
-<li class="chapter" data-level="5.4.4" data-path="continuousrv.html"><a href="continuousrv.html#the-student-t-distribution"><i class="fa fa-check"></i><b>5.4.4</b> The Student-t distribution</a></li>
-<li class="chapter" data-level="5.4.5" data-path="continuousrv.html"><a href="continuousrv.html#the-f-distribution"><i class="fa fa-check"></i><b>5.4.5</b> The F distribution</a></li>
-<li class="chapter" data-level="5.4.6" data-path="continuousrv.html"><a href="continuousrv.html#the-lognormal-distribution"><i class="fa fa-check"></i><b>5.4.6</b> The lognormal distribution</a></li>
-<li class="chapter" data-level="5.4.7" data-path="continuousrv.html"><a href="continuousrv.html#exponential-distribution"><i class="fa fa-check"></i><b>5.4.7</b> Exponential distribution</a></li>
-</ul></li>
-<li class="chapter" data-level="5.5" data-path="continuousrv.html"><a href="continuousrv.html#transformation-of-variables"><i class="fa fa-check"></i><b>5.5</b> Transformation of variables</a>
-<ul>
-<li class="chapter" data-level="5.5.1" data-path="continuousrv.html"><a href="continuousrv.html#transformation-of-discrete-random-variables"><i class="fa fa-check"></i><b>5.5.1</b> Transformation of discrete random variables</a></li>
-<li class="chapter" data-level="5.5.2" data-path="continuousrv.html"><a href="continuousrv.html#transformation-of-variables-using-the-cdf"><i class="fa fa-check"></i><b>5.5.2</b> Transformation of variables using the CDF</a></li>
-<li class="chapter" data-level="5.5.3" data-path="continuousrv.html"><a href="continuousrv.html#function-1-to-1-and-monotone-decreasing"><i class="fa fa-check"></i><b>5.5.3</b> Function 1-to-1 and monotone decreasing</a></li>
-<li class="chapter" data-level="5.5.4" data-path="continuousrv.html"><a href="continuousrv.html#transformation-of-continuous-rv-through-pdf"><i class="fa fa-check"></i><b>5.5.4</b> Transformation of continuous RV through pdf</a></li>
-<li class="chapter" data-level="5.5.5" data-path="continuousrv.html"><a href="continuousrv.html#example-of-transformation-using-pdf"><i class="fa fa-check"></i><b>5.5.5</b> Example of transformation using pdf</a></li>
-<li class="chapter" data-level="5.5.6" data-path="continuousrv.html"><a href="continuousrv.html#a-caveat"><i class="fa fa-check"></i><b>5.5.6</b> A caveat</a></li>
-</ul></li>
-<li class="chapter" data-level="5.6" data-path="continuousrv.html"><a href="continuousrv.html#the-big-picture"><i class="fa fa-check"></i><b>5.6</b> The big picture</a></li>
-</ul></li>
-<li class="chapter" data-level="6" data-path="limittheorems.html"><a href="limittheorems.html"><i class="fa fa-check"></i><b>6</b> 📝 Limit Theorems</a>
-<ul>
-<li class="chapter" data-level="6.1" data-path="limittheorems.html"><a href="limittheorems.html#sequences-of-random-variables"><i class="fa fa-check"></i><b>6.1</b> Sequences of Random Variables</a>
-<ul>
-<li class="chapter" data-level="6.1.1" data-path="limittheorems.html"><a href="limittheorems.html#example-bernoulli-trials-and-their-sum"><i class="fa fa-check"></i><b>6.1.1</b> Example: Bernoulli Trials and their sum</a></li>
-<li class="chapter" data-level="6.1.2" data-path="limittheorems.html"><a href="limittheorems.html#example-bernoulli-trials-and-limit-behaviour"><i class="fa fa-check"></i><b>6.1.2</b> Example: Bernoulli Trials and limit behaviour</a></li>
-</ul></li>
-<li class="chapter" data-level="6.2" data-path="limittheorems.html"><a href="limittheorems.html#convergence-in-probability-oversetprightarrow"><i class="fa fa-check"></i><b>6.2</b> Convergence in Probability (<span class="math inline">\(\overset{p}{\rightarrow }\)</span>)</a>
-<ul>
-<li class="chapter" data-level="6.2.1" data-path="limittheorems.html"><a href="limittheorems.html#operational-rules-for-oversetprightarrow"><i class="fa fa-check"></i><b>6.2.1</b> Operational Rules for <span class="math inline">\(\overset{p}{\rightarrow }\)</span></a></li>
-<li class="chapter" data-level="6.2.2" data-path="limittheorems.html"><a href="limittheorems.html#convergence-of-sample-moments-as-a-motivation"><i class="fa fa-check"></i><b>6.2.2</b> Convergence of Sample Moments as a motivation…</a></li>
-<li class="chapter" data-level="6.2.3" data-path="limittheorems.html"><a href="limittheorems.html#the-weak-law-of-large-numbers-wlln"><i class="fa fa-check"></i><b>6.2.3</b> The Weak Law of Large Numbers (WLLN)</a></li>
-<li class="chapter" data-level="6.2.4" data-path="limittheorems.html"><a href="limittheorems.html#the-wlln-and-chebyshevs-inequality"><i class="fa fa-check"></i><b>6.2.4</b> The WLLN and Chebyshev’s Inequality</a></li>
-<li class="chapter" data-level="6.2.5" data-path="limittheorems.html"><a href="limittheorems.html#chebyshevs-and-markovs-inequality"><i class="fa fa-check"></i><b>6.2.5</b> Chebyshev’s (and Markov’s) Inequality</a></li>
-<li class="chapter" data-level="6.2.6" data-path="limittheorems.html"><a href="limittheorems.html#example-markovs-inequality"><i class="fa fa-check"></i><b>6.2.6</b> Example: Markov’s Inequality</a></li>
-</ul></li>
-</ul></li>
-<li class="chapter" data-level="7" data-path="bivariatediscreterv.html"><a href="bivariatediscreterv.html"><i class="fa fa-check"></i><b>7</b> 📝 Bivariate Discrete Random Variables</a>
-<ul>
-<li class="chapter" data-level="7.1" data-path="bivariatediscreterv.html"><a href="bivariatediscreterv.html#joint-probability-functions"><i class="fa fa-check"></i><b>7.1</b> Joint Probability Functions</a></li>
-<li class="chapter" data-level="7.2" data-path="bivariatediscreterv.html"><a href="bivariatediscreterv.html#marginal-probability-mass-functions"><i class="fa fa-check"></i><b>7.2</b> Marginal probability (mass) functions</a>
-<ul>
-<li class="chapter" data-level="7.2.1" data-path="bivariatediscreterv.html"><a href="bivariatediscreterv.html#first-example"><i class="fa fa-check"></i><b>7.2.1</b> First Example</a></li>
-<li class="chapter" data-level="7.2.2" data-path="bivariatediscreterv.html"><a href="bivariatediscreterv.html#empirical-example"><i class="fa fa-check"></i><b>7.2.2</b> Empirical Example</a></li>
-</ul></li>
-<li class="chapter" data-level="7.3" data-path="bivariatediscreterv.html"><a href="bivariatediscreterv.html#conditional-probability-mass-function"><i class="fa fa-check"></i><b>7.3</b> Conditional probability mass function</a></li>
-<li class="chapter" data-level="7.4" data-path="bivariatediscreterv.html"><a href="bivariatediscreterv.html#independence-1"><i class="fa fa-check"></i><b>7.4</b> Independence</a></li>
-<li class="chapter" data-level="7.5" data-path="bivariatediscreterv.html"><a href="bivariatediscreterv.html#expectations-for-jointly-distributed-discrete-rvs"><i class="fa fa-check"></i><b>7.5</b> Expectations for Jointly Distributed Discrete RVs</a></li>
-<li class="chapter" data-level="7.6" data-path="bivariatediscreterv.html"><a href="bivariatediscreterv.html#iterated-expectations"><i class="fa fa-check"></i><b>7.6</b> Iterated Expectations</a></li>
-<li class="chapter" data-level="7.7" data-path="bivariatediscreterv.html"><a href="bivariatediscreterv.html#expectations-for-jointly-distributed-discrete-rvs-1"><i class="fa fa-check"></i><b>7.7</b> Expectations for Jointly Distributed Discrete RVs</a></li>
-<li class="chapter" data-level="7.8" data-path="bivariatediscreterv.html"><a href="bivariatediscreterv.html#some-properties-of-covariances"><i class="fa fa-check"></i><b>7.8</b> Some Properties of Covariances</a>
-<ul>
-<li class="chapter" data-level="7.8.1" data-path="bivariatediscreterv.html"><a href="bivariatediscreterv.html#a-remark"><i class="fa fa-check"></i><b>7.8.1</b> A remark</a></li>
-<li class="chapter" data-level="7.8.2" data-path="bivariatediscreterv.html"><a href="bivariatediscreterv.html#an-important-property-of-correlation"><i class="fa fa-check"></i><b>7.8.2</b> An important property of correlation</a></li>
-</ul></li>
-</ul></li>
-<li class="chapter" data-level="8" data-path="numericalmethods.html"><a href="numericalmethods.html"><i class="fa fa-check"></i><b>8</b> 📝 Numerical Methods</a>
-<ul>
-<li class="chapter" data-level="8.1" data-path="numericalmethods.html"><a href="numericalmethods.html#introduction-to-simulation"><i class="fa fa-check"></i><b>8.1</b> Introduction to simulation</a></li>
-<li class="chapter" data-level="8.2" data-path="numericalmethods.html"><a href="numericalmethods.html#simulation-procedure"><i class="fa fa-check"></i><b>8.2</b> Simulation procedure</a></li>
-<li class="chapter" data-level="8.3" data-path="numericalmethods.html"><a href="numericalmethods.html#simulation-in-r"><i class="fa fa-check"></i><b>8.3</b> Simulation in R</a></li>
-<li class="chapter" data-level="8.4" data-path="numericalmethods.html"><a href="numericalmethods.html#coin-tossing"><i class="fa fa-check"></i><b>8.4</b> Coin tossing</a></li>
-<li class="chapter" data-level="8.5" data-path="numericalmethods.html"><a href="numericalmethods.html#summarizing"><i class="fa fa-check"></i><b>8.5</b> Summarizing</a></li>
-</ul></li>
-<li class="chapter" data-level="9" data-path="exercise-solutions.html"><a href="exercise-solutions.html"><i class="fa fa-check"></i><b>9</b> 📝 Exercise Solutions</a>
-<ul>
-<li class="chapter" data-level="9.1" data-path="exercise-solutions.html"><a href="exercise-solutions.html#chapter-1"><i class="fa fa-check"></i><b>9.1</b> Chapter 1</a></li>
-<li class="chapter" data-level="9.2" data-path="exercise-solutions.html"><a href="exercise-solutions.html#chapter-2"><i class="fa fa-check"></i><b>9.2</b> Chapter 2</a>
-<ul>
-<li class="chapter" data-level="9.2.1" data-path="exercise-solutions.html"><a href="exercise-solutions.html#exercise-2.1"><i class="fa fa-check"></i><b>9.2.1</b> Exercise 2.1</a></li>
-<li class="chapter" data-level="9.2.2" data-path="exercise-solutions.html"><a href="exercise-solutions.html#exercise-2.2"><i class="fa fa-check"></i><b>9.2.2</b> Exercise 2.2</a></li>
-<li class="chapter" data-level="9.2.3" data-path="exercise-solutions.html"><a href="exercise-solutions.html#exercise-2.3"><i class="fa fa-check"></i><b>9.2.3</b> Exercise 2.3</a></li>
-<li class="chapter" data-level="9.2.4" data-path="exercise-solutions.html"><a href="exercise-solutions.html#exercise-2.4"><i class="fa fa-check"></i><b>9.2.4</b> Exercise 2.4</a></li>
-<li class="chapter" data-level="9.2.5" data-path="exercise-solutions.html"><a href="exercise-solutions.html#exercise-2.5"><i class="fa fa-check"></i><b>9.2.5</b> Exercise 2.5</a></li>
-<li class="chapter" data-level="9.2.6" data-path="exercise-solutions.html"><a href="exercise-solutions.html#exercise-2.6"><i class="fa fa-check"></i><b>9.2.6</b> Exercise 2.6</a></li>
-<li class="chapter" data-level="9.2.7" data-path="exercise-solutions.html"><a href="exercise-solutions.html#exercise-2.7"><i class="fa fa-check"></i><b>9.2.7</b> Exercise 2.7</a></li>
-<li class="chapter" data-level="9.2.8" data-path="exercise-solutions.html"><a href="exercise-solutions.html#exercise-2.8"><i class="fa fa-check"></i><b>9.2.8</b> Exercise 2.8</a></li>
-<li class="chapter" data-level="9.2.9" data-path="exercise-solutions.html"><a href="exercise-solutions.html#exercise-2.8-1"><i class="fa fa-check"></i><b>9.2.9</b> Exercise 2.8</a></li>
-</ul></li>
-<li class="chapter" data-level="9.3" data-path="exercise-solutions.html"><a href="exercise-solutions.html#chapter-3"><i class="fa fa-check"></i><b>9.3</b> Chapter 3</a></li>
-<li class="chapter" data-level="9.4" data-path="exercise-solutions.html"><a href="exercise-solutions.html#chapter-4"><i class="fa fa-check"></i><b>9.4</b> Chapter 4</a></li>
-<li class="chapter" data-level="9.5" data-path="exercise-solutions.html"><a href="exercise-solutions.html#chapter-5"><i class="fa fa-check"></i><b>9.5</b> Chapter 5</a></li>
-<li class="chapter" data-level="9.6" data-path="exercise-solutions.html"><a href="exercise-solutions.html#chapter-6"><i class="fa fa-check"></i><b>9.6</b> Chapter 6</a></li>
-<li class="chapter" data-level="9.7" data-path="exercise-solutions.html"><a href="exercise-solutions.html#chapter-7"><i class="fa fa-check"></i><b>9.7</b> Chapter 7</a></li>
-<li class="chapter" data-level="9.8" data-path="exercise-solutions.html"><a href="exercise-solutions.html#chapter-8"><i class="fa fa-check"></i><b>9.8</b> Chapter 8</a></li>
-</ul></li>
-<li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
-<li class="divider"></li>
-<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
-
-</ul>
-
-      </nav>
+    <div class="d-flex align-items-start justify-content-between">
+      <h1>
+        <a href="index.html" title="Course Notes">🃏 Probability I</a>:
+        <small class="text-muted">Course Notes</small>
+      </h1>
+      <button class="btn btn-outline-primary d-lg-none ml-2 mt-1" type="button" data-toggle="collapse" data-target="#main-nav" aria-expanded="true" aria-controls="main-nav"><i class="fas fa-bars"></i><span class="sr-only">Show table of contents</span></button>
     </div>
 
-    <div class="book-body">
-      <div class="body-inner">
-        <div class="book-header" role="navigation">
-          <h1>
-            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">🃏 Probability I</a>
-          </h1>
+    <div id="main-nav" class="collapse-lg">
+      <form role="search">
+        <input id="search" class="form-control" type="search" placeholder="Search" aria-label="Search">
+</form>
+
+      <nav aria-label="Table of contents"><h2>Table of contents</h2>
+        <ul class="book-toc list-unstyled">
+<li><a class="" href="index.html">About this lecture</a></li>
+<li><a class="" href="introduction.html"><span class="header-section-number">1</span> Introduction</a></li>
+<li><a class="active" href="settheory.html"><span class="header-section-number">2</span> Elements of Set Theory for Probability</a></li>
+<li><a class="" href="axioms.html"><span class="header-section-number">3</span> Probability Axioms</a></li>
+<li><a class="" href="discreterv.html"><span class="header-section-number">4</span> 🔧 Discrete Random Variables</a></li>
+<li><a class="" href="continuousrv.html"><span class="header-section-number">5</span> 🔧 Continuous Random Variable</a></li>
+<li><a class="" href="limittheorems.html"><span class="header-section-number">6</span> 📝 Limit Theorems</a></li>
+<li><a class="" href="bivariatediscreterv.html"><span class="header-section-number">7</span> 📝 Bivariate Discrete Random Variables</a></li>
+<li><a class="" href="numericalmethods.html"><span class="header-section-number">8</span> 📝 Numerical Methods</a></li>
+<li><a class="" href="exercise-solutions.html"><span class="header-section-number">9</span> 📝 Exercise Solutions</a></li>
+<li><a class="" href="references.html">References</a></li>
+</ul>
+
+        <div class="book-extra">
+          
         </div>
-
-        <div class="page-wrapper" tabindex="-1" role="main">
-          <div class="page-inner">
-
-            <section class="normal" id="section-">
-<div id="settheory" class="section level1" number="2">
-<h1><span class="header-section-number">Chapter 2</span> Elements of Set Theory for Probability</h1>
-<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-1"></span>
-<img src="img/fun/R9mJR.jpeg" alt="_The beaverduck_ from [Tenso Graphics](https://cargocollective.com/tensographics)" width="75%" />
-<p class="caption">
+      </nav>
+</div>
+  </header><main class="col-sm-12 col-md-9 col-lg-7" id="content"><div id="settheory" class="section level1" number="2">
+<h1>
+<span class="header-section-number">2</span> Elements of Set Theory for Probability<a class="anchor" aria-label="anchor" href="#settheory"><i class="fas fa-link"></i></a>
+</h1>
+<div class="figure" style="text-align: center">
+<span style="display:block;" id="fig:unnamed-chunk-17"></span>
+<img src="img/fun/R9mJR.jpeg" alt="_The beaverduck_ from [Tenso Graphics](https://cargocollective.com/tensographics)" width="75%"><p class="caption">
 Figure 2.1: <em>The beaverduck</em> from <a href="https://cargocollective.com/tensographics">Tenso Graphics</a>
 </p>
 </div>
 <p>In order to formalise the theory of probability, our first step consists in formulating events with uncertain outcomes as mathematical objects. To do this, we take advantage of <strong>Set Theory</strong>.</p>
 <p>In this chapter, we will overview some elements of Set Theory, and link them with uncertain outcomes.</p>
 <div id="random-experiments-events-and-sample-spaces" class="section level2" number="2.1">
-<h2><span class="header-section-number">2.1</span> Random Experiments, Events and Sample Spaces</h2>
+<h2>
+<span class="header-section-number">2.1</span> Random Experiments, Events and Sample Spaces<a class="anchor" aria-label="anchor" href="#random-experiments-events-and-sample-spaces"><i class="fas fa-link"></i></a>
+</h2>
 <p>Let us start our journey with some definitions:</p>
-
-<div class="definition">
-<span id="def:randomExperiment" class="definition"><strong>Definition 2.1  (Random Experiment)  </strong></span>
-A Random Experiment is a process that can <strong>result in two or more different outcomes</strong> with <strong>uncertainty as to which will be observed</strong>.
-</div>
 <p>We perform Random Experiments almost every day in our everyday life. Some are very deliberate, such as the referee flipping a coin to decide who gets to kick the ball first in a football game. However, some are less deliberate, such as the rise or fall of the price of a Stock which, as we have illustrated in the introductory lecture, falls within this definition.</p>
-
-<div class="definition">
-<p><span id="def:event" class="definition"><strong>Definition 2.2  (Event)  </strong></span>
-An Event is an uncertain outcome of a random experiment.</p>
-<p>An event can be:</p>
-<ul>
-<li>Elementary: it includes only one particular outcome of the experiment</li>
-<li>Composite: it includes more than one elementary outcome in the possible sets of outcomes.
-</div></li>
-</ul>
 <p>For instance, in some card games, you have to draw more than one card, and in some dice games, (such as the Bolivian game of “Cacho Alalay”), you have to throw more 5 dice. The result of your throw is therefore the composition of elementary events (the result of each die).</p>
 <!-- https://www.paginasiete.bo/u/fotografias/fotosnoticias/2015/9/19/78124.jpg -->
-
-<div class="definition">
-<span id="def:sampleSpace" class="definition"><strong>Definition 2.3  (Sample Space)  </strong></span>The <strong>Sample Space</strong> is the complete listing of the elementary events that can occur in a random experiment. We will denote the sample space by <span class="math inline">\(S\)</span>.
-</div>
-
-<div class="example">
-<p><span id="exm:cardGame" class="example"><strong>Example 2.1  (A simple card game)  </strong></span>
-To illustrate all these definitions, we will use a game of cards.</p>
-<ul>
-<li><p>Let us suppose that the game requires drawing <strong>one</strong> card at random from a full deck of 52 playing cards. This draw consitutes a <strong>Random Experiment</strong></p></li>
-<li><p>The <strong>Sample Space</strong> <span class="math inline">\(S\)</span> consists of the values of the cards of all colors and suits.</p></li>
-</ul>
-<div align="center">
-S = {<span style="color: black">A♣</span>, <span style="color: black">2♣</span>, …,<span style="color: black">K♣</span>,<span style="color: red">A♦</span>, <span style="color: red">2♦</span>, … ,<span style="color: red">K♦</span> , <span style="color: red">A♥</span>, <span style="color: red">2♥</span>, … ,<span style="color: red">K♥</span>, <span style="color: black">A♠</span>, <span style="color: black">2♠</span>, … ,<span style="color: black">K♠</span>}
-</div>
-<ul>
-<li>Here, we can define Events as subsets of the sample space, To keep it simple, let’s consider <strong>Elementary Events</strong>:
-<ul>
-<li><span class="math inline">\(K\)</span>: <em>drawing a <strong>King</strong></em>
-<div align="center">
-K = {<span style="color: black">K♣</span>, <span style="color: red">K♦</span>, <span style="color: red">K♥</span>, <span style="color: black">K♠</span>}
-</div></li>
-<li><span class="math inline">\(H\)</span>: Event of drawing a <strong>Heart</strong>
-<div align="center">
-H = {<span style="color: red">A♥</span>, <span style="color: red">2♥</span>, … ,<span style="color: red">K♥</span>}
-</div></li>
-<li><span class="math inline">\(J\)</span>: drawing a <strong>Jack or higher</strong>
-<div align="center">
-J = {<span style="color: black">J♣</span>, <span style="color: black">Q♣</span>,<span style="color: black">K♣</span>,<span style="color: red">J♦</span>, <span style="color: red">Q♦</span>, <span style="color: red">K♦</span> , <span style="color: red">J♥</span>, <span style="color: red">Q♥</span>, <span style="color: red">K♥</span>, <span style="color: black">J♠</span>, <span style="color: black">Q♠</span>, <span style="color: black">K♠</span>}
-</div></li>
-<li><span class="math inline">\(Q\)</span>: drawing a <strong>Queen</strong>
-<div align="center">
-Q = {<span style="color: black">Q♣</span>, <span style="color: red">Q♦</span>, <span style="color: red">Q♥</span>, <span style="color: black">Q♠</span>}
-</div>
-</div></li>
-</ul></li>
-</ul>
 With a game of cards, we can also illustrate <strong>Composite Events</strong>, e.g. drawing 4 <strong>Aces</strong>
-<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-2"></span>
-<img src="img/02_set_theory/CardDeck/aces.png" alt="Someone is lucky!" width="50%" />
-<p class="caption">
+<div class="figure" style="text-align: center">
+<span style="display:block;" id="fig:unnamed-chunk-18"></span>
+<img src="img/02_set_theory/CardDeck/aces.png" alt="Someone is lucky!" width="50%"><p class="caption">
 Figure 2.2: Someone is lucky!
 </p>
 </div>
-
-<div class="example">
-<p><span id="exm:flipCoins" class="example"><strong>Example 2.2  (Flipping Coins)  </strong></span>Flipping a set of two coins can be characterised as another random experiment allowing for composite events. In this case, let us denote the outcomes for each coin are <span class="math inline">\(H\)</span> for Head and <span class="math inline">\(T\)</span> for Tail.</p>
-<p>Hence, the sample space of the experiment “flipping two coins” contains the following four points:</p>
-<span class="math display">\[S = \{ (HH),(HT),(TH),(TT)  \}.\]</span>
-</div>
-
-<div class="example">
-<p><span id="exm:timePhone" class="example"><strong>Example 2.3  (Time on your phone)  </strong></span>Say you are interested in measuring the time of your life spent on your phone. The measure of the time (in hours) can be considered as the outcome of a random experiment, and every measure of the time, an event.</p>
-When you take a measure, you will be counting fractions of the hour spent on your phone (e.g. 20 minutes = 1/3 h). Therefore, the possible outcomes of this experiment are are <em>durations</em> measured in fractions ranging from 0 to infinity. Hence, the sample space consists of all nonnegative real numbers:
-<span class="math display">\[ S = \{x: 0 \leq x &lt; \infty \}\]</span>
-or, equivalently, <span class="math inline">\(S\equiv \mathbb{R}^+\)</span>.
-</div>
 </div>
 <div id="some-definitions-from-set-theory" class="section level2" number="2.2">
-<h2><span class="header-section-number">2.2</span> Some definitions from set theory</h2>
+<h2>
+<span class="header-section-number">2.2</span> Some definitions from set theory<a class="anchor" aria-label="anchor" href="#some-definitions-from-set-theory"><i class="fas fa-link"></i></a>
+</h2>
 <p>The following definitions from set theory will be useful to deal with events.</p>
-
-<div class="definition">
-<p><span id="def:subsets" class="definition"><strong>Definition 2.4  </strong></span>If every element of a set <span class="math inline">\(A\)</span> is also an element of a set <span class="math inline">\(B\)</span>, then <strong><span class="math inline">\(A\)</span> is a <em>subset</em> of <span class="math inline">\(B\)</span></strong>.</p>
-We write this as : <span class="math display">\[A \subset B\]</span> and we read it as <strong>“<span class="math inline">\(A\)</span> is contained in <span class="math inline">\(B\)</span>”</strong>
-</div>
-
-<div class="definition">
-<span id="def:equality" class="definition"><strong>Definition 2.5  </strong></span>Two sets <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span> are said to be <strong>equal</strong> if <span class="math display">\[A \subset B \text{ and } B \subset A;\]</span>
-</div>
-
-<div class="definition">
-<span id="def:emptySet" class="definition"><strong>Definition 2.6  </strong></span>If a set <span class="math inline">\(A\)</span> contains no points, it will be called the <strong>null set</strong>, or <strong>empty set</strong>, and it is typically denoted by <span class="math inline">\(\varnothing\)</span>.
-</div>
 </div>
 <div id="the-venn-diagram" class="section level2" number="2.3">
-<h2><span class="header-section-number">2.3</span> The Venn diagram</h2>
+<h2>
+<span class="header-section-number">2.3</span> The Venn diagram<a class="anchor" aria-label="anchor" href="#the-venn-diagram"><i class="fas fa-link"></i></a>
+</h2>
 <p>The Venn diagram is an elementary schematic representation of sets and helps displaying their properties. As you might remember from your elementary mathematics classes, a Venn diagram represents a set with a closed figure and it is assumed that the set elements are in the surface contained by the figure. They are very useful to illustrate inclusion and equality as well as more abstract notions.</p>
-<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-3"></span>
-<img src="img/02_set_theory/charts/charts.001.png" alt="Inclusion and Equality of sets with Venn Diagrams" width="960" />
-<p class="caption">
+<div class="figure" style="text-align: center">
+<span style="display:block;" id="fig:unnamed-chunk-19"></span>
+<img src="img/02_set_theory/charts/charts.001.png" alt="Inclusion and Equality of sets with Venn Diagrams" width="960"><p class="caption">
 Figure 2.3: Inclusion and Equality of sets with Venn Diagrams
 </p>
 </div>
 <div id="sample-space-and-events" class="section level3" number="2.3.1">
-<h3><span class="header-section-number">2.3.1</span> Sample Space and Events</h3>
+<h3>
+<span class="header-section-number">2.3.1</span> Sample Space and Events<a class="anchor" aria-label="anchor" href="#sample-space-and-events"><i class="fas fa-link"></i></a>
+</h3>
 <p>By definition, an event or several events, constitute a subset of the sample space. This can be represented in a Venn Diagram with a figure enclosed within the Sample Space.</p>
-<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-4"></span>
-<img src="img/02_set_theory/charts/charts.002.png" alt="Venn Diagram - An event within the Sample Space" width="960" />
-<p class="caption">
+<div class="figure" style="text-align: center">
+<span style="display:block;" id="fig:unnamed-chunk-20"></span>
+<img src="img/02_set_theory/charts/charts.002.png" alt="Venn Diagram - An event within the Sample Space" width="960"><p class="caption">
 Figure 2.4: Venn Diagram - An event within the Sample Space
 </p>
 </div>
 </div>
 <div id="exclusive-and-non-exclusive-events" class="section level3" number="2.3.2">
-<h3><span class="header-section-number">2.3.2</span> Exclusive and Non-Exclusive Events</h3>
+<h3>
+<span class="header-section-number">2.3.2</span> Exclusive and Non-Exclusive Events<a class="anchor" aria-label="anchor" href="#exclusive-and-non-exclusive-events"><i class="fas fa-link"></i></a>
+</h3>
 <p>Two events are mutually exclusive is they cannot occur jointly. This is represented by two separate enclosed surfaces within the sample space.</p>
-<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-5"></span>
-<img src="img/02_set_theory/charts/charts.003.png" alt="Venn Diagram - Two mutually exclusive events" width="960" />
-<p class="caption">
+<div class="figure" style="text-align: center">
+<span style="display:block;" id="fig:unnamed-chunk-21"></span>
+<img src="img/02_set_theory/charts/charts.003.png" alt="Venn Diagram - Two mutually exclusive events" width="960"><p class="caption">
 Figure 2.5: Venn Diagram - Two mutually exclusive events
 </p>
 </div>
-
-<div class="exercise">
-<span id="exr:unnamed-chunk-6" class="exercise"><strong>Exercise 2.1  </strong></span>Consider our simple card game example. Build Venn Diagrams of the events “drawing a <strong>King</strong>” and “drawing a <strong>Queen</strong>.” Do they have element in common? What does that say about these events?
-</div>
 <p>Events that are not mutually exclusive have a shared area, which in set theory constitutes an <strong>intersection</strong> and gets shown in a Venn diagram by two figures that share some of their areas.</p>
-<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-7"></span>
-<img src="img/02_set_theory/charts/charts.004.png" alt="Venn Diagram - Two Non-mutually exclusive events" width="960" />
-<p class="caption">
+<div class="figure" style="text-align: center">
+<span style="display:block;" id="fig:unnamed-chunk-23"></span>
+<img src="img/02_set_theory/charts/charts.004.png" alt="Venn Diagram - Two Non-mutually exclusive events" width="960"><p class="caption">
 Figure 2.6: Venn Diagram - Two Non-mutually exclusive events
 </p>
 </div>
-
-<div class="exercise">
-<span id="exr:unnamed-chunk-8" class="exercise"><strong>Exercise 2.2  </strong></span>Coming back to our example with the card game, build Venn diagrams for the events “drawing a <strong>King</strong>” and “drawing a <strong>Heart</strong>.” Do they have element in common? What does that say about these events?
-</div>
 </div>
 <div id="union-and-intersection-of-events" class="section level3" number="2.3.3">
-<h3><span class="header-section-number">2.3.3</span> Union and Intersection of Events</h3>
+<h3>
+<span class="header-section-number">2.3.3</span> Union and Intersection of Events<a class="anchor" aria-label="anchor" href="#union-and-intersection-of-events"><i class="fas fa-link"></i></a>
+</h3>
 <p>The <strong>union</strong> of the events <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span> is the event which occurs when either <span class="math inline">\(A\)</span> or <span class="math inline">\(B\)</span> occurs: <span class="math inline">\(A \cup B\)</span>. In a Venn diagram, we can illustrate this by shading the area enclosed by both sets.</p>
-<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-9"></span>
-<img src="img/02_set_theory/charts/charts.005.png" alt="Venn Diagram - $A\cup B$" width="960" />
-<p class="caption">
+<div class="figure" style="text-align: center">
+<span style="display:block;" id="fig:unnamed-chunk-25"></span>
+<img src="img/02_set_theory/charts/charts.005.png" alt="Venn Diagram - $A\cup B$" width="960"><p class="caption">
 Figure 2.7: Venn Diagram - <span class="math inline">\(A\cup B\)</span>
 </p>
 </div>
 <p>The <strong>intersection</strong> of the events <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span> is the event which occurs when both <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span> occur: <span class="math inline">\(A \cap B\)</span>. In a Venn diagram, we can illustrate this by shading the area shared by both sets.</p>
-<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-10"></span>
-<img src="img/02_set_theory/charts/charts.006.png" alt="Venn Diagram - $A\cap B$" width="960" />
-<p class="caption">
+<div class="figure" style="text-align: center">
+<span style="display:block;" id="fig:unnamed-chunk-26"></span>
+<img src="img/02_set_theory/charts/charts.006.png" alt="Venn Diagram - $A\cap B$" width="960"><p class="caption">
 Figure 2.8: Venn Diagram - <span class="math inline">\(A\cap B\)</span>
 </p>
 </div>
 </div>
 <div id="complement" class="section level3" number="2.3.4">
-<h3><span class="header-section-number">2.3.4</span> Complement</h3>
+<h3>
+<span class="header-section-number">2.3.4</span> Complement<a class="anchor" aria-label="anchor" href="#complement"><i class="fas fa-link"></i></a>
+</h3>
 <p>The <strong>complement</strong> of an event <span class="math inline">\(A\)</span> is the event that occurs when <span class="math inline">\(A\)</span> does not occur: We write <span class="math inline">\(A^{c}\)</span> or <span class="math inline">\(\overline{A}\)</span>. A Venn diagram illustrates this by shading the area outside the set that defines the event <span class="math inline">\(A\)</span>.</p>
-<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-11"></span>
-<img src="img/02_set_theory/charts/charts.007.png" alt="Venn Diagram - $A^{c}$" width="960" />
-<p class="caption">
+<div class="figure" style="text-align: center">
+<span style="display:block;" id="fig:unnamed-chunk-27"></span>
+<img src="img/02_set_theory/charts/charts.007.png" alt="Venn Diagram - $A^{c}$" width="960"><p class="caption">
 Figure 2.9: Venn Diagram - <span class="math inline">\(A^{c}\)</span>
 </p>
 </div>
 <p>Let <span class="math inline">\(S\)</span> be the complete set of all possible events, i.e. the Sample Space. In such case, <span class="math inline">\(A^c\)</span> can be written as: <span class="math display">\[A^c = S \setminus A = S-A.\]</span> and is such that <span class="math display">\[A \cup A^c = S.\]</span></p>
 </div>
 <div id="some-properties-of-union-and-intersection" class="section level3" number="2.3.5">
-<h3><span class="header-section-number">2.3.5</span> Some Properties of union and intersection</h3>
+<h3>
+<span class="header-section-number">2.3.5</span> Some Properties of union and intersection<a class="anchor" aria-label="anchor" href="#some-properties-of-union-and-intersection"><i class="fas fa-link"></i></a>
+</h3>
 <p>Let <span class="math inline">\(A\)</span>, <span class="math inline">\(B\)</span>, and <span class="math inline">\(D\)</span> be sets. The following laws hold:</p>
 <ul>
 <li><p><strong>Commutative laws</strong>: Union and Intersection of sets are <em>commutative</em>, i.e. they produce the same outcome irrespective of the order in which the sets are written.
@@ -485,88 +182,37 @@ A \cap B = B \cap A
 A \cup (B \cup C) = (A \cup C) \cup C \\
 A \cap (B \cap C) = (A \cap C) \cap C
 \end{eqnarray*}\]</span></p></li>
-<li><p><strong>Distributive laws</strong></p>
+<li>
+<p><strong>Distributive laws</strong></p>
 <ul>
-<li><strong>The intersection is <em>distributive</em> with respect to the union</strong>, i.e. the intersection between a set (<span class="math inline">\(A\)</span>) and the union of two other sets (<span class="math inline">\(B\)</span> and <span class="math inline">\(C\)</span>) is the union of the intersections.
+<li>
+<strong>The intersection is <em>distributive</em> with respect to the union</strong>, i.e. the intersection between a set (<span class="math inline">\(A\)</span>) and the union of two other sets (<span class="math inline">\(B\)</span> and <span class="math inline">\(C\)</span>) is the union of the intersections.
 <span class="math display">\[ A \cap (B \cup C) = (A \cap B) \cup (A\cap C)\]</span>
-<img src="img/02_set_theory/charts/charts.008.png" width="960" style="display: block; margin: auto;" /></li>
-<li><strong>The union is <em>distributive</em> with respect to the intersection</strong>, i.e. the union between a set (<span class="math inline">\(A\)</span>) and an intersection of two others is the intersection of the unions.
+<img src="img/02_set_theory/charts/charts.008.png" width="960" style="display: block; margin: auto;">
+</li>
+<li>
+<strong>The union is <em>distributive</em> with respect to the intersection</strong>, i.e. the union between a set (<span class="math inline">\(A\)</span>) and an intersection of two others is the intersection of the unions.
 <span class="math display">\[A \cup (B \cap C) = (A\cup C) \cap (A \cup C)\]</span>
-<img src="img/02_set_theory/charts/charts.009.png" width="960" style="display: block; margin: auto;" /></li>
-</ul></li>
+<img src="img/02_set_theory/charts/charts.009.png" width="960" style="display: block; margin: auto;">
+</li>
 </ul>
-
-<div class="exercise">
-<p><span id="exr:unnamed-chunk-14" class="exercise"><strong>Exercise 2.3  </strong></span>
-Let <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span> be two non-exclusive Events in the Sample Space <span class="math inline">\(S\)</span>. Use Venn diagrams to represent:</p>
-<ol style="list-style-type: lower-roman">
-<li><span class="math inline">\(\overline{A\cap B} = (A\cap B)^{c}\)</span></li>
-<li><span class="math inline">\(B-A\)</span></li>
-</ol>
-</div>
+</li>
+</ul>
 </div>
 </div>
 <div id="countable-and-uncountable-sets" class="section level2" number="2.4">
-<h2><span class="header-section-number">2.4</span> Countable and Uncountable sets</h2>
+<h2>
+<span class="header-section-number">2.4</span> Countable and Uncountable sets<a class="anchor" aria-label="anchor" href="#countable-and-uncountable-sets"><i class="fas fa-link"></i></a>
+</h2>
 <p>Events can be represented by means of sets and sets can be either <strong>countable</strong> or <strong>uncountable</strong>.</p>
 <p>In mathematics, a <strong>Countable Set</strong> is a set with the same <em>cardinality</em> (number of elements) as some subset of the set of natural numbers <span class="math inline">\(\mathbb{N}= \{0, 1, 2, 3, \dots \}\)</span>.</p>
 <p>A countable set can be <strong>countably finite</strong> or <strong>countably infinite</strong>. Whether finite or infinite, the elements of a countable set can always be counted one at a time and, although the counting may never finish, every element of the set is associated with a natural number. Roughly speaking one can count the elements of the set using <span class="math inline">\(1,2,3,..\)</span></p>
-
-<div class="example">
-<p><span id="exm:countableSet" class="example"><strong>Example 2.4  (Our deck of cards and Finite Countable Sets)  </strong></span>Let’s come back to our example with the deck of cards and the event. The following events can be considered countably finite sets as they have a limited and countable number of elements:</p>
-<ul>
-<li><span class="math inline">\(K \cup H\)</span> = {<span style="color: black">K♣</span>, <span style="color: red">K♦</span>, <span style="color: red">K♥</span>, <span style="color: black">K♠</span>, <span style="color: red">A♥</span>, <span style="color: red">2♥</span>, … , <span style="color: red">Q♥</span>}</li>
-<li><span class="math inline">\(J \cup H\)</span> = {<span style="color: black">J♣</span>, <span style="color: black">Q♣</span>, <span style="color: black">K♣</span>, <span style="color: red">J♦</span>, <span style="color: red">Q♦</span>, <span style="color: red">K♦</span>, <span style="color: red">J♥</span>, <span style="color: red">Q♥</span>, <span style="color: red">K♥</span>, <span style="color: black">J♠</span>, <span style="color: black">Q♠</span>, <span style="color: black">K♠</span>, <span style="color: red">A♥</span>, <span style="color: red">2♥</span>, … , <span style="color: red">10♥</span>}</li>
-<li><span class="math inline">\(H^{c}\)</span> = {<span style="color: black">A♣</span>, <span style="color: black">2♣</span>, …,<span style="color: black">K♣</span>,<span style="color: red">A♦</span>, <span style="color: red">2♦</span>, … ,<span style="color: red">K♦</span> ,<span style="color: black">A♠</span>, <span style="color: black">2♠</span>, … ,<span style="color: black">K♠</span>}
-</div></li>
-</ul>
 <!-- - G. Cantor introduced the term countable set, contrasting sets that are countable with those that are **uncountable** (i.e., nonenumerable or nondenumerable). -->
 <!-- Events can be represented by means of sets. -->
-
-<div class="exercise">
-<p><span id="exr:uncountableSet" class="exercise"><strong>Exercise 2.4  (Illustrations within an Uncountable Set)  </strong></span>
-Any segment of the Real line is an Uncountable set. Consider the segment ranging from (but excluding) 0 to 1 the Sample Space
-<span class="math display">\[S = \{x : 0 &lt;x &lt;1\}\]</span>
-and the sets
-<span class="math display">\[\begin{align*}
-A &amp;= \{x \in S : 0.4&lt;x&lt;0.8\} \text{and}\\
-B &amp;= \{x \in S : 0.6&lt;x&lt;1\}
-\end{align*}\]</span></p>
-<p>Using these definitions, compute:</p>
-<ul>
-<li><span class="math inline">\(A^c\)</span></li>
-<li><span class="math inline">\(B^c\)</span></li>
-<li><span class="math inline">\(B^c \cup A\)</span></li>
-<li><span class="math inline">\(B^c \cup A^c\)</span></li>
-<li><span class="math inline">\(A \cup B\)</span></li>
-<li><span class="math inline">\(A \cap B\)</span></li>
-<li><span class="math inline">\(B \cup A^c\)</span></li>
-<li><span class="math inline">\(A^c \cup A\)</span>
-</div></li>
-</ul>
 <!-- %\begin{figure}[h!] -->
 <!-- %\centering                -->
 <!-- %\includegraphics[width=0.6\textwidth,height=0.6\textheight]{Example3bis.pdf} -->
 <!-- %\end{figure} -->
-
-<div class="exercise">
-<p><span id="exr:unnamed-chunk-15" class="exercise"><strong>Exercise 2.5  (flipping coins again)  </strong></span>Let us come back to the experiment where we flip two coins. For each coin we have <span class="math inline">\(H\)</span> for Head and <span class="math inline">\(T\)</span> for Tail. Remember that the sample space contains the following four points:</p>
-<p><span class="math display">\[ S = \{ (HH),(HT),(TH),(TT) \}.\]</span></p>
-<p>Then, let us consider the events:</p>
-<ul>
-<li><span class="math inline">\(A= H\)</span> is obtained at least once = <span class="math inline">\(\Big\{ (HH),(HT),(TH) \Big\}\)</span></li>
-<li><span class="math inline">\(B=\)</span> the second toss yields <span class="math inline">\(T\)</span> = <span class="math inline">\(\Big\{ (HT),(TT) \Big\}\)</span></li>
-</ul>
-<p>Using these definitions of <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span> compute:</p>
-<ul>
-<li><span class="math inline">\(A^c\)</span></li>
-<li><span class="math inline">\(B^c\)</span></li>
-<li><span class="math inline">\(B^c \cup A\)</span></li>
-<li><span class="math inline">\(A \cup B\)</span></li>
-<li><span class="math inline">\(A \cap B\)</span></li>
-<li><span class="math inline">\(B \cup A^c\)</span>
-</div></li>
-</ul>
 <!-- %\begin{figure}[h!] -->
 <!-- %\centering                -->
 <!-- %\includegraphics[width=0.9\textwidth,height=0.5\textheight]{Example4.pdf} -->
@@ -599,44 +245,18 @@ B &amp;= \{x \in S : 0.6&lt;x&lt;1\}
 <!-- \item $A \cap B$ -->
 <!-- \item $B \cup A^c$ -->
 <!-- %\item $C^c$ -->
-
-<div class="proposition">
-<p><span id="prp:propUnionInter" class="proposition"><strong>Proposition 2.1  </strong></span>Let <span class="math inline">\(A\)</span> be a set in <span class="math inline">\(S\)</span> and let <span class="math inline">\(\varnothing\)</span> denote the empty set<a href="#fn1" class="footnote-ref" id="fnref1"><sup>1</sup></a>. The following relations hold:</p>
-<ul>
-<li><span class="math inline">\(A \cap S = A\)</span>;</li>
-<li><span class="math inline">\(A \cup S = S\)</span>;</li>
-<li><span class="math inline">\(A \cap \varnothing = \varnothing\)</span>;</li>
-<li><span class="math inline">\(A \cup \varnothing = A\)</span>;</li>
-<li><span class="math inline">\(A \cap A^c = \varnothing\)</span>;</li>
-<li><span class="math inline">\(A \cup A^c = S\)</span>;</li>
-<li><span class="math inline">\(A \cap A = A\)</span>;</li>
-<li><span class="math inline">\(A \cup A = A\)</span>;
-</div></li>
-</ul>
-
-<div class="exercise">
-<span id="exr:unnamed-chunk-16" class="exercise"><strong>Exercise 2.6  </strong></span>Use Venn Diagrams to illustrate these relationships
-</div>
-<p>The identities in proposition <a href="settheory.html#prp:propUnionInter">2.1</a> are helpful to define some other relations between sets/events.</p>
-
-<div class="example">
-<p><span id="exm:unnamed-chunk-17" class="example"><strong>Example 2.5  </strong></span>Let <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span> be two sets in <span class="math inline">\(S\)</span>. Then we have:
-<span class="math display">\[B = (B \cap A) \cup (B \cap A^c).\]</span></p>
-<p>To check it, we can proceed as follows:</p>
-<p><span class="math display">\[\begin{eqnarray*}
-B &amp; = &amp; S \cap B \\
- &amp; = &amp; (A \cup A^c) \cap B  \\
- &amp; = &amp;  (B \cap A) \cup (B \cap A^c). 
-\end{eqnarray*}\]</span></p>
-That concludes the argument.
-</div>
+<p>The identities in proposition <a href="#prp:propUnionInter"><strong>??</strong></a> are helpful to define some other relations between sets/events.</p>
 </div>
 <div id="de-morgans-laws" class="section level2" number="2.5">
-<h2><span class="header-section-number">2.5</span> De Morgan’s Laws</h2>
+<h2>
+<span class="header-section-number">2.5</span> De Morgan’s Laws<a class="anchor" aria-label="anchor" href="#de-morgans-laws"><i class="fas fa-link"></i></a>
+</h2>
 <p>Operations of union and intersection of sets have interesting interactions with complementarity. These properties are formulated under the name of <strong>De Morgan’s laws</strong>.</p>
 <p>For simplicity, let us illustrate these laws in the case of two sets <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span> both included in the Sample Space <span class="math inline">\(S\)</span>. Just keep in mind that they can be generalized for an infinite amount of sets.</p>
 <div id="first-law" class="section level3" number="2.5.1">
-<h3><span class="header-section-number">2.5.1</span> First Law</h3>
+<h3>
+<span class="header-section-number">2.5.1</span> First Law<a class="anchor" aria-label="anchor" href="#first-law"><i class="fas fa-link"></i></a>
+</h3>
 <p>Let <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span> be two sets in <span class="math inline">\(S\)</span>, then
 <span class="math display">\[\begin{eqnarray}
 (A\cap B)^{c} =A^c \cup B^c,
@@ -650,13 +270,11 @@ That concludes the argument.
 <blockquote>
 <p>the complement of the intersection between two sets is the union of their complements.</p>
 </blockquote>
-
-<div class="exercise">
-<span id="exr:unnamed-chunk-18" class="exercise"><strong>Exercise 2.7  </strong></span>It is easy to see this graphically using Venn Diagrams. Try it, as an exercise.
-</div>
 </div>
 <div id="second-law" class="section level3" number="2.5.2">
-<h3><span class="header-section-number">2.5.2</span> Second Law</h3>
+<h3>
+<span class="header-section-number">2.5.2</span> Second Law<a class="anchor" aria-label="anchor" href="#second-law"><i class="fas fa-link"></i></a>
+</h3>
 <p>Let <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span> be two sets in <span class="math inline">\(S\)</span>. Then:</p>
 <p><span class="math display">\[\begin{eqnarray}
 (A\cup B)^{c} =A^c \cap B^c,
@@ -670,13 +288,11 @@ That concludes the argument.
 <blockquote>
 <p>the complement of the union between two sets is the intersection of their complements.</p>
 </blockquote>
-
-<div class="exercise">
-<span id="exr:unnamed-chunk-19" class="exercise"><strong>Exercise 2.8  </strong></span>Once again, it is easy to see this graphically with Venn Diagrams. Try it, as an exercise.
-</div>
 </div>
 <div id="de-morgans-theorem" class="section level3" number="2.5.3">
-<h3><span class="header-section-number">2.5.3</span> De Morgan’s Theorem</h3>
+<h3>
+<span class="header-section-number">2.5.3</span> De Morgan’s Theorem<a class="anchor" aria-label="anchor" href="#de-morgans-theorem"><i class="fas fa-link"></i></a>
+</h3>
 <p>We can extend these laws to three sets. Let us consider three sets <span class="math inline">\(A_{1}\)</span>, <span class="math inline">\(A_{2}\)</span> and <span class="math inline">\(A_{3}\)</span> in <span class="math inline">\(S\)</span>, and use the overline notation to denote the complement of a set, (i.e. <span class="math inline">\(A^{c}_{1} = \overline{A_{1}})\)</span>,</p>
 <ol style="list-style-type: lower-roman">
 <li><p>The <strong>First law</strong> then becomes:
@@ -684,28 +300,10 @@ That concludes the argument.
 <li><p>While the <strong>Second Law</strong> becomes:
 <span class="math display">\[\overline{\left(A_{1}\cap A_{2}\cap A_{3}\right)} = \overline{A_{1}} \cup \overline{A_{2}} \cup \overline{A_{3}}\]</span></p></li>
 </ol>
-
-<div class="exercise">
-<span id="exr:unnamed-chunk-20" class="exercise"><strong>Exercise 2.9  </strong></span>Show this using Venn diagrams.
-</div>
 <p>More generally, this can be extended to the union of an infinite amount of sets in a theorem that we present without demonstration. Consider the following notation for the union of an infinity of sets :</p>
 <p><span class="math display">\[\bigcup_{i \in \mathbb{N}} A_{i} = A_{1} \cup A_{2} \cup A_{3} \cup \dots \]</span></p>
 <p>and the intersection of an infinite but countable amount of sets</p>
 <p><span class="math display">\[\bigcap_{i \in \mathbb{N}} A_{i} = A_{1} \cap A_{2} \cap A_{3} \cap \dots\]</span></p>
-
-<div class="theorem">
-<p><span id="thm:deMorgan" class="theorem"><strong>Theorem 2.1  (De Morgan’s Theorem)  </strong></span>Let <span class="math inline">\(\mathbb{N}\)</span> be the set of natural number and <span class="math inline">\(\{A_{i}\}\)</span> a collection (indexed by <span class="math inline">\(i \in \mathbb{N}\)</span>) of subsets of <span class="math inline">\(S\)</span>. Then:</p>
-<ol style="list-style-type: lower-roman">
-<li><p>the complement of the union of all <span class="math inline">\(A_i\)</span> is the intersection of their complements.
-<span class="math display">\[\begin{eqnarray}
-\overline{\bigcup_{i \in \mathbb{N}} A_i} &amp;=&amp; \bigcap_{i \in \mathbb{N}} \overline{A}_i;
-\end{eqnarray}\]</span></p></li>
-<li><p>the complement of the intersection of all <span class="math inline">\(A_i\)</span> is the union of their complements.
-<span class="math display">\[\begin{eqnarray}
-\overline{\bigcap_{i \in \mathbb{N}} A_i} &amp;=&amp; \bigcup_{i \in \mathbb{N}} \overline{A}_i.
-\end{eqnarray}\]</span></p>
-</div></li>
-</ol>
 <!-- % -->
 <!-- %\frametitle{Back to the events} -->
 <!-- % -->
@@ -724,7 +322,9 @@ That concludes the argument.
 </div>
 </div>
 <div id="probability-as-frequency" class="section level2" number="2.6">
-<h2><span class="header-section-number">2.6</span> Probability as Frequency</h2>
+<h2>
+<span class="header-section-number">2.6</span> Probability as Frequency<a class="anchor" aria-label="anchor" href="#probability-as-frequency"><i class="fas fa-link"></i></a>
+</h2>
 <p>When assessing any experiment with an uncertain outcome the, <strong>primary interest</strong> is not necessarily in the events itself (as they may or may not happen) but in the <em>degree of likelihood that it can happen</em>. That is, we are interested in the <strong>probability of the event happening</strong></p>
 <p>Intuitively, the probability of an event is a <strong>value</strong> associated with the event:
 <span class="math display">\[\text{event} \rightarrow \text{pr(event)}\]</span>
@@ -748,16 +348,6 @@ or equivalently <span class="math inline">\(P(\{i\})= 1/N\)</span>, for <span cl
 \tag{2.1}
 \end{equation}\]</span></p>
 <p>where the “hash” ‘<span class="math inline">\(\#\)</span>’ stands for “number.”</p>
-
-<div class="example">
-<p><span id="exm:unnamed-chunk-21" class="example"><strong>Example 2.6  (An even number among 6 dice)  </strong></span>
-We roll a fair die and we define the event <span class="math display">\[A=\text{the outcome is an even number}=\{2,4,6\}.\]</span>
-What is the probability of <span class="math inline">\(A\)</span>?</p>
-<p>First, we identify the sample space as
-<span class="math display">\[S=\{1,2,3,4,5,6\}.\]</span></p>
-<p>Then, we have that</p>
-<span class="math display">\[P(A)=\frac{N_A}{N} = \frac{\mbox{3 favorable outcomes}}{\mbox{6 total outcomes}} = \frac{1}{2}. \]</span>
-</div>
 <!-- %= \text{pr}(\{1\})+\text{pr}(\{2\})+\text{pr}(\{3\}) -->
 <!-- # since the die is fair, each outcome is equally -->
 <!-- # %likely, so -->
@@ -766,46 +356,14 @@ What is the probability of <span class="math inline">\(A\)</span>?</p>
 <!-- # %\end{eqnarray} -->
 <!-- # %Thus, we conclude that -->
 <p>Building on the intuition gained in the last example and formula <a href="settheory.html#eq:ratioproba">(2.1)</a>, we state a first <strong>informal</strong> definition, which establishes the probability of an event in terms of <strong>relative frequency</strong>.</p>
-
-<div class="definition">
-<p><span id="def:informalProbability" class="definition"><strong>Definition 2.7  (Informal definition of probability)  </strong></span>
-Suppose that an experiment, whose sample space is <span class="math inline">\(S\)</span>, is repeatedly performed under exactly the same conditions.</p>
-<p>For each event, say <span class="math inline">\(A\)</span>, of the sample space, we define <span class="math inline">\(n(A)\)</span> to be the <strong>number of times in the first <span class="math inline">\(n\)</span> repetitions of the experiment</strong> that the <strong>event <span class="math inline">\(A\)</span> occurs</strong>.</p>
-<p>Then, <span class="math inline">\(P(A)\)</span>, namely the probability of the event <span class="math inline">\(A\)</span>, is defined as:</p>
-<p><span class="math display" id="eq:ratioprobaInf">\[\begin{equation}
-P(A)=\lim_{n \to \infty} \frac{n(A)}{n},
-\tag{2.2}
-\end{equation}\]</span></p>
-<p>put in words:</p>
-<span class="math inline">\(P(A)\)</span> is the limiting proportion/frequency of time that <span class="math inline">\(A\)</span> occurs. <span class="math inline">\(P(A)\)</span> is the limit of relative frequency of <span class="math inline">\(A\)</span>.
-</div>
-
-<div class="example">
-<p><span id="exm:unnamed-chunk-22" class="example"><strong>Example 2.7  (Tossing a well-balanced coin)  </strong></span>
-In tossing a well-balanced coin, there are 2 mutually exclusive equiprobrable outcomes: “Heads” <span class="math inline">\(H\)</span> and “Tails” <span class="math inline">\(T\)</span>.</p>
-<p>Let <span class="math inline">\(A\)</span> be the event of <span class="math inline">\(H\)</span>. Since the coin is fair, we have <span class="math inline">\(P(A)=1/2\)</span>. To confirm this intuition/conjecture we can toss the coin a large number of times (each under identical conditions) and count the times we spot <span class="math inline">\(H\)</span>.</p>
-<p>Let <span class="math inline">\(n\)</span> be the <strong>total number of repetitions</strong> while <span class="math inline">\(n(A)\)</span> is the <strong>number of times in which we observe <span class="math inline">\(A\)</span></strong>. Then, the relative frequency:
-<span class="math display">\[\lim_{n \to \infty} \frac{n(A)}{n},\]</span>
-<em>converges</em> to <span class="math inline">\(P(A)\)</span>.</p>
-<p>So,
-<span class="math display">\[P(A) \sim \frac{n(A)}{n}, \quad \text{for large $n$}.\]</span></p>
-The taable shon in Figure <a href="settheory.html#fig:roz">2.10</a> , taken from <span class="citation"><a href="references.html#ref-ross2014first" role="doc-biblioref">Ross</a> (<a href="references.html#ref-ross2014first" role="doc-biblioref">2014</a>)</span> illustrates this point.
-</div>
-<div class="figure" style="text-align: center"><span id="fig:roz"></span>
-<img src="img/02_set_theory/roz.png" alt="Taken from @ross2014first" width="447" />
-<p class="caption">
+<div class="figure" style="text-align: center">
+<span style="display:block;" id="fig:roz"></span>
+<img src="img/02_set_theory/roz.png" alt="Taken from @ross2014first" width="447"><p class="caption">
 Figure 2.10: Taken from <span class="citation"><a href="references.html#ref-ross2014first" role="doc-biblioref">Ross</a> (<a href="references.html#ref-ross2014first" role="doc-biblioref">2014</a>)</span>
 </p>
 </div>
 <p>Clearly, <span class="math display">\[0 \leq n(A) \leq n, \quad \text{so} \quad  0 \leq P(A) \leq 1.\]</span>
 Thus, we say that <em>the probability is a <strong>set function</strong> (it is defined on sets) and <strong>it associates to each set/event a number between zero and one</strong></em>.</p>
-
-<div class="remark">
-<p> <span class="remark"><em>Remark. </em></span> One can provide a more rigorous definition of probability, as a <strong>real-valued function</strong> which defines a <strong>mapping between sets/events and the interval <span class="math inline">\([0,1]\)</span></strong>.</p>
-<p><span class="math display">\[P : A \subseteq \mathbb{R} \longrightarrow [0,1]\]</span></p>
-<p>However, to provide this formal definition we need to introduce the concept of <strong>sigma-algebra</strong> (which represents the <strong>domain</strong> of the probability), a concept that narrowly escapes the frame of our course.</p>
-We will proceed without presenting it, with the very unfortunate cost of losing the mathematical rigour in the following sections and chapters.
-</div>
 <!-- %In this way, we define the domain of the probability. Then,  -->
 <p>To express the probability, we need to impose some additional conditions, that we are going to call <strong>axioms</strong>.</p>
 <p>We here briefly state the ideas, then we will formalize them:</p>
@@ -819,7 +377,9 @@ suitable for us that <span class="math inline">\(A^c\)</span> is also an event, 
 </ol>
 </div>
 <div id="some-references" class="section level2" number="2.7">
-<h2><span class="header-section-number">2.7</span> Some references</h2>
+<h2>
+<span class="header-section-number">2.7</span> Some references<a class="anchor" aria-label="anchor" href="#some-references"><i class="fas fa-link"></i></a>
+</h2>
 <p>The interested reader can find some additional info in <span class="citation"><a href="references.html#ref-rozanov2013probability" role="doc-biblioref">Rozanov</a> (<a href="references.html#ref-rozanov2013probability" role="doc-biblioref">2013</a>)</span> and <span class="citation"><a href="references.html#ref-hogg2019introduction" role="doc-biblioref">Hogg, McKean, and Craig</a> (<a href="references.html#ref-hogg2019introduction" role="doc-biblioref">2019</a>)</span>.</p>
 <!-- You can write citations, too. For example, we are using the **bookdown** package [@R-bookdown] in this sample book, which was built on top of R Markdown and **knitr** [@xie2015]. -->
 <!-- % -->
@@ -847,61 +407,59 @@ suitable for us that <span class="math inline">\(A^c\)</span> is also an event, 
 
 </div>
 </div>
-<div class="footnotes">
-<hr />
-<ol start="1">
-<li id="fn1"><p>A set is called empty if it contains no elements.<a href="settheory.html#fnref1" class="footnote-back">↩︎</a></p></li>
-</ol>
+  <div class="chapter-nav">
+<div class="prev"><a href="introduction.html"><span class="header-section-number">1</span> Introduction</a></div>
+<div class="next"><a href="axioms.html"><span class="header-section-number">3</span> Probability Axioms</a></div>
+</div></main><div class="col-md-3 col-lg-2 d-none d-md-block sidebar sidebar-chapter">
+    <nav id="toc" data-toggle="toc" aria-label="On this page"><h2>On this page</h2>
+      <ul class="nav navbar-nav">
+<li><a class="nav-link" href="#settheory"><span class="header-section-number">2</span> Elements of Set Theory for Probability</a></li>
+<li><a class="nav-link" href="#random-experiments-events-and-sample-spaces"><span class="header-section-number">2.1</span> Random Experiments, Events and Sample Spaces</a></li>
+<li><a class="nav-link" href="#some-definitions-from-set-theory"><span class="header-section-number">2.2</span> Some definitions from set theory</a></li>
+<li>
+<a class="nav-link" href="#the-venn-diagram"><span class="header-section-number">2.3</span> The Venn diagram</a><ul class="nav navbar-nav">
+<li><a class="nav-link" href="#sample-space-and-events"><span class="header-section-number">2.3.1</span> Sample Space and Events</a></li>
+<li><a class="nav-link" href="#exclusive-and-non-exclusive-events"><span class="header-section-number">2.3.2</span> Exclusive and Non-Exclusive Events</a></li>
+<li><a class="nav-link" href="#union-and-intersection-of-events"><span class="header-section-number">2.3.3</span> Union and Intersection of Events</a></li>
+<li><a class="nav-link" href="#complement"><span class="header-section-number">2.3.4</span> Complement</a></li>
+<li><a class="nav-link" href="#some-properties-of-union-and-intersection"><span class="header-section-number">2.3.5</span> Some Properties of union and intersection</a></li>
+</ul>
+</li>
+<li><a class="nav-link" href="#countable-and-uncountable-sets"><span class="header-section-number">2.4</span> Countable and Uncountable sets</a></li>
+<li>
+<a class="nav-link" href="#de-morgans-laws"><span class="header-section-number">2.5</span> De Morgan’s Laws</a><ul class="nav navbar-nav">
+<li><a class="nav-link" href="#first-law"><span class="header-section-number">2.5.1</span> First Law</a></li>
+<li><a class="nav-link" href="#second-law"><span class="header-section-number">2.5.2</span> Second Law</a></li>
+<li><a class="nav-link" href="#de-morgans-theorem"><span class="header-section-number">2.5.3</span> De Morgan’s Theorem</a></li>
+</ul>
+</li>
+<li><a class="nav-link" href="#probability-as-frequency"><span class="header-section-number">2.6</span> Probability as Frequency</a></li>
+<li><a class="nav-link" href="#some-references"><span class="header-section-number">2.7</span> Some references</a></li>
+</ul>
+
+      <div class="book-extra">
+        <ul class="list-unstyled">
+          
+        </ul>
 </div>
-            </section>
+    </nav>
+</div>
 
-          </div>
-        </div>
-      </div>
-<a href="introduction.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="axioms.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
-    </div>
+</div>
+</div> <!-- .container -->
+
+<footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
+
+  <div class="col-12 col-md-6 mt-3">
+    <p>"<strong>🃏 Probability I</strong>: Course Notes" was written by Dr. Daniel Flores Agreda (based on the Lecture by Prof. Davide La Vecchia). </p>
   </div>
-<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
-<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
-<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
-<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
-<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
-<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
-<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
-<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
-<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
-<script>
-gitbook.require(["gitbook"], function(gitbook) {
-gitbook.start({
-"sharing": null,
-"fontsettings": {
-"theme": "white",
-"family": "sans",
-"size": 2
-},
-"edit": {
-"link": "https://github.com/rstudio/bookdown-demo/edit/master/02-set_theory.Rmd",
-"text": "Edit"
-},
-"history": {
-"link": null,
-"text": null
-},
-"view": {
-"link": null,
-"text": null
-},
-"download": null,
-"toc": {
-"collapse": "subsection"
-}
-});
-});
-</script>
 
-<!-- dynamically load mathjax for compatibility with self-contained -->
-<script>
+  <div class="col-12 col-md-6 mt-3">
+    <p>This book was built by the <a class="text-light" href="https://bookdown.org">bookdown</a> R package.</p>
+  </div>
+
+</div></div>
+</footer><!-- dynamically load mathjax for compatibility with self-contained --><script>
   (function () {
     var script = document.createElement("script");
     script.type = "text/javascript";
@@ -913,7 +471,22 @@ gitbook.start({
     script.src = src;
     document.getElementsByTagName("head")[0].appendChild(script);
   })();
+</script><script type="text/x-mathjax-config">const popovers = document.querySelectorAll('a.footnote-ref[data-toggle="popover"]');
+for (let popover of popovers) {
+  const div = document.createElement('div');
+  div.setAttribute('style', 'position: absolute; top: 0, left:0; width:0, height:0, overflow: hidden; visibility: hidden;');
+  div.innerHTML = popover.getAttribute('data-content');
+
+  var has_math = div.querySelector("span.math");
+  if (has_math) {
+    document.body.appendChild(div);
+    MathJax.Hub.Queue(["Typeset", MathJax.Hub, div]);
+    MathJax.Hub.Queue(function() {
+      popover.setAttribute('data-content', div.innerHTML);
+      document.body.removeChild(div);
+    })
+  }
+}
 </script>
 </body>
-
 </html>

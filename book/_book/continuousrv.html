@@ -1,350 +1,102 @@
 <!DOCTYPE html>
-<html lang="" xml:lang="">
+<html lang="en">
 <head>
-
-  <meta charset="utf-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Chapter 5 🔧 Continuous Random Variable | 🃏 Probability I</title>
-  <meta name="description" content="Course Materials" />
-  <meta name="generator" content="bookdown 0.21 and GitBook 2.6.7" />
-
-  <meta property="og:title" content="Chapter 5 🔧 Continuous Random Variable | 🃏 Probability I" />
-  <meta property="og:type" content="book" />
-  
-  
-  <meta property="og:description" content="Course Materials" />
-  <meta name="github-repo" content="rstudio/bookdown-demo" />
-
-  <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Chapter 5 🔧 Continuous Random Variable | 🃏 Probability I" />
-  
-  <meta name="twitter:description" content="Course Materials" />
-  
-
-<meta name="author" content="Dr. Daniel Flores Agreda (based on the Lecture by Prof. Davide La Vecchia)" />
-
-
-
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="apple-mobile-web-app-capable" content="yes" />
-  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
-  
-  
-<link rel="prev" href="discreterv.html"/>
-<link rel="next" href="limittheorems.html"/>
-<script src="libs/header-attrs-2.7/header-attrs.js"></script>
-<script src="libs/jquery-2.2.3/jquery.min.js"></script>
-<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
-<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
-<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
-<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
-<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
-<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
-<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
-
-
-
-
-
-
-
-
-
-
-
-
-<link rel="stylesheet" href="style.css" type="text/css" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<title>Chapter 5 🔧 Continuous Random Variable | 🃏 Probability I</title>
+<meta name="author" content="Dr. Daniel Flores Agreda (based on the Lecture by Prof. Davide La Vecchia)">
+<meta name="description" content="Figure 5.1: ‘Statistical Cow’ by Enrico Chavez   5.1 Two Motivating Examples  Let’s try to count the relative frequency of each of these returns, in an attempt to estimate the probability of each...">
+<meta name="generator" content="bookdown 0.24 with bs4_book()">
+<meta property="og:title" content="Chapter 5 🔧 Continuous Random Variable | 🃏 Probability I">
+<meta property="og:type" content="book">
+<meta property="og:description" content="Figure 5.1: ‘Statistical Cow’ by Enrico Chavez   5.1 Two Motivating Examples  Let’s try to count the relative frequency of each of these returns, in an attempt to estimate the probability of each...">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Chapter 5 🔧 Continuous Random Variable | 🃏 Probability I">
+<meta name="twitter:description" content="Figure 5.1: ‘Statistical Cow’ by Enrico Chavez   5.1 Two Motivating Examples  Let’s try to count the relative frequency of each of these returns, in an attempt to estimate the probability of each...">
+<!-- JS --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://kit.fontawesome.com/6ecbd6c532.js" crossorigin="anonymous"></script><script src="libs/header-attrs-2.11/header-attrs.js"></script><script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<link href="libs/bootstrap-4.6.0/bootstrap.min.css" rel="stylesheet">
+<script src="libs/bootstrap-4.6.0/bootstrap.bundle.min.js"></script><script src="libs/bs3compat-0.3.1/transition.js"></script><script src="libs/bs3compat-0.3.1/tabs.js"></script><script src="libs/bs3compat-0.3.1/bs3compat.js"></script><link href="libs/bs4_book-1.0.0/bs4_book.css" rel="stylesheet">
+<script src="libs/bs4_book-1.0.0/bs4_book.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/autocomplete.js/0.38.0/autocomplete.jquery.min.js" integrity="sha512-GU9ayf+66Xx2TmpxqJpliWbT5PiGYxpaG8rfnBEk1LL8l1KGkRShhngwdXK1UgqhAzWpZHSiYPc09/NwDQIGyg==" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/mark.min.js" integrity="sha512-5CYOlHXGh6QpOFA/TeTylKLWfB3ftPsde7AnmhuitiTX4K5SqCLBeKro6sPS8ilsz1Q4NRx3v8Ko2IBiszzdww==" crossorigin="anonymous"></script><!-- CSS -->
 </head>
+<body data-spy="scroll" data-target="#toc">
 
-<body>
+<div class="container-fluid">
+<div class="row">
+  <header class="col-sm-12 col-lg-3 sidebar sidebar-book"><a class="sr-only sr-only-focusable" href="#content">Skip to main content</a>
 
-
-
-  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
-
-    <div class="book-summary">
-      <nav role="navigation">
-
-<ul class="summary">
-<li><a href="https://www.unige.ch/gsem/fr/"><img src="img/gsem_en.png" alt="UNIGE Logo" width="200" class ="center"></a></li>
-<li><a href="https://moodle.unige.ch/course/view.php?id=7133"><strong>Probability I (Spring 2021)</strong></a></li>
-
-<li class="divider"></li>
-<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>About this lecture</a>
-<ul>
-<li class="chapter" data-level="" data-path="index.html"><a href="index.html#contents"><i class="fa fa-check"></i>Contents</a></li>
-<li class="chapter" data-level="" data-path="index.html"><a href="index.html#practical-information"><i class="fa fa-check"></i>Practical information</a>
-<ul>
-<li class="chapter" data-level="" data-path="index.html"><a href="index.html#who-we-are"><i class="fa fa-check"></i>Who we are</a></li>
-<li class="chapter" data-level="" data-path="index.html"><a href="index.html#lectures"><i class="fa fa-check"></i>Lectures</a></li>
-<li class="chapter" data-level="" data-path="index.html"><a href="index.html#exercises"><i class="fa fa-check"></i>Exercises</a></li>
-<li class="chapter" data-level="" data-path="index.html"><a href="index.html#tools"><i class="fa fa-check"></i>Tools</a></li>
-</ul></li>
-</ul></li>
-<li class="chapter" data-level="1" data-path="introduction.html"><a href="introduction.html"><i class="fa fa-check"></i><b>1</b> Introduction</a>
-<ul>
-<li class="chapter" data-level="1.1" data-path="introduction.html"><a href="introduction.html#a-world-of-data"><i class="fa fa-check"></i><b>1.1</b> A World of Data</a></li>
-<li class="chapter" data-level="1.2" data-path="introduction.html"><a href="introduction.html#what-to-expect-from-this-lecture"><i class="fa fa-check"></i><b>1.2</b> What to expect from this Lecture?</a>
-<ul>
-<li class="chapter" data-level="1.2.1" data-path="introduction.html"><a href="introduction.html#one-intuitive-illustration"><i class="fa fa-check"></i><b>1.2.1</b> One intuitive illustration</a></li>
-</ul></li>
-<li class="chapter" data-level="1.3" data-path="introduction.html"><a href="introduction.html#a-quick-reminder-of-mathematics"><i class="fa fa-check"></i><b>1.3</b> A quick reminder of Mathematics</a>
-<ul>
-<li class="chapter" data-level="1.3.1" data-path="introduction.html"><a href="introduction.html#powers-and-logarithms"><i class="fa fa-check"></i><b>1.3.1</b> Powers and Logarithms</a></li>
-<li class="chapter" data-level="1.3.2" data-path="introduction.html"><a href="introduction.html#differentiation"><i class="fa fa-check"></i><b>1.3.2</b> Differentiation</a></li>
-<li class="chapter" data-level="1.3.3" data-path="introduction.html"><a href="introduction.html#integration"><i class="fa fa-check"></i><b>1.3.3</b> Integration</a></li>
-<li class="chapter" data-level="1.3.4" data-path="introduction.html"><a href="introduction.html#sums"><i class="fa fa-check"></i><b>1.3.4</b> Sums</a></li>
-<li class="chapter" data-level="1.3.5" data-path="introduction.html"><a href="introduction.html#combinatorics"><i class="fa fa-check"></i><b>1.3.5</b> Combinatorics</a></li>
-<li class="chapter" data-level="1.3.6" data-path="introduction.html"><a href="introduction.html#limits"><i class="fa fa-check"></i><b>1.3.6</b> Limits</a></li>
-</ul></li>
-</ul></li>
-<li class="chapter" data-level="2" data-path="settheory.html"><a href="settheory.html"><i class="fa fa-check"></i><b>2</b> Elements of Set Theory for Probability</a>
-<ul>
-<li class="chapter" data-level="2.1" data-path="settheory.html"><a href="settheory.html#random-experiments-events-and-sample-spaces"><i class="fa fa-check"></i><b>2.1</b> Random Experiments, Events and Sample Spaces</a></li>
-<li class="chapter" data-level="2.2" data-path="settheory.html"><a href="settheory.html#some-definitions-from-set-theory"><i class="fa fa-check"></i><b>2.2</b> Some definitions from set theory</a></li>
-<li class="chapter" data-level="2.3" data-path="settheory.html"><a href="settheory.html#the-venn-diagram"><i class="fa fa-check"></i><b>2.3</b> The Venn diagram</a>
-<ul>
-<li class="chapter" data-level="2.3.1" data-path="settheory.html"><a href="settheory.html#sample-space-and-events"><i class="fa fa-check"></i><b>2.3.1</b> Sample Space and Events</a></li>
-<li class="chapter" data-level="2.3.2" data-path="settheory.html"><a href="settheory.html#exclusive-and-non-exclusive-events"><i class="fa fa-check"></i><b>2.3.2</b> Exclusive and Non-Exclusive Events</a></li>
-<li class="chapter" data-level="2.3.3" data-path="settheory.html"><a href="settheory.html#union-and-intersection-of-events"><i class="fa fa-check"></i><b>2.3.3</b> Union and Intersection of Events</a></li>
-<li class="chapter" data-level="2.3.4" data-path="settheory.html"><a href="settheory.html#complement"><i class="fa fa-check"></i><b>2.3.4</b> Complement</a></li>
-<li class="chapter" data-level="2.3.5" data-path="settheory.html"><a href="settheory.html#some-properties-of-union-and-intersection"><i class="fa fa-check"></i><b>2.3.5</b> Some Properties of union and intersection</a></li>
-</ul></li>
-<li class="chapter" data-level="2.4" data-path="settheory.html"><a href="settheory.html#countable-and-uncountable-sets"><i class="fa fa-check"></i><b>2.4</b> Countable and Uncountable sets</a></li>
-<li class="chapter" data-level="2.5" data-path="settheory.html"><a href="settheory.html#de-morgans-laws"><i class="fa fa-check"></i><b>2.5</b> De Morgan’s Laws</a>
-<ul>
-<li class="chapter" data-level="2.5.1" data-path="settheory.html"><a href="settheory.html#first-law"><i class="fa fa-check"></i><b>2.5.1</b> First Law</a></li>
-<li class="chapter" data-level="2.5.2" data-path="settheory.html"><a href="settheory.html#second-law"><i class="fa fa-check"></i><b>2.5.2</b> Second Law</a></li>
-<li class="chapter" data-level="2.5.3" data-path="settheory.html"><a href="settheory.html#de-morgans-theorem"><i class="fa fa-check"></i><b>2.5.3</b> De Morgan’s Theorem</a></li>
-</ul></li>
-<li class="chapter" data-level="2.6" data-path="settheory.html"><a href="settheory.html#probability-as-frequency"><i class="fa fa-check"></i><b>2.6</b> Probability as Frequency</a></li>
-<li class="chapter" data-level="2.7" data-path="settheory.html"><a href="settheory.html#some-references"><i class="fa fa-check"></i><b>2.7</b> Some references</a></li>
-</ul></li>
-<li class="chapter" data-level="3" data-path="axioms.html"><a href="axioms.html"><i class="fa fa-check"></i><b>3</b> Probability Axioms</a>
-<ul>
-<li class="chapter" data-level="3.1" data-path="axioms.html"><a href="axioms.html#an-axiomatic-definition-of-probability"><i class="fa fa-check"></i><b>3.1</b> An Axiomatic Definition of Probability</a></li>
-<li class="chapter" data-level="3.2" data-path="axioms.html"><a href="axioms.html#properties-of-pcdot"><i class="fa fa-check"></i><b>3.2</b> Properties of <span class="math inline">\(P(\cdot)\)</span></a></li>
-<li class="chapter" data-level="3.3" data-path="axioms.html"><a href="axioms.html#examples-and-illustrations"><i class="fa fa-check"></i><b>3.3</b> Examples and Illustrations</a>
-<ul>
-<li class="chapter" data-level="3.3.1" data-path="axioms.html"><a href="axioms.html#flipping-coins"><i class="fa fa-check"></i><b>3.3.1</b> Flipping coins</a></li>
-<li class="chapter" data-level="3.3.2" data-path="axioms.html"><a href="axioms.html#detecting-shoppers"><i class="fa fa-check"></i><b>3.3.2</b> Detecting shoppers</a></li>
-<li class="chapter" data-level="3.3.3" data-path="axioms.html"><a href="axioms.html#de-morgans-law"><i class="fa fa-check"></i><b>3.3.3</b> De Morgan’s Law</a></li>
-<li class="chapter" data-level="3.3.4" data-path="axioms.html"><a href="axioms.html#probability-union-and-complement"><i class="fa fa-check"></i><b>3.3.4</b> Probability, union, and complement</a></li>
-</ul></li>
-<li class="chapter" data-level="3.4" data-path="axioms.html"><a href="axioms.html#conditional-probability"><i class="fa fa-check"></i><b>3.4</b> Conditional probability</a></li>
-<li class="chapter" data-level="3.5" data-path="axioms.html"><a href="axioms.html#independence"><i class="fa fa-check"></i><b>3.5</b> Independence</a>
-<ul>
-<li class="chapter" data-level="3.5.1" data-path="axioms.html"><a href="axioms.html#another-characterisation"><i class="fa fa-check"></i><b>3.5.1</b> Another characterisation</a></li>
-</ul></li>
-<li class="chapter" data-level="3.6" data-path="axioms.html"><a href="axioms.html#theorem-i-the-theorem-of-total-probabilities"><i class="fa fa-check"></i><b>3.6</b> Theorem I: The Theorem of Total Probabilities</a></li>
-<li class="chapter" data-level="3.7" data-path="axioms.html"><a href="axioms.html#theorem-ii-bayes-theorem"><i class="fa fa-check"></i><b>3.7</b> Theorem II: Bayes’ Theorem</a>
-<ul>
-<li class="chapter" data-level="3.7.1" data-path="axioms.html"><a href="axioms.html#guessing-in-a-multiple-choice-exam"><i class="fa fa-check"></i><b>3.7.1</b> Guessing in a multiple choice exam</a></li>
-<li class="chapter" data-level="3.7.2" data-path="axioms.html"><a href="axioms.html#rent-car-maintenance"><i class="fa fa-check"></i><b>3.7.2</b> Rent car maintenance</a></li>
-</ul></li>
-</ul></li>
-<li class="chapter" data-level="4" data-path="discreterv.html"><a href="discreterv.html"><i class="fa fa-check"></i><b>4</b> 🔧 Discrete Random Variables</a>
-<ul>
-<li class="chapter" data-level="4.1" data-path="discreterv.html"><a href="discreterv.html#what-is-a-random-variable"><i class="fa fa-check"></i><b>4.1</b> What is a Random Variable?</a>
-<ul>
-<li class="chapter" data-level="4.1.1" data-path="discreterv.html"><a href="discreterv.html#formal-definition-of-a-random-variable"><i class="fa fa-check"></i><b>4.1.1</b> Formal definition of a random variable</a></li>
-<li class="chapter" data-level="4.1.2" data-path="discreterv.html"><a href="discreterv.html#example-from-s-to-d-via-xcdot"><i class="fa fa-check"></i><b>4.1.2</b> Example: from <span class="math inline">\(S\)</span> to <span class="math inline">\(D\)</span>, via <span class="math inline">\(X(\cdot)\)</span></a></li>
-<li class="chapter" data-level="4.1.3" data-path="discreterv.html"><a href="discreterv.html#an-example-from-gambling"><i class="fa fa-check"></i><b>4.1.3</b> An Example from gambling</a></li>
-</ul></li>
-<li class="chapter" data-level="4.2" data-path="discreterv.html"><a href="discreterv.html#discrete-random-variables"><i class="fa fa-check"></i><b>4.2</b> Discrete random variables</a></li>
-<li class="chapter" data-level="4.3" data-path="discreterv.html"><a href="discreterv.html#cumulative-distribution-function"><i class="fa fa-check"></i><b>4.3</b> Cumulative Distribution Function</a></li>
-<li class="chapter" data-level="4.4" data-path="discreterv.html"><a href="discreterv.html#distributional-summaries-for-discrete-random-variables"><i class="fa fa-check"></i><b>4.4</b> Distributional summaries for discrete random variables</a>
-<ul>
-<li class="chapter" data-level="4.4.1" data-path="discreterv.html"><a href="discreterv.html#properties"><i class="fa fa-check"></i><b>4.4.1</b> Properties</a></li>
-</ul></li>
-<li class="chapter" data-level="4.5" data-path="discreterv.html"><a href="discreterv.html#dependenceindependence"><i class="fa fa-check"></i><b>4.5</b> Dependence/Independence</a>
-<ul>
-<li class="chapter" data-level="4.5.1" data-path="discreterv.html"><a href="discreterv.html#more-important-properties"><i class="fa fa-check"></i><b>4.5.1</b> More important properties</a></li>
-<li class="chapter" data-level="4.5.2" data-path="discreterv.html"><a href="discreterv.html#more-on-expectations"><i class="fa fa-check"></i><b>4.5.2</b> More on expectations</a></li>
-</ul></li>
-<li class="chapter" data-level="4.6" data-path="discreterv.html"><a href="discreterv.html#some-discrete-distributions-of-interest"><i class="fa fa-check"></i><b>4.6</b> Some discrete distributions of interest</a>
-<ul>
-<li class="chapter" data-level="4.6.1" data-path="discreterv.html"><a href="discreterv.html#discrete-uniform-distribution"><i class="fa fa-check"></i><b>4.6.1</b> Discrete uniform distribution</a></li>
-<li class="chapter" data-level="4.6.2" data-path="discreterv.html"><a href="discreterv.html#bernoulli-trials"><i class="fa fa-check"></i><b>4.6.2</b> Bernoulli Trials</a></li>
-<li class="chapter" data-level="4.6.3" data-path="discreterv.html"><a href="discreterv.html#the-binomial-distribution"><i class="fa fa-check"></i><b>4.6.3</b> The Binomial Distribution</a></li>
-<li class="chapter" data-level="4.6.4" data-path="discreterv.html"><a href="discreterv.html#poisson-distribution"><i class="fa fa-check"></i><b>4.6.4</b> Poisson Distribution</a></li>
-<li class="chapter" data-level="4.6.5" data-path="discreterv.html"><a href="discreterv.html#the-hypergeometric-distribution"><i class="fa fa-check"></i><b>4.6.5</b> The Hypergeometric Distribution</a></li>
-<li class="chapter" data-level="4.6.6" data-path="discreterv.html"><a href="discreterv.html#the-negative-binomial-distribution"><i class="fa fa-check"></i><b>4.6.6</b> The Negative Binomial Distribution</a></li>
-<li class="chapter" data-level="4.6.7" data-path="discreterv.html"><a href="discreterv.html#illustrations-4"><i class="fa fa-check"></i><b>4.6.7</b> Illustrations</a></li>
-<li class="chapter" data-level="4.6.8" data-path="discreterv.html"><a href="discreterv.html#the-geometric-distribution"><i class="fa fa-check"></i><b>4.6.8</b> The Geometric Distribution</a></li>
-</ul></li>
-</ul></li>
-<li class="chapter" data-level="5" data-path="continuousrv.html"><a href="continuousrv.html"><i class="fa fa-check"></i><b>5</b> 🔧 Continuous Random Variable</a>
-<ul>
-<li class="chapter" data-level="5.1" data-path="continuousrv.html"><a href="continuousrv.html#two-motivating-examples"><i class="fa fa-check"></i><b>5.1</b> Two Motivating Examples</a></li>
-<li class="chapter" data-level="5.2" data-path="continuousrv.html"><a href="continuousrv.html#cumulative-distribution-function-cdf"><i class="fa fa-check"></i><b>5.2</b> Cumulative Distribution Function (CDF)</a></li>
-<li class="chapter" data-level="5.3" data-path="continuousrv.html"><a href="continuousrv.html#distributional-summaries"><i class="fa fa-check"></i><b>5.3</b> Distributional Summaries</a>
-<ul>
-<li class="chapter" data-level="5.3.1" data-path="continuousrv.html"><a href="continuousrv.html#the-expectation"><i class="fa fa-check"></i><b>5.3.1</b> The Expectation</a></li>
-<li class="chapter" data-level="5.3.2" data-path="continuousrv.html"><a href="continuousrv.html#the-variance"><i class="fa fa-check"></i><b>5.3.2</b> The Variance</a></li>
-<li class="chapter" data-level="5.3.3" data-path="continuousrv.html"><a href="continuousrv.html#important-properties-of-expectations"><i class="fa fa-check"></i><b>5.3.3</b> Important properties of expectations</a></li>
-<li class="chapter" data-level="5.3.4" data-path="continuousrv.html"><a href="continuousrv.html#mode-and-median"><i class="fa fa-check"></i><b>5.3.4</b> Mode and Median</a></li>
-</ul></li>
-<li class="chapter" data-level="5.4" data-path="continuousrv.html"><a href="continuousrv.html#some-important-continuous-distributions"><i class="fa fa-check"></i><b>5.4</b> Some Important Continuous Distributions</a>
-<ul>
-<li class="chapter" data-level="5.4.1" data-path="continuousrv.html"><a href="continuousrv.html#continuous-uniform-distribution"><i class="fa fa-check"></i><b>5.4.1</b> Continuous Uniform Distribution</a></li>
-<li class="chapter" data-level="5.4.2" data-path="continuousrv.html"><a href="continuousrv.html#normal-gaussian-distribution"><i class="fa fa-check"></i><b>5.4.2</b> Normal (Gaussian) distribution</a></li>
-<li class="chapter" data-level="5.4.3" data-path="continuousrv.html"><a href="continuousrv.html#the-chi-squared-distribution"><i class="fa fa-check"></i><b>5.4.3</b> The Chi-squared distribution</a></li>
-<li class="chapter" data-level="5.4.4" data-path="continuousrv.html"><a href="continuousrv.html#the-student-t-distribution"><i class="fa fa-check"></i><b>5.4.4</b> The Student-t distribution</a></li>
-<li class="chapter" data-level="5.4.5" data-path="continuousrv.html"><a href="continuousrv.html#the-f-distribution"><i class="fa fa-check"></i><b>5.4.5</b> The F distribution</a></li>
-<li class="chapter" data-level="5.4.6" data-path="continuousrv.html"><a href="continuousrv.html#the-lognormal-distribution"><i class="fa fa-check"></i><b>5.4.6</b> The lognormal distribution</a></li>
-<li class="chapter" data-level="5.4.7" data-path="continuousrv.html"><a href="continuousrv.html#exponential-distribution"><i class="fa fa-check"></i><b>5.4.7</b> Exponential distribution</a></li>
-</ul></li>
-<li class="chapter" data-level="5.5" data-path="continuousrv.html"><a href="continuousrv.html#transformation-of-variables"><i class="fa fa-check"></i><b>5.5</b> Transformation of variables</a>
-<ul>
-<li class="chapter" data-level="5.5.1" data-path="continuousrv.html"><a href="continuousrv.html#transformation-of-discrete-random-variables"><i class="fa fa-check"></i><b>5.5.1</b> Transformation of discrete random variables</a></li>
-<li class="chapter" data-level="5.5.2" data-path="continuousrv.html"><a href="continuousrv.html#transformation-of-variables-using-the-cdf"><i class="fa fa-check"></i><b>5.5.2</b> Transformation of variables using the CDF</a></li>
-<li class="chapter" data-level="5.5.3" data-path="continuousrv.html"><a href="continuousrv.html#transformation-of-continuous-rv-through-pdf"><i class="fa fa-check"></i><b>5.5.3</b> Transformation of continuous RV through PDF</a></li>
-<li class="chapter" data-level="5.5.4" data-path="continuousrv.html"><a href="continuousrv.html#a-caveat"><i class="fa fa-check"></i><b>5.5.4</b> A caveat</a></li>
-</ul></li>
-<li class="chapter" data-level="5.6" data-path="continuousrv.html"><a href="continuousrv.html#the-big-picture"><i class="fa fa-check"></i><b>5.6</b> The big picture</a></li>
-</ul></li>
-<li class="chapter" data-level="6" data-path="limittheorems.html"><a href="limittheorems.html"><i class="fa fa-check"></i><b>6</b> 📝 Limit Theorems</a>
-<ul>
-<li class="chapter" data-level="6.1" data-path="limittheorems.html"><a href="limittheorems.html#markovs-and-chebyshevs-inequalities"><i class="fa fa-check"></i><b>6.1</b> Markov’s and Chebyshev’s Inequalities</a>
-<ul>
-<li class="chapter" data-level="6.1.1" data-path="limittheorems.html"><a href="limittheorems.html#markovs-inequality"><i class="fa fa-check"></i><b>6.1.1</b> Markov’s inequality</a></li>
-</ul></li>
-<li class="chapter" data-level="6.2" data-path="limittheorems.html"><a href="limittheorems.html#sequences-of-random-variables"><i class="fa fa-check"></i><b>6.2</b> Sequences of Random Variables</a>
-<ul>
-<li class="chapter" data-level="6.2.1" data-path="limittheorems.html"><a href="limittheorems.html#example-bernoulli-trials-and-their-sum"><i class="fa fa-check"></i><b>6.2.1</b> Example: Bernoulli Trials and their sum</a></li>
-<li class="chapter" data-level="6.2.2" data-path="limittheorems.html"><a href="limittheorems.html#example-bernoulli-trials-and-limit-behaviour"><i class="fa fa-check"></i><b>6.2.2</b> Example: Bernoulli Trials and limit behaviour</a></li>
-</ul></li>
-<li class="chapter" data-level="6.3" data-path="limittheorems.html"><a href="limittheorems.html#convergence-in-probability-oversetprightarrow"><i class="fa fa-check"></i><b>6.3</b> Convergence in Probability (<span class="math inline">\(\overset{p}{\rightarrow }\)</span>)</a>
-<ul>
-<li class="chapter" data-level="6.3.1" data-path="limittheorems.html"><a href="limittheorems.html#operational-rules-for-oversetprightarrow"><i class="fa fa-check"></i><b>6.3.1</b> Operational Rules for <span class="math inline">\(\overset{p}{\rightarrow }\)</span></a></li>
-<li class="chapter" data-level="6.3.2" data-path="limittheorems.html"><a href="limittheorems.html#convergence-of-sample-moments-as-a-motivation"><i class="fa fa-check"></i><b>6.3.2</b> Convergence of Sample Moments as a motivation…</a></li>
-<li class="chapter" data-level="6.3.3" data-path="limittheorems.html"><a href="limittheorems.html#the-weak-law-of-large-numbers-wlln"><i class="fa fa-check"></i><b>6.3.3</b> The Weak Law of Large Numbers (WLLN)</a></li>
-<li class="chapter" data-level="6.3.4" data-path="limittheorems.html"><a href="limittheorems.html#the-wlln-and-chebyshevs-inequality"><i class="fa fa-check"></i><b>6.3.4</b> The WLLN and Chebyshev’s Inequality</a></li>
-</ul></li>
-</ul></li>
-<li class="chapter" data-level="7" data-path="bivariatediscreterv.html"><a href="bivariatediscreterv.html"><i class="fa fa-check"></i><b>7</b> 📝 Bivariate Discrete Random Variables</a>
-<ul>
-<li class="chapter" data-level="7.1" data-path="bivariatediscreterv.html"><a href="bivariatediscreterv.html#joint-probability-functions"><i class="fa fa-check"></i><b>7.1</b> Joint Probability Functions</a></li>
-<li class="chapter" data-level="7.2" data-path="bivariatediscreterv.html"><a href="bivariatediscreterv.html#marginal-probability-mass-functions"><i class="fa fa-check"></i><b>7.2</b> Marginal probability (mass) functions</a>
-<ul>
-<li class="chapter" data-level="7.2.1" data-path="bivariatediscreterv.html"><a href="bivariatediscreterv.html#first-example"><i class="fa fa-check"></i><b>7.2.1</b> First Example</a></li>
-<li class="chapter" data-level="7.2.2" data-path="bivariatediscreterv.html"><a href="bivariatediscreterv.html#empirical-example"><i class="fa fa-check"></i><b>7.2.2</b> Empirical Example</a></li>
-</ul></li>
-<li class="chapter" data-level="7.3" data-path="bivariatediscreterv.html"><a href="bivariatediscreterv.html#conditional-probability-mass-function"><i class="fa fa-check"></i><b>7.3</b> Conditional probability mass function</a></li>
-<li class="chapter" data-level="7.4" data-path="bivariatediscreterv.html"><a href="bivariatediscreterv.html#independence-1"><i class="fa fa-check"></i><b>7.4</b> Independence</a></li>
-<li class="chapter" data-level="7.5" data-path="bivariatediscreterv.html"><a href="bivariatediscreterv.html#expectations-for-jointly-distributed-discrete-rvs"><i class="fa fa-check"></i><b>7.5</b> Expectations for Jointly Distributed Discrete RVs</a></li>
-<li class="chapter" data-level="7.6" data-path="bivariatediscreterv.html"><a href="bivariatediscreterv.html#iterated-expectations"><i class="fa fa-check"></i><b>7.6</b> Iterated Expectations</a></li>
-<li class="chapter" data-level="7.7" data-path="bivariatediscreterv.html"><a href="bivariatediscreterv.html#expectations-for-jointly-distributed-discrete-rvs-1"><i class="fa fa-check"></i><b>7.7</b> Expectations for Jointly Distributed Discrete RVs</a></li>
-<li class="chapter" data-level="7.8" data-path="bivariatediscreterv.html"><a href="bivariatediscreterv.html#some-properties-of-covariances"><i class="fa fa-check"></i><b>7.8</b> Some Properties of Covariances</a>
-<ul>
-<li class="chapter" data-level="7.8.1" data-path="bivariatediscreterv.html"><a href="bivariatediscreterv.html#a-remark"><i class="fa fa-check"></i><b>7.8.1</b> A remark</a></li>
-<li class="chapter" data-level="7.8.2" data-path="bivariatediscreterv.html"><a href="bivariatediscreterv.html#an-important-property-of-correlation"><i class="fa fa-check"></i><b>7.8.2</b> An important property of correlation</a></li>
-</ul></li>
-</ul></li>
-<li class="chapter" data-level="8" data-path="numericalmethods.html"><a href="numericalmethods.html"><i class="fa fa-check"></i><b>8</b> 📝 Numerical Methods</a>
-<ul>
-<li class="chapter" data-level="8.1" data-path="numericalmethods.html"><a href="numericalmethods.html#introduction-to-simulation"><i class="fa fa-check"></i><b>8.1</b> Introduction to simulation</a></li>
-<li class="chapter" data-level="8.2" data-path="numericalmethods.html"><a href="numericalmethods.html#simulation-procedure"><i class="fa fa-check"></i><b>8.2</b> Simulation procedure</a></li>
-<li class="chapter" data-level="8.3" data-path="numericalmethods.html"><a href="numericalmethods.html#simulation-in-r"><i class="fa fa-check"></i><b>8.3</b> Simulation in <code>R</code></a></li>
-<li class="chapter" data-level="8.4" data-path="numericalmethods.html"><a href="numericalmethods.html#coin-tossing"><i class="fa fa-check"></i><b>8.4</b> Coin tossing</a></li>
-<li class="chapter" data-level="8.5" data-path="numericalmethods.html"><a href="numericalmethods.html#summarising"><i class="fa fa-check"></i><b>8.5</b> Summarising</a></li>
-</ul></li>
-<li class="chapter" data-level="9" data-path="exercise-solutions.html"><a href="exercise-solutions.html"><i class="fa fa-check"></i><b>9</b> 📝 Exercise Solutions</a>
-<ul>
-<li class="chapter" data-level="9.1" data-path="exercise-solutions.html"><a href="exercise-solutions.html#chapter-1"><i class="fa fa-check"></i><b>9.1</b> Chapter 1</a></li>
-<li class="chapter" data-level="9.2" data-path="exercise-solutions.html"><a href="exercise-solutions.html#chapter-2"><i class="fa fa-check"></i><b>9.2</b> Chapter 2</a>
-<ul>
-<li class="chapter" data-level="9.2.1" data-path="exercise-solutions.html"><a href="exercise-solutions.html#exercise-2.1"><i class="fa fa-check"></i><b>9.2.1</b> Exercise 2.1</a></li>
-<li class="chapter" data-level="9.2.2" data-path="exercise-solutions.html"><a href="exercise-solutions.html#exercise-2.2"><i class="fa fa-check"></i><b>9.2.2</b> Exercise 2.2</a></li>
-<li class="chapter" data-level="9.2.3" data-path="exercise-solutions.html"><a href="exercise-solutions.html#exercise-2.3"><i class="fa fa-check"></i><b>9.2.3</b> Exercise 2.3</a></li>
-<li class="chapter" data-level="9.2.4" data-path="exercise-solutions.html"><a href="exercise-solutions.html#exercise-2.4"><i class="fa fa-check"></i><b>9.2.4</b> Exercise 2.4</a></li>
-<li class="chapter" data-level="9.2.5" data-path="exercise-solutions.html"><a href="exercise-solutions.html#exercise-2.5"><i class="fa fa-check"></i><b>9.2.5</b> Exercise 2.5</a></li>
-<li class="chapter" data-level="9.2.6" data-path="exercise-solutions.html"><a href="exercise-solutions.html#exercise-2.6"><i class="fa fa-check"></i><b>9.2.6</b> Exercise 2.6</a></li>
-<li class="chapter" data-level="9.2.7" data-path="exercise-solutions.html"><a href="exercise-solutions.html#exercise-2.7"><i class="fa fa-check"></i><b>9.2.7</b> Exercise 2.7</a></li>
-<li class="chapter" data-level="9.2.8" data-path="exercise-solutions.html"><a href="exercise-solutions.html#exercise-2.8"><i class="fa fa-check"></i><b>9.2.8</b> Exercise 2.8</a></li>
-<li class="chapter" data-level="9.2.9" data-path="exercise-solutions.html"><a href="exercise-solutions.html#exercise-2.8-1"><i class="fa fa-check"></i><b>9.2.9</b> Exercise 2.8</a></li>
-</ul></li>
-<li class="chapter" data-level="9.3" data-path="exercise-solutions.html"><a href="exercise-solutions.html#chapter-3"><i class="fa fa-check"></i><b>9.3</b> Chapter 3</a></li>
-<li class="chapter" data-level="9.4" data-path="exercise-solutions.html"><a href="exercise-solutions.html#chapter-4"><i class="fa fa-check"></i><b>9.4</b> Chapter 4</a></li>
-<li class="chapter" data-level="9.5" data-path="exercise-solutions.html"><a href="exercise-solutions.html#chapter-5"><i class="fa fa-check"></i><b>9.5</b> Chapter 5</a></li>
-<li class="chapter" data-level="9.6" data-path="exercise-solutions.html"><a href="exercise-solutions.html#chapter-6"><i class="fa fa-check"></i><b>9.6</b> Chapter 6</a></li>
-<li class="chapter" data-level="9.7" data-path="exercise-solutions.html"><a href="exercise-solutions.html#chapter-7"><i class="fa fa-check"></i><b>9.7</b> Chapter 7</a></li>
-<li class="chapter" data-level="9.8" data-path="exercise-solutions.html"><a href="exercise-solutions.html#chapter-8"><i class="fa fa-check"></i><b>9.8</b> Chapter 8</a></li>
-</ul></li>
-<li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
-<li class="divider"></li>
-<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
-
-</ul>
-
-      </nav>
+    <div class="d-flex align-items-start justify-content-between">
+      <h1>
+        <a href="index.html" title="Course Notes">🃏 Probability I</a>:
+        <small class="text-muted">Course Notes</small>
+      </h1>
+      <button class="btn btn-outline-primary d-lg-none ml-2 mt-1" type="button" data-toggle="collapse" data-target="#main-nav" aria-expanded="true" aria-controls="main-nav"><i class="fas fa-bars"></i><span class="sr-only">Show table of contents</span></button>
     </div>
 
-    <div class="book-body">
-      <div class="body-inner">
-        <div class="book-header" role="navigation">
-          <h1>
-            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">🃏 Probability I</a>
-          </h1>
+    <div id="main-nav" class="collapse-lg">
+      <form role="search">
+        <input id="search" class="form-control" type="search" placeholder="Search" aria-label="Search">
+</form>
+
+      <nav aria-label="Table of contents"><h2>Table of contents</h2>
+        <ul class="book-toc list-unstyled">
+<li><a class="" href="index.html">About this lecture</a></li>
+<li><a class="" href="introduction.html"><span class="header-section-number">1</span> Introduction</a></li>
+<li><a class="" href="settheory.html"><span class="header-section-number">2</span> Elements of Set Theory for Probability</a></li>
+<li><a class="" href="axioms.html"><span class="header-section-number">3</span> Probability Axioms</a></li>
+<li><a class="" href="discreterv.html"><span class="header-section-number">4</span> 🔧 Discrete Random Variables</a></li>
+<li><a class="active" href="continuousrv.html"><span class="header-section-number">5</span> 🔧 Continuous Random Variable</a></li>
+<li><a class="" href="limittheorems.html"><span class="header-section-number">6</span> 📝 Limit Theorems</a></li>
+<li><a class="" href="bivariatediscreterv.html"><span class="header-section-number">7</span> 📝 Bivariate Discrete Random Variables</a></li>
+<li><a class="" href="numericalmethods.html"><span class="header-section-number">8</span> 📝 Numerical Methods</a></li>
+<li><a class="" href="exercise-solutions.html"><span class="header-section-number">9</span> 📝 Exercise Solutions</a></li>
+<li><a class="" href="references.html">References</a></li>
+</ul>
+
+        <div class="book-extra">
+          
         </div>
-
-        <div class="page-wrapper" tabindex="-1" role="main">
-          <div class="page-inner">
-
-            <section class="normal" id="section-">
-<div id="continuousrv" class="section level1" number="5">
-<h1><span class="header-section-number">Chapter 5</span> 🔧 Continuous Random Variable</h1>
-<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-2"></span>
-<img src="img/fun/EC_Stat_Cow.png" alt="'Statistical Cow' by Enrico Chavez" width="80%" />
-<p class="caption">
+      </nav>
+</div>
+  </header><main class="col-sm-12 col-md-9 col-lg-7" id="content"><div id="continuousrv" class="section level1" number="5">
+<h1>
+<span class="header-section-number">5</span> 🔧 Continuous Random Variable<a class="anchor" aria-label="anchor" href="#continuousrv"><i class="fas fa-link"></i></a>
+</h1>
+<div class="figure" style="text-align: center">
+<span style="display:block;" id="fig:unnamed-chunk-119"></span>
+<img src="img/fun/EC_Stat_Cow.png" alt="'Statistical Cow' by Enrico Chavez" width="80%"><p class="caption">
 Figure 5.1: ‘Statistical Cow’ by Enrico Chavez
 </p>
 </div>
 <div id="two-motivating-examples" class="section level2" number="5.1">
-<h2><span class="header-section-number">5.1</span> Two Motivating Examples</h2>
-
-<div class="example">
-<p><span id="exm:unnamed-chunk-3" class="example"><strong>Example 5.1  (Standard &amp; Poors 500 returns)  </strong></span>
-Let us consider the returns of the S&amp;P 500 index for all the trading days in 1990, 1991,…,1999.</p>
-Here below, the plot of the returns (in <span class="math inline">\(\%\)</span> on the y-axis)
-series over time:
-</div>
-<p><img src="Prob1-GSEM-UNIGE_files/figure-html/unnamed-chunk-4-1.png" width="80%" style="display: block; margin: auto;" /></p>
+<h2>
+<span class="header-section-number">5.1</span> Two Motivating Examples<a class="anchor" aria-label="anchor" href="#two-motivating-examples"><i class="fas fa-link"></i></a>
+</h2>
+<div class="inline-figure"><img src="Prob1-GSEM-UNIGE_files/figure-html/unnamed-chunk-121-1.png" width="80%" style="display: block; margin: auto;"></div>
 <p>Let’s try to count the relative frequency of each of these returns, in an attempt to estimate the probability of each value of the return.</p>
-<p><img src="Prob1-GSEM-UNIGE_files/figure-html/unnamed-chunk-5-1.png" width="80%" style="display: block; margin: auto;" /></p>
+<div class="inline-figure"><img src="Prob1-GSEM-UNIGE_files/figure-html/unnamed-chunk-122-1.png" width="80%" style="display: block; margin: auto;"></div>
 <p>We notice that there are too many different values for the returns. This yields
 a low value and “uniform” relative frequency which does not help us gain any insight on the probability distribution of the values. Moreover, we could be almost sure that a future return would not have any of the values already obtained.</p>
 <p>However, we notice that there’s some <em>concentration</em>, i.e. there are more returns in the
 neighborhood of zero, as there are in the extreme corners of the possible values. To quantify this concentration, we can create a <em>histogram</em> by splitting the space of possible values into a given number of intervals, or “bins,” and counting the number of observations within a bin.</p>
 <p>If we consider 30 bins, we obtain the following plot:</p>
-<p><img src="Prob1-GSEM-UNIGE_files/figure-html/unnamed-chunk-6-1.png" width="80%" style="display: block; margin: auto;" /></p>
+<div class="inline-figure"><img src="Prob1-GSEM-UNIGE_files/figure-html/unnamed-chunk-123-1.png" width="80%" style="display: block; margin: auto;"></div>
 <p>If we consider separating the space of returns into 300 <code>bins</code>, we obtain the
 following plot:</p>
-<p><img src="Prob1-GSEM-UNIGE_files/figure-html/unnamed-chunk-7-1.png" width="80%" style="display: block; margin: auto;" /></p>
+<div class="inline-figure"><img src="Prob1-GSEM-UNIGE_files/figure-html/unnamed-chunk-124-1.png" width="80%" style="display: block; margin: auto;"></div>
 <p>We could go further and affine the number of bins and the method of counting.
 One of the options is to estimate a so-called <em>Density Curve</em>, which among other
 considerations, chooses to split the space into an infinite amount of bins.</p>
-<p><img src="Prob1-GSEM-UNIGE_files/figure-html/unnamed-chunk-8-1.png" width="80%" style="display: block; margin: auto;" /></p>
+<div class="inline-figure"><img src="Prob1-GSEM-UNIGE_files/figure-html/unnamed-chunk-125-1.png" width="80%" style="display: block; margin: auto;"></div>
 <p>This plot is much more interesting, as it clearly shows that the returns are
 quite concentrated around 0.</p>
-
-<div class="example">
-<p><span id="exm:unnamed-chunk-9" class="example"><strong>Example 5.2  (Arrivals to the Cafeteria)  </strong></span>Let us consider a serious/significant issue: the arrivals to the cafeteria UniMail, from 10AM to 2PM
-<span class="math display">\[\begin{eqnarray*}
-\mbox{relative freq}&amp;=&amp; \frac{\mbox{# customers incoming }}{\mbox{# total of customers}}
-\end{eqnarray*}\]</span></p>
-<p>We want to study the distribution of this object over the considered time interval.
-E.g. we would like to know when the relative frequency has a peak and when that peak happens.</p>
-<p>Once again, we can display this phenomenon as a histogram:</p>
-</div>
-<p><img src="img/05_continuous_rv/hist1.png" width="80%" style="display: block; margin: auto;" /></p>
+<div class="inline-figure"><img src="img/05_continuous_rv/hist1.png" width="80%" style="display: block; margin: auto;"></div>
 <p>And we can affine our analysis by increasing the number of bins.</p>
-<p><img src="img/05_continuous_rv/hist2.png" width="80%" style="display: block; margin: auto;" /></p>
+<div class="inline-figure"><img src="img/05_continuous_rv/hist2.png" width="80%" style="display: block; margin: auto;"></div>
 <p>In the last one, we see that there is clearly a peak around 12h. If we would like
 to allocate resources (e.g. hire more service workers to adapt to the demand),
 we’d like to call the workers to provide service around those hours.</p>
-<p><img src="img/05_continuous_rv/hist3.png" width="80%" style="display: block; margin: auto;" /></p>
+<div class="inline-figure"><img src="img/05_continuous_rv/hist3.png" width="80%" style="display: block; margin: auto;"></div>
 <p>These examples are illustrations of a class of random variables which are
 different from what we have seen so far. Specifically, the examples emphasise
 that, unlike discrete random variables, the considered variables are
@@ -357,36 +109,15 @@ a positive <strong>probability to each and every possible interval</strong> of v
 can occur. This is done by defining the <strong>Cumulative Distribution Function (CDF)</strong>,
 which is sometimes called <strong>Probability Distribution Function</strong>.</p>
 <p>So, graphically, we have that the <strong>Discrete Random Variables</strong> have a distribution that allocates the <strong>probability</strong> to the <strong>values</strong>, represented by <em>bars</em>, whereas <strong>Continuous Random Variables</strong> have a distribution that allocates probability to <strong>intervals</strong>, represented by the <strong>area below the density curve</strong> enclosed by the interval.</p>
-<p><img src="img/05_continuous_rv/discr_vs_cont-1.png" width="80%" style="display: block; margin: auto;" /></p>
+<div class="inline-figure"><img src="img/05_continuous_rv/discr_vs_cont-1.png" width="80%" style="display: block; margin: auto;"></div>
 </div>
 <div id="cumulative-distribution-function-cdf" class="section level2" number="5.2">
-<h2><span class="header-section-number">5.2</span> Cumulative Distribution Function (CDF)</h2>
-
-<div class="definition">
-<p><span id="def:CDF" class="definition"><strong>Definition 5.1  </strong></span> Let <span class="math inline">\(X\)</span> be a continuous random variable and let <span class="math inline">\(x\in \mathbb{R}\)</span>, here <span class="math inline">\(x\)</span> denotes any number somewhere on the real line <span class="math inline">\(\mathbb{R}=(-\infty,\infty)\)</span>. The “Probability Distribution Function” synonymously, the <strong>Cumulative Distribution Function (CDF) of <span class="math inline">\(X\)</span> at the point <span class="math inline">\(x\)</span></strong> is a continuous function <span class="math inline">\(\color{red}{F_{X}\left( x\right)}\)</span> defined such that:</p>
-<ul>
-<li><span class="math inline">\(\lim_{x\rightarrow -\infty}\color{red}{F_{X}\left( x\right)}=0\)</span> and <span class="math inline">\(\lim_{x\rightarrow +\infty}\color{red}{F_{X}\left( x\right)}=1\)</span>,</li>
-<li><span class="math inline">\(0\leq \color{red}{F_{X}\left( x\right)} \leq 1\)</span> for all <span class="math inline">\(x\in \mathbb{R}\)</span> and</li>
-<li>the function is monotonically non-decreasing in <span class="math inline">\(x\)</span>, i.e. 
-<span class="math display">\[\color{red}{F_{X}\left( x\right)}\geq \color{red}{F_{X}\left( x&#39;\right)}\quad\mbox{for all}\quad x&gt;x&#39;\]</span>
-and the value <span class="math inline">\(\color{red}{F_{X}\left( x\right)}\)</span> yields the probability that <span class="math inline">\(X\)</span> lies in the interval <span class="math inline">\((-\infty,x]\)</span>, i.e
-<span class="math display">\[\color{red}{F_{X}\left( x\right)}=P\left( X\leq x\right)\]</span>
-</div></li>
-</ul>
-<p><img src="Prob1-GSEM-UNIGE_files/figure-html/unnamed-chunk-14-1.png" width="80%" style="display: block; margin: auto;" /></p>
-
-<div class="definition">
-<p><span id="def:PDF" class="definition"><strong>Definition 5.2  </strong></span>Let <span class="math inline">\(X\)</span> be a random variable taking values in the interval <span class="math inline">\((a,b]\)</span> since:</p>
-<ul>
-<li><span class="math inline">\(\color{red}{F_{X}\left( x\right)}\)</span> is zero for all <span class="math inline">\(x&lt;a\)</span></li>
-<li><span class="math inline">\(0&lt;\color{red}{F_{X}\left( x\right)}&lt;1\)</span> for all <span class="math inline">\(x\)</span> in <span class="math inline">\((a,b)\)</span> and</li>
-<li><span class="math inline">\(\color{red}{F_{X}\left( x\right)}=1\)</span> for all <span class="math inline">\(x\geq b\)</span>.</li>
-</ul>
-<p>Then, the Probability Density Function (PDF) of <span class="math inline">\(X\)</span> at the point <span class="math inline">\(x\)</span> is defined as</p>
-<span class="math display">\[\color{blue}{f_{X}\left( x\right)} =\frac{d\color{red}{F_{X}(x)}}{dx}.\]</span>
-</div>
+<h2>
+<span class="header-section-number">5.2</span> Cumulative Distribution Function (CDF)<a class="anchor" aria-label="anchor" href="#cumulative-distribution-function-cdf"><i class="fas fa-link"></i></a>
+</h2>
+<div class="inline-figure"><img src="Prob1-GSEM-UNIGE_files/figure-html/unnamed-chunk-131-1.png" width="80%" style="display: block; margin: auto;"></div>
 <p>Graphically, if we represent the values of the PDF with a curve, the CDF will be the area beneath it in the interval considered.</p>
-<p><img src="img/05_continuous_rv/generic_CDF2-1.png" width="80%" style="display: block; margin: auto;" /></p>
+<div class="inline-figure"><img src="img/05_continuous_rv/generic_CDF2-1.png" width="80%" style="display: block; margin: auto;"></div>
 <!-- % -->
 <!-- %-  Let $X$ be a continuous random variable with continuous CDF $F_{X}\left( x\right)$. -->
 <!-- % -->
@@ -415,7 +146,7 @@ and the value <span class="math inline">\(\color{red}{F_{X}\left( x\right)}\)</s
 <!-- %\includegraphics[width=0.95\textwidth]{generic_pdf__1.pdf}% -->
 <!-- %\end{figure}% -->
 <p>Another way of seeing this relationship is with the following plot, where the value of the area undereneath the density is mapped into a new curve that will represent the CDF.</p>
-<p><img src="img/05_continuous_rv/Diego_F-1.png" width="80%" style="display: block; margin: auto;" /></p>
+<div class="inline-figure"><img src="img/05_continuous_rv/Diego_F-1.png" width="80%" style="display: block; margin: auto;"></div>
 <p>From a formal mathematical standpoint, the relationship between PDF and CDF is given by the <strong><em>fundamental theorem of integral calculus</em></strong>. In the illustration, <span class="math inline">\(X\)</span> is a random variable taking values in the interval <span class="math inline">\((a,b]\)</span>, and the PDF <span class="math inline">\(f_{X}\left(x\right)\)</span> is non-zero only in <span class="math inline">\((a,b)\)</span>. More generally we have, for a variable taking values on the whole real line (<span class="math inline">\(\mathbb{R}\)</span>):</p>
 <ul>
 <li><p>the <strong><em>fundamental theorem of integral calculus</em></strong> yields
@@ -426,50 +157,42 @@ the area under the CDF between <span class="math inline">\(-\infty\)</span> and 
 <span class="math display">\[\color{blue}{f_{X}\left( x\right)} = \frac{d\color{red}{F_{X}(x)}}{dx}\]</span></p></li>
 </ul>
 Most of the PDF’s that we are going to consider are bell-shaped. So, typically, we will have a density that looks like a bell:
-<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-17"></span>
-<img src="img/05_continuous_rv/R_bell_pdf-1.png" alt="A typical bell-shaped Density Function" width="50%" />
-<p class="caption">
+<div class="figure" style="text-align: center">
+<span style="display:block;" id="fig:unnamed-chunk-134"></span>
+<img src="img/05_continuous_rv/R_bell_pdf-1.png" alt="A typical bell-shaped Density Function" width="50%"><p class="caption">
 Figure 5.2: A typical bell-shaped Density Function
 </p>
 </div>
 and a CDF that has the shape of an S.
-<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-18"></span>
-<img src="img/05_continuous_rv/R_bell_CDF-1.png" alt="A typical S-shaped Cumulative Distribution Function" width="50%" />
-<p class="caption">
+<div class="figure" style="text-align: center">
+<span style="display:block;" id="fig:unnamed-chunk-135"></span>
+<img src="img/05_continuous_rv/R_bell_CDF-1.png" alt="A typical S-shaped Cumulative Distribution Function" width="50%"><p class="caption">
 Figure 5.3: A typical S-shaped Cumulative Distribution Function
 </p>
 </div>
 </div>
 <div id="distributional-summaries" class="section level2" number="5.3">
-<h2><span class="header-section-number">5.3</span> Distributional Summaries</h2>
+<h2>
+<span class="header-section-number">5.3</span> Distributional Summaries<a class="anchor" aria-label="anchor" href="#distributional-summaries"><i class="fas fa-link"></i></a>
+</h2>
 <div id="the-expectation" class="section level3" number="5.3.1">
-<h3><span class="header-section-number">5.3.1</span> The Expectation</h3>
+<h3>
+<span class="header-section-number">5.3.1</span> The Expectation<a class="anchor" aria-label="anchor" href="#the-expectation"><i class="fas fa-link"></i></a>
+</h3>
 <p>Recall that for <strong>Discrete</strong> random variables, the Expectation results from <strong>summing the product of <span class="math inline">\(x_{i}\)</span> and <span class="math inline">\(p_{i}=P(X=x_{i})\)</span></strong>, for all <strong>possible values <span class="math inline">\(x_{i}\)</span></strong></p>
 <p><span class="math display">\[\begin{equation*}
   E\left[ X\right] =\sum_{i}x_{i}p_{i}
 \end{equation*}\]</span></p>
-
-<div class="definition">
-<span id="def:unnamed-chunk-19" class="definition"><strong>Definition 5.3  (Expectation of a Continuous Random Variable)  </strong></span>The Expectation of <span class="math inline">\(X\)</span> results from <strong>integrating the product of <span class="math inline">\(x\)</span> and its PDF <span class="math inline">\(f_{X}\left(x\right)\)</span></strong> over the <strong>range of possible values of <span class="math inline">\(x\)</span></strong>. In other words, we obtain the Expectation via integration:
-<span class="math display">\[\begin{equation*}
-  E\left[ X\right] =\int_{a}^{b}x\,f_{X}\left( x\right)dx
-\end{equation*}\]</span>
-</div>
 </div>
 <div id="the-variance" class="section level3" number="5.3.2">
-<h3><span class="header-section-number">5.3.2</span> The Variance</h3>
+<h3>
+<span class="header-section-number">5.3.2</span> The Variance<a class="anchor" aria-label="anchor" href="#the-variance"><i class="fas fa-link"></i></a>
+</h3>
 <p>Recall that, for <strong>discrete</strong> random variables, we defined the variance as:</p>
 <p><span class="math display">\[\begin{equation*}
 Var\left( X\right) =\sum_{i}\left( x_{i}-E\left[ X\right] \right) ^{2}P
 \left( X=x_{i}\right)
 \end{equation*}\]</span></p>
-
-<div class="definition">
-<p><span id="def:unnamed-chunk-20" class="definition"><strong>Definition 5.4  (Variance of a Continuous Random Variable)  </strong></span>Similarly, for continuous random variables, we use integration to obtain the variance.</p>
-<p><span class="math display">\[\begin{equation*}
-Var\left( X\right) =\int_{a}^{b}\left( x-E\left[ X\right] \right)^{2}\,f_{X}\left( x\right) dx
-\end{equation*}\]</span></p>
-</div>
 <p>Very roughly speaking, we could say that we are replacing the sum (<span class="math inline">\(\sum\)</span>) by its continuous counterpart, namely the integral (<span class="math inline">\(\int\)</span>).</p>
 <!-- %\frametitle{The expected value of a function of a random variable} -->
 <!-- % -->
@@ -490,7 +213,9 @@ Var\left( X\right) =\int_{a}^{b}\left( x-E\left[ X\right] \right)^{2}\,f_{X}\lef
 <!-- %\end{equation*} -->
 </div>
 <div id="important-properties-of-expectations" class="section level3" number="5.3.3">
-<h3><span class="header-section-number">5.3.3</span> Important properties of expectations</h3>
+<h3>
+<span class="header-section-number">5.3.3</span> Important properties of expectations<a class="anchor" aria-label="anchor" href="#important-properties-of-expectations"><i class="fas fa-link"></i></a>
+</h3>
 <p>As with discrete random variables, the following properties hold when <span class="math inline">\(X\)</span> is a continuous random variable and <span class="math inline">\(c\)</span> is any real number (namely, <span class="math inline">\(c \in \mathbb{R}\)</span>):</p>
 <ul>
 <li><span class="math inline">\(E\left[ cX\right] =cE\left[ X\right]\)</span></li>
@@ -517,54 +242,43 @@ E\left[ c+X\right] &amp;=&amp;\int \left( c+x\right) f_{X}\left( x\right) dx \\
 \end{eqnarray*}\]</span></p>
 </div>
 <div id="mode-and-median" class="section level3" number="5.3.4">
-<h3><span class="header-section-number">5.3.4</span> Mode and Median</h3>
+<h3>
+<span class="header-section-number">5.3.4</span> Mode and Median<a class="anchor" aria-label="anchor" href="#mode-and-median"><i class="fas fa-link"></i></a>
+</h3>
 <p>There are two other important distributional summaries that also characterise a sort of center for the distribution: the Mode and the Median.</p>
 <p>The <strong>Mode</strong> of a continuous random variable having density <span class="math inline">\(f_{X}(x)\)</span> is the <strong>value of <span class="math inline">\(x\)</span> for which the PDF <span class="math inline">\(f_X(x)\)</span> attains its maximum</strong>, i.e.<span class="math display">\[\text{Mode}(X) = \text{argmax}_{x}\{f_X(x)\}.\]</span> Very roughly speaking, it is the <strong>point with the highest <em>concentration</em> of probability</strong>.</p>
 <p>On the other hand, the <strong>Median</strong> of a continuous random variable having CDF <span class="math inline">\(F_{X}(x)\)</span> is the <strong>value <span class="math inline">\(m\)</span> such that <span class="math inline">\(F(m) = 1/2\)</span></strong>
 <span class="math display">\[\text{Median}(X) = \text{arg}_{m}\left\{P(X\leq m) = F_X(m) = \frac{1}{2}\right\}.\]</span>
 Again, very roughly speaking, the median is the value that <strong>splits the sample space in two intervals with equal cumulative probability</strong>.</p>
 <p>Let’s illustrate these two location values in the PDF. We have purposefully chosen an asymmetric (right)<em>skewed</em> distribution to display the differences between these two values.</p>
-<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-21"></span>
-<img src="Prob1-GSEM-UNIGE_files/figure-html/unnamed-chunk-21-1.png" alt="Mode and Median of an asymmetric distribution" width="80%" />
-<p class="caption">
+<div class="figure" style="text-align: center">
+<span style="display:block;" id="fig:unnamed-chunk-138"></span>
+<img src="Prob1-GSEM-UNIGE_files/figure-html/unnamed-chunk-138-1.png" alt="Mode and Median of an asymmetric distribution" width="80%"><p class="caption">
 Figure 5.4: Mode and Median of an asymmetric distribution
 </p>
 </div>
 </div>
 </div>
 <div id="some-important-continuous-distributions" class="section level2" number="5.4">
-<h2><span class="header-section-number">5.4</span> Some Important Continuous Distributions</h2>
+<h2>
+<span class="header-section-number">5.4</span> Some Important Continuous Distributions<a class="anchor" aria-label="anchor" href="#some-important-continuous-distributions"><i class="fas fa-link"></i></a>
+</h2>
 <p>There is a wide variety of Probability Distributions. In this section, we will explore the properties of some of them, namely:</p>
 <ul>
 <li>Continuous Uniform</li>
 <li>Gaussian a.k.a. “Normal”</li>
 <li>Chi-squared</li>
-<li>Student’s <span class="math inline">\(t\)</span></li>
-<li>Fisher’s <span class="math inline">\(F\)</span></li>
+<li>Student’s <span class="math inline">\(t\)</span>
+</li>
+<li>Fisher’s <span class="math inline">\(F\)</span>
+</li>
 <li>Log-Normal</li>
 <li>Exponential</li>
 </ul>
 <div id="continuous-uniform-distribution" class="section level3" number="5.4.1">
-<h3><span class="header-section-number">5.4.1</span> Continuous Uniform Distribution</h3>
-
-<div class="definition">
-<p><span id="def:unif" class="definition"><strong>Definition 5.5  (Continuous Uniform Distribution)  </strong></span>We say <span class="math inline">\(X\)</span> has a continuous <strong>uniform</strong> distribution over the
-interval <span class="math inline">\([a,b]\)</span>, denoted as <span class="math inline">\(X\sim \mathcal{U}(a,b)\)</span>, when the CDF and PDF are respectively given by:
-<span class="math display">\[
-{F_X\left( x\right)}=\left\{
-                           \begin{array}{ll}
-                             0, &amp; \hbox{$x\leq a$;} \\
-                             \frac{(x-a)}{(b-a)}, &amp; \hbox{$a&lt;x\leq b$;} \\
-                             1, &amp; \hbox{$x&gt;b$.}
-                           \end{array}
-                         \right.\mbox{and}~{f_{X}\left( x\right)} =\left\{
-\begin{array}{l}
-\frac{1}{b-a}\text{, for }a&lt;x&lt;b \\
-0\text{, otherwise}
-\end{array}
-\right. ,
-\]</span></p>
-</div>
+<h3>
+<span class="header-section-number">5.4.1</span> Continuous Uniform Distribution<a class="anchor" aria-label="anchor" href="#continuous-uniform-distribution"><i class="fas fa-link"></i></a>
+</h3>
 <!-- %-  The PDF is given by% -->
 <!-- %\begin{equation*} -->
 <!-- %f_{X}\left( x\right) =\left\{ -->
@@ -610,14 +324,16 @@ interval <span class="math inline">\([a,b]\)</span>, denoted as <span class="mat
 <!-- %%\end{equation*} -->
 <!-- %% -->
 As a graphical illustration, let us consider the case when <span class="math inline">\(a=0\)</span> and <span class="math inline">\(b=1\)</span>. So, we have that the density is 1 on the interval <span class="math inline">\((0,1)\)</span> and 0 everywhere else:
-<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-22"></span>
-<img src="Prob1-GSEM-UNIGE_files/figure-html/unnamed-chunk-22-1.png" alt="Density of a Continuous Uniform Random Variable" width="80%" />
-<p class="caption">
+<div class="figure" style="text-align: center">
+<span style="display:block;" id="fig:unnamed-chunk-139"></span>
+<img src="Prob1-GSEM-UNIGE_files/figure-html/unnamed-chunk-139-1.png" alt="Density of a Continuous Uniform Random Variable" width="80%"><p class="caption">
 Figure 5.5: Density of a Continuous Uniform Random Variable
 </p>
 </div>
 <div id="expectation-3" class="section level4" number="5.4.1.1">
-<h4><span class="header-section-number">5.4.1.1</span> Expectation</h4>
+<h4>
+<span class="header-section-number">5.4.1.1</span> Expectation<a class="anchor" aria-label="anchor" href="#expectation-3"><i class="fas fa-link"></i></a>
+</h4>
 <p>The expected value of <span class="math inline">\(X\)</span> can be computed via integration:
 <span class="math display">\[\begin{eqnarray*}
 E\left[ X\right] &amp;=&amp;\int_{a}^{b}\frac{x}{\left( b-a\right) }dx \\
@@ -627,13 +343,11 @@ E\left[ X\right] &amp;=&amp;\int_{a}^{b}\frac{x}{\left( b-a\right) }dx \\
 &amp;=&amp;\frac{1}{2\left(b-a\right)}\left[(b-a)(b+a)\right]\\
 &amp;=&amp;\frac{a+b}{2}
 \end{eqnarray*}\]</span></p>
-
-<div class="example">
-<span id="exm:unnamed-chunk-23" class="example"><strong>Example 5.3  </strong></span>When <span class="math inline">\(a=0\)</span> and <span class="math inline">\(b=1\)</span>, then <span class="math inline">\(E\left[ X\right] =\frac{1}{2}\)</span>.
-</div>
 </div>
 <div id="variance-3" class="section level4" number="5.4.1.2">
-<h4><span class="header-section-number">5.4.1.2</span> Variance</h4>
+<h4>
+<span class="header-section-number">5.4.1.2</span> Variance<a class="anchor" aria-label="anchor" href="#variance-3"><i class="fas fa-link"></i></a>
+</h4>
 <p>By definition, the variance of <span class="math inline">\(X\)</span> is given by:
 <span class="math display">\[\begin{eqnarray*}
 Var\left( X\right) 
@@ -657,17 +371,9 @@ Var\left( X\right) &amp;=&amp;\frac{\left( ab+a^{2}+b^{2}\right) }{3}-\left( \fr
 a+b}{2}\right) ^{2} \\
 &amp;=&amp;\frac{1}{12}\left( a-b\right) ^{2}
 \end{eqnarray*}\]</span></p>
-
-<div class="example">
-<span id="exm:unnamed-chunk-24" class="example"><strong>Example 5.4  </strong></span>For instance, when <span class="math inline">\(a=0\)</span> and <span class="math inline">\(b=1\)</span>, then <span class="math inline">\(Var\left( X\right) =\frac{1}{12}\)</span>.
-</div>
-
-<div class="example">
-<span id="exm:unnamed-chunk-25" class="example"><strong>Example 5.5  </strong></span>Let <span class="math inline">\(X \sim \mathcal{U}(0,10)\)</span>. Then its PDF is <span class="math inline">\(f_X(x) = 1/10=0.1\)</span> for <span class="math inline">\(x\in(0,10)\)</span> and zero otherwise. The PDF plot is:
-</div>
-<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-26"></span>
-<img src="Prob1-GSEM-UNIGE_files/figure-html/unnamed-chunk-26-1.png" alt="Density of $X \sim \mathcal{U}(0,10)$" width="80%" />
-<p class="caption">
+<div class="figure" style="text-align: center">
+<span style="display:block;" id="fig:unnamed-chunk-143"></span>
+<img src="Prob1-GSEM-UNIGE_files/figure-html/unnamed-chunk-143-1.png" alt="Density of $X \sim \mathcal{U}(0,10)$" width="80%"><p class="caption">
 Figure 5.6: Density of <span class="math inline">\(X \sim \mathcal{U}(0,10)\)</span>
 </p>
 </div>
@@ -680,16 +386,18 @@ P(2\leq x \leq 4) &amp;=  P(2\leq x \leq 4)   &amp;= &amp;0.2  \\
 P(x \geq 2)       &amp;=  P(2 &lt; x \leq 10)    &amp;= &amp;0.1(10-2) = 0.8
 \end{align}\]</span></p>
 <p>Let’s represent graphically the <span class="math inline">\(P(X\geq 2)\)</span>. Indeed, we see that it is represented by the pink rectangle. If we compute the area, it is apparent that its value is <span class="math inline">\(0.8\)</span>, as we have obtained with the formula.</p>
-<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-27"></span>
-<img src="Prob1-GSEM-UNIGE_files/figure-html/unnamed-chunk-27-1.png" alt="Cumulated Probability between 2 and 10" width="80%" />
-<p class="caption">
+<div class="figure" style="text-align: center">
+<span style="display:block;" id="fig:unnamed-chunk-144"></span>
+<img src="Prob1-GSEM-UNIGE_files/figure-html/unnamed-chunk-144-1.png" alt="Cumulated Probability between 2 and 10" width="80%"><p class="caption">
 Figure 5.7: Cumulated Probability between 2 and 10
 </p>
 </div>
 </div>
 </div>
 <div id="normal-gaussian-distribution" class="section level3" number="5.4.2">
-<h3><span class="header-section-number">5.4.2</span> Normal (Gaussian) distribution</h3>
+<h3>
+<span class="header-section-number">5.4.2</span> Normal (Gaussian) distribution<a class="anchor" aria-label="anchor" href="#normal-gaussian-distribution"><i class="fas fa-link"></i></a>
+</h3>
 <p>The Normal distribution was “discovered” in the eighteenth
 century when scientists observed an astonishing degree of
 regularity in the behavior of measurement errors.</p>
@@ -702,44 +410,40 @@ curves</strong> which they christened the “normal curve of errors.”</p>
 <li>Pierre Laplace (1749-1827), and then</li>
 <li>Karl Gauss (1777-1855), who also lent his name to the distribution.</li>
 </ul>
-
-<div class="definition">
-<span id="def:gaussian" class="definition"><strong>Definition 5.6  (The Gaussian Distribution)  </strong></span>A variable <span class="math inline">\(X\)</span> is said to have a <strong>Gaussian</strong> or <strong>Normal</strong>
-distribution, with mean <span class="math inline">\(\mu\)</span> and variance <span class="math inline">\(\sigma ^{2}\)</span>, if its PDF is given by
-<span class="math display">\[\begin{equation*}
-\phi_{(\mu,\sigma)}(x) =\frac{1}{\sqrt{2\pi \sigma ^{2}}}\exp{ \left\{ -\frac{1%
-}{2\sigma ^{2}}\left( x-\mu \right) ^{2}\right\}}~~-\infty&lt;x&lt;\infty\,.
-\end{equation*}\]</span>
-The short-hand notation is <span class="math inline">\(X\sim \mathcal{N}\left( \mu ,\sigma ^{2}\right)\)</span>.
-</div>
 <p>There are couple of important <strong>properties</strong> worth mentioning:</p>
 <ul>
 <li>A Normal random variable <strong><span class="math inline">\(X\)</span> can take any value <span class="math inline">\(x\in\mathbb{R}\)</span></strong>.</li>
 <li>A Normal distribution is <strong>completely defined by its mean <span class="math inline">\(\mu\)</span> and its variance <span class="math inline">\(\sigma ^{2}\)</span></strong>. This means that infinitely many different normal distributions are obtained by varying the <em>parameters</em> <span class="math inline">\(\mu\)</span> and <span class="math inline">\(\sigma ^{2}\)</span>.</li>
 </ul>
 <p>To illustrate this last property, we plot a series of densities that result from replacing different values of <span class="math inline">\(\mu\)</span> and <span class="math inline">\(\sigma^2\)</span> in the following figure:</p>
-<div class="figure" style="text-align: center"><span id="fig:normalDensities"></span>
-<img src="img/05_continuous_rv/normals4-1.png" alt="Densities for $\color{blue}{X_{1}\sim\mathcal{N}(0,1)}$, $\color{red}{X_{2}\sim\mathcal{N}(0,1.5^2)}$, $\color{forestgreen}{X_{3}\sim\mathcal{N}(1,2.5^2)}$" width="80%" />
-<p class="caption">
+<div class="figure" style="text-align: center">
+<span style="display:block;" id="fig:normalDensities"></span>
+<img src="img/05_continuous_rv/normals4-1.png" alt="Densities for $\color{blue}{X_{1}\sim\mathcal{N}(0,1)}$, $\color{red}{X_{2}\sim\mathcal{N}(0,1.5^2)}$, $\color{forestgreen}{X_{3}\sim\mathcal{N}(1,2.5^2)}$" width="80%"><p class="caption">
 Figure 5.8: Densities for <span class="math inline">\(\color{blue}{X_{1}\sim\mathcal{N}(0,1)}\)</span>, <span class="math inline">\(\color{red}{X_{2}\sim\mathcal{N}(0,1.5^2)}\)</span>, <span class="math inline">\(\color{forestgreen}{X_{3}\sim\mathcal{N}(1,2.5^2)}\)</span>
 </p>
 </div>
 <ul>
 <li>As we can assess in the previous Figure <a href="#normalDensities"><strong>??</strong></a>, the PDF of the Normal Distribution is “Bell-shaped,” meaning that looks a little bit like a bell. Moreover, it is:
 <ul>
-<li><strong>Symmetric</strong>, i.e. it is not skewed either to the right or to the left. This also implies that the values of the density are the same for <span class="math inline">\(x\)</span> and <span class="math inline">\(-x\)</span>, i.e <span class="math inline">\(\phi_{(\mu,\sigma)}(x) = \phi_{(\mu,\sigma)}(-x)\)</span></li>
-<li><strong>Unimodal</strong>, meaning that it has only one mode and</li>
+<li>
+<strong>Symmetric</strong>, i.e. it is not skewed either to the right or to the left. This also implies that the values of the density are the same for <span class="math inline">\(x\)</span> and <span class="math inline">\(-x\)</span>, i.e <span class="math inline">\(\phi_{(\mu,\sigma)}(x) = \phi_{(\mu,\sigma)}(-x)\)</span>
+</li>
+<li>
+<strong>Unimodal</strong>, meaning that it has only one mode and</li>
 <li>The <strong>Mean</strong>, <strong>Median</strong> and <strong>Mode</strong> are all <strong>equal</strong>, owing to the <strong>symmetry</strong> of the distribution.</li>
-</ul></li>
 </ul>
-<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-28"></span>
-<img src="Prob1-GSEM-UNIGE_files/figure-html/unnamed-chunk-28-1.png" alt="The symmetry of the Gaussian Distribution" width="80%" />
-<p class="caption">
+</li>
+</ul>
+<div class="figure" style="text-align: center">
+<span style="display:block;" id="fig:unnamed-chunk-145"></span>
+<img src="Prob1-GSEM-UNIGE_files/figure-html/unnamed-chunk-145-1.png" alt="The symmetry of the Gaussian Distribution" width="80%"><p class="caption">
 Figure 5.9: The symmetry of the Gaussian Distribution
 </p>
 </div>
 <div id="the-standard-normal-distribution" class="section level4" number="5.4.2.1">
-<h4><span class="header-section-number">5.4.2.1</span> The Standard Normal distribution</h4>
+<h4>
+<span class="header-section-number">5.4.2.1</span> The Standard Normal distribution<a class="anchor" aria-label="anchor" href="#the-standard-normal-distribution"><i class="fas fa-link"></i></a>
+</h4>
 <p>First let us establish that <span class="math inline">\(\phi_{(\mu,\sigma)}(x)\)</span> can serve as a
 <strong>density function</strong>. To show that, we need to demonstrate that it integrates to 1 in all the domain <span class="math inline">\(\mathbb{R}\)</span></p>
 <p>Integrating with respect to <span class="math inline">\(x\)</span> using <em>integration by substitution</em> we obtain
@@ -756,18 +460,6 @@ But the second integral on the right hand side equals to:
 \]</span>
 which is <strong>a known result</strong>, known as the <strong>Gaussian Integral</strong> that cancels out with <span class="math inline">\(1/\sqrt{2\pi}\)</span> yielding the integration to 1. Hence, the function <span class="math inline">\(\phi_{(\mu,\sigma)}(x)\)</span> does
 indeed define the PDF of a random variable with a mean <span class="math inline">\(\mu\)</span> and a variance of <span class="math inline">\(\sigma^2\)</span></p>
-
-<div class="remark">
-<p> <span class="remark"><em>Remark. </em></span> Notice that to prove that <span class="math inline">\(\phi_{(\mu,\sigma)}(x)\)</span>, we had to <strong>transform</strong> <span class="math inline">\(X\)</span> to <span class="math inline">\(Z\)</span> via the substitution <span class="math inline">\(Z=(X-\mu)/\sigma\)</span>. The new variable <span class="math inline">\(Z\)</span> is said to be <strong>standardised</strong>.</p>
-<p>Notice also that the integrand that results from this substitution:
-<span class="math display">\[\frac{1}{\sqrt{2\pi}}\exp{\left\{-\frac{z^2}{2}\right\}}=\phi_{(0,1)}(z),\]</span>
-is the PDF of a random variable <span class="math inline">\(Z\sim \mathcal{N}(0,1)\)</span>, which is called a
-<strong>standard normal random variable</strong> since <span class="math inline">\(E[Z]=0\)</span> and <span class="math inline">\(Var(Z)=1\)</span>.</p>
-Because of the special role that the standard normal distribution has in
-calculations involving the normal distribution its PDF is given the special
-notation:
-<span class="math display">\[\phi(z)=\phi_{(0,1)}(z).\]</span>
-</div>
 <p>In shorthand notation, we can characterise this transformation in the following way.
 <span class="math display">\[X\sim \mathcal{N}\left( \mu ,\sigma ^{2}\right)\Leftrightarrow Z=\frac{\left( X-\mu \right) }{\sigma }\sim \mathcal{N}\left( 0,1\right)\]</span>
 This process of <em>standardisation</em> has very important implications when dealing with the Normal Distribution, one of them being the that one can <strong>compute all quantities related with a random variable <span class="math inline">\(X\)</span> by evaluating the related quantities over <span class="math inline">\(Z\)</span></strong>. This is an example of what is called called a <strong>variable transformation</strong></p>
@@ -782,10 +474,11 @@ X=\sigma Z+\mu  \ (\text{for the random variable}) \quad\mbox{and}\quad x=\sigma
 <p>Thus, <strong>statements about any Normal random variable</strong> can always be translated into <strong>equivalent statements about a standard Normal random variable</strong>, and viceversa.</p>
 </div>
 <div id="the-normal-cdf" class="section level4" number="5.4.2.2">
-<h4><span class="header-section-number">5.4.2.2</span> The Normal CDF</h4>
+<h4>
+<span class="header-section-number">5.4.2.2</span> The Normal CDF<a class="anchor" aria-label="anchor" href="#the-normal-cdf"><i class="fas fa-link"></i></a>
+</h4>
 <p>For instance, we can concentrate on the consequences of this property on the computation of the CDF.</p>
-<p>Analytically the CDF of a Normal Random Variable <span class="math inline">\(X\sim \mathcal{N}\left( \mu ,\sigma ^{2}\right)\)</span> is given by:<br />
-<span class="math display">\[\Phi_{(\mu,\sigma)}\left( x\right) =\int_{-\infty }^{x}\frac{1}{\sqrt{2\pi \sigma ^{2}}}\exp{ \left\{ -\frac{1}{2\sigma ^{2}}\left( t-\mu \right) ^{2}\right\}} dt\]</span>
+<p>Analytically the CDF of a Normal Random Variable <span class="math inline">\(X\sim \mathcal{N}\left( \mu ,\sigma ^{2}\right)\)</span> is given by:<br><span class="math display">\[\Phi_{(\mu,\sigma)}\left( x\right) =\int_{-\infty }^{x}\frac{1}{\sqrt{2\pi \sigma ^{2}}}\exp{ \left\{ -\frac{1}{2\sigma ^{2}}\left( t-\mu \right) ^{2}\right\}} dt\]</span>
 To calculate <span class="math inline">\(\Phi_{(\mu,\sigma)}\left( x\right)=P(\{X\leq x\})\)</span> we use integration with the substitution
 <span class="math inline">\(s=(t-\mu)/\sigma\)</span>, which implies: <span class="math inline">\(z=(x-\mu)/\sigma\)</span> (for the domain of integration) and <span class="math inline">\(ds=dt/\sigma\)</span> (for the “differential”), yielding:
 <span class="math display">\[\begin{eqnarray*}
@@ -802,9 +495,9 @@ P(\{ X\leq x\} )  &amp;=&amp;P(\{Z\leq z\})
 <p>To compute the cumulative probability for <span class="math inline">\(z\leq 0\)</span> we take advantage of the symmetry property of <span class="math inline">\(\phi(z)\)</span> i.e. <span class="math inline">\(\phi(z)=\phi(-z)\)</span>, which also implies that:
 <span class="math display">\[\Phi(-z)=1-\Phi(z)\,\]</span></p>
 We can see this in the following plot.
-<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-30"></span>
-<img src="Prob1-GSEM-UNIGE_files/figure-html/unnamed-chunk-30-1.png" alt="The Symmetry of the Standard Normal PDF and its consequences for the CDF" width="80%" />
-<p class="caption">
+<div class="figure" style="text-align: center">
+<span style="display:block;" id="fig:unnamed-chunk-147"></span>
+<img src="Prob1-GSEM-UNIGE_files/figure-html/unnamed-chunk-147-1.png" alt="The Symmetry of the Standard Normal PDF and its consequences for the CDF" width="80%"><p class="caption">
 Figure 5.10: The Symmetry of the Standard Normal PDF and its consequences for the CDF
 </p>
 </div>
@@ -817,9 +510,9 @@ P(\{x_1&lt;X\leq x_2\})&amp;=&amp;P(\{z_1&lt;Z\leq z_2\})\\
 where, again, the values <span class="math inline">\(z_1\)</span> and <span class="math inline">\(z_2\)</span> result from <em>standardisation</em>
 <span class="math inline">\(z_1=(x_1-\mu)/\sigma\)</span> and <span class="math inline">\(z_2=(x_2-\mu)/\sigma\)</span>. As we can see from the plot below, there’s a clear
 geometric interpretation to this relation.</p>
-<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-31"></span>
-<img src="Prob1-GSEM-UNIGE_files/figure-html/unnamed-chunk-31-1.png" alt="Computing the Probability of an interval" width="80%" />
-<p class="caption">
+<div class="figure" style="text-align: center">
+<span style="display:block;" id="fig:unnamed-chunk-148"></span>
+<img src="Prob1-GSEM-UNIGE_files/figure-html/unnamed-chunk-148-1.png" alt="Computing the Probability of an interval" width="80%"><p class="caption">
 Figure 5.11: Computing the Probability of an interval
 </p>
 </div>
@@ -827,67 +520,50 @@ Figure 5.11: Computing the Probability of an interval
 <!-- We can proceed graphically. Let's start with a variable $X \sim \mathcal{N}(5,3)$. The procedure of shifting and rescaling consists in defining a new variable $Y=X-5$, which is a recentered/shifted $X$ (it's centered at 0 and has the same variance as $X$) and finally defining $Z= Y/\sqrt{3}$, which is a recentered/shifted and rescaled $X$ (it's centered at 0 and has unit variance).  -->
 </div>
 <div id="standard-normal-tables" class="section level4" number="5.4.2.3">
-<h4><span class="header-section-number">5.4.2.3</span> Standard Normal Tables</h4>
+<h4>
+<span class="header-section-number">5.4.2.3</span> Standard Normal Tables<a class="anchor" aria-label="anchor" href="#standard-normal-tables"><i class="fas fa-link"></i></a>
+</h4>
 <p>Standard Normal Tables give values of the standard normal integral <span class="math inline">\(\Phi(z)\)</span> for <span class="math inline">\(z\geq 0\)</span>. This is done to , to save space, since values for negative <span class="math inline">\(z\)</span> are obtained via symmetry, as we mentioned in the previous section.
 <!-- %-  Other Normal tables give either $1-\Phi(z)$ (tail area) or $\Phi(z)-0.5$! --></p>
 Most of the tables are explicit in this choice and graphically show that they
 contain the probabilities of the interval <span class="math inline">\(0\leq Z \leq z\)</span>, e.g. 
-<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-34"></span>
-<img src="img/05_continuous_rv/bell_curve__5-1.png" alt="Description of the contents of a Standard Normal Table" width="80%" />
-<p class="caption">
+<div class="figure" style="text-align: center">
+<span style="display:block;" id="fig:unnamed-chunk-151"></span>
+<img src="img/05_continuous_rv/bell_curve__5-1.png" alt="Description of the contents of a Standard Normal Table" width="80%"><p class="caption">
 Figure 5.12: Description of the contents of a Standard Normal Table
 </p>
 </div>
 <p>Typically, the dimension of the rows is nearest tenth to <span class="math inline">\(z\)</span>, while
 the columns indicate the nearest hundreth.</p>
 Say we would like to find the value of <span class="math inline">\(\Phi(0.46)\)</span>. We’d have to find the
-row for <span class="math inline">\(0.4\)</span> and the column for <code>0.06</code>.<br />
-
-<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-35"></span>
-<img src="img/05_continuous_rv/myTableGauss-1.png" alt="Probabilities for some values in the Standard Normal Table" width="80%" />
-<p class="caption">
+row for <span class="math inline">\(0.4\)</span> and the column for <code>0.06</code>.<br><div class="figure" style="text-align: center">
+<span style="display:block;" id="fig:unnamed-chunk-152"></span>
+<img src="img/05_continuous_rv/myTableGauss-1.png" alt="Probabilities for some values in the Standard Normal Table" width="80%"><p class="caption">
 Figure 5.13: Probabilities for some values in the Standard Normal Table
 </p>
 </div>
 <p>You can use these tables to compute integrals/probabilities of intervals <span class="math inline">\(Z&lt;=z\)</span> or
 <span class="math inline">\(Z \in [z_1, z_2]\)</span> using the rules mentioned above.
-<img src="img/05_continuous_rv/CDF_pr-1.png" width="100%" style="display: block; margin: auto;" /></p>
-
-<div class="example">
-<p><span id="exm:unnamed-chunk-37" class="example"><strong>Example 5.6  (Probability of several intervals)  </strong></span>
-Let us use the table Compute the probabilities for some open intervals:</p>
-<p><span class="math display">\[\begin{align*}
-P(\{Z\leq 1\})    &amp;\approx 0.8413 \\
-P(\{Z\leq 1.96\}) &amp;\approx 0.9750 \\
-P(\{Z\geq 1.96\}) &amp;=       1-P(\{Z\leq 1.96\}) \approx 1-0.9750=0.0250 \\
-P(\{Z\geq -1\})   &amp;=       P(\{Z\leq 1\})\approx 0.8413 \\
-P(\{Z\leq -1.5\}) &amp;=      P(\{Z\geq 1.5\}) =1-P(\{Z\leq 1.5\}) \approx 1-0.9332=0.0668
-\end{align*}\]</span></p>
-<p>And some closed intervals:
-<span class="math display">\[\begin{align*}
-P(\{0.64\leq Z\leq 1.96\}) &amp;=P(\{Z\leq 1.96\})-P(\{Z\leq 0.64\}) \approx 0.9750-0.7389=0.2361 \\
-P(\{-0.64\leq Z\leq 1.96\}) &amp;= P(\{Z\leq 1.96\})-P(\{Z\leq -0.64\}) =P(\{Z\leq 1.96\})-(1-P(\{Z\leq 0.64\})) \approx0.9750-(1-0.7389)=0.7139 \\
-P(\{-1.96\leq Z\leq -0.64\}) &amp;=P(\{0.64\leq Z\leq 1.96\}) \approx 0.2361
-\end{align*}\]</span></p>
-</div>
+<img src="img/05_continuous_rv/CDF_pr-1.png" width="100%" style="display: block; margin: auto;"></p>
 </div>
 <div id="further-properties-of-the-normal-distribution" class="section level4" number="5.4.2.4">
-<h4><span class="header-section-number">5.4.2.4</span> Further properties of the Normal distribution</h4>
+<h4>
+<span class="header-section-number">5.4.2.4</span> Further properties of the Normal distribution<a class="anchor" aria-label="anchor" href="#further-properties-of-the-normal-distribution"><i class="fas fa-link"></i></a>
+</h4>
 <div id="the-rule-68-95-99.7" class="section level5 unnumbered">
-<h5>The Rule ‘68 – 95 – 99.7’</h5>
+<h5>The Rule ‘68 – 95 – 99.7’<a class="anchor" aria-label="anchor" href="#the-rule-68-95-99.7"><i class="fas fa-link"></i></a>
+</h5>
 <p>In the following plot, the shaded areas under the PDFs are (approximately)
 equivalent to <span class="math inline">\(0.683\)</span>, <span class="math inline">\(0.954\)</span> and <span class="math inline">\(0.997\)</span>, respectively.
-<img src="img/05_continuous_rv/Areas_Normal-1.png" width="100%" style="display: block; margin: auto;" /></p>
+<img src="img/05_continuous_rv/Areas_Normal-1.png" width="100%" style="display: block; margin: auto;"></p>
 <p>This leads to the rule: <strong>.’68 – 95 – 99.7’</strong> i.e. that if <span class="math inline">\(X\)</span> is a
 Normal random variable, <span class="math inline">\(X \sim \mathcal{N}(\mu, \sigma^2)\)</span>, its realization
 has approximately a probability of:</p>
-<table>
-<thead>
-<tr class="header">
+<div class="inline-table"><table class="table table-sm">
+<thead><tr class="header">
 <th align="center">Probability</th>
 <th align="center">Interval</th>
-</tr>
-</thead>
+</tr></thead>
 <tbody>
 <tr class="odd">
 <td align="center"><span class="math inline">\(68 \, \%\)</span></td>
@@ -902,7 +578,7 @@ has approximately a probability of:</p>
 <td align="center"><span class="math inline">\(\lbrack \mu - 3 \, \sigma, \, \mu + 3 \, \sigma\rbrack\)</span></td>
 </tr>
 </tbody>
-</table>
+</table></div>
 <ul>
 <li><p>For <span class="math inline">\(X\sim \mathcal{N}\left( \mu ,\sigma ^{2}\right)\)</span>
 <span class="math display">\[\begin{equation*}
@@ -927,40 +603,18 @@ similar in shape since they sport the same variance). Moreover the density of th
 sum of the simulated values is also bell-shaped and appears to be centered around
 12 and sports a wider variance, confirming visually what we expected, i.e. that
 <span class="math inline">\(X + Y \sim \mathcal{N}(5+7,1+1)\)</span>, <span class="math inline">\(X+Y \sim \mathcal{N}(12,2)\)</span>.
-<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-39"></span>
-<img src="img/05_continuous_rv/sum_of_two_independent_normals_with_rug__1-1.png" alt="Locations of $n=30$ sampled values of $X,$ $Y$, and $X+Y$ shown as tick marks under each respective density" width="80%" />
-<p class="caption">
+<div class="figure" style="text-align: center">
+<span style="display:block;" id="fig:unnamed-chunk-156"></span>
+<img src="img/05_continuous_rv/sum_of_two_independent_normals_with_rug__1-1.png" alt="Locations of $n=30$ sampled values of $X,$ $Y$, and $X+Y$ shown as tick marks under each respective density" width="80%"><p class="caption">
 Figure 5.14: Locations of <span class="math inline">\(n=30\)</span> sampled values of <span class="math inline">\(X,\)</span> <span class="math inline">\(Y\)</span>, and <span class="math inline">\(X+Y\)</span> shown as tick marks under each respective density
 </p>
 </div>
 </div>
 </div>
 <div id="an-example" class="section level4" number="5.4.2.5">
-<h4><span class="header-section-number">5.4.2.5</span> An example</h4>
-
-<div class="example">
-<p><span id="exm:unnamed-chunk-40" class="example"><strong>Example 5.7  </strong></span>
-_On the highway A2 (in the Luzern area), the speed is limited to <span class="math inline">\(80\)</span> <span class="math inline">\(km/h\)</span>. A radar measures the speeds of all the cars.
-Assuming that the registered speeds are distributed according to a Normal law with mean <span class="math inline">\(72\)</span> <span class="math inline">\(km/h\)</span> and standard error <span class="math inline">\(8\)</span> <span class="math inline">\(km/h\)</span>:</p>
-<ul>
-<li><em>what is the proportion of the drivers who will have to pay a penalty for high speed?</em></li>
-<li><em>knowing that in addition to the penalty, a speed higher than <span class="math inline">\(30\)</span> <span class="math inline">\(km/h\)</span> (over the max allowed speed) implies a withdrawal of the driving license, what is the proportion of the drivers who will lose their driving license among those who will have a to pay a fine?</em></li>
-</ul>
-<p><strong>Response</strong></p>
-<p>Let <span class="math inline">\(X\)</span> be the random variable expressing the registered speed: <span class="math inline">\(X \sim \mathcal{N}(72,64)\)</span>.</p>
-<ul>
-<li>Since a driver has to pay if its speed is above <span class="math inline">\(80\)</span> <span class="math inline">\(km/h\)</span>, the proportion of drivers paying a penalty is expressed through <span class="math inline">\(P(X&gt;80)\)</span>:
-<span class="math display">\[\begin{equation*}
-P(X&gt;80)= P\left(Z&gt;\frac{80-72}{8} \right)=1-\Phi(1) \simeq 16 \%
-\end{equation*}\]</span>
-where <span class="math inline">\(Z \sim \mathcal{N}(0,1)\)</span>.</li>
-<li>We are looking for the conditional probability of a recorded speed greater than 110  the driver has had already to pay a fine:
-<span class="math display">\[\begin{eqnarray*}
-  P(X&gt;110 \vert X&gt;80) &amp;=&amp;  \frac{P(\{X&gt;110\} \bigcap \{X&gt;80\})}{P(X&gt;80)} \\
-   &amp;=&amp; \frac{P(X&gt;110)}{P(X&gt;80)} = \frac{1- \Phi((110-72)/8)}{1-\Phi(1)}\approx \frac{0}{16\%}\simeq 0.
-  \end{eqnarray*}\]</span></li>
-</ul>
-</div>
+<h4>
+<span class="header-section-number">5.4.2.5</span> An example<a class="anchor" aria-label="anchor" href="#an-example"><i class="fas fa-link"></i></a>
+</h4>
 <!-- %\frametitle{... it's all about normality...} -->
 <!-- % -->
 <!-- % -->
@@ -974,209 +628,146 @@ where <span class="math inline">\(Z \sim \mathcal{N}(0,1)\)</span>.</li>
 </div>
 </div>
 <div id="the-chi-squared-distribution" class="section level3" number="5.4.3">
-<h3><span class="header-section-number">5.4.3</span> The Chi-squared distribution</h3>
-
-<div class="definition">
-<span id="def:unnamed-chunk-41" class="definition"><strong>Definition 5.7  </strong></span>If <span class="math inline">\(Z_{1},Z_{2},\ldots ,Z_{n}\)</span> are independent standard Normal random
-variables, then:
-<span class="math display">\[\begin{equation*}
-X=Z_{1}^{2}+Z_{2}^{2}+\cdots +Z_{n}^{2}
-\end{equation*}\]</span>%
-has a <strong>Chi-squared distribution with <span class="math inline">\(n\)</span> degrees of freedom</strong>. Write as <span class="math inline">\(X\sim \chi ^{2}(n)\)</span>.
-</div>
+<h3>
+<span class="header-section-number">5.4.3</span> The Chi-squared distribution<a class="anchor" aria-label="anchor" href="#the-chi-squared-distribution"><i class="fas fa-link"></i></a>
+</h3>
 <p>A Chi-Squared-distributed Random Variable has the following properties:</p>
 <ul>
-<li><span class="math inline">\(X\sim \chi ^{2}(n)\)</span> can take only <strong>positive</strong> values.</li>
+<li>
+<span class="math inline">\(X\sim \chi ^{2}(n)\)</span> can take only <strong>positive</strong> values.</li>
 <li>The expectation and variance for <span class="math inline">\(X\sim \chi ^{2}(n)\)</span>, are given by:
 <span class="math display">\[\begin{eqnarray*}
 E\left[ X\right] &amp;=&amp;n \\
 Var\left( X\right) &amp;=&amp;2n
-\end{eqnarray*}\]</span></li>
+\end{eqnarray*}\]</span>
+</li>
 <li>Finally, if <span class="math inline">\(X\sim \chi ^{2}(n)\)</span> and <span class="math inline">\(Y\sim \chi ^{2}(m)\)</span> are <strong>independent</strong> then <span class="math inline">\(X+Y\sim \chi ^{2}(n+m)\)</span>.</li>
 </ul>
 <p>The Chi-Squared distribution has a parameter that defines its shape, namely the
 <span class="math inline">\(n\)</span> degrees of freedom. To illustrate their effect, let’s plot some densities
 in the following plot.</p>
-<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-42"></span>
-<img src="img/05_continuous_rv/chisquared_pdfs__2-1.png" alt="Chi-Squared densities for various values of $n$" width="80%" />
-<p class="caption">
+<div class="figure" style="text-align: center">
+<span style="display:block;" id="fig:unnamed-chunk-159"></span>
+<img src="img/05_continuous_rv/chisquared_pdfs__2-1.png" alt="Chi-Squared densities for various values of $n$" width="80%"><p class="caption">
 Figure 5.15: Chi-Squared densities for various values of <span class="math inline">\(n\)</span>
 </p>
 </div>
 <div id="chi-squared-tables" class="section level4" number="5.4.3.1">
-<h4><span class="header-section-number">5.4.3.1</span> Chi-squared tables</h4>
+<h4>
+<span class="header-section-number">5.4.3.1</span> Chi-squared tables<a class="anchor" aria-label="anchor" href="#chi-squared-tables"><i class="fas fa-link"></i></a>
+</h4>
 <p>As you can imagine, cumulated probabilities for Chi-squared distributions are not straightforward to compute. To do it, we require computational methods.</p>
 <p>Given that the shape depends on the parameter <span class="math inline">\(n\)</span> there would be an infinite number of tables (as many as <span class="math inline">\(n\)</span>) should we want to carry along the values of the CDF. Instead, tables contain the values for the Upper-tail or Lower-tail <em>Quantiles</em> for some given probabilities. For instance, in the following plot, we have a typical table, containing the values of the quantiles for different upper-tail probabilities displayed according to the degrees of freedom (denoted as <span class="math inline">\(V\)</span>).</p>
-<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-43"></span>
-<img src="img/05_continuous_rv/chisq_table__3-1.png" alt="A typical Chi-square Table" width="80%" />
-<p class="caption">
+<div class="figure" style="text-align: center">
+<span style="display:block;" id="fig:unnamed-chunk-160"></span>
+<img src="img/05_continuous_rv/chisq_table__3-1.png" alt="A typical Chi-square Table" width="80%"><p class="caption">
 Figure 5.16: A typical Chi-square Table
 </p>
 </div>
 <!-- To be included in the future: definition of upper-tail and lower-tail quantiles -->
-
-<div class="example">
-<p><span id="exm:unnamed-chunk-44" class="example"><strong>Example 5.8  </strong></span>Let <span class="math inline">\(X\)</span> be a chi-squared random variable with 10 degrees-of-freedom. What is the value of its <strong>upper fifth percentile</strong>?</p>
-<p>By definition, the upper fifth percentile is the chi-squared value <span class="math inline">\(x\)</span> (lower case!!!) such that the probability to the right of <span class="math inline">\(x\)</span> is <span class="math inline">\(0.05\)</span> (so the upper tail area is <span class="math inline">\(5\%\)</span>). To find such an <span class="math inline">\(x\)</span> we use the chi-squared table:</p>
-<ul>
-<li>setting <span class="math inline">\(\mathcal{V} = 10\)</span> in the first column on the left and getting the corresponding row</li>
-<li>finding the column headed by <span class="math inline">\(P(X \geq x) = 0.05\)</span>.</li>
-</ul>
-Now, all we need to do is read the corresponding cell. What do we get? Well, the table tells us that the upper fifth percentile of a chi-squared random variable with 10 degrees of freedom is <strong>18.30703</strong>.
-</div>
 </div>
 </div>
 <div id="the-student-t-distribution" class="section level3" number="5.4.4">
-<h3><span class="header-section-number">5.4.4</span> The Student-t distribution</h3>
-
-<div class="definition">
-<span id="def:unnamed-chunk-45" class="definition"><strong>Definition 5.8  </strong></span>If <span class="math inline">\(Z\sim \mathcal{N}(0,1)\)</span> and <span class="math inline">\(Y\sim \chi ^{2}(v)\)</span> are <strong>independent</strong>
-then%
-<span class="math display">\[\begin{equation*}
-T=\frac{Z}{\sqrt{Y/v}}
-\end{equation*}\]</span>
-has a <strong>Student-t</strong> distribution with <span class="math inline">\(v\)</span> degrees of freedom. Write as <span class="math inline">\(T\sim t_{v}\)</span>.
-</div>
+<h3>
+<span class="header-section-number">5.4.4</span> The Student-t distribution<a class="anchor" aria-label="anchor" href="#the-student-t-distribution"><i class="fas fa-link"></i></a>
+</h3>
 <ul>
-<li><span class="math inline">\(T\sim t_{v}\,\)</span> can take any value in <span class="math inline">\(\mathbb{R}\)</span>.</li>
+<li>
+<span class="math inline">\(T\sim t_{v}\,\)</span> can take any value in <span class="math inline">\(\mathbb{R}\)</span>.</li>
 <li>Expected value and variance for <span class="math inline">\(T\sim t_{v}\)</span> are
 <span class="math display">\[\begin{eqnarray*}
 E\left[ T\right] &amp;=&amp;0\text{, for }v&gt;1 \\
 Var\left( T\right) &amp;=&amp;\frac{v}{v-2}\text{, for }v&gt;2.
-\end{eqnarray*}\]</span></li>
+\end{eqnarray*}\]</span>
+</li>
 </ul>
-
-<div class="remark">
- <span class="remark"><em>Remark. </em></span> The PDF of <span class="math inline">\(T\sim t_{v}\)</span> is similar to a Normal (with mean zero) but with fatter tails. When <span class="math inline">\(v\)</span> is large (typically, <span class="math inline">\(v \geq 120\)</span>) <span class="math inline">\(t_{v}\)</span> approaches <span class="math inline">\(\mathcal{N}(0,1)\)</span>.
-</div>
-<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-47"></span>
-<img src="img/05_continuous_rv/student_t__4-1.png" alt="Densities for various Student-t densities alongside the Normal Density" width="80%" />
-<p class="caption">
+<div class="figure" style="text-align: center">
+<span style="display:block;" id="fig:unnamed-chunk-164"></span>
+<img src="img/05_continuous_rv/student_t__4-1.png" alt="Densities for various Student-t densities alongside the Normal Density" width="80%"><p class="caption">
 Figure 5.17: Densities for various Student-t densities alongside the Normal Density
 </p>
 </div>
 <p>Again, since the distribution depends on the degrees of freedom <span class="math inline">\(v\)</span>, in the absence of
 computers, we rely on tables for some values of upper-tail probabilities.</p>
-<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-48"></span>
-<img src="img/05_continuous_rv/Student_t_table__5-1.png" alt="A typical Student's-t Table" width="80%" />
-<p class="caption">
+<div class="figure" style="text-align: center">
+<span style="display:block;" id="fig:unnamed-chunk-165"></span>
+<img src="img/05_continuous_rv/Student_t_table__5-1.png" alt="A typical Student's-t Table" width="80%"><p class="caption">
 Figure 5.18: A typical Student’s-t Table
 </p>
 </div>
 </div>
 <div id="the-f-distribution" class="section level3" number="5.4.5">
-<h3><span class="header-section-number">5.4.5</span> The F distribution</h3>
-
-<div class="definition">
-<span id="def:unnamed-chunk-49" class="definition"><strong>Definition 5.9  </strong></span>
-If <span class="math inline">\(X\sim \chi ^{2}(v_{1})\)</span> and <span class="math inline">\(Y\sim \chi ^{2}(v_{2})\)</span> are <strong>
-independent</strong>, then
-<span class="math display">\[\begin{equation*}
-F=\frac{\frac{X}{v_{1}}}{\frac{Y}{v_{2}}},
-\end{equation*}\]</span>%
-has an <strong>F</strong> distribution with <span class="math inline">\(v_{1}\)</span> <code>numerator' and $v_{2}$</code>denominator’ degrees of freedom. Write as <span class="math inline">\(F\sim F_{v_{1},v_{2}}\)</span>.
-</div>
+<h3>
+<span class="header-section-number">5.4.5</span> The F distribution<a class="anchor" aria-label="anchor" href="#the-f-distribution"><i class="fas fa-link"></i></a>
+</h3>
 <ul>
-<li><span class="math inline">\(F\sim F_{v_{1},v_{2}}\,\)</span> can take only <strong>positive</strong> values.</li>
+<li>
+<span class="math inline">\(F\sim F_{v_{1},v_{2}}\,\)</span> can take only <strong>positive</strong> values.</li>
 <li>Expected value and variance for <span class="math inline">\(F\sim F_{v_{1},v_{2}}\)</span> (note that <strong>the order of the degrees of freedom is important!</strong>) is given by:
 <span class="math display">\[\begin{eqnarray*}
 E\left[ F\right] &amp;=&amp;\frac{v_{2}}{v_{2}-2}\text{, for }v_{2}&gt;2 \\
 Var\left( F\right) &amp;=&amp;\frac{2v_{2}^{2}\left( v_{1}+v_{2}-2\right) }{%
 v_{1}\left( v_{2}-2\right) ^{2}\left( v_{2}-4\right) }\text{, for }v_{2}&gt;4.
-\end{eqnarray*}\]</span></li>
+\end{eqnarray*}\]</span>
+</li>
 </ul>
 <p>As we can assess from the following plot, there is no uniform way in which the densities change
 according to the degrees of freedom. However all of them seem to be concentrated towards the lower side of the <span class="math inline">\(\mathbb{R}^{+}\)</span> line.
-<img src="img/05_continuous_rv/F-dist_pds__6-1.png" width="80%" style="display: block; margin: auto;" /></p>
+<img src="img/05_continuous_rv/F-dist_pds__6-1.png" width="80%" style="display: block; margin: auto;"></p>
 Again, when distributed in tables, we can only obtain information on the quantiles
 for some upper-tail probabilites. However, since the distributions are defined by
 two sets of degrees of freedom, a table can only pertain one value of the upper tail
 probability.
-<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-51"></span>
-<img src="img/05_continuous_rv/Fdist_table__7-1.png" alt="Critical Values for $F$ distribution and $\alpha = 0.05$" width="80%" />
-<p class="caption">
+<div class="figure" style="text-align: center">
+<span style="display:block;" id="fig:unnamed-chunk-168"></span>
+<img src="img/05_continuous_rv/Fdist_table__7-1.png" alt="Critical Values for $F$ distribution and $\alpha = 0.05$" width="80%"><p class="caption">
 Figure 5.19: Critical Values for <span class="math inline">\(F\)</span> distribution and <span class="math inline">\(\alpha = 0.05\)</span>
 </p>
 </div>
 </div>
 <div id="the-lognormal-distribution" class="section level3" number="5.4.6">
-<h3><span class="header-section-number">5.4.6</span> The lognormal distribution</h3>
-
-<div class="definition">
-<span id="def:unnamed-chunk-52" class="definition"><strong>Definition 5.10  </strong></span> <span class="math inline">\(Y\)</span> has a <strong>lognormal distribution</strong> when
-<span class="math display">\[\ln \left( Y\right) =X\]</span>
-has a Normal distribution. We write <span class="math inline">\(Y\sim\)</span> $( ,^{2}) $.
-</div>
+<h3>
+<span class="header-section-number">5.4.6</span> The lognormal distribution<a class="anchor" aria-label="anchor" href="#the-lognormal-distribution"><i class="fas fa-link"></i></a>
+</h3>
 <ul>
 <li>If <span class="math inline">\(Y\sim\)</span> <span class="math inline">\(\left( \mu ,\sigma ^{2}\right)\)</span> then
 <span class="math display">\[\begin{eqnarray*}
 E\left[ Y\right] &amp;=&amp;\exp^{ \left( \mu +\frac{1}{2}\sigma ^{2}\right)} \\
 Var(Y) &amp;=&amp;\exp^{ \left( 2\mu +\sigma ^{2}\right)} \left( \exp^{ \left( \sigma
 ^{2}\right)} -1\right).
-\end{eqnarray*}\]</span></li>
+\end{eqnarray*}\]</span>
+</li>
 </ul>
 <p>In the next plot, we display an estimation of the density of the realization of a Normal Random Variable, as well as the density of <span class="math inline">\(y = exp(x)\)</span>. Notice how the distribution is assymetric, positive and right-skewed.
-<img src="img/05_continuous_rv/lognormal_with_rug__8-1.png" width="80%" style="display: block; margin: auto;" /></p>
+<img src="img/05_continuous_rv/lognormal_with_rug__8-1.png" width="80%" style="display: block; margin: auto;"></p>
 </div>
 <div id="exponential-distribution" class="section level3" number="5.4.7">
-<h3><span class="header-section-number">5.4.7</span> Exponential distribution</h3>
-
-<div class="definition">
-<p><span id="def:unnamed-chunk-54" class="definition"><strong>Definition 5.11  </strong></span>Let <span class="math inline">\(X\)</span> be a continuous random variable, having the following characteristics:</p>
+<h3>
+<span class="header-section-number">5.4.7</span> Exponential distribution<a class="anchor" aria-label="anchor" href="#exponential-distribution"><i class="fas fa-link"></i></a>
+</h3>
 <ul>
-<li><span class="math inline">\(X\)</span> is defined on the positive real numbers <span class="math inline">\(\left( 0;\infty \right)\)</span> — namely <span class="math inline">\(\mathbb{R}^+\)</span>;<br />
-</li>
-<li>The PDF and CDF are given by:
-<span class="math display">\[\begin{eqnarray*}
-f_X(x)&amp;=\lambda \exp\{-\lambda x\},\lambda &gt;0; \\
-F_X(x)=1-\exp (-\lambda x); \nn 
-\end{eqnarray*}\]</span>
-then we say that <span class="math inline">\(X\)</span> has an <strong>exponential distribution</strong> and we write <span class="math inline">\(X\sim \text{Exp}(\lambda)\)</span>.
-</div></li>
 <li>The Expectation and Variance of <span class="math inline">\(X\sim \text{Exp}(\lambda)\)</span> are as follows:</li>
 </ul>
 <p><span class="math display">\[\begin{eqnarray*}
 E[X]=\int_{0}^{\infty }xf_X(x )dx= 1/\lambda &amp; \text{and} &amp;   Var(X)=\int_{0}^{\infty }x^{2}f_X(x )dx-E^{2}(X)=1/\lambda ^{2}. \nn
 \end{eqnarray*}\]</span></p>
-
-<div class="remark">
-<p> <span class="remark"><em>Remark. </em></span> <span class="math inline">\(X\)</span> is typically applied to model the <strong>waiting time until an event occurs</strong>, when events are always occurring at a rate <span class="math inline">\(\lambda &gt;0\)</span>.</p>
-Moreover, the sum of independent exponential random variables has a Gamma distribution (see the exercises).
-</div>
-
-<div class="example">
-<p><span id="exm:unnamed-chunk-56" class="example"><strong>Example 5.9  </strong></span>Let <span class="math inline">\(X\sim\)</span> <span class="math inline">\((\lambda)\)</span>, with <span class="math inline">\(\lambda =0.5\)</span>. Thus
-<span class="math display">\[f_X(x) = \left\{ \begin{array}{ll}
-0.5 \exp (-0.5x) &amp; x&gt;0\\
-0 &amp; \text{otherwise}
-\end{array} \right.\]</span>
-Then, find the CDF.</p>
-<p>For <span class="math inline">\(x&gt;0\)</span>, we have
-<span class="math display">\[\begin{eqnarray*}
-F_{X}(x) &amp; = &amp; \int_{0}^{x}f_{X}(u)du\\
-&amp; = &amp; 0.5\Big( -2\exp (-0.5u)\Big) \bigl|_{u=0}^{u=x}\\
-&amp; = &amp; 0.5(-2\exp (-0.5x)+2\exp (0))\\
-&amp; = &amp; 1-\exp (-0.5x)
-\end{eqnarray*}\]</span></p>
-<p>so, finally,</p>
-<span class="math display">\[F_X(x) = \left\{ \begin{array}{ll}
-0 &amp; x \leq 0 \\
-1-\exp (-0.5x)&amp; x&gt;0
-\end{array} \right.\]</span>
-</div>
-<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-57"></span>
-<img src="Prob1-GSEM-UNIGE_files/figure-html/unnamed-chunk-57-1.png" alt="Graphical Illustration of Exponential distributions with varying $\lambda$" width="80%" />
-<p class="caption">
+<div class="figure" style="text-align: center">
+<span style="display:block;" id="fig:unnamed-chunk-174"></span>
+<img src="Prob1-GSEM-UNIGE_files/figure-html/unnamed-chunk-174-1.png" alt="Graphical Illustration of Exponential distributions with varying $\lambda$" width="80%"><p class="caption">
 Figure 5.20: Graphical Illustration of Exponential distributions with varying <span class="math inline">\(\lambda\)</span>
 </p>
 </div>
 </div>
 </div>
 <div id="transformation-of-variables" class="section level2" number="5.5">
-<h2><span class="header-section-number">5.5</span> Transformation of variables</h2>
+<h2>
+<span class="header-section-number">5.5</span> Transformation of variables<a class="anchor" aria-label="anchor" href="#transformation-of-variables"><i class="fas fa-link"></i></a>
+</h2>
 <ul>
-<li>Consider a random variable <span class="math inline">\(X\)</span></li>
-<li>Suppose we are interested in <span class="math inline">\(Y=\psi(X)\)</span>, where <span class="math inline">\(\psi\)</span> is a <strong>one to one function</strong></li>
+<li>Consider a random variable <span class="math inline">\(X\)</span>
+</li>
+<li>Suppose we are interested in <span class="math inline">\(Y=\psi(X)\)</span>, where <span class="math inline">\(\psi\)</span> is a <strong>one to one function</strong>
+</li>
 <li>A <strong>function</strong> <span class="math inline">\(\psi \left( x\right)\)</span> <strong>is one to one</strong> (1-to-1) if there are no two numbers, <span class="math inline">\(x_{1},x_{2}\)</span> in the domain of <span class="math inline">\(\psi\)</span> such that <span class="math inline">\(\psi \left( x_{1}\right) =\psi \left( x_{2}\right)\)</span> but <span class="math inline">\(x_{1}\neq x_{2}\)</span>.</li>
 <li>A sufficient condition for <span class="math inline">\(\psi \left( x\right)\)</span> to be 1-to-1 is that it be monotonically increasing (or decreasing) in <span class="math inline">\(x\)</span>.</li>
 <li>Note that the <strong>inverse</strong> of a 1-to-1 function <span class="math inline">\(y=\psi \left(x\right)\)</span> is a 1-to-1 function <span class="math inline">\(\psi^{-1}\left( y\right)\)</span> such that:</li>
@@ -1187,25 +778,24 @@ Figure 5.20: Graphical Illustration of Exponential distributions with varying <s
 \end{equation*}\]</span></p>
 <ul>
 <li>To transform <span class="math inline">\(X\)</span> to <span class="math inline">\(Y\)</span>, we need to consider all the values <span class="math inline">\(x\)</span> that <span class="math inline">\(% X\)</span> can take</li>
-<li>We first transform <span class="math inline">\(x\)</span> into values <span class="math inline">\(y=\psi (x)\)</span></li>
+<li>We first transform <span class="math inline">\(x\)</span> into values <span class="math inline">\(y=\psi (x)\)</span>
+</li>
 </ul>
 <div id="transformation-of-discrete-random-variables" class="section level3" number="5.5.1">
-<h3><span class="header-section-number">5.5.1</span> Transformation of discrete random variables</h3>
+<h3>
+<span class="header-section-number">5.5.1</span> Transformation of discrete random variables<a class="anchor" aria-label="anchor" href="#transformation-of-discrete-random-variables"><i class="fas fa-link"></i></a>
+</h3>
 <ul>
 <li>To transform a discrete random variable <span class="math inline">\(X\)</span>, into the random variable <span class="math inline">\(Y=\psi (X)\)</span>, we transfer the probabilities for <strong>each</strong> <span class="math inline">\(x\)</span> to the values $y=( x) $:</li>
 </ul>
-<!-- \multicolumn{2}{l}{_Probability function for_$X$} |  |  -->
-<!-- \multicolumn{2}{l}{_Probability function for_$X$} \\  -->
-<table>
-<thead>
-<tr class="header">
+<!-- \multicolumn{2}{l}{_Probability function for_$X$} |  |  --><!-- \multicolumn{2}{l}{_Probability function for_$X$} \\  --><div class="inline-table"><table class="table table-sm">
+<thead><tr class="header">
 <th align="center"><span class="math inline">\(X\)</span></th>
 <th align="center"><span class="math inline">\(P \left(\{ X=x_{i} \}\right) =p_{i}\)</span></th>
 <th align="center"></th>
 <th align="center"><span class="math inline">\(Y\)</span></th>
 <th align="center"><span class="math inline">\(P \left(\{X=x_{i} \}\right) =p_{i}\)</span></th>
-</tr>
-</thead>
+</tr></thead>
 <tbody>
 <tr class="odd">
 <td align="center"><span class="math inline">\(x_{1}\)</span></td>
@@ -1243,7 +833,7 @@ Figure 5.20: Graphical Illustration of Exponential distributions with varying <s
 <td align="center"><span class="math inline">\(p_{n}\)</span></td>
 </tr>
 </tbody>
-</table>
+</table></div>
 <p>Notice that this is equivalent to applying the function <span class="math inline">\(\psi \left(\cdot \right)\)</span> inside the probability statements:</p>
 <p><span class="math display">\[\begin{eqnarray*}
 P \left( \{ X=x_{i}  \}\right) &amp;=&amp;P \left(  \{\psi \left( X\right) =\psi \left(
@@ -1251,12 +841,7 @@ x_{i}\right)  \} \right) \\
 &amp;=&amp;P \left( \{ Y=y_{i} \} \right) \\
 &amp;=&amp;p_{i}
 \end{eqnarray*}\]</span></p>
-
-<div class="example">
-<p><span id="exm:unnamed-chunk-58" class="example"><strong>Example 5.10  </strong></span>[option pricing]</p>
-Let us imagine that we are tossing a balanced coin (<span class="math inline">\(p=1/2\)</span>), and when we get a “Head” (<span class="math inline">\(H\)</span>) the stock price moves up of a factor <span class="math inline">\(u\)</span>, but when we get a “Tail” (<span class="math inline">\(T\)</span>) the price moves down of a factor <span class="math inline">\(d\)</span>. We denote the price at time <span class="math inline">\(t_1\)</span> by <span class="math inline">\(S_1(H)=u S_0\)</span> if the toss results in head (<span class="math inline">\(H\)</span>), and by <span class="math inline">\(S_1(T)=d S_0\)</span> if it results in tail (<span class="math inline">\(T\)</span>). After the second toss, the price will be one of:
-</div>
-<p><img src="img/05_continuous_rv/Shreve_Bin-1.png" width="80%" style="display: block; margin: auto;" />
+<p><img src="img/05_continuous_rv/Shreve_Bin-1.png" width="80%" style="display: block; margin: auto;">
 Indeed, after two tosses, there are four possible coin sequences,
 <span class="math display">\[
 \{HH,HT,TH,TT\}
@@ -1281,30 +866,28 @@ although not all of them result in different stock prices at time <span class="m
 <!-- %   \draw [->] (b) to node [above] {$(1-p)^2$} (d); -->
 <!-- %\end{tikzpicture} --></p>
 <p>Let us set <span class="math inline">\(S_0=1\)</span>, <span class="math inline">\(u=2\)</span> and <span class="math inline">\(d=1/2\)</span>: we represent the price evolution by a tree:</p>
-<p><img src="Prob1-GSEM-UNIGE_files/figure-html/unnamed-chunk-60-1.png" width="80%" style="display: block; margin: auto;" /></p>
+<div class="inline-figure"><img src="Prob1-GSEM-UNIGE_files/figure-html/unnamed-chunk-177-1.png" width="80%" style="display: block; margin: auto;"></div>
 <p>Now consider an European option call with maturity <span class="math inline">\(t_2\)</span> and strike price <span class="math inline">\(K=0.5\)</span>, whose random pay-off at <span class="math inline">\(t_2\)</span> is <span class="math inline">\(C=\max(0;S_2-0.5)\)</span>. Thus,
 <span class="math display">\[\begin{eqnarray*}
 C(HH)=\max(0;4-0.5)=\$ 3.5 &amp; C(HT)=\max(0;1-0.5)=\$ 0.5 \\
 C(TH)=\max(0;1-0.5)=\$ 0.5 &amp; C(TT)=\max(0;0.25-0.5)=\$ 0.
 \end{eqnarray*}\]</span>
 Thus at maturity <span class="math inline">\(t_2\)</span> we have</p>
-<table style="width:100%;">
+<div class="inline-table"><table style="width:100%;" class="table table-sm">
 <colgroup>
-<col width="11%" />
-<col width="54%" />
-<col width="11%" />
-<col width="11%" />
-<col width="11%" />
+<col width="11%">
+<col width="54%">
+<col width="11%">
+<col width="11%">
+<col width="11%">
 </colgroup>
-<thead>
-<tr class="header">
+<thead><tr class="header">
 <th align="center"><span class="math inline">\(S_2\)</span></th>
 <th align="center"><span class="math inline">\(P \left(\{ X=x_{i} \}\right) =p_{i}\)</span></th>
 <th align="center"></th>
 <th align="center"><span class="math inline">\(C\)</span></th>
 <th align="center"><span class="math inline">\(P \left(\{C=c_{i} \}\right) =p_{i}\)</span></th>
-</tr>
-</thead>
+</tr></thead>
 <tbody>
 <tr class="odd">
 <td align="center"><span class="math inline">\(\$ u^2\)</span></td>
@@ -1328,11 +911,13 @@ Thus at maturity <span class="math inline">\(t_2\)</span> we have</p>
 <td align="center"><span class="math inline">\((1-p)^2\)</span></td>
 </tr>
 </tbody>
-</table>
+</table></div>
 <p>Since <span class="math inline">\(ud=du\)</span> the corresponding values of <span class="math inline">\(S_2\)</span> and <span class="math inline">\(C\)</span> can be aggregated, without loss of info.</p>
 </div>
 <div id="transformation-of-variables-using-the-cdf" class="section level3" number="5.5.2">
-<h3><span class="header-section-number">5.5.2</span> Transformation of variables using the CDF</h3>
+<h3>
+<span class="header-section-number">5.5.2</span> Transformation of variables using the CDF<a class="anchor" aria-label="anchor" href="#transformation-of-variables-using-the-cdf"><i class="fas fa-link"></i></a>
+</h3>
 <p>We can use the same logic for CDF probabilities, whether the random variables are <strong>discrete or continuous</strong>.</p>
 <p>For instance, Let <span class="math inline">\(Y=\psi \left( X\right)\)</span> with <span class="math inline">\(\psi \left( x\right)\)</span> 1-to-1 and <strong>monotone increasing</strong>. Then:</p>
 <p><span class="math display">\[\begin{eqnarray*}
@@ -1341,16 +926,6 @@ F_{Y}\left( y\right) &amp;=&amp;P \left( \{ Y\leq y \}\right) \\
 ^{-1}\left( y\right) \} \right) \\
 &amp;=&amp;F_{X}\left( \psi ^{-1}\left( y\right) \right)
 \end{eqnarray*}\]</span></p>
-
-<div class="example">
-<span id="exm:unnamed-chunk-61" class="example"><strong>Example 5.11  </strong></span>Let <span class="math inline">\(Y=\psi \left( X\right) =\exp^{ X}\)</span> where <span class="math inline">\(X\sim F_X\)</span> on all values <span class="math inline">\(x\in\mathbb{R}\)</span>
-<span class="math display">\[\begin{eqnarray*}
-F_{Y}\left( y\right) &amp;=&amp;P \left( \{ Y\leq y \} \right) \\
-&amp;=&amp;P \left( \{ \exp^{  X} \leq y \} \right) =P \left( \{ X\leq \ln
-\left( y\right) \} \right) \\
-&amp;=&amp;F_{X}\left( \ln \left( y\right) \right) \text{ only for }y&gt;0\text{.}
-\end{eqnarray*}\]</span>
-</div>
 <p>You can notice that Monotone decreasing functions work in a similar way, but require
 changing of the sense of the inequality, e.g. let <span class="math inline">\(Y=\psi \left( X\right)\)</span> with <span class="math inline">\(\psi \left( x\right)\)</span> 1-to-1 and
 <strong>monotone decreasing</strong>. Then:</p>
@@ -1360,18 +935,11 @@ F_{Y}\left( y\right) &amp;=&amp;P \left( \{ Y\leq y \} \right) \\
 ^{-1}\left( y\right) \} \right) \\
 &amp;=&amp;1-F_{X}\left( \psi ^{-1}\left( y\right) \right)
 \end{eqnarray*}\]</span></p>
-
-<div class="example">
-<span id="exm:unnamed-chunk-62" class="example"><strong>Example 5.12  </strong></span>Example: let <span class="math inline">\(Y=\psi \left( X\right) =-\exp(X)\)</span> where <span class="math inline">\(X\sim F_X\)</span> on all values <span class="math inline">\(x\in\mathbb{R}\)</span>
-<span class="math display">\[\begin{eqnarray*}
-F_{Y}\left( y\right) &amp;=&amp;P \left( \{ Y\leq y \}\right) =P \left( \{ -\exp(X) \leq y \} \right) \\
-&amp;=&amp;P \left( \{ \exp(X) \geq -y \} \right) =P \left( \{ X\geq \ln \left( -y\right) \} \right) \\
-&amp;=&amp;1-F_{X}\left( \ln \left( -y\right) \right) \text{ only for }y&lt;0.
-\end{eqnarray*}\]</span>
-</div>
 </div>
 <div id="transformation-of-continuous-rv-through-pdf" class="section level3" number="5.5.3">
-<h3><span class="header-section-number">5.5.3</span> Transformation of continuous RV through PDF</h3>
+<h3>
+<span class="header-section-number">5.5.3</span> Transformation of continuous RV through PDF<a class="anchor" aria-label="anchor" href="#transformation-of-continuous-rv-through-pdf"><i class="fas fa-link"></i></a>
+</h3>
 <p>For continuous random variables, if <span class="math inline">\(\psi \left( x\right)\)</span> 1-to-1 and
 monotone <strong>increasing</strong>, we have:
 <span class="math display">\[\begin{equation*}
@@ -1408,52 +976,12 @@ f_{Y}\left( y\right) =f_{X}\left( \psi ^{-1}\left( y\right) \right) \times
 \end{equation*}\]</span></p>
 <p>This expression (called <strong>Jacobian-formula</strong>) is valid for <span class="math inline">\(\psi \left( x\right)\)</span> 1-to-1 and
 monotone (whether increasing or decreasing)</p>
-
-<div class="example">
-<p><span id="exm:unnamed-chunk-63" class="example"><strong>Example 5.13  </strong></span>
-What is the PDF for the lognormal distribution?</p>
-<ul>
-<li><p>Recall that <span class="math inline">\(Y\)</span> has a <strong>lognormal distribution</strong> when <span class="math inline">\(\ln \left(Y\right) =X\)</span> has a Normal distribution</p></li>
-<li><p><span class="math inline">\(\Rightarrow\)</span> if <span class="math inline">\(X\sim \mathcal{N}\left( \mu ,\sigma ^{2}\right) ,\)</span> then <span class="math inline">\(Y=\exp(X)\sim\text{lognormal}\left(\mu ,\sigma ^{2}\right)\)</span></p></li>
-<li><p>Corresponding to <span class="math inline">\(\psi \left( x\right) =\exp(x)\)</span> and <span class="math inline">\(\psi^{-1}\left( y\right) =\ln (y)\)</span></p></li>
-<li><p>The <em>PDF</em> of <span class="math inline">\(X\)</span> is
-<span class="math display">\[\begin{equation*}
-f_{X}\left( x\right) =\frac{1}{\sqrt{2\pi \sigma ^{2}}}\exp^{ \left\{ -\frac{1%
-}{2\sigma ^{2}}\left( x-\mu \right) ^{2}\right\}}
-\end{equation*}\]</span>
-for any $-&lt;x&lt;$</p></li>
-<li><p>Using <span class="math inline">\(\psi \left( x\right) =\exp^x\)</span> we know we will ll have possible values
-for <span class="math inline">\(Y\)</span> only on $0&lt;y&lt;$</p></li>
-<li><p>We know that:
-<span class="math display">\[\begin{equation*}
-f_{Y}\left( y\right) =f_{X}\left( \psi ^{-1}\left( y\right) \right) \times
-\left\vert \frac{d\psi ^{-1}\left( y\right) }{dy}\right\vert
-\end{equation*}\]</span></p></li>
-<li><p>And since <span class="math inline">\(\psi ^{-1}\left( y\right) =\ln (y)\)</span> then
-<span class="math display">\[\begin{equation*}
-\left\vert \frac{d\psi ^{-1}\left( y\right) }{dy}\right\vert =\left\vert 
-\frac{1}{y}\right\vert
-\end{equation*}\]</span></p></li>
-<li><p><span class="math inline">\(\Rightarrow\)</span> the <em>PDF</em> of <span class="math inline">\(Y\)</span> is
-<span class="math display">\[\begin{equation*}
-f_{Y}\left( y\right) =\frac{1}{y\sqrt{2\pi \sigma ^{2}}}\exp^{ \left\{ -\frac{1%
-}{2\sigma ^{2}}\left( \ln (y)-\mu \right) ^{2}\right\}}
-\end{equation*}\]</span> for any $0&lt;y&lt;$</p></li>
-<li><p>Both the Normal and the lognormal are characterized by
-only two parameters (<span class="math inline">\(\mu\)</span> and <span class="math inline">\(\sigma\)</span>). The <em>median</em> of the lognormal distribution is <span class="math inline">\(\exp^{ \mu }\)</span>, since
-<span class="math display">\[P \left( \{ X\leq \mu \} \right) = 0.5,\]</span>
-and hence
-<span class="math display">\[\begin{eqnarray*}
-0.5 &amp;=&amp;P \left(\{ X\leq \mu \}\right) \\
-&amp;=&amp;P \left( \{\exp^{X} \leq \exp^{ \mu }\} \right) \\
-&amp;=&amp;P \left( \{Y\leq \exp^{ \mu }\} \right).
-\end{eqnarray*}\]</span></p>
-</div></li>
-</ul>
 <p>More generally, for <span class="math inline">\(\alpha\in[0,1]\)</span>, the <span class="math inline">\(\alpha\)</span>-th quantile of a r.v. <span class="math inline">\(X\)</span> is the value <span class="math inline">\(x_\alpha\)</span> such that <span class="math inline">\(P(\{X \leq x_\alpha\})\geq\alpha\)</span>. If <span class="math inline">\(X\)</span> si a continuous r.v. we can set <span class="math inline">\(P(\{X \leq x_\alpha\})=\alpha\)</span> (as we did, e.g., for the lognormal).</p>
 </div>
 <div id="a-caveat" class="section level3" number="5.5.4">
-<h3><span class="header-section-number">5.5.4</span> A caveat</h3>
+<h3>
+<span class="header-section-number">5.5.4</span> A caveat<a class="anchor" aria-label="anchor" href="#a-caveat"><i class="fas fa-link"></i></a>
+</h3>
 <p>When <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span> are two random variables, we should pay attention to their transformations. For instance, let us consider
 <span class="math display">\[
 X\sim \mathcal{N}(\mu,\sigma^2) \quad \text{and}  \quad Y\sim Exp(\lambda).
@@ -1472,61 +1000,76 @@ E[Z] = E[X+Y] = E[X] + E[Y]
 </div>
 </div>
 <div id="the-big-picture" class="section level2" number="5.6">
-<h2><span class="header-section-number">5.6</span> The big picture</h2>
+<h2>
+<span class="header-section-number">5.6</span> The big picture<a class="anchor" aria-label="anchor" href="#the-big-picture"><i class="fas fa-link"></i></a>
+</h2>
 <p>Despite exotic names, the common distributions relate to each other in intuitive and interesting ways. Several follow naturally from the Bernoulli distribution, for example.</p>
-<p><img src="img/05_continuous_rv/RelRVs_Diego-1.png" width="80%" style="display: block; margin: auto;" /></p>
+<div class="inline-figure"><img src="img/05_continuous_rv/RelRVs_Diego-1.png" width="80%" style="display: block; margin: auto;"></div>
 
 </div>
 </div>
-            </section>
+  <div class="chapter-nav">
+<div class="prev"><a href="discreterv.html"><span class="header-section-number">4</span> 🔧 Discrete Random Variables</a></div>
+<div class="next"><a href="limittheorems.html"><span class="header-section-number">6</span> 📝 Limit Theorems</a></div>
+</div></main><div class="col-md-3 col-lg-2 d-none d-md-block sidebar sidebar-chapter">
+    <nav id="toc" data-toggle="toc" aria-label="On this page"><h2>On this page</h2>
+      <ul class="nav navbar-nav">
+<li><a class="nav-link" href="#continuousrv"><span class="header-section-number">5</span> 🔧 Continuous Random Variable</a></li>
+<li><a class="nav-link" href="#two-motivating-examples"><span class="header-section-number">5.1</span> Two Motivating Examples</a></li>
+<li><a class="nav-link" href="#cumulative-distribution-function-cdf"><span class="header-section-number">5.2</span> Cumulative Distribution Function (CDF)</a></li>
+<li>
+<a class="nav-link" href="#distributional-summaries"><span class="header-section-number">5.3</span> Distributional Summaries</a><ul class="nav navbar-nav">
+<li><a class="nav-link" href="#the-expectation"><span class="header-section-number">5.3.1</span> The Expectation</a></li>
+<li><a class="nav-link" href="#the-variance"><span class="header-section-number">5.3.2</span> The Variance</a></li>
+<li><a class="nav-link" href="#important-properties-of-expectations"><span class="header-section-number">5.3.3</span> Important properties of expectations</a></li>
+<li><a class="nav-link" href="#mode-and-median"><span class="header-section-number">5.3.4</span> Mode and Median</a></li>
+</ul>
+</li>
+<li>
+<a class="nav-link" href="#some-important-continuous-distributions"><span class="header-section-number">5.4</span> Some Important Continuous Distributions</a><ul class="nav navbar-nav">
+<li><a class="nav-link" href="#continuous-uniform-distribution"><span class="header-section-number">5.4.1</span> Continuous Uniform Distribution</a></li>
+<li><a class="nav-link" href="#normal-gaussian-distribution"><span class="header-section-number">5.4.2</span> Normal (Gaussian) distribution</a></li>
+<li><a class="nav-link" href="#the-chi-squared-distribution"><span class="header-section-number">5.4.3</span> The Chi-squared distribution</a></li>
+<li><a class="nav-link" href="#the-student-t-distribution"><span class="header-section-number">5.4.4</span> The Student-t distribution</a></li>
+<li><a class="nav-link" href="#the-f-distribution"><span class="header-section-number">5.4.5</span> The F distribution</a></li>
+<li><a class="nav-link" href="#the-lognormal-distribution"><span class="header-section-number">5.4.6</span> The lognormal distribution</a></li>
+<li><a class="nav-link" href="#exponential-distribution"><span class="header-section-number">5.4.7</span> Exponential distribution</a></li>
+</ul>
+</li>
+<li>
+<a class="nav-link" href="#transformation-of-variables"><span class="header-section-number">5.5</span> Transformation of variables</a><ul class="nav navbar-nav">
+<li><a class="nav-link" href="#transformation-of-discrete-random-variables"><span class="header-section-number">5.5.1</span> Transformation of discrete random variables</a></li>
+<li><a class="nav-link" href="#transformation-of-variables-using-the-cdf"><span class="header-section-number">5.5.2</span> Transformation of variables using the CDF</a></li>
+<li><a class="nav-link" href="#transformation-of-continuous-rv-through-pdf"><span class="header-section-number">5.5.3</span> Transformation of continuous RV through PDF</a></li>
+<li><a class="nav-link" href="#a-caveat"><span class="header-section-number">5.5.4</span> A caveat</a></li>
+</ul>
+</li>
+<li><a class="nav-link" href="#the-big-picture"><span class="header-section-number">5.6</span> The big picture</a></li>
+</ul>
 
-          </div>
-        </div>
-      </div>
-<a href="discreterv.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="limittheorems.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
-    </div>
+      <div class="book-extra">
+        <ul class="list-unstyled">
+          
+        </ul>
+</div>
+    </nav>
+</div>
+
+</div>
+</div> <!-- .container -->
+
+<footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
+
+  <div class="col-12 col-md-6 mt-3">
+    <p>"<strong>🃏 Probability I</strong>: Course Notes" was written by Dr. Daniel Flores Agreda (based on the Lecture by Prof. Davide La Vecchia). </p>
   </div>
-<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
-<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
-<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
-<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
-<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
-<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
-<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
-<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
-<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
-<script>
-gitbook.require(["gitbook"], function(gitbook) {
-gitbook.start({
-"sharing": null,
-"fontsettings": {
-"theme": "white",
-"family": "sans",
-"size": 2
-},
-"edit": {
-"link": "https://github.com/rstudio/bookdown-demo/edit/master/05-continuous_rv.Rmd",
-"text": "Edit"
-},
-"history": {
-"link": null,
-"text": null
-},
-"view": {
-"link": null,
-"text": null
-},
-"download": null,
-"toc": {
-"collapse": "subsection"
-}
-});
-});
-</script>
 
-<!-- dynamically load mathjax for compatibility with self-contained -->
-<script>
+  <div class="col-12 col-md-6 mt-3">
+    <p>This book was built by the <a class="text-light" href="https://bookdown.org">bookdown</a> R package.</p>
+  </div>
+
+</div></div>
+</footer><!-- dynamically load mathjax for compatibility with self-contained --><script>
   (function () {
     var script = document.createElement("script");
     script.type = "text/javascript";
@@ -1538,7 +1081,22 @@ gitbook.start({
     script.src = src;
     document.getElementsByTagName("head")[0].appendChild(script);
   })();
+</script><script type="text/x-mathjax-config">const popovers = document.querySelectorAll('a.footnote-ref[data-toggle="popover"]');
+for (let popover of popovers) {
+  const div = document.createElement('div');
+  div.setAttribute('style', 'position: absolute; top: 0, left:0; width:0, height:0, overflow: hidden; visibility: hidden;');
+  div.innerHTML = popover.getAttribute('data-content');
+
+  var has_math = div.querySelector("span.math");
+  if (has_math) {
+    document.body.appendChild(div);
+    MathJax.Hub.Queue(["Typeset", MathJax.Hub, div]);
+    MathJax.Hub.Queue(function() {
+      popover.setAttribute('data-content', div.innerHTML);
+      document.body.removeChild(div);
+    })
+  }
+}
 </script>
 </body>
-
 </html>
